@@ -1,0 +1,5585 @@
+﻿focus_tree = {
+	id = wakaruvian_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			original_tag = WAK
+		}
+	}
+		
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 1000 }
+
+	############################################################################
+	####################		POLITICAL		################################
+	############################################################################
+	
+	focus = {
+		id = WAK_wakaru_warning
+		icon = GFX_goal_ksk_political_turmoil
+		x = 30
+		y = 0
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 0
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event =  wakaru.1
+		}
+		ai_will_do = {
+			base = 0
+		}
+	}
+	focus = {
+		id = WAK_lore_event
+		icon = GFX_goal_wak_formal_govern
+		x = 35
+		y = 0
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 0
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event =  wakaru.2
+			mark_focus_tree_layout_dirty = yes
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_formal_governance
+		icon = GFX_goal_wak_formal_govern
+		x = 0
+		y = 1
+		relative_position_id =WAK_lore_event
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+		
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_lore_event }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_country_flag = shiba_in_charge
+			WAK_hal = {
+				remove_country_leader_role = {
+					ideology = centrism
+				}
+			}
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = wak_resistance_action
+				add_idea = wak_resistance_action_2
+			}
+			remove_ideas = wak_army_control
+			set_country_flag = siamese_puppet_wak
+			hidden_effect = {
+				news_event = {
+					id = kessoku_news.28
+					days = 2
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	############################################################################
+	####################		SHIBER			################################
+	############################################################################
+	
+	focus = {
+		id = WAK_shiba_corpo
+		icon = GFX_goal_wak_shiba_focus
+		x = -10
+		y = 2
+		relative_position_id =WAK_formal_governance
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_formal_governance }
+		mutually_exclusive = { focus = WAK_resistance_start_focus }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			set_power_balance = {
+				id = WAK_balance
+				left_side = shiba_side
+				right_side = yoyoko_side
+				set_default = yes
+			}
+			country_event = wakaru.5
+			set_country_flag = shiba_rebellion
+			set_country_flag = shiba_events
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+	focus = {
+		id = WAK_stray_company
+		icon = GFX_goal_wak_shiba_stray
+		x = -6
+		y = 1
+		relative_position_id =WAK_shiba_corpo
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 7
+		prerequisite = { focus = WAK_shiba_corpo }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = wak_stray_company_1
+			add_ideas = free_trade
+			set_country_flag = stray_company_flag
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_stray_steel
+		icon = GFX_goal_wak_shiba_steel
+		x = -2
+		y = 1
+		relative_position_id =WAK_stray_company
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 7
+		prerequisite = { focus = WAK_stray_company }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			1052 = {
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_stray_tungsten
+		icon = GFX_goal_wak_shiba_tungsten
+		x = 0
+		y = 1
+		relative_position_id =WAK_stray_company
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 7
+		prerequisite = { focus = WAK_stray_company }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			1052 = {
+				add_resource = {
+					type = tungsten
+					amount = 16
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_stray_random_resource
+		icon = GFX_goal_wak_shiba_random
+		x = 2
+		y = 1
+		relative_position_id =WAK_stray_company
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag  =wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 7
+		prerequisite = { focus = WAK_stray_company }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = WAK_shiba_random_resource_tt
+			hidden_effect = {
+				1052 = {
+					random_list = {
+						10 = {
+							add_resource = {
+								type = oil
+								amount = 12
+							}
+						}
+						10 = {
+							add_resource = {
+								type = aluminium
+								amount = 12
+							}
+						}
+						10 = {
+							add_resource = {
+								type = chromium
+								amount = 12
+							}
+						}
+						10 = {
+							add_resource = {
+								type = rubber
+								amount = 12
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_rain_profits
+		icon = GFX_goal_wak_shiba_profits
+		x = 0
+		y = 1
+		relative_position_id =WAK_stray_tungsten
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_stray_tungsten }
+		prerequisite = { focus = WAK_stray_steel }
+		prerequisite = { focus = WAK_stray_random_resource }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_offsite_building = { type = industrial_complex level = 1 }
+			swap_ideas = {
+				remove_idea = wak_stray_company_1
+				add_idea = wak_stray_company_2
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_siam_one
+		icon = GFX_goal_wak_shiba_fight_siam
+		x = 0
+		y = 1
+		relative_position_id =WAK_shiba_corpo
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 7
+		prerequisite = { focus = WAK_shiba_corpo }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_siam_reassure
+		icon = GFX_goal_wak_shiba_reassure_siam
+		x = -1
+		y = 1
+		relative_position_id =WAK_shiba_siam_one
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_shiba_siam_one }
+		prerequisite = { focus = WAK_stray_company }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.05
+			add_power_balance_value = {
+				id = WAK_balance
+				value = 0.1
+			}
+			add_autonomy_score = {
+				value = 300
+				localization = wakaru_autonomy_shiba_key
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_root_out_corruption
+		icon = GFX_goal_wak_shiba_corruption
+		x = 1
+		y = 1
+		relative_position_id =WAK_shiba_siam_one
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_shiba_siam_one }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {	
+			country_event = wakaru.4
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_autonomy_one
+		icon = GFX_goal_wak_shiba_autonomy
+		x = 0
+		y = 2
+		relative_position_id =WAK_shiba_siam_one
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_shiba_siam_reassure }
+		prerequisite = { focus = WAK_shiba_root_out_corruption }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			SIA = {
+				set_autonomy = {
+					target = WAK
+					autonomous_state = autonomy_puppet
+				}	
+			}
+			remove_ideas = wak_autonomy_loss_2
+			add_war_support = 0.05
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	focus = {
+		id = WAK_shiba_propaganda_one
+		icon = GFX_goal_wak_shiba_siam_wakaru
+		x = 4
+		y = 1
+		relative_position_id =WAK_shiba_corpo
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_shiba_corpo }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = WAK_balance
+				value = -0.2
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_poison_yami
+		icon = GFX_goal_wak_shiba_poison_yami
+		x = -1
+		y = 2
+		relative_position_id =WAK_shiba_propaganda_one
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_shiba_propaganda_one }
+		prerequisite = { focus = WAK_shiba_root_out_corruption }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = { 
+					WAK_poison = {
+						is_political_advisor = yes
+					}
+				}
+				WAK_poison = {
+					add_trait = {
+						slot = political_advisor
+						trait = propaganda_journalist_writer_shiba
+					}
+					set_can_be_fired_in_advisor_role = {
+						slot = political_advisor
+						value = no
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					WAK_poison = {
+						is_political_advisor = no
+					}
+				}
+				activate_advisor = wak_poison_advisor_idea
+				WAK_poison = {
+					add_trait = {
+						slot = political_advisor
+						trait = propaganda_journalist_writer_shiba
+					}
+					set_can_be_fired_in_advisor_role = {
+						slot = political_advisor
+						value = no
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_power_journalism
+		icon = GFX_goal_wak_shiba_poison_two
+		x = -1
+		y = 1
+		relative_position_id =WAK_shiba_poison_yami
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_shiba_poison_yami }
+		prerequisite = { focus = WAK_shiba_autonomy_one }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+			add_power_balance_value = {
+				id = WAK_balance
+				value = -0.1
+			}			
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_corporate_media
+		icon = GFX_goal_wak_shiba_media
+		x = -1
+		y = 1
+		relative_position_id =WAK_shiba_rain_profits
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_shiba_rain_profits }
+		prerequisite = { focus = WAK_shiba_poison_yami }
+		
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_research_slot = 1
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_look_for_expansion
+		icon = GFX_goal_wak_shiba_imperialism
+		x = -4
+		y = 2
+		relative_position_id =WAK_shiba_rain_profits
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_shiba_rain_profits }
+		prerequisite = { focus = WAK_shiba_autonomy_one }
+		
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			WAK_shiba = {
+				add_trait = {
+					character = WAK_shiba
+					ideology = centrism
+					trait = ambitionist_shiba
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_stray_food
+		icon = GFX_goal_wak_shiba_food
+		x = 1
+		y = 1
+		relative_position_id =WAK_shiba_corporate_media
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_corporate_media }
+		
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = -0.05
+			add_power_balance_value = {
+				id = WAK_balance
+				value = -0.15
+			}		
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_wakaru_imperialism
+		icon = GFX_goal_wak_shiba_imperialism
+		x = -1
+		y = 1
+		relative_position_id =WAK_shiba_corporate_media
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_corporate_media }
+		
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_manpower = 50000
+			add_stability = -0.05
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_obvious_enemy
+		icon = GFX_goal_wak_shiba_enemy
+		x = 0
+		y = 1
+		relative_position_id =WAK_shiba_look_for_expansion
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+			KSK = {
+				exists = no
+			}
+		}
+		
+		bypass_effect = {
+			set_country_flag = shiba_has_kessoku_buffs
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_shiba_look_for_expansion }
+		
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			unlock_decision_tooltip = { decision = WAK_kessoku_shiba_buffs show_effect_tooltip = yes show_modifiers = yes }
+			set_country_flag = shiba_has_kessoku_buffs
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_industry_shiba
+		icon = GFX_goal_wak_shiba_industry
+		x = 0
+		y = 1
+		relative_position_id =WAK_shiba_wakaru_imperialism
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_shiba_wakaru_imperialism }
+		
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			1052 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_stray_housing
+		icon = GFX_goal_wak_shiba_housing
+		x = 0
+		y = 1
+		relative_position_id =WAK_shiba_stray_food
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_shiba_stray_food }
+		
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = WAK_balance
+				value = -0.15
+			}
+			add_stability = 0.1
+			add_ideas = wak_stray_housing
+			add_tech_bonus = {
+				name = WAK_stray_housing
+				category = industry
+				uses = 2
+				bonus = 0.5
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_autonomy_two
+		icon = GFX_goal_wak_shiba_autonomy
+		x = -1
+		y = 1
+		relative_position_id =WAK_stray_housing
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+
+		}
+		
+		cost = 1
+		prerequisite = { focus = WAK_stray_housing }
+		prerequisite = { focus = WAK_industry_shiba }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			SIA = {
+				set_autonomy = {
+					target = WAK
+					autonomous_state = autonomy_colony
+				}	
+			}
+			add_war_support = 0.1
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	focus = {
+		id = WAK_shiba_kill_kessoku
+		icon = GFX_goal_wak_shiba_enemy
+		x = 1
+		y = 1
+		relative_position_id =WAK_shiba_obvious_enemy
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+			KSK = {
+				OR = {
+					exists = no
+					has_war_with = WAK
+				}
+			}
+		}
+		
+		cost = 1
+		prerequisite = { focus = WAK_shiba_obvious_enemy }
+		prerequisite = { focus = WAK_industry_shiba }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = kessokan_civil_war
+					RKR = { exists = yes }
+				}
+				every_country_with_original_tag = {
+					original_tag_to_check = KSK
+					WAK = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+				WAK = {
+					declare_war_on = {
+						target = RKR
+						type = annex_everything
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_global_flag = kessokan_civil_war
+					SHS = { exists = yes }
+				}
+				every_country_with_original_tag = {
+					original_tag_to_check = KSK
+					WAK = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+				WAK = {
+					declare_war_on = {
+						target = SHS
+						type = annex_everything
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { has_global_flag = kessokan_civil_war }
+				}
+				WAK = {
+					declare_war_on = {
+						target = KSK
+						type = annex_everything
+					}
+				}
+			}
+			unlock_decision_tooltip = { decision = WAK_call_siam_ksk }
+			custom_effect_tooltip = WAK_shiba_kessoku_kill_tt
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_psyop
+		icon = GFX_goal_wak_shiba_poison_two
+		x = -2
+		y = 1
+		relative_position_id =WAK_shiba_power_journalism
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_shiba_power_journalism }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = WAK_balance
+				value = -0.15
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_repress_anti_propaganda
+		icon = GFX_goal_wak_shiba_repress
+		x = 2
+		y = 1
+		relative_position_id =WAK_shiba_power_journalism
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_shiba_power_journalism }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = WAK_balance
+				value = -0.15
+			}
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_paint_kessoku_bad
+		icon = GFX_goal_wak_shiba_poison_two
+		x = -2
+		y = 1
+		relative_position_id =WAK_shiba_repress_anti_propaganda
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_psyop }
+		prerequisite = { focus = WAK_shiba_repress_anti_propaganda }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = WAK_balance
+				value = -0.05
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_funds_for_loyalists
+		icon = GFX_goal_wak_shiba_poison_two
+		x = -2
+		y = 1
+		relative_position_id =WAK_shiba_psyop
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_psyop }
+		prerequisite = { focus = WAK_shiba_corporate_media }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = WAK_balance
+				value = -0.15
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_hopeless_kessoku
+		icon = GFX_goal_wak_shiba_hopeless_kessoku
+		x = 0
+		y = 1
+		relative_position_id =WAK_shiba_funds_for_loyalists
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_funds_for_loyalists }
+		prerequisite = { focus = WAK_shiba_paint_kessoku_bad }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = WAK_balance
+				value = -0.15
+			}
+			add_stability = 0.1
+			add_war_support = 0.05
+			custom_effect_tooltip = WAK_shiba_kessoku_hopes_tt
+			set_country_flag = kessoku_hopes_destroyed
+			1052 = {
+				remove_core_of = KSK
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = WAK_shiba_hopeless_rebellion
+		icon = GFX_goal_wak_shiba_hopeless_rebellion
+		x = -1
+		y = 1
+		relative_position_id =WAK_shiba_hopeless_kessoku
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+			power_balance_value = {
+				id = WAK_balance
+				value < -0.6
+			}
+		}
+		bypass = {
+
+		}
+		
+		cost = 2
+		prerequisite = { focus = WAK_shiba_hopeless_kessoku }
+		prerequisite = { focus = WAK_stray_housing }
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.2
+			add_war_support = 0.05
+			set_country_flag = rebellion_crushed_wak
+			remove_power_balance = {
+				id = WAK_balance
+			}
+			remove_all_power_balance_modifiers = {
+				id = WAK_balance
+			}
+			remove_ideas = wak_resistance_action_2
+			set_global_flag = kessoku_hopes_destroyed
+			clr_country_flag = shiba_rebellion
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = WAK_shiba_consolidate_kessoku
+		icon = GFX_goal_wak_shiba_hopeless_kessoku
+		x = -1
+		y = 1
+		relative_position_id =WAK_shiba_hopeless_rebellion
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			OR = {
+				owns_state = 1047
+				owns_state = 1048
+				owns_state = 1049
+				owns_state = 1050
+				owns_state = 1051
+				owns_state = 741
+				KSK = {
+					exists = no
+				}
+			}
+		}
+		bypass = {
+
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_shiba_hopeless_rebellion }
+		prerequisite = { focus = WAK_shiba_kill_kessoku }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_state_core = 1047
+			add_state_core = 1048
+			add_state_core = 1049
+			add_state_core = 1050
+			add_state_core = 1051
+			add_state_core = 741
+			unlock_decision_category_tooltip = WAK_shiba_consolidate_kessoku_category
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = WAK_shiba_full_autonomy
+		icon = GFX_goal_wak_shiba_win
+		x = -1
+		y = 2
+		relative_position_id =WAK_shiba_consolidate_kessoku
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			owns_state = 1047
+			owns_state = 1048
+			OR = {
+				owns_state = 1049
+				owns_state = 1050
+				owns_state = 1051
+				owns_state = 741
+			}
+		}
+		bypass = {
+
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_consolidate_kessoku }
+		prerequisite = { focus = WAK_shiba_autonomy_two }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			SIA = {
+				set_autonomy = {
+					target = WAK
+					autonomous_state = autonomy_free
+				}
+			}
+			add_war_support = 0.15
+			drop_cosmetic_tag = WAK_SIAM
+			country_event = wakaru.6
+			add_research_slot = 1
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	focus = {
+		id = WAK_shiba_kessoku_resource_one
+		icon = GFX_goal_wak_shiba_random
+		x = 2
+		y = 1
+		relative_position_id =WAK_shiba_consolidate_kessoku
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			OR = {
+				owns_state = 1049
+				owns_state = 1050
+				owns_state = 1051
+				owns_state = 741
+				owns_state = 1047
+				owns_state = 1048
+			}
+		}
+		bypass = {
+
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_consolidate_kessoku }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = excavation_tech
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_kessoku_resource_two
+		icon = GFX_goal_wak_shiba_random
+		x = 4
+		y = 1
+		relative_position_id =WAK_shiba_consolidate_kessoku
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			owns_state = 1049
+		}
+		bypass = {
+
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_consolidate_kessoku }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_resource = {
+				type = steel
+				amount = 10
+				state = 1049
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_kessoku_resource_three
+		icon = GFX_goal_wak_shiba_random
+		x = 6
+		y = 1
+		relative_position_id =WAK_shiba_consolidate_kessoku
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			owns_state = 1050
+		}
+		bypass = {
+
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_consolidate_kessoku }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_resource = {
+				type = aluminium
+				amount = 10
+				state = 1050
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_stray_rations
+		icon = GFX_goal_wak_shiba_food
+		x = 0
+		y = 2
+		relative_position_id =WAK_shiba_kill_kessoku
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			
+		}
+		bypass = {
+			KSK = { exists = no }
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_kill_kessoku }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = wak_stray_rations_idea
+				days = 180
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_existential_morale
+		icon = GFX_goal_wak_shiba_imperialism
+		x = 0
+		y = 2
+		relative_position_id =WAK_shiba_autonomy_two
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+			
+		}
+		bypass = {
+			KSK = { exists = no }
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_kill_kessoku }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = 0.15
+			add_timed_idea = {
+				idea = wak_existential_morale
+				days = 120
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_obvious_ally
+		icon = GFX_goal_wak_shiba_alliance
+		x = -1
+		y = 7
+		relative_position_id =WAK_shiba_look_for_expansion
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+			
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_look_for_expansion }
+		prerequisite = { focus = WAK_shiba_full_autonomy }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					USA = {
+						NOT = {
+							is_in_faction = yes
+						}
+					}
+				}
+				USA = { 
+					create_faction = "Monopoly of South East Asia"
+					add_to_faction = WAK
+					add_to_faction = SIA
+				}
+			}
+			else_if = {
+				limit = {
+					USA = {
+						is_in_faction = yes
+					}
+				}
+				USA = {
+					faction_leader = {
+						add_to_faction = WAK
+						add_to_faction = SIA
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = USA
+				modifier = similar_ideals_shiba
+			}
+			USA = {
+				add_opinion_modifier = {
+					target = WAK
+					modifier = similar_ideals_shiba
+				}		
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_oceania
+		icon = GFX_goal_wak_shiba_oceania
+		x = -1
+		y = 1
+		relative_position_id =WAK_shiba_obvious_ally
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+			
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_shiba_obvious_ally }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_state_core = 336
+			add_state_core = 1021
+			add_state_core = 672
+			add_state_core = 335
+			add_state_core = 334
+			add_state_core = 333
+			add_state_core = 673
+			add_state_core = 662
+			add_state_core = 721
+			add_state_core = 668
+			add_state_core = 669
+			add_state_core = 523
+			add_state_core = 520
+			add_state_core = 870
+			add_state_core = 522
+			add_state_core = 871
+			add_state_core = 519
+			add_state_core = 517
+			add_state_core = 518
+			add_state_core = 285
+			add_state_core = 873
+			add_state_core = 521
+			add_state_core = 872
+			add_state_core = 723
+			add_state_core = 284
+			add_state_core = 1022
+			add_state_core = 1023
+			add_state_core = 1024
+			create_wargoal = {
+				type = take_core_state
+				target = AST
+			}
+			create_wargoal = {
+				type = take_core_state
+				target = HOL
+			}
+			 create_wargoal = {
+				type = take_core_state
+				target = NZL
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_china
+		icon = GFX_goal_wak_shiba_china
+		x = 1
+		y = 1
+		relative_position_id =WAK_shiba_obvious_ally
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+			
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_shiba_obvious_ally }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_state_core = 670
+			add_state_core = 1017
+			add_state_core = 671
+			add_state_core = 325
+			add_state_core = 599
+			add_state_core = 594
+			add_state_core = 747
+			add_state_core = 751
+			add_state_core = 603
+			add_state_core = 592
+			add_state_core = 728
+			add_state_core = 591
+			add_state_core = 748
+			add_state_core = 1033
+			create_wargoal = {
+				type = take_core_state
+				target = GXC
+			}
+			 create_wargoal = {
+				type = take_core_state
+				target = YUN
+			}
+			 create_wargoal = {
+				type = take_core_state
+				target = CHI
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_shiba_capitalism_works
+		icon = GFX_goal_wak_shiba_profits
+		x = 0
+		y = 2
+		relative_position_id =WAK_shiba_kessoku_resource_two
+		
+		text_icon = SHIBA_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+			
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_shiba_kessoku_resource_two }
+		prerequisite = { focus = WAK_shiba_kessoku_resource_one }
+		prerequisite = { focus = WAK_shiba_kessoku_resource_three }
+		prerequisite = { focus = WAK_shiba_full_autonomy }
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = wak_stray_company_2
+				add_idea = wak_stray_company_3
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	################################################################################
+	####################		RESISTANCE			################################
+	################################################################################
+	
+	focus = {
+		id = WAK_resistance_start_focus
+		icon = GFX_goal_wak_resistance
+		x = 6
+		y = 2
+		relative_position_id =WAK_formal_governance
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_formal_governance }
+		mutually_exclusive = { focus = WAK_shiba_corpo }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			set_power_balance = {
+				id = WAK_balance
+				left_side = shiba_side
+				right_side = yoyoko_side
+				set_value = 0.3
+			}
+			set_country_flag = resistance_rebellion
+			set_country_flag = yoyoko_events
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+	focus = {
+		id = WAK_caussokan_identity_goal
+		icon = GFX_goal_wak_caussokan
+		x = 2
+		y = 1
+		relative_position_id =WAK_resistance_start_focus
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_resistance_start_focus }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = wak_caussokan_identity_idea
+			set_global_flag = wakaru_pursuing_rebellion
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_an_enemy_inside
+		icon = GFX_goal_wak_yoyoko_poison
+		x = -2
+		y = 1
+		relative_position_id =WAK_resistance_start_focus
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_resistance_start_focus }
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = { 
+					WAK_poison = {
+						is_political_advisor = yes
+					}
+				}
+				WAK_poison = {
+					add_trait = {
+						slot = political_advisor
+						trait = propaganda_journalist_writer_yoyoko
+					}
+					set_can_be_fired_in_advisor_role = {
+						slot = political_advisor
+						value = no
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					WAK_poison = {
+						is_political_advisor = no
+					}
+				}
+				activate_advisor = wak_poison_advisor_idea
+				WAK_poison = {
+					add_trait = {
+						slot = political_advisor
+						trait = propaganda_journalist_writer_yoyoko
+					}
+					set_can_be_fired_in_advisor_role = {
+						slot = political_advisor
+						value = no
+					}
+				}
+			}
+			country_event = wakaru.12
+			hidden_effect = {
+				country_event = {
+					id = wakaru.9
+					days = 30
+					random_hours = 12
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_start_civil_war
+		icon = GFX_goal_wak_anti_siam
+		x = 1
+		y = 3
+		relative_position_id =WAK_an_enemy_inside
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			power_balance_value = {
+				id = WAK_balance
+				value > 0.7
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_an_enemy_inside }
+		prerequisite = { focus = WAK_caussokan_identity_goal }
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = WAK_yoyoko_civil_war_tooltip
+			hidden_effect = {
+				SIA = {
+					set_autonomy = {
+						target = WAK
+						autonomous_state = autonomy_free
+					}
+				}
+				drop_cosmetic_tag = WAK_SIAM
+				country_event = wakaru.10
+				clr_country_flag = resistance_rebellion
+			}
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	focus = {
+		id = WAK_siamese_psyop
+		icon = GFX_goal_wak_yoyoko_poison_two
+		x = 4
+		y = 1
+		relative_position_id =WAK_an_enemy_inside
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			NOT = {
+				has_completed_focus = WAK_start_civil_war
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_an_enemy_inside }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = WAK_yoyoko_siam_psyop_tooltip
+			set_global_flag = siam_less_People
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_siamese_annex
+		icon = GFX_goal_wak_anti_siam
+		x = 0
+		y = 1
+		relative_position_id =WAK_siamese_psyop
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			NOT = {
+				has_completed_focus = WAK_start_civil_war
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_siamese_psyop }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = WAK_yoyoko_annexation_tooltip
+			set_global_flag = siam_annexation
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_kessokan_promises
+		icon = GFX_goal_wak_yoyoko_no_kessoku
+		x = -2
+		y = 0
+		relative_position_id =WAK_siamese_psyop
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			NOT = {
+				has_completed_focus = WAK_start_civil_war
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_an_enemy_inside }
+		prerequisite = { focus = WAK_caussokan_identity_goal }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = WAK_yoyoko_kessokan_promises_tooltip
+			set_global_flag = kessokan_promises_yoyoko
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	focus = {
+		id = WAK_army_legitimate
+		icon = GFX_goal_wak_yoyoko_hr
+		x = 2
+		y = 0
+		relative_position_id =WAK_siamese_psyop
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			NOT = {
+				has_completed_focus = WAK_start_civil_war
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_an_enemy_inside }
+		prerequisite = { focus = WAK_caussokan_identity_goal }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = WAK_yoyoko_hr_onit_tooltip
+			set_global_flag = wakaru_hr_on_it
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_the_new_wakaru
+		icon = GFX_goal_wak_a_new_wakaru
+		x = 2
+		y = 1
+		relative_position_id =WAK_start_civil_war
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			NOT = {
+				has_global_flag = wak_war_siam
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_start_civil_war }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 150
+			country_event = wakaru.11
+			hidden_effect = {
+				if = {
+					limit = { has_global_flag = kessokan_promises_yoyoko }
+					country_event = {
+						id = wakaru.52
+						days = 60
+						random_days = 120
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_accepted_cultures
+		icon = GFX_goal_wak_yoyoko_signing
+		x = 0
+		y = 2
+		relative_position_id =WAK_the_new_wakaru
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_the_new_wakaru }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = wakaru.26
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_remove_core
+		icon = GFX_goal_wak_yoyoko_revoke
+		x = 2
+		y = 1
+		relative_position_id =WAK_accepted_cultures
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_accepted_cultures }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			1052 = {
+				remove_core_of = KSK
+			}
+			add_war_support = 0.1
+			hidden_effect = {
+				country_event = {
+					id = wakaru.31
+					days = 60
+					random_days = 120
+				}
+				if = {
+					limit = {
+						has_country_flag = wak_kessoku_discrimination
+					}
+					news_event = {
+						id = kessoku_news.13
+						days = 7
+					}
+				}
+				else = {
+					news_event = {
+						id = kessoku_news.14
+						days = 7
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_folt_defense
+		icon = GFX_goal_wak_yoyoko_forts
+		x = 2
+		y = 1
+		relative_position_id =WAK_the_new_wakaru
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+			KSK = {
+				exists = no
+			}
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_the_new_wakaru }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			1052 = {
+				set_building_level = {
+					type = bunker
+					level = 4
+					province = {
+						all_provinces = yes
+						limit_to_border_country = KSK
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						868 = {
+							is_owned_and_controlled_by = WAK
+						}
+						SIA = {
+							is_puppet_of = WAK
+							owns_state = 868
+						}
+					}
+				}
+				868 = {
+					set_building_level = {
+						type = bunker
+						level = 4
+						province = {
+							all_provinces = yes
+							limit_to_border_country = KSK
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_caussokan_education
+		icon = GFX_goal_wak_yoyoko_research
+		x = 4
+		y = 2
+		relative_position_id =WAK_the_new_wakaru
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_the_new_wakaru }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_rubber_infestation
+		icon = GFX_goal_wak_yoyoko_rubber
+		x = 2
+		y = 0
+		relative_position_id =WAK_siamese_annex
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = wak_rubber_virus_tt
+				has_country_flag = wak_bacteria_rubber
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			1052 = {
+				add_resource = {
+					type = rubber
+					amount = 5
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_there_is_no_plague
+		icon = GFX_goal_wak_poison_rubber
+		x = 3
+		y = 1
+		relative_position_id =WAK_rubber_infestation
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = wak_rubber_virus_tt
+				has_country_flag = wak_bacteria_rubber
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_rubber_infestation }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = wak_there_is_no_rubber_plague
+			country_event = wakaru.36
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_rubber_act
+		icon = GFX_goal_wak_honjo_rubber
+		x = 1
+		y = 1
+		relative_position_id =WAK_rubber_infestation
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = wak_rubber_virus_tt
+				has_country_flag = wak_bacteria_rubber
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_rubber_infestation }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			1052 = {
+				add_resource = {
+					type = rubber
+					amount = 10
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_rubber_imported
+		icon = GFX_goal_wak_sakaki_rubber
+		x = 1
+		y = 1
+		relative_position_id =WAK_there_is_no_plague
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = wak_rubber_virus_tt
+				has_country_flag = wak_bacteria_rubber
+			}
+		}
+		
+		bypass = {
+			KSK = {
+				OR = {
+					exists = no
+					has_war_with = WAK
+				}
+			}
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_there_is_no_plague focus = WAK_rubber_act }
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			1052 = {
+				add_resource = {
+					type = rubber
+					amount = 10
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_rubber_finished
+		icon = GFX_goal_wak_yoyoko_rubber_yay
+		x = -2
+		y = 1
+		relative_position_id =WAK_rubber_imported
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = wak_rubber_virus_tt
+				has_country_flag = wak_bacteria_rubber
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_there_is_no_plague }
+		prerequisite = { focus = WAK_rubber_act }
+		prerequisite = { focus = WAK_rubber_imported }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			1052 = {
+				add_resource = {
+					type = rubber
+					amount = 30
+				}
+			}
+			if = {
+				limit = {
+					has_idea = wak_rubber_bacterium
+				}
+				remove_ideas = wak_rubber_bacterium
+			}
+			else_if = {
+				limit = {
+					has_idea = wak_rubber_bacterium_2
+				}
+				remove_ideas = wak_rubber_bacterium_2
+			}
+			else_if = {
+				limit = {
+					has_idea = wak_rubber_bacterium_3
+				}
+				remove_ideas = wak_rubber_bacterium_3
+			}
+			remove_ideas = wak_there_is_no_rubber_plague
+			set_country_flag = wak_bacteria_rubber_finished
+			add_war_support = 0.1
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_bring_them_back
+		icon = GFX_goal_wak_kikuri
+		x = -8
+		y = 1
+		relative_position_id =WAK_resistance_start_focus
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			
+		}
+		
+		bypass = {
+
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_resistance_start_focus focus = WAK_shiba_corpo }
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			WAK_kikuri_hiroi = {
+				add_corps_commander_role = {
+					traits={ drunken_strategy_unit }
+					skill = 5
+					attack_skill = 5
+					defense_skill = 4
+					planning_skill = 3
+					logistics_skill = 5
+				}
+				advisor={
+					slot = political_advisor
+					idea_token = ksk_kikuri_hiroi_advisor
+					can_be_fired = yes
+					traits = {
+						drunken_strategy
+					}
+				}
+			}
+			if = {
+				limit = {
+					KSK = {
+						exists = yes
+					}
+				}
+				add_manpower = 5000
+				KSK = {
+					add_manpower = -5000
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = WAK_resistance_start_focus
+				}
+				country_event = {
+					id = wakaru.41
+				}
+			}
+			KSK = {
+				retire_character = KSK_kikuri_hiroi
+			}
+		}
+		ai_will_do = {
+			base = 0
+		}
+	}
+	focus = {
+		id = WAK_bring_gin_back
+		icon = GFX_goal_wak_gin
+		x = -2
+		y = 1
+		relative_position_id =WAK_bring_them_back
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			
+		}
+		
+		bypass = {
+
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_bring_them_back }
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			WAK_gin_san = {
+				add_advisor_role = {
+					advisor={
+						slot = political_advisor
+						idea_token = wak_gin_san_idea
+						can_be_fired = yes
+						traits = {
+							folt_manager
+						}
+					}
+				}
+			}
+			KSK = {
+				retire_character = KSK_gin_san
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_bring_eliza_back
+		icon = GFX_goal_wak_eliza
+		x = 0
+		y = 1
+		relative_position_id =WAK_bring_them_back
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			
+		}
+		
+		bypass = {
+
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_bring_them_back }
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			WAK_eliza = {
+				add_advisor_role = {
+					advisor={
+						slot = political_advisor
+						idea_token = wak_eliza_idea
+						can_be_fired = yes
+						traits = {
+							british_foreigner
+						}
+					}
+				}
+				add_naval_commander_role = {
+					skill = 4
+					attack_skill = 4
+					defense_skill = 3
+					planning_skill = 5
+					logistics_skill = 3
+				}
+			}
+			KSK = {
+				retire_character = KSK_eliza
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_bring_shima_back
+		icon = GFX_goal_wak_shima
+		x = 2
+		y = 1
+		relative_position_id =WAK_bring_them_back
+		
+		available = {
+			
+		}
+		
+		bypass = {
+
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_bring_them_back }
+		
+		text_icon = WAKARU_focus_style
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			WAK_shima = {
+				add_advisor_role = {
+					advisor={
+						slot = political_advisor
+						idea_token = wak_shima_idea
+						can_be_fired = yes
+						traits = {
+							caretaker_trait
+						}
+					}
+				}
+			}
+			KSK = {
+				retire_character = KSK_shima
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_core_kessoku
+		icon = GFX_goal_wak_yoyoko_core
+		x = -1
+		y = 1
+		relative_position_id =WAK_remove_core
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_remove_core }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			KSK = {
+				every_core_state = {
+					add_core_of = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_war_kessoku_yoyoko
+		icon = GFX_goal_wak_yoyoko_attack_kessoku
+		x = 1
+		y = 1
+		relative_position_id =WAK_remove_core
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+			KSK = {
+				OR = {
+					exists = no
+					has_war_with = WAK
+				}
+			}
+		}
+		
+		cost = 2
+		prerequisite = { focus = WAK_remove_core }
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = kessokan_civil_war
+					RKR = { exists = yes }
+				}
+				every_country_with_original_tag = {
+					original_tag_to_check = KSK
+					WAK = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+				WAK = {
+					declare_war_on = {
+						target = RKR
+						type = annex_everything
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_global_flag = kessokan_civil_war
+					SHS = { exists = yes }
+				}
+				every_country_with_original_tag = {
+					original_tag_to_check = KSK
+					WAK = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+				WAK = {
+					declare_war_on = {
+						target = SHS
+						type = annex_everything
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { has_global_flag = kessokan_civil_war }
+				}
+				WAK = {
+					declare_war_on = {
+						target = KSK
+						type = annex_everything
+					}
+				}
+			}
+			add_threat = 5
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_homeland_yoyoko
+		icon = GFX_goal_wak_yoyoko_france
+		x = 1
+		y = 1
+		relative_position_id =WAK_core_kessoku
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_war_kessoku_yoyoko }
+		prerequisite = { focus = WAK_core_kessoku }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_trait = {
+				character = WAK_yoyoko_ohtsuki
+				ideology = oligarchism
+				trait = french_national_yoyo
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_demonize_shiba
+		icon = GFX_goal_wak_yoyoko_anti_shiba
+		x = 1
+		y = 2
+		relative_position_id =WAK_caussokan_education
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			NOT = {
+				has_completed_focus = WAK_army_legitimate
+			}
+		}
+		
+		bypass = {
+
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_caussokan_education }
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = 0.1
+			add_stability = 0.1
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_pardon_shiba
+		icon = GFX_goal_wak_yoyoko_shiba
+		x = 5
+		y = 2
+		relative_position_id =WAK_caussokan_education
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			has_completed_focus = WAK_army_legitimate
+		}
+		
+		bypass = {
+
+		}
+		
+		cost = 6
+		prerequisite = { focus = WAK_caussokan_education }
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			WAK_shiba = {
+				add_advisor_role = {
+					advisor={
+						slot = political_advisor
+						idea_token = wak_shiba_political_idea
+						can_be_fired = yes
+						traits = {
+							bussinesswoman_trait
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_yoyoko_stonks
+		icon = GFX_goal_wak_yoyoko_stonks
+		x = -1
+		y = 1
+		relative_position_id =WAK_pardon_shiba
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			WAK_shiba = {
+				is_hired_as_advisor = yes
+			}
+		}
+		
+		bypass = {
+
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_pardon_shiba }
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = wak_limited_stray_idea
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_yoyoko_no_siamese
+		icon = GFX_goal_wak_a_new_wakaru
+		x = 1
+		y = 1
+		relative_position_id =WAK_demonize_shiba
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_demonize_shiba }
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_state_core = 868
+			add_state_core = 289
+			add_state_core = 869
+			add_state_core = 724
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_deal_with_france
+		icon = GFX_goal_wak_yoyoko_france_3
+		x = -1
+		y = 1
+		relative_position_id =WAK_homeland_yoyoko
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_homeland_yoyoko }
+		mutually_exclusive = { focus = WAK_deal_with_germany }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_global_flag = wak_has_made_deal_france
+			custom_effect_tooltip = WAK_deal_france_tt
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_deal_with_germany
+		icon = GFX_goal_wak_yoyoko_france_4
+		x = 1
+		y = 1
+		relative_position_id =WAK_homeland_yoyoko
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_homeland_yoyoko }
+		mutually_exclusive = { focus = WAK_deal_with_france }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_global_flag = wak_has_made_deal_germany
+			custom_effect_tooltip = WAK_deal_germany_tt
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_deal_with_the_devil
+		icon = GFX_goal_wak_yoyoko_france_2_germany
+		x = 1
+		y = 1
+		relative_position_id =WAK_deal_with_germany
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_deal_with_germany }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = FRA
+					NOT = {
+						state = 28
+					}
+					OR = {
+						region = 19
+						region = 20
+						region = 208
+					}
+				}
+				add_core_of = WAK
+			}
+			GER = {
+				every_state = {
+					limit = {
+						is_controlled_by = GER
+						is_core_of = FRA
+						NOT = {
+							state = 28
+						}
+					}
+					transfer_state_to = WAK
+				}
+				add_to_faction = WAK
+				add_to_war = {
+					targeted_alliance = GER
+					enemy = ENG
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_the_natural_borders
+		icon = GFX_goal_wak_yoyoko_france_2
+		x = -1
+		y = 1
+		relative_position_id =WAK_deal_with_france
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			has_war_with = GER
+			NOT = {
+				has_war_with = ENG
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_deal_with_france }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = FRA
+					OR = {
+						region = 19
+						region = 20
+						region = 208
+					}
+				}
+				add_core_of = WAK
+				remove_core_of = FRA
+			}
+			every_state = {
+				limit = {
+					is_core_of = BEL
+				}
+				add_core_of = WAK
+				remove_core_of = BEL
+			}
+			every_state = {
+				limit = {
+					is_core_of = LUX
+				}
+				add_core_of = WAK
+				remove_core_of = LUX
+			}
+			add_state_core = 6
+			add_state_core = 34
+			add_state_core = 980
+			add_state_core = 8
+			add_state_core = 42
+			add_state_core = 51
+			add_state_core = 977
+			add_state_core = 35
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_in_honour_of_the_republics
+		icon = GFX_goal_wak_yoyoko_france_5
+		x = 2
+		y = 1
+		relative_position_id =WAK_the_natural_borders
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_the_natural_borders focus = WAK_deal_with_the_devil }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = wak_honour_republics
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_folt_christmas_eve_live
+		icon = GFX_goal_wak_folt_yoyoko
+		x = -3
+		y = 1
+		relative_position_id =WAK_accepted_cultures
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_accepted_cultures }
+		prerequisite = { focus = WAK_bring_gin_back }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			1052 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_caussokan_education_2
+		icon = GFX_goal_wak_yoyoko_research
+		x = 1
+		y = 2
+		relative_position_id =WAK_yoyoko_no_siamese
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+
+		}
+		bypass = {
+		
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_yoyoko_no_siamese focus = WAK_yoyoko_stonks }
+		prerequisite = { focus = WAK_deal_with_germany focus = WAK_deal_with_france }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_folt_sick_hack
+		icon = GFX_goal_wak_sick_hack
+		x = -6
+		y = 2
+		relative_position_id =WAK_folt_christmas_eve_live
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			WAK_eliza = {
+				is_hired_as_advisor = yes
+			}
+			WAK_shima = {
+				is_hired_as_advisor = yes
+			}
+			WAK_kikuri_hiroi = {
+				is_leading_army = yes
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_bring_eliza_back }
+		prerequisite = { focus = WAK_bring_shima_back }
+		prerequisite = { focus = WAK_folt_christmas_eve_live focus = WAK_shiba_hopeless_rebellion }
+		mutually_exclusive = { focus = WAK_folt_sideros }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = wakaru.47
+			add_ideas = wak_sickhack_idea
+			set_country_flag = sick_hack_flag
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_folt_sideros
+		icon = GFX_goal_wak_sideros
+		x = 2
+		y = 2
+		relative_position_id =WAK_folt_christmas_eve_live
+		
+		text_icon = YOYOKO_focus_style
+		
+		available = {
+			WAK_akubi = {
+				is_hired_as_advisor = yes
+			}
+			WAK_fuko_honjo = {
+				OR = { 	
+					is_hired_as_advisor = yes
+					is_leading_army = yes
+				}
+			}
+			WAK_yuyu = {
+				is_hired_as_advisor = yes
+			}
+			WAK_yoyoko_ohtsuki = {
+				is_country_leader = yes
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_folt_christmas_eve_live }
+		mutually_exclusive = { focus = WAK_folt_sick_hack }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = wakaru.48
+			add_ideas = wak_sideros_idea
+			set_country_flag = sideros_flag
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	################################################################################
+	####################		INDUSTRY			################################
+	################################################################################
+	
+	focus = {
+		id = WAK_kickstart_industry
+		icon = GFX_goal_wak_industry
+		x = 18
+		y = 0
+		relative_position_id =WAK_resistance_start_focus
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_formal_governance }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_owned_and_controlled_by = WAK
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_european_investments
+		icon = GFX_focus_usa_focus_on_europe
+		x = -4
+		y = 1
+		relative_position_id =WAK_kickstart_industry
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}	
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_kickstart_industry }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 2
+						include_locked = yes
+					}
+					is_owned_and_controlled_by = WAK
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			unlock_decision_category_tooltip = WAK_wakaru_european_adventures_category
+			set_country_flag = wakaru_euro_adventures
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_german_immigration
+		icon = GFX_goal_wak_germany
+		x = -2
+		y = 1
+		relative_position_id =WAK_european_investments
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_war_with = GER
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_european_investments }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = wak_german_immigration
+				days = 365
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_tech
+			}
+			add_ideas = wak_german_immigration
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_british_immigration
+		icon = GFX_goal_wak_british
+		x = -2
+		y = 0
+		relative_position_id =WAK_german_immigration
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_war_with = ENG
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_european_investments }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = wak_british_immigration
+				days = 365
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_british_immigration_2
+		icon = GFX_goal_wak_british
+		x = 0
+		y = 1
+		relative_position_id =WAK_british_immigration
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_war_with = ENG
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_british_immigration }
+		mutually_exclusive = { focus = WAK_german_immigration_2 }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 2
+				category = industry
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}
+		}
+	}
+	focus = {
+		id = WAK_german_immigration_2
+		icon = GFX_goal_wak_germany
+		x = 0
+		y = 1
+		relative_position_id =WAK_german_immigration
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_war_with = GER
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_german_immigration }
+		mutually_exclusive = { focus = WAK_british_immigration_2 }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 1
+				category = infantry_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 1
+				category = armor
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}
+		}
+	}
+	focus = {
+		id = WAK_british_investments
+		icon = GFX_goal_wak_british
+		x = -1
+		y = 1
+		relative_position_id =WAK_british_immigration_2
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_war_with = ENG
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_british_immigration_2 }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+					is_owned_and_controlled_by = WAK
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}	
+		}
+	}
+	focus = {
+		id = WAK_german_investments
+		icon = GFX_goal_wak_germany
+		x = 1
+		y = 1
+		relative_position_id =WAK_german_immigration_2
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_war_with = GER
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_german_immigration_2 }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 3
+						include_locked = yes
+					}
+					is_owned_and_controlled_by = WAK
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}	
+		}
+	}
+	focus = {
+		id = WAK_american_investment
+		icon = GFX_goal_wak_amican
+		x = 5
+		y = 1
+		relative_position_id =WAK_kickstart_industry
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			has_opinion = {
+				target = USA
+				value > 25
+			}
+			USA = {
+				has_tech = nuclear_reactor
+			}
+			NOT = {
+				OR = {
+					has_war_with = ENG
+					has_war_with = USA
+				}
+				OR = {
+					has_completed_focus = WAK_deal_with_germany
+					has_government = fascism
+					has_government = communism
+				}
+				has_country_flag = wakaru_military_action
+			}
+			date > 1941.01.01
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_kickstart_industry }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = wak_american_investments
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_ease_up_investments
+		icon = GFX_goal_wak_infrastructure
+		x = 3
+		y = 1
+		relative_position_id =WAK_european_investments
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_european_investments focus = WAK_american_investment }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			1052 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1			
+		}
+	}
+	focus = {
+		id = WAK_invest_nuclear
+		icon = GFX_goal_wak_nuclear
+		x = 2
+		y = 1
+		relative_position_id =WAK_american_investment
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_american_investment }
+		mutually_exclusive = { focus = WAK_invest_nuclear_americans }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.75
+			}
+
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 1 
+				category = nuclear
+			}
+			remove_ideas = wak_american_investments
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_invest_nuclear_americans
+		icon = GFX_goal_wak_nuclear_america
+		x = 0
+		y = 1
+		relative_position_id =WAK_american_investment
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}		
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = WAK_american_investment }
+		mutually_exclusive = { focus = WAK_invest_nuclear }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_offsite_building = { type = industrial_complex level = 1 }
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_rubber_money
+		icon = GFX_goal_wak_rubber_money
+		x = 1
+		y = 1
+		relative_position_id =WAK_ease_up_investments
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_ease_up_investments }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = wak_money_surplus_idea
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_rubber_money_to_industry
+		icon = GFX_goal_wak_industry_money
+		x = -2
+		y = 1
+		relative_position_id =WAK_rubber_money
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_rubber_money }
+		mutually_exclusive = { focus = WAK_rubber_money_to_military }
+		mutually_exclusive = { focus = WAK_rubber_money_to_resources }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = wak_money_surplus_idea
+			add_ideas = wak_investing_civilian_idea
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}	
+		}
+	}
+	focus = {
+		id = WAK_rubber_money_to_military
+		icon = GFX_goal_wak_army_money
+		x = 0
+		y = 1
+		relative_position_id =WAK_rubber_money
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_rubber_money }
+		mutually_exclusive = { focus = WAK_rubber_money_to_industry }
+		mutually_exclusive = { focus = WAK_rubber_money_to_resources }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = wak_money_surplus_idea
+			add_ideas = wak_investing_army_idea
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}	
+		}
+	}
+	focus = {
+		id = WAK_rubber_money_to_resources
+		icon = GFX_goal_wak_rubber_money
+		x = 2
+		y = 1
+		relative_position_id =WAK_rubber_money
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_rubber_money }
+		mutually_exclusive = { focus = WAK_rubber_money_to_industry }
+		mutually_exclusive = { focus = WAK_rubber_money_to_military }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = wak_money_surplus_idea
+			add_ideas = wak_investing_resources_idea
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = excavation_tech
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}	
+		}
+	}
+	focus = {
+		id = WAK_folt_development
+		icon = GFX_goal_wak_folt_neutral
+		x = 0
+		y = 1
+		relative_position_id =WAK_rubber_money_to_military
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_rubber_money_to_military focus = WAK_rubber_money_to_industry focus = WAK_rubber_money_to_resources }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = wak_developed_folt
+			1052 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = WAK_war_industry
+		icon = GFX_goal_wak_army
+		x = 4
+		y = 1
+		relative_position_id = WAK_ease_up_investments
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}		
+		}
+		bypass = {
+		
+		}
+		
+		cost = 3
+		prerequisite = { focus = WAK_kickstart_industry }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_command_power = 100
+		}
+		ai_will_do = {
+		 	base = 1 
+		}
+	}
+	focus = {
+		id = WAK_gibson_focus
+		icon = GFX_goal_KSK_gibson
+		x = 1
+		y = 1
+		relative_position_id = WAK_war_industry
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}			
+		}
+		bypass = {
+			
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_war_industry }
+		mutually_exclusive = { focus = WAK_yamaha_focus }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    show_ideas_tooltip = wak_gibson
+		}
+		ai_will_do = {
+		 	base = 1 
+		}
+	}
+	focus = {
+		id = WAK_yamaha_focus
+		icon = GFX_goal_KSK_yamaha
+		x = 3
+		y = 1
+		relative_position_id = WAK_war_industry
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}		
+		}
+		bypass = {
+			
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_war_industry }
+		mutually_exclusive = { focus = WAK_gibson_focus }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    show_ideas_tooltip = wak_yamaha
+		}
+		ai_will_do = {
+		 	base = 1 
+		}
+	}
+	#####################################################
+	############### 		ARMY 		#################
+	#####################################################
+	focus = { 
+        id = WAK_infantry_focus
+        icon = GFX_goal_generic_small_arms
+        x = 5
+        y = 1
+        relative_position_id = WAK_war_industry
+		
+		text_icon = WAKARU_focus_style
+		
+        available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+        }
+        bypass = {
+
+        }
+
+        cost = 6
+        prerequisite = { focus = WAK_war_industry }
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = no
+
+        completion_reward = {
+		    add_ideas = wak_infantry
+			
+		    add_tech_bonus = {
+				name = WAK_infantry_focus
+				uses = 2
+				bonus = 0.75
+				category = infantry_weapons
+			}
+        }
+        ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}	
+        }
+    }
+	focus = { 
+        id = WAK_motorized_infantry_focus
+        icon = GFX_goal_generic_army_motorized
+        x = 0
+        y = 1
+        relative_position_id = WAK_infantry_focus
+		
+		text_icon = WAKARU_focus_style
+		
+		 available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+        }
+        bypass = {
+
+        }
+
+        cost = 6
+        prerequisite = { focus = WAK_infantry_focus }
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = no
+
+        completion_reward = {
+		    swap_ideas = {
+		        remove_idea = wak_infantry
+		        add_idea = wak_infantry_2
+			}
+		    add_tech_bonus = {
+				name = WAK_motorized_infantry_focus
+				uses = 1
+				bonus = 1
+				category = motorized_equipment
+			}
+        }
+        ai_will_do = {
+           base = 1
+        }
+    }
+	focus = { 
+        id = WAK_mechanized_infantry_focus
+        icon = GFX_goal_generic_build_tank
+        x = 0
+        y = 1
+        relative_position_id = WAK_motorized_infantry_focus
+		
+		text_icon = WAKARU_focus_style
+		
+        available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+        }
+        bypass = {
+
+        }
+
+        cost = 6
+        prerequisite = { focus = WAK_motorized_infantry_focus }
+        
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = no
+
+        completion_reward = {
+		    swap_ideas = {
+		        remove_idea = wak_infantry_2
+		        add_idea = wak_infantry_3
+			}
+		   add_tech_bonus = {
+				name = WAK_mechanized_infantry_focus
+				uses = 1
+				bonus = 1
+				category = motorized_equipment
+			}
+        }
+        ai_will_do = {
+           base = 1
+        }
+    }
+	focus = { 
+        id = WAK_special_forces_focus
+        icon = GFX_focus_generic_paratrooper
+        x = 0
+        y = 1
+        relative_position_id = WAK_mechanized_infantry_focus
+		
+		text_icon = WAKARU_focus_style
+		
+        available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+        }
+        bypass = {
+
+        }
+
+        cost = 6
+        prerequisite = { focus = WAK_mechanized_infantry_focus }
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = no
+
+        completion_reward = {
+		     add_tech_bonus = {
+				name = WAK_special_forces_focus
+				uses = 4
+				bonus = 0.5
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+        }
+        ai_will_do = {
+           base = 1
+        }
+    }
+	focus = { 
+        id = WAK_tanks_focus
+        icon = GFX_goal_generic_army_tanks
+        x = 2
+        y = 0
+        relative_position_id = WAK_infantry_focus
+		
+		text_icon = WAKARU_focus_style
+		
+        available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+        }
+        bypass = {
+
+        }
+
+        cost = 6
+        prerequisite = { focus = WAK_war_industry }
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = no
+
+        completion_reward = {
+		    swap_ideas = {
+				remove_idea = wak_forces
+				add_idea = wak_forces_2
+			}
+		     add_tech_bonus = {
+				name = WAK_tanks_focus
+				uses = 2
+				bonus = 1
+				category = armor
+			}
+        }
+        ai_will_do = {
+           base = 1
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}	
+        }
+    }
+	focus = { 
+        id = WAK_tanks_focus_2
+        icon = GFX_focus_SOV_the_glory_of_the_red_army_alternative
+        x = 0
+        y = 1
+        relative_position_id = WAK_tanks_focus
+		
+		text_icon = WAKARU_focus_style
+		
+        available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+        }
+        bypass = {
+
+        }
+
+        cost = 6
+        prerequisite = { focus = WAK_tanks_focus }
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = no
+
+        completion_reward = {
+		    swap_ideas = {
+				remove_idea = wak_forces_2
+				add_idea = wak_forces_3
+			}
+		    add_tech_bonus = {
+				name = WAK_tanks_focus_2
+				uses = 2
+				bonus = 0.5
+				category = armor
+			}
+        }
+        ai_will_do = {
+           base = 1
+        }
+    }
+	focus = { 
+        id = WAK_tactics_focus
+        icon = GFX_goal_generic_forceful_treaty
+        x = 0
+        y = 1
+        relative_position_id = WAK_tanks_focus_2
+		
+		text_icon = WAKARU_focus_style
+		
+        available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+        }
+        bypass = {
+
+        }
+
+        cost = 6
+        prerequisite = { focus = WAK_tanks_focus_2 }
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = no
+
+        completion_reward = {
+		    swap_ideas = {
+				remove_idea = wak_forces_3
+				add_idea = wak_forces_4
+			}
+        }
+        ai_will_do = {
+           base = 1
+        }
+    }
+	focus = { 
+        id = WAK_prussia_of_sea_focus
+        icon = GFX_goal_ksk_army_goal
+        x = 2
+        y = 1
+        relative_position_id = WAK_special_forces_focus
+		
+		text_icon = WAKARU_focus_style
+		
+        available = {
+			KSK = {
+				exists = no
+			}
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+        }
+        bypass = {
+
+        }
+
+        cost = 10
+        prerequisite = { focus = WAK_tactics_focus focus = WAK_special_forces_focus }
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = no
+
+        completion_reward = {
+		   add_ideas = wak_prussia_of_sea
+		   army_experience = 10
+        }
+        ai_will_do = {
+           base = 1
+        }
+    }
+	#########################################################
+	############### 		NAVAL/AIR 		#################
+	#########################################################
+	focus = {
+		id = WAK_expand_naval_and_air_production
+		icon = GFX_goal_generic_air_production
+		x = 0
+		y = 2
+		relative_position_id = WAK_folt_development
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			has_completed_focus = WAK_formal_governance
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			navy_experience = 10
+		    air_experience = 10
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_in_home_area = yes
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		
+		 ai_will_do = {
+		 	base = 1 
+		}
+	}
+    focus = {
+		id = WAK_modernize_the_wakaruvian_navy
+		icon = GFX_goal_generic_amphibious_assault
+		x = -4
+		y = 1
+		relative_position_id = WAK_expand_naval_and_air_production
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_expand_naval_and_air_production }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_ideas = wak_navy
+			
+			navy_experience = 5
+			
+		    add_tech_bonus = {
+		        bonus = 1.00
+			    uses = 2
+			    category = bc_tech
+				category = bb_tech
+			}
+		}
+		ai_will_do = {
+			base = 1		
+		}
+	}	
+	focus = { 
+		id = WAK_improve_our_destroyers
+		icon =  GFX_focus_generic_navy_battleship2
+		x = -1
+		y = 1
+		relative_position_id = WAK_modernize_the_wakaruvian_navy
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_modernize_the_wakaruvian_navy }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		 swap_ideas = {
+		    remove_idea = wak_navy
+		    add_idea = wak_navy_2
+			}
+		 add_tech_bonus = {
+			bonus = 1.00
+			uses = 2
+			category = dd_tech
+			}
+		}
+		ai_will_do = {
+		 	base = 1
+		
+		}
+	}
+	focus = { 
+		id = WAK_the_submarine_buildup
+		icon =  GFX_goal_generic_navy_submarine
+		x = 0
+		y = 1
+		relative_position_id = WAK_improve_our_destroyers
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_improve_our_destroyers }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		 swap_ideas = {
+		    remove_idea = wak_navy_2
+		    add_idea = wak_navy_3
+			}
+		 add_tech_bonus = {
+			bonus = 1.00
+			uses = 2
+			category = ss_tech
+			}
+		}
+		ai_will_do = {
+		 	base = 1			
+		}
+	}
+	focus = { 
+		id = WAK_cruiser_designs
+		icon =  GFX_goal_generic_navy_battleship
+		x = 0
+		y = 1
+		relative_position_id = WAK_the_submarine_buildup
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_the_submarine_buildup }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		 swap_ideas = {
+		    remove_idea = wak_navy_3
+		    add_idea = wak_navy_4
+			}
+		 add_tech_bonus = {
+			bonus = 1.00
+			uses = 2
+			category = cl_tech
+			category = ca_tech
+			}
+		}
+		ai_will_do = {
+		 	base = 1 
+		}
+	}
+	focus = { 
+		id = WAK_expand_wakaru_shipyards
+		icon =  GFX_goal_generic_construct_naval_dockyard 
+		x = 1
+		y = 1
+		relative_position_id = WAK_modernize_the_wakaruvian_navy
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_modernize_the_wakaruvian_navy }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 5
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = dockyard
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+		 	base = 1 
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}	
+		} 
+	}
+	focus = { 
+		id = WAK_kessokan_marines
+		icon =  GFX_goal_generic_navy_cruiser
+		x = 0
+		y = 1
+		relative_position_id =  WAK_expand_wakaru_shipyards
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus =  WAK_expand_wakaru_shipyards }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_ideas = wak_naval_defense
+
+		add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 2
+				technology = marines
+				technology = marines2
+			}
+		}
+		 ai_will_do = {
+		 	 base = 1 
+		    } 
+	}
+	focus = { 
+		id = WAK_coastal_defense
+		icon =  GFX_goal_generic_construct_military
+		x = 0
+		y = 1
+		relative_position_id =  WAK_kessokan_marines
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus =  WAK_kessokan_marines }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		   swap_ideas = {
+		    remove_idea = wak_naval_defense
+		    add_idea = wak_naval_defense_2
+			}
+		}
+		ai_will_do = {
+		 	 base = 1 
+		    } 
+	}
+	focus = { 
+		id = WAK_dockyard_expansion
+		icon =  GFX_goal_generic_production2
+		x = -1
+		y = 1
+		relative_position_id =  WAK_coastal_defense
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus =  WAK_coastal_defense }
+		prerequisite = { focus =  WAK_cruiser_designs }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+		 	 base = 1 
+		    } 
+	}
+	focus = { 
+		id = WAK_expand_airbases
+		icon =  GFX_goal_generic_build_airforce
+		x = 4
+		y = 1
+		relative_position_id = WAK_expand_naval_and_air_production
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_expand_naval_and_air_production }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		  random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			air_experience = 5
+			
+		}
+		ai_will_do = {
+		 	base = 1 
+		}
+	}
+	focus = { 
+		id = WAK_fighter_plans
+		icon =  GFX_goal_generic_air_fighter
+		x = 1
+		y = 1
+		relative_position_id = WAK_expand_airbases
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_expand_airbases }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_ideas = wak_air_force
+			
+			add_tech_bonus = {
+			    name = KSK_expand_airbases
+				bonus = 1.0
+				uses = 2
+				category = light_fighter
+			}
+		}
+		ai_will_do = {
+		    base = 1
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}	
+		}
+	}
+	focus = { 
+		id = WAK_cas_production
+		icon =  GFX_goal_generic_CAS
+		x = 0
+		y = 1
+		relative_position_id = WAK_fighter_plans
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_fighter_plans }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    swap_ideas = {
+				remove_idea = wak_air_force
+				add_idea = wak_air_force_two
+			}
+				
+			add_tech_bonus = {
+			    name = KSK_cas_production
+				bonus = 1.0
+				uses = 2
+				category = cas_bomber
+			}
+		}
+		ai_will_do = {
+		   base = 1
+		}
+	}
+	focus = { 
+		id = WAK_tac_bombers
+		icon =  GFX_focus_usa_escort_fighters
+		x = 0
+		y = 1
+		relative_position_id = WAK_cas_production
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_cas_production }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    swap_ideas = {
+				remove_idea = wak_air_force_two
+				add_idea = wak_air_force_3
+			}
+				
+			add_tech_bonus = {
+			    name = KSK_tac_bombers
+				bonus = 1.0
+				uses = 2
+				category = tactical_bomber
+			}
+		}
+		ai_will_do = {
+		   base = 1
+		}
+	}
+	focus = { 
+		id = WAK_expand_airforce_production
+		icon =  GFX_goal_generic_construct_mil_factory
+		x = -1
+		y = 1
+		relative_position_id = WAK_expand_airbases
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_expand_airbases }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    random_core_state = {
+				limit = {
+					is_owned_and_controlled_by = WAK
+					is_in_home_area = yes
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_owned_and_controlled_by = WAK
+					is_in_home_area = yes
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_owned_and_controlled_by = WAK
+					is_in_home_area = yes
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+        }			
+		ai_will_do = {
+		    base = 1
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}	
+		}
+	}
+	focus = { 
+		id = WAK_bombing_initiative
+		icon =  GFX_goal_generic_occupy_start_war
+		x = 0
+		y = 1
+		relative_position_id = WAK_expand_airforce_production
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_expand_airforce_production }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_ideas = wak_airforce_4
+				
+			add_tech_bonus = {
+			    name = KSK_bombing_initiative
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+			}
+		}
+		ai_will_do = {
+		   base = 1
+		}
+	}
+	focus = { 
+		id = WAK_home_defense
+		icon =   GFX_goal_generic_construct_military
+		x = 0
+		y = 1
+		relative_position_id = WAK_bombing_initiative
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_bombing_initiative }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		     swap_ideas = {
+				remove_idea = wak_airforce_4
+				add_idea = wak_airforce_5
+			}
+			 random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = anti_air_building
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = anti_air_building
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_in_home_area = yes
+					free_building_slots = {
+						building = anti_air_building
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = anti_air_building
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_in_home_area = yes
+					free_building_slots = {
+						building = anti_air_building
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = anti_air_building
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+		   base = 1
+		}
+	}
+	focus = { 
+		id = WAK_revamped_airforce
+		icon =   GFX_goal_generic_air_doctrine
+		x = 1
+		y = 1
+		relative_position_id = WAK_home_defense
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_home_defense }
+		prerequisite = { focus = WAK_tac_bombers }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    swap_ideas = {
+				remove_idea = wak_air_force_3
+				add_idea = wak_air_force_6
+			}
+		}
+		ai_will_do = {
+		   base = 1
+		}
+	}
+	focus = { 
+		id = WAK_naval_manufacturers
+		icon =   GFX_focus_ITA_new_horizons
+		x = 0
+		y = 2
+		relative_position_id = WAK_expand_naval_and_air_production
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_expand_airbases focus = WAK_modernize_the_wakaruvian_navy }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_political_power = 150
+			show_ideas_tooltip = stray_shipbuilders
+			show_ideas_tooltip = folt_navalworks
+		}
+		ai_will_do = {
+		   base = 1
+		}
+	}
+	focus = { 
+		id = WAK_air_manufacturers
+		icon =   GFX_focus_generic_aircraft_production
+		x = 0
+		y = 2
+		relative_position_id = WAK_naval_manufacturers
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 5
+		prerequisite = { focus = WAK_naval_manufacturers }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_political_power = 150
+			show_ideas_tooltip = folt_airfields
+			show_ideas_tooltip = chinpo_industries
+		}
+		ai_will_do = {
+		    base = 1
+			modifier = {
+				factor = 0
+				has_idea = wak_resistance_action_2
+			}	
+		}
+	}
+	focus = { 
+		id = WAK_the_sea_and_the_sky
+		icon =   GFX_goal_generic_navy_carrier
+		x = 0
+		y = 2
+		relative_position_id = WAK_air_manufacturers
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = WAK_dockyard_expansion focus = WAK_revamped_airforce }
+        prerequisite = { focus = WAK_air_manufacturers }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_ideas = wak_sea_and_sky
+			
+			add_tech_bonus = {
+			    name = KSK_bombing_initiative
+				bonus = 1.0
+				uses = 3
+				category = naval_bomber
+				category = naval_air
+				category = carrier
+			}
+		}
+		ai_will_do = {
+		   base = 1
+		}
+	}
+	focus = { 
+		id = WAK_supremacy_of_seas
+		icon =   GFX_goal_supremacy_of_sea
+		x = 2
+		y = 2
+		relative_position_id = WAK_dockyard_expansion
+		
+		text_icon = WAKARU_focus_style
+		
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+        prerequisite = { focus = WAK_dockyard_expansion }
+        mutually_exclusive = { focus = WAK_supremacy_of_skies }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_ideas = wak_supremacy_of_sea
+		}
+		ai_will_do = {
+		   base = 1
+		}
+	}
+	focus = { 
+		id = WAK_supremacy_of_skies
+		icon = GFX_goal_supremacy_of_sky
+		
+		text_icon = WAKARU_focus_style
+		
+		x = -2
+		y = 2
+		relative_position_id = WAK_revamped_airforce
+		available = {
+			NOT = {
+				has_country_flag = wakaru_military_action
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+        prerequisite = { focus = WAK_revamped_airforce }
+        mutually_exclusive = { focus = WAK_supremacy_of_seas }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_ideas = wak_supremacy_of_sky
+		}
+		ai_will_do = {
+		   base = 1
+		}
+	}
+}

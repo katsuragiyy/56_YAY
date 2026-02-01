@@ -1,0 +1,56 @@
+﻿
+
+
+##### OOB #####
+units = {
+### IJN ###
+	fleet = {
+		name = "SSRRY"			
+		naval_base = 7303  # Truk
+		#Truk
+		task_force = {
+			name = "Nanpo Yuso Sendan"
+			location = 7303  # Truk
+			ship = { name = "Fuan" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = KSK version_name = "Mutsuki Class"} } }
+			ship = { name = "Ancaline" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = KSK version_name = "Mutsuki Class"} } }
+			ship = { name = "Yugao" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = KSK version_name = "Mutsuki Class"} } }
+			#Former Dai 2 Kuchikutai
+			ship = { name = "Minekaze" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = KSK version_name = "Mutsuki Class"} } }
+			ship = { name = "Gita" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = KSK version_name = "Mutsuki Class"} } }
+			ship = { name = "Yamaha" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = KSK version_name = "Mutsuki Class"} } }
+			ship = { name = "Pachi" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = KSK version_name = "Mutsuki Class"} } }
+		}
+	}
+}
+
+
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = 
+{
+	
+### Ongoing Naval Production Jan 1 1936 ###
+		add_equipment_production = {				
+			equipment = {
+				type = ship_hull_heavy_1
+				creator = "JAP"
+				version_name = "Kongo Class"
+			}
+			requested_factories = 1
+			progress = 0.2
+			amount = 1
+		}
+		add_equipment_production = {				
+			equipment = {
+				type = ship_hull_light_1
+				creator = "KSK" 
+				version_name = "Fubuki Class"
+			}
+			requested_factories = 1
+			progress = 0.6
+			amount = 1
+		}		
+}

@@ -1,0 +1,35 @@
+#####---------------------------------------------------------------------> Mod by Sig "GreatExperiment" Altre
+
+leader_traits = {
+	starry_manager = { 
+		type = land
+		trait_type = personality_trait
+		
+		modifier = {
+			army_org_factor =  0.1
+			supply_consumption_factor = -0.15
+		}
+
+		new_commander_weight = {
+			factor = 0
+		}
+		
+	}
+	
+	drunken_strategy_unit = { 
+		type = land
+		trait_type = personality_trait
+		
+		modifier = {
+			army_morale_factor = 0.1
+			army_org_factor = -0.01
+		}
+
+		new_commander_weight = {
+			factor = 0
+		}
+		
+	}
+}
+
+#####---------------------------------------------------------------------> End

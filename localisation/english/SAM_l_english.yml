@@ -794,11 +794,11 @@
  r56_SAM_refused_to_support_opinion:0 "Refused to Aid us"
  r56_SAM_accepted_to_support_opinion:0 "Accepted to Aid us"
 
- #NZL_FRAGMENTATION_STATUS:0 "@NZL@SAM New Zealand Fragmentation Status"
- #RULE_OPTION_NZL_FRAGMENTED:0 "New Zealand Fragmented"
- #RULE_OPTION_NZL_FRAGMENTED_DESC:0 "Upon game start, a more accurate depiction of the New Zealand-Mau conflict that erupted in 1929 will be present. In which, the Mau will hold control over Western Samoa, and depending on New Zealand's approach to the issue, have the potential to break away from it's overlord or stay loyal to the crown."
- #RULE_OPTION_NZL_FRAGMENTED_SAMOA:0 "NZL Fragmented - Play as Samoa"
- #RULE_OPTION_NZL_FRAGMENTED_SAMOA_DESC:0 "When selecting New Zealand, you will start as Samoa."
+ NZL_FRAGMENTATION_STATUS:0 "@NZL@SAM New Zealand Fragmentation Status"
+ RULE_OPTION_NZL_FRAGMENTED:0 "New Zealand Fragmented"
+ RULE_OPTION_NZL_FRAGMENTED_DESC:0 "Upon game start, a more accurate depiction of the New Zealand-Mau conflict that erupted in 1929 will be present. In which, the Mau will hold control over Western Samoa, and depending on New Zealand's approach to the issue, have the potential to break away from it's overlord or stay loyal to the crown."
+ RULE_OPTION_NZL_FRAGMENTED_SAMOA:0 "NZL Fragmented - Play as Samoa"
+ RULE_OPTION_NZL_FRAGMENTED_SAMOA_DESC:0 "When selecting New Zealand, you will start as Samoa."
 
  SAM_r56_half_of_current_democratic_support_is_applied_as_a_stability_penalty_tt:0 "Half of the current §YDemocratic§! support is applied as a §RStability§! penalty:\n":0
 

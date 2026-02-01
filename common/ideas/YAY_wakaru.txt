@@ -1,0 +1,725 @@
+ideas = {
+	country = {
+		wak_resistance_action = {
+			picture = wak_resistance_action
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				war_support_factor = -0.15
+			}
+		}
+		wak_no_kessoku = {
+			picture = wak_no_kessokans
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				political_power_factor = 0.15
+				conscription_factor = -0.1
+				war_support_factor = 0.15
+				stability_factor = -0.05
+				consumer_goods_factor = -0.05
+				research_speed_factor = 0.15
+			}
+		}
+		wak_yes_kessoku = {
+			picture = wak_yes_kessokans
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				political_power_factor = 0.05
+				conscription_factor = 0.15
+				war_support_factor = -0.15
+				stability_factor = 0.15
+			}
+		}
+		wak_honour_republics = {
+			picture = wak_for_the_republics
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				conscription_factor = 0.15
+				war_support_factor = 0.15
+				army_attack_factor = 0.1
+			}
+		}
+		wak_sideros_idea = {
+			picture = GFX_idea_wak_sideors
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+		
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				army_defence_factor = 0.1
+			}
+		}
+		wak_sickhack_idea = {
+			picture = GFX_idea_wak_sick_hack
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				research_speed_factor = 0.1
+				army_attack_factor = 0.05
+				stability_factor = -0.05
+			}
+		}
+		wak_rubber_bacterium = {
+			picture = wak_rubber_fire
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				stability_factor = -0.1
+			}
+		}
+		wak_rubber_bacterium_2 = {
+			picture = wak_rubber_fire
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				stability_factor = -0.15
+			}
+		}
+		wak_rubber_bacterium_3 = {
+			picture = wak_rubber_fire
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				stability_factor = -0.2
+			}
+		}
+		wak_resignation_pressure = {
+			picture = wak_yoyoko_burning
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				stability_weekly = -0.02
+				war_support_weekly = -0.02
+			}
+		}
+		wak_there_is_no_rubber_plague = {
+			picture = wak_no_rubber_virus
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				stability_factor = 0.1
+			}
+		}
+		wak_resistance_action_2 = {
+			picture = wak_resistance_action
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				war_support_factor = -0.2
+				stability_factor = -0.1
+			}
+		}
+		wak_army_control = {
+			picture = wak_military_control
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				stability_factor = 0.15
+				political_power_factor = -0.25
+				political_advisor_cost_factor = 0.33
+				surrender_limit = 0.25
+			}
+		}
+		wak_stray_company_1 = {
+			picture = wak_stray_company
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				local_resources_factor = 0.15
+				industrial_capacity_factory = 0.05
+				trade_opinion_factor = 0.5
+			}
+		}
+		wak_stray_company_2 = {
+			picture = wak_stray_company
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				local_resources_factor = 0.25
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.05
+				trade_opinion_factor = 0.65
+			}
+		}
+		wak_stray_housing = {
+			picture = wak_stray_housing
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+			}
+		}
+		wak_caussokan_identity_idea = {
+			picture = wak_caussokan_identity
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				power_balance_weekly = 0.02
+				surrender_limit = 0.25
+				army_core_defence_factor = 0.05
+			}
+		}
+		wak_money_surplus_idea = {
+			picture = wak_money
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		wak_investing_civilian_idea = {
+			picture = wak_money
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.25
+				production_speed_infrastructure_factor = 0.2
+				production_speed_rail_way_factor = 0.2
+				production_speed_supply_node_factor = 0.2
+				conversion_cost_mil_to_civ_factor = 0.2
+				global_building_slots = 2
+			}
+		}
+		wak_investing_army_idea = {
+			picture = wak_money
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.2
+				production_speed_air_base_factor = 0.2
+				production_speed_dockyard_factor = 0.2
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				global_building_slots = 2
+			}
+		}
+		wak_investing_resources_idea = {
+			picture = wak_money
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				local_resources_factor = 0.35
+				stability_factor = 0.05
+			}
+		}
+		wak_developed_folt = {
+			picture = wak_folt
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				stability_factor = 0.1
+			}
+		}
+		wak_stray_company_3 = {
+			picture = wak_stray_company
+			
+			allowed = {
+				original_tag = WAK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				local_resources_factor = 0.35
+				industrial_capacity_factory = 0.15
+				consumer_goods_factor = -0.15
+				trade_opinion_factor = 0.80
+			}
+		}
+	}
+	materiel_manufacturer = {
+		
+		designer = yes
+		
+		wak_gibson = {
+		    picture = gibson
+			
+			allowed = {
+				original_TAG = WAK
+			}
+			
+			available = {
+				has_completed_focus = WAK_gibson_focus
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { gibson }
+			
+			modifier = {
+				
+			}
+		}
+		
+		wak_yamaha = {
+		    picture = yamaha
+			
+			allowed = {
+				original_TAG = WAK
+			}
+			
+			available = {
+				has_completed_focus = WAK_yamaha_focus
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { yamaha }
+			
+			modifier = { 
+				
+			}
+		}
+	}
+	naval_manufacturer = {
+
+	    designer = yes
+		
+	    stray_shipbuilders = {
+			picture = kure_naval_arsenal
+			
+			allowed = {
+				original_TAG = WAK
+			}
+			
+			available = {
+			    has_completed_focus = WAK_naval_manufacturers
+			}
+						
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { shimokitazawan_shipbuilding }
+
+		}
+		
+		folt_navalworks = {
+		    picture = bul_bulgarian_shipping_chamber
+			
+			allowed = {
+				original_TAG = WAK
+			}
+			
+			available = {
+			    has_completed_focus = WAK_naval_manufacturers
+			}
+						
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { enoshima_naval_works }
+		}
+	}
+	aircraft_manufacturer = {
+	
+	    designer = yes
+		
+		folt_airfields = {
+		    picture = boeing
+			
+			allowed = {
+				original_TAG = WAK
+			}
+			
+			available = {
+			    has_completed_focus = WAK_air_manufacturers
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { shimokitazawan_airfields }
+		}
+		
+		chinpo_industries = {
+		    picture = caproni
+			
+			allowed = {
+				original_TAG = WAK
+			}
+			
+			available = {
+			    has_completed_focus = WAK_air_manufacturers
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { enoshima_industry }
+		}
+	}
+}

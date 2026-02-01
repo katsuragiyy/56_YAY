@@ -1,0 +1,440 @@
+characters={
+	WAK_yoyoko_ohtsuki={
+		name=WAK_CHARACTER_YOYOKO
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_WAK_yoyoko
+				small=GFX_portrait_WAK_yoyoko_small
+			}
+		}
+		country_leader={
+			ideology=oligarchism
+			desc = WAK_YOYOKO_DESC
+			expire="1989.1.1.1"
+		}
+	}
+	WAK_akubi={
+		name=WAK_CHARACTER_AKUBI
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_WAK_akubi
+				small=GFX_portrait_WAK_akubi_small
+			}
+			army={
+				large=GFX_portrait_WAK_akubi
+				small=GFX_portrait_WAK_akubi_small
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = wak_akubi_hc_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				army_logistics_1
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = wak_akubi_theorist_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				military_modernizer
+			}
+		}
+		scientist = {
+			traits = { scientist_trait_armored_specialist }
+			skills = {
+				specialization_land = 2
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	WAK_poison={ 
+		name=WAK_CHARACTER_POISON
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_WAK_poison
+				small=GFX_portrait_WAK_poison_small
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = wak_poison_advisor_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			visible = {
+				has_country_flag = shiba_in_charge
+			}
+			traits = {
+				journalist_writer
+			}
+		}
+	}
+	WAK_fuko_honjo={
+		name=WAK_CHARACTER_FUKO
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_WAK_fuko
+				small=GFX_portrait_WAK_fuko_small
+			}
+			army = {
+				large=GFX_portrait_WAK_fuko
+				small=GFX_portrait_WAK_fuko_small
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = wak_fuko_hc_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				army_infantry_1
+			}
+		}
+		corps_commander = {
+			traits={ }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	WAK_hal={
+		name=WAK_CHARACTER_HAL
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_WAK_hal
+				small=GFX_portrait_WAK_hal_small
+			}
+			army = {
+				large=GFX_portrait_WAK_hal
+				small=GFX_portrait_WAK_hal_small
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = wak_hal_army_chief_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				wakaru_native_hc
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = wak_hal_air_chief_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				air_chief_reform_2
+			}
+		}
+		field_marshal = {
+			traits={ }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=4
+			legacy_id=-1
+		}
+		country_leader={
+			ideology=centrism
+			desc = WAK_HAL_DESC
+			expire="1989.1.1.1"
+		}
+	}
+	WAK_shiba={
+		name=WAK_CHARACTER_SHIBA
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_WAK_shiba
+				small=GFX_portrait_WAK_shiba_small
+			}
+		}
+		country_leader={
+			traits = { bussinesswoman_trait }
+			ideology=centrism
+			desc = WAK_SHIBA_DESC
+			expire="1989.1.1.1"
+		}
+	}
+	WAK_sasaki={
+		name=WAK_CHARACTER_SASAKI
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_WAK_sasaki
+				small=GFX_portrait_WAK_sasaki_small
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = wak_sasaki_advisor_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			visible = {
+				OR = {
+					WAK = {
+						NOT = {
+							has_war_with = KSK
+						}
+					}
+					KSK = { exists = no } 
+				}
+			}
+			traits = {
+				kessoku_cheerleading_committee
+			}
+		}
+	}
+	WAK_elena={
+		name=WAK_CHARACTER_ELENA
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_WAK_elena
+				small=GFX_portrait_WAK_elena_small
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = wak_elena_advisor_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				fangirl
+			}
+		}
+	}
+	WAK_nene={
+		name=WAK_CHARACTER_NENE
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_WAK_nene
+				small=GFX_portrait_WAK_nene_small
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = wak_nene_advisor_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				sportsman
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = wak_nene_hc_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				army_cavalry_1
+			}
+		}
+	}
+	WAK_yuyu={
+		name=WAK_CHARACTER_YUYU
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_WAK_yuyu
+				small=GFX_portrait_WAK_yuyu_small
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = wak_yuyu_advisor_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				occult_fanatic
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = wak_yuyu_theorist_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				nuclear_scientist
+			}
+		}
+		scientist = {
+			traits = { scientist_trait_nuclear_specialist scientist_trait_brilliant_theorist }
+			skills = {
+				specialization_nuclear = 2
+			}
+		}
+	}
+	WAK_ueremi={
+		name=WAK_CHARACTER_UEREMI
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_WAK_ueremi
+				small=GFX_portrait_WAK_ueremi_small
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = wak_ueremi_hc_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				air_strategic_bombing_1
+			}
+		}
+	}
+	WAK_teru={
+		name=WAK_CHARACTER_TERU
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_WAK_teru
+				small=GFX_portrait_WAK_teru_small
+			}
+			army={
+				large=GFX_portrait_WAK_teru
+				small=GFX_portrait_WAK_teru_small
+			}
+			navy={
+				large=GFX_portrait_WAK_teru
+				small=GFX_portrait_WAK_teru_small
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = wak_teru_chief_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				navy_chief_naval_aviation_1
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = wak_teru_chief_idea
+			can_be_fired = yes
+			allowed = {
+				original_tag = WAK
+			}
+			traits = {
+				head_of_intelligence
+			}
+		}
+		navy_leader = {
+			traits={ }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
+	WAK_futari_gotoh={
+		name=KSK_CHARACTER_FUTARI
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_KSK_futari_gotoh
+				small=GFX_portrait_KSK_futari_gotoh_small
+			}
+		}
+		country_leader={
+			ideology=oligarchism
+			desc = KSK_FUTARI_DESC
+			expire="1989.1.1.1"
+			traits = { untrained_monarch }
+		}
+	}
+	WAK_eliza={
+		name=KSK_CHARACTER_ELIZA
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_KSK_eliza
+				small=GFX_portrait_KSK_eliza_small
+			}
+			army = {
+				large=GFX_portrait_KSK_eliza
+			}
+		}
+	}
+	WAK_kikuri_hiroi={
+		name=KSK_CHARACTER_KIKURI
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_KSK_kikuri_hiroi
+				small=GFX_portrait_KSK_kikuri_hiroi_small
+			}
+		}
+	}
+	WAK_shima={
+		name=KSK_CHARACTER_SHIMA
+		gender = female
+		portraits={
+			civilian={
+				small=GFX_portrait_KSK_shima_small
+			}
+		}
+	}
+	WAK_gin_san={
+		name=KSK_CHARACTER_GIN
+		portraits={
+			civilian={
+				small=GFX_portrait_KSK_gin_san_small
+			}
+		}
+	}
+}

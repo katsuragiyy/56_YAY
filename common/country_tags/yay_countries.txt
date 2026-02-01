@@ -1,0 +1,7 @@
+#####-----> Country Tags Added by the Fork <><> <><> <><> <><> <><>
+
+# BOCCHI AT WAR
+KSK = "countries/Kessoku.txt"
+WAK = "countries/Wakaru.txt"
+
+#####-----> End <><> <><> <><> <><> <><>

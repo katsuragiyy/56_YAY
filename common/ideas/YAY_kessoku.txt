@@ -1,0 +1,2008 @@
+ideas = {
+	hidden_ideas = {
+		KSK_female_only = {
+			allowed = {
+				original_tag = KSK
+				original_tag = WAK
+				#original_tag = KNI
+			}
+
+			modifier = {
+				female_random_country_leader_chance = 1
+				female_random_operative_chance = 1
+				female_random_army_leader_chance = 1
+				female_random_admiral_chance = 1
+				female_divisional_commander_chance = 1
+				rule = { can_generate_female_aces = yes }
+			}
+		}
+	}
+
+	country = {
+		ksk_powerless_leader = {
+			picture = ksk_powerless 
+			allowed = { original_tag = KSK }
+			modifier = {
+				stability_weekly = -0.01
+				political_power_factor = -0.1
+				political_advisor_cost_factor = 0.15
+				surrender_limit = -0.2
+			}
+		}
+
+		ksk_army_crisis = {
+			picture = ksk_army_crisis
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				army_attack_factor = -0.1
+				army_attack_speed_factor = -0.1
+				army_defence_factor = -0.1
+				army_org_factor = -0.1
+				conscription_factor = -0.1
+				experience_gain_army_factor = -0.1
+			}
+		}
+		ksk_army_crisis_improved = {
+			picture = ksk_army_crisis
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				army_attack_factor = -0.05
+				army_attack_speed_factor = -0.05
+				army_defence_factor = -0.05
+				army_org_factor = -0.05
+				conscription_factor = -0.05
+				experience_gain_army_factor = -0.05
+			}
+		}
+		ksk_guitar_hero_idea = {
+			picture = ksk_band_icon
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				army_attack_factor = 0.1
+				war_support_factor = 0.05
+				neutrality_drift = 0.08
+			}
+		}
+		ksk_kessoku_band = {
+			picture = ksk_band_icon
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				army_defence_factor = 0.1
+				stability_factor = 0.05
+				army_org_factor = 0.05
+			}
+		}
+		ksk_god_save_kessoku = {
+			picture = ksk_god
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				army_core_defence_factor = 0.15
+				army_core_attack_factor = 0.05
+				war_support_factor = 0.1
+				conscription = 0.05
+				resistance_target_on_our_occupied_states = 0.05
+				compliance_growth_on_our_occupied_states = -0.05
+				resistance_growth_on_our_occupied_states = 0.05
+			}
+		}
+		ksk_bocchi = {
+			picture = ksk_bocchi_spirit
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				stability_factor = 0.1
+			}
+		}
+		ksk_ryo_exploit_1 = {
+			picture = ksk_ryo_greedy_bitch
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+
+			}
+			
+			allowed_civil_war = {
+				has_country_leader = {
+					character = KSK_ryo_yamada
+					ruling_only = yes
+				}
+			}
+			
+			
+			modifier = {	
+				equipment_capture_factor = 0.5
+				resistance_target = -0.1
+				non_core_manpower = 0.05
+				local_resources_factor = 0.15
+				production_speed_infrastructure_factor = 0.15
+				production_speed_supply_node_factor = 0.15
+				production_speed_rail_way_factor = 0.15
+			}
+		}
+		ksk_ryo_exploit_2 = {
+			picture = ksk_ryo_greedy_bitch
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+
+			}
+			
+			allowed_civil_war = {
+				has_country_leader = {
+					character = KSK_ryo_yamada
+					ruling_only = yes
+				}
+			}
+			
+			
+			modifier = {	
+				equipment_capture_factor = 0.6
+				resistance_target = -0.3
+				non_core_manpower = 0.05
+				local_resources_factor = 0.25
+				production_speed_infrastructure_factor = 0.25
+				production_speed_supply_node_factor = 0.25
+				production_speed_rail_way_factor = 0.25
+			}
+		}
+		ksk_ryo_exploit_3 = {
+			picture = ksk_ryo_greedy_bitch
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				has_country_leader = {
+					character = KSK_ryo_yamada
+					ruling_only = yes
+				}
+			}
+			
+			
+			modifier = {	
+				equipment_capture_factor = 0.9
+				resistance_target = -0.4
+				non_core_manpower = 0.1
+				local_resources_factor = 0.4
+				production_speed_infrastructure_factor = 0.3
+				production_speed_supply_node_factor = 0.3
+				production_speed_rail_way_factor = 0.3
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_speed_factor = 0.15
+			}
+		}
+		ksk_ryo_weeds_idea = {
+			picture = ksk_ryo_greedy_bitch
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				local_resources_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_speed_supply_node_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+			}
+		}
+		ksk_nijika_spiritual_idea = {
+			picture = ksk_nijika_greedy_bitch
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				political_power_factor = 0.25
+				stability_factor = 0.1
+				political_advisor_cost_factor = -0.2
+				air_advisor_cost_factor = -0.2
+				army_advisor_cost_Factor = -0.2
+			}
+		}
+		ksk_remember_bocchi_idea = {
+			picture = KSK_bocchi_remember
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				war_support_factor = 0.2
+				stability_factor = 0.05
+				army_attack_factor = 0.1
+				army_org_factor = 0.05
+			}
+		}
+		ksk_bocchi_eagle_idea = {
+			picture = ksk_bocchi_eagle
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				war_support_factor = 0.05
+				stability_factor = 0.2
+				army_defence_factor = 0.1
+				army_org_factor = 0.05
+			}
+		}
+		ksk_bocchi_eagle_idea_2 = {
+			picture = ksk_bocchi_eagle
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				war_support_factor = 0.05
+				stability_factor = 0.2
+				army_defence_factor = 0.1
+				army_org_factor = 0.05
+				consumer_goods_factor = -0.1
+				local_resources_factor = 0.2
+				industrial_capacity_factory = 0.05
+			}
+		}
+		ksk_kita_paradise = {
+			picture = ksk_kita_paradise
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		ksk_kita_kitaura_front_buffs = {
+			picture = ksk_kita_kitaura_front
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				army_defence_factor = 0.1
+				army_attack_factor = 0.1
+				army_org_factor = 0.05
+			}
+		}
+		ksk_kita_kitaura_plan_idea = {
+			picture = ksk_kita_planning
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				local_resources_factor = 0.05
+				production_speed_infrastructure_factor = 0.15
+				production_speed_rail_way_factor = 0.15
+				production_speed_supply_node_factor = 0.15
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		kni_knights_summon = {
+			picture = kni_knight_summon_icon
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				weekly_manpower = 500
+			}
+		}
+		kni_research_nijika = {
+			picture = kni_cross_research
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+		kni_profits_nijika = {
+			picture = kni_nijika_profit
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				industrial_capacity_factory = 0.1
+				global_building_slots_factor = 0.1
+				consumer_goods_factor = -0.05
+				local_resources_factor = 0.1
+			}
+		}
+		kni_religious_disporia = {
+			picture = kni_cross_broken
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				stability_factor = -0.3
+				supply_node_range = -0.15
+			}
+		}
+		kni_religious_disporia_2 = {
+			picture = kni_cross_broken
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				stability_factor = -0.25
+				supply_node_range = -0.1
+			}
+		}
+		kni_religious_disporia_3 = {
+			picture = kni_cross_broken
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				stability_factor = -0.2
+				supply_node_range = -0.1
+			}
+		}
+		kni_religious_disporia_4 = {
+			picture = kni_cross_broken
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				stability_factor = -0.15
+				supply_node_range = -0.05
+			}
+		}
+		kni_religious_disporia_5 = {
+			picture = kni_cross_broken
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				stability_factor = -0.1
+			}
+		}
+		kni_religious_disporia_6 = {
+			picture = kni_cross_broken
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				stability_factor = -0.05
+			}
+		}
+		kni_army_infancy = {
+			picture = chi_incompetent_officers
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				army_attack_factor = -0.05
+				army_defence_factor= -0.05
+				supply_consumption_factor = 0.10
+				experience_gain_army_factor = 0.15
+			}
+		}
+		kni_mass_conscription = {
+			picture = chi_forced_conscription
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				conscription = 0.05
+				conscription_factor = 0.25
+				training_time_factor = 0.10
+			}
+		}
+		kni_methodical_thinking = {
+			picture = cze_planning_bonus
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				max_planning = 0.1
+				max_planning_factor 0.15
+				planning_speed = 0.15
+				dig_in_speed_factor = 0.1
+			}
+		}
+		kni_professional_army = {
+			picture = generic_manpower_bonus
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				supply_consumption_factor = -0.10
+				experience_gain_army_factor = 0.05
+				training_time_factor = -0.15
+			}
+		}
+		kni_noble_army = {
+			picture = kni_mercy_army
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				army_attack_factor = -0.10
+				army_defence_factor= -0.10
+				supply_consumption_factor = 0.15
+				experience_gain_army_factor = 0.10
+				experience_loss_factor = -0.15
+			}
+		}
+		kni_war_crimes = {
+			picture = kni_knight_summon_icon
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				army_attack_factor = 0.15
+				army_defence_factor= 0.15
+				supply_consumption_factor = -0.15
+				experience_gain_army_unit_factor = -0.10
+				experience_loss_factor = 0.15
+			}
+		}
+		kni_marines = {
+			picture = idea_generic_the_london_naval_treaty
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				invasion_preparation = 0.05
+				naval_invasion_prep_speed = 0.05
+				naval_invasion_capacity = 10
+				naval_invasion_penalty = -0.10
+				amphibious_invasion_defence = 0.05
+			}
+		}
+		kni_navy_infancy = {
+			picture = generic_coastal_defense_ships
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				naval_damage_factor = -0.05
+				naval_defense_factor = -0.05
+				naval_accidents_chance = 0.10
+				experience_gain_navy_factor = 0.15
+			}
+		}
+		kni_air_infancy = {
+			picture = generic_air_fighter
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				air_attack_factor = -0.05
+				air_defence_factor = -0.05
+                air_accidents_factor = 0.10
+				experience_gain_air_factor = 0.15
+			}
+		}
+		kni_professional_navy = {
+			picture = generic_coastal_defense_ships2
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				naval_damage_factor = 0.05
+				naval_defense_factor = 0.05
+				naval_accidents_chance = -0.10
+				experience_gain_navy_factor = 0.05
+				navy_fuel_consumption_factor = -0.05
+			}
+		}
+		kni_professional_air_force = {
+			picture = generic_air_interception
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+			}
+			
+			allowed_civil_war = {
+			}
+			
+			
+			modifier = {
+				air_attack_factor = 0.05
+				air_defence_factor= 0.05
+				air_accidents_factor = -0.10
+				experience_gain_air_factor = 0.05
+				air_fuel_consumption_factor = -0.05
+			}
+		}
+############################################################
+#############		Economic recoovery		################
+############################################################
+
+		ksk_economy_crisis = {
+			picture = ksk_economy_crisis
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.25
+				industrial_capacity_factory = -0.35
+				local_resources_factor = -0.3
+			}
+		}
+
+		ksk_economy_crisis_2 = {
+			picture = ksk_economy_crisis
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.25
+				industrial_capacity_factory = -0.15
+				local_resources_factor = -0.2
+			}
+		}
+		ksk_economy_crisis_3 = {
+			picture = ksk_economy_crisis
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.25
+				industrial_capacity_factory = -0.15
+				local_resources_factor = -0.1
+			}
+		}
+		ksk_economy_crisis_4 = {
+			picture = ksk_economy_crisis
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.15
+				industrial_capacity_factory = -0.15
+				local_resources_factor = -0.05
+			}
+		}
+		ksk_economy_crisis_5 = {
+			picture = ksk_economy_crisis
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				industrial_capacity_factory = -0.15
+			}
+		}
+		ksk_economy_crisis_worker_incentive = {
+			picture = ksk_economy_crisis_worker_incentive
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = 0.05
+			}
+		}
+		ksk_economy_crisis_worker_incentive_2 = {
+			picture = ksk_economy_crisis_worker_incentive
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		ksk_economy_crisis_local_production = {
+			picture = ksk_economy_crisis_local_production
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+				global_building_slots_factor = 0.2
+				consumer_goods_factor = 0.05
+			}
+		}
+		ksk_economy_crisis_local_production_2 = {
+			picture = ksk_economy_crisis_local_production
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+			
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
+				global_building_slots_factor = 0.2
+				production_factory_start_efficiency_factor = 0.05
+			}
+		}
+		ksk_economy_crisis_final = {
+			picture = ksk_economy_crisis
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			modifier = {
+				industrial_capacity_factory = 0.1
+				local_resources_factor = 0.1
+			}
+		}
+		ksk_poverty_crisis = {
+			picture = ksk_economy_crisis
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				if = {
+					limit = {
+						has_civil_war = no
+					}
+				has_war = yes
+				}
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				stability_factor = -0.15
+				mobilization_speed = -0.1
+				conscription_factor = 0.25
+			}
+		}
+		ksk_resource_efficiency = {
+			picture = can_wartime_prices_and_trade_board
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+			
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				local_resources_factor = 0.15
+			}
+		}
+		
+		ksk_resource_efficiency_2 = {
+			picture = can_wartime_prices_and_trade_board
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				local_resources_factor = 0.25
+				base_fuel_gain_factor = 0.15
+				army_fuel_consumption_factor = -0.1
+				supply_node_range = 0.1
+			}
+		}
+		
+		ksk_autobohcchi = {
+			picture = FRA_motorized_focus
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				production_speed_infrastructure_factor = 0.25
+				production_speed_rail_way_factor = 0.25
+				production_speed_supply_node_factor = 0.25
+			}
+		}
+		
+		ksk_autobohcchi_invest = {
+			picture = generic_build_infrastructure
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			on_add = {
+				add_stability -0.2
+			}
+			
+			on_remove = {
+				add_ideas = ksk_autobohcchi
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = 0.15
+				production_speed_infrastructure_factor = 0.45
+				production_speed_rail_way_factor = 0.75
+				production_speed_supply_node_factor = 0.50
+				weekly_stability_factor = -0.1
+			}
+		}
+		
+		ksk_naval_productivity_idea = {
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				industrial_capacity_dockyard = 0.25
+			}
+		}
+		
+		ksk_convoy_efficiency = {
+			picture = liberty_ships_focus
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			equipment_bonus = {
+				Convoys = {
+					instant = yes
+					build_cost_ic = -0.2
+				}
+			}
+		}
+		
+		ksk_kusa_rations = {
+			picture = generic_goods_red_bonus
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		ksk_kusa_rations_2 = {
+			picture = generic_goods_red_bonus
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				no_supply_grace = 36
+				army_org_factor = 0.08
+				army_morale_factor = 0.08
+				attrition = -0.05
+			}
+		}
+		
+		ksk_dorito_rations = {
+			picture = generic_goods_red_bonus
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				hidden_modifier = {
+					war_support_factor = 0.05
+				}
+				consumer_goods_factor = -0.1
+				no_supply_grace = 72
+				army_org_regain = 0.1
+				army_org_factor = 0.1
+				army_morale_factor = 0.1
+				attrition = -0.15
+			}
+		}
+		
+		ksk_nijifish = {
+			picture = generic_goods_red_bonus
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				hidden_modifier = {
+					stability_factor = 0.05
+				}
+				production_factory_efficiency_gain_factor = 0.05
+				consumer_goods_factor = -0.1
+			}
+		}
+		
+		ksk_quality_food_and_rations = {
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				hidden_modifier = {
+					
+				}
+				production_factory_efficiency_gain_factor = 0.08
+				consumer_goods_factor = -0.15
+				army_morale_factor = 0.1
+				stability_factor = 0.05
+			}
+		}
+		
+		ksk_autobohcchi_reformed = {
+			picture = FRA_motorized_focus
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			equipment_bonus = {
+				motorized_equipment = {
+					reliability = 0.2
+				}
+			}
+			
+			modifier = {
+				truck_attrition_factor = -0.25
+				local_supply_impact_factor = -0.25
+				supply_node_range = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		ksk_efficient_fuel_idea = {
+			picture = FRA_motorized_focus
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				army_fuel_consumption_factor = -0.15
+				air_fuel_consumption_factor = -0.15
+				navy_fuel_consumption_factor = -0.15
+			}
+		}
+		
+		ksk_economic_stability = {
+			picture = KSK_starry
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				industrial_capacity_factory = 0.2
+				production_speed_buildings_factor = 0.15
+				global_building_slots_factor = 0.2
+				consumer_goods_factor = -0.1
+				production_speed_infrastructure_factor = 0.05
+				production_speed_rail_way_factor = 0.05
+				production_speed_supply_node_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_start_efficiency_factor = 0.1
+			}
+		}
+		
+		ksk_economic_re = {
+			picture = KSK_starry
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				industrial_capacity_factory = 0.35
+				production_speed_buildings_factor = 0.2
+				global_building_slots_factor = 0.3
+				consumer_goods_factor = -0.18
+				production_speed_infrastructure_factor = 0.05
+				production_speed_rail_way_factor = 0.05
+				production_speed_supply_node_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+			}
+		}
+		
+		ksk_economic_rere = {
+			picture = KSK_starry
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				
+			}
+			
+			cancel = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				industrial_capacity_factory = 0.5
+				production_speed_buildings_factor = 0.5
+				global_building_slots_factor = 0.4
+				consumer_goods_factor = -0.25
+				production_speed_infrastructure_factor = 0.5
+				production_speed_rail_way_factor = 0.5
+				production_speed_supply_node_factor = 0.5
+				production_factory_efficiency_gain_factor = 0.25
+				production_factory_start_efficiency_factor = 0.25
+			}
+		}
+########################################################
+#############		Economic End		################
+########################################################
+		#idea place holder, new ideas come here = {
+		#	picture = ksk_economy_crisis
+		#	
+		#	allowed = {
+		#		original_tag = KSK
+		#	}
+		#	
+		#	available = {
+		#		always = no
+		#	}
+		#	
+		#	cancel = {
+		#		always = no
+		#	}
+		#	
+		#	allowed_civil_war = {
+		#		always = yes
+		#	}
+		#	
+		#	modifier = {
+		#		
+		#	}
+		#}
+	}
+	naval_manufacturer = {
+
+	    designer = yes
+		
+	    shimokitazawan_shipbuilders = {
+			picture = kure_naval_arsenal
+			
+			allowed = {
+				original_TAG = KSK
+			}
+			
+			available = {
+			    has_completed_focus = KSK_naval_manufacturers
+			}
+						
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { shimokitazawan_shipbuilding }
+
+		}
+		
+		enoshima_navalworks = {
+		    picture = bul_bulgarian_shipping_chamber
+			
+			allowed = {
+				original_TAG = KSK
+			}
+			
+			available = {
+			    has_completed_focus = KSK_naval_manufacturers
+			}
+						
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { enoshima_naval_works }
+		}
+	}
+	aircraft_manufacturer = {
+	
+	    designer = yes
+		
+		shimokitazawan_airfields = {
+		    picture = boeing
+			
+			allowed = {
+				original_TAG = KSK
+			}
+			
+			available = {
+			    has_completed_focus = KSK_air_manufacturers
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { shimokitazawan_airfields }
+		}
+		
+		enoshima_industries = {
+		    picture = caproni
+			
+			allowed = {
+				original_TAG = KSK
+			}
+			
+			available = {
+			    has_completed_focus = KSK_air_manufacturers
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { enoshima_industry }
+		}
+	}
+	tank_manufacturer = {
+	    
+		designer = yes
+		
+		shimokitazawa_tanks = {
+		    picture = ford_motor_company
+			
+			allowed = {
+				original_TAG = KSK
+			}
+			
+			available = {
+			    has_completed_focus = KSK_tank_designers
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { shimokitazawan_tanks }
+		}
+		
+		enoshima_tank = {
+		    picture = generic_motorized_equipment_manufacturer_2
+			
+			allowed = {
+				original_TAG = KSK
+			}
+			
+			available = {
+			    has_completed_focus = KSK_tank_designers
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { enoshima_tanks }
+		}
+		
+		ksk_yamaha_motor = {
+		    picture = yamaha
+			
+			allowed = {
+				original_TAG = KSK
+			}
+			
+			available = {
+			    has_completed_focus = KSK_industry_m3
+				has_completed_focus = KSK_industry_m2
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { yamaha_motor }
+		}
+	}
+	materiel_manufacturer = {
+		
+		designer = yes
+		
+		ksk_gibson = {
+		    picture = gibson
+			
+			allowed = {
+				original_TAG = KSK
+			}
+			
+			available = {
+				has_completed_focus = KSK_industry_m1
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { gibson }
+			
+			modifier = {
+				
+			}
+		}
+		
+		ksk_gibson_2 = {
+		    picture = gibson
+			
+			allowed = {
+				original_TAG = KSK
+			}
+			
+			available = {
+				has_completed_focus = KSK_industry_m3
+				has_completed_focus = KSK_industry_m1
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { gibson_2 }
+			
+			modifier = {
+				
+			}
+		}
+		
+		ksk_yamaha = {
+		    picture = yamaha
+			
+			allowed = {
+				original_TAG = KSK
+			}
+			
+			available = {
+				has_completed_focus = KSK_industry_m2
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { yamaha }
+			
+			modifier = { 
+				
+			}
+		}
+	}
+	
+	industrial_concern = {
+	
+		ksk_starry = {
+			picture = ksk_starry
+			
+			allowed = {
+				original_tag = KSK
+			}
+			
+			available = {
+				has_completed_focus = KSK_starry
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			traits = { starry }
+			
+			modifier = {
+				
+			}
+		}
+	}
+}

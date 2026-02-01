@@ -1276,4 +1276,6 @@
  STATE_1123: "Wuwei"
  STATE_1124: "Guyuan"
  STATE_1125: "Yulin"
+ STATE_1126: "Chanthaburi"
+ #WAK_STATE_1126:0 "Wakaru"
 

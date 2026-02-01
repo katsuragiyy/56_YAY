@@ -1,3 +1,78 @@
+KNIRUS = {
+    color = rgb { 224 224 224 }
+    color_ui = rgb { 230 230 230 }
+}
+SIAWAK = {
+    color = rgb { 137 49 62 }
+    color_ui = rgb { 145 56 68 }
+}
+WAK_CAU = {
+    color = rgb { 137 49 62 }
+    color_ui = rgb { 145 56 68 }
+}
+WAK_FUT = {
+	color = rgb { 255 209 220 }
+	color_ui = rgb { 255 209 220 }
+}
+WAK_STRAY = {
+    color = rgb { 74 38 213 }
+    color_ui = rgb { 90 50 225 }
+}
+STALIN_KSK = {
+    color = rgb { 149 56 56 }
+    color_ui = rgb { 160 67 67 }
+}
+SIN_KSK = {
+    color = rgb { 149 56 56 }
+    color_ui = rgb { 160 67 67 }
+}
+KUSAR = {
+    color = rgb { 149 56 56 }
+    color_ui = rgb { 160 67 67 }
+}
+KJER = {
+    color = rgb { 198 198 198 }
+    color_ui = rgb { 170 170 170 }
+}
+WAK_SIAM = {
+    color = rgb { 171 190 152 }
+    color_ui = rgb { 222 247 198 }
+}
+KSKC = {
+    color = rgb { 255 209 222 }
+    color_ui = rgb { 255 209 220 }
+}
+WEED = {
+    color = rgb { 48 61 155 }
+    color_ui = rgb { 67 89 180 }
+}
+BOK = {
+    color = rgb { 205 37 34 }
+    color_ui = rgb { 225 54 51 }
+}
+RKSK = {
+    color = rgb { 48 61 155 }
+    color_ui = rgb { 67 89 180 }
+}
+RKS = {
+    color = rgb { 48 61 155 }
+    color_ui = rgb { 67 89 180 }
+}
+UHKSK = {
+    color = rgb { 48 61 155 }
+    color_ui = rgb { 67 89 180 }
+}
+RKUD = {
+    color = rgb { 48 61 155 }
+    color_ui = rgb { 67 89 180 }
+}
+HSKE = {
+    color = rgb { 228 211 85 }
+    color_ui = rgb { 255 236 109 }
+}
+
+##############################
+
 MAL_UK = {
     color = rgb { 201 56 93 }
     color_ui = rgb { 255 73 121 }

@@ -1,0 +1,29 @@
+﻿l_english:
+
+ # Characters
+ KSK_hitori_gotoh:0 "Gotō Hitori"
+ KSK_hitori_gotoh_desc:0 "After the assasination of the Kessokan Royal Family, a distant cousin by the name of Hitori Goto, more commonly known as 'Bocchi' claimed the Kessokan throne. Due to her social issues and anxiety, many within the kingdom refer to her as an uncapable leader."
+
+ KSK_ryo_yamada:0 "Yamada Ryō"
+ KSK_ryo_yamada_desc:0 "An introverted Japanese businesswoman, Ryō actively seeks out ways to get wealthier, often at the expense of others around her. She arrived to Kessoku after hearing of the instability brought about by the assasination of the royal family and how this instability could greatly benefit her."
+
+ KSK_kita_ikuyo:0 "Kita Ikuyo"
+ KSK_kita_ikuyo_desc:0 "A Filipino extrovert, Kita arrived in Kessoku on the basis of liberating the people from the oppressive Kessokan monarchy. From then on, she has managed to rise through the ranks of the Kessokan government, often times utilizing her Extroverted-Aura to coerce her political opponents."
+
+ KSK_nijika_ijichi:0 "Ijichi Nijika"
+ KSK_nijika_ijichi_desc:0 "Born into a Christian household in Shimokitazawa, she is often times nicknamed 'The Angel of Shimokitazawa' for spreading the gospel in Kessoku and her noble acts for the Kessokan people. Having formed her own cult of followers, she has been able to depose the monarchy and now rules Kessoku as the supreme messanger of God."
+
+ KSK_seika_ijichi:0 "Ijichi Seika"
+ KSK_seika_ijichi_desc:0 "Older sister of the cult leader Ijichi Nijika, she usually is the voice of reason within Nijika's inner circle, and has on multiple occasions had to restrict or intervene in order to prevent Nijika from committing unspeakable atrocities. She is also the manager of a club house called "Starry" in Shimokitazawa."
+
+ KSK_kikuri_hiroi:0 "Kirkuri Hiroi"
+
+ KSK_futari_gotoh:0 "Gotō Futari"
+
+ # Ideas
+ 
+
+ # Game Rules
+ SIA_FRAGMENTATION_STATUS:0 "@SIA Siamese Fragmentation"
+ RULE_OPTION_SIA_FRAGMENTED:0 "@KSK@WAK Bocchi at War"
+ RULE_OPTION_SIA_FRAGMENTED_DESC:0 "Kessoku has always been in a rough spot, having resisted the French, British, and Dutch colonization, it's independence has by many been considered truly a miracle. With the recent political instability and the assasination of the previous monarch, a distant cousin from Japan, Hitori Gotoh rising to the throne is for many the last nail in the coffin for Kessoku. \n\nSelect @FRI§YFrench Indochina§! to play @KSK§YKessoku§!. \nSelect @SIA§YSiam§! to play @WAK§YWakaru§!"
