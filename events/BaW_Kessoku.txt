@@ -1,0 +1,4338 @@
+﻿###########################
+# Kessokan Events
+###########################
+
+add_namespace = kessoku
+
+country_event = {
+	id = kessoku.1
+	title = "Kita Ikuyo flees!"
+	desc = kessoku.1.d
+	picture = GFX_report_event_kita_rid
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "It's Ikuyover."
+		ai_chance = { factor = 100 }
+		set_country_flag = kita_rid
+		PHI = {
+			country_event = {
+				id = kessoku.83
+				days = 2
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.2
+	title = "Ryou Yamada Imprisioned!"
+	desc = kessoku.2.d
+	picture = GFX_report_event_ryo_rid
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "It's Ryover."
+		ai_chance = { factor = 100 }
+		set_country_flag = ryo_rid
+	}
+}
+country_event = {
+	id = kessoku.3
+	title = "Nijika Ijichi dissapears?"
+	desc = kessoku.3.d
+	picture = GFX_report_event_nijika_rid
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "I hope she's in Hell."
+		ai_chance = { factor = 100 }
+		set_country_flag = nijika_rid
+		set_country_flag = nijika_on_the_run_bocchi
+		country_event = {
+			id = kessoku.76
+			days = 120
+			random_hours = 12
+		}
+	}
+}
+country_event = {
+	id = kessoku.4
+	title = "Kita accepts!"
+	desc = kessoku.4.d
+	picture = GFX_report_event_kita_invite
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Kitan?"
+		ai_chance = { factor = 100 }
+		set_country_flag = kita_rid
+		add_advisor_role = {
+			character = KSK_kita_ikuyo
+			activate = yes
+			advisor = {
+				slot = political_advisor
+				cost = 50
+				idea_token = ksk_kita_ikuyo_idea
+				traits = {
+						kitaura
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.5
+	title = "Ryou accepts!"
+	desc = kessoku.5.d
+	picture = GFX_report_event_ryo_invite
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Can't wait to see all the plants on the palace gone."
+		ai_chance = { factor = 100 }
+		set_country_flag = ryo_rid
+		add_field_marshal_role = {
+			character = KSK_ryo_yamada
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 4
+		}
+		add_advisor_role = {
+			character = KSK_ryo_yamada
+			activate = yes
+			advisor = {
+				slot = political_advisor
+				cost = 50
+				idea_token = ksk_ryo_yamada_idea
+				traits = {
+					weed_eater
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.6
+	title = "Nijika accepts!"
+	desc = kessoku.6.d
+	picture = GFX_report_event_nijika_invite
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "The Paragon of Human Virtue?"
+		ai_chance = { factor = 100 }
+		set_country_flag = nijika_rid
+		add_advisor_role = {
+			character = KSK_nijika_ijichi
+			activate = yes
+			advisor = {
+				slot = political_advisor
+				cost = 50
+				idea_token = ksk_nijika_ijichi_idea
+				traits = {
+					angelical_spirit
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.7
+	title = "Kessoku demands Indochina"
+	desc = kessoku.7.d
+	picture = GFX_news_event_nervous_bocchi
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "We don't want Indochina anyways."
+		ai_chance = { 
+		factor = 0
+			modifier = {	
+				factor = 100
+				has_global_flag = fall_of_france
+			}
+			modifier = {
+				factor = 100
+				FRA = {
+					has_war_with = GER
+				}
+			}
+		}
+		KSK = {
+			country_event = {
+			id = kessoku.8
+			}
+		}
+	}
+	option = { 
+		name = "Kessu- What?"
+		ai_chance = { 
+		factor = 100
+			modifier = {
+				factor = 0
+				has_global_flag = fall_of_france
+			}
+			modifier = {
+				factor = 0
+				FRA = {
+					has_war_with = GER
+				}
+			}
+		}
+		KSK = {
+			country_event = {
+			id = kessoku.9
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.8
+	title = "France accepts!"
+	desc = kessoku.8.d
+	picture = GFX_news_event_happy_bocchi
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Hooray! Hehe... I-I want it all!"
+		ai_chance = { factor = 50 }
+		set_state_controller = 671
+		set_state_controller = 670
+		set_state_controller = 286
+		set_state_controller = 1017 
+		set_state_owner = 286
+		set_state_owner = 670
+		set_state_owner = 671
+		set_state_owner = 1017 
+		add_state_core = 286
+		add_state_core = 670
+		add_state_core = 671
+		add_state_core = 1017 
+	}
+	option = { 
+		name = "I-I don't want to be like R-Ryou... Let's take some of it and set up some sort of government"
+		ai_chance = { factor = 50 }
+		LAO = {
+			set_state_owner = 670
+		}
+		puppet = {
+			target = LAO
+			end_wars = no
+		}
+		set_state_controller = 671
+		set_state_controller = 286
+		set_state_owner = 286
+		set_state_owner = 671
+		add_state_core = 286
+		add_state_core = 671
+	}
+}
+country_event = {
+	id = kessoku.9
+	title = "Ultimatum refused!"
+	desc = kessoku.9.d
+	picture = GFX_news_event_nervous_bocchi
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "W-What?! W-We can't do this..."
+		ai_chance = { factor = 50 }
+		add_state_core = 286
+		add_state_core = 670
+		add_state_core = 671
+		add_state_core = 1017 
+		add_threat = 2
+		671 = {
+			owner = {
+				ROOT = {
+					create_wargoal = {
+					target = PREV
+					type = take_core_state
+					}
+				}
+			}
+		}
+	}
+	option = { 
+		name = "W-What?! War!!"
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = ksk_france_war_advice_tt
+		add_state_core = 286
+		add_state_core = 670
+		add_state_core = 671
+		add_state_core = 1017 
+		KSK = {
+			diplomatic_relation = {
+			country = ENG
+			relation = non_aggression_pact
+			active = yes
+			}
+		}
+		671 = {
+			owner = {
+				ROOT = {
+					declare_war_on = {
+						target = PREV
+						type = take_core_state
+					}
+				}
+			}
+		}
+		add_threat = 4
+		set_country_flag = ksk_indochina_war
+	}
+}
+country_event = {
+	id = kessoku.10
+	title = "Hitori Gotoh Extradited"
+	desc = kessoku.10.d
+	picture = GFX_news_event_nervous_bocchi
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "We must show gratitude."
+		ai_chance = { factor = 100 }
+		KSK = {
+			country_event = {
+			id = kessoku.11
+			}
+		}
+	}
+	option = { 
+		name = "Thanks I guess?"
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = kessoku.11
+	title = "Japan shows gratitude."
+	desc = kessoku.11.d
+	picture = GFX_report_event_nijika_invite
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Thank you very much!"
+		ai_chance = { factor = 100 }
+		transfer_state = 647
+		add_state_core = 647
+	}
+}
+
+country_event = {
+	id = kessoku.12
+	title = "Kessoku demands Wakaru!"
+	desc = kessoku.12.d
+	picture = GFX_news_event_nervous_bocchi
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "This is a lost cause."
+		ai_chance = { factor = 100 }
+		KSK = {
+			country_event = {
+			id = kessoku.13
+			}
+		}
+		add_stability = -0.05
+	}
+	option = { 
+		name = "We won't let them take it that easy!"
+		ai_chance = { factor = 0 }
+		KSK = {
+			country_event = {
+			id = kessoku.14
+			}
+		}
+		add_stability = -0.1
+	}
+}
+country_event = {
+	id = kessoku.13
+	title = "Siam hands over Wakaru!"
+	desc = kessoku.13.d
+	picture = GFX_news_event_happy_bocchi
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Wakaru!"
+		ai_chance = { factor = 100 }
+		transfer_state = 1052
+	}
+}
+country_event = {
+	id = kessoku.14
+	title = "Siam Refuses!"
+	desc = kessoku.14.d
+	picture = GFX_news_event_nervous_bocchi
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "AGHGHHHHHHH"
+		ai_chance = { factor = 100 }
+		if = {
+			limit = {
+				WAK = {
+					exists = yes
+					is_puppet_of = SIA
+				}
+			}
+			declare_war_on = {
+				target = SIA
+				type = take_core_state
+			}
+		}
+		else_if = {
+			limit = { 
+				WAK = {
+					exists = yes
+					is_puppet = no
+				}
+			}
+			declare_war_on = {
+				target = WAK
+				type = annex_everything
+			}
+		}
+		else_if = {
+			limit = { 
+				WAK = {
+					exists = no
+				}
+			}
+			declare_war_on = {
+				target = SIA
+				type = take_core_state
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.15
+	title = "Bocchi-Chan, do you have any wishes for your next life?"
+	desc = kessoku.15.d
+	picture = GFX_report_event_goodbye_bocchi
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "..."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.16
+	title = "Why didn't you send me into one of those camps?"
+	desc = kessoku.16.d
+	picture = GFX_report_event_nijika_ryo1
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "The bible is just a book anyways."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.17
+	title = "I'm sorry Ryou.."
+	desc = kessoku.17.d
+	picture = GFX_report_event_nijika_ryo2
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "You aren't much better either!"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.18
+	title = "Nijikaaaaa...."
+	desc = kessoku.18.d
+	picture = GFX_report_event_ryo_beg
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = ":RyoBeg:"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.19
+	title = "Speech in Shimokitazawa"
+	desc = kessoku.19.d
+	picture = GFX_report_event_bocchi_anxiety_1
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Progress?"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.20
+	title = "Rich Meeting for Rich People"
+	desc = kessoku.20.d
+	picture = GFX_report_event_bocchi_anxiety_2
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "All she wanted was fame, Scummy bastard..."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.21
+	title = "The 'World' Tour"
+	desc = kessoku.21.d
+	picture = GFX_report_event_bocchi_anxiety_3
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "What do you mean Explode?!"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.22
+	title = "Un-Seishun Complex"
+	desc = kessoku.22.d
+	picture = GFX_report_event_bocchi_cool
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "She's... She's literally me!"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.23
+	title = "Internal Demons?"
+	desc = kessoku.23.d
+	picture = GFX_report_event_nijika_questions_start
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "How could anyone suggest this...?"
+		ai_chance = { factor = 100 }
+		set_country_flag = nijika_internal_demons
+	}
+}
+country_event = {
+	id = kessoku.24
+	title = "Civil War won!"
+	desc = kessoku.24.d
+	picture = GFX_report_event_ryo_invite
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		has_country_flag = kcw
+		has_country_flag = nijiryo_civilwar
+		NOT = {
+			has_civil_war = yes
+		}
+		NOT = {
+			has_war = yes
+		}
+	}
+	
+	option = { 
+		name = "Deus Weed!"
+		ai_chance = { factor = 100 }
+		clr_global_flag = kessokan_civil_war
+		clr_country_flag = kcw
+		clr_country_flag = nijiryo_civilwar
+		delete_unit_template_and_units = { division_template = "Weeders" }
+		every_possible_country = {
+			limit = { has_character = KSK_kita_ikuyo }
+			random_character = {
+				limit = { is_character = KSK_kita_ikuyo }
+				set_nationality = ROOT
+				promote_character = yes
+			}
+		}
+		every_possible_country = {
+			limit = { has_character = KSK_futari_gotoh }
+			random_character = {
+				limit = { is_character = KSK_futari_gotoh }
+				set_nationality = ROOT
+				promote_character = yes
+			}
+		}
+		PHI = {
+			country_event = {
+				id = kessoku.86
+				days = 2
+			}
+		}
+		hidden_effect = {
+			set_rule = {
+				desc = TAG_my_rule_description
+				can_join_factions = yes
+			}	
+		}
+	}
+}
+country_event = {
+	id = kessoku.25
+	title = "Infrastructural Aid"
+	desc = kessoku.25.d
+	picture = GFX_report_event_ryo_money
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Kandou?!"
+		ai_chance = { factor = 100 }
+		all_core_state = {
+			limit = { 
+				is_owned_and_controlled_by = KSK
+				free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+				}
+			}
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+			}
+		}
+		add_stability = 0.05
+	}
+}
+country_event = {
+	id = kessoku.26
+	title = "Industrial Aid"
+	desc = kessoku.26.d
+	picture = GFX_report_event_ryo_money
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Kandou?"
+		ai_chance = { factor = 100 }
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_stability = 0.05
+	}
+}
+country_event = {
+	id = kessoku.27
+	title = "Nuclear Aid"
+	desc = kessoku.27.d
+	picture = GFX_report_event_ryo_money
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Kandou?"
+		ai_chance = { factor = 100 }
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.75
+			}
+
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 1 # was 2
+				category = nuclear
+			}
+	}
+}
+country_event = {
+	id = kessoku.28
+	title = "Kessoku asks for British Colonies"
+	desc = kessoku.28.d
+	picture = GFX_report_event_kitaura
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "We don't need them anyways."
+		ai_chance = { factor = 100 }
+		KSK = {
+			country_event = {
+			id = kessoku.29
+			}
+		}
+	}
+	option = { 
+		name = "No way!"
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = kessoku.29
+	title = "Britain hands over colonies!"
+	desc = kessoku.29.d
+	picture = GFX_report_event_kitaura
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Kitan!"
+		ai_chance = { factor = 100 }
+		KSK = {
+			transfer_state = 336
+			transfer_state = 333
+			transfer_state = 733
+			transfer_state = 281
+			transfer_state = 326
+			transfer_state = 1023
+			transfer_state = 1024
+			transfer_state = 1021
+		}
+		336 = {
+			set_state_flag = under_kessoku
+		}
+		333 = {
+			set_state_flag = under_kessoku
+		}
+		733 = {
+			set_state_flag = under_kessoku
+		}
+		281 = {
+			set_state_flag = under_kessoku
+		}
+		326 = {
+			set_state_flag = under_kessoku
+		}
+		1023 = {
+			set_state_flag = under_kessoku
+		}
+		1024 = {
+			set_state_flag = under_kessoku
+		}
+		1021 = {
+			set_state_flag = under_kessoku
+		}
+	}
+}
+country_event = {
+	id = kessoku.30
+	title = "Kessoku asks for Dutch Colonies"
+	desc = kessoku.30.d
+	picture = GFX_report_event_kitaura
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "We do need them, but probably not now."
+		ai_chance = { factor = 100 }
+		KSK = {
+			country_event = {
+			id = kessoku.31
+			}
+		}
+	}
+	option = { 
+		name = "No way!"
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = kessoku.31
+	title = "The Dutch accepted!"
+	desc = kessoku.31.d
+	picture = GFX_report_event_kitaura
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Kitan!"
+		ai_chance = { factor = 100 }
+		KSK = {
+			transfer_state = 672
+			transfer_state = 335
+			transfer_state = 334
+			transfer_state = 673
+			transfer_state = 667
+			transfer_state = 668
+			transfer_state = 1022
+		}
+		672 = {
+			set_state_flag = under_kessoku
+		}
+		335 = {
+			set_state_flag = under_kessoku
+		}
+		334 = {
+			set_state_flag = under_kessoku
+		}
+		673 = {
+			set_state_flag = under_kessoku
+		}
+		667 = {
+			set_state_flag = under_kessoku
+		}
+		668 = {
+			set_state_flag = under_kessoku
+		}
+		1022 = {
+			set_state_flag = under_kessoku
+		}
+	}
+}
+country_event = {
+	id = kessoku.32
+	title = "Civil War won!"
+	desc = kessoku.32.d
+	picture = GFX_report_event_ryo_invite
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		has_country_flag = kcwn
+		NOT = {
+			has_civil_war = yes
+		}
+		NOT = {
+			has_war = yes
+		}
+	}
+	option = { 
+		name = "Tere. Let's use a more formal name."
+		ai_chance = { factor = 50 }
+		clr_country_flag = kcwn
+		delete_unit_template_and_units = { division_template = "Weeders" }
+		set_cosmetic_tag = RKSK
+		set_capital = {state = 1047}
+		hidden_effect = {
+			country_event = {
+				id = kessoku.82
+				days = 7
+				random_hours = 12
+			}
+		}
+	}
+	option = { 
+		name = "Tere. Keep the informal name."
+		ai_chance = { factor = 50 }
+		clr_country_flag = kcwn
+		delete_unit_template_and_units = { division_template = "Weeders" }
+		set_capital = {state = 1047}
+		hidden_effect = {
+			country_event = {
+				id = kessoku.82
+				days = 7
+				random_hours = 12
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.33
+	title = "Nuclear Aid"
+	desc = kessoku.33.d
+	picture = GFX_report_event_ryo_money_2
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Nothing stops this train."
+		ai_chance = { factor = 100 }
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.75
+			}
+
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 1 # was 2
+				category = nuclear
+			}
+	}
+}
+country_event = {
+	id = kessoku.34
+	title = "Infrastructural Aid"
+	desc = kessoku.34.d
+	picture = GFX_report_event_ryo_money_2
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "I'm on the Empire Business."
+		ai_chance = { factor = 100 }
+		every_owned_state = {
+			limit = { 
+				is_owned_and_controlled_by = KSK
+				free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+				}
+			}
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+			}
+		}
+		add_stability = 0.01
+	}
+}
+country_event = {
+	id = kessoku.35
+	title = "Industrial Aid"
+	desc = kessoku.35.d
+	picture = GFX_report_event_ryo_money_2
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Fuck China."
+		ai_chance = { factor = 100 }
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_stability = 0.01
+	}
+}
+country_event = {
+	id = kessoku.36
+	title = "Kessoku's trade offer"
+	desc = kessoku.36.d
+	picture = GFX_report_event_nijiryo_table
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "I guess we could..."
+		ai_chance = { factor = 100 }
+		KSK = {
+			country_event = {
+			id = kessoku.37
+			}
+		}
+	}
+	option = { 
+		name = "No."
+		ai_chance = { factor = 0 }
+		KSK = {
+			country_event = {
+			id = kessoku.38
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.37
+	title = "Japan Accepts!"
+	desc = kessoku.37.d
+	picture = GFX_report_event_nijiryo_table
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Deus Weed!"
+		ai_chance = { factor = 100 }
+		transfer_state = 555
+		add_state_core = 555
+		JAP = {
+			diplomatic_relation = {
+				country = KSK
+				relation = non_aggression_pact
+				active = no
+			}
+		}	
+	}
+}
+country_event = {
+	id = kessoku.38
+	title = "Japan Refuses?"
+	desc = kessoku.38.d
+	picture = GFX_report_event_nijiryo_table
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "The Game"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.39
+	title = "Kessoku's trade offer"
+	desc = kessoku.39.d
+	picture = GFX_report_event_nijiryo_table
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "I guess we could..."
+		ai_chance = { factor = 100 }
+		KSK = {
+			country_event = {
+			id = kessoku.40
+			}
+		}
+	}
+	option = { 
+		name = "No."
+		ai_chance = { factor = 0 }
+		KSK = {
+			country_event = {
+			id = kessoku.38
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.40
+	title = "Japan Accepts!"
+	desc = kessoku.40.d
+	picture = GFX_report_event_nijiryo_table
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Deus Weed!"
+		ai_chance = { factor = 100 }
+		transfer_state = 645
+		add_state_core = 645
+		JAP = {
+			diplomatic_relation = {
+				country = KSK
+				relation = non_aggression_pact
+				active = no
+			}
+		}	
+	}
+}
+country_event = {
+	id = kessoku.41
+	title = "Kessoku Federation collapses!"
+	desc = kessoku.41.d
+	picture = GFX_news_event_nervous_bocchi
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		NOT= {
+			OR = {
+				KSK_ryo_yamada = {
+					is_hired_as_advisor = yes
+				}
+				KSK_nijika_ijichi = {
+					is_hired_as_advisor = yes
+				}
+				KSK_kita_ikuyo = {
+					is_hired_as_advisor = yes
+				}
+			}
+		}
+		has_country_flag = kessoku_formed
+	}
+	
+	option = { 
+		name = "Explodes"
+		ai_chance = { factor = 100 }
+		add_stability = -0.25
+		add_war_support = -0.15
+		clr_country_flag = kessoku_formed
+		drop_cosmetic_flag = KSKC
+	}
+}
+country_event = {
+	id = kessoku.42
+	title = "Chicanery"
+	desc = kessoku.42.d
+	picture = GFX_report_event_nijika_angry
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "I better call Bocchi!"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.43
+	title = "Chicanery"
+	desc = kessoku.43.d
+	picture = GFX_report_event_nijika_angry
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "I better call Kita..."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.44
+	title = "Corruption in Kessoku!"
+	desc = kessoku.44.d
+	picture = GFX_report_event_ryo_money
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		NOT = {
+			has_civil_war = yes
+			has_country_flag = ryo_did_shit
+		}
+		KSK_ryo_yamada = {
+			OR = {
+				is_hired_as_advisor = yes
+				is_field_marshal = yes
+			}
+		}
+		KSK_kita_ikuyo = {
+			is_country_leader = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+		months = 6
+	}
+	
+	option = { 
+		name = "Excuse me?!"
+		ai_chance = { factor = 100 }
+		add_stability = -0.05
+		set_country_flag = ryo_did_shit
+	}
+}
+country_event = {
+	id = kessoku.45
+	title = "Corruption in Kessoku."
+	desc = kessoku.45.d
+	picture = GFX_report_event_ryo_money
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		NOT = {
+			has_civil_war = yes
+			has_country_flag = ryo_did_shit
+		}
+		KSK_ryo_yamada = {
+			OR = {
+				is_hired_as_advisor = yes
+				is_field_marshal = yes
+			}
+		}
+		KSK_nijika_ijichi = {
+			is_country_leader = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+		months = 6
+	}
+	
+	option = { 
+		name = "You don't say..."
+		ai_chance = { factor = 100 }
+		add_stability = -0.05
+		set_country_flag = ryo_did_shit
+	}
+}
+country_event = {
+	id = kessoku.46
+	title = "Corruption in Kessoku."
+	desc = kessoku.46.d
+	picture = GFX_report_event_ryo_money
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		NOT = {
+			has_civil_war = yes
+			has_country_flag = ryo_did_shit
+		}
+		KSK_ryo_yamada = {
+			OR = {
+				is_hired_as_advisor = yes
+				is_field_marshal = yes
+			}
+		}
+		KSK_hitori_gotoh = {
+			is_country_leader = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+		months = 6
+	}
+	
+	option = { 
+		name = "What?!"
+		ai_chance = { factor = 100 }
+		add_stability = -0.05
+		set_country_flag = ryo_did_shit
+	}
+}
+country_event = {
+	id = kessoku.56
+	title = "Kessoku Joins the Allies!"
+	desc = kessoku.56.d
+	picture = GFX_news_event_nervous_bocchi
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Well this is a surprise!"
+		ai_chance = { factor = 100 }
+		set_country_flag = kessoku_allies
+		ROOT = { add_to_faction = FROM }
+		FROM = {
+			add_to_war = {
+				targeted_alliance = ROOT
+				enemy = JAP
+				hostility_reason = asked_to_join
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.57
+	title = "La Weeder"
+	desc = kessoku.57.d
+	picture = GFX_report_event_ryo_invite
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		NOT = {
+			has_civil_war = yes
+		}
+		KSK_ryo_yamada = {
+			is_country_leader = yes
+		}
+	}
+	
+	option = { 
+		name = "Queso Cubano? Sounds familiar..."
+		ai_chance = { factor = 100 }
+		add_war_support = 0.05
+	}
+}
+country_event = {
+	id = kessoku.58
+	title = "Kita struggles"
+	desc = kessoku.58.d
+	picture = GFX_report_event_kita_wha
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		NOT = {
+			has_civil_war = yes
+		}
+		OR = {
+			has_country_leader = {
+				character = KSK_kita_ikuyo
+				ruling_only = yes
+			}
+			has_country_leader = {
+				character = KSK_kita_ikuyo_communist
+				ruling_only = yes
+			}
+		}
+	}
+	
+	option = { 
+		name = "I volunteer!"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.59
+	title = "The Unholy Kingdom"
+	desc = kessoku.59.d
+	picture = GFX_report_event_nijika_questions_4
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		NOT = {
+			has_civil_war = yes
+		}
+		KSK_nijika_ijichi = {
+			is_country_leader = yes
+		}
+	}
+	
+	option = { 
+		name = "Ugh!"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.60
+	title = "Welcome to BaW!"
+	desc = kessoku.60.d
+	picture = GFX_report_event_bocchi_cool
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Nijifish"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.61
+	title = "Social struggles"
+	desc = kessoku.61.d
+	picture = GFX_news_event_nervous_bocchi
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		NOT = {
+			has_civil_war = yes
+		}
+		KSK_hitori_gotoh = {
+			is_country_leader = yes
+		}
+	}
+	
+	option = { 
+		name = "Ugh!"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.62
+	title = "Almost Chicanery"
+	desc = kessoku.62.d
+	picture = GFX_report_event_nijika_angry_2
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		has_country_flag = nijiryo_flag
+	}
+	
+	option = { 
+		name = "What?"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.63
+	title = "False Angel"
+	desc = kessoku.63.d
+	picture = GFX_report_event_ryo_poker
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		has_country_flag = nijiryo_flag
+	}
+	
+	option = { 
+		name = "But why?"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.64
+	title = "Priest Incident"
+	desc = kessoku.64.d
+	picture = GFX_report_event_ryo_poker_2
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+		}
+		original_tag = KSK
+		has_country_flag = nijiryo_flag
+	}
+	
+	option = { 
+		name = "How do people like this girl?!"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.65
+	title = "Kita's Real Name"
+	desc = kessoku.65.d
+	picture = GFX_report_event_kita_fear
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+		}
+		original_tag = KSK
+		OR = {
+			has_country_leader = {
+				character = KSK_kita_ikuyo
+				ruling_only = yes
+			}
+			has_country_leader = {
+				character = KSK_kita_ikuyo_communist
+				ruling_only = yes
+			}
+		}
+	}
+	
+	option = { 
+		name = "...Ikuyo?"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.66
+	title = "Ryou's Luck"
+	desc = kessoku.66.d
+	picture = GFX_report_event_ryo_poker_2
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+		}
+		original_tag = KSK
+		KSK_ryo_yamada = {
+			is_country_leader = yes
+		}
+	}
+	
+	option = { 
+		name = "What do you want me to do, congratulate you?"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.67
+	title = "Nijika's Dilemma"
+	desc = kessoku.67.d
+	picture = GFX_report_event_nijika_paragon
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+		}
+		original_tag = KSK
+		KSK_nijika_ijichi = {
+			is_country_leader = yes
+		}
+	}
+	
+	option = { 
+		name = "I love her so much. I didn't take my pills today."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.68
+	title = "Guitar Hero"
+	desc = kessoku.68.d
+	picture = GFX_report_event_bocchi_blush
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_completed_focus = KSK_lonely_ruling_bocchi
+		NOT = {
+			has_civil_war = yes
+		}
+		original_tag = KSK
+		KSK_hitori_gotoh = {
+			is_country_leader = yes
+		}
+	}
+	
+	option = { 
+		name = "I love her so much. I didn't take my pills today."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.69
+	title = "The Drunkard"
+	desc = kessoku.69.d
+	picture = GFX_report_event_kikuri
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+		}
+		is_ai = no
+		OR = {
+			AND = {
+				original_tag = KSK
+				KSK_kikuri_hiroi = {
+					OR = {
+						is_hired_as_advisor = yes
+						is_leading_army = yes
+					}
+				}
+			}
+			AND = {
+				original_tag = WAK
+				WAK_kikuri_hiroi = {
+					OR = {
+						is_hired_as_advisor = yes
+						is_leading_army = yes
+					}
+				}
+			}
+		}
+	}
+	
+	option = { 
+		name = "How did you even get here?!"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.70
+	title = "The Manager"
+	desc = kessoku.70.d
+	picture = GFX_report_event_seika
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+		}
+		original_tag = KSK
+		KSK_seika_ijichi = {
+			OR = {
+				is_leading_army = yes
+				is_army_chief = yes
+			}
+		}
+	}
+	
+	option = { 
+		name = "I want her to dom-"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.71
+	title = "Political Turmoil"
+	desc = kessoku.71.d
+	picture = GFX_report_event_bocchi_anxiety_1
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Now that brings us to today..."
+		ai_chance = { factor = 100 }
+		KSK = {
+			country_event = {
+			id = kessoku.72
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.72
+	title = "Political Turmoil 2: Electric Boogalo"
+	desc = kessoku.72.d
+	picture = GFX_report_event_nijiryo_table
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "What is this, TNO?"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.73
+	title = "Hey, you!"
+	desc = kessoku.73.d
+	picture = GFX_report_event_pa_san
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		KSK_pa_san = {
+			OR = {
+				is_hired_as_advisor = yes
+				is_leading_army = yes
+			}
+		}
+	}
+	
+	option = { 
+		name = "No, I'm not finally awake..."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.74
+	title = "The True Origin of Bocchi"
+	desc = kessoku.74.d
+	picture = GFX_report_event_nijika_space
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { days = 30 }
+	
+	trigger = {
+		original_tag = KSK
+		is_researching_technology = experimental_rockets
+	}
+	
+	option = { 
+		name = "I guess it couldn't hurt..."
+		ai_chance = { factor = 100 }
+		add_political_power = -35
+		set_country_flag = ksk_researching_bocchi
+		custom_effect_tooltip = KSK_researching_bocchi_tt
+	}
+	option = { 
+		name = "She's real, duh."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.75
+	title = "The True Origin of Bocchi 2: Electric Boogalo"
+	desc = kessoku.75.d
+	picture = GFX_report_event_nijika_space
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { days = 2 }
+	
+	trigger = {
+		original_tag = KSK
+		has_tech = experimental_rockets
+		has_country_flag = ksk_researching_bocchi
+	}
+	
+	option = { 
+		name = "You don't say..."
+		ai_chance = { factor = 100 }
+		add_war_support = 0.05
+		add_stability = 0.05
+		clr_country_flag = ksk_researching_bocchi
+		set_country_flag = truth_unfolded_flag
+	}
+}
+country_event = {
+	id = kessoku.76
+	title = "Nijika Ijichi found on The Customs!"
+	desc = kessoku.76.d
+	picture = GFX_report_event_nijika_arrest
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "I-I'ts t-treason! Execute her!"
+		ai_chance = { factor = 100 }
+		add_stability = -0.05
+		retire_character = KSK_nijika_ijichi
+		clr_country_flag = nijika_on_the_run_bocchi
+	}
+	option = { 
+		name = "Emh... Put her on Prison...?"
+		ai_chance = { factor = 100 }
+		remove_country_leader_role = {
+			character = KSK_nijika_ijichi
+			ideology = falangism
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.1
+		}
+		clr_country_flag = nijika_on_the_run_bocchi
+	}
+}
+country_event = {
+	id = kessoku.77
+	title = "Sister's doubts"
+	desc = kessoku.77.d
+	picture = GFX_report_event_nijika_questions_3
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+		}
+		original_tag = KSK
+		KSK_nijika_ijichi = {
+			is_country_leader = yes
+		}
+	}
+	
+	option = { 
+		name = "Are you okay?"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.78
+	title = "Broken Reflection"
+	desc = kessoku.78.d
+	picture = GFX_report_event_kita_rid
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+		}
+		original_tag = KSK
+		has_country_leader = {
+			character = KSK_kita_ikuyo
+			ruling_only = yes
+		}
+	}
+	
+	option = { 
+		name = "Don't do anything dumb, Kita."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.79
+	title = "Ikuyo"
+	desc = kessoku.79.d
+	picture = GFX_report_event_ryo_money
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+		}
+		original_tag = KSK
+		OR = {
+			has_country_leader = {
+				character = KSK_ryo_yamada
+				ruling_only = yes
+			}
+			has_country_leader = {
+				character = KSK_ryo_yamada
+				ruling_only = yes
+			}
+		}
+	}
+	
+	option = { 
+		name = "Ryou, you are already rich..."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.80
+	title = "Futari"
+	desc = kessoku.80.d
+	picture = GFX_news_event_nervous_bocchi
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_completed_focus = KSK_lonely_ruling_bocchi
+		NOT = {
+			has_civil_war = yes
+		}
+		original_tag = KSK
+		KSK_hitori_gotoh = {
+			is_country_leader = yes
+		}
+	}
+	
+	option = { 
+		name = "She's the Devil!"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.81
+	title = "Bassist Spending"
+	desc = kessoku.81.d
+	picture = GFX_report_event_ryo_money_2
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+			has_idea = ksk_ryo_spending
+		}
+		original_tag = KSK
+		KSK_ryo_yamada = {
+			is_country_leader = yes
+		}
+	}
+	
+	option = { 
+		name = "Can you stop..."
+		ai_chance = { factor = 100 }
+		add_timed_idea = {
+			idea = ksk_ryo_spending
+			days = 120
+		}	
+	}
+}
+country_event = {
+	id = kessoku.82
+	title = "My name is Nijika Ijichi"
+	desc = kessoku.82.d
+	picture = GFX_report_event_nijika_questions_3
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Huh?"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.83
+	title = "Runaway Politician"
+	desc = kessoku.83.d
+	picture = GFX_report_event_kita_fear
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Yeah!"
+		ai_chance = { factor = 100 }
+		every_possible_country = {
+			limit = { has_character = KSK_kita_ikuyo }
+			random_character = {
+				limit = { is_character = KSK_kita_ikuyo }
+				set_nationality = ROOT
+				promote_character = yes
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				retire_character = KSK_kita_ikuyo_communist
+			}
+			news_event = {
+				id = kessoku_news.10 
+				days = 1 
+			}
+		}
+	}
+	option = { 
+		name = "Nuh uh."
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = kessoku.84
+	title = "Mirai Hoshinko"
+	desc = kessoku.84.d
+	picture = GFX_report_event_bocchi_cool
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Am I Flying Beyond Shattered Seas...?"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.85
+	title = "Yanita"
+	desc = kessoku.85.d
+	picture = GFX_report_event_kita_rid
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+		}
+		original_tag = KSK
+		has_completed_focus = KSK_bokita
+	}
+	
+	option = { 
+		name = "Someone call the fricking INTERPOL..."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.86
+	title = "Runaway Politician"
+	desc = kessoku.86.d
+	picture = GFX_report_event_kita_fear
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Yeah!"
+		ai_chance = { factor = 100 }
+		PHI_kita_ikuyo_philippines = {
+			promote_character = yes
+		}
+		hidden_effect = {
+			FROM = {
+				retire_character = KSK_kita_ikuyo_communist
+			}
+			news_event = {
+				id = kessoku_news.10 
+				days = 1 
+			}
+		}
+	}
+	option = { 
+		name = "Nuh uh."
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = kessoku.87
+	title = "Bocchi Teachings"
+	desc = kessoku.87.d
+	picture = GFX_report_event_futari_bocchi
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Hmph!"
+	}
+}
+country_event = {
+	id = kessoku.88
+	title = "Parent Teachings"
+	desc = kessoku.88.d
+	picture = GFX_report_event_futari_parents
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "But money and power make everything easy, no?"
+	}
+}
+country_event = {
+	id = kessoku.89
+	title = "Kitalin"
+	desc = kessoku.89.d
+	picture = GFX_report_event_kita_wha
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "I hate this Event name."
+	}
+}
+country_event = {
+	id = kessoku.90
+	title = "The National"
+	desc = kessoku.90.d
+	picture = GFX_report_event_kitaura
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Za Rodina! Oh sorry, wrong country."
+	}
+}
+country_event = {
+	id = kessoku.91
+	title = "Teachings from Myself"
+	desc = kessoku.91.d
+	picture = GFX_report_event_futari_herself
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Well, I must work now I guess!"
+	}
+}
+country_event = {
+	id = kessoku.92
+	title = "Teachings from Kessoku"
+	desc = kessoku.92.d
+	picture = GFX_report_event_shimokitazawa_school
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Life is good under the Gotoh Monarchy!"
+	}
+}
+country_event = {
+	id = kessoku.93
+	title = "Kita 'Kita' Ikuyo was found!"
+	desc = kessoku.93.d
+	picture = GFX_report_event_kita_arrest
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Make her guilty of all charges and sentence her to the death penalty."
+		retire_character = KSK_kita_ikuyo
+		retire_character = KSK_kita_ikuyo_communist
+		add_stability = 0.05
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		custom_effect_tooltip = KSK_futari_blood_tt
+		hidden_effect = { 
+			KSK_futari_gotoh = {
+				set_character_flag = punished_futari
+			}
+			set_country_flag = kita_gone
+			set_country_flag = futari_punished_flag
+		}
+	}
+	option = { 
+		name = "Make her guilty of all charges and sentence her to life in prison!"
+		add_stability = 0.05
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		set_country_flag = kita_gone
+	}
+}
+country_event = {
+	id = kessoku.94
+	title = "Ryo Yamada was found!"
+	desc = kessoku.94.d
+	picture = GFX_report_event_ryo_rid
+	
+	is_triggered_only = yes
+	
+	#Bloodlust Futari
+	option = { 
+		name = "Guilty. Actually, let me kill her personally!"
+		trigger = { 
+			KSK_futari_gotoh = {
+				has_character_flag = punished_futari
+			}
+		}
+		add_stability = -0.1
+		add_war_support = 0.15
+		custom_effect_tooltip = KSK_futari_punished_tt
+		retire_character = KSK_ryo_yamada
+		set_country_flag = ryo_gone
+	}
+	option = { 
+		name = "Guilty, just put her in prison."
+		trigger = { 
+			KSK_futari_gotoh = {
+				has_character_flag = punished_futari
+			}
+		}
+		add_war_support = -0.05
+		set_country_flag = ryo_gone
+	}
+	#Non Bloodlust Futari
+	option = { 
+		name = "Guilty. Death Penalty!"
+		trigger = { 
+			KSK_futari_gotoh = {
+				NOT = {
+					has_character_flag = punished_futari
+				}
+			}
+		}
+		add_stability = -0.05
+		add_war_support = 0.01
+		retire_character = KSK_ryo_yamada
+		set_country_flag = ryo_gone
+	}
+	option = { 
+		name = "Guilty, put her in prison!"
+		trigger = { 
+			KSK_futari_gotoh = {
+				NOT = {
+					has_character_flag = punished_futari
+				}
+			}
+		}
+		set_country_flag = ryo_gone
+	}
+}
+country_event = {
+	id = kessoku.95
+	title = "Nijika Ijichi was found!"
+	desc = kessoku.95.d
+	picture = GFX_report_event_nijika_arrest
+	
+	is_triggered_only = yes
+	
+	#Bloodlust Futari
+	option = { 
+		name = "Guilty. Unfortunately for her, she won't be going to Heaven."
+		trigger = { 
+			KSK_futari_gotoh = {
+				has_character_flag = punished_futari
+			}
+		}
+		add_stability = -0.1
+		add_war_support = 0.15
+		custom_effect_tooltip = KSK_futari_punished_tt
+		retire_character = KSK_nijika_ijichi
+		set_country_flag = nijika_gone
+	}
+	option = { 
+		name = "Guilty, just put her in prison."
+		trigger = { 
+			KSK_futari_gotoh = {
+				has_character_flag = punished_futari
+			}
+		}
+		add_war_support = -0.05
+		set_country_flag = nijika_gone
+	}
+	#Non Bloodlust Futari
+	option = { 
+		name = "Guilty. Death Penalty!"
+		trigger = { 
+			KSK_futari_gotoh = {
+				NOT = {
+					has_character_flag = punished_futari
+				}
+			}
+		}
+		add_stability = -0.05
+		add_war_support = 0.01
+		retire_character = KSK_nijika_ijichi
+		set_country_flag = nijika_gone
+	}
+	option = { 
+		name = "Guilty, put her in prison!"
+		trigger = { 
+			KSK_futari_gotoh = {
+				NOT = {
+					has_character_flag = punished_futari
+				}
+			}
+		}
+		set_country_flag = nijika_gone
+	}
+}
+country_event = {
+	id = kessoku.96
+	title = "Investigation report"
+	desc = kessoku.96.d
+	picture = GFX_report_event_nijiryo_table
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Wakaru, funny name!"
+	}
+}
+country_event = {
+	id = kessoku.97
+	title = "Extradition request"
+	desc = kessoku.97.d
+	picture = GFX_report_event_nijiryo_table
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Whatever, give them it."
+		KSK_ryo_yamada = {
+			set_nationality = KSK
+		}
+		KSK_nijika_ijichi = {
+			set_nationality = KSK
+		}
+		KSK = { 
+			country_event = kessoku.94
+			country_event = kessoku.95
+		}
+		ai_chance = {
+			factor = 0
+		}
+		KSK = { 
+			set_country_flag = gave_traitors_in_wakaru 
+		}
+	}
+	option = { 
+		name = "What about, no?"
+		KSK = {
+			country_event = kessoku.98
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+country_event = {
+	id = kessoku.98
+	title = "They said no!"
+	desc = kessoku.98.d
+	picture = GFX_report_event_nijiryo_table
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Give them hell."
+		trigger = {
+			KSK_futari_gotoh = {
+				has_character_flag = punished_futari
+			}
+		}
+		if = {
+			limit = { 
+				WAK = {
+					exists = yes
+					is_puppet_of = SIA
+				}
+			}
+			KSK = {
+				declare_war_on = {
+					target = SIA
+					type = take_state
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				WAK = {
+					exists = yes
+					is_puppet = no
+				}
+			}
+			KSK = {
+				declare_war_on = {
+					target = WAK
+					type = annex_everything
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				WAK = {
+					exists = no
+				}
+			}
+			KSK = {
+				declare_war_on = {
+					target = SIA
+					type = take_state
+				}
+			}
+		}
+	}
+	option = { 
+		name = "Well, they asked for it..."
+		trigger = {
+			KSK_futari_gotoh = {
+				NOT = {
+					has_character_flag = punished_futari
+				}
+			}
+		}
+		if = {
+			limit = { 
+				WAK = {
+					is_puppet_of = SIA
+				}
+			}
+			KSK = {
+				declare_war_on = {
+					target = SIA
+					type = take_state
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				WAK = {
+					is_puppet = no
+				}
+			}
+			KSK = {
+				declare_war_on = {
+					target = WAK
+					type = annex_everything
+				}
+			}
+		}
+	}
+	option = { 
+		name = "Maybe let's not.. Yet."
+		trigger = {
+			KSK_futari_gotoh = {
+				NOT = {
+					has_character_flag = punished_futari
+				}
+			}
+		}
+		if = {
+			limit = { 
+				WAK = {
+					exists = yes
+					is_puppet_of = SIA
+				}
+			}
+			KSK = {
+				create_wargoal = {
+					type = annex_everything
+					target = SIA
+					expire = 0
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				WAK = {
+					exists = yes
+					is_puppet = no
+				}
+			}
+			KSK = {
+				create_wargoal = {
+					type = annex_everything
+					target = SIA
+					expire = 0
+				}
+			}
+			KSK = {
+				create_wargoal = {
+					type = annex_everything
+						target = WAK
+					expire = 0
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				WAK = {
+					exists = no
+				}
+			}
+			KSK = {
+				create_wargoal = {
+					type = annex_everything
+					target = SIA
+					expire = 0
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.99
+	title = "Justice Served"
+	desc = kessoku.99.d
+	picture = GFX_report_event_futari_herself
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Long Live the Gotoh Family!"
+		KSK_futari_gotoh = {
+			remove_trait = {
+				ideology = oligarchism
+				trait = scarred_futari
+			}
+		}
+		add_stability = 0.1
+	}
+}
+country_event = {
+	id = kessoku.100
+	title = "Justice Punished"
+	desc = kessoku.100.d
+	picture = GFX_report_event_futari_herself
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Revenge is a dish best served cold."
+		KSK_futari_gotoh = {
+			set_portraits = {
+				civilian = { large ="GFX_portrait_KSK_futari_gotoh_punished" }
+			}
+			swap_country_leader_traits = {
+				remove = scarred_futari
+				add = bloodlust_futari
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.101
+	title = "Wakaru Autonomy"
+	desc = kessoku.101.d
+	picture = GFX_report_event_sasaki
+	
+	fire_only_once = yes 
+	
+	trigger = {
+		1052 = {
+			NOT = {
+				is_core_of = KSK
+			}
+			is_core_of = WAK
+			is_owned_and_controlled_by = KSK
+		}
+		original_tag = KSK
+	}
+	
+	immediate = {
+		set_global_flag = wakaru_already_non_cored
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = { 
+		name = "Maybe we can, yeah."
+		if = {
+			limit = { has_government = neutrality }
+			WAK = {
+				transfer_state = 1052
+				set_politics = {
+					ruling_party = neutrality
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.25
+				}
+				add_country_leader_role = {
+					character = WAK_sasaki
+					promote_leader = yes
+					country_leader = {
+						ideology = oligarchism
+						expire = "1965.1.1.1"
+						trait = { kessoku_cheerleading_committee }
+					}
+				}
+			}
+			add_stability = -0.05
+		}
+		else_if = {
+			limit = { has_government = democratic }
+			WAK = {
+				transfer_state = 1052
+				set_politics = {
+					ruling_party = democratic
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.25
+				}
+				add_country_leader_role = {
+					character = WAK_sasaki
+					promote_leader = yes
+					country_leader = {
+						ideology = socialism 
+						expire = "1965.1.1.1"
+						trait = { kessoku_cheerleading_committee }
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { has_government = fascism }
+			WAK = {
+				transfer_state = 1052
+				set_politics = {
+					ruling_party = fascism
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.25
+				}
+				add_country_leader_role = {
+					character = WAK_sasaki
+					promote_leader = yes
+					country_leader = {
+						ideology = falangism 
+						expire = "1965.1.1.1"
+						trait = { kessoku_cheerleading_committee }
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { has_government = communism }
+			WAK = {
+				transfer_state = 1052
+				set_politics = {
+					ruling_party = communism
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.25
+				}
+				add_country_leader_role = {
+					character = WAK_sasaki
+					promote_leader = yes
+					country_leader = {
+						ideology = marxism 
+						expire = "1965.1.1.1"
+						trait = { kessoku_cheerleading_committee }
+					}
+				}
+			}
+		}
+		puppet = WAK
+	}
+	option = { 
+		name = "We can, but only if someone from the Royal family leads it."
+		trigger = {
+			has_country_leader = {
+				character = KSK_hitori_gotoh
+				ruling_only = yes
+			}
+		}
+		WAK = {
+			transfer_state = 1052
+			set_politics = {
+				ruling_party = neutrality
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.25
+			}
+			WAK_futari_gotoh = {
+				add_country_leader_role = {
+					character = KSK_futari_gotoh
+					promote_leader = yes
+					country_leader = {
+						ideology = oligarchism
+						expire = "1965.1.1.1"
+						traits = { }
+					}
+				}
+			}
+			load_focus_tree = generic_focus
+		}
+		add_opinion_modifier = {
+			target = WAK
+			modifier = same_royal_family
+		}
+		puppet = WAK
+		WAK = {
+			add_stability = -0.1
+		}
+		set_country_flag = two_queens_flag
+	}
+	option = { 
+		name = "We can, but only if someone from the Royal family leads it."
+		trigger = {
+			has_country_leader = {
+				character = KSK_futari_gotoh
+				ruling_only = yes
+			}
+		}
+		WAK = {
+			transfer_state = 1052
+			set_politics = {
+				ruling_party = neutrality
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.25
+			}
+		}
+		KSK_jimihen = {
+			set_nationality = WAK
+			add_country_leader_role = {
+				character = KSK_jimihen
+				promote_leader = yes
+				country_leader = {
+					ideology = oligarchism
+					expire = "1965.1.1.1"
+					traits = { }
+				}
+			}
+		}
+		add_opinion_modifier = {
+			target = WAK
+			modifier = same_royal_family
+		}
+		puppet = WAK
+		WAK = {
+			add_stability = -0.1
+		}
+	}
+	option = { 
+		name = "What is a Tsuguko Sakaki?"
+		1052 = {
+			add_resistance = 40
+			add_resistance_target = 40
+			start_resistance = yes
+		}
+		if = {
+			limit = { has_government = communism }
+			add_stability = -0.25
+		}
+	}
+}
+country_event = {
+	id = kessoku.102
+	title = "India is No longer in British Control!"
+	desc = kessoku.102.d
+	picture = GFX_report_event_futari_herself
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Finally."
+		ENG = { 
+			end_puppet = RAJ
+			remove_from_faction = RAJ
+			end_puppet = BRM
+			remove_from_faction = BRM
+			add_opinion_modifier = {
+				target = RAJ
+				modifier = left_britain
+			}
+			add_opinion_modifier = {
+				target = BRM
+				modifier = left_britain
+			}
+		}
+		declare_war_on = {
+			target = RAJ
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = BRM
+			type = annex_everything
+		}
+		add_state_core = 994
+		add_state_core = 995
+		add_state_core = 996
+		add_state_core = 997
+		add_state_core = 288
+		add_state_core = 998
+		add_state_core = 640
+		add_state_core = 999
+		add_state_core = 993
+		add_state_core = 432
+		add_state_core = 990
+		add_state_core = 430
+		add_state_core = 434
+		add_state_core = 985
+		add_state_core = 431
+		add_state_core = 435
+		add_state_core = 426
+		add_state_core = 438
+		add_state_core = 436
+		add_state_core = 984
+		hidden_effect = {
+			RAJ = {
+				add_stability = -0.25
+				set_rule = {
+					desc = TAG_my_rule_description
+					can_join_factions = no
+				}
+			}
+			BRM = {
+				add_stability = -0.25
+				set_rule = {
+					desc = TAG_my_rule_description
+					can_join_factions = no
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.103
+	title = "Bocchi in an Eagle"
+	desc = kessoku.103.d
+	picture = GFX_report_event_eagle
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "What am I even reading?"
+
+	}
+}
+country_event = {
+	id = kessoku.104
+	title = "Ex-Kessokan Monarch seeking revenge"
+	desc = kessoku.104.d
+	picture = GFX_report_event_futari_herself
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Yeah, why not?"
+		add_corps_commander_role = {
+			Character = KSK_futari_gotoh
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 5
+		}
+	}
+	option = { 
+		name = "Ew, Kessokan scum."
+		
+	}
+}
+country_event = {
+	id = kessoku.105
+	title = "A Familiar Face"
+	desc = kessoku.105.d
+	picture = GFX_report_event_nijika_questions_start
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_possible_country = {
+			limit = { has_character = KSK_nijika_ijichi }
+			random_character = {
+				limit = { is_character = KSK_nijika_ijichi }
+				set_nationality = KSK
+			}
+		}
+	}
+	
+	option = { 
+		name = "I guess I could! Welcome back Nijika!"
+		add_advisor_role = {
+			character = KSK_nijika_ijichi
+			activate = yes
+			advisor = {
+				slot = political_advisor
+				cost = 50
+				idea_token = KSK_nijika_kiter
+				traits = {
+					angelical_spirit_small
+				}
+			}
+		}
+		add_stability = -0.05
+	}
+	option = { 
+	name = "Does she think I have alzheimer? I don't want her anywhere near my government!"
+
+	}
+	option = { 
+		name = "In fact, I don't want her anywhere."
+		KSK_nijika_ijichi = {
+			retire = yes
+		}
+		add_stability = 0.05
+		set_country_flag = yandere_kita
+	}
+}
+country_event = {
+	id = kessoku.106
+	title = "Indochina Question"
+	desc = kessoku.106.d
+	picture = GFX_report_event_kita_wha
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		INF = {
+			transfer_state = 286
+			transfer_state = 671
+			transfer_state = 670
+			transfer_state = 1017 
+			add_manpower = 50000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+				producer = INF
+			}
+		}
+	}
+	
+	option = { 
+		name = "Excellent!"
+		hidden_effect = {
+			VIN = {
+				transfer_state = 286
+				set_popularities = {
+					democratic = 15
+					neutrality = 5
+					fascism = 5
+					communism = 75
+				}
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				set_country_flag = infwar
+				declare_war_on = {
+					target = INF
+					type = civil_war
+				}
+				add_ai_strategy = {
+					type = invade
+					id = INF
+					value = 51
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 5000
+					producer = VIN
+				}
+				load_oob = "VIN_civil_war"
+				set_rule = {
+					desc = TAG_my_rule_description
+					can_join_factions = no
+				}
+				add_ideas = civilwar_ai_buffs_war
+			}
+			INF = {
+				load_oob = "INF_civil_war"
+				set_rule = {
+					desc = TAG_my_rule_description
+					can_join_factions = no
+				}
+			}
+			set_rule = {
+				desc = TAG_my_rule_description
+				can_send_volunteers = yes
+			}
+			add_ideas = ksk_kita_idea_volunteers
+			286 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 10137
+				}
+			}
+		}
+		unlock_decision_tooltip = KSK_vin_take_over
+		set_country_flag = ksk_infwar
+	}
+}
+country_event = {
+	id = kessoku.107
+	title = "Kessokan Representatives"
+	desc = kessoku.107.d
+	picture = GFX_report_event_kita_wha
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = kessokan_representatives_flag
+	}
+	
+	option = { 
+		name = "Very real."
+		set_power_balance = {
+			id = KSK_balance
+			left_side = kita_side
+			right_side = antikita_side
+			set_value = 0.3
+		}
+	}
+}
+country_event = {
+	id = kessoku.108
+	title = "Federal Governors"
+	desc = kessoku.108.d
+	picture = GFX_report_event_kita_wha
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = kessokan_governors_flag
+	}
+	
+	option = { 
+		name = "Very real."
+		set_power_balance = {
+			id = KSK_balance
+			left_side = kita_side
+			right_side = antikita_side
+			set_value = 0.3
+		}
+	}
+}
+country_event = {
+	id = kessoku.109
+	title = "Burma Question"
+	desc = kessoku.109.d
+	picture = GFX_report_event_kita_wha
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			BRM = {
+				add_manpower = 25000
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 5000
+					producer = BRM
+				}
+				set_rule = {
+					desc = TAG_my_rule_description
+					can_join_factions = no
+				}
+			}
+			ENG = { 
+				end_puppet = BRM
+				remove_from_faction = BRM
+				add_opinion_modifier = {
+					target = BRM
+					modifier = left_britain
+				}
+			}
+		}
+	}
+	
+	option = { 
+		name = "Excellent!"
+		hidden_effect = {
+			CBP = {
+				transfer_state = 996
+				transfer_state = 995
+				add_state_core = 996
+				add_state_core = 995
+				add_state_core = 994
+				add_state_core = 997
+				add_state_core = 640
+				add_state_core = 284
+				add_state_core = 999
+				add_state_core = 993
+				add_state_core = 998
+				set_popularities = {
+					democratic = 15
+					neutrality = 5
+					fascism = 5
+					communism = 75
+				}
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				set_country_flag = cbpwar
+				declare_war_on = {
+					target = BRM
+					type = civil_war
+				}
+				add_ai_strategy = {
+					type = invade
+					id = BRM
+					value = 51
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 5000
+					producer = CBP
+				}
+				load_oob = "CBP_civil_war"
+				set_rule = {
+					desc = TAG_my_rule_description
+					can_join_factions = no
+				}
+				add_ideas = civilwar_ai_buffs_war
+			}
+			BRM = {
+				load_oob = "BRM_civil_war"
+				remove_state_core = 996
+				remove_state_core = 995
+				remove_state_core = 994
+				remove_state_core = 997
+				remove_state_core = 640
+				remove_state_core = 284
+				remove_state_core = 999
+				remove_state_core = 993
+				remove_state_core = 998
+				remove_state_core = 999
+			}
+		}
+		unlock_decision_tooltip = KSK_vin_take_over
+		set_country_flag = ksk_brmwar
+	}
+}
+country_event = {
+	id = kessoku.110
+	title = "The Homeland"
+	desc = kessoku.110.d
+	picture = GFX_report_event_kita_invite
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			USA = { 
+				end_puppet = PHI
+				remove_from_faction = PHI
+				add_opinion_modifier = {
+					target = PHI
+					modifier = left_britain
+				}
+			}
+			PHI = {
+				set_rule = {
+					desc = TAG_my_rule_description
+					can_join_factions = no
+				}					
+			}
+		}
+	}
+	
+	option = { 
+		name = "You'll be mine."
+		unlock_decision_tooltip = KSK_phi_take_over
+		set_country_flag = ksk_phi_takeover_decision
+	}
+}
+country_event = {
+	id = kessoku.111
+	title = "Kessoku-Mao Alliance"
+	desc = kessoku.111.d
+	picture = GFX_report_event_kita_backwards
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		PRC = {
+			leave_faction = yes
+		}
+	}
+	
+	option = { 
+		name = "Heck Yeah!"
+		add_state_core = 528
+		add_state_core = 529
+		add_state_core = 530
+		add_state_core = 531
+		add_state_core = 532
+		add_state_core = 535
+		add_state_core = 534
+		add_state_core = 282
+		add_state_core = 533
+		add_state_core = 526
+		add_state_core = 536
+		add_state_core = 555
+		add_state_core = 1020
+		add_state_core = 1019
+		add_state_core = 1018
+		if = {
+			limit = {
+				KSK = {
+					is_faction_leader = yes
+				}
+			}
+			KSK = { add_to_faction = PRC }
+		}
+		if = {
+			limit = {
+				KSK = {
+					is_faction_leader = no
+				}
+			}
+			KSK = {
+				faction_leader = {
+					add_to_faction = PRC
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = kessoku.112
+	title = "Kessoku offers vassalization!"
+	desc = kessoku.112.d
+	picture = GFX_report_event_kita_backwards
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Uh, sure."
+		KSK = {
+			country_event = kessoku.113
+		}
+		ai_chance = { base = 100 }
+	}
+	option = { 
+		name = "No."
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = kessoku.113
+	title = "China accepts!"
+	desc = kessoku.113.d
+	picture = GFX_report_event_kitaura
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "yippe!!"
+		puppet = PRC
+	}
+}
+country_event = {
+	id = kessoku.114
+	title = "Carry your Cross, and I'll Carry Mine"
+	desc = kessoku.114.d
+	picture = GFX_report_event_nijika_crusader
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "I must honour my previous Brothers, and finish what they started. We're going to the Mediterranean!"
+		custom_effect_tooltip = KNI_country_start_tt
+		country_event = kessoku.115
+		set_global_flag = nijika_left_k
+	}
+	option = { 
+		name = "But it's just history now."
+	}
+}
+country_event = {
+	id = kessoku.115
+	title = "Where to place our HQ's?"
+	desc = kessoku.115.d
+	picture = GFX_report_event_nijika_crusader
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = { 
+		name = "Malta! Like the Knights of St. John!"
+		country_event = knights.4
+	}
+	option = { 
+		name = "Cyprus! It's the closest to the Levant, so logically.."
+		country_event = knights.5
+	}
+	option = { 
+		name = "Crete! It's the biggest one."
+		country_event = knights.6
+	}
+}
+country_event = {
+	id = kessoku.116
+	title = "Bandmate"
+	desc = kessoku.116
+	picture = GFX_report_event_rina
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		KSK_rina = {
+			is_hired_as_advisor = yes
+		}
+	}
+	
+	option = { 
+		name = "I trust her."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.117
+	title = "My Bandmate is a War Criminal"
+	desc = kessoku.117.d
+	picture = GFX_report_event_bocchi_shock
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Smh, where's the fun in that?"
+		every_other_country = {
+			limit = {
+				NOT = {
+					OR = {
+						has_government = fascism
+						has_country_flag = futari_punished_flag
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = gas_war_crimes_wtf
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						has_government = fascism
+						has_country_flag = futari_punished_flag
+					}
+				}
+			}
+			add_stability = -0.1
+		}
+		if = {
+			limit = {
+				is_ai = no
+			}
+			set_global_flag = bocchi_warcrimes_achievement
+		}
+	}
+}
+country_event = {
+	id = kessoku.118
+	title = "Poser"
+	desc = kessoku.118.d
+	picture = GFX_report_event_kita_wha
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		NOT = {
+			has_civil_war = yes
+		}
+		has_country_leader = {
+			character = KSK_kita_ikuyo_communist
+			ruling_only = yes
+		}
+	}
+	
+	option = { 
+		name = "Such Poser..."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.119
+	title = "Jimihen Nights"
+	desc = kessoku.119.d
+	picture = GFX_report_event_futari_herself
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		NOT = {
+			has_civil_war = yes
+		}
+		has_country_leader = {
+			character = KSK_futari_gotoh
+			ruling_only = yes
+		}
+	}
+	
+	option = { 
+		name = "How did the dog get called Jimihen if Jimi Hendrix isn't even a thing yet?"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.120
+	title = "Hitori"
+	desc = kessoku.120.d
+	picture = GFX_report_event_futari_herself
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		NOT = {
+			has_civil_war = yes
+		}
+		has_country_leader = {
+			character = KSK_futari_gotoh
+			ruling_only = yes
+		}
+	}
+	
+	option = { 
+		name = "Hitori Right?"
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.121
+	title = "Gotoh Dynasty"
+	desc = kessoku.121.d
+	picture = GFX_report_event_futari_herself
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = KSK
+		NOT = {
+			has_civil_war = yes
+		}
+		has_country_leader = {
+			character = KSK_futari_gotoh
+			ruling_only = yes
+		}
+	}
+	
+	option = { 
+		name = "It's a bad omen."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.122
+	title = "Store Clerk One"
+	desc = kessoku.122.d
+	picture = GFX_report_event_clerk
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+		}
+		original_tag = KSK
+	}
+	
+	option = { 
+		name = "She's scary."
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = kessoku.123
+	title = "Eliza"
+	desc = kessoku.123.d
+	picture = GFX_report_event_eliza
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_civil_war = yes
+		}
+		is_ai = no
+		OR = {
+			AND = {
+				original_tag = KSK
+				KSK_eliza = {
+					OR = {
+						is_hired_as_advisor = yes
+						is_leading_army = yes
+					}
+				}
+			}
+			AND = {
+				original_tag = WAK
+				WAK_eliza = {
+					OR = {
+						is_hired_as_advisor = yes
+						is_leading_army = yes
+					}
+				}
+			}
+		}
+	}
+	
+	option = { 
+		name = "Yeah, we're like.. Poorer Japan."
+		ai_chance = { factor = 100 }
+	}
+}
+#####################################
+#####		Rural Dilemma		#####
+#####################################
+
+#Rural Dilemma
+country_event = {
+	id = kessoku.47
+	title = "The Rural Dilemma!"
+	desc = kessoku.47.desc
+	picture = GFX_report_event_kessoku_poverty
+	
+	is_triggered_only = yes
+	
+	#Slow progression - Bocchi
+	option = {
+		name = "Maybe we should take it slow.."
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_hitori_gotoh
+			}
+		}
+		activate_targeted_decision = { target = 1050 decision = KSK_rural_development }
+		activate_targeted_decision = { target = 1051 decision = KSK_rural_development }
+		activate_targeted_decision = { target = 741 decision = KSK_rural_development }
+		if = {
+			limit = {
+				1052 = { is_owned_and_controlled_by = KSK }
+			}
+			activate_targeted_decision = { target = 1052 decision = KSK_rural_development }
+		}
+	}
+	#Slow progression - Kita
+	option = {
+		name = "No good! We mustn't be too hasty."
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_kita_ikuyo
+			}
+		}
+		activate_targeted_decision = { target = 1050 decision = KSK_rural_development }
+		activate_targeted_decision = { target = 1051 decision = KSK_rural_development }
+		activate_targeted_decision = { target = 741 decision = KSK_rural_development }
+		if = {
+			limit = {
+				1052 = { is_owned_and_controlled_by = KSK }
+			}
+			activate_targeted_decision = { target = 1052 decision = KSK_rural_development }
+		}
+	}
+	#Slow progression - Ryo
+	option = {
+		name = "It's more ideal to take it slow."
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_ryo_yamada
+			}
+		}
+		activate_targeted_decision = { target = 1050 decision = KSK_rural_development }
+		activate_targeted_decision = { target = 1051 decision = KSK_rural_development }
+		activate_targeted_decision = { target = 741 decision = KSK_rural_development }
+		if = {
+			limit = {
+				1052 = { is_owned_and_controlled_by = KSK }
+			}
+			activate_targeted_decision = { target = 1052 decision = KSK_rural_development }
+		}
+	}
+	#Slow progression - Nijika
+	option = {
+		name = "Let's not agitate them, alright? One by one."
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_nijika_ijichi
+			}
+		}
+		activate_targeted_decision = { target = 1050 decision = KSK_rural_development }
+		activate_targeted_decision = { target = 1051 decision = KSK_rural_development }
+		activate_targeted_decision = { target = 741 decision = KSK_rural_development }
+		if = {
+			limit = {
+				1052 = { is_owned_and_controlled_by = KSK }
+			}
+			activate_targeted_decision = { target = 1052 decision = KSK_rural_development }
+		}
+	}
+	
+	#Fast progression - Bocchi
+	option = {
+		name = "Uhm.. We should really hurry or they'll get angry."
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_hitori_gotoh
+			}
+		}
+		1050 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		1051 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		741 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = {
+				1052 = { is_owned_and_controlled_by = KSK }
+			}
+			1052 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		hidden_effect = {
+			random = {
+				chance = 90
+				add_ideas = ksk_poverty_crisis
+				KSK = { country_event = { id = kessoku.48 days = 2 } }
+			}
+		}
+	}
+	
+	#Fast progression - Kita
+	option = {
+		name = "Risks? We should help improve their environment right this instant! *Kitaura.sfx*"
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_kita_ikuyo
+			}
+		}
+		1050 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		1051 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		741 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = {
+				1052 = { is_owned_and_controlled_by = KSK }
+			}
+			1052 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		hidden_effect = {
+			random = {
+				chance = 90
+				add_ideas = ksk_poverty_crisis
+				KSK = { country_event = { id = kessoku.49 days = 2 } }
+			}
+		}
+	}
+	
+	#Fast progression - Ryo
+	option = {
+		name = "..But the faster, the profitable."
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_ryo_yamada
+			}
+			has_country_leader = {
+				character = KSK_unholy_duo
+			}
+		}
+		1050 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		1051 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		741 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = {
+				1052 = { is_owned_and_controlled_by = KSK }
+			}
+			1052 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		hidden_effect = {
+			random = {
+				chance = 90
+				add_ideas = ksk_poverty_crisis
+				KSK = { country_event = { id = kessoku.50 days = 2 } }
+			}
+		}
+		
+	}
+	
+	#Fast progression - Nijika
+	option = {
+		name = "We're sorta in a bit of a fix... But if they don't like it.. Though we're in a fix..."
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_nijika_ijichi
+			}
+			has_country_leader = {
+				character = KSK_unholy_duo
+			}
+		}
+		1050 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		1051 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		741 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = {
+				1052 = { is_owned_and_controlled_by = KSK }
+			}
+			1052 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		hidden_effect = {
+			random = {
+				chance = 90
+				add_ideas = ksk_poverty_crisis
+				KSK = { country_event = { id = kessoku.51 days = 2 } }
+			}
+		}
+	}
+	
+	#Slow Progression
+	option = {
+		name = "Let's take it slow.."
+		ai_chance = { factor = 50 }
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = KSK_hitori_gotoh
+				}
+				has_country_leader = {
+					character = KSK_kita_ikuyo
+				}
+				has_country_leader = {
+					character = KSK_ryo_yamada
+				}
+				has_country_leader = {
+					character = KSK_nijika_ijichi
+				}
+				has_country_leader = {
+					character = KSK_unholy_duo
+				}
+			}
+		}
+		activate_targeted_decision = { target = 1050 decision = KSK_rural_development }
+		activate_targeted_decision = { target = 1051 decision = KSK_rural_development }
+		activate_targeted_decision = { target = 741 decision = KSK_rural_development }
+		if = {
+			limit = {
+				1052 = { is_owned_and_controlled_by = KSK }
+			}
+			activate_targeted_decision = { target = 1052 decision = KSK_rural_development }
+		}
+	}
+	
+	#Fast Progression
+	option = {
+		name = "Maximize profit!"
+		ai_chance = { factor = 50 }
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = KSK_hitori_gotoh
+				}
+				has_country_leader = {
+					character = KSK_kita_ikuyo
+				}
+				has_country_leader = {
+					character = KSK_ryo_yamada
+				}
+				has_country_leader = {
+					character = KSK_nijika_ijichi
+				}
+			}
+		}
+		1050 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		1051 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		741 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = {
+				1052 = { is_owned_and_controlled_by = KSK }
+			}
+			1052 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		hidden_effect = {
+			random = {
+				chance = 90
+				add_ideas = ksk_poverty_crisis
+				KSK = { country_event = { id = kessoku.50 days = 2 } }
+			}
+		}
+	}
+}
+
+#Live Boccher Reaction
+country_event = {
+	id = kessoku.48
+	title = "Widespread poverty!"
+	desc = kessoku.48.desc
+	picture = GFX_report_event_bocchi_shock
+	
+	is_triggered_only = yes
+	trigger = {
+		has_country_leader = {
+			character = KSK_hitori_gotoh
+		}
+	}
+
+	option = {
+		name = "Uhm.. That's not good."
+		ai_chance = { factor = 50 }
+		trigger = {
+			KSK_hitori_gotoh = {
+				has_trait = unseishuned_complex
+			}
+		}
+	}
+	
+	option = {
+		name = "Poverty?!?"
+		ai_chance = { factor = 50 }
+		trigger = {
+			KSK_hitori_gotoh = {
+				OR = {
+					has_trait = social_anxiety
+					has_trait = social_anxiety_2
+					has_trait = social_anxiety_3
+					has_trait = social_anxiety_4
+				}
+			}
+		}
+	}
+	option = {
+		name = "This isn't good.."
+		ai_chance = { factor = 50 }
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = KSK_hitori_gotoh
+				}
+				has_country_leader = {
+					character = KSK_kita_ikuyo
+				}
+				has_country_leader = {
+					character = KSK_ryo_yamada
+				}
+				has_country_leader = {
+					character = KSK_nijika_ijichi
+				}
+			}
+		}
+	}
+}
+
+#Live Kiter Reaction
+country_event = {
+	id = kessoku.49
+	title = "Widespread poverty!"
+	desc = kessoku.48.desc
+	picture = GFX_report_event_kita_poverty
+	
+	is_triggered_only = yes
+	trigger = {
+		has_country_leader = {
+			character = KSK_kita_ikuyo
+		}
+	}
+
+	option = {
+		name = "Oh no.. it's all my fault..!"
+		ai_chance = { factor = 50 }
+	}
+}
+
+#Live Roy Reaction
+country_event = {
+	id = kessoku.50
+	title = "Widespread poverty!"
+	desc = kessoku.48.desc
+	picture = GFX_report_event_ryo_oops
+	
+	is_triggered_only = yes
+	trigger = {
+		has_country_leader = {
+			character = KSK_ryo_yamada
+		}
+	}
+
+	option = {
+		name = "Oops."
+		ai_chance = { factor = 50 }
+	}
+}
+
+#Live Nijiker Reaction
+country_event = {
+	id = kessoku.51
+	title = "Widespread poverty!"
+	desc = kessoku.48.desc
+	picture = GFX_report_event_nijika_eh
+	
+	is_triggered_only = yes
+	trigger = {
+		has_country_leader = {
+			character = KSK_nijika_ijichi
+		}
+	}
+
+	option = {
+		name = "Eh? Eh?! Eh!!"
+		ai_chance = { factor = 50 }
+	}
+}
+
+#Autobohcchi
+country_event = {
+	id = kessoku.52
+	title = "The Question of Autobohcchi"
+	desc = kessoku.52.desc
+	picture = GFX_report_event_bocchi_autobohcchi
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "Proceed as planned."
+		ai_chance = { factor = 50 }
+	}
+	
+	option = {
+		name = "Actually, let's invite a few investors."
+		ai_chance = { factor = 50 }
+		custom_effect_tooltip = autobohcchi_tt
+		remove_ideas = ksk_autobohcchi
+		add_timed_idea = {
+			idea = ksk_autobohcchi_invest
+			days = 180
+		}
+	}
+}
+
+#If Capital is lost
+country_event = {
+	id = kessoku.53
+	title = "Shimokitazawa has been captured!!"
+	desc = kessoku.53.desc
+	picture = GFX_news_event_kessoku_poverty
+	
+	fire_only_once = yes
+	mean_time_to_happen = { days = 2 }
+	trigger = {
+		any_country = { 
+			controls_state = 1047
+			has_war_with = KSK
+		}
+		KSK = {
+			has_completed_focus = KSK_industry_2b
+			has_idea = KSK_capital_focus
+		}
+		NOT = { has_global_flag = KSK_capital_lost_flag }
+	}
+	
+	immediate = { 
+		KSK = { 
+			swap_ideas = {
+				remove_idea = KSK_capital_focus
+				add_idea = KSK_capital_lost
+			}
+		}
+		set_global_flag = KSK_capital_lost_flag
+	}
+
+	option = {
+		name = "All is lost."
+		ai_chance = { factor = 50 }
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = KSK_ryo_yamada
+				}
+				has_country_leader = {
+					character = KSK_hitori_gotoh
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "The money!"
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_ryo_yamada
+			}
+		}
+	}
+	
+	option = {
+		name = "We need.. we need to retake it!"
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_hitori_gotoh
+			}
+		}
+	}
+}
+
+#If Capital is recovered
+country_event = {
+	id = kessoku.54
+	title = "Shimokitazawa recaptured!"
+	desc = kessoku.54.desc
+	picture = GFX_news_event_kessoku_poverty
+	
+	fire_only_once = yes
+	mean_time_to_happen = { days = 2 }
+	trigger = {
+		any_country = {
+			has_war_with = KSK
+		}
+		KSK = {
+			has_global_flag = KSK_capital_lost_flag
+			controls_state = 1047
+		}
+		NOT = { has_global_flag = KSK_capital_lost_flag }
+	}
+	
+	immediate = { 
+		KSK = { 
+			swap_ideas = {
+				remove_idea = KSK_capital_lost
+				add_idea = KSK_capital_focus
+			}
+		}
+		set_global_flag = KSK_capital_lost_flag
+	}
+
+	option = {
+		name = "W-We did it!!"
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_hitori_gotoh
+			}
+		}
+	}
+	
+	option = {
+		name = "Ok, back to business."
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_ryo_yamada
+			}
+		}
+	}
+	
+	option = {
+		name = "Oh, thank god."
+		ai_chance = { factor = 50 }
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = KSK_ryo_yamada
+				}
+				has_country_leader = {
+					character = KSK_hitori_gotoh
+				}
+			}
+		}
+	}
+}
+
+#If Civil War occurs
+country_event = {
+	id = kessoku.55
+	title = "Good news and bad news"
+	desc = kessoku.55.desc
+	picture = GFX_news_event_kessoku_poverty
+	
+	fire_only_once = yes
+	mean_time_to_happen = { days = 19 }
+	trigger = {
+		any_country = {
+			has_war_with = KSK
+		}
+		KSK = {
+			has_global_flag = KSK_capital_lost_flag
+			controls_state = 1047
+		}
+		NOT = { has_global_flag = KSK_civil_war_economy }
+	}
+	
+	immediate = { 
+		KSK = { 
+			remove_ideas = ksk_economy_crisis
+			add_ideas = {
+				ksk_economy_crisis_worker_incentive_2
+				ksk_economy_crisis_local_production_2
+				ksk_economy_crisis_final
+			}
+		}
+		set_country_flag = KSK_civil_war_economy
+		add_ideas = ksk_poverty_crisis
+	}
+	
+	option = {
+		name = "It's just part of business."
+		ai_chance = { factor = 50 }
+		trigger = {
+			has_country_leader = {
+				character = KSK_ryo_yamada
+			}
+		}
+	}
+	
+	option = {
+		name = "At least some people are working now.."
+		ai_chance = { factor = 50 }
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = KSK_ryo_yamada
+				}
+			}
+		}
+		set_country_flag = KSK_civil_war_economy
+		add_ideas = ksk_poverty_crisis
+	}
+}

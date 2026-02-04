@@ -2,6 +2,7 @@
 
 leader_traits = {
 	anti_christ = {
+		random = no
 		stability_factor = -0.05
 		war_stability_factor = -0.05
 	}
@@ -105,16 +106,19 @@ leader_traits = {
 		army_morale_Factor = 0.1
 	}
 	nijika_baptised = {
+		random = no
 		stability_factor = 0.05
 		war_support_factor = 0.15
 	}
 	nijika_prideful = {
+		random = no
 		surrender_limit = 0.33
 		political_power_factor = 0.4
 		stability_factor = 0.15
 		army_defence_factor = 0.1
 	}
 	nijika_crusader_trait = {
+		random = no
 		command_power_gain_mult = 0.1
 		experience_gain_army_factor = 0.25
 		org_loss_when_moving = -0.25
@@ -123,10 +127,12 @@ leader_traits = {
 		defensive_war_stability_factor = -0.25
 	}
 	ambitionist_shiba = {
+		random = no
 		war_support_factor = 0.05
 	}
 	
 	non_scarred_leader = {
+		random = no
 		stability_factor = 0.05
 		war_support_factor = 0.1
 		army_morale_factor = 0.1
@@ -134,6 +140,7 @@ leader_traits = {
 	}
 	
 	bussinesswoman_trait = {
+		random = no
 		consumer_goods_factor = -0.05
 		trade_opinion_factor = 0.5
 		local_resources_factor = 0.05
@@ -145,24 +152,29 @@ leader_traits = {
 	}
 	
 	propaganda_journalist_writer_shiba = {
+		random = no
 		power_balance_weekly = -0.02
 	}
 	
 	propaganda_journalist_writer_yoyoko = {
+		random = no
 		power_balance_weekly = 0.02
 	}
 	
 	journalist_writer = {
+		random = no
 		war_support_factor = 0.05
 		stability_factor = 0.05
 		political_power_factor = 0.1
 	}
 	
 	ueremi_trait = {
+		random = no
 		research_speed_factor = 0.08
 	}
 	
 	occult_fanatic = {
+		random = no
 		research_speed_factor = 0.08
 		opinion_gain_monthly_factor = -0.2
 	}
@@ -256,28 +268,11 @@ leader_traits = {
 		justify_war_goal_time = -0.15
 	}
 	
-	social_anxiety = {
+	KSK_bocchi_trait = {
 		random = no
-		opinion_gain_monthly_factor = -0.25
-		political_power_factor = -0.1
-	}
-	
-	social_anxiety_2 = {
-		random = no
-		opinion_gain_monthly_factor = -0.1
-		political_power_factor = -0.05
-	}
-	
-	social_anxiety_3 = { # REMOVE
-		random = no
-		opinion_gain_monthly_factor = -0.2
-		political_power_factor = -0.05
-	}
-	
-	social_anxiety_4 = { # REMOVE
-		random = no
-		opinion_gain_monthly_factor = -0.1
-		political_power_factor = -0.01
+		political_power_factor = -0.25
+		opinion_gain_monthly_factor = -0.4
+		stability_factor = -0.1
 	}
 	
 	unseishuned_complex = {
@@ -343,7 +338,6 @@ leader_traits = {
 	}
 	
 	weed_eater = {
-		random = no
 		consumer_goods_factor = -0.05
 	}
 	

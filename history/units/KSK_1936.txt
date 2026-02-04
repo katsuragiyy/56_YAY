@@ -1,7 +1,7 @@
 ﻿division_template = {
-	name = "Band Guard" 			# (Square) Infantry Division - 4 infantry regiments (3k men each), 1 field artillery regiment - abstracted into infantry,
+	name = "Band Guard"
 	division_names_group = JAP_INF_01
-									# 
+
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -22,7 +22,7 @@
 }
 
 division_template = {
-	name = "Band Cavalry" 			# Cavalry Division - 2 Cavalry Division regiments (3k men); 1 mounted artillery regiment
+	name = "Band Cavalry"
 	division_names_group = JAP_CAV_01
 	regiments = {
 		cavalry = { x = 0 y = 0 }
@@ -35,9 +35,8 @@ division_template = {
 }
 
 division_template = {
-	name = "Band Defense" 			# Garrison template - represents Imperial Manchukuo Army infantry divisions: 2 infantry regiments (3k men) -- militia (lowest equipment, experience)
+	name = "Band Defense"
 	division_names_group = JAP_GAR_01
-										# Also represents (over-sized) IJN Base Defense Unit (island, city and naval base garrisons): 2 infantry rgts (3k men), 1 field artillery rgt (abstracted), 1 engineering rgt
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -51,7 +50,6 @@ division_template = {
 
 ##### OOB #####
 units = {
-	
 	division = {
 		name = "1 'Kita' Guard"
 		location = 7303 #Ominato Naval Base
@@ -121,8 +119,7 @@ units = {
 #########################
 ## STARTING PRODUCTION ##
 #########################
-instant_effect = 
-{
+instant_effect = {
 	add_equipment_production = {
 		equipment = {
 			type = infantry_equipment_1

@@ -16,14 +16,76 @@
  KSK_seika_ijichi:0 "Ijichi Seika"
  KSK_seika_ijichi_desc:0 "Older sister of the cult leader Ijichi Nijika, she usually is the voice of reason within Nijika's inner circle, and has on multiple occasions had to restrict or intervene in order to prevent Nijika from committing unspeakable atrocities. She is also the manager of a club house called "Starry" in Shimokitazawa."
 
+ KSK_pa_san:0 "Pa-San"
+ KSK_pa_san_desc:0 "WIP"
+
  KSK_kikuri_hiroi:0 "Kirkuri Hiroi"
 
  KSK_futari_gotoh:0 "Gotō Futari"
 
  # Ideas
- 
+ BaW_KSK_army_issues:0 "Army Issues"
+ BaW_KSK_army_issues_desc:0 "The [ROOT.GetAdjective] army is currently in shambles. After our glorious victory in the 1870s during the Kessoku-Franco wars, the [ROOT.GetAdjective] started to deteriorate in multiple aspects, such as combat readiness, organization, supply, and experience. \n\nAlthough, some of the young officers are starting to show promising results, such as Seika Ijichi, who studied abroad in Japan, and Pa-San, who was the Kessokan military attache in Vienna. The future of the army depends on these young officers and their modernization efforts to succeed."
+
+ BaW_KSK_economic_issues:0 "Economic Issues"
+ BaW_KSK_economic_issues_desc:0 "The Great Depression has had a massive impact on our small and fragile economy. Many are in poverty because of the economic collapse world wide, and if we aren't quick to act on this, we may experience a total economic collapse."
+
+ KSK_native_opposition:0 "Native Opposition"
+ KSK_native_opposition_desc:0 "In the 17th century after the establishment of the Tokugawa Shogunate in mainland Japan, many Japanese fled to what would now be known as Kessoku. Over the course of the last few generations, native opposition towards Kessokan domination over their lands has led to mass dissent and unrest in all parts of the country. Movements such as the Viet Minh have taken a confrontation approach and often clash with civil police."
+
+ # Traits
+ KSK_bocchi_trait:0 "Incapable Leader"
+
+ # Opinion Modifiers
+ BaW_KSK_heritage_ties:0 "Ancestral Ties"
 
  # Game Rules
  SIA_FRAGMENTATION_STATUS:0 "@SIA Siamese Fragmentation"
  RULE_OPTION_SIA_FRAGMENTED:0 "@KSK@WAK Bocchi at War"
  RULE_OPTION_SIA_FRAGMENTED_DESC:0 "Kessoku has always been in a rough spot, having resisted the French, British, and Dutch colonization, it's independence has by many been considered truly a miracle. With the recent political instability and the assasination of the previous monarch, a distant cousin from Japan, Hitori Gotoh rising to the throne is for many the last nail in the coffin for Kessoku. \n\nSelect @FRI§YFrench Indochina§! to play @KSK§YKessoku§!. \nSelect @SIA§YSiam§! to play @WAK§YWakaru§!"
+
+ # Focuses
+ KSK_establish_the_ministry_of_defense:0 "Establish the Ministry of Defense"
+ KSK_establish_the_ministry_of_defense_desc:0 "As part of our modernization program, we must take steps towards reforming the armed forces. Beginning from establishing a ministry dedicated to the defense of the nation."
+
+ KSK_kessokan_royal_armed_forces:0 "[ROOT.GetAdjective] Armed Forces"
+ KSK_kessokan_royal_armed_forces_desc:0 "The [ROOT.GetAdjective] has a long history of armed engagements. Most infamous is the Kessokan-Franco wars in the 19th century, which resulted in our victory and our independence being secured."
+
+ KSK_trust_in_pasan:0 "Trust in Pa-San"
+ KSK_trust_in_pasan_desc:0 "Pa-San, our former military attaché in Vienna, is the main advocate for the mechanization of the army, with her believing that only through the 'Blitzkrieg' strategy can Kessoku defeat all of its neighbours and regain its lost glory."
+
+ KSK_trust_in_seika:0 "Trust in Seika Ijichi"
+ KSK_trust_in_seika_desc:0 ""
+
+ KSK_initiate_defensive_plans:0 "Begin Defensive Preperations"
+ KSK_initiate_defensive_plans_desc:0 ""
+
+ KSK_anti_air:0 "Protect the Skies"
+ KSK_anti_air_desc:0 ""
+
+ KSK_connect_the_supply_chains:0 "Construct Strategic Infrastructure"
+ KSK_connect_the_supply_chains_desc:0 ""
+
+ KSK_fortifacation_efforts:0 "Extend the Defensive Lines"
+ KSK_fortifacation_efforts_desc:0 ""
+
+ KSK_establish_kessokan_panzer_academy:0 "Invite Foreign Tank Experts"
+ KSK_establish_kessokan_panzer_academy_desc:0 "To familiarize ourselves with this new and developing field, we must first understand the functions of it. Let us invite foreign experts and slowly progress our mechanization efforts."
+
+ KSK_medium_armour:0 "Speed..."
+ KSK_medium_armour_desc:0 ""
+
+ KSK_heavy_armour:0 "Or Strength..."
+ KSK_heavy_armour_desc:0 ""
+
+ KSK_purchase_armored_equipment:0 "Purchase Foreign Armor Equipment"
+ KSK_purchase_armored_equipment_desc:0 "While our production efficiency is still growing and adapting to mechanized equipment, lets purchase this equipment from friendly nations."
+
+ KSK_continue_tank_development:0 "Fund Production Organizations"
+ KSK_continue_tank_development_desc:0 ""
+
+ KSK_mechanization_efforts:0 "Mechanization Effort"
+ KSK_mechanization_efforts_desc:0 ""
+
+ KSK_they_will_know_fear:0 "They Will Know Fear"
+ KSK_they_will_know_fear_desc:0 ""
