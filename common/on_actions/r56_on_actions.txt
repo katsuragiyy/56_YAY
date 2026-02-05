@@ -12542,7 +12542,9 @@ on_actions = {
 						option = NZL_FRAGMENTED_SAMOA
 					}
 				}
-				SAM = { change_tag_from = NZL }
+				SAM = {
+					change_tag_from = NZL
+				}
 			}
 
 			# Germany status

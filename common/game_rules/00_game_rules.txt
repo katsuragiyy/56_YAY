@@ -4438,21 +4438,6 @@ nzl_fragmentation_status = {
 		desc = "RULE_OPTION_NZL_FRAGMENTED_SAMOA_DESC"
 	}
 }
-sia_fragmentation_status = {
-	name = "SIA_FRAGMENTATION_STATUS"
-	group = "RULE_GROUP_GAME_SETUP"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "RULE_OPTION_DEFAULT_FRAGMENTATION_DESC"
-	}
-	option = {
-		name = SIA_FRAGMENTED
-		text = "RULE_OPTION_SIA_FRAGMENTED"
-		desc = "RULE_OPTION_SIA_FRAGMENTED_DESC"
-	}
-}
-
 yug_fragmentation_status = {
 	name = "YUG_FRAGMENTATION_STATUS"
 	group = "RULE_GROUP_GAME_SETUP"
