@@ -1,3 +1,0 @@
-opinion_modifiers = {
-	BaW_KSK_heritage_ties = { value = 60 }
-}

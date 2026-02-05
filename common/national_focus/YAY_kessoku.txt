@@ -14,386 +14,6 @@
 	
 	continuous_focus_position = { x = 50 y = 1000 }
 	
-	focus = {
-		id = KSK_establish_the_ministry_of_defense
-		icon = GFX_focus_manufacturers_cooperation
-		
-		cost = 10
-		x = 25
-		y = 0
-				
-		available = {
-			OR = {
-				has_war = yes
-				threat > 0.05
-				has_war_support > 0.2
-			}
-		}
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			add_research_slot = 1
-			custom_effect_tooltip = generic_skip_one_line_tt
-			army_experience = 25
-			navy_experience = 25
-			air_experience = 25
-			custom_effect_tooltip = generic_skip_one_line_tt
-			upgrade_economy_law = yes
-		}
-	}
-
-	focus = {
-		id = KSK_kessokan_royal_navy
-		icon = GFX_goal_JAP_new_naval_estimates
-		prerequisite = { focus = KSK_establish_the_ministry_of_defense }
-		relative_position_id = KSK_establish_the_ministry_of_defense
-
-		cost = 8
-		x = -8
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			add_command_power = 25
-			army_experience = 10
-
-			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = KSK_kessokan_royal_airforce
-		icon = GFX_goal_JAP_bomber
-		prerequisite = { focus = KSK_establish_the_ministry_of_defense }
-		relative_position_id = KSK_establish_the_ministry_of_defense
-
-		cost = 8
-		x = 8
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			add_command_power = 25
-			army_experience = 10
-
-			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = KSK_kessokan_royal_armed_forces
-		icon = GFX_goal_JAP_flag_army
-		prerequisite = { focus = KSK_establish_the_ministry_of_defense }
-		relative_position_id = KSK_establish_the_ministry_of_defense
-
-		cost = 8
-		x = 0
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			add_command_power = 25
-			army_experience = 10
-			custom_effect_tooltip = generic_skip_one_line_tt
-			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = KSK_trust_in_seika
-		icon = GFX_BaW_goal_seika
-		prerequisite = { focus = KSK_kessokan_royal_armed_forces }
-		mutually_exclusive = { focus = KSK_trust_in_pasan }
-		relative_position_id = KSK_kessokan_royal_armed_forces
-
-		cost = 10
-		x = 1
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			custom_effect_tooltip = available_theorist
-			show_ideas_tooltip = ksk_seika_theorist
-		}
-	}
-
-	focus = {
-		id = KSK_trust_in_pasan
-		icon = GFX_BaW_goal_pasan
-		prerequisite = { focus = KSK_kessokan_royal_armed_forces }
-		mutually_exclusive = { focus = KSK_trust_in_seika }
-		relative_position_id = KSK_kessokan_royal_armed_forces
-
-		cost = 10
-		x = -1
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			custom_effect_tooltip = available_theorist
-			show_ideas_tooltip = KSK_pa_san_theorist
-		}
-	}
-
-	focus = {
-		id = KSK_establish_kessokan_panzer_academy
-		icon = GFX_goal_CAN_ram_tank
-		prerequisite = { focus = KSK_trust_in_pasan }
-		relative_position_id = KSK_trust_in_pasan
-
-		cost = 10
-		x = -3
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			add_command_power = 25
-			army_experience = 10
-
-			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = KSK_heavy_armour
-		icon = GFX_SOV_development_of_tankograd_ccp_2d_sov_compatibility
-		prerequisite = { focus = KSK_establish_kessokan_panzer_academy }
-		mutually_exclusive = { focus = KSK_medium_armour }
-		relative_position_id = KSK_establish_kessokan_panzer_academy
-
-		cost = 10
-		x = 1
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			add_command_power = 25
-			army_experience = 10
-
-			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = KSK_medium_armour
-		icon = GFX_goal_tank_offensive
-		prerequisite = { focus = KSK_establish_kessokan_panzer_academy }
-		mutually_exclusive = { focus = KSK_heavy_armour }
-		relative_position_id = KSK_establish_kessokan_panzer_academy
-
-		cost = 10
-		x = -1
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			add_command_power = 25
-			army_experience = 10
-
-			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = KSK_purchase_armored_equipment
-		icon = GFX_focus_BRA_acquire_german_tanks
-		prerequisite = { focus = KSK_medium_armour focus = KSK_heavy_armour }
-		relative_position_id = KSK_establish_kessokan_panzer_academy
-
-		cost = 5
-		x = 0
-		y = 2
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			if = {
-				limit = { has_completed_focus = KSK_medium_armour } # Giv medium armour tanks
-				else = {
-					# give heavy armour although in smaller quantities and larger consumer goods
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = KSK_continue_tank_development
-		icon = GFX_goal_generic_tank_cogs
-		prerequisite = { focus = KSK_medium_armour focus = KSK_heavy_armour }
-		relative_position_id = KSK_purchase_armored_equipment
-
-		cost = 5
-		x = -1
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			if = { # research bonuses and variable adjustments
-				limit = { has_completed_focus = KSK_medium_armour }
-				else = {
-					
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = KSK_mechanization_efforts
-		icon = GFX_goal_mechanized_offensive
-		prerequisite = { focus = KSK_medium_armour focus = KSK_heavy_armour }
-		relative_position_id = KSK_purchase_armored_equipment
-
-		cost = 5
-		x = 1
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			#armoured cars and mechanized. also mios
-		}
-	}
-
-	focus = {
-		id = KSK_they_will_know_fear
-		icon = GFX_SOV_they_will_know_fear_ccp_2d_sov_compatibility
-		prerequisite = { focus = KSK_mechanization_efforts }
-		prerequisite = { focus = KSK_continue_tank_development }
-		relative_position_id = KSK_purchase_armored_equipment
-
-		cost = 5
-		x = 0
-		y = 2
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			#armoured cars and mechanized. also mios
-		}
-	}
-
-	focus = {
-		id = KSK_initiate_defensive_plans
-		icon = GFX_goal_generic_defense_of_the_lands
-		prerequisite = { focus = KSK_trust_in_seika focus = KSK_trust_in_pasan }
-		relative_position_id = KSK_trust_in_seika
-
-		cost = 10
-		x = -1
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			
-		}
-	}
-
-	focus = {
-		id = KSK_anti_air
-		icon = GFX_goal_airplane_hunt
-		prerequisite = { focus = KSK_initiate_defensive_plans }
-		relative_position_id = KSK_initiate_defensive_plans
-
-		cost = 10
-		x = -1
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			
-		}
-	}
-
-	focus = {
-		id = KSK_connect_the_supply_chains
-		icon = GFX_focus_SOV_the_road_of_life
-		prerequisite = { focus = KSK_initiate_defensive_plans }
-		relative_position_id = KSK_initiate_defensive_plans
-
-		cost = 10
-		x = 1
-		y = 1
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			
-		}
-	}
-
-	focus = {
-		id = KSK_fortifacation_efforts
-		icon = GFX_SOV_fortify_mongolian_border_ccp_2d_sov_compatibility
-		prerequisite = { focus = KSK_initiate_defensive_plans }
-		relative_position_id = KSK_initiate_defensive_plans
-
-		cost = 10
-		x = 0
-		y = 2
-
-		ai_will_do = { base = 1 }
-
-		completion_reward = {
-			
-		}
-	}
-
-
 	############################################################################
 	####################		NAVY AND AIR		############################
 	############################################################################
@@ -498,7 +118,7 @@
 		 	base = 1
 			modifier = {
 				factor = 0
-				has_idea = KSK_powerless_leader
+				has_idea = ksk_powerless_leader
 			}
 		}
 	}	
@@ -868,7 +488,7 @@
 		 	base = 1 
 			modifier = {
 				factor = 0
-				has_idea = KSK_powerless_leader
+				has_idea = ksk_powerless_leader
 			}
 		}
 	}
@@ -1253,7 +873,7 @@
 		    base = 1
 			modifier = {
 				factor = 0
-				has_idea = KSK_powerless_leader
+				has_idea = ksk_powerless_leader
 			}
 		}
 	}
@@ -1571,7 +1191,7 @@
            base = 1
 		   modifier = {
 				factor = 0
-				has_ideas = KSK_powerless_leader
+				has_ideas = ksk_powerless_leader
 		   }
         }
     }
@@ -1732,7 +1352,7 @@
            base = 1
 		   modifier = {
 				factor = 0
-				has_ideas = KSK_powerless_leader
+				has_ideas = ksk_powerless_leader
 		   }
         }
     }
@@ -1950,7 +1570,7 @@
 		id = KSK_political_turmoil
 		icon = GFX_goal_ksk_political_turmoil
 		x = 35
-		y = 10
+		y = 0
 		
 		text_icon = BAND_focus_style
 		
@@ -2430,7 +2050,7 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			remove_ideas = KSK_powerless_leader
+			remove_ideas = ksk_powerless_leader
 			add_stability = 0.15
 			add_political_power = 20
 		}
@@ -3624,7 +3244,7 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			remove_ideas = KSK_powerless_leader
+			remove_ideas = ksk_powerless_leader
 			retire_character = KSK_hitori_gotoh
 			add_stability = 0.05
 			add_war_support = 0.05
@@ -3708,7 +3328,7 @@
 
 		completion_reward = {
 			add_stability = 0.1
-			remove_ideas = KSK_powerless_leader
+			remove_ideas = ksk_powerless_leader
 			JAP = {
 				country_event = {
 				id = kessoku.10
@@ -4829,7 +4449,7 @@
 			add_ideas = ksk_bocchi
 			set_cosmetic_tag = BOK
 			add_stability = -0.2
-			remove_ideas = KSK_powerless_leader
+			remove_ideas = ksk_powerless_leader
 			remove_ideas = ksk_unpopular_throne
 			KSK_kita_ikuyo = {
 				set_character_flag = turned_monarchist
@@ -4901,7 +4521,7 @@
 				long_name = "Kitaura Front of Politics"
 				name = "KFP"
 			}
-			remove_ideas = KSK_powerless_leader
+			remove_ideas = ksk_powerless_leader
 			remove_ideas = ksk_unpopular_throne
 			add_stability = 0.05
 			if = {
@@ -8655,7 +8275,7 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			remove_ideas = KSK_powerless_leader
+			remove_ideas = ksk_powerless_leader
 			add_ideas = KSK_martial_law
 		}
 		ai_will_do = {
@@ -10895,7 +10515,7 @@
 		id = KSK_economic_recovery_1
 		icon = GFX_goal_continuous_non_factory_construct
 		x = 70
-		y = 10
+		y = 0
 		
 		text_icon = BAND_focus_style
 		
@@ -10911,7 +10531,7 @@
 				}
 			}
 			NOT = {
-				has_idea = KSK_powerless_leader
+				has_idea = ksk_powerless_leader
 			}
 		}
 		bypass = {
@@ -10964,7 +10584,7 @@
 				}
 			}
 			NOT = {
-				has_idea = KSK_powerless_leader
+				has_idea = ksk_powerless_leader
 			}
 		}
 		bypass = {
@@ -11038,7 +10658,7 @@
 				}
 			}
 			NOT = {
-				has_idea = KSK_powerless_leader
+				has_idea = ksk_powerless_leader
 			}
 		}
 		bypass = {
@@ -11112,7 +10732,7 @@
 				}
 			}
 			NOT = {
-				has_idea = KSK_powerless_leader
+				has_idea = ksk_powerless_leader
 			}
 		}
 		bypass = {

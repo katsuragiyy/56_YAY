@@ -1,30 +1,16 @@
 ﻿capital = 286
-oob = "KSK_1936"
+#oob = "KSK_1936"
 set_research_slots = 3
-set_stability = 0.6
+set_stability = 0.2 
 set_war_support = 0.3
 set_convoys = 75
 
 add_ideas = {
-	KSK_native_opposition
+	ksk_army_crisis
+	ksk_economy_crisis
+	ksk_powerless_leader
 	KSK_female_only # Hidden
 }
-
-# Army Variables
-add_dynamic_modifier = { modifier = BaW_KSK_army_issues }
-set_variable = { KSK_army_planning_speed = -0.1 }
-set_variable = { KSK_army_organization = -0.15 }
-set_variable = { KSK_morale_factor = -0.1 }
-set_variable = { KSK_experience_loss = 0.2 }
-set_variable = { KSK_supply_consumption = 0.15 }
-
-# Economy Variables
-add_dynamic_modifier = { modifier = BaW_KSK_economic_issues }
-set_variable = { KSK_consumer_goods_factor = 0.25 }
-set_variable = { KSK_building_speed_factor = -0.1 }
-set_variable = { KSK_research_speed_factor = -0.15 }
-set_variable = { KSK_political_power_cost = 0.45 }
-set_variable = { KSK_lack_of_resource_penalty_factor = 0.2 }
 
 recruit_character = KSK_hitori_gotoh
 recruit_character = KSK_ryo_yamada

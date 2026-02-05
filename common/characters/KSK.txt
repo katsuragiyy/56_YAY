@@ -9,10 +9,10 @@ characters = {
 		}
 
 		country_leader = {
-			ideology = constitutional_monarchy
+			ideology = oligarchism
 			desc = KSK_hitori_gotoh_desc
 			expire = "1989.1.1.1"
-			traits = { KSK_bocchi_trait }
+			traits = { social_anxiety unpopular_monarch }
 		}
 	}
 
@@ -79,7 +79,7 @@ characters = {
 		name = KSK_seika_ijichi
 		portraits = {
 			army = {
-				large = "gfx/leaders/KSK/portrait_ksk_seika_ijichi_alt.dds"
+				large = "gfx/leaders/KSK/portrait_ksk_seika_ijichi.dds"
 				small = GFX_portrait_KSK_seika_ijichi_small
 			}
 		}
@@ -104,41 +104,46 @@ characters = {
 		}
 
 		advisor = {
-			slot = theorist
-			cost = 100
-			idea_token = ksk_seika_theorist
-			available = { has_completed_focus = KSK_trust_in_seika }
+			slot = army_chief
+			cost = 150
+			idea_token = ksk_seika_command
 			allowed = { original_tag = KSK }
-			traits = { grand_battle_plan_expert }
+			traits = { starry_manager_hc }
 		}
 	}
 	
-	KSK_pa_san = {
-		name = KSK_pa_san
-		portraits = {
+	KSK_pa_san={
+		name=KSK_CHARACTER_PASAN
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_KSK_pa_san
+				small=GFX_portrait_KSK_pa_san_small
+			}
 			army = {
-				large = "gfx/leaders/KSK/portrait_ksk_pasan"
-				small = GFX_portrait_KSK_pa_san_small
+				large=GFX_portrait_KSK_pa_san
+				small=GFX_portrait_KSK_pa_san_small
 			}
 		}
-
-		advisor = {
-			slot = theorist
-			cost = 150
-			idea_token = KSK_pa_san_theorist
-			allowed = { original_tag = KSK }
-			available = { has_completed_focus = KSK_trust_in_pasan }
-			traits = { mobile_warfare_expert }
+		advisor={
+			slot = political_advisor
+			idea_token = ksk_pa_san_advisor
+			can_be_fired = yes
+			allowed = {
+				original_tag = KSK
+			}
+			traits = {
+				v_tuber
+			}
 		}
-
-		corps_commander = {
-			traits = { media_personality }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 4
-			legacy_id = -1
+		corps_commander={
+			traits={ }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=4
+			legacy_id=-1
 		}
 	}
 	KSK_futari_gotoh={

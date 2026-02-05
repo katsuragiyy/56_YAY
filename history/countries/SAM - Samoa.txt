@@ -102,7 +102,9 @@ set_grand_doctrine = r56_guerilla_warfare
 
 # Army Variables
 
-add_dynamic_modifier = { modifier = r56_SAM_samoan_army }
+add_dynamic_modifier = {
+	modifier = r56_SAM_samoan_army
+}
 
 set_variable = { SAM_army_core_defence_factor = 0.1 }
 set_variable = { SAM_army_conscription = 0.05 }

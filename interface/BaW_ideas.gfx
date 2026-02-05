@@ -2,107 +2,107 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_idea_ksk_unpopular"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_unpopular.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_unpopular.dds"
 	}	
 	spriteType = {
 		name = "GFX_idea_ksk_powerless"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_powerless.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_powerless.dds"
 	}	
 	spriteType = {
 		name = "GFX_idea_ksk_economy_crisis"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_economy_shambles.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_economy_shambles.dds"
 	}	
 	spriteType = {
 		name = "GFX_idea_ksk_army_crisis"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_army_shambles.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_army_shambles.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_hero_guitar"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_hero_guitar.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_hero_guitar.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_band_icon"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_kessoku_band.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_kessoku_band.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_god"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_god_kessoku.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_god_kessoku.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_bocchi_spirit"
-		texturefile = "gfx/interface/ideas/ksk/idea_KSK_hitori_gotoh.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_KSK_hitori_gotoh.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_ryo_greedy_bitch"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_ryo_greedy_bitch.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_ryo_greedy_bitch.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_nijika_greedy_bitch"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_nijika_greedy_bitch.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_nijika_greedy_bitch.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_economy_crisis_worker_incentive"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_worker_incentive.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_worker_incentive.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_economy_crisis_local_production"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_local_produce.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_local_produce.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_gibson"
-		texturefile = "gfx/interface/ideas/ksk/idea_gibson.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_gibson.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_yamaha"
-		texturefile = "gfx/interface/ideas/ksk/idea_yamaha.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_yamaha.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_starry"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_starry.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_starry.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_KSK_martial_law"
-		texturefile = "gfx/interface/ideas/ksk/ksk_martial_law.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/ksk_martial_law.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_bocchi_eagle"
-		texturefile = "gfx/interface/ideas/ksk/idea_bocchi_eagle.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_bocchi_eagle.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_KSK_bocchi_remember"
-		texturefile = "gfx/interface/ideas/ksk/idea_rememeber_bocchi.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_rememeber_bocchi.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_kita_paradise"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_kita_paradise.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_kita_paradise.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_kita_kitaura_front"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_kita_kitaura_front.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_kita_kitaura_front.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_ksk_kita_planning"
-		texturefile = "gfx/interface/ideas/ksk/idea_ksk_kita_plan.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_ksk_kita_plan.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_kni_knight_summon_icon"
-		texturefile = "gfx/interface/ideas/ksk/idea_kni_knight_summon_.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_kni_knight_summon_.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_kni_cross_research"
-		texturefile = "gfx/interface/ideas/ksk/idea_kni_cross_research.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_kni_cross_research.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_kni_nijika_profit"
-		texturefile = "gfx/interface/ideas/ksk/idea_kni_nijika_profit.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_kni_nijika_profit.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_kni_cross_broken"
-		texturefile = "gfx/interface/ideas/ksk/idea_kni_cross_broken.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_kni_cross_broken.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_kni_mercy_army"
-		texturefile = "gfx/interface/ideas/ksk/idea_kni_cross_broken.dds"
+		texturefile = "gfx/interface/ideas/ksk/ksk/idea_kni_cross_broken.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_wak_military_control"
@@ -163,15 +163,5 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_wak_money"
 		texturefile = "gfx/interface/ideas/ksk/wak_money.dds"
-	}
-
-	spriteType = {
-		name = "GFX_portrait_KSK_seika_ijichi_small"
-		texturefile = "gfx/interface/ideas/ksk/idea_KSK_seika_ijichi.dds"
-	}
-
-	spriteType = {
-		name = "GFX_portrait_KSK_pa_san_small"
-		texturefile = "gfx/interface/ideas/ksk/idea_KSK_pa_san.dds"
 	}
 }
