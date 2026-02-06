@@ -100,6 +100,7 @@ characters = {
 		country_leader = {
 			ideology = constitutional_monarchy
 			expire = "1955.1.1" #Dies via event
+			desc = SAM_tanumafili_i_desc
 			id = -1
 			traits = {
 				r56_SAM_western_puppet
@@ -120,6 +121,7 @@ characters = {
 		country_leader = {
 			ideology = constitutional_monarchy
 			traits = { charismatic_monarch EGY_lavish_lifestyle }
+			desc = SAM_tanumafili_ii_desc
 			expire = "2007.5.11" #This guy was king for life btw
 			id = -1
 		}
@@ -191,6 +193,7 @@ characters = {
 		country_leader = {
 			ideology = ultranationalism
 			expire = "1965.7.5" #Dies via event
+			desc = SAM_mataafa_faumuina_fiame_desc
 			id = -1
 			traits = { popular_figurehead3 conservative_grandee r56_trait_opposed_to_communism r56_dislikes_usa }
 		}
@@ -203,7 +206,6 @@ characters = {
 			allowed = { original_tag = SAM }
 
 			available = {
-				NOT = { has_government = communism }
 				OR = {
 					has_country_flag = r56_SAM_we_appoint_our_own_advisors_now_flag
 					NOT = { is_subject_of = NZL }

@@ -377,31 +377,31 @@ r56_SAM_new_zealand_reminder_to_do_goodwill = {
 
 		visible = {
 			NOT = { has_country_flag = r56_SAM_goodwill_mission_has_arrived_flag }
-			NZL = { exists = yes }
-			#SAM = {
-			#	exists = yes
-			#	is_subject_of = NZL
-			#}
-		}
-
-		activation = {
+			SAM = {
+				exists = yes
+				is_subject_of = NZL
+			}
 		}
 		
 		cancel_trigger = {
 			OR = {
 				has_completed_focus = NZL_the_goodwill_mission
-				SAM = { NOT = { is_subject_of = ROOT } } #Should be adjusted to gamerules
+				SAM = { NOT = { is_subject_of = ROOT } } # Should be adjusted to gamerules
 			}
 		}
 		
 		timeout_effect = {
 			add_popularity = {
 				ideology = ROOT
-				popularity = -0.05
+				popularity = -0.03
 			}
 			custom_effect_tooltip = SAM_samoa_will_be_buffed_in_negotiations
+			custom_effect_tooltip = generic_skip_one_line_tt
+			SAM = {
+				effect_tooltip = { unlock_national_focus = r56_SAM_pressure_the_legislative_council }
+				set_country_flag = r56_NZL_no_goodwill_in_time_flag
+			}
 			set_country_flag = r56_NZL_no_goodwill_in_time_flag
-			SAM = { set_country_flag = r56_NZL_no_goodwill_in_time_flag }
 		}
 	}
 	

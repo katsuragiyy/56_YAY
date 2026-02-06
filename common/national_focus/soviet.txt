@@ -27875,7 +27875,7 @@ focus = {
 
 	focus = {
 		id = SOV_the_berlin_moscow_axis
-		icon = GFX_goal_generic_join_axis
+		icon = GFX_focus_chi_mission_to_germany
 		prerequisite = { focus = SOV_pacify_the_rim }
 		x = 2
 		y = 1

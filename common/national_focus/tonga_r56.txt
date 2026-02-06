@@ -58,8 +58,8 @@ focus_tree = {
     }
 
     focus = {
-        id = TON_placeholder_opposition_r56
-        icon = GFX_focus_SWE_organize_a_putsch
+        id = TON_request_overseas_aid_r56
+        icon = GFX_focus_jap_showa_restoration
         prerequisite = { focus = TON_opposition_party_r56 }
         relative_position_id = TON_opposition_party_r56
         
@@ -78,8 +78,8 @@ focus_tree = {
     }
 
     focus = {
-        id = TON_placeholder_opposition2_r56
-        icon = GFX_focus_SWE_organize_a_putsch
+        id = TON_sway_the_church_r56
+        icon = GFX_goal_generic_friendship_with_church
         prerequisite = { focus = TON_opposition_party_r56 }
         relative_position_id = TON_opposition_party_r56
         
@@ -131,7 +131,7 @@ focus_tree = {
         y = 1
 
         available = {
-            neutrality < 50
+            neutrality < 0.50
         }
 
         ai_will_do = { factor = 1 }
@@ -143,7 +143,7 @@ focus_tree = {
 
     focus = {
         id = TON_moderate_reactionary_r56
-        icon = GFX_goal_constitutional_monarchy
+        icon = GFX_focus_ARG_defense_and_democracy
         prerequisite = { focus = TON_coup_the_government_r56 }
         mutually_exclusive = { focus = TON_radicalize_the_reactionaries_r56 }
         relative_position_id = TON_coup_the_government_r56
@@ -153,7 +153,7 @@ focus_tree = {
         y = 1
 
         available = {
-            neutrality < 50
+            neutrality < 0.50
         }
 
         ai_will_do = { factor = 1 }
@@ -164,17 +164,143 @@ focus_tree = {
     }
 
     focus = {
-        id = TON_tear_up_the_unfair_treaties_r56
-        icon = GFX_focus_ARG_cut_ties_with_britain
-        prerequisite = { focus = TON_radicalize_the_reactionaries_r56 focus = TON_moderate_reactionary_r56 }
-        relative_position_id = TON_coup_the_government_r56
+        id = TON_unity_through_reconciliation_r56
+        icon = GFX_goal_generic_national_unity
+        prerequisite = { focus = TON_moderate_reactionary_r56 }
+        relative_position_id = TON_moderate_reactionary_r56
+        
+        cost = 5
+        x = 1
+        y = 1
+
+        available = {
+            neutrality < 0.50
+        }
+
+        ai_will_do = { factor = 1 }
+
+        completion_reward = {
+			
+        }
+    }
+
+    focus = {
+        id = TON_amend_the_constitution_r56
+        icon = GFX_goal_constitution
+        prerequisite = { focus = TON_moderate_reactionary_r56 }
+        relative_position_id = TON_moderate_reactionary_r56
+        
+        cost = 5
+        x = -1
+        y = 1
+
+        available = {
+            neutrality < 0.50
+        }
+
+        ai_will_do = { factor = 1 }
+
+        completion_reward = {
+			
+        }
+    }
+
+    focus = {
+        id = TON_hold_elections_r56
+        icon = GFX_goal_generic_election
+        prerequisite = { focus = TON_moderate_reactionary_r56 }
+        relative_position_id = TON_moderate_reactionary_r56
         
         cost = 5
         x = 0
         y = 2
 
         available = {
-            neutrality < 50
+            neutrality < 0.50
+        }
+
+        ai_will_do = { factor = 1 }
+
+        completion_reward = {
+			
+        }
+    }
+
+    focus = {
+        id = TON_placeholder_r56
+        icon = GFX_goal_generic_election
+        prerequisite = { focus = TON_hold_elections_r56 }
+        relative_position_id = TON_hold_elections_r56
+        
+        cost = 5
+        x = 0
+        y = 1
+
+        available = {
+            neutrality < 0.50
+        }
+
+        ai_will_do = { factor = 1 }
+
+        completion_reward = {
+			
+        }
+    }
+
+    focus = {
+        id = TON_placeholder2_r56
+        icon = GFX_goal_generic_election
+        prerequisite = { focus = TON_hold_elections_r56 }
+        relative_position_id = TON_hold_elections_r56
+        
+        cost = 5
+        x = -2
+        y = 1
+
+        available = {
+            neutrality < 0.50
+        }
+
+        ai_will_do = { factor = 1 }
+
+        completion_reward = {
+			
+        }
+    }
+
+    focus = {
+        id = TON_placeholder3_r56
+        icon = GFX_goal_generic_election
+        prerequisite = { focus = TON_placeholder2_r56 }
+        relative_position_id = TON_placeholder2_r56
+        
+        cost = 5
+        x = -1
+        y = 1
+
+        available = {
+            neutrality < 0.50
+        }
+
+        ai_will_do = { factor = 1 }
+
+        completion_reward = {
+			
+        }
+    }
+
+    focus = {
+        id = TON_placeholder4_r56
+        icon = GFX_goal_generic_election
+        prerequisite = { focus = TON_placeholder2_r56 }
+        relative_position_id = TON_placeholder2_r56
+        
+        cost = 5
+        x = 1
+        y = 1
+
+        available = {
+            neutrality < 0.50
         }
 
         ai_will_do = { factor = 1 }

@@ -3653,7 +3653,7 @@ focus_tree = {
         available = {
 		    SAM = {
 				is_subject_of = NZL
-				controls_state = 726
+				NOT = { has_completed_focus = r56_SAM_pressure_the_legislative_council }
 			}
 		    has_government = democratic
 			has_war = no

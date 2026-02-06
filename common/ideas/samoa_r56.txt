@@ -39,6 +39,18 @@ ideas = {
 				recruitable_population_factor = -0.1
 			}
 		}
+
+		r56_SAM_malietoa_cooperation = {
+		    picture = MEN_kwantungs_invisible_hand
+			allowed_civil_war = { always = yes }
+			allowed = { always = yes }
+			removal_cost = -1
+				
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = -0.1
+			}
+		}
 		
 	    r56_SAM_a_divided_samoa = {
 		    picture = SAM_divided_samoa
@@ -187,15 +199,15 @@ ideas = {
 
 			targeted_modifier = {
 				tag = AST
-				attack_bonus_against = 0.05
+				attack_bonus_against = 0.1
 			}
 			targeted_modifier = {
 				tag = NZL
-				attack_bonus_against = 0.05
+				attack_bonus_against = 0.1
 			}
 			targeted_modifier = {
 				tag = TON
-				attack_bonus_against = 0.05
+				attack_bonus_against = 0.1
 			}
 		}
 

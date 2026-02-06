@@ -10,7 +10,7 @@
 
  # Ideas
  TON_political_opposition_r56:0 "Popular Opposition"
- TON_political_opposition_r56_desc:0 "Many in the [ROOT.GetAdjective] parliament feel dissatisfied with the [ROOT.GetLeader]'s leadership. This has led to the formation of a Reactionary Party headed by Sioape Kaho and likeminded individuals, who have been able to garner much support from the local population."
+ TON_political_opposition_r56_desc:0 "Many in the [ROOT.GetAdjective] parliament feel dissatisfied with [ROOT.GetLeader]'s leadership. This has led to the formation of a Reactionary Party headed by Sioape Kaho and likeminded individuals, who have been able to garner much support from the local population."
 
  TON_failed_education_reforms_r56:0 "Failed Education Reforms"
  TON_failed_education_reforms_r56_desc:0 "After King Tupou I had established an independent Tongan church in an attempt to appease the local chiefs of Tonga, many of the Western missionaries who were responsible for the education of the Tongan youth exited the country on mass, leaving the inexperienced Tongans to themselves. Over time, failed reforms have left the Tongan education system in a complete mess."
@@ -51,8 +51,22 @@
  TON_opposition_party_r56:0 "Trust in the Reactionaries"
  TON_opposition_party_r56_desc:0 ""
 
+ TON_request_overseas_aid_r56:0 "Request Foreign Aid"
+ TON_request_overseas_aid_r56_desc:0 ""
+
+ TON_sway_the_church_r56:0 "Sway the Church"
+ TON_sway_the_church_r56_desc:0 ""
+
  TON_coup_the_government_r56:0 "Commence the Plot"
  TON_coup_the_government_r56_desc:0 ""
+
+ TON_radicalize_the_reactionaries_r56:0 "Radicalize the Reactionaries"
+ TON_radicalize_the_reactionaries_r56_desc:0 ""
+
+ TON_moderate_reactionary_r56:0 "Implement Democratic Reforms"
+ TON_moderate_reactionary_r56_desc:0 ""
+
+ 
 
  # Traits 
  TON_queen_of_the_people:0 "Queen of the People"
