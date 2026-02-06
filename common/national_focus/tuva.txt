@@ -30,7 +30,7 @@ focus_tree = {
 	shared_focus = GEN_industrial_boom
 	#shared_focus = GEN_State_Matter
 	shared_focus = SIB_siberian_unification
-	#### # Add turkestan unification focuses but make it mutually exclusive with siberian union
+	shared_focus = TRK_turkestan_unification
 
 
 continuous_focus_position = { x = 0 y = 1100 }
@@ -740,6 +740,8 @@ continuous_focus_position = { x = 0 y = 1100 }
 
 		completion_reward = {
 			add_ideas = ROM_gold_extraction_idea
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = TAN_mining_directorate
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -2117,8 +2119,8 @@ continuous_focus_position = { x = 0 y = 1100 }
 
 	focus = {
 		id = TAN_State_Matter
-		icon = GFX_focus_generic_self_management
-		x = 49
+		icon = GFX_focus_generic_befriend_tannu_tuva
+		x = 54
 		y = 0
 		cost = 5
 	
@@ -2151,9 +2153,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 	
 		completion_reward = {
 			add_political_power = 75
-			hidden_effect = {
-				set_country_flag = R56_i_have_generic_politics
-			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -2168,7 +2167,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 		available = {
 		}
 	
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = TAN_State_Matter
 	
@@ -2303,9 +2302,12 @@ continuous_focus_position = { x = 0 y = 1100 }
 	focus = {
 		id = TAN_tuvan_nationalism
 		#text = nationalism_focus
-		icon = GFX_goal_support_fascism #icon = GFX_goal_tripartite_pact
+		icon = GFX_goal_morale_bonus
 		prerequisite = { focus = TAN_Collectivist_Ethos }
-		mutually_exclusive = { focus = TAN_cement_communist_rule }
+		mutually_exclusive = {
+			focus = TAN_case_of_the_nine
+			focus = TAN_gather_the_party_opposition
+		}
 	
 	
 		available = {
@@ -2427,6 +2429,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 							country_leader = {
 								ideology = fascism_ideology
 								expire = "1965.1.1.1"
+								desc = TAN_fascist_leader_desc
 							}							
 							promote_leader = yes 
 						}	
@@ -2457,6 +2460,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 							country_leader = {
 								ideology = fascism_ideology
 								expire = "1965.1.1.1"
+								desc = TAN_fascist_leader_desc
 							}
 							promote_leader = yes 
 						}
@@ -2474,6 +2478,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 									authoritarian_centralizer
 									r56_trait_opposed_to_communism
 								}
+								desc = TAN_fascist_leader_desc
 							}
 							promote_leader = yes 
 						}
@@ -2481,6 +2486,27 @@ continuous_focus_position = { x = 0 y = 1100 }
 				}
 			}
 			add_timed_idea = { idea = nationalism days = 1395 }
+			set_party_name = {
+				ideology = fascism
+				long_name = TAN_great_khural_party_long
+				name = TAN_great_khural_party
+			}
+			add_advisor_role = {
+				character = TAN_kamby_lama
+				advisor = {
+					slot = political_advisor
+					cost = 250
+					idea_token = TAN_kamby_lama
+					traits = {
+						kamby_lama
+					}
+					available = {
+						NOT = {
+							has_government = communism
+						}
+					}
+				}
+			}
 		}
 	}
 	
@@ -2519,7 +2545,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 	focus = {
 		id = TAN_Organise_Youth
 		icon = GFX_focus_generic_military_academy
-		prerequisite = { focus = TAN_tuvan_nationalism focus = TAN_cement_communist_rule }
+		prerequisite = { focus = TAN_tuvan_nationalism focus = TAN_case_of_the_nine focus = TAN_gather_the_party_opposition }
 		x = -1
 		y = 1
 		relative_position_id = TAN_tuvan_nationalism
@@ -2549,7 +2575,10 @@ continuous_focus_position = { x = 0 y = 1100 }
 	
 			if = {
 				limit = {
-					has_completed_focus = TAN_cement_communist_rule
+					OR = {
+						has_completed_focus = TAN_case_of_the_nine
+						has_completed_focus = TAN_gather_the_party_opposition
+					}
 				}
 				ROOT = {
 					add_ideas = GEN_Organise_Youth_Com_I
@@ -2559,13 +2588,14 @@ continuous_focus_position = { x = 0 y = 1100 }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 	}
 	
-	
 	focus = {
-		id = TAN_cement_communist_rule
-		text = internationalism_focus
-		icon = GFX_goal_support_communism #icon = GFX_goal_tripartite_pact
+		id = TAN_case_of_the_nine
+		icon = GFX_focus_SOV_the_last_purge
 		prerequisite = { focus = TAN_Collectivist_Ethos }
-		mutually_exclusive = { focus = TAN_tuvan_nationalism }
+		mutually_exclusive = {
+			focus = TAN_tuvan_nationalism
+			focus = TAN_gather_the_party_opposition
+		}
 	
 	
 		available = {
@@ -2584,7 +2614,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 			}
 		}
 	
-		x = -1
+		x = -4
 		y = 1
 		relative_position_id = TAN_Collectivist_Ethos
 	
@@ -2632,15 +2662,15 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 11
 				is_historical_focus_on = yes
-				OR = {
-					original_tag = MON
-					original_tag = TAN
-				}
+				date > 1938.1.1
 			}
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
-				NOT = { has_government = communism }
+				OR = {
+					date < 1938.1.1
+					NOT = { has_government = communism }
+				}
 			}
 			modifier = {
 				factor = 2
@@ -2649,30 +2679,222 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 	
 		completion_reward = {
-		# As IA uses ideological politicians this is useless
-		#	add_popularity = {
-		#		ideology = communism
-		#		popularity = 0.05
-		#	}
-			add_timed_idea = { idea = internationalism days = 1395 }
-			add_political_power = 75
-			if = {
-				limit = {
-					has_idea = rt56_far_left_suppression
+			add_popularity = {
+				ideology = communism
+				popularity = 0.15
+			}
+			add_political_power = 100
+			set_province_name = { id = 7804 name = VICTORY_POINTS_7804_TOKA }
+			custom_effect_tooltip = SOV_characters_will_be_purged_tt
+			retire_character = TAN_sat_churmit_dazhy
+			retire_character = TAN_sat_bazyr_ool_oglu_lopsan
+			retire_character = TAN_oiun_danchai
+			retire_character = TAN_adyg_tulush_khemchik_ool
+			retire_character = TAN_kuular_sungar_ool
+			retire_character = TAN_seren_kuzhuget
+			hidden_effect = { SOV = { country_event = { id = tuva.1 hours = 6 } } }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+	}
+	focus = {
+		id = TAN_Collectivist_Propaganda
+		icon = GFX_goal_communist_factory
+		prerequisite = { focus = TAN_case_of_the_nine }
+		x = 0
+		y = 1
+		relative_position_id = TAN_case_of_the_nine
+	
+		cost = 10
+	
+		available_if_capitulated = yes
+	
+		available = {
+			has_government = communism
+		}
+	
+		completion_reward = {
+			add_political_power = 25
+			add_ideas = GEN_Collectivist_Propaganda_I
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+	}
+	focus = {
+		id = TAN_the_fifth_constitution
+		icon = GFX_generic_goal_communist_reforms
+		cost = 10
+		prerequisite = {
+			focus = TAN_Collectivist_Propaganda
+		}
+        x = 0
+        y = 1
+        relative_position_id = TAN_Collectivist_Propaganda
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0.5
+			}
+		}
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 11
+				is_historical_focus_on = yes
+				date > 1941.1.1
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				OR = {
+					date < 1941.1.1
 				}
-				remove_ideas = rt56_far_left_suppression
+			}
+		}
+		completion_reward = {
+			add_ideas = TAN_fifth_constitution_enshrinements
+			custom_effect_tooltip = TAN_1941_flag_change_tt
+			hidden_effect = { set_cosmetic_tag = TAN_1941 }							
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
+	}
+	
+	focus = {
+		id = TAN_gather_the_party_opposition
+		icon = GFX_goal_TAN_gather_the_party_opposition
+		prerequisite = { focus = TAN_Collectivist_Ethos }
+		mutually_exclusive = {
+			focus = TAN_tuvan_nationalism
+			focus = TAN_case_of_the_nine
+		}
+	
+	
+		available = {
+			NOT  = {
+				original_tag = SOV
+			}
+			if = {
+				limit = { original_tag = CHI }
+				has_government = communism
+			}
+			else = {
+				OR = {
+					communism > 0.15
+					has_government = neutrality
+				}
+			}
+		}
+	
+		x = -2
+		y = 1
+		relative_position_id = TAN_Collectivist_Ethos
+	
+		cost = 10
+	
+		available_if_capitulated = yes
+	
+	
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 2
+				is_historical_focus_on = no
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	
+		completion_reward = {
+			retire_character = TAN_salchak_toka
+			add_country_leader_role = {
+				character = TAN_sat_churmit_dazhy
+				promote_leader = yes
+				country_leader = {
+					ideology = agrarian_socialism
+					expire = "1965.1.1.1"
+					traits = { TAN_voice_of_restraint_communist }
+					desc = TAN_sat_churmit_dazhy_leader_desc
+				}
+			}
+			hidden_effect = {
+				news_event = {
+					id = tuva.2
+					days = 2
+					random_days = 5
+				}
 			}
 		}
 	}
+	focus = {
+		id = TAN_restore_our_ways
+		icon = GFX_focus_JAP_incorporate_buddhist_socialism
+		prerequisite = { focus = TAN_gather_the_party_opposition }
+		x = 0
+		y = 1
+		relative_position_id = TAN_gather_the_party_opposition
 	
+		cost = 10
+	
+		available_if_capitulated = yes
+	
+		available = {
+			has_government = communism
+		}
+	
+		completion_reward = {
+			add_ideas = TAN_coexistence_of_socialism_and_buddhism
+			custom_effect_tooltip = TAN_1921_flag_change_tt
+			hidden_effect = { set_cosmetic_tag = TAN_1921 }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+	}
+	focus = {
+		id = TAN_the_basis_of_the_economy
+		icon = GFX_focus_ARG_capitalize_the_beef_industry
+		prerequisite = { focus = TAN_restore_our_ways }
+		x = 0
+		y = 1
+		relative_position_id = TAN_restore_our_ways
+	
+		cost = 10
+	
+		available_if_capitulated = yes
+	
+		available = {
+		}
+	
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = TAN_Civilian_One_1
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+	}
 	
 	focus = {
 		id = TAN_Com_Generals
 		icon = GFX_focus_generic_military_mission
-		prerequisite = { focus = TAN_cement_communist_rule }
-		x = -1
+		prerequisite = { focus = TAN_case_of_the_nine focus = TAN_gather_the_party_opposition }
+		x = -2
 		y = 1
-		relative_position_id = TAN_cement_communist_rule
+		relative_position_id = TAN_case_of_the_nine
 	
 		cost = 10
 	
@@ -2711,9 +2933,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 				}
 				add_country_leader_trait = army_connections
 			}
-			custom_effect_tooltip = SOV_characters_will_be_purged_tt
-			retire_character = TAN_sat_churmit_dazhy
-			retire_character = TAN_adyg_tulush_oldukai_oglu_khemchik_ool
 
 			hidden_effect = {
 				kill_ideology_leader = democratic
@@ -2747,66 +2966,13 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 	}
 
-	focus = {
-		id = TAN_revolutionary_guards
-		icon = GFX_goal_HON_nkvd_assistance
-		cost = 10
-		prerequisite = {
-			focus = TAN_Com_Generals
-		}
-        x = -2
-        y = 1
-        relative_position_id = TAN_Com_Generals
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0.5
-			}
-		}
-		available = {
-			has_government = communism
-		}
-		completion_reward = {			
-			if = {
-				limit = {
-					has_dlc = "La Resistance"
-					NOT = {
-						has_intelligence_agency = yes
-					}
-				}
-				create_intelligence_agency = yes
-				add_ideas = GER_abwehr_contacts
-			}
-			else_if = {
-				limit = {
-					NOT = {	
-						has_dlc = "La Resistance"
-					}			
-				}
-				add_tech_bonus = {
-					name = MLI_revolutionary_guards
-					bonus = 1
-					uses = 1
-					category = encryption_tech
-				}
-			}			
-			add_tech_bonus = {
-				name = MLI_revolutionary_guards
-				bonus = 1
-				uses = 1
-				category = military_police_tech
-			}	
-			add_stability = -0.05									
-		}
-	}
     focus = {
         id = TAN_red_army
         icon = GFX_focus_SOV_builder_of_the_red_army
-        prerequisite = { focus = TAN_revolutionary_guards }
+        prerequisite = { focus = TAN_Com_Generals }
         x = 0
         y = 1
-        relative_position_id = TAN_revolutionary_guards
+        relative_position_id = TAN_Com_Generals
     
         cost = 10
     
@@ -2825,36 +2991,13 @@ continuous_focus_position = { x = 0 y = 1100 }
     }	
 	
 	focus = {
-		id = TAN_Collectivist_Propaganda
-		icon = GFX_goal_communist_factory
-		prerequisite = { focus = TAN_cement_communist_rule }
-		x = 0
-		y = 2
-		relative_position_id = TAN_cement_communist_rule
-	
-		cost = 10
-	
-		available_if_capitulated = yes
-	
-		available = {
-			has_government = communism
-		}
-	
-		completion_reward = {
-			add_political_power = 25
-			add_ideas = GEN_Collectivist_Propaganda_I
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
 		id = TAN_indoctrination_focus
 		icon = GFX_postive_heroism
-		prerequisite = { focus = TAN_revolutionary_guards }
-		prerequisite = { focus = TAN_Collectivist_Propaganda }
-		relative_position_id = TAN_revolutionary_guards
+		prerequisite = { focus = TAN_the_fifth_constitution focus = TAN_the_basis_of_the_economy }
+		relative_position_id = TAN_the_fifth_constitution
 		text = indoctrination_focus
-		x = 1
-		y = 2
+		x = 0
+		y = 1
 		cost = 10
 
 		available_if_capitulated = yes
@@ -2869,11 +3012,51 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 	}	
+	focus = {
+		id = TAN_sovietization
+		icon = GFX_goal_TAN_sovietisation
+		prerequisite = { focus = TAN_the_fifth_constitution }
+		x = -2
+		y = 1
+		relative_position_id = TAN_the_fifth_constitution
 	
+		cost = 10
+	
+		available_if_capitulated = yes
+	
+		available = {
+			has_government = communism
+			SOV = { has_government = communism }
+			is_in_faction_with = SOV
+		}
+		
+		ai_will_do = {
+			modifier = {
+				factor = 11
+				is_historical_focus_on = yes
+				date > 1943.1.1
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				OR = {
+					date < 1943.1.1
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_war_support = 0.1
+			add_ideas = TAN_support_our_soviet_comrades
+			custom_effect_tooltip = TAN_1943_flag_change_tt
+			hidden_effect = { set_cosmetic_tag = TAN_1943 }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_HISTORICAL }
+	}
 	focus = {
 		id = TAN_Conquer
 		icon = GFX_goal_generic_more_territorial_claims
-		prerequisite = { focus = TAN_militarism focus = TAN_Collectivist_Propaganda }
+		prerequisite = { focus = TAN_militarism focus = TAN_the_fifth_constitution focus = TAN_the_basis_of_the_economy }
 		mutually_exclusive = { focus = TAN_Intervene focus = TAN_Isolated }
 		x = 2
 		y = 2
@@ -2987,7 +3170,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 	focus = {
 		id = TAN_Intervene
 		icon = GFX_focus_generic_support_the_left_right
-		prerequisite = { focus = TAN_militarism focus = TAN_Collectivist_Propaganda }
+		prerequisite = { focus = TAN_militarism focus = TAN_the_fifth_constitution focus = TAN_the_basis_of_the_economy }
 		mutually_exclusive = { focus = TAN_Conquer focus = TAN_Isolated }
 		x = 0
 		y = 2
@@ -3120,7 +3303,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 	focus = {
 		id = TAN_Isolated
 		icon = GFX_goal_generic_military_sphere
-		prerequisite = { focus = TAN_militarism focus = TAN_Collectivist_Propaganda }
+		prerequisite = { focus = TAN_militarism focus = TAN_the_fifth_constitution focus = TAN_the_basis_of_the_economy }
 		mutually_exclusive = { focus = TAN_Conquer focus = TAN_Intervene }
 		x = -2
 		y = 2
@@ -3129,14 +3312,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 		cost = 10
 	
 		available_if_capitulated = yes
-	
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 3
-			}
-		}
 	
 		available = {
 			NOT = {
@@ -3217,9 +3392,9 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 	}
-		focus = {
+	focus = {
 		id = TAN_appropriate_the_gokturks
-		icon = GFX_focus_generic_fascist_propaganda
+		icon = GFX_goal_TUR_pan_turan
 		prerequisite = { focus = TAN_Fanaticism }
 		x = 0
 		y = 1
@@ -3254,7 +3429,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 		icon = GFX_goal_generic_liberty
 		prerequisite = { focus = TAN_State_Matter }
 		mutually_exclusive = { focus = TAN_Collectivist_Ethos }
-		x = 4
+		x = 3
 		y = 1
 		relative_position_id = TAN_State_Matter
 	
@@ -3335,7 +3510,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 	
 	focus = {
 		id = TAN_rehabilitate_pre_revolutionary_practices
-		icon = GFX_goal_religious_harmony
+		icon = GFX_goal_TAN_rehabilitate_uriankhai_practices
 		prerequisite = { focus = TAN_Liberty_Ethos }
 		mutually_exclusive = { focus = TAN_Strenghten_Democracy}
 		x = -1
@@ -3385,7 +3560,9 @@ continuous_focus_position = { x = 0 y = 1100 }
 				ideology = neutrality
 				popularity = 0.1
 			}
+			
 			add_timed_idea = { idea = GEN_Strenghten_Monarchy_I days = 1395 }
+			recruit_character = TAN_mongush_lopsan_chimit
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
@@ -3463,6 +3640,11 @@ continuous_focus_position = { x = 0 y = 1100 }
 				popularity = 0.1
 			}
 			add_timed_idea = { idea = GEN_Strenghten_Democracy_I days = 1395 }
+			set_party_name = {
+				ideology = democratic
+				long_name = TAN_great_khural_party_long
+				name = TAN_great_khural_party
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
@@ -3483,6 +3665,22 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 	
 		completion_reward = {
+			add_advisor_role = {
+				character = TAN_kamby_lama
+				advisor = {
+					slot = political_advisor
+					cost = 250
+					idea_token = TAN_kamby_lama
+					traits = {
+						kamby_lama
+					}
+					available = {
+						NOT = {
+							has_government = communism
+						}
+					}
+				}
+			}
 			add_political_power = 50
 			add_stability = 0.1
 			#maybe the Tibetan decision about restoring the monasteries. If possible find another existing religious survivor.	
@@ -3531,7 +3729,12 @@ continuous_focus_position = { x = 0 y = 1100 }
 			add_country_leader_trait = autocratic_imperialist
 
 			add_war_support = 0.15
-
+			if = {
+				limit = {
+					has_government = neutrality
+				}
+				set_cosmetic_tag = TAN_khanate
+			}
 			if = {
 				limit = {
 					JAP = {
@@ -3622,7 +3825,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 		icon = GFX_goal_generic_neutrality_focus
 		prerequisite = { focus = TAN_Defence_Act }
 		mutually_exclusive = { focus = TAN_interventionism_focus }
-		x = 1
+		x = -1
 		y = 1
 		relative_position_id = TAN_Defence_Act
 	
@@ -3657,7 +3860,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = TAN_Defence_Act }
 		mutually_exclusive = { focus = TAN_neutrality_focus }
-		x = -1
+		x = 1
 		y = 1
 		relative_position_id = TAN_Defence_Act
 	
@@ -3775,7 +3978,108 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 	}
+	focus = {
+		id = TAN_carry_the_altai_torch
+		icon = GFX_goal_generic_befriend_altai
+		prerequisite = { focus = TAN_Strenghten_Democracy }
+		prerequisite = { focus = TAN_interventionism_focus }
+		x = 2
+		y = 1
+		relative_position_id = TAN_interventionism_focus
+		available = {
+			has_government = democratic
+			654 = { owner = { is_subject = no controls_STATE = 654 } }
+		}
+		bypass = {
+			owns_state = 654
+		}
+		cost = 10
 	
+		available_if_capitulated = yes
+		completion_reward = {
+			IF = {
+				limit = {
+					country_exists = ALT
+					ALT = {
+						owns_state = 654
+						controls_state = 654
+					}
+				}
+				ALT = {
+					country_event = {
+						id = tuva.6
+						days = 1
+					}
+				}
+			}
+			IF = {
+				limit = {
+					NOT = { ALT = { owns_state = 654 } }
+					654 = { owner = { controls_state = 654 } }
+				}
+				654 = {
+					owner = {
+						country_event = {
+							id = tuva.3
+							days = 1
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = { 654 = { transfer_state_to = TAN } }
+			custom_effect_tooltip = generic_more_likely_to_accept_tt
+			custom_effect_tooltip = more_likely_to_accept_federalization_tt
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+	focus = {
+		id = TAN_bolster_altai_economy
+		icon = GFX_goal_generic_farm_tractor
+		prerequisite = { focus = TAN_carry_the_altai_torch }
+		x = 0
+		y = 1
+		relative_position_id = TAN_carry_the_altai_torch
+	
+		cost = 10
+	
+		available_if_capitulated = yes
+	
+		completion_reward = {
+			654 = { set_state_category = rural }
+			build_railway = {
+				level = 1
+				fallback = yes
+				path = { 10627 1676 7804 12509 4781 4800 }
+				start_province = 10627
+				target_province = 4800
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = TAN_refuge_for_the_tofalar
+		icon = GFX_goal_TAN_refuge_for_the_tofalar
+		prerequisite = { focus = TAN_carry_the_altai_torch }
+		x = 2
+		y = 1
+		relative_position_id = TAN_carry_the_altai_torch
+		available = {
+			has_government = democratic
+		}
+		
+		cost = 10
+	
+		available_if_capitulated = yes
+	
+		completion_reward = {
+			567 = {
+				add_claim_by = TAN
+			}
+			add_ideas = TAN_defender_of_peoples
+		}
+		search_filters = { }
+	}
 	
 	focus = {
 		id = TAN_Brigades
@@ -3801,7 +4105,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = TAN_neutrality_focus focus = TAN_interventionism_focus }
 		mutually_exclusive = { focus = TAN_Anti_Invasion }
-		x = -1
+		x = 1
 		y = 1
 		relative_position_id = TAN_neutrality_focus
 	
@@ -3821,7 +4125,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 		icon = GFX_goal_generic_construct_military
 		prerequisite = { focus = TAN_neutrality_focus }
 		mutually_exclusive = { focus = TAN_Military_Build }
-		x = 1
+		x = -1
 		y = 1
 		relative_position_id = TAN_neutrality_focus
 	
@@ -3850,7 +4154,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 	
 		continue_if_invalid = yes
 	
-		x = 1
+		x = -1
 		y = 2
 		relative_position_id = TAN_Military_Build
 		cost = 10
