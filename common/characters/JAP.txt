@@ -338,7 +338,7 @@ characters={
 
 		portraits = {
 			civilian = {
-				large = GFX_portrait_JAP_koki_hirota
+				large = "gfx/leaders/JAP/r56_portrait_JAP_Koki_Hirota.dds"
 				small = GFX_portrait_JAP_koki_hirota_small
 			}
 		}

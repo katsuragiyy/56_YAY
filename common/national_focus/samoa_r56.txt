@@ -1101,7 +1101,44 @@ focus_tree = {
 		
         ai_will_do = { factor = 1 }
 
-        completion_reward = {
+        completion_reward = { #yoinked
+			if = { 
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_tech_bonus = {
+					name = uk_amphibious_focus
+					bonus = 1.0
+					uses = 1
+					category = marine_tech
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = uk_amphibious_focus
+					bonus = 1.0
+					uses = 1
+					category = marine_tech
+					category = r56_special_forces_training_tech 
+				}
+			}	
+			add_tech_bonus = {
+				name = uk_amphibious_focus
+				bonus = 1.0
+				uses = 1
+				category = tp_tech
+			}
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				add_tech_bonus = {
+					name = JAP_expand_the_snlf
+					bonus = 1
+					uses = 1
+					category = amphibious_armor_tech
+				}				
+			}
 		}
     }
 

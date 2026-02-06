@@ -740,6 +740,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 
 		completion_reward = {
 			add_ideas = ROM_gold_extraction_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_industrial_concern
 			show_ideas_tooltip = TAN_mining_directorate
 		}
@@ -2186,7 +2187,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 0
 				AND = {
 					is_historical_focus_on = yes
-					is_puppet = yes
+					is_subject = yes
 					NOT = {
 						OVERLORD = {
 							OR = {
@@ -2242,7 +2243,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 0.01
 				AND = {
 					is_historical_focus_on = no
-					is_puppet = yes
+					is_subject = yes
 					NOT = {
 						OVERLORD = {
 							OR = {
@@ -2257,7 +2258,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 0.02
 				AND = {
 					is_historical_focus_on = no
-					is_puppet = no
+					is_subject = no
 					OR = {
 						has_government = fascism
 						has_government = communism
@@ -2268,7 +2269,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 10
 				AND = {
 					is_historical_focus_on = no
-					is_puppet = no
+					is_subject = no
 					OR = {
 						AND = {
 							is_in_faction_with = SOV
@@ -2335,7 +2336,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 10
 				AND = {
-					is_puppet = yes
+					is_subject = yes
 					OVERLORD = {
 						has_government = fascism
 					}
@@ -2485,28 +2486,17 @@ continuous_focus_position = { x = 0 y = 1100 }
 					}
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_timed_idea = { idea = nationalism days = 1395 }
+			custom_effect_tooltip = generic_skip_one_line_tt
 			set_party_name = {
 				ideology = fascism
 				long_name = TAN_great_khural_party_long
 				name = TAN_great_khural_party
 			}
-			add_advisor_role = {
-				character = TAN_kamby_lama
-				advisor = {
-					slot = political_advisor
-					cost = 250
-					idea_token = TAN_kamby_lama
-					traits = {
-						kamby_lama
-					}
-					available = {
-						NOT = {
-							has_government = communism
-						}
-					}
-				}
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = TAN_kamby_lama
 		}
 	}
 	
@@ -2531,7 +2521,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 		completion_reward = {
 			army_experience = 25
 			add_war_support = 0.05
-	
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = { has_idea = neutrality_idea }
 				remove_ideas = neutrality_idea
@@ -2629,7 +2619,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 10
 				OR = {
 					AND = {
-						is_puppet = yes
+						is_subject = yes
 						OVERLORD = {
 							has_government = communism
 						}
@@ -2679,12 +2669,13 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 	
 		completion_reward = {
+			add_political_power = 100
 			add_popularity = {
 				ideology = communism
 				popularity = 0.15
 			}
-			add_political_power = 100
 			set_province_name = { id = 7804 name = VICTORY_POINTS_7804_TOKA }
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = SOV_characters_will_be_purged_tt
 			retire_character = TAN_sat_churmit_dazhy
 			retire_character = TAN_sat_bazyr_ool_oglu_lopsan
@@ -2754,8 +2745,8 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 		completion_reward = {
 			add_ideas = TAN_fifth_constitution_enshrinements
-			custom_effect_tooltip = TAN_1941_flag_change_tt
-			hidden_effect = { set_cosmetic_tag = TAN_1941 }							
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_cosmetic_tag = TAN_1941					
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 	}
@@ -2846,8 +2837,8 @@ continuous_focus_position = { x = 0 y = 1100 }
 	
 		completion_reward = {
 			add_ideas = TAN_coexistence_of_socialism_and_buddhism
-			custom_effect_tooltip = TAN_1921_flag_change_tt
-			hidden_effect = { set_cosmetic_tag = TAN_1921 }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_cosmetic_tag = TAN_1921
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 	}
@@ -3048,8 +3039,8 @@ continuous_focus_position = { x = 0 y = 1100 }
 		completion_reward = {
 			add_war_support = 0.1
 			add_ideas = TAN_support_our_soviet_comrades
-			custom_effect_tooltip = TAN_1943_flag_change_tt
-			hidden_effect = { set_cosmetic_tag = TAN_1943 }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_cosmetic_tag = TAN_1943
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_HISTORICAL }
 	}
@@ -3442,7 +3433,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
-				is_puppet = yes
+				is_subject = yes
 				OVERLORD = {
 					OR = {
 						has_government = fascism
@@ -3464,7 +3455,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 0.01
 				AND = {
 					is_historical_focus_on = no
-					is_puppet = yes
+					is_subject = yes
 					OVERLORD = {
 						OR = {
 							has_government = fascism
@@ -3477,7 +3468,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 0.15
 				AND = {
 					is_historical_focus_on = no
-					is_puppet = no
+					is_subject = no
 					OR = {
 						has_government = fascism
 						has_government = communism
@@ -3495,7 +3486,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 10
 				is_historical_focus_on = no
-				is_puppet = no
+				is_subject = no
 				tag = WGR
 			}
 		}
@@ -3526,7 +3517,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
-				is_puppet = yes
+				is_subject = yes
 				NOT = {
 					OVERLORD = {
 						has_government = neutrality
@@ -3543,7 +3534,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 0.1
 				is_historical_focus_on = no
-				is_puppet = no
+				is_subject = no
 				NOT = {
 					has_government = neutrality
 				}
@@ -3562,7 +3553,8 @@ continuous_focus_position = { x = 0 y = 1100 }
 			}
 			
 			add_timed_idea = { idea = GEN_Strenghten_Monarchy_I days = 1395 }
-			recruit_character = TAN_mongush_lopsan_chimit
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = TAN_mongush_lopsan_chimit
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
@@ -3586,7 +3578,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
-				is_puppet = yes
+				is_subject = yes
 				NOT = {
 					OVERLORD = {
 						has_government = democratic
@@ -3606,7 +3598,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 0.05
 				is_historical_focus_on = no
-				is_puppet = yes
+				is_subject = yes
 				NOT = {
 					OVERLORD = {
 						has_government = democratic
@@ -3616,7 +3608,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 0.2
 				is_historical_focus_on = no
-				is_puppet = no
+				is_subject = no
 				NOT = {
 					has_government = democratic
 				}
@@ -3628,7 +3620,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 10
 				is_historical_focus_on = no
-				is_puppet = no
+				is_subject = no
 				tag = WGR
 			}
 		}
@@ -3665,24 +3657,10 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 	
 		completion_reward = {
-			add_advisor_role = {
-				character = TAN_kamby_lama
-				advisor = {
-					slot = political_advisor
-					cost = 250
-					idea_token = TAN_kamby_lama
-					traits = {
-						kamby_lama
-					}
-					available = {
-						NOT = {
-							has_government = communism
-						}
-					}
-				}
-			}
 			add_political_power = 50
 			add_stability = 0.1
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = TAN_kamby_lama
 			#maybe the Tibetan decision about restoring the monasteries. If possible find another existing religious survivor.	
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }

@@ -269,10 +269,22 @@ characters={
 	}
 	
 	TAN_kamby_lama={
-		name="TAN_kamby_lama"
+		name = TAN_kamby_lama
 		portraits={
 			civilian={
 				small = GFX_kr_portrait_central_asia_generic_1_small
+			}
+		}
+
+		advisor={
+			slot = political_advisor
+			idea_token = SAM_mataafa_faumuina_fiame
+			allowed  = { original_tag = TAN }
+			cost = 250
+			available = { NOT = { has_government = communism } }
+			visible = { OR = { has_completed_focus = TAN_tuvan_nationalism has_completed_focus = TAN_restore_monastic_prerogatives } }
+			traits = {
+				kamby_lama
 			}
 		}
 	}
@@ -691,7 +703,9 @@ characters={
 			allowed  = {
 				original_tag  = TAN
 			}
-			
+			visible = {
+				has_completed_focus = TAN_rehabilitate_pre_revolutionary_practices
+			}
 			traits  = {
 				staunch_traditionalist
 			}

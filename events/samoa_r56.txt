@@ -408,7 +408,7 @@ country_event = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		effect_tooltip = {
 			add_equipment_to_stockpile = {
-				equipment = infantry_equipment_0
+				type = infantry_equipment_0
 				amount = 750
 				producer = JAP
 			}
@@ -595,11 +595,8 @@ country_event = {
 			}
 
 			modifier = {
-				any_other_country = {
-					limit = { is_ally_with = ROOT }
-					has_war_with = FROM
-				}
-				add = 10
+				has_wargoal_against = FROM
+				add = 5
 			}
 		}
 	}

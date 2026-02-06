@@ -1,0 +1,85 @@
+
+spriteTypes = {
+
+###------> GENERIC <><> <><> <><> <><> <><>
+
+	SpriteType = {
+		name = "GFX_goal_suez_canal"
+		texturefile = "gfx/interface/goals/generic/r56_goal_suez_canal.dds"
+	}
+
+###------> FRI <><> <><> <><> <><> <><>
+
+	SpriteType = {
+		name = "GFX_goal_FRI_army_coa"
+		texturefile = "gfx/interface/goals/FRI/r56_goal_FRI_army_coa.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_FRI_navy_coa"
+		texturefile = "gfx/interface/goals/FRI/r56_goal_FRI_navy_coa.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_FRI_airforce_coa"
+		texturefile = "gfx/interface/goals/FRI/r56_goal_FRI_airforce_coa.dds"
+	}
+
+###------> MAL <><> <><> <><> <><> <><>
+
+	SpriteType = {
+		name = "GFX_goal_MAL_army_coa"
+		texturefile = "gfx/interface/goals/mal/r56_goal_mal_army_coa.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_MAL_navy_coa"
+		texturefile = "gfx/interface/goals/mal/r56_goal_mal_navy_coa.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_MAL_airforce_coa"
+		texturefile = "gfx/interface/goals/mal/r56_goal_mal_airforce_coa.dds"
+	}
+
+###------> SAR <><> <><> <><> <><> <><>
+
+	SpriteType = {
+		name = "GFX_goal_SAR_army_coa"
+		texturefile = "gfx/interface/goals/sar/r56_goal_sar_army_coa.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_SAR_navy_coa"
+		texturefile = "gfx/interface/goals/sar/r56_goal_sar_navy_coa.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_SAR_airforce_coa"
+		texturefile = "gfx/interface/goals/sar/r56_goal_sar_airforce_coa.dds"
+	}
+
+###------> SOV <><> <><> <><> <><> <><>
+
+	SpriteType = {
+		name = "GFX_goal_SOV_seize_tuva_icon"
+		texturefile = "gfx/interface/goals/sov/r56_goal_SOV_seize_tuva.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_SOV_befriend_britain"
+		texturefile = "gfx/interface/goals/sov/r56_goal_SOV_british_frens.dds"
+	}
+
+###------> VEN <><> <><> <><> <><> <><>
+
+	SpriteType = {
+		name = "GFX_goal_VEN_focus_on_guiana"
+		texturefile = "gfx/interface/goals/ven/r56_goal_VEN_guiana_focus.dds"
+	}
+
+}
+
+
+
+#####---------------------------------------------------------------------> End
