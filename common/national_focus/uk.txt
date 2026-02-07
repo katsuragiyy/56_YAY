@@ -3010,7 +3010,7 @@ focus_tree = {
 	focus = {
 		id = uk_protect_suez
 		prerequisite = { focus = uk_mediterranean_focus }
-		icon = GFX_focus_generic_the_suez
+		icon = GFX_goal_suez_canal
 		x = 0
 		y = 2
 		relative_position_id = uk_mediterranean_focus
@@ -16364,7 +16364,7 @@ focus_tree = {
 				NOT = { has_war_with = LUX }
 			}
 		}
-		icon = GFX_goal_tripartite_pact
+		icon = GFX_focus_chi_reach_out_to_france
 		x = 1
 		y = 1
 		relative_position_id = ENG_the_british_communist_alternative

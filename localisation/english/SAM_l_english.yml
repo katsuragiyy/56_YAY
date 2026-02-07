@@ -473,6 +473,28 @@
  r56_SAM_tuimanua:0 "Tui Manu'a"
  r56_SAM_politically_absent:0 "Politically Absent"
  r56_SAM_tuimanua_cy:0 "Politically Absent Monarch"
+
+ # Over a Thousand Seas...
+ r56_SAM_integrating_polynesia_category:0 "Over a Thousand Seas.."
+ r56_SAM_integrating_polynesia_category_desc:0 "Can someone please get me a snack?"
+
+ r56_SAM_kiwi_uprising:0 "The Kiwi Insurgency"
+ r56_SAM_kiwi_uprising_desc:0 "Although we have been able to take control of these lands now called "New Zealand", many in these lands oppose our rule and have already begun "
+ r56_SAM_integrate_nzl:0 "Integrate Aotearoa"
+ r56_SAM_integrate_nzl_desc:0 ""
+ r56_SAM_request_japanese_intervention:0 "Request Japanese Military Assistance"
+ r56_SAM_request_japanese_intervention_desc:0 ""
+ r56_SAM_offer_concessions_to_whites:0 "Offer Concessions to Pākehā Politicians"
+ r56_SAM_offer_concessions_to_whites_desc:0 ""
+ r56_SAM_offer_investments_to_nzl:0 "Invest Into Pākehā Cities"
+ r56_SAM_offer_investments_to_nzl_desc:0 ""
+ r56_SAM_offer_autonomy_to_white_settlements:0 "Grant Limited Autonomy to White Settlements"
+ r56_SAM_offer_autonomy_to_white_settlements_desc:0 ""
+ r56_SAM_grant_autonomy_to_new_zealand:0 "Establish the Aotearoa Autonomous District"
+ r56_SAM_grant_autonomy_to_new_zealand_desc:0 ""
+ r56_SAM_decide_the_fate_of_the_moriori:0 "Decide on the Chatham Islands"
+ r56_SAM_decide_the_fate_of_the_moriori_desc:0 ""
+ 
  
  #Illegal Smuggling
  r56_SAM_smuggle_operations:0 "Smuggling Operations"
@@ -771,11 +793,51 @@
  r56_SAM_jungle_tech:0 "Study Our Home Terrain"
  r56_SAM_jungle_tech_desc:0 ""
 
+ r56_SAM_supremacy_of_will:0 "Supremacy of Will"
+ r56_SAM_supremacy_of_will_desc:0 ""
+
+ r56_SAM_establish_resistance_contacts:0 "Establish Contact with Resistance Groups"
+ r56_SAM_establish_resistance_contacts_desc:0 ""
+ r56_SAM_resistance_idea:0 "Resistsance in the Home Islands"
+
+ r56_SAM_we_will_return:0 "The Liberation Army Abroad"
+ r56_SAM_we_will_return_desc:0 ""
+
+ r56_SAM_evacuate_property:0 "Evacuate Valuable Industry"
+ r56_SAM_evacuate_property_desc:0 ""
+
  r56_SAM_conquer_the_oppressor:0 "Remember 1929"
  r56_SAM_conquer_the_oppressor_desc:0 ""
 
  r56_SAM_demand_pacific_holdings:0 "Request Pacific Holdings"
  r56_SAM_demand_pacific_holdings_desc:0 ""
+
+ r56_SAM_develop_newly_acquired_territories:0 "Develop Our Newly Acquired Territories"
+ r56_SAM_develop_newly_acquired_territories_desc:0 ""
+
+ r56_SAM_acquire_japanese_machinery:0 "Acquire Japanese Machinery"
+ r56_SAM_acquire_japanese_machinery_desc:0 ""
+
+ r56_SAM_the_means_to_wage_war:0 "The Means to Wage War"
+ r56_SAM_the_means_to_wage_war_desc:0 ""
+
+ r56_SAM_japplaceholder:0 "PLACEHOLDER"
+ r56_SAM_japplaceholder_desc:0 ""
+
+ r56_SAM_tagaloa_chosen:0 "Tagaloa's Chosen"
+ r56_SAM_tagaloa_chosen_desc:0 ""
+
+ r56_SAM_ally_not_subject:0 "An Ally, Not Subject"
+ r56_SAM_ally_not_subject_desc:0 ""
+ 
+ r56_SAM_the_sun_sets:0 "Watch the Sunset"
+ r56_SAM_the_sun_sets_desc:0 ""
+
+ r56_SAM_equal_partners:0 "Brothers in Arms"
+ r56_SAM_equal_partners_desc:0 ""
+
+ r56_SAM_embrace_the_prosperity_sphere:0 "Embrace the Prosperity Sphere"
+ r56_SAM_embrace_the_prosperity_sphere_desc:0 ""
 
  # Balance of Power
  SAM_power_balance:0 "State Authority - District Autonomy Balance of Power"
