@@ -1,12 +1,56 @@
 ideas = {
 	country = {
-		NEP_royal_army = {
-			
-			picture = raj_indian_gentlemen_officers
-			
-			allowed = {
-				always = no
+
+		NEP_expeditionary_force_r56 = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = { always = yes }	
+			allowed_civil_war = { always = no }		
+			modifier = {
+				send_volunteers_tension = -0.85
+				send_volunteer_divisions_required = -0.75
 			}
+		}
+
+		NEP_involvement_in_the_sinojapanese_war_r56 = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = { always = yes }
+			allowed_civil_war = { always = no }
+			cancel = { CUG = { has_war = no } }
+			targeted_modifier = {
+				tag = CUG
+				send_volunteer_divisions_required = -0.85
+				send_volunteers_tension = -1
+			}
+		}
+
+		NEP_joint_military_exercise_r56 = {
+			name = chi_army_corruption2
+			picture = generic_volunteer_expedition_bonus
+			allowed = { always = yes }	
+			allowed_civil_war = { always = no }		
+			modifier = {
+				experience_gain_army = 0.05
+				command_power_gain = 0.1
+			}
+		}
+
+		NEP_economic_exploitation_r56 = { #todo - make upgrading eco laws impossible
+			picture = generic_economic_crisis
+			allowed = { original_tag = NEP }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.25
+				industrial_capacity_factory = -0.15
+				production_speed_buildings_factor = -0.1
+				custom_modifier_tooltip = NEP_cannot_change_eco_law
+			}
+		}
+
+		NEP_royal_army = {
+			picture = raj_indian_gentlemen_officers
+			allowed = { always = no }
 			
 			modifier = {
 				special_forces_cap = 0.75
@@ -14,7 +58,38 @@ ideas = {
 				special_forces_defence_factor = 0.05
 			}
 		}
+
+		NEP_royal_army_2 = {
+			name = NEP_royal_army
+			picture = raj_indian_gentlemen_officers
+			
+			allowed = {
+				always = no
+			}
+			
+			modifier = {
+				special_forces_cap = 1
+				special_forces_attack_factor = 0.08
+				special_forces_defence_factor = 0.08
+				army_org_factor = 0.15
+				command_abilities_cost_factor = -0.3		
+			}
+		}
+
 		NEP_tribhuvan_idea = {
+			picture = NEP_tribhuvan
+			allowed = { always = no }
+
+			cancel = { # He doesn't have a character, but if one is made check he isn't leader
+				has_government = communism
+			}
+			
+			modifier = { political_power_cost = 0.1 }
+		}
+
+		NEP_tribhuvan_idea_2 = {
+
+			name = NEP_tribhuvan_idea
 			
 			picture = NEP_tribhuvan
 			
@@ -30,5 +105,278 @@ ideas = {
 				popular_figurehead2
 			}
 		}
+		NEP_tribhuvan_idea_neutral = { 
+			
+			picture = NEP_tribhuvan
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = { # He doesn't have a character, but if one is made check he isn't leader
+				has_government = communism
+			}
+			
+			traits = {
+
+			}
+			modifier = {
+
+			}
+		}
+
+		NEP_organized_opposition = {
+			picture = SPR_the_popular_front
+
+			allowed = {
+				original_tag = NEP
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			
+			removal_cost = -1
+			
+			modifier = {
+				democratic_drift = 0.7
+				communism_drift = 0.01
+			}
+		}
+
+		NEP_nepal_bank_idea = {
+			
+			allowed = {
+				
+				original_tag = NEP
+				
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_goods_red_bonus
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		NEP_expand_recruitment = {
+			
+			picture = generic_manpower_bonus
+
+			allowed = {
+ 
+			}
+
+			allowed_civil_war = {
+				always = yes 
+			}
+
+			removal_cost = -1 
+
+			modifier = {
+				training_time_factor = -0.15
+				conscription_factor = 0.2
+			}
+		}
+
+		NEP_obsolete_equipment = {
+			allowed = {
+
+			}
+
+			allowed_civil_war = {
+ 
+			}
+
+			removal_cost = -1 
+
+			picture = SWE_severe_lack_of_ammunition
+
+			modifier = {
+				army_attack_factor = -0.1
+				army_defence_factor = -0.05
+
+			}
+		}
+
+		NEP_from_the_mountains_to_the_jungle = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+
+			modifier = {
+				winter_attrition_factor = -0.2
+				heat_attrition_factor = -0.2
+			}
+		}
+
+		NEP_rana_stratocracy = {
+			picture = MAN_officer_academy
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_leader_cost_factor = 2
+			}
+		}
+
+		NEP_rana_stratocracy_2 = {
+			picture = MAN_officer_academy
+			name = NEP_rana_stratocracy
+			allowed = { #Rana leaders
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_leader_cost_factor = 2
+				political_advisor_cost_factor = -0.1
+				army_chief_cost_factor = -0.2
+				high_command_cost_factor = -0.2
+			}
+		}
+
+		NEP_reinforced_rana_rule = {
+			picture = generic_pp_unity_bonus
+			removal_cost = -1	
+			modifier = {
+				political_power_gain = 0.2
+			}	
+			allowed = {
+				has_government = neutrality
+			}					
+		}
+
+		NEP_panchayat_system = {
+			picture = generic_pp_unity_bonus
+			removal_cost = -1	
+			modifier = {
+				political_power_gain = 0.3
+			}		
+		}
+
+		NEP_illiteracy = {
+			
+			picture = indochina_illiteracy
+		
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+				
+			modifier ={
+				research_speed_factor = -0.2
+			}
+		}
+
+		NEP_illiteracy_1 = {
+
+			name = NEP_illiteracy
+			
+			picture = indochina_illiteracy
+		
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+				
+			modifier ={
+				research_speed_factor = -0.15
+			}
+		}
+
+		NEP_illiteracy_2 = {
+
+			name = NEP_illiteracy
+			
+			picture = indochina_illiteracy
+		
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+				
+			modifier ={
+				research_speed_factor = -0.1
+			}
+		}
+
+		NEP_illiteracy_3 = {
+
+			name = NEP_illiteracy
+			
+			picture = indochina_illiteracy
+		
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+				
+			modifier ={
+				research_speed_factor = -0.05
+			}
+		}
+
+	#	NEP_illiteracy_4 = {
+	#		
+	#		picture = indochina_illiteracy
+	#	
+	#		allowed = {
+	#			always = yes
+	#		}
+	#		
+	#		allowed_civil_war = {
+	#			always = yes
+	#		}
+	#			
+	#		modifier ={
+	#			research_speed_factor = -0.1
+	#		}
+	#	}
+	#
+	#	NEP_illiteracy_5 = {
+	#		
+	#		picture = indochina_illiteracy
+	#	
+	#		allowed = {
+	#			always = yes
+	#		}
+	#		
+	#		allowed_civil_war = {
+	#			always = yes
+	#		}
+	#			
+	#		modifier ={
+	#			research_speed_factor = -0.05
+	#		}
+	#	}								
 	}
 }

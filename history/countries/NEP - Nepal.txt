@@ -1,28 +1,31 @@
-﻿capital = 323
-
+capital = 323
 oob = "NEP_1936"
-
-# Starting tech
-set_technology = {
-
-	# Extended Technologies
-	etax_doctrine = 1
-	camo = 1
-		
-	TIB_mountainous_people_tech = 1
-	
-	infantry_weapons = 1
-	tech_mountaineers = 1
-}
+set_research_slots = 2
+set_war_support = 0.2
+set_stability = 0.6
+set_country_flag = started_out_as_landlocked
 
 add_ideas = {
 	NEP_tribhuvan_idea
 	NEP_royal_army
-	TIB_mountainous_people
+	NEP_economic_exploitation_r56
+	NEP_rana_stratocracy
+	NEP_obsolete_equipment
+	NEP_illiteracy
+	limited_exports
 }
 
-set_war_support = 0.05
-set_stability = 0.75
+diplomatic_relation = {
+	country = ENG
+	relation = non_aggression_pact
+	active = yes
+}
+
+# Bagmati
+323 = { add_dynamic_modifier = { modifier = dense_rural_infrastructure } }
+
+# Gandaki
+1091 = { add_dynamic_modifier = { modifier = dense_rural_infrastructure } }
 
 set_politics = {
 	ruling_party = neutrality
@@ -32,52 +35,67 @@ set_politics = {
 }
 
 set_popularities = {
-	democratic = 12
+	democratic = 18
 	communism = 5
 	fascism = 3
-	neutrality = 80
+	neutrality = 74
 }
 
 recruit_character = NEP_juddha_rana
-recruit_character = NEP_baber_rana
+recruit_character = NEP_tribhuvan_shah
 recruit_character = NEP_tanka_prasad_acharya
-recruit_character = NEP_pushpa_lal_shrestha #brother executed in 1941 democrat ->Ganga Lal Shrestha
-recruit_character = NEP_brahma_rana
-recruit_character = NEP_kiran_rana
+recruit_character = NEP_pushpa_lal_shrestha
+
+# ARMY
+recruit_character = NEP_padma_rana
+recruit_character = NEP_baber_rana
+recruit_character = NEP_mohan_rana
+#recruit_character = NEP_bahadur_rana mistake, should be kiran rana instead, bahadur is part of a title not a first name
+recruit_character = NEP_dilli_jung_thapa
 recruit_character = NEP_nir_rana
 recruit_character = NEP_kaiser_rana
-recruit_character = NEP_mohan_rana
-recruit_character = NEP_padma_rana
-recruit_character = NEP_ENG_air_theorist
-recruit_character = NEP_navy_devisive_battle
+recruit_character = NEP_navy_decisive_battle
+recruit_character = NEP_ace_air_theorist
 recruit_character = NEP_singha_rana
 recruit_character = NEP_mrigendra_rana
 recruit_character = NEP_dharmaditya_dharmacharya
+# recruit_character = NEP_brahma_rana
+recruit_character = NEP_kiran_rana
+recruit_character = NEP_rudra_rana # starts in exile
+
 recruit_character = NEP_shukraraj_shastri
 recruit_character = NEP_jagat_sundar_malla
 recruit_character = NEP_motidevi_shrestha
 recruit_character = NEP_kunwar_indrajit_singh
 recruit_character = NEP_kulbir_thapa
-
 recruit_character = NEP_khadga_man_singh
 recruit_character = NEP_subarna_rana
+recruit_character = NEP_tatsuo_fukai
+recruit_character = NEP_dharma_bhakta_mathema
+recruit_character = NEP_ganga_lal_shrestha
+recruit_character = NEP_nara_rana
 
-###BAD, to remove whenever possible
-#recruit_character = NEP_william_stevenson_meyer
-#recruit_character = NEP_w_r_parker_gill
-#recruit_character = NEP_sidney_r_planter
+recruit_character = NEP_random_general_1
+recruit_character = NEP_random_general_2
+recruit_character = NEP_random_general_3
+recruit_character = NEP_random_general_4
 
 
-323 = { #Nepal
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
+# recruit_character = NEP_william_stevenson_meyer
+# recruit_character = NEP_w_r_parker_gill
+# recruit_character = NEP_sidney_r_planter
 
-1091 = { #Nepal
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
+# Starting tech
+set_technology = {
+	# Extended Technologies
+	TIB_mountainous_people_tech = 1
+	etax_doctrine = 1
+	camo = 1
+	infantry_weapons = 1
+	gw_artillery = 1
+	tech_mountaineers = 1
+	camo = 1
+	tech_support = 1
+	tech_engineers = 1
 
-diplomatic_relation = {
-	country = ENG
-	relation = non_aggression_pact
-	active = yes
 }
