@@ -498,21 +498,23 @@ characters={
 		}
 	}
 	
-	MAN_adnan_saidi={
-		name= "Adnan Saidi"
-		portraits={
+	MAN_adnan_saidi = {
+		name = MAN_adnan_saidi
+		portraits = {
 			army = {
 				large= "gfx/leaders/MAL/Portrait_Adnan_Saidi.dds"
 			}
 		}
+
 		corps_commander = {
-			traits = { promising guerilla_fighter  }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
+			traits = { promising }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
 			planning_skill = 1
-			logistics_skill = 2
-			legacy_id = 1213
+			logistics_skill = 1
+			legacy_id = -1
+			visible = { has_completed_focus = MAL_conduct_an_army_review_r56 }
 		}
 	}
 	

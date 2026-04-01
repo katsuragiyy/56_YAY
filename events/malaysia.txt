@@ -1,4 +1,23 @@
-﻿  add_namespace = malaysia
+﻿add_namespace = malaysia
+add_namespace = r56_malaysia
+
+country_event = { #Sultan of Johore expresses interest in Air force.
+	id = r56_malaysia.1
+	title = r56_malaysia.1.t
+	desc = r56_malaysia.1.desc
+	picture = GFX_report_event_tur_military_affair
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { # Delusional.
+		name = r56_malaysia.1.a
+	}
+
+	option = { # Request he not follow up with whatever is going on in his head.
+		name = r56_malaysia.1.b
+	}
+}
 
 country_event = {
 	id = malaysia.1
