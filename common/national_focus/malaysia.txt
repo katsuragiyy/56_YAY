@@ -1457,7 +1457,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 20
 			add_command_power = 10
-			show_unit_leaders_tooltip = MAN_adnan_saidi
+			show_unit_leaders_tooltip = MAL_adnan_saidi
 		}
 
 		search_filters = { FOCUS_FILTER_ARMY_XP }
@@ -1471,24 +1471,117 @@ focus_tree = {
 		x = 56
 		y = 15
 
-		completion_reward = {
-			navy_experience = 20
-			add_doctrine_cost_reduction = {
-				name = naval_doctrine
-				cost_reduction = 0.5
-				uses = 1
-				category = air_doctrine	
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_timed_idea = {
-				idea = MAL_allocated_funds_idea_r56
-				days = 80
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
 			}
 		}
 
+		completion_reward = {
+			navy_experience = 20
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = dd_tech
+				category = cl_tech
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT is_coastal = yes }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAL_destroyer_focus_r56
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = MAL_lay_foundations_for_navy_r56 }
+		relative_position_id = MAL_lay_foundations_for_navy_r56
+
+		cost = 8
+		x = 2
+		y = 1
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 10
+			
+		}
+
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = MAL_placeholder_r56
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = MAL_lay_foundations_for_navy_r56 }
+		relative_position_id = MAL_lay_foundations_for_navy_r56
+
+		cost = 8
+		x = -2
+		y = 1
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 10
+			
+		}
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = MAL_expand_dockyard_industry_r56
+		icon = GFX_goal_generic_expand_the_naval_industry
+		prerequisite = { focus = MAL_lay_foundations_for_navy_r56 }
+		relative_position_id = MAL_lay_foundations_for_navy_r56
+
+		cost = 10
+		x = 0
+		y = 1
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+			#research checks
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT is_coastal = yes }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -1501,12 +1594,13 @@ focus_tree = {
 
 		completion_reward = {
 			air_experience = 20
-			add_doctrine_cost_reduction = {
+			add_tech_bonus = {
 				name = air_doc_bonus
-				cost_reduction = 0.5
+				bonus = 0.75
 				uses = 1
-				category = air_doctrine	
+				category = light_air
 			}
+			unlock_decision_tooltip = MAL_begin_nationwide_airbase_construction_r56
 
 			hidden_effect = { country_event = { id = r56_malaysia.1 days = 25 } }
 		}
@@ -1514,25 +1608,40 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
 	}
 
-	#focus = {  #might just convert to decision in the first focus
-	#	id = MAL_construct_nationwide_airbases_r56
-	#	icon = GFX_focus_generic_air_bases
-	#	prerequisite = { focus = MAL_create_mvaf_r56 }
-	#	relative_position_id = MAL_create_mvaf_r56
-	#
-	#	cost = 5
-	#	x = 1
-	#	y = 1
-	#
-	#	available_if_capitulated = no
-	#
-	#	completion_reward = {
-	#		# event that draws protests from the navy and ESPECIALLY THE ARMY BCUZ ARMY NO LIKE AIRFORCE DOING RANDOM SHIT
-	#		#activates mission for central malaya, johor, and kelantan having level 2-3 air bases
-	#	} # about the mission!! - build level 2 air base in terengganu, then in kedah, then a level 4 airbase in pahang. after that, u gain an air facility. make it required to have like 300 aircraft tho to activate the mission. if u fail then u just gain -25 pp and -5 warsupport. each decision should add 90 days to the mission.
-	#
-	#	search_filters = {  }
-	#}
+	focus = {
+		id = MAL_torpedos_r56
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = MAL_create_mvaf_r56 focus = MAL_lay_foundations_for_navy_r56 }
+		relative_position_id = MAL_create_mvaf_r56
+	
+		cost = 5
+		x = 2
+		y = 1
+		
+		completion_reward = { #yoinked from siam
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_tech_bonus = {
+					bonus = 0.75
+					uses = 2
+					category = cat_torpedoes
+					technology = air_torpedoe_1
+					technology = air_torpedoe_2
+					technology = air_torpedoe_3
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.75
+					uses = 2
+					category = naval_bomber
+					category = cat_torpedoes
+				}
+			}
+		}
+	
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
 
 	focus = {
 		id = MAL_send_pilots_abroad_r56
@@ -1550,11 +1659,12 @@ focus_tree = {
 		prerequisite = { focus = MAL_create_mvaf_r56 }
 		relative_position_id = MAL_create_mvaf_r56
 
-		cost = 8
+		cost = 7.2
 		x = 0
 		y = 1
 
 		completion_reward = {
+			air_experience = 10
 			add_doctrine_cost_reduction = {
 				name = air_doc_bonus
 				cost_reduction = 0.85
@@ -1776,10 +1886,15 @@ focus_tree = {
 		allow_branch = { is_ally_with = ENG }
 
 		completion_reward = {
-			
+			add_doctrine_cost_reduction = {
+				name = naval_doctrine
+				cost_reduction = 0.85
+				uses = 1
+				category = naval_doctrine
+			}
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
 
 	focus = {

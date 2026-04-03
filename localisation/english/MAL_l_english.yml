@@ -485,14 +485,20 @@ MAL_status_quo_tooltip:0 "For AI use only."
 MAL_singapore_tooltip:0 "This currently does nothing"
 
  # Characters
- MAN_adnan_saidi:0 "Adnan Saidi"
+ MAL_adnan_saidi:0 "Adnan Saidi"
 
  # Ideas
  MAL_neglected_army_idea_r56:0 "Neglected Army"
- MAL_neglected_army_idea_r56_desc:0 ""
+ MAL_neglected_army_idea_r56_desc:0 "From the times of the Malacca and Johor Sultanates who dominated the region now known as the Malaya Peninsula, the Malays have always been known to fight with glory and were formidable forces in their time. But after many violent confrontations between these Malay states and the European powers, it left their armies shattered, and this weakness allowed for much of the peninsula to fall under the influence of [ENG.GetNameDef]. \n\nNow, [ROOT.GetNameDef] rely on [ROOT.OVERLORD.GetNameDef] for its defense against foreign threats, which has left the army lacking the necessary funds and to become neglected by the government. If we want to fully ensure our own security, we must restore Malaya's former military capabilities."
 
  MAL_allocated_funds_idea_r56:0 "Allocated Funds"
- MAL_allocated_funds_idea_r56_desc:0 ""
+ MAL_allocated_funds_idea_r56_desc:0 "Currently we are allocating funds."
+
+ MAL_allocated_funds_idea_to_navy_r56:0 "Allocated Funds to the Formation of a [ROOT.GetAdjective] Navy"
+ MAL_allocated_funds_idea_to_navy_r56_desc:0 "Currently we are allocating funds to the creation of a Malaysian naval force that can fend off future threats from the sea."
+
+ MAL_spent_too_much_money_r56:0 "Overspent Budget"
+ MAL_spent_too_much_money_r56_desc:0 "After the failure to establish airbases all around the Malay peninsula, many investors and government officials have withdrawn their funding from the project, leading to temporary economic strain."
 
  MAL_prioritizing_fighter_output_r56:0 "Prioritizing Fighter Production"
  MAL_prioritizing_fighter_output_r56_desc:0 ""
@@ -512,6 +518,21 @@ MAL_singapore_tooltip:0 "This currently does nothing"
  r56_malaysia.1.a:0 "Delusional."
  r56_malaysia.1.b:0 "Tell him to cut the idea short."
 
+ r56_malaysia.2.t:0 "Airbase Construction Plan Successful!"
+ r56_malaysia.2.desc:0 "After spending an enormous amount of resources and funds on the project, our mission of constructing airbases all around Malaya has proven to be successful."
+ r56_malaysia.2.a:0 "Great."
+
+ r56_malaysia.3.t:0 "Airbase Construction Plan Falls Short"
+ r56_malaysia.3.desc:0 "After spending an enormous amount of resources and funds on the project, our mission of constructing airbases all around Malaya was cut short due to the lack of progression and the hitting of the deadline."
+ r56_malaysia.3.a:0 "We over estimated our capabilities."
+
+ r56_malaysia.4.t:0 "Completed Construction of Airbases in Kedah"
+ r56_malaysia.4.desc:0 ""
+ r56_malaysia.4.a:0 "Let us continue on."
+
+ r56_malaysia.5.t:0 "Completed Construction of Airbases in Terengganu"
+ r56_malaysia.5.desc:0 ""
+
  # Army, Navy, & Air
  MAL_conduct_an_army_review_r56:0 "Army of Malaya"
  MAL_conduct_an_army_review_r56_desc:0 ""
@@ -519,13 +540,13 @@ MAL_singapore_tooltip:0 "This currently does nothing"
  MAL_lay_foundations_for_navy_r56:0 "Allocate Funds to a [ROOT.GetAdjective] Navy"
  MAL_lay_foundations_for_navy_r56_desc:0 ""
 
- MAL_create_mvaf_r56:0 "Found the Malayan Volunteers Air Force" #SCRIPTED LOC--> IF MALAYA IS A SUBJECT, THIS!! IF MALAYSIA IS INDEPENDENT, CREATE A MALAYAN AIRWING
+ MAL_create_mvaf_r56:0 "Found the Malayan Volunteers Air Force"
  MAL_create_mvaf_r56_desc:0 ""
 
- #MAL_construct_nationwide_airbases_r56:0 "Construct Nationwide Air Bases"
- #MAL_construct_nationwide_airbases_r56_desc:0 ""
+ MAL_torpedos_r56:0 "Acquire Foreign Torpedos"
+ MAL_torpedos_r56_desc:0 ""
 
- MAL_send_pilots_abroad_r56:0 "Send Our Pilots Abroad" #SCRIPTED LOC--> MAKE IT SEND PILOTOS TO OVERLORD CAPITAL FOR TRAINING or smt like that IF SUBJECT
+ MAL_send_pilots_abroad_r56:0 "Send Our Pilots Abroad for Training"
  MAL_send_pilots_abroad_r56_desc:0 ""
 
  MAL_study_fighter_technology_r56:0 "Study Fighter Aircraft"
@@ -561,7 +582,34 @@ MAL_singapore_tooltip:0 "This currently does nothing"
  MAL_assume_protection_over_singapore_r56:0 "Assume Protection Over [336.GetName]"
  MAL_assume_protection_over_singapore_r56_desc:0 ""
 
+ # Decision(s) and Decision Categories
+ MAL_airforce_decisions_r56:0 "Situation in the Skies"
+ MAL_airforce_decisions_r56_desc:0 "Many have come to doubt the Singapore strategy, especially after seeing the recent technological developments in attack aircraft and their effectiveness against sea vessels. Some of our strategists have suggested that we should also take precautionary steps to form an airforce of our own in order to protect ourselves from any potential future threats that may arise."
+
+ MAL_begin_nationwide_airbase_construction_r56:0 "Build Nationwide Airbases"
+ MAL_begin_nationwide_airbase_construction_r56_desc:0 ""
+
+ MAL_building_airbases_mission_r56:0 "Building Nationwide Airbases"
+ MAL_building_airbases_mission_r56_desc:0 ""
+
+ MAL_building_airbases_kedah_r56:0 "Construct Level II Airbases in [914.GetName]"
+ MAL_building_airbases_kedah_r56_desc:0 ""
+
+ MAL_building_airbases_terengganu_r56:0 "Construct Level II Airbases in [960.GetName]"
+ MAL_building_airbases_terengganu_r56_desc:0 ""
+
+ MAL_building_airbases_pahang_r56:0 "Construct Level IV Airbases in [915.GetName]"
+ MAL_building_airbases_pahang_r56_desc:0 ""
+
  # Tooltips
  MAL_has_strike_aircraft_doctrine_tt:0 "If we have acquired the §O"Strike Aircraft"§! sub doctrine, we will receive the following effects:"
+
  MAL_has_fighter_airfcraft_doctrine_tt:0 "If we have acquired the §O"Fighter Aircraft"§! sub doctrine, we will receive the following effects:"
+
  MAL_we_get_idea_for_whatever_focus_we_complete:0 "In addition to a military factory, we will gain a production reduction cost on either §OFighter§! or §OBomber§! aircraft, depending on which one of the above §YFocuses§! we §GCompleted§!."
+
+ MAL_warning_do_this_at_your_own_risk:0 "To achieve such a build up of airbases all around our nation will require the full attention of most of our industry. We should be pragmatic in our approach to this task and begin this giant task when we are ready."
+
+ MAL_air_mission_timeout_good:0 "§YIf we are §GAble§! to meet expectations by the deadline, we will gain the following effects§!:"
+ 
+ MAL_air_mission_timeout_bad:0 "§YIf we §RAren't§! able to meet expectations by the deadline, we will gain the following effects§!:"

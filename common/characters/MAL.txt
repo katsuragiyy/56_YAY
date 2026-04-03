@@ -498,8 +498,8 @@ characters={
 		}
 	}
 	
-	MAN_adnan_saidi = {
-		name = MAN_adnan_saidi
+	MAL_adnan_saidi = {
+		name = MAL_adnan_saidi
 		portraits = {
 			army = {
 				large= "gfx/leaders/MAL/Portrait_Adnan_Saidi.dds"
