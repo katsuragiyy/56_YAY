@@ -471,7 +471,7 @@ mal_fascist_denied:0 "Denied Freedom"
  MAL_democratic_party_puppet_long:0 "Kesatuan Melayu"
 #  MAL_communism_party:0 "MCP" #or MCP # moved to replace
  MAL_communism_party_long:0 "Parti Komunis Malaya" #or MCP
- MAL_neutrality_party_puppet:0 "Kerajaan Penjajah"
+ MAL_neutrality_party_puppet:0 "British Administration"
 
 MAL_democratic_umno:0 "UMNO"
 MAL_democratic_umno_long:0 "Pertubuhan Kebangsaan Melayu"
@@ -485,14 +485,17 @@ MAL_status_quo_tooltip:0 "For AI use only."
 MAL_singapore_tooltip:0 "This currently does nothing"
 
  # Characters
+ MAL_shenton_thomas:0 "Shenton Thomas"
  MAL_adnan_saidi:0 "Adnan Saidi"
 
  # Ideas
  MAL_neglected_army_idea_r56:0 "Neglected Army"
  MAL_neglected_army_idea_r56_desc:0 "From the times of the Malacca and Johor Sultanates who dominated the region now known as the Malaya Peninsula, the Malays have always been known to fight with glory and were formidable forces in their time. But after many violent confrontations between these Malay states and the European powers, it left their armies shattered, and this weakness allowed for much of the peninsula to fall under the influence of [ENG.GetNameDef]. \n\nNow, [ROOT.GetNameDef] rely on [ROOT.OVERLORD.GetNameDef] for its defense against foreign threats, which has left the army lacking the necessary funds and to become neglected by the government. If we want to fully ensure our own security, we must restore Malaya's former military capabilities."
 
+ MAL_dependency_on_uk_r56:0 "Economic Dependence on [ENG.GetNameDef]"
+ MAL_dependency_on_uk_r56_desc:0 "We currently relay heavily on [ENG.GetNameDef] economically."
+
  MAL_allocated_funds_idea_r56:0 "Allocated Funds"
- MAL_allocated_funds_idea_r56_desc:0 "Currently we are allocating funds."
 
  MAL_allocated_funds_idea_to_navy_r56:0 "Allocated Funds to the Formation of a [ROOT.GetAdjective] Navy"
  MAL_allocated_funds_idea_to_navy_r56_desc:0 "Currently we are allocating funds to the creation of a Malaysian naval force that can fend off future threats from the sea."
@@ -576,8 +579,8 @@ MAL_singapore_tooltip:0 "This currently does nothing"
  MAL_cooperation_with_raaf_r56:0 "Cooperate With the R.A.A.F"
  MAL_cooperation_with_raaf_r56_desc:0 ""
 
- MAL_gibraltar_of_the_east_r56:0 "Gibraltar of the East"
- MAL_gibraltar_of_the_east_r56_desc:0 ""
+ MAL_request_the_z_force_r56:0 "Request the Force Z"
+ MAL_request_the_z_force_r56_desc:0 ""
 
  MAL_assume_protection_over_singapore_r56:0 "Assume Protection Over [336.GetName]"
  MAL_assume_protection_over_singapore_r56_desc:0 ""
@@ -613,3 +616,5 @@ MAL_singapore_tooltip:0 "This currently does nothing"
  MAL_air_mission_timeout_good:0 "§YIf we are §GAble§! to meet expectations by the deadline, we will gain the following effects§!:"
  
  MAL_air_mission_timeout_bad:0 "§YIf we §RAren't§! able to meet expectations by the deadline, we will gain the following effects§!:"
+
+ MAL_cannot_leave_uk_faction_lol:0 "\nCan leave faction: §RNo§!"

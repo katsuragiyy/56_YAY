@@ -5,6 +5,7 @@ state={
 	resources={
 		rubber = 459
 		tungsten = 608
+		coal = 10
 	}
 
 	history={
@@ -13,7 +14,7 @@ state={
 		add_to_array = { state_victory_points = 10297 }
 		add_to_array = { state_victory_points = 4412 }
 		victory_points = {
-			10297 5
+			10297 10
 		}
 		victory_points = {
 			4412 1 
@@ -21,6 +22,7 @@ state={
 		buildings = {
 			infrastructure = 2 #was 3
 			industrial_complex = 2
+			arms_factory = 1
 			1364 = { dam = 1 } #https://en.wikipedia.org/wiki/Chenderoh_Power_Station
 			4412 = {
 				naval_base = 2

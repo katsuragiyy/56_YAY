@@ -1437,6 +1437,9 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 	}
 
+	############ Eco
+	
+
 	############ ARMY, NAVY, AIR
 	focus = {
 		id = MAL_conduct_an_army_review_r56
@@ -1867,6 +1870,7 @@ focus_tree = {
 		search_filters = {  }
 	}
 
+	# Dynamic Branches for Malaya's allies
 	focus = {
 		id = MAL_singapore_strategy_r56
 		icon = GFX_goal_ENG_pride_of_the_fleet
@@ -1953,95 +1957,37 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MAL_gibraltar_of_the_east_r56
-		icon = GFX_focus_PRC_anti_air_effort
+		id = MAL_request_the_z_force_r56
+		icon = GFX_goal_generic_multiple_ships
 		prerequisite = { focus = MAL_singapore_strategy_r56 }
 		relative_position_id = MAL_singapore_strategy_r56
 
-		cost = 6
+		cost = 10
 		x = 0
 		y = 1
 
-		available = {
-			336 = { is_controlled_by_ROOT_or_ally = yes }
-			OR = {
-				has_tech = antiair1
-				is_special_project_completed = sp:sp_air_radar
-			}
-			ENG = {
-				OR = {
-					has_tech = antiair1
-					is_special_project_completed = sp:sp_air_radar
-				}
-			}
+		available = { 
+			
 		}
+
+		bypass = { 336 = { is_fully_controlled_by = ROOT } }
 
 		completion_reward = {
-			if = {
-				limit = {
-					is_special_project_completed = sp:sp_air_radar
-					ENG = { is_special_project_completed = sp:sp_air_radar }
-				}
-				336 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = radar
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_tech = antiair1
-					ENG = { has_tech = antiair1 }
-				}
-				336 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = anti_air_building
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_tech = antiair1
-					is_special_project_completed = sp:sp_air_radar
-					ENG = {
-						has_tech = antiair1
-						is_special_project_completed = sp:sp_air_radar
-					}
-				}
-				336 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = anti_air_building
-						level = 2
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = radar
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
+			# event that lets u choose how much navy u can request. 3 options, look in wikipedia for further info. UK then gets event to either transfer the ships or tell malaya to fuck off
 		}
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
 		id = MAL_assume_protection_over_singapore_r56
 		icon = GFX_goal_JAP_alliance_ENG
-		prerequisite = { focus = MAL_gibraltar_of_the_east_r56 }
-		relative_position_id = MAL_gibraltar_of_the_east_r56
+		prerequisite = { focus = MAL_cooperation_with_raaf_r56 focus = MAL_request_colonial_garrisons_r56 focus = MAL_request_the_z_force_r56 }
+		relative_position_id = MAL_singapore_strategy_r56
 
 		cost = 5
 		x = 0
-		y = 2
+		y = 3
 
 		available = { 
 			

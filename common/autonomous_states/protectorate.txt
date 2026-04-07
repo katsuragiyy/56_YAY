@@ -43,6 +43,10 @@ autonomy_state = {
 		}
 	}
 	can_take_level = {
+		if = {
+			limit = { original_tag = MAL }
+			NOT = { has_idea = MAL_dependency_on_uk_r56 }
+		}
 		NOT = {
 			original_tag = AOI
 		}	

@@ -1,5 +1,5 @@
 ﻿capital = 915 #Kuala Lumpur
-set_cosmetic_tag = MAL_UK # British Malaya
+set_cosmetic_tag = MAL_FMS
 set_research_slots = 3
 add_to_tech_sharing_group = commonwealth_research
 oob = "MAL_1936"
@@ -9,10 +9,15 @@ set_party_name = { ideology = neutrality  long_name = MAL_neutrality_party_puppe
 set_party_name = { ideology = democratic long_name = MAL_democratic_party_puppet_long name = MAL_democratic_party_puppet}
 
 add_ideas = {
+	# National Spirits
+	MAL_dependency_on_uk_r56
 	MAL_neglected_army_idea_r56
-	MAL_colonial_idea
 	MAL_government_idea
 	MAL_political_idea
+
+	# R56 Laws
+	r56i_laws_social_diversity
+	r56i_laws_gender_traditional
 }
 
 set_politics = {
