@@ -48,6 +48,11 @@
 		}
 
 		completion_reward = {
+			if = {
+				limit = { original_tag = NEP }
+				unlock_decision_category_tooltip = NEP_nepali_army_r56
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
 			army_experience = 5
 			if = { # Tooltip Only
 				limit = {

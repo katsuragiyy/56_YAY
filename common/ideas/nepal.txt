@@ -1,12 +1,59 @@
 ideas = {
 	country = {
-		NEP_royal_army = {
-			
-			picture = raj_indian_gentlemen_officers
-			
-			allowed = {
-				always = no
+		NEP_expeditionary_force_r56 = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = { always = yes }	
+			modifier = {
+				conscription = 0.02
+				send_volunteers_tension = -0.8
+				send_volunteer_divisions_required = -0.85
 			}
+		}
+
+		NEP_involvement_in_the_sinojapanese_war_r56 = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = { always = yes }
+			cancel = { CUG = { has_war = no } }
+			targeted_modifier = {
+				tag = CUG
+				send_volunteer_divisions_required = -0.85
+				send_volunteers_tension = -1
+			}
+		}
+
+		NEP_joint_military_exercise_r56 = {
+			picture = chi_army_corruption3
+			allowed = { always = yes }	
+			modifier = {
+				experience_gain_army = 0.05
+				command_power_gain = 0.1
+			}
+		}
+
+		NEP_market_restriction_r56 = {
+			picture = CHI_corruption_armed_forces
+			allowed = { always = yes }	
+			rule = { can_access_market = no }
+			modifier = { custom_modifier_tooltip = NEP_can_only_exchange_arms_with_uk }
+		}
+
+		NEP_economic_exploitation_r56 = { #unused currently
+			picture = generic_economic_crisis
+			allowed = { original_tag = NEP }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.25
+				industrial_capacity_factory = -0.15
+				production_speed_buildings_factor = -0.1
+				custom_modifier_tooltip = NEP_cannot_change_eco_law
+			}
+		}
+
+		NEP_royal_army = {
+			picture = raj_indian_gentlemen_officers
+			allowed = { always = no }
 			
 			modifier = {
 				special_forces_cap = 0.75
@@ -14,21 +61,74 @@ ideas = {
 				special_forces_defence_factor = 0.05
 			}
 		}
-		NEP_tribhuvan_idea = {
-			
-			picture = NEP_tribhuvan
+
+		NEP_royal_army_2 = {
+			name = NEP_royal_army
+			picture = raj_indian_gentlemen_officers
 			
 			allowed = {
 				always = no
 			}
-
-			cancel = { # He doesn't have a character, but if one is made check he isn't leader
-				has_government = communism
-			}
 			
-			traits = {
-				popular_figurehead2
+			modifier = {
+				special_forces_cap = 1
+				special_forces_attack_factor = 0.08
+				special_forces_defence_factor = 0.08
+				army_org_factor = 0.15
+				command_abilities_cost_factor = -0.3		
 			}
 		}
+
+		NEP_tribhuvan_idea = {
+			picture = NEP_tribhuvan
+			allowed = { always = no }
+			allowed_civil_war = { NOT = { has_government = communism } }
+			cancel = { has_government = communism }
+			traits = { popular_figurehead2 }
+		}
+
+		NEP_obsolete_equipment = {
+
+			removal_cost = -1 
+
+			picture = SWE_severe_lack_of_ammunition
+
+			modifier = {
+				army_attack_factor = -0.1
+				army_defence_factor = -0.05
+
+			}
+		}
+
+		NEP_from_the_mountains_to_the_jungle = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+
+			modifier = {
+				winter_attrition_factor = -0.2
+				heat_attrition_factor = -0.2
+			}
+		}
+
+		NEP_rana_stratocracy = {
+			picture = MAN_officer_academy
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_leader_cost_factor = 2
+			}
+		}
+
 	}
 }

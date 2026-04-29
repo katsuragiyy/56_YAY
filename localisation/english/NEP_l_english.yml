@@ -1,25 +1,27 @@
-﻿#There was a bilateral treaty between Nepal and Britain about the mobilization of Nepalese soldiers. The units which took part were Sri Nath, Kalibox, Surya Dal, Naya Gorakh, Barda Bahadur, Kali Bahadur, Mahindra Dal, Second Rifle, Bhairung, Jabbar Jung, Shumsher Dal, Sher, Devi Dutta, Bhairab Nath, Jagannath and Purano Gorakh Battalions. Besides, there were many high ranking Nepalese in the Joint Army HQ. Late Commander-in-Chief Kiran Shumsher Rana and ex-Commander-in-Chief and Field Marshall Nir Shumsher Rana were amongst the officers deployed by the Nepalese Army.
-#When Japan got involved in this war in December 1940, the British presence was threatened in the Indian subcontinent. Britain deployed its troops in India and on the Burma front. Nepalese battalions – Mahindra Dal, Sher, Kali Bahadur and Jagannath- were also deployed. These Nepalese battalions fought under Allied Command. The Jagannath Battalion took part as engineers to construct tracks, bridges, water points etc.
-#Nepalese troops fought with distinction in the 14th Army under Slim and helped force the eventual Japanese retreat. Finally, following the atomic bomb attacks on Hirosima and Nagasaki, Japan surrendered. Most Nepalese troops were withdrawn to Kathmandu in Oct 1945. A grand victory parade was held on 28 Oct 1945 where many Nepalese soldiers, officers and associated British officers were honored for their appreciable performances.
-#Matrika Prashad Koirala--> see nepali congress https://en.wikipedia.org/wiki/Nepali_Congress
-#Subarna Shamsher Rana
-#Bishweshwar Prasad Koirala
-#Pushpa Lal Shrestha communist leader--> party leader--
-#Man Mohan Adhikari PM in 1995 but 4 older than the other.
-#Mohan Bikram Singh a bit young communist
-#Kunwar Inderjit Singh --> land reformer, communist?
-#Tanka Prasad Acharya democratic leader/advisor
-#Yogbir Singh Kansakar died 1942, opponant to Rana
-#Chittadhar Hridaya another opponant poet
-#Dhammalok Mahasthavir moine exilé par les Rana
-#Rudra Rana another chief if staff,
-l_english:
+﻿l_english:
 
- NEP_tribhuvan_idea:0 "Tribhuvan"
- NEP_tribhuvan_idea_desc:0 "Though the position of King of [ROOT.GetNonIdeologyName] has been reduced to largely ceremonial, Tribhuvan still serves as a popular figure amongst the [NEP.GetAdjective] population."
+ ######## CHARACTERS ########
 
-# NEP_kiran_rana:0 "Kiran Rana"
-# NEP_baber_rana:0 "Baber Rana"
+ # NEP_kiran_rana:0 "Kiran Rana"
+ # NEP_baber_rana:0 "Baber Rana"
+ NEP_tribhuvan_shah:0 "Tribhuvan"
+ NEP_rudra_rana:0 "Rudra Rana"
+ NEP_tanka_prasad_acharya:0 "Tanka Prasad Acharya"
+ NEP_pushpa_lal_shrestha:0 "Pushpa Lal Shrestha"
+ NEP_kulbir_thapa:0 "Kulbir Thapa"
+ NEP_padma_rana:0 "Padma Rana"
+ NEP_dilli_jung_thapa:0 "Dilli Jung Thapa"
+ NEP_dharmaditya_dharmacharya:0 "Dharmaditya Dharmacharya"
+ NEP_shukraraj_shastri:0 "Shukraraj Shastri"
+ NEP_khadga_man_singh:0 "Khadga Man Singh"
+ NEP_kunwar_indrajit_singh:0 "Kunwar Indrajit Singh"
+ NEP_jagat_sundar_malla:0 "Jagat Sundar Malla"
+ NEP_motidevi_shrestha:0 "Motidevi Shrestha"
+ NEP_subarna_rana:0 "Subarna Shamsher Rana"
+ NEP_tatsuo_fukai:0 "Tatsuo Fukai"
+ NEP_dharma_bhakta_mathema:0 "Dharma Bhakta Mathema"
+ NEP_ganga_lal_shrestha:0 "Ganga Lal Shrestha"
+ NEP_nara_rana:0 "Nara Rana"
  NEP_matrika_prashad_koirala:0 "Matrika Prashad Koirala"
  NEP_bishweshwar_prasad_koirala:0 "Bishweshwar Prasad Koirala"
  NEP_kunwar_inderjit_singh:0 "Kunwar Inderjit Singh"
@@ -31,21 +33,251 @@ l_english:
  NEP_brahma_rana:0 "Brahma Rana"
  NEP_singha_rana:0 "Singha Rana"
  NEP_mrigendra_rana:0 "Mrigendra Rana"
-#  NEP_generic_democratic_reformer:0 "Dharma Bhakta Mathema" #executed in 41 IRL # moved to replace
+ # NEP_generic_democratic_reformer:0 "Dharma Bhakta Mathema" # Executed in 41, moved to replace
  NEP_nir_rana:0 "Nir Rana"
- 
- #look for a real candidate
- NEP_ENG_air_theorist:0 "John Smith"
- 
+ NEP_ENG_air_theorist:0 "John Smith" # Look for a real candidate
  NEP_reformist_religious_writer:0 "Reformist Religious Writer"
- 
  NEP_military_diplomat:0 "Military Diplomat"
- 
- 
- NEP_infantry_equipment_0:0 "Gahendra-Martini Rifle"
- NEP_infantry_equipment_0_short:0 "Gahendra-Martini"
 
+ ######## IDEAS ########
+
+ # STARTING IDEAS #
+
+ NEP_tribhuvan_idea:0 "Tribhuvan"
+ NEP_tribhuvan_idea_desc:0 "Though the position of King of [ROOT.GetNonIdeologyName] has been reduced to largely ceremonial, Tribhuvan still serves as a popular figure amongst the [NEP.GetAdjective] population."
+
+ NEP_rana_stratocracy:0 "Rana Stratocracy"
+ NEP_rana_stratocracy_desc:0 "For over a century the Rana clan has managed to secure the prime ministership and all the military command position to the point that the royal family has barely any power at all. They enter the army as colonels and their position in the army is de facto the order of succession to the head of the army and then the prime ministership."
+ 
+ # DESIGNERS #
+
+ NEP_generic_industrial_concern:0 "Biratnagar Jute Mill"
+ NEP_nepalese_cannon_foundry_organization:0 "Nepalese Cannon Foundry"
+ NEP_thoshe_gun_manufacturing_plant_organization:0 "Thoshe Gun Manufacturing Plant"
+ NEP_nakhu_firearms_workshop_organization:0 "Nakhu Firearms Workshop"
+ NEP_generic_artillery_manufacturer:0 "Nepalese Cannon Foundry"
+ NEP_generic_infantry_equipment_manufacturer:0 "Thoshe Gun Manufacturing Plant" 
+
+ ######## DECISIONS ########
+
+ NEP_nepali_army_r56:0 "The Nepali Army"
+ NEP_nepali_army_r56_desc:0 "The members of the Rana clan enter the army at a very young age, owing their rank not to their abilities but to their position in the family tree. Therefore, despite their education being paid for by their vast wealth, a certain number of them have become complacent, relying on obsolete military strategies."
+ NEP_train_mohan_rana:0 "Train Mohan Rana"
+ NEP_train_baber_rana:0 "Train Baber Rana"
+ NEP_train_brahma_rana:0 "Train Brahma Rana"
+ NEP_train_kiran_rana:0 "Train Kiran Rana"
+ NEP_train_nir_rana:0 "Train Nir Rana"
+
+ NEP_family_politics_decision_category:0 "Family Politics"
+ NEP_family_politics_decision_category_desc:0 "With the concentration of political power firmly in the hands of the Ranas, and their overwhelming influence in the military, any change in course towards a revisionist and militaristic form of government must come from within the family itself."
+ NEP_pose_an_ultimatum_to_juddha_rana:0 "Pose an Ultimatum to Juddha Rana"
+ NEP_convince_mohan_rana:0 "Convince Mohan Rana"
+ NEP_convince_baber_rana:0 "Convince Baber Rana"
+ NEP_convince_kiran_rana:0 "Convince Kiran Rana"
+ NEP_convince_brahma_rana:0 "Convince Brahma Rana"
+ NEP_convinced_nir_rana:0 "Convince Nir Rana"
+
+ regular_infantry_template_tt:0 "Create an §YInfantry Template§!."
+ NEP_reduce_illiteracy_tt:0 "Reduce §Yilliteracy§!: §G+5%§! Research Speed"
+ NEP_prepare_rana_generals_decisions_tt:0 "Unlock §Ydecisions§! to retrain the Rana generals, upgrading their §Ygeneral staff skill levels§!. "
+ has_generated_an_ace_pilot:0 "Has Generated an Ace Pilot"
+
+ # Ideas
+ NEP_economic_exploitation_r56:0 "Economic Exploitation"
+ NEP_economic_exploitation_r56_desc:0 "The Rana clan has been exploiting the resources of Nepal for decades to maintain its tight control over the nation. And although some modernization efforts and reforms have been introduced, the clan will not allow further development if it threatens their hold on power."
+ NEP_cannot_change_eco_law:0 "Can change trade laws: §RNo§!"
+
+ NEP_expeditionary_force_r56:0 "[ROOT.GetAdjective] Expeditionary Force"
+ NEP_expeditionary_force_r56_desc:0 ""
+
+ NEP_involvement_in_the_sinojapanese_war_r56:0 "Involvement in the Sino-Japanese War"
+ NEP_involvement_in_the_sinojapanese_war_r56_desc:0 "WIP \n\n§WWill be §RRemoved§! once the §Y2nd Sino-Japanese War§! concludes.§!"
+
+ NEP_market_restriction_r56:0 "Restricted Access to the International Market"
+ NEP_market_restriction_r56_desc:0 "While in theory the Nepal-Britain Treaty of 1923 allows us to purchase and import military equipment from other nations through India, in practice, the [ENG.GetAdjective] still hold the final say in our purchases and can easily invalidate or confiscate said weapons. This greatly hinders our stockpile quantity and actively reinforces [ENG.GetNameDef]'s influence over our nation."
+ NEP_can_only_exchange_arms_with_uk:0 "Allows for Arms Trade with §Y[ENG.GetNameDef]§! and §Y[RAJ.GetNameDef]§!" # Tooltip
+ NEP_we_can_only_trade_with_uk_tt:0 "§Y[NEP.GetNameDefCap]§! is only allowed to purchase weapons from us." # Tooltip
+
+ # Parties
+ NEP_neutrality_party:0 "Rānā"
+ #NEP_neutrality_party_long:0 "Rānā Dynasty" # Moved to r56_parties_l_english
+ NEP_communism_party:0 "CPN"
+ NEP_communism_party_long:0 "Communist Party of Nepal"
+ NEP_democratic_party:0 "NPP"
+ NEP_democratic_party_long:0 "Nepal Praja Parishad"
+ NEP_fascism_party:0 "Gorkha Dal"
+ NEP_fascism_party_long:0 "Gorkha Dal"
+
+ # Decisions
+
+ # Greater Nepal
+ NEP_greater_nepal_r56:0 "Dream of Greater Nepal"
+ NEP_greater_nepal_r56_desc:0 ""
+
+ NEP_integrate_sikkim_r56:0 "Reintegrate Sikkim"
+ NEP_integrate_sikkim_r56_desc:0 "WIP"
+
+ # Nepal on the World Stage
+ NEP_foreign_relations_r56:0 "Nepal on the World Stage"
+ NEP_foreign_relations_r56_desc:0 "WIP"
+
+ NEP_join_allies_r56:0 "Join the Allies"
+ NEP_join_allies_r56_desc:0 ""
+
+ NEP_invite_british_economic_advisors_r56:0 "Invite [ENG.GetAdjective] Economic Advisors"
+ NEP_invite_british_economic_advisors_r56_desc:0 ""
+
+ NEP_purchase_british_weapons_r56:0 "Purchase [ENG.GetAdjective] Weaponry"
+ NEP_purchase_british_weapons_r56_desc:0 ""
+
+ NEP_joint_british_nepalese_military_exercises_r56:0 "Joint [ENG.GetAdjective]-[NEP.GetAdjective] Military Exercises"
+ NEP_joint_british_nepalese_military_exercises_r56_desc:0 ""
+ NEP_decision_cost_command_power:0 "£command_power  §Y10§!"
+
+ NEP_request_british_border_revisions_r56:0 "Request Border Revision With @RAJIndia"
+ NEP_request_british_border_revisions_r56_desc:0 ""
+
+ NEP_volunteers_in_the_sinojapanese_war_r56:0 "Send Volunteers to [CUG.GetNameDef]"
+ NEP_volunteers_in_the_sinojapanese_war_r56_desc:0 ""
+
+ # Himalayan Politics
+ NEP_transhimalayan_politics_r56:0 "Trans-Himalayan Politics"
+ NEP_transhimalayan_politics_r56_desc:0 ""
+
+ NEP_invite_ladakh_into_defensive_pact_r56:0 "Invite [KAS.GetNameDef] Into the Himalayan Defense Pact"
+ NEP_invite_ladakh_into_defensive_pact_r56_desc:0 "Kashmir as a region has been dominated by many empires throughout its long and rich history. Only recently was it granted the opportunity to establish itself as a sovereign and free nation under the rule of [KAS.GetLeader]. To prevent [KAS.GetNonIdeologyName] from falling into foreign hands once more, we should expand our defensive pact with our fellow Himalayan states into the west by extending a friendly hand to the [KAS.GetAdjective]s."
+
+ # Events
+ # England has Entered a State of War
  nepal.1.t:0 "[ENG.GetNameDefCap] has Entered a State of War"
  nepal.1.d:0 "Some days ago, a new war has broken out in Europe, and possibly across the world! The outcome of what is to be called 'The Great War'. [ROOT.GetNameDefCap] has a reason to support [ENG.GetNameDef] and is, in a way, obligated to do so by the Nepal-Britain Treaty of 1923, whereby our two nations will recognize eachother's sovereignty and protect said sovereignty."
  nepal.1.a:0 "We must aid our allies. Immediately declare war!"
  nepal.1.b:0 "The national interests of Nepal come first..."
+
+ # Whispers of Change
+ nepal.2.t:0 "Whispers of Change"
+ nepal.2.desc:0 "One of our officials reported having discovered a leaflet calling for political changes. This proves that at least one group wishing for our demise is getting organized."
+ nepal.2.a:0 "We must remain vigilant."
+
+ # Nepal Proposes Joint Military Exercise
+ nepal.4.t:0 "[FROM.GetNameDefCap] Proposes Joint Military Exercise"
+ nepal.4.desc:0 "Today the government of [FROM.GetNameDef] has sent us a telegram, proposing a joint military exercise between our two nations with the intention of enhancing both of our army's fighting capabilities."
+ nepal.4.a:0 "Sure."
+ nepal.4.b:0 "Not today."
+
+ # FROM Rejects 
+ nepal.5.t:0 "[FROM.GetNameDefCap] Rejects Joint Military Exercise"
+ nepal.5.desc:0 "Our proposal for joint military exercises with [FROM.GetNameDef] was rejected by their government."
+ nepal.5.a:0 "Unfortunate."
+
+ # FROM Accepts
+ nepal.6.t:0 "[FROM.GetNameDefCap] Accepts Joint Military Exercise"
+ nepal.6.desc:0 "Our proposal for joint military exercises with [FROM.GetNameDef] was accepted by their government."
+ nepal.6.a:0 "Good."
+
+ # Our Role in Himalayan Politics
+ nepal.7.t:0 "Our Role in Himalayan Politics"
+ nepal.7.desc:0 ""
+ nepal.7.a:0 "We must strive for a peaceful Himalayan future."
+ nepal.7.b:0 "[ROOT.GetNonIdeologyName] is superior to all!"
+
+ # [FROM.GetNameDefCap] Suggests Defensive Pact
+ nepal.8.t:0 "[FROM.GetNameDefCap] Suggests Defensive Pact"
+ nepal.8.desc:0 ""
+ nepal.8.a:0 "They raise a good point."
+ nepal.8.b:0 "They are not to be trusted."
+
+ # FROM Rejects Defensive Pact
+ nepal.9.t:0 "[FROM.GetNameDefCap] Rejects Our Proposal"
+ nepal.9.desc:0 ""
+ nepal.9.a:0 "Their loss."
+
+ # FROM Accepts Defensive Pact
+ nepal.10.t:0 "[FROM.GetNameDefCap] Accepts Our Proposal"
+ nepal.10.desc:0 ""
+ nepal.10.a:0 "We stand stronger together."
+
+ # Focuses
+ NEP_maintain_british_ties_r56:0 "Maintain British Ties"
+ NEP_maintain_british_ties_r56_desc:0 ""
+ NEP_we_join_britains_war_tt:0 "If §Y[ENG.GetNameDef]§! enters into a state of §RWar§!, we will receive an §OEvent§! which will allow us to §GJoin§! the war on their side." # Tooltip
+
+ NEP_strengthen_chinese_ties_r56:0 "Strengthen [CHI.GetAdjective] Relations"
+ NEP_strengthen_chinese_ties_r56_desc:0 ""
+ NEP_if_completed_focus_expeditionary_force:0 "If §OThe Nepali Expeditionary Force§! is completed:"
+
+ NEP_normalize_relations_with_the_united_states_r56:0 "Normalize Relations with the United States"
+ NEP_normalize_relations_with_the_united_states_r56_desc:0 ""
+
+ NEP_renegotiate_unfair_treaties_r56:0 "Renegotiate Unfair Treaties"
+ NEP_renegotiate_unfair_treaties_r56_desc:0 ""
+
+ NEP_nepals_place_in_the_western_world_order_r56:0 "[ROOT.GetNonIdeologyName]'s Place in the Western World Order"
+ NEP_nepals_place_in_the_western_world_order_r56_desc:0 ""
+
+ NEP_recognize_the_soviet_regime_r56:0 "Recognize the [SOV.GetAdjective] Regime"
+ NEP_recognize_the_soviet_regime_r56_desc:0 ""
+
+ NEP_invite_soviet_economic_advisors_r56:0 "Invite [SOV.GetAdjective] Economic Advisors"
+ NEP_invite_soviet_economic_advisors_r56_desc:0 ""
+
+ NEP_order_soviet_heavy_weapons_r56:0 "Order Heavy [SOV.GetAdjective] Armor"
+ NEP_order_soviet_heavy_weapons_r56_desc:0 ""
+ 
+ NEP_support_ccp_r56:0 "Support the [PRC.GetAdjective] Revolution"
+ NEP_support_ccp_r56_desc:0 ""
+
+ NEP_demand_a_corridor_to_the_soviets_r56:0 "Demand a Corridor to the [SOV.GetAdjective]s"
+ NEP_demand_a_corridor_to_the_soviets_r56_desc:0 ""
+
+ NEP_approach_japan_r56:0 "Approach [JAP.GetNameDef]"
+ NEP_approach_japan_r56_desc:0 ""
+
+ NEP_open_a_german_embassy_r56:0 "Open a [GER.GetAdjective] Embassy in [GER.Capital.GetCapitalVictoryPointName]"
+ NEP_open_a_german_embassy_r56_desc:0 ""
+
+ NEP_purchase_japanese_aircraft_r56:0 "Purchase [JAP.GetAdjective] Aircraft"
+ NEP_purchase_japanese_aircraft_r56_desc:0 ""
+
+ NEP_attract_japanese_investment_r56:0 "Attract [JAP.GetAdjective] Investment"
+ NEP_attract_japanese_investment_r56_desc:0 ""
+
+ NEP_nepalese_autarky_r56:0 "[ROOT.GetAdjective] Autarky"
+ NEP_nepalese_autarky_r56_desc:0 ""
+
+ NEP_our_role_in_himalayan_politics_r56:0 "Our Role in Himalayan Politics"
+ NEP_our_role_in_himalayan_politics_r56_desc:0 ""
+
+ NEP_expand_the_alliance_r56:0 "Expand the Alliance"
+ NEP_expand_the_alliance_r56_desc:0 ""
+
+ NEP_propose_a_federation_r56:0 "A Trans-Himalayan Federation"
+ NEP_propose_a_federation_r56_desc:0 ""
+
+ NEP_address_the_new_india_r56:0 "Address the New India"
+ NEP_address_the_new_india_r56_desc:0 ""
+
+ NEP_anti_invasion_buildup_r56:0 "Anti-invasion Buildup"
+ NEP_anti_invasion_buildup_r56_desc:0 ""
+
+ NEP_technology_sharing_r56:0 "Technology Sharing"
+ NEP_technology_sharing_r56_desc:0 ""
+
+ NEP_promote_pan_nepalese_identity_r56:0 "Promote Pan-Nepalese Identity"
+ NEP_promote_pan_nepalese_identity_r56_desc:0 ""
+
+ NEP_the_nepali_expeditionary_force_r56:0 "The Nepali Expeditionary Force"
+ NEP_the_nepali_expeditionary_force_r56_desc:0 ""
+
+ NEP_adapt_to_the_jungles_r56:0 "Adapt to the Jungles"
+ NEP_adapt_to_the_jungles_r56_desc:0 ""
+
+ NEP_adapt_to_the_desert_r56:0 "Adapt to the Desert"
+ NEP_adapt_to_the_desert_r56_desc:0 ""
+
+ NEP_masters_of_the_himalayas_r56:0 "Masters of the Himalayas"
+ NEP_masters_of_the_himalayas_r56_desc:0 ""
+
+ # Flags and Tooltips
+ NEP_accepted_himalayan_defense_pact:0 "Is part of the Himalayan Defense Pact"
+ NEP_they_are_more_likely_to_accept_if:0 "They are more §GLikely§! to accept if: \n-They have a §YHigh Opinion§! of us \n-We share the §YSame Ideology§! \n-We haven't generated §YWorld Tension§! \n-Another country is §YJustifying§! on them"

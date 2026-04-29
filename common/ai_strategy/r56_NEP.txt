@@ -1,0 +1,172 @@
+
+
+r56_NEP_britain_friend = {
+	allowed = { original_tag = NEP }
+	enable = { has_completed_focus = NEP_maintain_british_ties_r56 }
+	abort = {
+		OR = {
+			NOT = { country_exists = ENG }
+			has_war_with = ENG
+		}
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = ENG
+		value = 25
+	}
+	ai_strategy = {
+		type = alliance
+		id = ENG
+		value = 25
+	}
+}
+
+r56_NEP_japan_friend = {
+	allowed = { original_tag = NEP }
+	enable = { has_completed_focus = NEP_approach_japan_r56 }
+	abort = {
+		OR = {
+			NOT = { country_exists = JAP }
+			has_war_with = JAP
+		}
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = JAP
+		value = 25
+	}
+	ai_strategy = {
+		type = alliance
+		id = JAP
+		value = 25
+	}
+}
+
+r56_NEP_soviet_friend = {
+	allowed = { original_tag = NEP }
+	enable = { has_completed_focus = NEP_recognize_the_soviet_regime_r56 }
+	abort = {
+		OR = {
+			NOT = { country_exists = SOV }
+			has_war_with = SOV
+		}
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = SOV
+		value = 25
+	}
+	ai_strategy = {
+		type = alliance
+		id = SOV
+		value = 25
+	}
+}
+
+r56_NEP_usa_friend = {
+	allowed = { original_tag = NEP }
+	enable = { has_completed_focus = NEP_normalize_relations_with_the_united_states_r56 }
+	abort = {
+		OR = {
+			NOT = { country_exists = USA }
+			has_war_with = USA
+		}
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = USA
+		value = 25
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = USA
+		value = 25
+	}
+}
+
+r56_NEP_germany_friend = {
+	allowed = { original_tag = NEP }
+	enable = { has_completed_focus = NEP_open_a_german_embassy_r56 }
+	abort = {
+		OR = {
+			NOT = { country_exists = GER }
+			has_war_with = GER
+		}
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = GER
+		value = 25
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = GER
+		value = 25
+	}
+}
+
+r56_NEP_ccp_friend = {
+	allowed = { original_tag = NEP }
+	enable = { has_completed_focus = NEP_support_ccp_r56 }
+	abort = {
+		OR = {
+			NOT = { country_exists = PRC }
+			has_war_with = PRC
+		}
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = PRC
+		value = 25
+	}
+
+	ai_strategy = {
+		type = support
+		id = PRC
+		value = 25
+	}
+
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = PRC
+		value = 25
+	}
+}
+
+r56_NEP_britain_no_friend = {
+	allowed = { original_tag = ENG }
+	enable = {
+		OR = {
+			has_completed_focus = NEP_approach_japan_r56
+			has_completed_focus = NEP_recognize_the_soviet_regime_r56
+		} 
+	}
+
+	abort = {
+		OR = {
+			NOT = { country_exists = NEP }
+			is_in_faction_with = NEP
+			is_subject_of = NEP
+			NEP = { is_subject_of = ENG }
+		}
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = NEP
+		value = 25
+	}
+	ai_strategy = {
+		type = alliance
+		id = NEP
+		value = -25
+	}
+}
