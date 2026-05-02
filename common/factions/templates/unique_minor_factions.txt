@@ -1329,8 +1329,29 @@ faction_template_SOV_free_russian_peoples_faction = {
 		government_in_exile_allowed		
 	}
 }
+# Himalayan Defense Pact
+faction_template_NEP_himalayan_faction = {
+	name = faction_template_NEP_himalayan_faction_name
+	manifest = faction_manifest_strength_in_unity
+	icon = GFX_faction_logo_japanese_co_prosperity_sphere
 
+	goals = {
+		# Short Term 
+		# faction_goal_ensure_military_r_d
 
+		# Medium Term 
+		faction_goal_industrial_expansion
+
+		# Long term goals 
+		faction_goal_defeating_our_enemies
+
+	}
+
+	default_rules = {
+		joining_rule_neighbors_only
+		government_in_exile_allowed
+	}
+}
 
 
 

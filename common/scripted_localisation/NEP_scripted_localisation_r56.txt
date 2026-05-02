@@ -1,0 +1,47 @@
+defined_text = {
+	name = GetROOTWinsBorderSkirmish
+	text = {
+		trigger = { original_tag = TIB }
+		localization_key = NEP_tibet_wins_scripted_loc
+	}	
+	text = {
+		trigger = { original_tag = NEP }
+		localization_key = NEP_nepal_wins_scripted_loc
+	}
+}
+
+defined_text = {
+	name = GetROOTWinsBorderSkirmishDesc
+	text = {
+		trigger = { original_tag = TIB }
+		localization_key = NEP_tibet_wins_desc_scripted_loc
+	}	
+	text = {
+		trigger = { original_tag = NEP }
+		localization_key = NEP_nepal_wins_desc_scripted_loc
+	}
+}
+
+defined_text = {
+	name = GetROOTLosesBorderSkirmish
+	text = {
+		trigger = { original_tag = TIB }
+		localization_key = NEP_tibet_loses_scripted_loc
+	}	
+	text = {
+		trigger = { original_tag = NEP }
+		localization_key = NEP_nepal_loses_scripted_loc
+	}
+}
+
+defined_text = {
+	name = GetROOTLosesBorderSkirmishDesc
+	text = {
+		trigger = { original_tag = TIB }
+		localization_key = NEP_tibet_loses_desc_scripted_loc
+	}	
+	text = {
+		trigger = { original_tag = NEP }
+		localization_key = NEP_nepal_loses_desc_scripted_loc
+	}
+}

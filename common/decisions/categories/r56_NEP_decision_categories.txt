@@ -1,8 +1,7 @@
 NEP_greater_nepal_r56 = {
 	icon = GFX_decision_india_forward
-	priority = 100
-	
 	allowed = { original_tag = NEP }
+	priority = 100
 }
 
 NEP_foreign_relations_r56 = {
@@ -25,7 +24,7 @@ NEP_transhimalayan_politics_r56 = {
 	picture = GFX_decision_cat_MEN_decisions
 	priority = 25
 	allowed = { original_tag = NEP }
-	visible = { has_completed_focus = NEP_our_role_in_himalayan_politics_r56 }
+	#visible = { has_completed_focus = NEP_our_role_in_himalayan_politics_r56 }
 }
 
 NEP_nepali_army_r56 = {

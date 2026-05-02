@@ -1,4 +1,5 @@
 #!gfx:interface\r56_goals.gfx
+
 focus_tree = {
 	id = r56_nepal_focus
 
@@ -84,7 +85,7 @@ focus_tree = {
 	focus = {
 		id = NEP_strengthen_chinese_ties_r56
 		icon = GFX_focus_CHI_dang_guo
-		prerequisite { focus = NEP_maintain_british_ties_r56 }
+		prerequisite = { focus = NEP_maintain_british_ties_r56 }
 		relative_position_id = NEP_maintain_british_ties_r56
 
 		cost = 6
@@ -115,17 +116,6 @@ focus_tree = {
 					modifier = large_increase
 					target = ROOT
 				}
-
-				ai_strategy = {
-					type = befriend
-					id = ROOT
-					value = 25
-				}
-				ai_strategy = {
-					type = alliance
-					id = ROOT
-					value = 25
-				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = NEP_if_completed_focus_expeditionary_force
@@ -136,7 +126,7 @@ focus_tree = {
 	focus = {
 		id = NEP_normalize_relations_with_the_united_states_r56
 		icon = GFX_goal_generic_befriend_united_states
-		prerequisite { focus = NEP_maintain_british_ties_r56 }
+		prerequisite = { focus = NEP_maintain_british_ties_r56 }
 		relative_position_id = NEP_maintain_british_ties_r56
 
 		cost = 6
@@ -162,7 +152,7 @@ focus_tree = {
 	focus = {
 		id = NEP_renegotiate_unfair_treaties_r56
 		icon = GFX_focus_IRQ_discuss_a_new_treaty
-		prerequisite { focus = NEP_maintain_british_ties_r56 }
+		prerequisite = { focus = NEP_maintain_british_ties_r56 }
 		relative_position_id = NEP_maintain_british_ties_r56
 
 		cost = 8
@@ -170,6 +160,8 @@ focus_tree = {
 		y = 1
 
 		available = {
+			is_subject = no
+			NOT = { has_war_with = ENG }
 		}
 
 		ai_will_do = { factor = 5 }	
@@ -183,7 +175,7 @@ focus_tree = {
 	focus = {
 		id = NEP_nepals_place_in_the_western_world_order_r56
 		icon = GFX_goal_USA_united_nations
-		prerequisite { focus = NEP_normalize_relations_with_the_united_states_r56 focus = NEP_strengthen_chinese_ties_r56 focus = NEP_renegotiate_unfair_treaties_r56 }
+		prerequisite = { focus = NEP_normalize_relations_with_the_united_states_r56 focus = NEP_strengthen_chinese_ties_r56 focus = NEP_renegotiate_unfair_treaties_r56 }
 		relative_position_id = NEP_strengthen_chinese_ties_r56
 
 		cost = 5
@@ -266,12 +258,14 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ALLIANCE }
 	}
 
 	focus = {
 		id = NEP_order_soviet_heavy_weapons_r56
 		icon = GFX_SOV_the_glory_of_the_red_army_ccp_2d_sov_compatibility
-		prerequisite { focus = NEP_recognize_the_soviet_regime_r56 }
+		prerequisite = { focus = NEP_recognize_the_soviet_regime_r56 }
 		relative_position_id = NEP_recognize_the_soviet_regime_r56
 
 		cost = 8
@@ -291,7 +285,7 @@ focus_tree = {
 	focus = {
 		id = NEP_invite_soviet_economic_advisors_r56
 		icon = GFX_goal_generic_business_bills
-		prerequisite { focus = NEP_recognize_the_soviet_regime_r56 }
+		prerequisite = { focus = NEP_recognize_the_soviet_regime_r56 }
 		relative_position_id = NEP_recognize_the_soviet_regime_r56
 
 		cost = 6
@@ -316,7 +310,7 @@ focus_tree = {
 	focus = {
 		id = NEP_support_ccp_r56
 		icon = GFX_goal_PRC_focus_on_red_army
-		prerequisite { focus = NEP_recognize_the_soviet_regime_r56 }
+		prerequisite = { focus = NEP_recognize_the_soviet_regime_r56 }
 		relative_position_id = NEP_recognize_the_soviet_regime_r56
 
 		cost = 5
@@ -345,7 +339,7 @@ focus_tree = {
 	focus = {
 		id = NEP_demand_a_corridor_to_the_soviets_r56
 		icon = GFX_focus_SOV_the_road_of_life
-		prerequisite { focus = NEP_support_ccp_r56 }
+		prerequisite = { focus = NEP_support_ccp_r56 }
 		relative_position_id = NEP_support_ccp_r56
 
 		cost = 8
@@ -420,12 +414,14 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ALLIANCE }
 	}
 
 	focus = {
 		id = NEP_open_a_german_embassy_r56
 		icon = GFX_goal_GER_restore_weimar
-		prerequisite { focus = NEP_approach_japan_r56 }
+		prerequisite = { focus = NEP_approach_japan_r56 }
 		relative_position_id = NEP_approach_japan_r56
 
 		cost = 6
@@ -472,7 +468,7 @@ focus_tree = {
 	focus = {
 		id = NEP_attract_japanese_investment_r56
 		icon = GFX_goal_JAP_co_prosperity_sphere
-		prerequisite { focus = NEP_approach_japan_r56 }
+		prerequisite = { focus = NEP_approach_japan_r56 }
 		relative_position_id = NEP_approach_japan_r56
 
 		cost = 6
@@ -492,7 +488,7 @@ focus_tree = {
 	focus = {
 		id = NEP_purchase_japanese_aircraft_r56
 		icon = GFX_focus_generic_multi_role_aircraft
-		prerequisite { focus = NEP_approach_japan_r56 }
+		prerequisite = { focus = NEP_approach_japan_r56 }
 		relative_position_id = NEP_approach_japan_r56
 
 		cost = 8
@@ -512,7 +508,7 @@ focus_tree = {
 	focus = {
 		id = NEP_nepalese_autarky_r56
 		icon = GFX_goal_italy_autarky
-		prerequisite { focus = NEP_attract_japanese_investment_r56 }
+		prerequisite = { focus = NEP_attract_japanese_investment_r56 }
 		prerequisite = { focus = NEP_purchase_japanese_aircraft_r56 }
 		relative_position_id = NEP_open_a_german_embassy_r56
 
@@ -533,7 +529,7 @@ focus_tree = {
 	focus = {
 		id = NEP_the_nepali_expeditionary_force_r56
 		icon = GFX_goal_infantry_offensive
-		prerequisite { focus = NEP_approach_japan_r56 focus = NEP_maintain_british_ties_r56 focus = NEP_recognize_the_soviet_regime_r56 }
+		prerequisite = { focus = NEP_approach_japan_r56 focus = NEP_maintain_british_ties_r56 focus = NEP_recognize_the_soviet_regime_r56 }
 		relative_position_id = NEP_maintain_british_ties_r56
 
 		cost = 10
@@ -559,7 +555,7 @@ focus_tree = {
 	focus = {
 		id = NEP_adapt_to_the_jungles_r56
 		icon = GFX_goal_generic_jungle_warfare
-		prerequisite { focus = NEP_the_nepali_expeditionary_force_r56 }
+		prerequisite = { focus = NEP_the_nepali_expeditionary_force_r56 }
 		mutually_exclusive = { focus = NEP_adapt_to_the_desert_r56 }
 		relative_position_id = NEP_the_nepali_expeditionary_force_r56
 
@@ -583,7 +579,7 @@ focus_tree = {
 	focus = {
 		id = NEP_masters_of_the_himalayas_r56
 		icon = GFX_goal_generic_mountain_warfare
-		prerequisite { focus = NEP_the_nepali_expeditionary_force_r56 }
+		prerequisite = { focus = NEP_the_nepali_expeditionary_force_r56 }
 		relative_position_id = NEP_the_nepali_expeditionary_force_r56
 
 		cost = 8
@@ -606,7 +602,7 @@ focus_tree = {
 	focus = {
 		id = NEP_adapt_to_the_desert_r56
 		icon = GFX_goal_generic_desert_warfare
-		prerequisite { focus = NEP_the_nepali_expeditionary_force_r56 }
+		prerequisite = { focus = NEP_the_nepali_expeditionary_force_r56 }
 		mutually_exclusive = { focus = NEP_adapt_to_the_jungles_r56 }
 		relative_position_id = NEP_the_nepali_expeditionary_force_r56
 
@@ -630,35 +626,32 @@ focus_tree = {
 	focus = {
 		id = NEP_our_role_in_himalayan_politics_r56
 		icon = GFX_goal_PRC_liberate_tibet
-		prerequisite { focus = NEP_approach_japan_r56 focus = NEP_maintain_british_ties_r56 focus = NEP_recognize_the_soviet_regime_r56 }
+		prerequisite = { focus = NEP_approach_japan_r56 focus = NEP_maintain_british_ties_r56 focus = NEP_recognize_the_soviet_regime_r56 }
 		relative_position_id = NEP_approach_japan_r56
 
-		cost = 8
+		cost = 7.2
 		x = -4
 		y = 1
 
-		available = {
-			
-		}
-
+		available = { is_subject = no }
 		available_if_capitulated = no
-
-		ai_will_do = { factor = 5 }		
+		ai_will_do = { factor = 5 }	
 
 		completion_reward = {
 			add_political_power = 35
 			country_event = nepal.7
 			custom_effect_tooltip = generic_skip_one_line_tt
 			unlock_decision_category_tooltip = NEP_transhimalayan_politics_r56
-			# make additional decision when this is completed to annex kingdom of lo (upper mustang). requires 1 divison in X state and will grant building slot and remove like 2 stability
-			# event to decide what to do with HIMALAYA. either restore the idea of a himalayan alliance or go about trying to kill everyone. expanded via decisions and additional content depending on who u align with
+			unlock_decision_tooltip = NEP_invade_upper_mustang_r56
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
 		id = NEP_expand_the_alliance_r56
 		icon = GFX_goal_GRE_balkan_pact
-		prerequisite { focus = NEP_our_role_in_himalayan_politics_r56 }
+		prerequisite = { focus = NEP_our_role_in_himalayan_politics_r56 }
 		mutually_exclusive = { focus = NEP_propose_a_federation_r56 }
 		relative_position_id = NEP_our_role_in_himalayan_politics_r56
 
@@ -667,21 +660,41 @@ focus_tree = {
 		y = 1
 
 		available = {
-			
+			OR = {
+				is_in_faction = no
+				is_faction_leader = yes
+			}
+			is_subject = no
+			has_capitulated = no
+			any_other_country = {
+				has_country_flag = NEP_accepted_himalayan_defense_pact
+				NOT = { has_war_with = ROOT }
+				is_in_faction = no
+				is_subject = no
+			}
 		}
 
-		available_if_capitulated = no
-
-		ai_will_do = { factor = 5 }		
+		ai_will_do = { factor = 1 }		
 
 		completion_reward = {
-			#for if u decide to do peaceful happy i wanna be part of ur sympothy path. unlocks additional decisions to invite kashmir(i) (ball knowledge required to understand) and potentially ma clique and tunganistan / xinjiang? but main point is that this becomes a FACTION!!!
+			add_political_power = 100
+			if = {
+				limit = { is_faction_leader = yes }
+				every_other_country = {
+					limit = { has_country_flag = NEP_accepted_himalayan_defense_pact }
+					country_event = generic.5
+				}
+
+				else = { country_event = nepal.12 }
+			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ALLIANCE }
 	}
 
 	focus = {
 		id = NEP_propose_a_federation_r56
-		prerequisite { focus = NEP_our_role_in_himalayan_politics_r56 }
+		prerequisite = { focus = NEP_our_role_in_himalayan_politics_r56 }
 		mutually_exclusive = { focus = NEP_expand_the_alliance_r56 }
 		relative_position_id = NEP_our_role_in_himalayan_politics_r56
 
@@ -699,8 +712,85 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		available = {
-			
+		available = { #this was a fucking nightmare to code and i regret even thinking about making the availability checks so flexible. should have just slapped on one big check and thats it. - katsura
+			if = {
+				limit = { has_country_flag = NEP_we_want_friendship }
+				any_other_country = {
+					has_country_flag = NEP_accepted_himalayan_defense_pact
+					NOT = { has_war_with = ROOT }
+					is_in_faction = no
+					is_subject = no
+				}
+
+				else_if = { #meh mostly this was a bitch to code in
+					limit = { has_country_flag = NEP_we_will_kill_everyone }
+					if = {
+						limit = {
+							has_country_flag = NEP_annexing_all
+							any_state = {
+								OR = { is_core_of = TIB is_core_of = BHU }
+								is_controlled_by = ROOT
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = NEP_requirements_to_core_tibet
+							any_controlled_state = {
+								is_core_of = TIB
+								compliance > 60
+								resistance < 5
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = NEP_requirements_to_core_bhutan
+							any_controlled_state = {
+								is_core_of = BHU
+								compliance > 40 # Bhutan has a nepali-speaking minority which can make integration easier.
+								resistance < 5
+							}
+						} 
+					}
+
+					if = {
+						limit = {
+							has_country_flag = NEP_we_will_kill_everyone
+							OR = {
+								original_tag = TIB
+								original_tag = SKK
+								original_tag = BHU
+								original_tag = KAS
+							}
+							is_subject_of = ROOT
+						}
+						custom_trigger_tooltip = {
+							tooltip = NEP_they_all_must_be_integrated_puppet
+							if = {
+								limit = {
+									OR = {
+										original_tag = TIB
+										original_tag = SKK
+										original_tag = BHU
+										original_tag = KAS
+									}
+								}
+								is_subject_of = ROOT
+								if = {
+									limit = { has_government = fascism }
+									has_autonomy_state = autonomy_reichskommissariat
+
+									else = { has_autonomy_state = autonomy_integrated_puppet }
+								}
+							}
+						}
+					}
+				}
+				
+				else = {
+					custom_trigger_tooltip = {
+						tooltip = NEP_availability_depends_on_previous_focus
+						always = no
+					}
+				}
+			}
 		}
 
 		available_if_capitulated = no
@@ -708,6 +798,33 @@ focus_tree = {
 		ai_will_do = { factor = 5 }		
 
 		completion_reward = {
+			if = {
+				limit = { has_country_flag = NEP_we_want_friendship }
+				every_other_country = {
+					limit = { has_country_flag = NEP_accepted_himalayan_defense_pact }
+					
+				}
+
+				else_if = {
+					limit = { has_country_flag = NEP_we_will_kill_everyone }
+					every_state = {
+						limit = { is_core_of = TIB is_fully_controlled_by = ROOT }
+						add_core_of = ROOT
+					}
+
+					every_state = {
+						limit = { is_claimed_by = TIB is_fully_controlled_by = ROOT }
+						add_claim_by = ROOT
+					}
+
+					every_state = {
+						limit = { is_core_of = BHU is_fully_controlled_by = ROOT }
+						add_core_of = ROOT
+					}
+				}
+				
+				else = { custom_effect_tooltip = NEP_depends_on_previous_focus_completion }
+			}
 			#instead of a faction, lets make a himalayan federation!!
 		}
 	}
@@ -715,7 +832,7 @@ focus_tree = {
 	focus = {
 		id = NEP_promote_pan_nepalese_identity_r56
 		icon = GFX_focus_ETH_freedom_at_gunpoint
-		prerequisite { focus = NEP_nepals_place_in_the_western_world_order_r56 focus = NEP_demand_a_corridor_to_the_soviets_r56 focus = NEP_nepalese_autarky_r56 }
+		prerequisite = { focus = NEP_nepals_place_in_the_western_world_order_r56 focus = NEP_demand_a_corridor_to_the_soviets_r56 focus = NEP_nepalese_autarky_r56 }
 		relative_position_id = NEP_nepals_place_in_the_western_world_order_r56
 
 		cost = 10
@@ -723,7 +840,10 @@ focus_tree = {
 		y = 1
 
 		available = {
-			
+			is_subject = no
+			has_full_control_of_state = 1013
+			has_full_control_of_state = 1090
+			has_full_control_of_state = 1092
 		}
 
 		available_if_capitulated = no
@@ -731,14 +851,32 @@ focus_tree = {
 		ai_will_do = { factor = 5 }		
 
 		completion_reward = {
-			
+			add_stability = 0.1
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_state = {
+				limit = {
+					OR = {
+						state = 1013
+						state = 1090
+						state = 1092
+					}
+				}
+				add_compliance = 15
+				add_resistance = -5
+			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
 		id = NEP_address_the_new_india_r56
 		icon = GFX_goal_RAJ_dreams_of_ahand_hindustan
-		prerequisite { focus = NEP_nepals_place_in_the_western_world_order_r56 focus = NEP_demand_a_corridor_to_the_soviets_r56 focus = NEP_nepalese_autarky_r56 }
+		prerequisite = { focus = NEP_nepals_place_in_the_western_world_order_r56 focus = NEP_demand_a_corridor_to_the_soviets_r56 focus = NEP_nepalese_autarky_r56 }
 		relative_position_id = NEP_nepals_place_in_the_western_world_order_r56
 
 		cost = 5
@@ -746,10 +884,35 @@ focus_tree = {
 		y = 1
 
 		available = {
-			
+			is_subject = no
+			RAJ = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				if = {
+					limit = { ROOT = { has_government = communism } }
+					OR = {
+						has_government = communism
+						has_government = neutrality
+					}
+					else_if = {
+						limit = { ROOT = { has_government = democratic } }
+						OR = {
+							has_government = democratic
+							has_government = neutrality
+						}
+					}
+					else_if = {
+						limit = { ROOT = { has_government = fascism } }
+						OR = {
+							has_government = fascism
+							has_government = neutrality
+						}
+					}
+				}
+			}
 		}
-
-		available_if_capitulated = no
 
 		ai_will_do = { factor = 5 }		
 
@@ -761,46 +924,47 @@ focus_tree = {
 	focus = {
 		id = NEP_technology_sharing_r56
 		icon = GFX_goal_tfv_generic_tech_sharing
-		prerequisite { focus = NEP_nepals_place_in_the_western_world_order_r56 focus = NEP_demand_a_corridor_to_the_soviets_r56 focus = NEP_nepalese_autarky_r56 }
+		prerequisite = { focus = NEP_nepals_place_in_the_western_world_order_r56 focus = NEP_demand_a_corridor_to_the_soviets_r56 focus = NEP_nepalese_autarky_r56 }
 		relative_position_id = NEP_nepals_place_in_the_western_world_order_r56
 
-		cost = 5
+		cost = 8
 		x = -2
 		y = 1
 
-		available = {
-			
-		}
-
-		available_if_capitulated = no
+		available = { is_in_faction = yes }
 
 		ai_will_do = { factor = 5 }		
 
 		completion_reward = {
-			
+			add_research_slot = 1
+			# add research groups depending on faction
 		}
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
 
 	focus = {
 		id = NEP_anti_invasion_buildup_r56
 		icon = GFX_goal_generic_fortify_city
-		prerequisite { focus = NEP_nepals_place_in_the_western_world_order_r56 focus = NEP_demand_a_corridor_to_the_soviets_r56 focus = NEP_nepalese_autarky_r56 }
+		prerequisite = { focus = NEP_nepals_place_in_the_western_world_order_r56 focus = NEP_demand_a_corridor_to_the_soviets_r56 focus = NEP_nepalese_autarky_r56 }
 		relative_position_id = NEP_nepals_place_in_the_western_world_order_r56
 
-		cost = 5
+		cost = 10
 		x = -4
 		y = 1
-
-		available = {
-			
-		}
 
 		available_if_capitulated = no
 
 		ai_will_do = { factor = 5 }		
 
 		completion_reward = {
-			
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = cat_fortification
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = deterrence
 		}
 	}
 }

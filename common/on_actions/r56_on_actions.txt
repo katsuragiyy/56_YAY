@@ -2915,7 +2915,25 @@ on_actions = {
 						country_event = { id = yugoslavia.27 hours = 12 }
 					}
 				}
-			}			
+			}
+			if = {	# HDP - Come to defense
+				limit = { FROM = { has_idea = NEP_himalayan_defense_pact_idea_r56 } }
+				ROOT = { custom_effect_tooltip = NEP_we_risk_going_to_war_with_them }
+
+				FROM = {
+					every_other_country = {
+						limit = { has_idea = NEP_himalayan_defense_pact_idea_r56 }
+						country_event = { id = nepal.11 hours = 12 }
+					}
+				}
+
+				NEP = {
+					if = {
+						limit = { NOT = { has_completed_focus = NEP_expand_the_alliance_r56 has_completed_focus = NEP_propose_a_federation_r56 } }
+						complete_national_focus = NEP_expand_the_alliance_r56
+					}
+				}
+			}
 			if = { # BELGIAN event to arrest fascists after the invasion
 				limit = {
 					tag = GER

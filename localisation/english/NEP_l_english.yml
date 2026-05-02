@@ -2,6 +2,8 @@
 
  ######## CHARACTERS ########
 
+ NEP_juddha_rana_leader_desc:0 "Juddha Rana was born as Juddha Shumsher Jung Bahadur Rana in 1875 to the then Commander-In-Chief of the Nepalese Army, Dhir Shumsher Rana who belonged to the ruling Rana Dynasty, and his wife Juhar Kumari Devi. When Juddha Rana was merely nine years of age his father passed away, which would go on to have a major impact on him and his sibilings. Not long after his father's passing in 1885, a revolution swept through Nepal which granted an opportunity for his older brother, Bir Shum Shere to ascend to the premiership of Nepal. Immediately after securing power, Bir Shum Shere promoted Juddha Rana to a general. In the years that followed, Juddha Rana would hold many positions within the army, eventually being granted full command over the armed forces. \n\nAfter the passing of Prime Minister Bhim Shum Shere in 1932, Juddha Rana, with the trust he had earned from his sibilings and cousins during his military career, ascended to the premiership of Nepal. Following his ascension, he promoted his brothers and cousins to multiple positions within the government, supress the King's power even further than he had been under previous Rana rulers, and with the support of the army he had commanded for decades, was able to supress any revolutionaries that sought to oppose the Rana dynasty's continued autocratic rule. Alongside this, family politics within the Rana dynasty have also led to many of Juddha Rana's close allies being exiled and having to seek refuge in India. The political situation in Nepal seems to be deteriorating day by day, and only time will tell if Juddha Rana's efforts of securing power prove successful or result in another revolution."
+
  # NEP_kiran_rana:0 "Kiran Rana"
  # NEP_baber_rana:0 "Baber Rana"
  NEP_tribhuvan_shah:0 "Tribhuvan"
@@ -33,7 +35,6 @@
  NEP_brahma_rana:0 "Brahma Rana"
  NEP_singha_rana:0 "Singha Rana"
  NEP_mrigendra_rana:0 "Mrigendra Rana"
- # NEP_generic_democratic_reformer:0 "Dharma Bhakta Mathema" # Executed in 41, moved to replace
  NEP_nir_rana:0 "Nir Rana"
  NEP_ENG_air_theorist:0 "John Smith" # Look for a real candidate
  NEP_reformist_religious_writer:0 "Reformist Religious Writer"
@@ -43,8 +44,8 @@
 
  # STARTING IDEAS #
 
- NEP_tribhuvan_idea:0 "Tribhuvan"
- NEP_tribhuvan_idea_desc:0 "Though the position of King of [ROOT.GetNonIdeologyName] has been reduced to largely ceremonial, Tribhuvan still serves as a popular figure amongst the [NEP.GetAdjective] population."
+ NEP_tribhuvan_idea_r56:0 "Tribhuvan"
+ NEP_tribhuvan_idea_r56_desc:0 "Though the position of King of [ROOT.GetNonIdeologyName] has been reduced to largely ceremonial, Tribhuvan still serves as a popular figure amongst the [NEP.GetAdjective] population."
 
  NEP_rana_stratocracy:0 "Rana Stratocracy"
  NEP_rana_stratocracy_desc:0 "For over a century the Rana clan has managed to secure the prime ministership and all the military command position to the point that the royal family has barely any power at all. They enter the army as colonels and their position in the army is de facto the order of succession to the head of the army and then the prime ministership."
@@ -95,8 +96,12 @@
 
  NEP_market_restriction_r56:0 "Restricted Access to the International Market"
  NEP_market_restriction_r56_desc:0 "While in theory the Nepal-Britain Treaty of 1923 allows us to purchase and import military equipment from other nations through India, in practice, the [ENG.GetAdjective] still hold the final say in our purchases and can easily invalidate or confiscate said weapons. This greatly hinders our stockpile quantity and actively reinforces [ENG.GetNameDef]'s influence over our nation."
+
  NEP_can_only_exchange_arms_with_uk:0 "Allows for Arms Trade with §Y[ENG.GetNameDef]§! and §Y[RAJ.GetNameDef]§!" # Tooltip
  NEP_we_can_only_trade_with_uk_tt:0 "§Y[NEP.GetNameDefCap]§! is only allowed to purchase weapons from us." # Tooltip
+
+ NEP_himalayan_defense_pact_idea_r56:0 "Himalayan Defense Pact"
+ NEP_himalayan_defense_pact_tooltip_r56:0 "§RIf any nation goes to war with a member of the Himalayan Defense Pact, members will come to their aid.§!"
 
  # Parties
  NEP_neutrality_party:0 "Rānā"
@@ -108,14 +113,21 @@
  NEP_fascism_party:0 "Gorkha Dal"
  NEP_fascism_party_long:0 "Gorkha Dal"
 
+
  # Decisions
 
  # Greater Nepal
  NEP_greater_nepal_r56:0 "Dream of Greater Nepal"
  NEP_greater_nepal_r56_desc:0 ""
 
- NEP_integrate_sikkim_r56:0 "Reintegrate Sikkim"
- NEP_integrate_sikkim_r56_desc:0 "WIP"
+ NEP_integrate_bihar_r56:0 "Integrate [1092.GetName]"
+ NEP_integrate_bihar_r56_desc:0 ""
+
+ NEP_integrate_uttarakhand_r56:0 "Integrate [1090.GetName]"
+ NEP_integrate_uttarakhand_r56_desc:0 "In the late 18th century, [1090.GetName] was conquered by the Gorkha Empire, our predecessor state. For many years it remained under the [ROOT.GetAdjective] domain until the imperialist scum unfairly seized it from us in 1816. Now that our armies have occupied the region once more, we may be able to undo the injustice imposed on us by foreigners and integrate [1090.GetName] into our domain!"
+
+ NEP_integrate_sikkim_r56:0 "Integrate [1013.GetName]"
+ NEP_integrate_sikkim_r56_desc:0 "[1013.GetName] has both a cultural and historical connection to [ROOT.GetNonIdeologyName], with most of the population speaking the Nepali language. But tragedy struck in 1816, when [1013.GetName] was forcefully separated from us by the imperialist scum, and became a kingdom of it's own run by illegitimates. With [1013.GetName] back under the fold temporarily, it serves as the perfect opportunity to reintegrate the lost territory into it's rightful domain!"
 
  # Nepal on the World Stage
  NEP_foreign_relations_r56:0 "Nepal on the World Stage"
@@ -140,12 +152,31 @@
  NEP_volunteers_in_the_sinojapanese_war_r56:0 "Send Volunteers to [CUG.GetNameDef]"
  NEP_volunteers_in_the_sinojapanese_war_r56_desc:0 ""
 
+ NEP_upper_mustang_refugees_r56:0 "Refugees from Upper Mustang"
+ NEP_upper_mustang_refugees_r56_desc:0 "Following the [NEP.GetAdjective] forceful annexation of Upper Mustang, many in the area have decided to seek refuge in our nation in fear of persecution of the [NEP.GetAdjective] regime."
+
  # Himalayan Politics
  NEP_transhimalayan_politics_r56:0 "Trans-Himalayan Politics"
  NEP_transhimalayan_politics_r56_desc:0 ""
 
+ NEP_invite_tibet_into_defensive_pact_r56:0 "Invite [TIB.GetNameDef] Into the Himalayan Defense Pact"
+ NEP_invite_tibet_into_defensive_pact_r56_desc:0 "[ROOT.GetNonIdeologyName] and [TIB.GetNonIdeologyName] have a long and complicated relationship with one another. From the Sino-Gorkha, which led to the loss of [NEP.GetAdjective] suzerainty over Tibet, to the early 20th century where we were key mediators between Tibet and foreign powers such as the Great Qing and British empires. Our two nations have always been intertwined with one another, and it seems like this intertwining will continue for many more years to come. However, with rising tensions in neighboring states, it might be a perfect opportunity to call upon our [TIB.GetAdjective] brothers for increased cooperation between our two nations, starting from proposing a defensive pact between us which will ensure the security and sovereignty of both of our nations."
+
+ NEP_invite_bhutan_into_defensive_pact_r56:0 "Invite [BHU.GetNameDef] Into the Himalayan Defense Pact"
+ NEP_invite_bhutan_into_defensive_pact_r56_desc:0 "Ever since the Sino-Gorkha war in 1792, diplomatic relations between our nation and [BHU.GetNameDef] have been strained due to their suspected support of our enemies. Although, as a modernizing and developing nation, we must also rethink this mindset. With tensions in our surrounding regions rising, holding a grudge on a neighbor will only give us another front to worry about. It may be a perfect opportunity for our two nations to reconcile by entering into a defensive pact with one another and to secure another ally in these troubling times."
+
+ NEP_invite_sikkim_into_defensive_pact_r56:0 "Invite [SKK.GetNameDef] Into the Himalayan Defense Pact"
+ NEP_invite_sikkim_into_defensive_pact_r56_desc:0 "Whilst our nations share a complicated history with one another, and some [ROOT.GetAdjective] nationalists claiming Sikkim to be part of a Greater Nepalese realm, we must put it all aside and show goodwill to our [SKK.GetAdjective] neighbor by inviting them to our defense pact in order to protect them from potential external threats."
+
  NEP_invite_ladakh_into_defensive_pact_r56:0 "Invite [KAS.GetNameDef] Into the Himalayan Defense Pact"
  NEP_invite_ladakh_into_defensive_pact_r56_desc:0 "Kashmir as a region has been dominated by many empires throughout its long and rich history. Only recently was it granted the opportunity to establish itself as a sovereign and free nation under the rule of [KAS.GetLeader]. To prevent [KAS.GetNonIdeologyName] from falling into foreign hands once more, we should expand our defensive pact with our fellow Himalayan states into the west by extending a friendly hand to the [KAS.GetAdjective]s."
+
+ NEP_invade_upper_mustang_r56:0 "Put an End to Upper Mustang's Autonomy"
+ NEP_invade_upper_mustang_r56_desc:0 "The Kingdom of Lo, otherwise known as Upper Mustang, is an isolated autonomous entity within our borders that holds much strategic importance due to its location between us and [TIB.GetNameDef]. While they have no standing armed force and don't serve as a threat from a military point of view, their political and cultural ties to [TIB.GetNameDef] make them unreliable and untrustworthy. Without an armed force, we can easily secure the kingdom militarily without much resistance. But if [TIB.GetNameDef] decides to respond to this action, then we risk escalating the matter."
+
+ # Political Actions
+ NEP_border_war_with_tibet_r56:0 "Skirmish on the [NEP.GetAdjective]-[TIB.GetAdjective] Border"
+
 
  # Events
  # England has Entered a State of War
@@ -197,20 +228,80 @@
  nepal.10.desc:0 ""
  nepal.10.a:0 "We stand stronger together."
 
+ # Himalayan Defense Pact Member Under Attack!
+ nepal.11.t:0 "Himalayan Defense Pact Member Under Attack!"
+ nepal.11.desc:0 ""
+ nepal.11.a:0 "Come to their aid immediately!"
+ nepal.11.b:0 "On second thought.."
+
+ # Militarization of the Himalayan Defense Pact
+ nepal.12.t:0 "Militarization of the Himalayan Defense Pact"
+ nepal.12.desc:0 ""
+ nepal.12.a:0 "And so on."
+
+ # FROM Proposes Militarizing the HDP
+ nepal.13.t:0 "[FROM.GetNameDefCap] Proposes Militarizing the HDP"
+ nepal.13.desc:0 ""
+ nepal.13.a:0 "They raise a valid point."
+ nepal.13.b:0 "Lets preserve the status quo."
+
+ # FROM Suggests Federalizing the Himalayan Defense Pact
+ nepal.14.t:0 "[FROM.GetNameDefCap] Suggests Federalizing the Himalayan Defense Pact"
+ nepal.14.desc:0 ""
+ nepal.14.a:0 "A sound idea."
+ nepal.14.b:0 "Delusional."
+
+ # The Goal of Our Expansion
+ nepal.15.t:0 "The Goal of Our Expansion?"
+ nepal.15.desc:0 ""
+ nepal.15.a:0 "To conquer our Himalayan neighbors!"
+ nepal.15.b:0 "To subjugate our Himalayan neighbors!"
+
+ # Nepal Invades Upper Mustang
+ mustang_crisis.1.t:0 "[FROM.GetNameDefCap] Violates Upper Mustang's Autonomy"
+ mustang_crisis.1.desc:0 "Some days ago, [FROM.GetAdjective] soldiers crossed into the Kingdom of Lo's boundaries, seeking to relinquish it of its autonomy as a kingdom within [FROM.GetNameDef]. The Kingdom of Lo are culturally and politically tied to our nation and people, and not protecting them would mean abandoning our fellow brothers and sisters in the face of tyranny."
+ mustang_crisis.1.a:0 "This is not worth an escalation."
+ mustang_crisis.1.b:0 "Prepare the army at once!"
+
+ # Tibet Doesn't Pursue Military Intervention
+ mustang_crisis.2.t:0 "[FROM.GetNameDefCap] Doesn't Pursue Military Intervention"
+ mustang_crisis.2.desc:0 "It seems as if our show of force in Upper Mustang was enough to scare off the [FROM.GetAdjective]s from pursuing military action against us. If they are willing to let Mustang fall, then how far can we go with this until they feel the need to intervene?"
+ mustang_crisis.2.a:0 "Only time will tell."
+
+ # Tibet Stations Soldiers on Our Border
+ mustang_crisis.3.t:0 "[FROM.GetNameDefCap] Stations Soldiers on Our Border"
+ mustang_crisis.3.desc:0 "In a show of force following our recent actions in Upper Mustang, [FROM.GetNameDef] has begun moving its soldiers to our border. This can only mean one thing, being that [FROM.GetNameDef] is preparing to strike our nation!"
+ mustang_crisis.3.a:0 "This can't be good."
+
+ # ROOT Soldiers March in Victory
+ mustang_crisis.4.t:0 "[GetROOTWinsBorderSkirmish]"
+ mustang_crisis.4.desc:0 "[GetROOTWinsBorderSkirmishDesc]"
+ mustang_crisis.4.a:0 "A great victory for [ROOT.GetNonIdeologyName]!"
+
+ # Our Troops Forced to Retreat
+ mustang_crisis.5.t:0 "[GetROOTLosesBorderSkirmish]"
+ mustang_crisis.5.desc:0 "[GetROOTLosesBorderSkirmishDesc]"
+ mustang_crisis.5.a:0 "We'll get them next time."
+
+ # Stalemate in Upper Mustang
+ mustang_crisis.6.t:0 "Stalemate in Upper Mustang"
+ mustang_crisis.6.desc:0 "After intense fighting in the harsh terrain of Upper Mustang, the troops on the front have exhausted all of their energy and a ceasefire between the commanding officers has been signed. Whether this is a victory or a loss is up to interpretation, but many within our nation consider this an embarrassing show of incompetence by our army."
+ 
+
  # Focuses
- NEP_maintain_british_ties_r56:0 "Maintain British Ties"
- NEP_maintain_british_ties_r56_desc:0 ""
+ NEP_maintain_british_ties_r56:0 "Maintain [ENG.GetAdjective] Ties"
+ NEP_maintain_british_ties_r56_desc:0 "Our friendship with [ENG.GetNameDef] has proven to be nothing but mutually benefical for both of our great nations, as we provide them a buffer between India and China, and they provide us with much needed political support. Let us continue this prosperous relationship."
  NEP_we_join_britains_war_tt:0 "If §Y[ENG.GetNameDef]§! enters into a state of §RWar§!, we will receive an §OEvent§! which will allow us to §GJoin§! the war on their side." # Tooltip
 
  NEP_strengthen_chinese_ties_r56:0 "Strengthen [CHI.GetAdjective] Relations"
- NEP_strengthen_chinese_ties_r56_desc:0 ""
- NEP_if_completed_focus_expeditionary_force:0 "If §OThe Nepali Expeditionary Force§! is completed:"
+ NEP_strengthen_chinese_ties_r56_desc:0 "[ROOT.GetNonIdeologyName] and [CHI.GetNonIdeologyName] share a long history with one another, with [CHI.GetNonIdeologyName] still playing an important role in Trans-himalayan politics. Under the premiership of Bhim Shumsher, [ROOT.GetNameDef] warmed up to the [CHI.GetAdjective] Kuomintang and established friendly ties with the nation. Maybe [ROOT.GetLeader] can follow in his steps and strengthen our preexisting ties with the [CHI.GetAdjective] government?"
+ NEP_if_completed_focus_expeditionary_force:0 "If §OThe Nepali Expeditionary Force§! is completed:" # Tooltip
 
  NEP_normalize_relations_with_the_united_states_r56:0 "Normalize Relations with the United States"
- NEP_normalize_relations_with_the_united_states_r56_desc:0 ""
+ NEP_normalize_relations_with_the_united_states_r56_desc:0 "Laying the foundations for a friendly relationship with [USA.GetNameDef] is essential for [ROOT.GetNonIdeologyName] future, especially if we seek to distance ourselves from [ENG.GetNameDef] in the future and establish a fully independent foreign policy. Aside from securing more diplomatic freedom, establishing a friendly relationship with the United States may help us in the economic sector by inviting [USA.GetAdjective] engineers and industrialists to aid in [ROOT.GetNonIdeologyName]'s industrial sector."
 
  NEP_renegotiate_unfair_treaties_r56:0 "Renegotiate Unfair Treaties"
- NEP_renegotiate_unfair_treaties_r56_desc:0 ""
+ NEP_renegotiate_unfair_treaties_r56_desc:0 "Following our defeat to the [ENG.GetAdjective], [NEP.GetNameDef] was forced to cede much of its territory to the [ENG.GetAdjective] in a humiliating treaty known as the 'Treaty of Sugauli in 1816'. This undid the decades old process of uniting Nepal as a region under one banner. But now that we have much friendlier ties with [ENG.GetNameDef], and with our contributation to the British Empire, maybe they will be generous and return us our rightful land in exchange of a strong ally in the region?"
 
  NEP_nepals_place_in_the_western_world_order_r56:0 "[ROOT.GetNonIdeologyName]'s Place in the Western World Order"
  NEP_nepals_place_in_the_western_world_order_r56_desc:0 ""
@@ -266,7 +357,7 @@
  NEP_promote_pan_nepalese_identity_r56:0 "Promote Pan-Nepalese Identity"
  NEP_promote_pan_nepalese_identity_r56_desc:0 ""
 
- NEP_the_nepali_expeditionary_force_r56:0 "The Nepali Expeditionary Force"
+ NEP_the_nepali_expeditionary_force_r56:0 "The [ROOT.GetAdjective] Expeditionary Force"
  NEP_the_nepali_expeditionary_force_r56_desc:0 ""
 
  NEP_adapt_to_the_jungles_r56:0 "Adapt to the Jungles"
@@ -281,3 +372,32 @@
  # Flags and Tooltips
  NEP_accepted_himalayan_defense_pact:0 "Is part of the Himalayan Defense Pact"
  NEP_they_are_more_likely_to_accept_if:0 "They are more §GLikely§! to accept if: \n-They have a §YHigh Opinion§! of us \n-We share the §YSame Ideology§! \n-We haven't generated §YWorld Tension§! \n-Another country is §YJustifying§! on them"
+ NEP_we_risk_going_to_war_with_them:0 "§RDue to the Himalayan Defense Pact having been formed, we risk going to war with other HDP members.§!"
+ NEP_has_treaty:0 "Is part of the §YHimalayan Defense Pact§!"
+ NEP_availability_depends_on_previous_focus:0 "§YThe availability checks will change depending on our stance regarding the Himalayas.§!" 
+ NEP_we_will_border_raid_you:0 "§RWe will begin a border war in roughly 30 days.§!"
+ NEP_requirements_to_core_tibet:0 "All §Y[TIB.GetAdjective]§! cores controlled by us must have: \nMore than §Y60% Compliance§! \nLess than §Y5% Resistance§!"
+ NEP_requirements_to_core_bhutan:0 "All §Y[BHU.GetAdjective]§! cores controlled by us must have: \nMore than §Y40% Compliance§! \nLess than §Y5% Resistance§!"
+ NEP_depends_on_previous_focus_completion:0 "§YThe rewards will change depending on our stance regarding the Himalayas.§!"
+ NEP_they_all_must_be_integrated_puppet:0 "§Y[TIB.GetNameDefCap]§!, §Y[BHU.GetNameDef]§!, §Y[SKK.GetNameDef]§!, or §Y[KAS.GetNameDef]§! must be either an §OIntegrated Puppet§! or a §OReichskommissariat§!."
+
+ # Faction
+ faction_template_NEP_himalayan_faction_name:0 "Himalaya Defense Pact"
+
+ # MIO
+ NEP_nepal_government_railways_organization:0 "Nepal Government Railways"
+
+ # Scripted Localisation
+ NEP_tibet_wins_scripted_loc:0 "[ROOT.GetAdjective] Soldiers March in Victory"
+ NEP_nepal_wins_scripted_loc:0 "[ROOT.GetAdjective] Soldiers Force [TIB.GetNameDef] to Retreat"
+
+ NEP_tibet_wins_desc_scripted_loc:0 "After the tyrannical regime of [NEP.GetNameDef] invaded the Kingdom of Lo in Upper Mustang and our immediate intervention, the brave [ROOT.GetAdjective] troops engaged the [NEP.GetAdjective] soldiers in combat. After a days long battle, they have been able to drive the [NEP.GetAdjective] into a retreat and reinstate Upper Mustang's rightful autonomy. The battle hardened [ROOT.GetAdjective] soldiers now march to [ROOT.Capital.GetCapitalVictoryPointName] in glory."
+ NEP_nepal_wins_desc_scripted_loc:0 "As the [TIB.GetAdjective] soldiers hurry to evacuate from Upper Mustang, the [ROOT.GetAdjective] soldiers march in glory back home, having defeated a much larger nation in a show of superiority of the [ROOT.GetAdjective] nation. With Upper Mustang out of the way, we now have a safe passage into [TIB.GetNameDef] which we can use to threaten the [TIB.GetAdjective]s in the event they attempt to attack us once more."
+
+ NEP_tibet_loses_scripted_loc:0 "Our Troops Forced to Retreat"
+ NEP_nepal_loses_scripted_loc:0 "Humiliating Defeat in Upper Mustang"
+
+ NEP_tibet_loses_desc_scripted_loc:0 "Despite our best efforts, our soldiers were overwhelmed in the fight against the elite [NEP.GetAdjective] units and were forced to retreat to where they came from. This defeat now leaves our allies in Upper Mustang at [NEP.GetNameDef]'s mercy."
+ NEP_nepal_loses_desc_scripted_loc:0 "After a hard fought battle between [ROOT.GetNonIdeologyName]'s most elite forces and the [TIB.GetAdjective] troops, our units were humiliated in a decisive defeat and were forced to retreat outside of the territory, undoing our progress in the annexation of Upper Mustang."
+
+ 

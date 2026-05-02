@@ -37,6 +37,53 @@ ideas = {
 			modifier = { custom_modifier_tooltip = NEP_can_only_exchange_arms_with_uk }
 		}
 
+		NEP_royal_army = {
+			picture = raj_indian_gentlemen_officers
+			allowed = { always = no }
+			
+			modifier = {
+				special_forces_cap = 0.75
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+			}
+		}
+
+		NEP_tribhuvan_idea_r56 = {
+			picture = NEP_tribhuvan
+			allowed = { always = no }
+			allowed_civil_war = { NOT = { has_government = communism } }
+			cancel = { has_government = communism }
+			traits = { popular_figurehead2 }
+		}
+
+		NEP_himalayan_defense_pact_idea_r56 = {
+			picture = TIB_mountainous_people
+			allowed = { always = no }
+			cancel = {
+				OR = {
+					exists = no
+					is_in_faction = yes
+					any_other_country = {
+						has_idea = NEP_himalayan_defense_pact_idea_r56
+						has_war_with = ROOT
+					}
+				}
+			}
+			modifier = { custom_modifier_tooltip = NEP_himalayan_defense_pact_tooltip_r56 }
+		}
+
+		NEP_upper_mustang_refugees_r56 = {
+			picture = ARG_social_welfare_fund_ns
+			allowed = { always = no }
+			modifier = { 
+				monthly_population = 0.05
+				weekly_manpower = 25 
+			}
+		}
+
+#		IIII UNUSED IIII ############################### IIII UNUSED IIII	
+#		VVVV UNUSED VVVV ############################### VVVV UNUSED VVVV
+
 		NEP_economic_exploitation_r56 = { #unused currently
 			picture = generic_economic_crisis
 			allowed = { original_tag = NEP }
@@ -48,17 +95,6 @@ ideas = {
 				industrial_capacity_factory = -0.15
 				production_speed_buildings_factor = -0.1
 				custom_modifier_tooltip = NEP_cannot_change_eco_law
-			}
-		}
-
-		NEP_royal_army = {
-			picture = raj_indian_gentlemen_officers
-			allowed = { always = no }
-			
-			modifier = {
-				special_forces_cap = 0.75
-				special_forces_attack_factor = 0.05
-				special_forces_defence_factor = 0.05
 			}
 		}
 
@@ -77,14 +113,6 @@ ideas = {
 				army_org_factor = 0.15
 				command_abilities_cost_factor = -0.3		
 			}
-		}
-
-		NEP_tribhuvan_idea = {
-			picture = NEP_tribhuvan
-			allowed = { always = no }
-			allowed_civil_war = { NOT = { has_government = communism } }
-			cancel = { has_government = communism }
-			traits = { popular_figurehead2 }
 		}
 
 		NEP_obsolete_equipment = {

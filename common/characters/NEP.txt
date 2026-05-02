@@ -28,14 +28,16 @@ characters = {
 		}
 
 		country_leader = {
-			ideology=military_junta
-			expire="1965.1.1"
-			id=-1
+			ideology = military_junta
+			expire = "1965.1.1"
+			desc = NEP_juddha_rana_leader_desc
+			id = -1
 			traits = {
 				army_connections
 				r56_trait_opposed_to_communism
 			}
 		}
+
 		# advisor = {		
 		# 	slot = army_chief
 		# 	idea_token = NEP_juddha_rana
@@ -56,20 +58,20 @@ characters = {
 		# 		factor = 1.000
 		# 	}
 		# }
-		# field_marshal = {
-		# 	traits = { defensive_doctrine old_guard politically_connected }
-		# 	skill = 2
-		# 	attack_skill = 1
-		# 	defense_skill = 3
-		# 	planning_skill = 2
-		# 	logistics_skill = 1
-		# 	visible = { 
-		# 		has_country_leader = {
-		# 			character = NEP_juddha_rana
-		# 			ruling_only = yes
-		# 		}
-		# 	}
-		# }
+		field_marshal = {
+		 	traits = { defensive_doctrine old_guard politically_connected }
+		 	skill = 2
+		 	attack_skill = 1
+		 	defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+			visible = { 
+				has_country_leader = {
+					character = NEP_juddha_rana
+					ruling_only = yes
+				}
+			}
+		}
 	}
 
 	NEP_tribhuvan_shah = { # King of Nepal
@@ -86,8 +88,8 @@ characters = {
 		name = NEP_rudra_rana
 		portraits = {
 			army = {
-				small="GFX_portrait_r56_TIB_land_3"
-				large="GFX_portrait_r56_TIB_land_3_small"
+				small="GFX_portrait_r56_TIB_land_3_small"
+				large="GFX_portrait_r56_TIB_land_3"
 			}
 		}
 		advisor = {
@@ -656,7 +658,6 @@ characters = {
 				original_tag = NEP
 			}
 			available = {
-				has_completed_focus = NEP_a_nepali_air_force
 				has_country_flag = has_generated_an_ace_pilot
 			}
 			traits = {
@@ -934,7 +935,7 @@ characters = {
 						has_autonomy_state = autonomy_supervised_state
 					}
 				}
-				has_completed_focus = NEP_kaiser_rana_and_panasianism
+				#has_completed_focus = NEP_kaiser_rana_and_panasianism
 			}
 			traits = {
 				fascist_demagogue
@@ -984,7 +985,7 @@ characters = {
 						has_autonomy_state = autonomy_supervised_state
 					}
 				}
-				has_completed_focus = NEP_contact_the_opposition
+				#has_completed_focus = NEP_contact_the_opposition
 			}
 			traits = {
 				democratic_reformer
@@ -1033,7 +1034,7 @@ characters = {
 						has_autonomy_state = autonomy_supervised_state
 					}
 				}
-				has_completed_focus = NEP_contact_the_opposition
+				#has_completed_focus = NEP_contact_the_opposition
 			}
 			traits = {
 				communist_revolutionary

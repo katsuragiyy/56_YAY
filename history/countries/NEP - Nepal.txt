@@ -8,7 +8,7 @@ set_country_flag = started_out_as_landlocked
 add_ideas = {
 	TIB_mountainous_people
 	NEP_royal_army
-	NEP_tribhuvan_idea
+	NEP_tribhuvan_idea_r56
 	low_economic_mobilisation # Tibet is playing with fire
 	limited_exports
 }

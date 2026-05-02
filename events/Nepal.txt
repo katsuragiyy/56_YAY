@@ -1,9 +1,10 @@
 ###########################
-# nepal events
+# Nepal Events
 ###########################
 
 add_namespace = nepal
 
+# England has Entered a State of War
 country_event = {
 	id = nepal.1
 	title = nepal.1.t
@@ -115,44 +116,43 @@ country_event = {
 	}	
 }
 
-country_event = {
-	id = nepal.2
-	title = nepal.2.t
-	desc = nepal.2.desc
-	picture = GFX_report_event_polish_politics
-
-	trigger = {
-		original_tag = NEP
-		
-		has_government = neutrality
-		has_completed_focus = NEP_rule_of_the_rana_clan
-		
-	}
-
-	mean_time_to_happen = {
-		days = 20
-	}
-
-	fire_only_once = yes
-
-	option = { #Creation of the first true democratic party
-		name = nepal.2.a
-		add_days_mission_timeout = {
-			mission = NEP_growing_opposition
-			days = -20
-		}
-		add_popularity = {
-			ideology = democratic
-			popularity = 0.01
-		}	
-		set_party_name = {
-			ideology = democratic
-			long_name = "Nepal Praja Parishad"
-			name = "NPP"
-		}			
-	}
-	
-}
+#country_event = {
+#	id = nepal.2
+#	title = nepal.2.t
+#	desc = nepal.2.desc
+#	picture = GFX_report_event_polish_politics
+#	is_triggered_only = yes # not used currently
+#
+#	#trigger = {
+#	#	original_tag = NEP
+#	#	
+#	#	has_government = neutrality
+#	#	
+#	#}
+#
+#	mean_time_to_happen = {
+#		days = 20
+#	}
+#
+#	fire_only_once = yes
+#
+#	option = { #Creation of the first true democratic party
+#		name = nepal.2.a
+#		add_days_mission_timeout = {
+#			mission = NEP_growing_opposition
+#			days = -20
+#		}
+#		add_popularity = {
+#			ideology = democratic
+#			popularity = 0.01
+#		}	
+#		set_party_name = {
+#			ideology = democratic
+#			long_name = "Nepal Praja Parishad"
+#			name = "NPP"
+#		}			
+#	}
+#}
 
 country_event = { # trouble in the UK, invite some teachers?
 	id = nepal.3
@@ -173,7 +173,6 @@ country_event = { # trouble in the UK, invite some teachers?
 		set_country_flag = NEP_unlock_invitation_british_teachers
 
 	}
-	
 }
 
 country_event = { #nepal proposes military excersies
@@ -244,15 +243,21 @@ country_event = { #boooooooo
 	}
 }
 
-country_event = { # What we do with Tibet, Bhutan, and Sikkim
+# Our Role in Himalayan Politics
+country_event = {
 	id = nepal.7
 	title = nepal.7.t
 	desc = nepal.7.desc
 	picture = GFX_report_event_polish_politics
+
 	is_triggered_only = yes
+	fire_only_once = yes
 
 	option = { # Lets strive for a peaceful himalayan region free of conflict!
 		name = nepal.7.a
+		set_country_flag = NEP_we_want_friendship
+		add_ideas = NEP_himalayan_defense_pact_idea_r56
+		custom_effect_tooltip = generic_skip_one_line_tt
 		every_other_country = {
 			limit = {
 				OR = {
@@ -261,13 +266,13 @@ country_event = { # What we do with Tibet, Bhutan, and Sikkim
 					original_tag = SKK
 				}
 				exists = yes
-				if = {
-					limit = { is_subject = yes }
-					OR = { # We are autonomous enough to make our own decisions
-						has_autonomy_state = autonomy_dominion
-						has_autonomy_state = autonomy_protectorate
-					}
-				}
+				#if = { # if a member is attacked it can drag in a major and we dont want that happening do we?
+				#	limit = { is_subject = yes }
+				#	OR = { # We are autonomous enough to make our own decisions
+				#		has_autonomy_state = autonomy_dominion
+				#		has_autonomy_state = autonomy_protectorate
+				#	}
+				#}
 			}
 			country_event = {
 				id = nepal.8
@@ -277,30 +282,121 @@ country_event = { # What we do with Tibet, Bhutan, and Sikkim
 		custom_effect_tooltip = if_they_accept_tt
 		effect_tooltip = {
 			add_political_power = -10
-			give_guarantee = TIB
-			TIB = { give_guarantee = ROOT }
+			add_ideas = NEP_himalayan_defense_pact_idea_r56
 		}
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = NEP_they_are_more_likely_to_accept_if
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_government = democratic
+				add = 1
+			}
+
+			modifier = {
+				add = 1
+				OR = {
+					has_non_aggression_pact_with = TIB
+					has_non_aggression_pact_with = BHU
+					has_non_aggression_pact_with = SKK
+				}
+			}
+
+			modifier = {
+				add = 1
+				OR = {
+					has_guaranteed = TIB
+					has_guaranteed = BHU
+					has_guaranteed = SKK
+				}
+			}
+
+			modifier = {
+				add = 1
+				OR = {
+					is_guaranteed_by = TIB
+					is_guaranteed_by = BHU
+					is_guaranteed_by = SKK
+				}
+			}
+
+			modifier = {
+				add = 1
+				OR = {
+					is_guaranteed_by = TIB
+					is_guaranteed_by = BHU
+					is_guaranteed_by = SKK
+				}
+			}
+		}
 	}
 
 	option = { # we will kill them all
 		name = nepal.7.b
-		
+		set_country_flag = NEP_we_will_kill_everyone
+		add_country_leader_trait = warmonger
+		country_event = nepal.15
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_neighbor_country = {
+			limit = {
+				exists = yes
+				has_war = no
+				has_capitulated = no
+				is_major = no
+				NOT = { is_in_faction_with = ROOT }
+			}
+			news_event = {
+				hours = 8
+				id = r56.news_event.10
+			}
+		}
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 1
+				has_government = fascism
+			}
+
+			modifier = {
+				add = 1
+				OR = {
+					has_completed_focus = interventionism_focus
+					has_completed_focus = GEN_Conquer
+					has_completed_focus = GEN_Intervene
+				}
+			}
+
+			modifier = {
+				add = 3
+				strength_ratio = {
+					tag = TIB
+					ratio > 2
+				}
+
+				strength_ratio = {
+					tag = BHU
+					ratio > 2
+				}
+			}
+		}
 	}
 }
 
-country_event = { # Nepal suggests defensive pact
+# Nepal Suggests Defensive Pact
+country_event = {
 	id = nepal.8
 	title = nepal.8.t
 	desc = nepal.8.desc
 	picture = GFX_report_event_polish_politics
+
 	is_triggered_only = yes
 
 	option = { # Sure
 		name = nepal.8.a
 		if = {
-			limit = { is_faction_leader = yes }
+			limit = { FROM = { is_faction_leader = yes } }
 
 			add_political_power = -10
 			FROM = { add_to_faction = ROOT }
@@ -310,8 +406,7 @@ country_event = { # Nepal suggests defensive pact
 			
 			else = {
 				add_political_power = -10
-				give_guarantee = FROM
-				FROM = { give_guarantee = ROOT }
+				add_ideas = NEP_himalayan_defense_pact_idea_r56
 
 				custom_effect_tooltip = generic_skip_one_line_tt
 				FROM = { country_event = nepal.10 }
@@ -336,8 +431,8 @@ country_event = { # Nepal suggests defensive pact
 
 			modifier = { # Someone is justifying against us
 				add = 3
-				every_other_country = {
-					limit = { NOT = { OR = { has_country_flag = NEP_accepted_himalayan_defense_pact original_tag = NEP } } }
+				any_other_country = {
+					NOT = { has_country_flag = NEP_accepted_himalayan_defense_pact original_tag = NEP }
 					is_justifying_wargoal_against = ROOT
 				}
 			}
@@ -355,10 +450,10 @@ country_event = { # Nepal suggests defensive pact
 		}
 		custom_effect_tooltip = generic_skip_one_line_tt
 		FROM = { country_event = nepal.9 }
+		set_country_flag = NEP_we_dont_want_alliance_with_you_nepalese
 
 		ai_chance = {
 			base = 1
-
 			modifier = { # Low Opinion
 				add = 2
 				has_opinion = {
@@ -375,11 +470,13 @@ country_event = { # Nepal suggests defensive pact
 	}
 }
 
-country_event = { # FROM rejects
+# [FROM.GetNameDefCap] Rejects Our Proposal
+country_event = {
 	id = nepal.9
 	title = nepal.9.t
 	desc = nepal.9.desc
 	picture = GFX_report_event_generic_sign_treaty1
+
 	is_triggered_only = yes
 
 	option = {
@@ -393,11 +490,13 @@ country_event = { # FROM rejects
 	}
 }
 
-country_event = { # FROM accepts
+# [FROM.GetNameDefCap] Accepts Our Proposal
+country_event = {
 	id = nepal.10
 	title = nepal.10.t
 	desc = nepal.10.desc
 	picture = GFX_report_event_generic_sign_treaty3
+
 	is_triggered_only = yes
 
 	option = {
@@ -406,12 +505,425 @@ country_event = { # FROM accepts
 			limit = { is_faction_leader = yes }
 			effect_tooltip = { add_to_faction = FROM }
 
+			else = { effect_tooltip = { FROM = { add_ideas = NEP_himalayan_defense_pact_idea_r56 } } }
+		}
+	}
+}
+
+# Himalayan Defense Pact Member Under Attack!
+country_event = {
+	id = nepal.11
+	title = nepal.11.t
+	desc = nepal.11.desc
+	picture = GFX_report_event_tibetan_army_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nepal.11.a
+		ROOT = {
+			add_to_war = {
+				targeted_alliance = FROM.FROM
+				enemy = FROM
+				hostility_reason = asked_to_join
+			}
+		}
+
+		ai_chance = { base = 3 }
+	}
+
+	option = {
+		name = nepal.11.b
+		every_other_country = {
+			limit = {
+				has_idea = NEP_himalayan_defense_pact_idea_r56
+				has_war_with = FROM.FROM
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = faction_traitor
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		remove_ideas = NEP_himalayan_defense_pact_idea_r56
+
+		ai_chance = { base = 0 }
+	}
+}
+
+# Militarization of the Himalayan Defense Pact
+country_event = {
+	id = nepal.12
+	title = nepal.12.t
+	desc = nepal.12.desc
+	picture = GFX_report_event_canada_treaty
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nepal.12.a
+		remove_ideas = NEP_himalayan_defense_pact_idea_r56
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		if = {
+			limit = { has_dlc = "No Compromise, No Surrender" }
+			set_rule = { can_create_factions = yes }
+			create_faction_from_template = faction_template_NEP_himalayan_faction
+			add_faction_initiative = 1
+
 			else = {
-				effect_tooltip = {
-					give_guarantee = FROM
-					FROM = { give_guarantee = ROOT }
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = faction_template_NEP_himalayan_faction
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		every_other_country = {
+			limit = { has_idea = NEP_himalayan_defense_pact_idea_r56 }
+			country_event = {
+				id = nepal.13
+				hours = 12
+			}
+		}
+
+		custom_effect_tooltip = if_they_accept_tt
+		effect_tooltip = {
+			add_to_faction = TIB
+			custom_effect_tooltip = generic_skip_one_line_tt
+			remove_ideas = NEP_himalayan_defense_pact_idea_r56
+		}
+
+		ai_chance = { base = 3 }
+	}
+}
+
+# Militarization of the Himalayan Defense Pact - Accept?
+country_event = {
+	id = nepal.13
+	title = nepal.13.t
+	desc = nepal.13.desc
+	picture = GFX_report_event_canada_treaty
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # sure
+		name = nepal.13.a
+		FROM = { add_to_faction = ROOT }
+		custom_effect_tooltip = generic_skip_one_line_tt
+		remove_ideas = NEP_himalayan_defense_pact_idea_r56
+
+		ai_chance = { base = 3 }
+	}
+
+	option = { # no
+		name = nepal.13.b
+		FROM = { add_to_faction = ROOT }
+		custom_effect_tooltip = generic_skip_one_line_tt
+		remove_ideas = NEP_himalayan_defense_pact_idea_r56
+
+		ai_chance = { base = 3 }
+	}
+}
+
+# Nepal Suggests a Himalayan Federation
+country_event = {
+	id = nepal.14
+	title = nepal.14.t
+	desc = nepal.14.desc
+	picture = GFX_report_event_DEN_danish_politics
+
+	is_triggered_only = yes
+
+	option = { # Sure
+		name = nepal.14.a
+		
+
+		ai_chance = {
+			base = 1
+			modifier = { # Same Government
+				add = 1
+				has_government = FROM
+			}
+
+			modifier = { # High Opinion
+				add = 2
+				has_opinion = {
+					target = FROM
+					value > 90
 				}
 			}
 		}
+	}
+
+	option = { # no
+		name = nepal.14.b
+		add_political_power = 10
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = medium_decrease
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = { country_event = nepal.9 }
+		set_country_flag = NEP_we_dont_want_alliance_with_you_nepalese
+
+		ai_chance = {
+			base = 1
+			modifier = { # Low Opinion
+				add = 2
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+			}
+
+			modifier = { # Generated World Tension
+				add = 3
+				FROM = { has_added_tension_amount > 0 }
+			}
+		}
+	}
+}
+
+# The Goal of Our Expansion
+country_event = {
+	id = nepal.15
+	title = nepal.15.t
+	desc = nepal.15.desc
+	picture = GFX_report_event_manchukuo_army_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Annex all
+		name = nepal.15.a
+		set_country_flag = NEP_annexing_all
+
+	}
+
+	option = { # Puppet all
+		name = nepal.15.b
+		set_country_flag = NEP_puppeting_all
+		
+	}
+}
+
+###########################
+# Mustang Events
+###########################
+
+add_namespace = mustang_crisis
+
+# Nepal Invades Upper Mustang
+country_event = { # Event for Tibet
+	id = mustang_crisis.1
+	title = mustang_crisis.1.t
+	desc = mustang_crisis.1.desc
+	picture = GFX_report_event_NOR_quisling_troops
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = mustang_crisis.1.a
+		FROM = { country_event = mustang_crisis.2 }
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_opinion_modifier = {
+			target = FROM
+			modifier = large_decrease
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_timed_idea = {
+			idea = NEP_upper_mustang_refugees_r56
+			days = 70
+		}
+
+		ai_chance = { 
+			base = 1
+			modifier = {
+				FROM = { is_in_faction = yes }
+				add = 3
+			}
+
+			modifier = {
+				FROM = { is_major = yes }
+				add = 1
+			}
+		}
+	}
+
+	option = {
+		name = mustang_crisis.1.b
+		FROM = { country_event = mustang_crisis.3 }
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		custom_effect_tooltip = NEP_we_will_border_raid_you
+		activate_mission_tooltip = NEP_border_war_with_tibet_r56
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_opinion_modifier = {
+			target = FROM
+			modifier = large_decrease
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_timed_idea = {
+			idea = NEP_upper_mustang_refugees_r56
+			days = 70
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_war_support = 0.05
+		upgrade_economy_law = yes
+
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = NEP
+						original_tag = TIB
+					}
+				}
+				set_country_flag = NEP_its_going_down
+			}
+		}
+
+		ai_chance = { 
+			base = 1
+			modifier = {
+				add = 3
+				strength_ratio = {
+					tag = FROM
+					ratio > 2
+				}
+			}
+
+			modifier = {
+				add = 1
+				has_opinion = {
+					target = FROM
+					value < 10
+				}
+			}
+
+			modifier = {
+				add = 1
+				FROM = { has_war = yes }
+			}
+		}
+	}
+}
+
+# Tibet Doesn't Pursue Military Intervention
+country_event = { # Event for Nepal
+	id = mustang_crisis.2
+	title = mustang_crisis.2.t
+	desc = mustang_crisis.2.desc
+	picture = GFX_report_event_chinese_japanese_handshake
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = mustang_crisis.2.a
+		add_political_power = 15
+
+		ai_chance = { base = 1 }
+	}
+}
+
+# Tibet Pursues Military Intervention
+country_event = { # Event for Nepal
+	id = mustang_crisis.3
+	title = mustang_crisis.3.t
+	desc = mustang_crisis.3.desc
+	picture = GFX_report_event_tibetan_army
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = mustang_crisis.3.a
+		activate_mission_tooltip = NEP_border_war_with_tibet_r56
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_war_support = 0.05
+		upgrade_economy_law = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+# ROOT Soldiers March in Victory
+country_event = { # Uses Scripted Loc
+	id = mustang_crisis.4
+	title = mustang_crisis.4.t
+	desc = mustang_crisis.4.desc
+	picture = GFX_report_event_polish_dictator
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = mustang_crisis.4.a
+		army_experience = 10
+		add_command_power = 5
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 1
+			category = mountaineers_tech
+			category = winter_clothing_tech
+		}
+
+		ai_chance = { base = 1 }
+	}
+}
+
+# Our Troops Forced to Retreat
+country_event = { # Uses Scripted Loc
+	id = mustang_crisis.5
+	title = mustang_crisis.5.t
+	desc = mustang_crisis.5.desc
+	picture = GFX_report_event_DEN_denmark_surrenders
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = mustang_crisis.5.a
+		add_war_support = -0.05
+		add_popularity = {
+			ideology = ROOT
+			popularity = -0.03
+		}
+
+		if = {
+			limit = { original_tag = NEP }
+			323 = { add_extra_state_shared_building_slots = -1 }
+		}
+
+		ai_chance = { base = 1 }
+	}
+}
+
+# Stalemate in Upper Mustang
+country_event = {
+	id = mustang_crisis.6
+	title = mustang_crisis.6.t
+	desc = mustang_crisis.6.desc
+	picture = GFX_report_event_french_british_officers
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = mustang_crisis.5.a
+		army_experience = 5
+
+		ai_chance = { base = 1 }
 	}
 }
