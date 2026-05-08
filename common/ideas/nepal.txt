@@ -22,17 +22,25 @@ ideas = {
 		}
 
 		NEP_joint_military_exercise_r56 = {
+			name = NEP_joint_british_nepalese_military_exercises_r56
 			picture = chi_army_corruption3
 			allowed = { always = yes }	
 			modifier = {
-				experience_gain_army = 0.05
-				command_power_gain = 0.1
+				experience_gain_army = 0.15
+				command_power_gain = 0.05
 			}
 		}
 
 		NEP_market_restriction_r56 = {
 			picture = CHI_corruption_armed_forces
 			allowed = { always = yes }	
+			cancel = {
+				OR = { 
+					any_controlled_state = { is_coastal = yes }
+					has_war_with = ENG
+					ENG = { exists = no }
+				}
+			}
 			rule = { can_access_market = no }
 			modifier = { custom_modifier_tooltip = NEP_can_only_exchange_arms_with_uk }
 		}
@@ -42,7 +50,7 @@ ideas = {
 			allowed = { always = no }
 			
 			modifier = {
-				special_forces_cap = 0.75
+				special_forces_cap = 0.25 # can increase overtime
 				special_forces_attack_factor = 0.05
 				special_forces_defence_factor = 0.05
 			}

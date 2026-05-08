@@ -175,15 +175,49 @@ country_event = { # trouble in the UK, invite some teachers?
 	}
 }
 
-country_event = { #nepal proposes military excersies
+# Nepal Proposes Military Exercise
+country_event = {
 	id = nepal.4
 	title = nepal.4.t
 	desc = nepal.4.desc
-	picture = GFX_report_event_polish_politics
+	picture = GFX_report_event_kenya_army
 	is_triggered_only = yes
 
-	option = { #sure
+	option = { # Sure
 		name = nepal.4.a
+		every_other_country = {
+			limit = {
+				OR = {
+					original_tag = FROM
+					original_tag = ROOT
+				}
+			}
+			add_timed_idea = {
+				idea = NEP_joint_military_exercise_r56
+				days = 100
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = { country_event = nepal.5 }
+	}
+
+	option = { # not tuday m8
+		name = nepal.4.b
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = { country_event = nepal.6 }
+	}
+}
+
+# FROM Accepts Joint Military Exercise
+country_event = {
+	id = nepal.5
+	title = nepal.5.t
+	desc = nepal.5.desc
+	picture = GFX_report_event_kenya_army
+	is_triggered_only = yes
+
+	option = {
+		name = nepal.5.a
 		effect_tooltip = {
 			every_other_country = {
 				limit = {
@@ -198,49 +232,18 @@ country_event = { #nepal proposes military excersies
 				}
 			}
 		}
-		hidden_effect = { country_event = nepal.5 }
-	}
-
-	option = { #not today
-		name = nepal.4.b
-		hidden_effect = { country_event = nepal.6 }
 	}
 }
 
-country_event = { #yay
-	id = nepal.5
-	title = nepal.5.t
-	desc = nepal.5.desc
-	picture = GFX_report_event_polish_politics
-	is_triggered_only = yes
-
-	option = { #sure
-		name = nepal.5.a
-		every_other_country = {
-			limit = {
-				OR = {
-					original_tag = FROM
-					original_tag = ROOT
-				}
-			}
-			add_timed_idea = {
-				idea = NEP_joint_military_exercise_r56
-				days = 100
-			}
-		}
-	}
-}
-
-country_event = { #boooooooo
+# FROM Rejects Joint Military Exercise
+country_event = {
 	id = nepal.6
 	title = nepal.6.t
 	desc = nepal.6.desc
-	picture = GFX_report_event_polish_politics
+	picture = GFX_report_event_GER_engima_machine3
 	is_triggered_only = yes
 
-	option = { #boooooooo
-		name = nepal.6.a
-	}
+	option = { name = nepal.6.a }
 }
 
 # Our Role in Himalayan Politics
@@ -708,6 +711,150 @@ country_event = {
 		name = nepal.15.b
 		set_country_flag = NEP_puppeting_all
 		
+	}
+}
+
+# Nepal Seeks to Acquire Ships
+country_event = {
+	id = nepal.16
+	title = nepal.16.t
+	desc = nepal.16.desc
+	picture = GFX_report_event_portugal_navy_mutiny_prisoners
+	is_triggered_only = yes
+
+	option = { # Sure
+		name = nepal.16.a
+		send_equipment = {
+			equipment = convoy
+			amount = 50
+			target = NEP
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			country_event = nepal.17
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_offsite_building = { type = dockyard level = 1 }
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_increase
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = NEP_learnings_from_british_ships_r56
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	option = { # not tuday m8
+		name = nepal.16.b
+		FROM = {
+			country_event = nepal.18
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = POR_rejected_lease
+			}
+		}
+	}
+}
+
+# FROM Sends Ships
+country_event = {
+	id = nepal.17
+	title = nepal.17.t
+	desc = nepal.17.desc
+	picture = GFX_report_event_ast_navy
+	is_triggered_only = yes
+
+	option = {
+		name = nepal.17.a
+		effect_tooltip = {
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 50
+			}
+			add_offsite_building = { type = dockyard level = 1 }
+			add_tech_bonus = {
+				name = NEP_learnings_from_british_ships_r56
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_opinion_modifier = {
+				target = FROM
+				modifier = large_increase
+			}
+		}
+	}
+}
+
+# FROM Refuses to Sends Ships
+country_event = {
+	id = nepal.18
+	title = nepal.18.t
+	desc = nepal.18.desc
+	picture = GFX_report_event_ast_navy
+	is_triggered_only = yes
+
+	option = {
+		name = nepal.18.a
+		effect_tooltip = {
+			add_opinion_modifier = {
+				target = FROM
+				modifier = POR_rejected_lease
+			}
+		}
+	}
+}
+
+# Nepal Seeks to Purchase Weapons
+country_event = {
+	id = nepal.19
+	title = nepal.19.t
+	desc = nepal.19.desc
+	picture = GFX_report_event_portugal_navy_mutiny_prisoners
+	is_triggered_only = yes
+
+	option = { # Let them do as they please
+		name = nepal.19.a
+	}
+
+	option = { # Embargo them
+		name = nepal.19.b
+		send_embargo = NEP
+		add_relation_rule_override = {
+			target = NEP
+			can_access_market = no
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = { country_event = nepal.20 }
+	}
+}
+
+# Britain Embargoes Us
+country_event = {
+	id = nepal.20
+	title = nepal.20.t
+	desc = nepal.20.desc
+	picture = GFX_report_event_ast_navy
+	is_triggered_only = yes
+
+	option = {
+		name = nepal.20.a
+		effect_tooltip = {
+			ENG = {
+				send_embargo = NEP
+				add_relation_rule_override = {
+					target = NEP
+					can_access_market = no
+				}
+			}
+		}
 	}
 }
 

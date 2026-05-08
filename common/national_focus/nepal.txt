@@ -55,8 +55,16 @@ focus_tree = {
 			add_political_power = 25
 			unlock_decision_category_tooltip = NEP_foreign_relations_r56
 			custom_effect_tooltip = generic_skip_one_line_tt
-			unlock_decision_tooltip = NEP_invite_british_economic_advisors_r56
+			if = {
+				limit = { ENG = { is_faction_leader = yes } }
+				unlock_decision_tooltip = NEP_join_allies_r56
+			}
+			unlock_decision_tooltip = NEP_purchase_british_weapons_r56
 			unlock_decision_tooltip = NEP_joint_british_nepalese_military_exercises_r56
+			if = {
+				limit = { any_controlled_state = { is_coastal = yes } }
+				unlock_decision_tooltip = NEP_acquire_british_ships_r56
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_opinion_modifier = {
 				target = ENG
@@ -79,7 +87,7 @@ focus_tree = {
 			custom_effect_tooltip = NEP_we_join_britains_war_tt
 		}
 
-		search_filters = { FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_EQUIPMENT }
 	}
 
 	focus = {
@@ -94,7 +102,7 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			CUG = {
+			CHI = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
@@ -105,21 +113,20 @@ focus_tree = {
 		ai_will_do = { factor = 5 }	
 
 		completion_reward = {
-			add_political_power = 15
+			add_political_power = 20
+			add_offsite_building = { type = arms_factory level = 1 }
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_opinion_modifier = {
 				target = CUG
 				modifier = large_increase
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			CUG = {
+			CHI = {
 				add_opinion_modifier = {
 					modifier = large_increase
 					target = ROOT
 				}
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = NEP_if_completed_focus_expeditionary_force
-			unlock_decision_tooltip = NEP_volunteers_in_the_sinojapanese_war_r56
 		}
 	}
 
@@ -135,7 +142,7 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			CUG = {
+			USA = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
@@ -146,7 +153,27 @@ focus_tree = {
 		ai_will_do = { factor = 5 }	
 
 		completion_reward = {
+			add_political_power = 50
+			add_offsite_building = { type = industrial_complex level = 1 }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = NEP_purchase_american_motorized_equipment_r56
+			unlock_decision_tooltip = NEP_invite_american_economic_advisors_r56
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_opinion_modifier = {
+				target = USA
+				modifier = large_increase
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			USA = {
+				add_opinion_modifier = {
+					modifier = large_increase
+					target = ROOT
+				}
+			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MILITARY_EQUIPMENT }
 	}
 
 	focus = {
@@ -164,12 +191,18 @@ focus_tree = {
 			NOT = { has_war_with = ENG }
 		}
 
-		ai_will_do = { factor = 5 }	
+		ai_will_do = { factor = 1 }	
 
 		completion_reward = {
 			add_political_power = 45
 			unlock_decision_tooltip = NEP_request_british_border_revisions_r56
+			if = {
+				limit = { has_idea = NEP_market_restriction_r56 }
+				unlock_decision_tooltip = NEP_break_the_british_monopoly_r56
+			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
@@ -220,6 +253,11 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			unlock_decision_category_tooltip = NEP_foreign_relations_r56
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { has_idea = NEP_market_restriction_r56 }
+				unlock_decision_tooltip = NEP_cheat_on_britain_r56
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_opinion_modifier = {
 				target = SOV
@@ -279,6 +317,11 @@ focus_tree = {
 		ai_will_do = { factor = 5 }		
 
 		completion_reward = {
+			add_political_power = 50
+			add_offsite_building = { type = arms_factory level = 1 }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = NEP_purchase_soviet_light_tanks_r56
+			unlock_decision_tooltip = NEP_purchase_soviet_medium_tanks_r56
 		}
 	}
 
@@ -304,6 +347,10 @@ focus_tree = {
 		ai_will_do = { factor = 5 }		
 
 		completion_reward = {
+			add_political_power = 40
+			add_offsite_building = { type = industrial_complex level = 1 }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = NEP_invite_soviet_economic_advisors_r56
 		}
 	}
 
@@ -330,9 +377,20 @@ focus_tree = {
 			}
 		}
 
-		ai_will_do = { factor = 5 }		
+		ai_will_do = { factor = 5 }
 
 		completion_reward = {
+			add_opinion_modifier = {
+				target = PRC
+				modifier = large_increase
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			PRC = {
+				add_opinion_modifier = {
+					modifier = large_increase
+					target = ROOT
+				}
+			}
 		}
 	}
 
@@ -388,6 +446,11 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			unlock_decision_category_tooltip = NEP_foreign_relations_r56
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { has_idea = NEP_market_restriction_r56 }
+				unlock_decision_tooltip = NEP_cheat_on_britain_r56
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_opinion_modifier = {
 				target = JAP
@@ -538,13 +601,12 @@ focus_tree = {
 
 		available = {
 			has_war = no
-			threat > 0.05
-			has_war_support > 0.2
+			has_army_manpower = { size > 24999 }
 		}
 
 		available_if_capitulated = no
 
-		ai_will_do = { factor = 5 }		
+		ai_will_do = { factor = 1 }		
 
 		completion_reward = {
 			set_rule = { can_send_volunteers = yes }
@@ -831,7 +893,7 @@ focus_tree = {
 
 	focus = {
 		id = NEP_promote_pan_nepalese_identity_r56
-		icon = GFX_focus_ETH_freedom_at_gunpoint
+		icon = GFX_goal_RAJ_hindu_nationalism
 		prerequisite = { focus = NEP_nepals_place_in_the_western_world_order_r56 focus = NEP_demand_a_corridor_to_the_soviets_r56 focus = NEP_nepalese_autarky_r56 }
 		relative_position_id = NEP_nepals_place_in_the_western_world_order_r56
 
@@ -917,7 +979,11 @@ focus_tree = {
 		ai_will_do = { factor = 5 }		
 
 		completion_reward = {
-			
+			add_political_power = 100
+			if = {
+				limit = { NOT = { has_completed_focus = NEP_renegotiate_unfair_treaties_r56 } }
+				unlock_decision_tooltip = NEP_request_british_border_revisions_r56
+			}
 		}
 	}
 
