@@ -89,82 +89,45 @@ ideas = {
 			}
 		}
 
-#		IIII UNUSED IIII ############################### IIII UNUSED IIII	
-#		VVVV UNUSED VVVV ############################### VVVV UNUSED VVVV
-
-		NEP_economic_exploitation_r56 = { #unused currently
-			picture = generic_economic_crisis
-			allowed = { original_tag = NEP }
-			allowed_civil_war = { always = yes }
-			removal_cost = -1
-			
+		NEP_nkvd_r56 = {
+			name = nkvd
+			picture = nkvd_2
+			allowed = { always = no }	
 			modifier = {
-				consumer_goods_factor = 0.25
-				industrial_capacity_factory = -0.15
-				production_speed_buildings_factor = -0.1
-				custom_modifier_tooltip = NEP_cannot_change_eco_law
+				operative_slot = 1
+				subversive_activites_upkeep = -0.5
+				communism_drift = 0.05
+				political_power_gain = 0.1
 			}
+
+			research_bonus = { encryption_tech = 0.05 }
 		}
 
-		NEP_royal_army_2 = {
-			name = NEP_royal_army
-			picture = raj_indian_gentlemen_officers
-			
-			allowed = {
-				always = no
-			}
-			
-			modifier = {
-				special_forces_cap = 1
-				special_forces_attack_factor = 0.08
-				special_forces_defence_factor = 0.08
-				army_org_factor = 0.15
-				command_abilities_cost_factor = -0.3		
-			}
-		}
-
-		NEP_obsolete_equipment = {
-
-			removal_cost = -1 
-
-			picture = SWE_severe_lack_of_ammunition
+		NEP_anti_fascist_war_r56 = {
+			name = SOV_anti_fascist_campaign_generic
+			picture = generic_fascism_banned
 
 			modifier = {
-				army_attack_factor = -0.1
-				army_defence_factor = -0.05
+				mobilization_speed = 0.1
+			}
 
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+
+			targeted_modifier = {
+				tag = ITA
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
 			}
 		}
-
-		NEP_from_the_mountains_to_the_jungle = {
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = generic_intel_bonus
-
-			modifier = {
-				winter_attrition_factor = -0.2
-				heat_attrition_factor = -0.2
-			}
-		}
-
-		NEP_rana_stratocracy = {
-			picture = MAN_officer_academy
-			allowed = {
-				always = yes
-			}
-			removal_cost = -1
-			modifier = {
-				army_leader_cost_factor = 2
-			}
-		}
-
 	}
 }

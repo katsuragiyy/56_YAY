@@ -1,46 +1,46 @@
 NEP_greater_nepal_r56 = {
-	NEP_integrate_bihar_r56 = {
-		icon = GFX_decision_concessions
-		fire_only_once = yes
-		days_remove = 100
-		priority = 40
-
-		available = {
-			1092 = {
-				is_controlled_by_ROOT_or_subject = yes
-				compliance > 50
-				resistance < 5
-			}
-		}
-
-		visible = { 1092 = { NOT = { is_core_of = ROOT } } }
-		highlight_states = { highlight_state_targets = { state = 1092 } }
-		cancel_trigger = { 1092 = { is_controlled_by_ROOT_or_subject = no }  }
-		ai_will_do = { base = 5 }
-
-		modifier = {
-			political_power_factor = -0.25
-			consumer_goods_factor = 0.1
-		}
-
-		complete_effect = { add_manpower = -10000 }
-
-		remove_effect = {
-			add_political_power = 50
-			add_stability = 0.07
-			1092 = {
-				add_core_of = ROOT
-				if = {
-					limit = { 1092 = { is_Claimed_by = ROOT } }
-					remove_claim_by = ROOT
-				}
-				if = {
-					limit = { 1092 = { NOT = { is_owned_by = ROOT } } }
-					transfer_state_to = ROOT
-				}
-			}
-		}
-	}
+	#NEP_integrate_bihar_r56 = {
+	#	icon = GFX_decision_concessions
+	#	fire_only_once = yes
+	#	days_remove = 100
+	#	priority = 40
+#
+	#	available = {
+	#		1092 = {
+	#			is_controlled_by_ROOT_or_subject = yes
+	#			compliance > 50
+	#			resistance < 5
+	#		}
+	#	}
+#
+	#	visible = { 1092 = { NOT = { is_core_of = ROOT } } }
+	#	highlight_states = { highlight_state_targets = { state = 1092 } }
+	#	cancel_trigger = { 1092 = { is_controlled_by_ROOT_or_subject = no }  }
+	#	ai_will_do = { base = 5 }
+#
+	#	modifier = {
+	#		political_power_factor = -0.25
+	#		consumer_goods_factor = 0.1
+	#	}
+#
+	#	complete_effect = { add_manpower = -10000 }
+#
+	#	remove_effect = {
+	#		add_political_power = 50
+	#		add_stability = 0.07
+	#		1092 = {
+	#			add_core_of = ROOT
+	#			if = {
+	#				limit = { 1092 = { is_Claimed_by = ROOT } }
+	#				remove_claim_by = ROOT
+	#			}
+	#			if = {
+	#				limit = { 1092 = { NOT = { is_owned_by = ROOT } } }
+	#				transfer_state_to = ROOT
+	#			}
+	#		}
+	#	}
+	#}
 
 	NEP_integrate_uttarakhand_r56 = {
 		icon = GFX_decision_CHL_mapuche_reorganize_the_brazilian_government
@@ -379,7 +379,7 @@ NEP_foreign_relations_r56 = {
 		}
 	}
 
-	# Request ACCESS TO MARKET
+	# Break the British Monopoly
 	NEP_break_the_british_monopoly_r56 = { #todo
 		icon = GFX_decision_ger_military_buildup
 		fire_only_once = yes
@@ -403,7 +403,7 @@ NEP_foreign_relations_r56 = {
 		}
 	}
 
-	# Request ACCESS TO MARKET
+	# Bypass the Strict Market Restrictions
 	NEP_cheat_on_britain_r56 = {
 		icon = GFX_decision_ger_military_buildup
 		fire_only_once = yes
@@ -433,8 +433,86 @@ NEP_foreign_relations_r56 = {
 		}
 	}
 
+	##########################################################################
+
+	# Join the Comintern
+	NEP_join_comintern_r56 = {
+		icon = GFX_decision_eng_trade_unions_support
+		fire_only_once = yes
+		targets = { SOV }
+		priority = 25
+
+		available = {
+			has_government = communism
+			is_in_faction = no
+			is_subject = no
+			NOT = { has_war_with = SOV }
+			SOV = { 
+				has_capitulated = no
+				has_government = communism
+			}
+		}
+
+		visible = {
+			has_completed_focus = NEP_recognize_the_soviet_regime_r56
+			SOV = {
+				is_faction_leader = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = 1
+				has_government = communism 
+			}
+		}
+
+		complete_effect = { SOV = { country_event = generic.2 } }
+	}
+
+	# Purchase Soviet Weapons
+	NEP_purchase_soviet_weapons_r56 = {
+		icon = GFX_decision_generic_prepare_civil_war
+		fire_only_once = no
+		targets = { SOV }
+		priority = 15
+
+		cost = 25
+		days_re_enable = 100
+		days_remove = 50
+
+		available = {
+			SOV = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+			}
+		}
+
+		visible = { has_completed_focus = NEP_recognize_the_soviet_regime_r56 }
+		ai_will_do = { base = 1 }
+
+		modifier = { consumer_goods_factor = 0.08 }
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1500
+				producer = SOV
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 50
+				producer = SOV
+			}
+		}
+	}
+
 	# Invite Soviet Economic Advisors
-	NEP_invite_soviet_economic_advisors_r56 = {
+	NEP_invite_soviet_economic_advisors_decision_r56 = {
+		name = NEP_invite_soviet_economic_advisors_r56
 		icon = GFX_decision_gre_investment_decisions
 		fire_only_once = no
 		targets = { SOV }
@@ -460,6 +538,62 @@ NEP_foreign_relations_r56 = {
 				bonus = 0.35
 				uses = 1
 				category = industry
+			}
+		}
+	}
+
+	# Promote Worker's Culture
+	NEP_promote_workers_culture_r56 = {
+		icon = GFX_decision_generic_industry
+		fire_only_once = no
+		priority = 20
+
+		cost = 40
+		days_re_enable = 150
+		days_remove = 50
+
+		visible = { has_completed_focus = NEP_invite_soviet_economic_advisors_r56 }
+		ai_will_do = { base = 3 }
+
+		modifier = {
+			industrial_capacity_factory = 0.1
+			industrial_capacity_dockyard = 0.1
+			communism_drift = 0.05
+		}
+	}
+
+	# Invite Soviet NKVD
+	NEP_invite_nkvd_r56 = {
+		icon = GFX_decision_SWI_expand_covert_operations
+		fire_only_once = yes
+		priority = 20
+
+		cost = 50
+		days_remove = 25
+
+		available = { NOT = { has_war_with = SOV } }
+		visible = { has_completed_focus = NEP_recognize_the_soviet_regime_r56 }
+		ai_will_do = { base = 5 }
+
+		modifier = { political_power_factor = -0.15 communism_drift = 0.03 }
+
+		remove_effect = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+					NOT = { has_intelligence_agency = yes }
+				}
+				create_intelligence_agency = yes
+				custom_effect_tooltip = generic_skip_one_line_tt			
+			}
+
+			add_ideas = NEP_nkvd_r56
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = mp_tech_bonus_name
+				bonus = 1
+				uses = 1
+				category = military_police_tech
 			}
 		}
 	}
@@ -543,6 +677,207 @@ NEP_foreign_relations_r56 = {
 			}
 		}
 	}
+
+	# Join CCP Faction
+	NEP_join_ccp_faction_r56 = {
+		icon = GFX_decision_eng_trade_unions_support
+		fire_only_once = yes
+		targets = { PRC }
+		priority = 25
+
+		available = {
+			has_government = communism
+			is_in_faction = no
+			is_subject = no
+			NOT = { has_war_with = PRC }
+			PRC = { 
+				has_capitulated = no
+				has_government = communism
+			}
+		}
+
+		visible = {
+			has_completed_focus = NEP_support_ccp_r56
+			PRC = {
+				is_faction_leader = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = 1
+				has_government = communism 
+			}
+		}
+
+		complete_effect = { PRC = { country_event = generic.2 } }
+	}
+
+	# Send Weapons to Communist China
+	NEP_send_weapons_to_ccp_r56 = {
+		icon = GFX_decision_generic_prepare_civil_war
+		fire_only_once = no
+		targets = { PRC }
+		priority = 15
+
+		cost = 25
+		days_re_enable = 100
+
+		available = {
+			PRC = {
+				NOT = { has_war_with = ROOT }
+				has_government = communism
+				exists = yes
+			}
+
+			has_equipment = { infantry_equipment > 1999 }
+			has_equipment = { support_equipment > 24 }
+			has_equipment = { artillery_equipment > 49 }
+		}
+
+		visible = { has_completed_focus = NEP_support_ccp_r56 }
+		ai_will_do = { base = 1 }
+
+		complete_effect = {
+			effect_tooltip = {
+				send_equipment = {
+					type = infantry_equipment
+					amount = 2000
+					target = PRC
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				send_equipment = {
+					type = support_equipment
+					amount = 25
+					target = PRC
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				send_equipment = {
+					type = artillery_equipment
+					amount = 50
+					target = PRC
+				}
+			}
+			#event to prc
+		}
+	}
+
+	# Joint British-Nepali Military Exercises
+	NEP_joint_pla_nepalese_military_exercises_r56 = {
+		icon = GFX_decision_generic_army_support
+		fire_only_once = no
+		targets = { PRC }
+		priority = 20
+
+		days_re_enable = 100
+
+		custom_cost_text = EGY_decision_cost_army_experience
+		custom_cost_trigger = { has_army_experience > 9 }
+
+		available = {
+			PRC = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+			}
+		}
+
+		visible = { has_completed_focus = NEP_support_ccp_r56 }
+
+		ai_will_do = { base = 0 } # dont be annoying
+		complete_effect = { 
+			PRC = { country_event = nepal.4 }
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				add_timed_idea = {
+					idea = NEP_joint_military_exercise_r56
+					days = 100
+				}
+			}
+		}
+	}
+
+	##########################################################################
+
+	# Join the Great East Asian Co-prosperity Sphere
+	NEP_join_geacps_r56 = {
+		icon = GFX_decision_eng_trade_unions_support
+		fire_only_once = yes
+		targets = { JAP }
+		priority = 25
+
+		available = {
+			is_in_faction = no
+			is_subject = no
+			NOT = { has_war_with = JAP }
+			JAP = { 
+				has_capitulated = no
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = NEP_approach_japan_r56
+			JAP = {
+				is_faction_leader = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = 1
+				has_government = fascism 
+			}
+		}
+
+		complete_effect = { JAP = { country_event = generic.2 } }
+	}
+
+	# Purchase Japanese Weapons
+	NEP_purchase_japanese_weapons_r56 = {
+		icon = GFX_decision_generic_prepare_civil_war
+		fire_only_once = no
+		targets = { JAP }
+		priority = 15
+
+		cost = 25
+		days_re_enable = 100
+		days_remove = 50
+
+		available = {
+			JAP = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+			}
+		}
+
+		visible = { has_completed_focus = NEP_approach_japan_r56 }
+		ai_will_do = { base = 1 }
+
+		modifier = { consumer_goods_factor = 0.08 }
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1500
+				producer = JAP
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 50
+				producer = JAP
+			}
+		}
+	}
+
+	##########################################################################
 
 	NEP_volunteers_in_the_sinojapanese_war_r56 = {
 		icon = GFX_decision_generic_reorganize_irregulars
@@ -1083,841 +1418,3 @@ political_actions = {
 		}
 	}
 }
-
-#NEP_nepali_army_r56 = {
-#	NEP_recall_rudra_rana_to_kathmandu = {
-#		icon = GFX_decision_generic_army_support
-#
-#		available = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#			NOT = {
-#				OR = {
-#					has_country_leader = {
-#						character = NEP_juddha_rana
-#						ruling_only = yes
-#					}
-#
-#					has_country_leader = {
-#						character = NEP_kaiser_rana
-#						ruling_only = yes
-#					}
-#				}
-#			}
-#		}
-#
-#		visible = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#			has_character = NEP_rudra_rana
-#		}
-#
-#		cost = 20
-#		fire_only_once = yes
-#		days_remove = 10
-#
-#		remove_effect = { NEP_rudra_rana = { set_character_flag = NEP_recalled_rudra_rana_flag } }
-#
-#		ai_will_do = { factor = 5 }
-#	}
-#
-#	NEP_train_rudra_rana = { # remove this one?
-#		icon = attache
-#
-#		available = { has_completed_focus = ABC_establish_a_general_staff }
-#		visible = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#			has_character = NEP_rudra_rana
-#			NEP_rudra_rana = { has_character_flag = NEP_recalled_rudra_rana_flag has_trait = army_chief_planning_1 }
-#		}
-#
-#		custom_cost_text = ETH_reorganize_staff_of_general_cost
-#
-#		custom_cost_trigger = {
-#			command_power > 24
-#			has_army_experience > 9
-#			has_political_power > 24
-#		}
-#
-#		fire_only_once = yes
-#		days_remove = 80
-#
-#		modifier = { political_power_gain = -0.1 }
-#
-#		complete_effect = {
-#            #random_army_leader = {
-#            #    limit = { has_id = 5620 }
-#			#	if = {
-#			#		limit = {
-#			#			has_trait = bad_staffer
-#			#		}
-#			#		add_unit_leader_trait = retraining
-#			#		#custom_effect_tooltip = combat_skill_drop_tt
-#			#	}
-#            #}
-#
-#            add_command_power = -25
-#            army_experience = -10
-#            add_political_power = -25		
-#		}
-#				
-#
-#		remove_effect = { # needs tooltip as remove_unit_leader_trait works but is not displayed. A version about removing old guard is also necessary
-#            #ETH_kassa_haile_darge = {
-#			#	if = {
-#			#		limit = {
-#			#			has_trait = retraining
-#			#		}
-#			#		remove_unit_leader_trait = bad_staffer
-#			#		remove_unit_leader_trait = retraining
-#			#	}
-#			#	custom_effect_tooltip = remove_bad_staffer_trait_tt
-#			#	gain_xp = 150
-#			#}
-#			remove_trait = {
-#		    	character = NEP_rudra_rana
-#     			slot = army_chief
-#     			trait = army_chief_offensive_1
-#			}
-#			add_trait = {
-#		    	character = NEP_rudra_rana
-#     			slot = army_chief
-#     			trait = army_chief_offensive_2
-#			}			
-#            NEP_rudra_rana = {
-#
-#				#custom_effect_tooltip = remove_bad_staffer_trait_tt
-#				gain_xp = 150
-#			}			
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}	
-#	NEP_train_mohan_rana = {
-#
-#		icon = attache
-#
-#		allowed = { # to be replaced by leader ID
-#
-#		}
-#
-#		available = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#		}
-#
-#
-#		visible = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#			has_character = NEP_mohan_rana
-#			NEP_mohan_rana= {
-#				has_trait = army_chief_planning_1
-#			}
-#			
-#		}
-#		custom_cost_text = ETH_reorganize_staff_of_general_cost
-#		custom_cost_trigger = {
-#			command_power > 24
-#			has_army_experience > 9
-#			has_political_power > 24
-#		}
-#		fire_only_once = yes
-#		days_remove = 80
-#
-#		modifier = {
-#		}
-#		complete_effect = { #need to be replaced with leader IDs because the game don't retarget another valid general
-#            #random_army_leader = {
-#            #    limit = { has_id = 5620 }
-#			#	if = {
-#			#		limit = {
-#			#			has_trait = bad_staffer
-#			#		}
-#			#		add_unit_leader_trait = retraining
-#			#		#custom_effect_tooltip = combat_skill_drop_tt
-#			#	}
-#            #}
-#
-#            add_command_power = -25
-#            army_experience = -10
-#            add_political_power = -25		
-#		}
-#				
-#
-#		remove_effect = { # needs tooltip as remove_unit_leader_trait works but is not displayed. A version about removing old guard is also necessary
-#            #ETH_kassa_haile_darge = {
-#			#	if = {
-#			#		limit = {
-#			#			has_trait = retraining
-#			#		}
-#			#		remove_unit_leader_trait = bad_staffer
-#			#		remove_unit_leader_trait = retraining
-#			#	}
-#			#	custom_effect_tooltip = remove_bad_staffer_trait_tt
-#			#	gain_xp = 150
-#			#}
-#			remove_trait = {
-#		    	character = NEP_mohan_rana
-#     			slot = army_chief
-#     			trait = army_chief_planning_1
-#			}			
-#			add_trait = {
-#		    	character = NEP_mohan_rana
-#     			slot = army_chief
-#     			trait = army_chief_planning_2
-#			}			
-#            NEP_mohan_rana = {
-#
-#				#custom_effect_tooltip = remove_bad_staffer_trait_tt
-#				gain_xp = 150
-#			}			
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}
-#
-#	NEP_train_baber_rana = {
-#
-#		icon = attache
-#
-#		allowed = { # to be replaced by leader ID
-#
-#		}
-#
-#		available = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#		}
-#
-#
-#		visible = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#			has_character = NEP_baber_rana
-#			NEP_baber_rana= {
-#				has_trait = army_regrouping_1
-#			}
-#			
-#		}
-#		custom_cost_text = ETH_reorganize_staff_of_general_cost
-#		custom_cost_trigger = {
-#			command_power > 24
-#			has_army_experience > 9
-#			has_political_power > 24
-#		}
-#		fire_only_once = yes
-#		days_remove = 80
-#
-#		modifier = {
-#		}
-#		complete_effect = { #need to be replaced with leader IDs because the game don't retarget another valid general
-#            #random_army_leader = {
-#            #    limit = { has_id = 5620 }
-#			#	if = {
-#			#		limit = {
-#			#			has_trait = bad_staffer
-#			#		}
-#			#		add_unit_leader_trait = retraining
-#			#		#custom_effect_tooltip = combat_skill_drop_tt
-#			#	}
-#            #}
-#
-#            add_command_power = -25
-#            army_experience = -10
-#            add_political_power = -25		
-#		}
-#				
-#
-#		remove_effect = { # needs tooltip as remove_unit_leader_trait works but is not displayed. A version about removing old guard is also necessary
-#            #ETH_kassa_haile_darge = {
-#			#	if = {
-#			#		limit = {
-#			#			has_trait = retraining
-#			#		}
-#			#		remove_unit_leader_trait = bad_staffer
-#			#		remove_unit_leader_trait = retraining
-#			#	}
-#			#	custom_effect_tooltip = remove_bad_staffer_trait_tt
-#			#	gain_xp = 150
-#			#}
-#			remove_trait = {
-#		    	character = NEP_baber_rana
-#     			slot = high_command
-#     			trait = army_regrouping_1
-#			}			
-#			add_trait = {
-#		    	character = NEP_baber_rana
-#     			slot = high_command
-#     			trait = army_regrouping_2
-#			}		
-#            NEP_baber_rana = {
-#
-#				#custom_effect_tooltip = remove_bad_staffer_trait_tt
-#				gain_xp = 150
-#			}			
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}
-#	NEP_train_brahma_rana = {
-#
-#		icon = attache
-#
-#		allowed = { # to be replaced by leader ID
-#
-#		}
-#
-#		available = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#		}
-#
-#
-#		visible = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#			has_character = NEP_brahma_rana
-#			NEP_brahma_rana= {
-#				has_trait = army_entrenchment_1
-#			}
-#			
-#		}
-#		custom_cost_text = ETH_reorganize_staff_of_general_cost
-#		custom_cost_trigger = {
-#			command_power > 24
-#			has_army_experience > 9
-#			has_political_power > 24
-#		}
-#		fire_only_once = yes
-#		days_remove = 80
-#
-#		modifier = {
-#		}
-#		complete_effect = { 
-#
-#			NEP_brahma_rana = {
-#				add_unit_leader_trait = retraining
-#					
-#			}
-#            add_command_power = -25
-#            army_experience = -10
-#            add_political_power = -25		
-#		}
-#				
-#
-#		remove_effect = { 
-#			remove_trait = {
-#		    	character = NEP_brahma_rana
-#     			slot = army_chief
-#     			trait = army_entrenchment_1
-#			}			
-#			add_trait = {
-#		    	character = NEP_brahma_rana
-#     			slot = army_chief
-#     			trait = army_entrenchment_2
-#			}			
-#            NEP_brahma_rana = {
-#				remove_unit_leader_trait = retraining
-#				gain_xp = 150
-#			}			
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}
-#
-#	NEP_train_kiran_rana = {
-#
-#		icon = attache
-#
-#		allowed = { # to be replaced by leader ID
-#
-#		}
-#
-#		available = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#		}
-#
-#
-#		visible = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#			has_character = NEP_kiran_rana
-#			NEP_kiran_rana= {
-#				has_trait = army_infantry_1
-#			}
-#			
-#		}
-#		custom_cost_text = ETH_reorganize_staff_of_general_cost
-#		custom_cost_trigger = {
-#			command_power > 24
-#			has_army_experience > 9
-#			has_political_power > 24
-#		}
-#		fire_only_once = yes
-#		days_remove = 80
-#
-#		modifier = {
-#		}
-#		complete_effect = { 
-#
-#			NEP_kiran_rana = {
-#				add_unit_leader_trait = retraining
-#					
-#			}
-#            add_command_power = -25
-#            army_experience = -10
-#            add_political_power = -25		
-#		}
-#				
-#
-#		remove_effect = { 
-#			remove_trait = {
-#		    	character = NEP_kiran_rana
-#     			slot = army_chief
-#     			trait = army_infantry_1
-#			}			
-#			add_trait = {
-#		    	character = NEP_kiran_rana
-#     			slot = army_chief
-#     			trait = army_infantry_2
-#			}			
-#            NEP_kiran_rana = {
-#				remove_unit_leader_trait = retraining
-#				gain_xp = 150
-#			}			
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}	
-#	NEP_train_nir_rana = {
-#
-#		icon = attache
-#
-#		allowed = { # to be replaced by leader ID
-#
-#		}
-#
-#		available = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#		}
-#
-#
-#		visible = {
-#			has_completed_focus = ABC_establish_a_general_staff
-#			has_character = NEP_nir_rana
-#			NEP_nir_rana= {
-#				has_trait = army_commando_1
-#			}
-#			
-#		}
-#		custom_cost_text = ETH_reorganize_staff_of_general_cost
-#		custom_cost_trigger = {
-#			command_power > 24
-#			has_army_experience > 9
-#			has_political_power > 24
-#		}
-#		fire_only_once = yes
-#		days_remove = 80
-#
-#		modifier = {
-#		}
-#		complete_effect = { 
-#
-#			NEP_nir_rana = {
-#				add_unit_leader_trait = retraining
-#					
-#			}
-#            add_command_power = -25
-#            army_experience = -10
-#            add_political_power = -25		
-#		}
-#				
-#
-#		remove_effect = { 
-#			remove_trait = {
-#		    	character = NEP_nir_rana
-#     			slot = army_chief
-#     			trait = army_commando_1
-#			}			
-#			add_trait = {
-#		    	character = NEP_nir_rana
-#     			slot = army_chief
-#     			trait = army_commando_2
-#			}			
-#            NEP_nir_rana = {
-#				remove_unit_leader_trait = retraining
-#				gain_xp = 150
-#			}			
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}
-#}
-#
-#NEP_family_politics_decision_category = {
-#	NEP_pose_an_ultimatum_to_juddha_rana = {
-#		icon = eng_trade_unions_demand
-#
-#		allowed = { # to be replaced by leader ID
-#
-#		}
-#
-#		available = {
-#			fascism > 0.5
-#			has_country_flag = NEP_convinced_mohan_rana
-#		}
-#
-#
-#		visible = {
-#			#has_completed_focus = NEP_family_politics
-#			
-#		}
-#		cost = 70
-#		fire_only_once = yes
-#		
-#		modifier = { 
-#			#civilian_factory_use = 1 #basically a bribe
-#		}
-#		complete_effect = { 
-#			set_politics = {
-#				ruling_party = fascism
-#				elections_allowed = no
-#			#	long_name = TAG_party_long
-#			#	name = TAG_party
-#			}			
-#			add_stability = -0.1
-#		}
-#				
-#
-#		remove_effect = { 
-#			
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}	
-#	NEP_spread_panasianism_to_the_regiments = {
-#		icon = GFX_decision_eng_propaganda_campaigns
-#
-#		allowed = { # to be replaced by leader ID
-#
-#		}
-#
-#		available = {
-#			fascism > 0.05
-#			OR = {
-#				has_country_flag = NEP_convinced_mohan_rana
-#				has_country_flag = NEP_convinced_nir_rana
-#				has_country_flag = NEP_convinced_brahma_rana
-#				has_country_flag = NEP_convinced_baber_rana
-#				has_country_flag = NEP_convinced_kiran_rana
-#			}
-#		}
-#
-#
-#		visible = {
-#			#has_completed_focus = NEP_family_politics
-#			
-#		}
-#		cost = 100
-#		fire_only_once = yes
-#		days_remove = 20
-#
-#		modifier = { 
-#			#civilian_factory_use = 1 #basically a bribe
-#		}
-#		complete_effect = { 
-#		
-#			add_stability = -0.05
-#		}
-#				
-#
-#		remove_effect = { 
-#			add_timed_idea = { idea = nationalism days = 720 }	
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}	
-#
-#	NEP_convince_mohan_rana = {
-#		icon = attache
-#
-#		allowed = { # to be replaced by leader ID
-#
-#		}
-#
-#		available = {
-#			#has_completed_focus = NEP_family_politics
-#			NOT = {
-#				has_country_flag = NEP_convincing_clan_members
-#			}
-#			fascism > 0.1
-#			has_country_flag = NEP_convinced_nir_rana
-#			has_country_flag = NEP_convinced_baber_rana
-#			has_country_flag = NEP_convinced_kiran_rana
-#			has_country_flag = NEP_convinced_brahma_rana
-#		}
-#
-#
-#		visible = {
-#			#has_completed_focus = NEP_family_politics
-#			has_character = NEP_mohan_rana
-#			NEP_mohan_rana= {
-#				NOT = {
-#					has_unit_leader_trait = hidden_sympathies
-#				}
-#			}
-#			
-#		}
-#		cost = 30
-#		fire_only_once = yes
-#		days_remove = 30
-#		
-#		modifier = { 
-#			civilian_factory_use = 1 #basically a bribe
-#		}
-#		complete_effect = { 
-#			set_country_flag = NEP_convincing_clan_members
-#		}
-#				
-#
-#		remove_effect = { 
-#			NEP_mohan_rana = {
-#				add_unit_leader_trait = hidden_sympathies
-#			}		
-#			clr_country_flag = NEP_convincing_clan_members
-#			set_country_flag = NEP_convinced_mohan_rana
-#			add_popularity = {
-#				ideology = fascism
-#				popularity = 0.05
-#			}			
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}		
-#	NEP_convince_baber_rana = {
-#		icon = attache
-#
-#		allowed = { # to be replaced by leader ID
-#
-#		}
-#
-#		available = {
-#			#has_completed_focus = NEP_family_politics
-#			NOT = {
-#				has_country_flag = NEP_convincing_clan_members
-#			}
-#		#	fascism > 0.1
-#		}
-#
-#
-#		visible = {
-#			#has_completed_focus = NEP_family_politics
-#			has_character = NEP_baber_rana
-#			NEP_baber_rana= {
-#				NOT = {
-#					has_unit_leader_trait = hidden_sympathies
-#				}
-#			}
-#			
-#		}
-#		cost = 20
-#		fire_only_once = yes
-#		days_remove = 30
-#
-#		modifier = {
-#		}
-#		complete_effect = { 
-#			set_country_flag = NEP_convincing_clan_members
-#		}
-#				
-#
-#		remove_effect = { 
-#			NEP_baber_rana = {
-#				add_unit_leader_trait = hidden_sympathies
-#			}		
-#			clr_country_flag = NEP_convincing_clan_members
-#			set_country_flag = NEP_convinced_baber_rana
-#			add_popularity = {
-#				ideology = fascism
-#				popularity = 0.05
-#			}			
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}	
-#
-#	NEP_convince_brahma_rana = {
-#		icon = attache
-#
-#		allowed = { # to be replaced by leader ID
-#
-#		}
-#
-#		available = {
-#			#has_completed_focus = NEP_family_politics
-#			NOT = {
-#				has_country_flag = NEP_convincing_clan_members
-#			}
-#			#fascism > 0.1
-#		}
-#
-#
-#		visible = {
-#			#has_completed_focus = NEP_family_politics
-#			has_character = NEP_brahma_rana
-#			NEP_brahma_rana= {
-#				NOT = {
-#					has_unit_leader_trait = hidden_sympathies
-#				}
-#			}
-#			
-#		}
-#		cost = 20
-#		fire_only_once = yes
-#		days_remove = 30
-#
-#		modifier = {
-#		}
-#		complete_effect = { 
-#			set_country_flag = NEP_convincing_clan_members
-#		}
-#				
-#
-#		remove_effect = { 
-#			NEP_brahma_rana = {
-#				add_unit_leader_trait = hidden_sympathies
-#			}		
-#			clr_country_flag = NEP_convincing_clan_members
-#			set_country_flag = NEP_convinced_brahma_rana
-#			add_popularity = {
-#				ideology = fascism
-#				popularity = 0.05
-#			}
-#
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}
-#	NEP_convince_kiran_rana = {
-#		icon = attache
-#
-#		allowed = { # to be replaced by leader ID
-#
-#		}
-#
-#		available = {
-#			#has_completed_focus = NEP_family_politics
-#			NOT = {
-#				has_country_flag = NEP_convincing_clan_members
-#			}
-#			#fascism > 0.1
-#		}
-#
-#
-#		visible = {
-#			#has_completed_focus = NEP_family_politics
-#			has_character = NEP_kiran_rana
-#			NEP_kiran_rana= {
-#				NOT = {
-#					has_unit_leader_trait = hidden_sympathies
-#				}
-#			}
-#			
-#		}
-#		cost = 20
-#		fire_only_once = yes
-#		days_remove = 30
-#
-#		modifier = {
-#		}
-#		complete_effect = { 
-#			set_country_flag = NEP_convincing_clan_members
-#		}
-#				
-#
-#		remove_effect = { 
-#			NEP_kiran_rana = {
-#				add_unit_leader_trait = hidden_sympathies
-#			}		
-#			clr_country_flag = NEP_convincing_clan_members
-#			set_country_flag = NEP_convinced_kiran_rana
-#			add_popularity = {
-#				ideology = fascism
-#				popularity = 0.05
-#			}			
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}
-#
-#
-#	NEP_convinced_nir_rana = {
-#		icon = attache
-#
-#		allowed = { # to be replaced by leader ID
-#
-#		}
-#
-#		available = {
-#			#has_completed_focus = NEP_family_politics
-#			NOT = {
-#				has_country_flag = NEP_convincing_clan_members
-#			}
-#			#fascism > 0.1
-#		}
-#
-#
-#		visible = {
-#			#has_completed_focus = NEP_family_politics
-#			has_character = NEP_nir_rana
-#			NEP_nir_rana= {
-#				NOT = {
-#					has_unit_leader_trait = hidden_sympathies
-#				}
-#			}
-#			
-#		}
-#		cost = 20
-#		fire_only_once = yes
-#		days_remove = 30
-#
-#		modifier = {
-#		}
-#		complete_effect = { 
-#			set_country_flag = NEP_convincing_clan_members
-#		}
-#				
-#
-#		remove_effect = { 
-#			NEP_nir_rana = {
-#				add_unit_leader_trait = hidden_sympathies
-#			}		
-#			clr_country_flag = NEP_convincing_clan_members
-#			set_country_flag = NEP_convinced_nir_rana
-#			add_popularity = {
-#				ideology = fascism
-#				popularity = 0.05
-#			}			
-#		}
-#
-#		ai_will_do = {
-#			factor = 2
-#		}
-#	}
-#}

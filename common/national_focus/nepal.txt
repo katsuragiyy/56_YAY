@@ -53,7 +53,14 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 25
-			unlock_decision_category_tooltip = NEP_foreign_relations_r56
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = { ENG = { is_faction_leader = yes } }
@@ -178,7 +185,7 @@ focus_tree = {
 
 	focus = {
 		id = NEP_renegotiate_unfair_treaties_r56
-		icon = GFX_focus_IRQ_discuss_a_new_treaty
+		icon = GFX_goal_generic_forceful_treaty
 		prerequisite = { focus = NEP_maintain_british_ties_r56 }
 		relative_position_id = NEP_maintain_british_ties_r56
 
@@ -252,8 +259,17 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 25
-			unlock_decision_category_tooltip = NEP_foreign_relations_r56
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { SOV = { is_faction_leader = yes } }
+				unlock_decision_tooltip = NEP_join_comintern_r56
+			}
+			unlock_decision_tooltip = NEP_invite_nkvd_r56
+			unlock_decision_tooltip = NEP_purchase_soviet_weapons_r56
 			if = {
 				limit = { has_idea = NEP_market_restriction_r56 }
 				unlock_decision_tooltip = NEP_cheat_on_britain_r56
@@ -272,7 +288,15 @@ focus_tree = {
 			}
 
 			if = {
-				limit = { LIE = { has_cosmetic_tag = LIE_RUS } } #insert troll emoji
+				limit = {
+					LIE = { #insert troll emoji
+						OR = {
+							has_cosmetic_tag = LIE_RUS
+							has_cosmetic_tag = SOV
+						}
+						NOT = { has_government = communism }
+					}
+				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 				LIE = {
 					add_opinion_modifier = {
@@ -289,6 +313,7 @@ focus_tree = {
 						original_tag = ENG
 						is_subject_of = ENG
 					}
+					NOT = { has_government = communism }
 				}
 				add_opinion_modifier = {
 					modifier = medium_decrease
@@ -317,6 +342,14 @@ focus_tree = {
 		ai_will_do = { factor = 5 }		
 
 		completion_reward = {
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				add_equipment_subsidy = {
+					cic = 500
+					equipment_type = light_tank_chassis
+					seller_trigger = is_allied_seller_trigger
+				}
+			}
 			add_political_power = 50
 			add_offsite_building = { type = arms_factory level = 1 }
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -347,10 +380,11 @@ focus_tree = {
 		ai_will_do = { factor = 5 }		
 
 		completion_reward = {
-			add_political_power = 40
+			add_political_power = 35
 			add_offsite_building = { type = industrial_complex level = 1 }
 			custom_effect_tooltip = generic_skip_one_line_tt
-			unlock_decision_tooltip = NEP_invite_soviet_economic_advisors_r56
+			unlock_decision_tooltip = NEP_invite_soviet_economic_advisors_decision_r56
+			unlock_decision_tooltip = NEP_promote_workers_culture_r56
 		}
 	}
 
@@ -380,6 +414,19 @@ focus_tree = {
 		ai_will_do = { factor = 5 }
 
 		completion_reward = {
+			add_political_power = 40
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { PRC = { is_faction_leader = yes } }
+				unlock_decision_tooltip = NEP_join_ccp_faction_r56
+			}
+			unlock_decision_tooltip = NEP_send_weapons_to_ccp_r56
+			unlock_decision_tooltip = NEP_joint_pla_nepalese_military_exercises_r56
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_opinion_modifier = {
 				target = PRC
 				modifier = large_increase
@@ -406,11 +453,14 @@ focus_tree = {
 
 		available = {
 			has_war_together_with = SOV
+			has_government = communism
 		}
 
 		ai_will_do = { factor = 5 }		
 
 		completion_reward = {
+			add_war_support = 0.05
+			
 		}
 	}
 
@@ -445,8 +495,16 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 25
-			unlock_decision_category_tooltip = NEP_foreign_relations_r56
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { JAP = { is_Faction_leader = yes } }
+				unlock_decision_tooltip = NEP_join_geacps_r56
+				unlock_decision_tooltip = NEP_purchase_japanese_weapons_r56
+			}
 			if = {
 				limit = { has_idea = NEP_market_restriction_r56 }
 				unlock_decision_tooltip = NEP_cheat_on_britain_r56
@@ -470,6 +528,7 @@ focus_tree = {
 						original_tag = ENG
 						is_subject_of = ENG
 					}
+					NOT = { has_government = fascism }
 				}
 				add_opinion_modifier = {
 					modifier = medium_decrease
@@ -512,7 +571,11 @@ focus_tree = {
 		ai_will_do = { factor = 5 }		
 
 		completion_reward = {
-			add_political_power = 15
+			add_political_power = 30
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_opinion_modifier = {
 				target = GER
@@ -545,6 +608,7 @@ focus_tree = {
 		ai_will_do = { factor = 5 }		
 
 		completion_reward = {
+			
 		}
 	}
 
@@ -609,6 +673,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }		
 
 		completion_reward = {
+			add_war_support = 0.05
 			set_rule = { can_send_volunteers = yes }
 			add_ideas = NEP_expeditionary_force_r56
 		}
@@ -626,7 +691,13 @@ focus_tree = {
 		y = 1
 
 		available = {
-			
+			any_country = {
+				has_volunteers_amount_from = {
+					tag = ROOT
+					count > 2
+				}
+			}
+			any_unit_leader = { has_trait = jungle_rat }
 		}
 
 		available_if_capitulated = no
@@ -639,17 +710,24 @@ focus_tree = {
 	}	
 
 	focus = {
-		id = NEP_masters_of_the_himalayas_r56
-		icon = GFX_goal_generic_mountain_warfare
+		id = NEP_adapt_to_the_desert_r56
+		icon = GFX_goal_generic_desert_warfare
 		prerequisite = { focus = NEP_the_nepali_expeditionary_force_r56 }
+		mutually_exclusive = { focus = NEP_adapt_to_the_jungles_r56 }
 		relative_position_id = NEP_the_nepali_expeditionary_force_r56
 
 		cost = 8
-		x = 2
+		x = 0
 		y = 1
 
 		available = {
-			
+			any_country = {
+				has_volunteers_amount_from = {
+					tag = ROOT
+					count > 2
+				}
+			}
+			any_unit_leader = { has_trait = desert_Fox }
 		}
 
 		available_if_capitulated = no
@@ -662,14 +740,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = NEP_adapt_to_the_desert_r56
-		icon = GFX_goal_generic_desert_warfare
+		id = NEP_masters_of_the_himalayas_r56
+		icon = GFX_goal_generic_mountain_warfare
 		prerequisite = { focus = NEP_the_nepali_expeditionary_force_r56 }
-		mutually_exclusive = { focus = NEP_adapt_to_the_jungles_r56 }
 		relative_position_id = NEP_the_nepali_expeditionary_force_r56
 
 		cost = 8
-		x = 0
+		x = 2
 		y = 1
 
 		available = {

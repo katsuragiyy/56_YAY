@@ -112,8 +112,8 @@
  NEP_greater_nepal_r56:0 "Dream of Greater Nepal"
  NEP_greater_nepal_r56_desc:0 ""
 
- NEP_integrate_bihar_r56:0 "Integrate [1092.GetName]"
- NEP_integrate_bihar_r56_desc:0 ""
+ #NEP_integrate_bihar_r56:0 "Integrate [1092.GetName]"
+ #NEP_integrate_bihar_r56_desc:0 ""
 
  NEP_integrate_uttarakhand_r56:0 "Integrate [1090.GetName]"
  NEP_integrate_uttarakhand_r56_desc:0 "In the late 18th century, [1090.GetName] was conquered by the Gorkha Empire, our predecessor state. For many years it remained under the [ROOT.GetAdjective] domain until the imperialist scum unfairly seized it from us in 1816. Now that our armies have occupied the region once more, we may be able to undo the injustice imposed on us by foreigners and integrate [1090.GetName] into our domain!"
@@ -126,39 +126,29 @@
  NEP_foreign_relations_r56_desc:0 "WIP"
 
  NEP_join_allies_r56:0 "Join the Allies"
- NEP_join_allies_r56_desc:0 ""
-
  NEP_purchase_british_weapons_r56:0 "Purchase [ENG.GetAdjective] Weaponry"
- NEP_purchase_british_weapons_r56_desc:0 ""
-
  NEP_joint_british_nepalese_military_exercises_r56:0 "Joint [ENG.GetAdjective]-[NEP.GetAdjective] Military Exercises"
-
- NEP_joint_british_nepalese_military_exercises_r56_desc:0 ""
  NEP_decision_cost_command_power:0 "£command_power  §Y10§!"
-
  NEP_acquire_british_ships_r56:0 "Acquire [ENG.GetAdjective] Ships"
- NEP_acquire_british_ships_r56_desc:0 ""
-
  NEP_invite_american_economic_advisors_r56:0 "Invite [USA.GetAdjective] Economic Advisors"
- NEP_invite_american_economic_advisors_r56_desc:0 ""
-
  NEP_purchase_american_motorized_equipment_r56:0 "Purchase [USA.GetAdjective] Motorized Equipment"
- NEP_purchase_american_motorized_equipment_r56_desc:0 ""
 
  NEP_request_british_border_revisions_r56:0 "Request Border Revision With @RAJIndia"
- NEP_request_british_border_revisions_r56_desc:0 ""
-
  NEP_break_the_british_monopoly_r56:0 "Break the [ENG.GetAdjective] Monopoly"
- NEP_break_the_british_monopoly_r56_desc:0 ""
-
  NEP_cheat_on_britain_r56:0 "Bypass the Strict Market Restrictions"
- NEP_cheat_on_britain_r56_desc:0 ""
 
- NEP_invite_soviet_economic_advisors_r56:0 "Invite [SOV.GetAdjective] Economists"
-
+ NEP_join_comintern_r56:0 "Join the Comintern"
+ NEP_purchase_soviet_weapons_r56:0 "Purchase [SOV.GetAdjective] Weaponry"
+ NEP_promote_workers_culture_r56:0 "Promote Worker's Culture"
+ NEP_invite_nkvd_r56:0 "Invite Elements of the NKVD"
  NEP_purchase_soviet_light_tanks_r56:0 "Purchase Light Tanks from the [SOV.GetAdjective]s"
-
  NEP_purchase_soviet_medium_tanks_r56:0 "Purchase Medium Tanks from the [SOV.GetAdjective]s"
+ NEP_join_ccp_faction_r56:0 "Join the Chinese Bloc"
+ NEP_send_weapons_to_ccp_r56:0 "Send Weapons to [PRC.GetNameDef]"
+ NEP_joint_pla_nepalese_military_exercises_r56:0 "Joint PLA-[ROOT.GetAdjective] Military Cooperation"
+
+ NEP_join_geacps_r56:0 "Join the Great East Asian Co-prosperity Sphere"
+ NEP_purchase_japanese_weapons_r56:0 "Purchase [JAP.GetAdjective] Weaponry"
 
  # Himalayan Politics
  NEP_transhimalayan_politics_r56:0 "Trans-Himalayan Politics"
@@ -356,7 +346,7 @@
  NEP_demand_a_corridor_to_the_soviets_r56:0 "Demand a Corridor to the [SOV.GetAdjective]s"
  NEP_demand_a_corridor_to_the_soviets_r56_desc:0 ""
 
- NEP_approach_japan_r56:0 "Approach [JAP.GetNameDef]"
+ NEP_approach_japan_r56:0 "State Visit to [JAP.Capital.GetCapitalVictoryPointName]"
  NEP_approach_japan_r56_desc:0 ""
 
  NEP_open_a_german_embassy_r56:0 "Open a [GER.GetAdjective] Embassy in [GER.Capital.GetCapitalVictoryPointName]"
@@ -374,7 +364,7 @@
  NEP_our_role_in_himalayan_politics_r56:0 "Our Role in Himalayan Politics"
  NEP_our_role_in_himalayan_politics_r56_desc:0 ""
 
- NEP_expand_the_alliance_r56:0 "Expand the Alliance"
+ NEP_expand_the_alliance_r56:0 "Militarize the Himalayan Defense Pact"
  NEP_expand_the_alliance_r56_desc:0 ""
 
  NEP_propose_a_federation_r56:0 "A Trans-Himalayan Federation"
