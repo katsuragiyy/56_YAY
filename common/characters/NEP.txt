@@ -275,6 +275,21 @@ characters = {
 		# 	logistics_skill = 1
 		# }
 	}
+	NEP_geoffrey_betham = {
+		name = NEP_geoffrey_betham
+		portraits = {
+			army = {
+				small="GFX_idea_generic_army_cav_western_european_2d"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEP_geoffrey_betham
+			allowed = { original_tag = NEP }
+			available = { has_completed_focus = NEP_maintain_british_ties_r56 }
+			traits = { AFG_british_ambassador }
+		}
+	}
 
 	NEP_kaiser_rana = { # Went to Britain as foreign affair minister to the coronation of Georges VI... also made pro japanese (and war friendly) comments after a screening of japanese films at the palace by a japanese representative
 		name = NEP_kaiser_rana

@@ -7,6 +7,7 @@
  # NEP_kiran_rana:0 "Kiran Rana"
  # NEP_baber_rana:0 "Baber Rana"
  NEP_tribhuvan_shah:0 "Tribhuvan"
+ NEP_geoffrey_betham:0 "Geoffrey Betham"
  NEP_rudra_rana:0 "Rudra Rana"
  NEP_tanka_prasad_acharya:0 "Tanka Prasad Acharya"
  NEP_pushpa_lal_shrestha:0 "Pushpa Lal Shrestha"
@@ -349,7 +350,7 @@
  NEP_approach_japan_r56:0 "State Visit to [JAP.Capital.GetCapitalVictoryPointName]"
  NEP_approach_japan_r56_desc:0 ""
 
- NEP_open_a_german_embassy_r56:0 "Open a [GER.GetAdjective] Embassy in [GER.Capital.GetCapitalVictoryPointName]"
+ NEP_open_a_german_embassy_r56:0 "Open an Embassy in [GER.Capital.GetCapitalVictoryPointName]"
  NEP_open_a_german_embassy_r56_desc:0 ""
 
  NEP_purchase_japanese_aircraft_r56:0 "Purchase [JAP.GetAdjective] Aircraft"

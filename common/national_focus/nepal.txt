@@ -62,6 +62,9 @@ focus_tree = {
 				popularity = 0.05
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = NEP_geoffrey_betham
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = { ENG = { is_faction_leader = yes } }
 				unlock_decision_tooltip = NEP_join_allies_r56
@@ -345,7 +348,7 @@ focus_tree = {
 			if = {
 				limit = { has_dlc = "Arms Against Tyranny" }
 				add_equipment_subsidy = {
-					cic = 500
+					cic = 2000
 					equipment_type = light_tank_chassis
 					seller_trigger = is_allied_seller_trigger
 				}
@@ -577,6 +580,11 @@ focus_tree = {
 				popularity = 0.05
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
+			add_equipment_to_stockpile = { #hitler's gift to juddha rana
+				type = motorized_equipment
+				amount = 1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_opinion_modifier = {
 				target = GER
 				modifier = large_increase
@@ -764,7 +772,7 @@ focus_tree = {
 	
 	focus = {
 		id = NEP_our_role_in_himalayan_politics_r56
-		icon = GFX_goal_PRC_liberate_tibet
+		icon = GFX_focus_GRE_a_land_of_mountains
 		prerequisite = { focus = NEP_approach_japan_r56 focus = NEP_maintain_british_ties_r56 focus = NEP_recognize_the_soviet_regime_r56 }
 		relative_position_id = NEP_approach_japan_r56
 
@@ -789,7 +797,7 @@ focus_tree = {
 
 	focus = {
 		id = NEP_expand_the_alliance_r56
-		icon = GFX_goal_GRE_balkan_pact
+		icon = GFX_goal_TIB_fair_treatment_dalai_lama
 		prerequisite = { focus = NEP_our_role_in_himalayan_politics_r56 }
 		mutually_exclusive = { focus = NEP_propose_a_federation_r56 }
 		relative_position_id = NEP_our_role_in_himalayan_politics_r56
@@ -838,13 +846,8 @@ focus_tree = {
 		relative_position_id = NEP_our_role_in_himalayan_politics_r56
 
 		icon = {
-			trigger = { has_government = communism }
-			value = GFX_focus_JAP_mountain_village_operation_units
-		}
-
-		icon = {
-			trigger = { NOT = { has_government = communism } }
-			value = GFX_goal_FRA_vienot_accords
+			GFX_focus_JAP_mountain_village_operation_units = { has_government = communism }
+			GFX_focus_AUS_the_danubian_federation = yes
 		}
 
 		cost = 10
