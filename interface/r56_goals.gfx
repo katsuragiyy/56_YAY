@@ -7429,6 +7429,21 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/ice/r56_goal_ICE_security_force.dds"
 	}
 
+	SpriteType = {
+		name = "GFX_goal_ICE_monarchy"
+		texturefile = "gfx/interface/goals/ice/r56_goal_ICE_monarchy.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_ICE_republic"
+		texturefile = "gfx/interface/goals/ice/r56_goal_ICE_republic.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_ICE_military_academy"
+		texturefile = "gfx/interface/goals/ice/r56_goal_ICE_military_academy.dds"
+	}
+
 ###------> NOR <><> <><> <><> <><> <><>
 	SpriteType = {
 		name = "GFX_focus_NOR_hydroelectric_power"

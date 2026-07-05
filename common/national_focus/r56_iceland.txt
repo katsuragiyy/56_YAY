@@ -9,20 +9,27 @@ focus_tree = {
 		}
 	}
 	
-	continuous_focus_position = { x = 2700 y = 700 }
+	continuous_focus_position = { x = 3600 y = 800 }
 	default = no
 	shared_focus = SCA_scandinavian_unification
+	shared_focus = NORDIC_form_joint_alliance
+
+
+	##############
+	## ECONOMIC ##
+	##############
 
 	focus = {
 		id = ICE_roads_program
-		icon = GFX_focus_generic_road_investment
-		cost = 8
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}
 		
 		available = {
 			100 = {	CONTROLLER = { tag = ICE } }
+			1043 = { CONTROLLER = { tag = ICE } }
 		}
 		
 		bypass = {
@@ -37,165 +44,100 @@ focus_tree = {
 			}
 		}
 		
-		x = 2
+		x = 0
 		y = 0
 		
 		completion_reward = {
 			100 = {
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
-
 			1043 = {
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
+
 	focus = {
-		id = ICE_look_den
-		icon = GFX_goal_generic_befriend_denmark
-		cost = 10
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		mutually_exclusive = {
-			focus = ICE_look_away
-		}
-		
-		available = {
-			is_subject_of = DEN
-		}
-		
-		x = 8
-		y = 0
-		
-		completion_reward = {
-			add_political_power = 75
-			DEN = {
-				custom_effect_tooltip = ICE_look_den_tt
-				hidden_effect = {
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = ICE_loyal_subject
-					}
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = ICE_loyal_subject2
-					}
-				}
-			}			
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		id = ICE_expand_industrial_machinery
+		icon = GFX_goal_generic_industrial_planning
+		prerequisite = { focus = ICE_roads_program }
+		relative_position_id = ICE_roads_program
+		cost = 6.5
 
-	}
-	focus = {
-		id = ICE_look_away
-		icon = GFX_goal_NOR_iceland
-		cost = 10
-		ai_will_do = {
-			factor = 20
-		}
-		mutually_exclusive = {
-			focus = ICE_look_den
-		}
-		bypass = {
-			is_subject = no
-		}
-		x = 12
-		y = 0
-		
-		completion_reward = {
-			add_political_power = 100
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_ideas = ICE_disloyal
-		}
-		search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_POLITICAL }
-
-	}
-	focus = {
-		id = ICE_national_def_force
-		icon = GFX_focus_ICE_iceland_defense_force
-		cost = 10
-		ai_will_do = {
-			factor = 3
-		}
-		x = 29
-		y = 0
-	
-		completion_reward = {
-			army_experience = 10
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_war_support = 0.05
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-	}
-	focus = {
-		id = ICE_coastguard
-		icon = GFX_focus_ICE_modernizing_the_coast_guard
-		cost = 5
-		ai_will_do = {
-			factor = 3
-		}
-		x = 42
-		y = 0
-		
-		completion_reward = {
-			air_experience = 5
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			navy_experience = 10
-		}
-
-	}
-	focus = {
-		id = ICE_domestic_ind
-		icon = GFX_focus_generic_expansion_of_new_towns
-		cost = 5
-		ai_will_do = {
-			factor = 100
-		}
-		prerequisite = {
-			focus = ICE_roads_program
-		}
-		
-		available = {
-		}
-		
-		bypass = {
-			100 = {
-				free_building_slots = {
-					building = industrial_complex
-					size < 1
-					include_locked = yes
-				}
-			}
-		}
-		
-		x = 3
+		x = -1
 		y = 1
 		
+		available = {
+			100 = {	CONTROLLER = { tag = ICE } }
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+		
 		completion_reward = {
-			random_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-				}
+			add_tech_bonus = {
+                    name = industrial_bonus
+                    bonus = 0.75
+                    uses = 2
+                    category = industry
+            } 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = ICE_resource_extraction
+		icon = GFX_goal_generic_construction_engineering
+		prerequisite = { focus = ICE_expand_industrial_machinery }
+		relative_position_id = ICE_roads_program
+		cost = 6.5
+
+		x = -1
+		y = 3
+		
+		available = {
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+		
+		completion_reward = {
+			add_ideas = ICE_local_extraction
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = ICE_generic_manufacturies
+		icon = GFX_goal_generic_light_industry
+		prerequisite = { focus = ICE_roads_program }
+		relative_position_id = ICE_roads_program
+		cost = 10
+
+		x = 2
+		y = 1
+		
+		available = {
+			100 = {	CONTROLLER = { tag = ICE } }
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+		
+		completion_reward = {
+			100 = { 
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -205,808 +147,296 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-
 	}
-	focus = {
-		id = ICE_new_industry
-		icon = GFX_goal_generic_construction
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_roads_program
-		}
-		x = 1
-		y = 1
-		
-		completion_reward = {
-			add_tech_bonus = {
-				name = ICE_new_industry_tech
-				bonus = 1
-				uses = 2
-				category = industry
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
 
-	}
 	focus = {
-		id = ICE_refine_research
-		icon = GFX_goal_generic_oil_refinery
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_infr_2
-		}
-		x = 1
-		y = 3
-		
-		completion_reward = {
-			add_tech_bonus = {
-				name = ICE_refineries
-				bonus = 3
-				uses = 1
-				category = synth_resources
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_OIL}
-
-	}
-	focus = {
-		id = ICE_infr_2
-		icon = GFX_goal_generic_construct_infrastructure
-		cost = 8
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_new_industry
-		}
-		prerequisite = {
-			focus = ICE_domestic_ind
-		}
-		
-		available = {
-		}
-			
-		
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = infrastructure_effort_tt
-				100 = {
-					free_building_slots = {
-						building = infrastructure
-						size < 1
-					}
-				}
-			}
-		}
-		
-		x = 2
-		y = 2
-		
-		completion_reward = {
-			100 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-
-			1043 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-
-	}
-	focus = {
-		id = ICE_recycling_programs
-		icon = GFX_goal_continuous_repairments
+		id = ICE_regulate_imports
+		icon = GFX_goal_generic_banking_legislation
+		prerequisite = { focus = ICE_roads_program }
+		relative_position_id = ICE_roads_program
 		cost = 5
-		ai_will_do = {
-			factor = 10
-		}
-		prerequisite = {
-			focus = ICE_domestic_ind
-		}
-		x = 5
-		y = 2
-		
-		completion_reward = {
-			add_ideas = ICE_recycle
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-	}
-	focus = {
-		id = ICE_new_indu
-		icon = GFX_goal_generic_construct_civ_factory
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_recycling_programs
-		}
-		prerequisite = {
-			focus = ICE_infr_2
-		}
-		
-		
-		
-		available = {
-			100 = {
-				CONTROLLER = {
-					tag = ICE
-				}
-			}
-		}
-			
-		
-		bypass = {
-		}
-			
-		
-		x = 4
-		y = 4
-		
-		completion_reward = {
-			100 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = ICE_steel_mill
-		icon = GFX_focus_generic_steel
-		cost = 10
-		ai_will_do = {
-			factor = 10
-		}
-		prerequisite = {
-			focus = ICE_infr_2
-		}
-		
-		
-		
-		available = {
-			has_tech = excavation2
-			100 = {
-				CONTROLLER = {
-					tag = ICE
-				}
-			}
-		}
-		
-		x = 3
-		y = 3
-		
-		completion_reward = {
-			100 = {
-				add_resource = {
-					type = steel
-					amount = 12
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STEEL}
-
-	}
-	focus = {
-		id = ICE_den_inf
-		icon = GFX_focus_DEN_no_regulations
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_look_den
-		}
-		
-		available = {
-			controls_state = 100
-			controls_state = 1043
-			is_subject_of = DEN
-		}
-		
-		x = 7
-		y = 1
-		
-		completion_reward = {
-			if = {
-				limit = {
-					has_autonomy_state = autonomy_personal_union
-				}
-				add_autonomy_ratio = {
-					value = -0.05
-					localization = ICE_den_inf
-				}
-				else = {
-					add_autonomy_ratio = {
-						value = -0.25
-						localization = ICE_den_inf
-					}
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			random_core_state  = {
-				limit =	{
-					is_fully_controlled_by = ROOT
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_ideas = ICE_den_investment
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY }
-
-	}
-	focus = {
-		id = ICE_den_mil_invest
-		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_den_inf
-		}
-
-		available = {
-			controls_state = 100
-			controls_state = 1043
-			is_subject_of = DEN
-		}
-		
-		x = 7
-		y = 2
-		
-		completion_reward = {
-			if = {
-				limit = {
-					has_autonomy_state = autonomy_personal_union
-				}
-				add_autonomy_ratio = {
-					value = -0.05
-					localization = ICE_den_mil_invest
-				}
-				else = {
-					add_autonomy_ratio = {
-						value = -0.25
-						localization = ICE_den_mil_invest
-					}
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			random_core_state = {
-			    limit = {
-					is_fully_controlled_by = ROOT
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			swap_ideas = {
-				remove_idea = ICE_den_investment
-				add_idea = ICE_den_investment2
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY }
-
-	}
-	focus = {
-		id = ICE_den_invest_final
-		icon = GFX_sca_focus_danish_industry
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_den_mil_invest
-		}
-		
-		available = {
-			controls_state = 100
-			is_subject_of = DEN
-		}
-		
-		x = 7
-		y = 3
-		
-		completion_reward = {
-			if = {
-				limit = {
-					has_autonomy_state = autonomy_personal_union
-				}
-				add_autonomy_ratio = {
-					value = -0.1
-					localization = ICE_den_mil_invest
-				}
-				else = {
-					add_autonomy_ratio = {
-						value = -0.35
-						localization = ICE_den_invest_final
-					}
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			random_core_state = {
-			    limit = {
-					is_fully_controlled_by = ROOT
-				}
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			swap_ideas = {
-				remove_idea = ICE_den_investment2
-				add_idea = ICE_den_investment3
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY }
-
-	}
-	focus = {
-		id = ICE_den_research_collab
-		icon = GFX_goal_tfv_generic_tech_sharing
-		cost = 5
-		ai_will_do = {
-			factor = 2
-		}
-		prerequisite = {
-			focus = ICE_look_den
-		}
-		
-		available = {
-			is_subject_of = DEN
-		}
-		
-		x = 9
-		y = 1
-		
-		completion_reward = {
-			add_to_tech_sharing_group = DEN_ICE_research_group
-			DEN = { add_to_tech_sharing_group = DEN_ICE_research_group }
-			if = {
-				limit = {
-					GRN = {
-						exists = yes
-					}
-				}
-				GRN = { add_to_tech_sharing_group = DEN_ICE_research_group }
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-	}
-	focus = {
-		id = ICE_look_out
-		icon = GFX_goal_generic_cinema
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_look_den
-			focus = ICE_look_away
-		}
-		x = 12
-		y = 1
-		
-		completion_reward = {
-			add_political_power = 120
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-	}
-	focus = {
-		id = ICE_end_neutrality
-		icon = GFX_focus_generic_strike_at_democracy1
-		mutually_exclusive = { focus = ICE_strong_neutral }
-		cost = 10
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		
-		available = {
-			OR = {
-				is_subject = no
-				AND = {
-					is_subject = yes
-				}
-			}
-		}
-		
-		prerequisite = {
-			focus = ICE_look_out
-		}
-		
-		x = 11
-		y = 3
-		
-		completion_reward = {
-			custom_effect_tooltip = ICE_end_neutral_tt
-			hidden_effect = {
-				remove_ideas = ICE_icelandic_neutrality 
-				remove_ideas = ICE_icelandic_neutrality2
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_war_support = 0.15
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			set_rule = { can_create_factions = yes }
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-
-	}
-	focus = {
-		id = ICE_mil_facs
-		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 10
-				has_war = yes
-			}
-		}
-		prerequisite = {
-			focus = ICE_recycling_programs
-		}
-		prerequisite = {
-			focus = ICE_end_neutrality
-		}
-		x = 6
-		y = 4
-		
-		completion_reward = {
-			random_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-
-	}
-	focus = {
-		id = ICE_discoveries
-		icon = GFX_focus_ICE_expanding_the_university_of_reykjavik
-		cost = 10
-		ai_will_do = {
-			factor = 10
-		}
-		
-		prerequisite = {
-			focus = ICE_steel_mill
-		}
-		prerequisite = {
-			focus = ICE_refine_research
-		}
-		x = 2
-		y = 4
-		completion_reward = {
-		if = {
-			limit = { 
-				OR = { 
-					has_completed_focus = ICE_ally_tech
-					has_completed_focus = ICE_ger_tech
-					has_completed_focus = ICE_sov_tech
-				}
-			}
-			add_tech_bonus = {
-				name = ICE_extra_research_slot
-				bonus = 1
-				uses = 3
-				category = industry
-				category = electronics
-			}
-		}
-			
-		add_research_slot = 1
-			
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = ICE_geothermic_banana_production_r56
-		text = ICE_geothermic_banana_production
-		icon = GFX_goal_HON_bannans_empire #yes that's the icon, little fascist symbol is a bit annoying
-		prerequisite = { focus = ICE_discoveries }
-		prerequisite = { focus = ICE_new_indu }
-		
 		x = 1
-		y = 1
-		relative_position_id = ICE_discoveries
-		cost = 10
-
-		available = {
-			num_of_factories > 10
-			has_tech = construction5
-			has_capitulated = no
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-
-		completion_reward = {
-			add_ideas = ICE_geothermic_banana_production
-			if = {
-				limit = {
-					HON = {
-						NOT = {
-							is_subject_of = ROOT
-						}
-						has_completed_focus = HON_banana_empire
-						has_government = fascism
-					}
-				}
-				add_opinion_modifier = { 
-					target = ROOT
-					modifier = small_decrease
-				}
-			}
-		}
-	}
-	focus = {
-		id = ICE_close_eng
-		icon = GFX_focus_chi_british_cooperation
-		cost = 8
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_end_neutrality
-		}
+		y = 2
 		
 		available = {
-			NOT = { has_war_with = ENG }
-			if = {
-				limit = { ENG = { has_government = democratic } }
-				NOT = { 
-					OR = { 
-						has_government = fascism
-						has_government = communism
-					}
-				}
-			}
-			if = {
-				limit = { ENG = { has_government = communism } }
-				NOT = { 
-					OR = { 
-						has_government = fascism
-						has_government = democratic
-					}
-				}
-			}
-			if = {
-				limit = { ENG = { has_government = fascism } }
-				NOT = { 
-					OR = { 
-						has_government = democratic
-						has_government = communism
-					}
-				}
-			}
-		}
-		
-		x = 8
-		y = 4
-		
-		completion_reward = {
-			add_political_power = 25
-			custom_effect_tooltip = ICE_close_eng_tt
-			hidden_effect = {
-				ENG = { add_opinion_modifier = { target = ROOT modifier = ICE_like_brits } }
-				ENG = { add_opinion_modifier = { target = ROOT modifier = ICE_like_brits2 } }
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-	}
-	focus = {
-		id = ICE_close_usa
-		icon = GFX_goal_generic_befriend_united_states
-		cost = 8
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_end_neutrality
-		}
-		
-		available = {
-			NOT = { has_war_with = USA }
-			if = {
-				limit = { USA = { has_government = democratic } }
-				NOT = { 
-					OR = { 
-						has_government = fascism
-						has_government = communism
-					}
-				}
-			}
-			if = {
-				limit = { USA = { has_government = communism } }
-				NOT = { 
-					OR = { 
-						has_government = fascism
-						has_government = democratic
-					}
-				}
-			}
-			if = {
-				limit = { USA = { has_government = fascism } }
-				NOT = { 
-					OR = { 
-						has_government = democratic
-						has_government = communism
-					}
-				}
-			}
-		}
-		
-		x = 10
-		y = 4
-		
-		completion_reward = {
-			add_political_power = 25
-			custom_effect_tooltip = ICE_close_usa_tt
-			hidden_effect = {
-				USA = { add_opinion_modifier = { target = ROOT modifier = ICE_like_us } }
-				USA = { add_opinion_modifier = { target = ROOT modifier = ICE_like_us2 } }
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-	}
-	focus = {
-		id = ICE_strong_neutral
-		icon = GFX_goal_generic_neutrality_focus
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		mutually_exclusive = { focus = ICE_end_neutrality }
-		prerequisite = {
-			focus = ICE_look_out
-		}
-		
-		available = {
-			has_war = no
-		}
-		
-		x = 13
-		y = 3
-		
-		completion_reward = {
-			custom_effect_tooltip = SCA_can_decline_tt 
-			hidden_effect = {
-				set_rule = {
-					can_decline_call_to_war = yes
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_stability = 0.1
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			swap_ideas = {
-				remove_idea = ICE_icelandic_neutrality
-				add_idea = ICE_icelandic_neutrality2
-			}
-		}
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
-
-	}
-	focus = {
-		id = ICE_sup_dem
-		icon = GFX_focus_ICE_republicanism
-		cost = 10
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
+			custom_trigger_tooltip = { 
+				tooltip = ICE_recovered_tt
 				OR = {
-					has_government = communism
-					has_government = fascism
-					DEN = { has_completed_focus = DEN_Icelandic_path_to_Socialism }
+					has_idea = ICE_iceland_depression
+					has_idea = ICE_iceland_depression2
+					has_idea = ICE_iceland_depression3
+					has_idea = ICE_iceland_depression4
+					has_idea = ICE_iceland_depression5
+					has_idea = ICE_iceland_depression6
 				}
 			}
-			modifier = {
-				factor = 0.1
+			hidden_trigger = {
+				OR = {
+					has_idea = ICE_iceland_depression
+					has_idea = ICE_iceland_depression2
+					has_idea = ICE_iceland_depression3
+					has_idea = ICE_iceland_depression4
+					has_idea = ICE_iceland_depression5
+					has_idea = ICE_iceland_depression6
+				}
+			}
+			
+		}
+
+		bypass = {
+			NOT = {
+				OR = {
+					has_idea = ICE_iceland_depression
+					has_idea = ICE_iceland_depression2
+					has_idea = ICE_iceland_depression3
+					has_idea = ICE_iceland_depression4
+					has_idea = ICE_iceland_depression5
+					has_idea = ICE_iceland_depression6
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ICE_iceland_depression5
+				}
+				remove_ideas = ICE_iceland_depression5
+			}
+			if = {
+				limit = {
+					has_idea = ICE_iceland_depression4
+				}
+				swap_ideas = {
+					add_idea = ICE_iceland_depression5
+					remove_idea = ICE_iceland_depression4
+				}
+			}
+			if = {
+				limit = {
+					has_idea = ICE_iceland_depression3
+				}
+				swap_ideas = {
+					add_idea = ICE_iceland_depression4
+					remove_idea = ICE_iceland_depression3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = ICE_iceland_depression2
+				}
+				swap_ideas = {
+					add_idea = ICE_iceland_depression3
+					remove_idea = ICE_iceland_depression2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = ICE_iceland_depression
+				}
+				swap_ideas = {
+					add_idea = ICE_iceland_depression2
+					remove_idea = ICE_iceland_depression
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = ICE_bolster_fishers_farmers
+		icon = GFX_goal_agrarian_reform
+		prerequisite = { focus = ICE_generic_manufacturies }
+		prerequisite = { focus = ICE_regulate_imports }
+		relative_position_id = ICE_roads_program
+		cost = 10
+
+		x = 2
+		y = 3
+		
+		available = {
+			100 = {	CONTROLLER = { tag = ICE } }
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+		
+		completion_reward = {
+			add_ideas = ICE_fisher_farmers
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = ICE_economic_shock
+		icon = GFX_goal_generic_empty_coffers
+		prerequisite = { focus = ICE_bolster_fishers_farmers }
+		prerequisite = { focus = ICE_resource_extraction }
+		relative_position_id = ICE_roads_program
+		cost = 2
+
+		x = 0
+		y = 4
+		
+		available = {
+			has_country_flag = ICE_scw_economy
+			hidden_trigger = {
+				has_global_flag = spanish_civil_war
+			}
+			has_country_flag = ICE_political_path
+			hidden_trigger = {
+				has_country_flag = ICE_chosen_political_path
+			}
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+		
+		completion_reward = {
+			country_event = SCA_iceland.11
+			custom_effect_tooltip = ICE_economical_shock_tt2
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = ICE_introduce_public_works
+		icon = GFX_goal_cuba_support_the_confederation_of_cuban_workers
+		prerequisite = { focus = ICE_economic_shock }
+		relative_position_id = ICE_roads_program
+		cost = 5
+
+		x = -1
+		y = 5
+		
+		available = {
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			custom_effect_tooltip = ICE_unemployment_tt
+			set_country_flag = ICE_unemployment_flag
+			#test decision above then set the flag ^
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	###############
+	### POLITIC ###
+	###############
+
+	focus = {
+		id = ICE_closer_ties_with_denmark
+		icon = GFX_focus_ICE_the_kingdom_of_iceland
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+			is_subject_of = DEN
+			NOT = {
 				DEN = {
 					OR = {
 						has_government = communism
 						has_government = fascism
+						has_completed_focus = DEN_Abolish_the_Monarchy
+						is_subject = yes
 					}
 				}
 			}
 		}
-		prerequisite = {
-			focus = ICE_look_away
+
+		mutually_exclusive = { focus = ICE_defy_denmark }
+		
+		x = 8
+		y = 0
+		
+		completion_reward = {
+			DEN = {
+				add_opinion_modifier = {
+					target = ICE
+					modifier = large_increase 
+				}
+			}
+			add_opinion_modifier = {
+				target = DEN
+				modifier = large_increase 
+			}
+			add_autonomy_score = {
+				value = -100
+				localization = AST_adopt_westminster
+			}
 		}
-		prerequisite = {
-			focus = ICE_look_out
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_defy_denmark
+		icon = GFX_goal_generic_uprising
+		cost = 5
+		ai_will_do = {
+			factor = 5
 		}
-		mutually_exclusive = {
-			focus = ICE_sup_com
-			focus = ICE_fas_rallies
+		
+		available = {
+			is_subject_of = DEN
 		}
+
 		bypass = {
-			is_subject = no
+			NOT = {
+				is_subject_of = DEN
+			}
 		}
-		x = 15
-		y = 2
+		
+		mutually_exclusive = { focus = ICE_closer_ties_with_denmark }
+		
+		x = 19
+		y = 0
+		
+		completion_reward = {
+			add_ideas = ICE_disloyal
+			add_stability = -0.25
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	
+	##########################
+	##### DEMOCRATIC PATH ####
+	##########################
+
+	focus = {
+		id = ICE_gather_althing
+		icon = GFX_goal_generic_parliament
+		cost = 5
+		prerequisite = { focus = ICE_defy_denmark }
+		relative_position_id = ICE_defy_denmark
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+		
+		mutually_exclusive = { focus = ICE_legacy_of_guttoslagurinn }
+		mutually_exclusive = { focus = ICE_release_the_persecuted_nationalists }
+		
+		x = -5
+		y = 1
 		
 		completion_reward = {
 			swap_ideas = {
@@ -1014,1606 +444,1356 @@ focus_tree = {
 				add_idea = ICE_disloyal_democratic
 			}
 		}
-		search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
-	focus = {
-		id = ICE_distance_den
-		icon = GFX_focus_ICE_break_with_the_crown
-		cost = 10
-		ai_will_do = {
-			factor = 1 
-		}
-		prerequisite = {
-			focus = ICE_sup_dem
-		}
-		x = 15
-		y = 3
-		bypass = {
-			is_subject = no
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ICE_disloyal_democratic
-				add_idea = ICE_disloyal_democratic2
-			}
-		}
-		search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_POLITICAL }
 
-	}
 	focus = {
-		id = ICE_guarantees
-		icon = GFX_goal_support_democracy
-		cost = 10
+		id = ICE_reach_out_to_opposition
+		icon = GFX_goal_democracy_people
+		cost = 5
+		prerequisite = { focus = ICE_gather_althing }
+		relative_position_id = ICE_gather_althing
 		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_distance_den
+			factor = 5
 		}
 		
 		available = {
-			controls_state = 100
 		}
 		
-		x = 15
+		x = 1
+		y = 1
+		
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_rally_republicans
+		icon = GFX_focus_ICE_republicanism
+		cost = 5
+		prerequisite = { focus = ICE_gather_althing }
+		relative_position_id = ICE_gather_althing
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+		
+		x = -1
+		y = 1
+		
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_form_constitutional_committee
+		icon = GFX_goal_treaty_peoples
+		cost = 5
+		prerequisite = { focus = ICE_rally_republicans }
+		prerequisite = { focus = ICE_reach_out_to_opposition }
+		relative_position_id = ICE_gather_althing
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+		
+		x = 0
+		y = 2
+		
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	##########################
+	##### COMMUNIST PATH #####
+	##########################
+
+	focus = {
+		id = ICE_legacy_of_guttoslagurinn
+		icon = GFX_goal_generic_red_freedom
+		cost = 5
+		prerequisite = { focus = ICE_defy_denmark }
+		relative_position_id = ICE_defy_denmark
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+
+		mutually_exclusive = { focus = ICE_gather_althing }
+		mutually_exclusive = { focus = ICE_release_the_persecuted_nationalists }
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ICE_disloyal
+				add_idea = ICE_disloyal_communism
+			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ICE_isleifur_hognason
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_stability = -0.05
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_maintain_ideological_purity
+		icon = GFX_focus_SOV_stalins_cult_of_personality
+		cost = 5
+		prerequisite = { focus = ICE_legacy_of_guttoslagurinn }
+		relative_position_id = ICE_legacy_of_guttoslagurinn
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+			SOV = {
+				has_civil_war = no
+			}
+		}
+
+		mutually_exclusive = { focus = ICE_popular_front_strategy }
+		
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_stability = 0.1
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_popular_front_strategy
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		cost = 5
+		prerequisite = { focus = ICE_legacy_of_guttoslagurinn }
+		relative_position_id = ICE_legacy_of_guttoslagurinn
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+
+		mutually_exclusive = { focus = ICE_maintain_ideological_purity }
+		
+		
+		x = -2
+		y = 1
+		
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_inspire_the_workers
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 5
+		prerequisite = { focus = ICE_maintain_ideological_purity focus = ICE_popular_front_strategy }
+		relative_position_id = ICE_legacy_of_guttoslagurinn
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+
+		mutually_exclusive = { focus = ICE_maintain_ideological_purity }
+		
+		
+		x = -1
+		y = 2
+		
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_use_comintern_connections
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		cost = 5
+		prerequisite = { focus = ICE_maintain_ideological_purity }
+		relative_position_id = ICE_legacy_of_guttoslagurinn
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+			SOV = {
+				has_civil_war = no
+			}
+		}
+
+		bypass = {
+			SOV = {
+				has_civil_war = yes
+			}
+		}
+
+		mutually_exclusive = { focus = ICE_maintain_ideological_purity }
+		
+		
+		x = 1
+		y = 2
+		
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+	
+	##########################
+	##### FASCIST PATH #######
+	##########################
+
+	focus = {
+		id = ICE_release_the_persecuted_nationalists
+		icon = GFX_goal_generic_repeal_opressive_law
+		cost = 5
+		prerequisite = { focus = ICE_defy_denmark }
+		relative_position_id = ICE_defy_denmark
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+
+		mutually_exclusive = { focus = ICE_legacy_of_guttoslagurinn }
+		mutually_exclusive = { focus = ICE_gather_althing }
+	
+		x = 5
+		y = 1
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ICE_disloyal
+				add_idea = ICE_disloyal_fascism
+			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ICE_eidur_kvaran
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_stability = -0.1
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_utilise_the_rikisutvarpid
+		icon = GFX_goal_generic_control_the_radio
+		cost = 5
+		prerequisite = { focus = ICE_release_the_persecuted_nationalists }
+		relative_position_id = ICE_release_the_persecuted_nationalists
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+	
+		x = -1
+		y = 1
+		
+		completion_reward = {
+		
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_woo_the_rural_populace
+		icon = GFX_goal_generic_promote_ruralism
+		cost = 5
+		prerequisite = { focus = ICE_release_the_persecuted_nationalists }
+		relative_position_id = ICE_release_the_persecuted_nationalists
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+	
+		x = 1
+		y = 1
+		
+		completion_reward = {
+		
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_exploit_pro_german_sentiments
+		icon = GFX_focus_chi_mission_to_germany
+		cost = 5
+		prerequisite = { focus = ICE_utilise_the_rikisutvarpid }
+		prerequisite = { focus = ICE_woo_the_rural_populace }
+		relative_position_id = ICE_release_the_persecuted_nationalists
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+	
+		x = 0
+		y = 2
+		
+		completion_reward = {
+			IF = {
+				GER = {
+					has_government = fascism
+				}
+				add_opinion_modifier = {
+					target = GER
+					modifier = CHI_mission_to_germany
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+	
+	##########################
+	##### SHARED FOCUSES #####
+	##########################
+
+	focus = {
+		id = ICE_revolutionary_spirit
+		icon = GFX_goal_generic_flames_of_rebellion
+		cost = 5
+		prerequisite = { focus = ICE_release_the_persecuted_nationalists focus = ICE_legacy_of_guttoslagurinn }
+		relative_position_id = ICE_release_the_persecuted_nationalists
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+	
+		x = -2
+		y = 2
+		
+		completion_reward = {
+			custom_effect_tooltip = ICE_path_dependent
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_encourage_progressive_dissent
+		icon = GFX_goal_generic_crisis
+		cost = 5
+		prerequisite = { focus = ICE_reach_out_to_opposition focus = ICE_popular_front_strategy }
+		relative_position_id = ICE_defy_denmark
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+	
+		x = -3
+		y = 3
+		
+		completion_reward = {
+			custom_effect_tooltip = ICE_path_dependent
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_ignite_the_revolution
+		icon = GFX_goal_communist_revolt
+		cost = 5
+		prerequisite = { focus = ICE_use_comintern_connections focus = ICE_encourage_progressive_dissent }
+		prerequisite = { focus = ICE_revolutionary_spirit }
+		prerequisite = { focus = ICE_inspire_the_workers }
+		relative_position_id = ICE_defy_denmark
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+	
+		x = 0
 		y = 4
 		
 		completion_reward = {
-			country_event = SCA_iceland.3
+		
 		}
-
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
+
 	focus = {
-		id = ICE_usa_airport
-		icon = GFX_goal_generic_air_production
+		id = ICE_march_on_reykjavik
+		icon = GFX_goal_generic_revolt
 		cost = 5
+		prerequisite = { focus = ICE_exploit_pro_german_sentiments }
+		prerequisite = { focus = ICE_revolutionary_spirit }
+		relative_position_id = ICE_defy_denmark
 		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {			
-			focus = ICE_close_usa
-			focus = ICE_strong_neutral
-			focus = ICE_guarantees			
+			factor = 5
 		}
 		
 		available = {
-			NOT = { has_war_with = USA }
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = ICE_no_neutral_tt
-					NOT = { has_idea = ICE_icelandic_neutrality }
-					NOT = { has_idea = ICE_icelandic_neutrality2 }
-				}
-				gives_military_access_to = USA
-			}
 		}
-		
-		x = 12
-		y = 5
+	
+		x = 4
+		y = 4
 		
 		completion_reward = {
+		
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = ICE_vote_of_no_confidence
+		icon = GFX_goal_generic_internal_democracy
+		cost = 5
+		prerequisite = { focus = ICE_form_constitutional_committee }
+		prerequisite = { focus = ICE_encourage_progressive_dissent }
+		relative_position_id = ICE_defy_denmark
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+		}
+	
+		x = -4
+		y = 4
+		
+		completion_reward = {
+		
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+	
+	##########################
+	##### MONARCHIST PATH ####
+	##########################
+
+	focus = {
+		id = ICE_kingdom_iceland
+		icon = GFX_goal_ICE_monarchy
+		cost = 5
+		prerequisite = { focus = ICE_closer_ties_with_denmark }
+		relative_position_id = ICE_closer_ties_with_denmark
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+			is_subject_of = DEN
+		}
+
+		mutually_exclusive = { focus = ICE_steady_as_she_goes }
+		
+		x = -2
+		y = 1
+		
+		completion_reward = {
+			add_autonomy_score = {
+				value = -400
+				localization = AST_adopt_westminster
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+	
+	##########################
+	##### HISTORICAL PATH ####
+	##########################
+
+	focus = {
+		id = ICE_steady_as_she_goes
+		icon = GFX_goal_constitutional_monarchy
+		cost = 5
+		prerequisite = { focus = ICE_closer_ties_with_denmark }
+		relative_position_id = ICE_closer_ties_with_denmark
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+			is_subject_of = DEN
+		}
+
+		mutually_exclusive = { focus = ICE_closer_ties_with_denmark }
+		
+		x = 2
+		y = 1
+		
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	###############
+	### Diplo #####
+	###############
+
+	focus = {
+		id = ICE_the_foreign_ministry
+		icon = GFX_goal_generic_break_rifle
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		x = 27
+		y = 6
+
+		available = {
+			
+		}
+	
+		completion_reward = {
+			
+		}
+		search_filters = {  }
+	}
+
+	focus = {
+		id = ICE_diplomatic_corps
+		icon = GFX_goal_generic_break_rifle
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		x = 1
+		y = 1
+		prerequisite = { focus = ICE_the_foreign_ministry }
+		relative_position_id = ICE_the_foreign_ministry
+
+		available = {
+			has_country_flag = ICE_political_path
+			hidden_trigger = {
+				has_country_flag = ICE_chosen_political_path
+			}
+		}
+	
+		completion_reward = {
+			
+		}
+		search_filters = {  }
+	}
+
+	focus = {
+		id = ICE_war_in_europe
+		icon = GFX_goal_generic_break_rifle
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		x = -2
+		y = 1
+		prerequisite = { focus = ICE_the_foreign_ministry }
+		relative_position_id = ICE_the_foreign_ministry
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ICE_ww2
+				any_country = {
+					is_major = yes
+					is_faction_leader = yes
+					capital_scope = {
+						is_on_continent = Europe
+					}
+					any_enemy_country = {
+						is_faction_leader = yes
+						is_major = yes
+						capital_scope = {
+							is_on_continent = Europe
+						}
+					}
+				}
+			}
+		}
+	
+		completion_reward = {
+			
+		}
+		search_filters = {  }
+	}
+
+
+
+
+
+
+
+	###############
+	### ARMY ######
+	###############
+
+	focus = {
+		id = ICE_permanent_neutrality
+		icon = GFX_goal_generic_break_rifle
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		x = 28
+		y = 0
+
+		available = {
+			has_war = no
+			is_in_faction = no
+		}
+
+		mutually_exclusive = { focus = ICE_national_def_force }
+	
+		completion_reward = {
+			add_ideas = disarmed_nation
+			set_rule = {
+				desc = ICE_test
+				can_decline_call_to_war = yes
+			}
+			set_rule = {
+				desc = ICE_test
+				can_not_declare_war = yes
+			}
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_fortify_the_land
+		icon = GFX_goal_generic_fortification
+		cost = 10
+
+		x = 0
+		y = 3
+		prerequisite = { focus = ICE_focus_on_civ_sector }
+		relative_position_id = ICE_permanent_neutrality
+	
+		completion_reward = {
+			add_ideas = ICE_fortifications
+			custom_effect_tooltip = ICE_lineskip
 			100 = {
 				add_building_construction = {
-					type = air_base
-					level = 3
-					instant_build = yes
+                    type = bunker
+                    level = 1
+                    province = 12674
+                    instant_build = yes
+                }
+                add_building_construction = {
+                    type = bunker
+                    level = 1
+                    province = 13311
+                    instant_build = yes
+                }
+                add_building_construction = {
+                    type = bunker
+                    level = 1
+                    province = 4861
+                    instant_build = yes
+                }
+			}
+		}
+		ai_will_do = {
+			factor = 3
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_global_trade
+		icon = GFX_goal_generic_deals
+		cost = 10
+
+		x = 0
+		y = 1
+		prerequisite = { focus = ICE_permanent_neutrality }
+		relative_position_id = ICE_permanent_neutrality
+	
+		completion_reward = {
+			add_ideas = ICE_trading
+			custom_effect_tooltip = ICE_lineskip
+			add_ideas = free_trade
+		}
+		ai_will_do = {
+			factor = 3
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_aid_denmark
+		icon = GFX_focus_DEN_no_regulations
+		cost = 10
+
+		x = -1
+		y = 2
+		prerequisite = { focus = ICE_global_trade }
+		relative_position_id = ICE_permanent_neutrality
+
+		available = {
+			is_subject_of = DEN
+			has_completed_focus = ICE_closer_ties_with_denmark
+			DEN = {
+				is_subject = no
+				has_capitulated = no
+			}
+		}
+	
+		completion_reward = {
+			DEN = {
+				add_offsite_building = { 
+					type = arms_factory 
+					level = 1 
 				}
+			}
+			add_ideas = ICE_overlord_aid
+		}
+		ai_will_do = {
+			factor = 3
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_focus_on_civ_sector
+		icon = GFX_focus_generic_industry_3
+		cost = 10
+
+		x = 1
+		y = 2
+		prerequisite = { focus = ICE_global_trade }
+		relative_position_id = ICE_permanent_neutrality
+	
+		completion_reward = {
+			add_ideas = ICE_civilian_focus
+			custom_effect_tooltip = ICE_lineskip
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
-					type = anti_air_building
+					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
 			}
 		}
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-
-	}
-	focus = {
-		id = ICE_join_allies
-		icon = GFX_allies
-		cost = 10
 		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_guarantees
-		}
-		
-		available = {
-			is_subject = no
-			is_in_faction = no
-			ENG = { is_faction_leader = yes }
-			ENG = { has_government = democratic }
-			has_government = democratic
-			NOT = { has_war_with = ENG }
-			custom_trigger_tooltip = {
-				tooltip = ICE_no_neutral_tt
-				NOT = { has_idea = ICE_icelandic_neutrality }
-				NOT = { has_idea = ICE_icelandic_neutrality2 }
-			}
-		}
-		
-		bypass = {
-			is_in_faction_with = ENG
-			ENG = { is_faction_leader = yes }
-		}
-		
-		x = 14
-		y = 5
-		
-		completion_reward = {
-			ENG = { country_event = generic.2 } 
-		}
-		search_filters = { FOCUS_FILTER_ALLIANCE }
-	}
-	focus = {
-		id = ICE_sup_com
-		icon = GFX_focus_YUG_pan_slavic_congress
-		cost = 10
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				OR = {
-					has_government = fascism
-					AND = {
-						is_historical_focus_on = yes
-						NOT = {
-							DEN = { has_completed_focus = DEN_Icelandic_path_to_Socialism }
-						}
-					}
-				}
-			}
-			modifier = {
-				factor = 0.1
-				DEN = {
-					OR = {
-						has_government = democratic
-						has_government = fascism
-					}
-				}
-			}
-			modifier = {
-				factor = 20
-				DEN = {
-					has_completed_focus = DEN_Icelandic_path_to_Socialism
-				}
-			}
-		}
-		prerequisite = {
-			focus = ICE_look_out
-		}
-		mutually_exclusive = {
-			focus = ICE_fas_rallies
-			focus = ICE_sup_dem
-		}
-		
-		available = {
-			OR = {
-				has_completed_focus = ICE_look_away
-				DEN = { has_completed_focus = DEN_Icelandic_path_to_Socialism }
-			}
-		}
-		bypass = {
-			is_subject = no
-		}
-		
-		x = 18
-		y = 2
-		
-		completion_reward = {
-			if = {
-				limit = { ICE = { has_completed_focus = ICE_look_away } }
-				swap_ideas = {
-					remove_idea = ICE_disloyal
-					add_idea = ICE_disloyal_communism
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			if = {
-				limit = { NOT = { ICE = { has_completed_focus = ICE_look_away } } }
-				add_timed_idea = { idea = internationalism days = 1095 }
-			}
-		}
-		search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_POLITICAL }
-
-	}
-	focus = {
-		id = ICE_com_rallies
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_sup_com
-		}
-		x = 18
-		y = 3
-		bypass = {
-			is_subject = no
-		}
-		completion_reward = {
-			if = {
-				limit = { ICE = { has_completed_focus = ICE_look_away } }
-				swap_ideas = {
-					remove_idea = ICE_disloyal_communism
-					add_idea = ICE_disloyal_communism2
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			if = {
-				limit = { NOT = { ICE = { has_completed_focus = ICE_look_away } } }
-				add_political_power = 100
-				add_popularity = { ideology = communism popularity = 0.2 }
-			}
-		}
-		search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_POLITICAL }
-
-	}
-	focus = {
-		id = ICE_com_takeover
-		icon = GFX_focus_generic_soviet_politics
-		cost = 10
-		ai_will_do = {
-			factor = 5
-		}
-		prerequisite = {
-			focus = ICE_com_rallies
-		}
-		
-		available = {
-			communism > 0.4
-		}
-		
-		x = 18
-		y = 4
-		
-		completion_reward = {
-			if = {
-				limit = { NOT = { has_government = communism } }
-				add_stability = -0.1
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_war_support = 0.1
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_political_power = 100
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			set_politics = {
-				ruling_party = communism
-				elections_allowed = no
-			}
-		}
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
-	}
-	focus = {
-		id = ICE_break_den
-		icon = GFX_focus_rom_abdicate
-		cost = 10
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				AND = {
-					is_historical_focus_on = yes
-					date < 1943.6.15
-				}
-			}
-		}
-		prerequisite = {
-			focus = ICE_guarantees
-			focus = ICE_com_takeover
-		}
-		
-		available = {
-			has_completed_focus = ICE_look_away
-			OR = {
-				is_subject = no
-				has_autonomy_state = autonomy_dominion
-				has_autonomy_state = autonomy_satellite
-				has_autonomy_state = autonomy_personal_union
-			}
-			if = {
-				limit = { is_subject = yes }
-				compare_autonomy_progress_ratio > 0.75
-			}
-		}
-		
-		x = 16
-		y = 5
-		
-		completion_reward = {
-			if = {
-				limit = { is_subject_of = DEN }
-				overlord = {
-					set_autonomy = {
-						target = ICE
-						autonomy_state = autonomy_free 
-					}
-				}
-			}
-
-			if = {
-				limit = { has_government = democratic }
-				add_country_leader_role = {
-					character = ICE_sveinn_bjornsson
-					country_leader={
-						ideology=socialism
-						expire="1965.1.1"
-						traits = { 
-							bank_president_trait
-						}
-					}
-					promote_leader = yes
-				}
-			}
-
-			if = {
-				limit = { NOT = { is_subject_of = DEN } }
-				add_political_power = 100
-			}
-			if = {
-				limit = { is_in_faction = yes }
-				every_country = {
-					limit = { 
-						is_in_faction_with = ICE
-						is_faction_leader = yes 
-					}
-					remove_from_faction = ICE
-				}
-			}
-			set_rule = { can_create_factions = yes }
-		}				
-		search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_POLITICAL }
-
-	}
-	focus = {
-		id = ICE_join_com
-		icon = GFX_goal_support_communism
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_com_takeover
-		}
-		
-		available = {
-			is_subject = no
-			is_in_faction = no
-			SOV = { is_faction_leader = yes }
-			SOV = { has_government = communism }
-			has_government = communism
-			NOT = { has_war_with = SOV }
-			custom_trigger_tooltip = {
-				tooltip = ICE_no_neutral_tt
-				NOT = { has_idea = ICE_icelandic_neutrality }
-				NOT = { has_idea = ICE_icelandic_neutrality2 }
-			}
-		}
-		
-		bypass = {
-			is_in_faction_with = SOV
-		}
-		x = 18
-		y = 5
-		
-		completion_reward = {
-			SOV = { country_event = generic.2 }
-		}
-		search_filters = { FOCUS_FILTER_ALLIANCE }
-	}
-	focus = {
-		id = ICE_sov_group
-		icon = GFX_goal_generic_communist_loyalty
-		cost = 10
-		ai_will_do = {
-			factor = 10 #We need men
-		}
-		prerequisite = {
-			focus = ICE_join_com
-		}
-		
-		available = {
-			is_in_faction_with = SOV
-		}
-		
-		x = 18
-		y = 6
-		
-		completion_reward = {
-			add_war_support = 0.1
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			SOV = { country_event = SCA_iceland.4 }
+			factor = 3
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-
 	}
+
 	focus = {
-		id = ICE_fas_rallies
-		icon = GFX_goal_generic_demand_territory
+		id = ICE_establish_merchant_marine
+		icon = GFX_goal_generic_expand_the_naval_industry
+		cost = 10
+
+		x = 2
+		y = 3
+		prerequisite = { focus = ICE_focus_on_civ_sector }
+		relative_position_id = ICE_permanent_neutrality
+	
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ICE_civilian_focus
+				add_idea = ICE_convoy_production
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 3
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_national_def_force
+		icon = GFX_focus_ICE_iceland_defense_force
 		cost = 10
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				OR = {
-					has_government = democratic
-					has_government = communism
-					is_historical_focus_on = yes
-					DEN = { has_completed_focus = DEN_Icelandic_path_to_Socialism }
-				}
+			factor = 3
+		}
+		x = 34
+		y = 0
+
+		mutually_exclusive = { focus = ICE_permanent_neutrality }
+	
+		completion_reward = {
+			army_experience = 10
+			add_war_support = 0.05
+			custom_effect_tooltip = ICE_lineskip
+			remove_ideas = ICE_icelandic_neutrality
+			custom_effect_tooltip = ICE_lineskip
+			add_timed_idea = {
+				idea = ICE_funding_a_military
+				days = 180
 			}
-			modifier = {
-				factor = 0.1
-				DEN = {
-					OR = {
-						has_government = democratic
-						has_government = communism
-					}
-				}
+			custom_effect_tooltip = ICE_lineskip
+			add_dynamic_modifier = { modifier = r56_national_defence_forces }
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_expand_the_national_police
+		icon = GFX_goal_ICE_security_force
+		cost = 8
+		prerequisite = { focus = ICE_national_def_force focus = ICE_permanent_neutrality }
+		relative_position_id = ICE_national_def_force
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -4
+		y = 1
+	
+		completion_reward = {
+
+			division_template = {
+                	name = "Ríkislögreglan"
+                	division_names_group = ICE_INF_01
+                	is_locked = no
+                	template_counter = 6
+                	regiments = {
+                    	infantry = { x = 0 y = 0 }
+                    	infantry = { x = 0 y = 1 }
+                	}
+                support = {   
+					recon = { x = 0 y = 0 }
+                }
+			}
+
+			random_owned_state = {
+               		create_unit = {
+               	     division = "division_template = \"Ríkislögreglan\" start_experience_factor = 0 start_equipment_factor = 0"
+               	     owner = ICE
+               		}
+           		}
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_expand_doctrines
+		icon = GFX_goal_generic_officers
+		cost = 5
+		prerequisite = { focus = ICE_national_def_force }
+		relative_position_id = ICE_national_def_force
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -2
+		y = 1
+	
+		completion_reward = {
+			add_to_variable = { ICE_land_doctrine_reduction = -0.1 }
+			custom_effect_tooltip = ICE_land_doctrine_reduction_tt
+			add_doctrine_cost_reduction = {
+				name = ICE_expand_doctrines
+				cost_reduction = 0.3
+				uses = 2
+	 			category = land_doctrine
 			}
 		}
-		prerequisite = {
-			focus = ICE_look_out
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_utilise_the_terrain
+		icon = GFX_goal_generic_mountain_warfare2
+		cost = 8
+		prerequisite = { focus = ICE_expand_doctrines }
+		relative_position_id = ICE_national_def_force
+
+
+		ai_will_do = {
+			factor = 3
 		}
-		mutually_exclusive = {
-			focus = ICE_sup_com
-			focus = ICE_sup_dem
-		}
-		
-		available = {
-			has_completed_focus = ICE_look_away
-		}
-		bypass = {
-			is_subject = no
-		}
-		
-		x = 22
+
+		x = -3
 		y = 2
-		
+	
 		completion_reward = {
-			if = {
-				limit = { ICE = { has_completed_focus = ICE_look_away } }
-				swap_ideas = {
-					remove_idea = ICE_disloyal
-					add_idea = ICE_disloyal_fascism
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			if = {
-				limit = { NOT = { ICE = { has_completed_focus = ICE_look_away } } }
-				add_timed_idea = { idea = nationalism days = 1095 }
+			add_to_variable = { ICE_attrition_factor = 0.1 }
+			custom_effect_tooltip = ICE_attrition_factor_tt
+			add_tech_bonus = {
+				name = ROM_vanatori_de_munte
+				bonus = 1.0
+				uses = 1
+				category = mountaineers_tech
 			}
 		}
-		search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_POLITICAL }
-
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 	}
+
 	focus = {
-		id = ICE_abolish_althing
-		icon = GFX_focus_generic_self_management
+		id = ICE_reshuffle_high_command
+		icon = GFX_goal_ICE_military_academy
+		cost = 5
+		prerequisite = { focus = ICE_expand_doctrines }
+		prerequisite = { focus = ICE_recruitment_initiatives }
+		relative_position_id = ICE_national_def_force
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -1
+		y = 2
+	
+		completion_reward = {
+			add_to_variable = { ICE_more_exp_factor = 0.10 }
+			add_to_variable = { ICE_more_command_power = 40 }
+			add_to_variable = { ICE_military_leader_cost = -0.25 }
+			custom_effect_tooltip = ICE_high_command_tt
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_recruitment_initiatives
+		icon = GFX_goal_generic_army_mobilization2
 		cost = 10
-		prerequisite = {
-			focus = ICE_fas_rallies
+		prerequisite = { focus = ICE_national_def_force }
+		relative_position_id = ICE_national_def_force
+
+
+		ai_will_do = {
+			factor = 3
 		}
-		
-		available = {
-			fascism > 0.3
-		}
-		
-		bypass = {
-			has_government = fascism
-		}
-		
-		x = 21
-		y = 3
-		
+
+		x = 0
+		y = 1
+	
 		completion_reward = {
-			add_stability = -0.1
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_war_support = 0.1
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			custom_effect_tooltip = ICE_abolish_althing_tt
-			hidden_effect = {
-				country_event = SCA_iceland.8
+			add_to_variable = { ICE_more_manpower = 0.01 }
+			add_to_variable = { ICE_faster_manpower = 0.05}
+			custom_effect_tooltip = ICE_more_manpower_tt
+			add_timed_idea = {
+				days = 365
+				idea = ICE_army_recruitment
 			}
 		}
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
-
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 	}
+
 	focus = {
-		id = ICE_fas_leader
-		icon = GFX_goal_support_fascism
+		id = ICE_weapon_research
+		icon = GFX_goal_generic_warfighting_technology
+		cost = 5
+		prerequisite = { focus = ICE_national_def_force }
+		relative_position_id = ICE_national_def_force
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 2
+		y = 1
+	
+		completion_reward = {
+			add_tech_bonus = {
+                name = infantry_artillery_bonus
+                bonus = 1
+                uses = 1
+                category = infantry_weapons
+            }
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_weapon_production
+		icon = GFX_goal_generic_national_arsenal
+		cost = 10
+		prerequisite = { focus = ICE_weapon_research }
+		relative_position_id = ICE_national_def_force
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 3
+		y = 3
+	
+		completion_reward = {
+			add_tech_bonus = {
+                name = infantry_artillery_bonus
+                bonus = 0.5
+                uses = 1
+                category = infantry_weapons
+            }
+			add_ideas = ICE_rifle_production
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_motorized_research
+		icon = GFX_goal_generic_modernizing_the_cavalry
+		cost = 10
+		prerequisite = { focus = ICE_weapon_research }
+		relative_position_id = ICE_national_def_force
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 4
+		y = 2
+	
+		completion_reward = {
+			add_tech_bonus = {
+                name = motorized_bonus
+                bonus = 1
+                uses = 2
+                category = motorized_equipment
+            }
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_armor_research
+		icon = GFX_goal_tank_offensive
+		cost = 10
+		prerequisite = { focus = ICE_motorized_research }
+		relative_position_id = ICE_national_def_force
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 5
+		y = 3
+	
+		completion_reward = {
+			add_tech_bonus = {
+                name = armor_bonus
+                bonus = 0.5
+                uses = 2
+                category = armor
+            }
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_winter_equipment
+		icon = GFX_goal_generic_cold_war
+		cost = 5
+		prerequisite = { focus = ICE_weapon_research }
+		relative_position_id = ICE_national_def_force
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 1
+		y = 2
+	
+		completion_reward = {
+			add_to_variable = { ICE_winter_supplies_attrition = -0.15 }
+			custom_effect_tooltip = ICE_winter_supplies_attrition_tt
+
+			add_tech_bonus = {
+                name = infantry_artillery_bonus
+                bonus = 1
+                uses = 1
+                category = winter_clothing_tech
+            }
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+
+	focus = {
+		id = ICE_expansive_army_focus
+		icon = GFX_goal_generic_army_professionalism
+		cost = 10
+		prerequisite = { focus = ICE_reshuffle_high_command }
+		relative_position_id = ICE_national_def_force
+
+		mutually_exclusive = { focus = ICE_effective_army_focus }
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 1
+		y = 3
+	
+		completion_reward = {
+			add_to_variable = { ICE_more_manpower = 0.025 }
+			add_to_variable = { ICE_planning_speed_factor = 0.1 }
+			add_to_variable = { ICE_training_time = -0.1 }
+			custom_effect_tooltip = ICE_more_mp2_tt
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_ensure_cohesion
+		icon = GFX_goal_iron_people
+		cost = 10
+		prerequisite = { focus = ICE_expansive_army_focus }
+		relative_position_id = ICE_expansive_army_focus
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 0
+		y = 1
+	
+		completion_reward = {
+			add_to_variable = { ICE_army_org = 0.1 }
+			add_to_variable = { ICE_recovery_rate_factor = 0.05 }
+			custom_effect_tooltip = ICE_cohesion_tt
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_modernized_army
+		icon = GFX_goal_generic_democratic_army
+		cost = 10
+		prerequisite = { focus = ICE_ensure_cohesion }
+		relative_position_id = ICE_expansive_army_focus
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 0
+		y = 2
+	
+		completion_reward = {
+			add_to_variable = { ICE_entrenchment_factor = 0.1 }
+			add_to_variable = { ICE_army_org = 0.05 }
+			add_to_variable = { ICE_recovery_rate_factor = 0.05 }
+
+			custom_effect_tooltip = ICE_modern_army_tt
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_effective_army_focus
+		icon = GFX_goal_generic_army
+		cost = 10
+		prerequisite = { focus = ICE_reshuffle_high_command }
+		relative_position_id = ICE_national_def_force
+
+		mutually_exclusive = { focus = ICE_expansive_army_focus }
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -2
+		y = 3
+	
+		completion_reward = {
+			add_to_variable = { ICE_attack_factor = 0.05 }
+			add_to_variable = { ICE_defence_factor = 0.05 }
+			add_to_variable = { ICE_training_time = 0.1 }
+
+			custom_effect_tooltip = ICE_effective_army_tt
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_conventional_army
+		icon = GFX_goal_infantry_offensive
+		cost = 10
+		prerequisite = { focus = ICE_effective_army_focus }
+		relative_position_id = ICE_effective_army_focus
+		
+		mutually_exclusive = { focus = ICE_special_forces_army }
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 1
+		y = 1
+	
+		completion_reward = {
+			add_to_variable = { ICE_inf_attack = 0.05 }
+			add_to_variable = { ICE_inf_defence = 0.05 }
+			custom_effect_tooltip = ICE_inf_conventional_tt
+			add_tech_bonus = {
+                name = infantry_artillery_bonus
+                bonus = 0.25
+                uses = 1
+                category = infantry_weapons
+            }
+			add_doctrine_cost_reduction = {
+				name = ICE_expand_doctrines
+				cost_reduction = 0.25
+				uses = 1
+	 			category = land_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_special_forces_army
+		icon = GFX_goal_generic_army_elite
+		cost = 10
+		prerequisite = { focus = ICE_effective_army_focus }
+		relative_position_id = ICE_effective_army_focus
+
+		mutually_exclusive = { focus = ICE_conventional_army }
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -1
+		y = 1
+	
+		completion_reward = {
+			add_to_variable = { ICE_specforces_attack = 0.1 }
+			add_to_variable = { ICE_specforces_defence = 0.1 }
+			add_to_variable = { ICE_specforces_number = 0.25 }
+			custom_effect_tooltip = ICE_special_forces_tt
+			add_doctrine_cost_reduction = {
+				name = ICE_expand_doctrines
+				cost_reduction = 0.5
+				uses = 2
+	 			category = special_forces_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_large_guns
+		icon = GFX_goal_generic_combined_arms_artillery_antiair_antitank
+		cost = 10
+		prerequisite = { focus = ICE_conventional_army focus = ICE_special_forces_army }
+		relative_position_id = ICE_effective_army_focus
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 0
+		y = 2
+	
+		completion_reward = {
+			add_to_variable = { ICE_art_attack = 0.15 }
+			add_to_variable = { ICE_art_defence = 0.15 }
+			add_to_variable = { ICE_army_org = 0.05 }
+			custom_effect_tooltip = ICE_large_guns_tt
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+
+
+
+	###############
+	### NAVY ######
+	###############
+
+
+	focus = {
+		id = ICE_coastguard
+		icon = GFX_focus_ICE_modernizing_the_coast_guard
+		cost = 5
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			has_completed_focus = ICE_national_def_force
+		}
+		x = 45
+		y = 0
+		
+		completion_reward = {
+			air_experience = 5
+			navy_experience = 10
+		}
+	}
+	
+	focus = {
+		id = ICE_nav_doc
+		icon = GFX_goal_generic_blue_navy
 		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = ICE_abolish_althing
-		}
-		
-		available = {
-			has_government = fascism 
-			NOT = { has_idea = ICE_internal_conflicts }
-		}
-		
-		x = 21
-		y = 4
-		
-		completion_reward = {
-			add_country_leader_trait = dictator
-		}
-
-	}
-	focus = {
-		id = ICE_ikarus
-		icon = GFX_goal_annexiceland
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_fas_leader
-		}
-		
-		available = {
-			has_government = fascism
-			is_in_faction = no
-			GER = {
-				is_faction_leader = yes
-				NOT = { has_war_with = ROOT }
-			}
-			controls_state = 100
-			is_subject_of = DEN
-		}
-		
-		bypass = {
-			is_in_faction_with = GER
-		}
-		
-		x = 20
-		y = 5
-		
-		completion_reward = {
-			if = {
-				limit = { 
-					NOT = { is_subject_of = GER }
-					is_subject = yes 
-				}
-				overlord = {
-					set_autonomy = {
-						target = ICE
-						autonomy_state = autonomy_free 
-					}
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			GER = {	add_to_faction = ICE }
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			custom_effect_tooltip = ICE_ikarus_tt
-			hidden_effect = {
-				division_template = {
-					name = "Fallschirmjäger-Division"
-					regiments = {
-						paratrooper = { x = 0 y = 0 }
-						paratrooper = { x = 0 y = 1 }
-						paratrooper = { x = 0 y = 2 }
-						paratrooper = { x = 1 y = 0 }
-						paratrooper = { x = 1 y = 1 }
-						paratrooper = { x = 1 y = 2 }
-					}
-				}
-				100 = {
-					create_unit = {
-						division = "name = \"Fallschirmjäger Iceland-Division\" division_template = \"Fallschirmjäger-Division\" start_experience_factor = 0.3" 
-						owner = ICE
-					}
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_MANPOWER }
-	}
-	focus = {
-		id = ICE_ger_coop
-		icon = GFX_focus_generic_military_mission
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_ikarus
-		}
-		
-		x = 20
-		y = 6
-		
-		available = {
-			OR = {
-				is_in_faction_with = GER
-				has_army_manpower = { size > 10000 }
-			}
-		}
-		
-		completion_reward = {
-			add_ideas = ICE_ger_mil
-		}
-
-	}
-	focus = {
-		id = ICE_vikings
-		icon = GFX_focus_generic_strike_at_democracy2
-		cost = 10
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor =  0.1
-				has_war = yes
-			}
-		}
-		prerequisite = {
-			focus = ICE_fas_leader
-		}
-		
-		available = {
-			is_subject = no
-			has_government = fascism
-		}
-		
-		x = 22
-		y = 5
-		
-		completion_reward = {
-			add_war_support = 0.15
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			custom_effect_tooltip = ICE_vikings_tt
-			hidden_effect = {
-				add_state_core = 101
-				add_state_core = 337
-				add_state_core = 37
-				add_state_core = 970
-				add_state_claim = 971
-				add_state_claim = 99
-				add_state_claim = 964
-				add_state_claim = 37
-				add_state_claim = 1027
-				add_state_claim = 145
-				add_state_claim = 110
-				add_state_claim = 1031
-				add_state_claim = 1032
-				add_state_claim = 967
-				add_state_claim = 1033
-				add_state_claim = 1034
-				add_state_claim = 1035
-				add_state_claim = 666
-				add_state_claim = 1029
-				add_state_claim = 968
-				add_state_claim = 1028
-				add_state_claim = 1026
-				add_state_claim = 969
-				add_state_claim = 1030
-				add_state_claim = 1025
-				add_state_claim = 1024
-				add_state_core = 142
-				add_state_claim = 143
-				add_state_claim = 144
-				add_state_claim = 38
-				add_state_core = 124
-				add_state_core = 138
-				add_state_claim = 139
-				add_state_claim = 140
-				add_state_claim = 141
-			}
-			if = {
-				limit = {
-					NOT = { NOR = { is_in_faction_with = ICE } }
-					country_exists = NOR					
-				}
-				create_wargoal = {
-					target = NOR
-					expire = 0
-					type = annex_everything						
-				}
-			}
-			if = {
-				limit = {
-					NOT = { DEN = { is_in_faction_with = ICE } }
-					country_exists = DEN					
-				}
-				create_wargoal = {
-					target = DEN
-					expire = 0
-					type = annex_everything						
-				}
-			}
-			if = {
-				limit = {
-					NOT = { SWE = { is_in_faction_with = ICE } }
-					country_exists = SWE					
-				}
-				create_wargoal = {
-					target = SWE
-					expire = 0
-					type = annex_everything						
-				}
-			}
-			if = {
-				limit = {
-					NOT = { FIN = { is_in_faction_with = ICE } }
-					country_exists = FIN					
-				}
-				create_wargoal = {
-					target = NOR
-					expire = 0
-					type = take_state_focus
-					generator = { 145 }
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_WAR_SUPPORT }
-
-	}
-	focus = {
-		id = ICE_fas_youth
-		icon = GFX_goal_generic_axis_build_infantry
-		cost = 10
-		ai_will_do = {
-			factor = 2
-		}
-		prerequisite = {
-			focus = ICE_fas_rallies
-		}
-		x = 23
-		y = 3
-		
-		completion_reward = {
-			add_war_support = 0.05
-			add_ideas = ICE_fascist_youth
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
-
-	}
-	focus = {
-		id = ICE_train_reserves
-		icon = GFX_focus_ICE_the_armed_forces_of_iceland
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_national_def_force
-		}
-		
-		available = {
-			100 = { CONTROLLER = { tag = ICE } }
-		}
-		
-		x = 29
-		y = 1
-		
-		completion_reward = {
-			army_experience = 5
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			random_owned_controlled_state = {
-				prioritize = { 100 }
-				create_unit = {
-					division = "name = \"Icelandic Defense Force\" division_template = \"Ríkislögreglan\" start_experience_factor = 0.2"
-					owner = ICE
-				}
-			}			
-		}
-		search_filters = { FOCUS_FILTER_MANPOWER }
-	}
-	focus = {
-		id = ICE_look_into_armour
-		icon = GFX_goal_generic_army_tanks
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_train_reserves
-		}
-		mutually_exclusive = {
-			focus = ICE_look_into_special
-		}
-		
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = ICE_no_neutral_tt
-				NOT = { has_idea = ICE_icelandic_neutrality }
-				NOT = { has_idea = ICE_icelandic_neutrality2 }
-			}
-		}
-		
-		x = 25
-		y = 2
-		
-		completion_reward = {
-			add_tech_bonus = {
-				name = ICE_full_metal
-				bonus = 1
-				uses = 2
-				category = armor
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = ICE_mobile_warfare
-		icon = GFX_goal_generic_army_motorized
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_look_into_armour
-		}
-		x = 25
-		y = 3
-		
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = ICE_mobile_warfare
-				cost_reduction = 0.5
-				uses = 2
-				category = cat_mobile_warfare
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-	}
-	focus = {
-		id = ICE_mobile_armour
-		icon = GFX_goal_generic_production2
-		cost = 10
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.1
-				has_completed_focus = ICE_pure_armour
-			}
-		}
-		prerequisite = {
-			focus = ICE_mobile_warfare
-		}
-		x = 24
-		y = 4
-		
-		completion_reward = {
-			add_tech_bonus = {
-				name = ICE_fast_armor
-				bonus = 1
-				ahead_reduction = 1
-				uses = 2
-				category = cat_light_armor
-				category = cat_medium_armor
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-	}
-	focus = {
-		id = ICE_heavy_armour
-		icon = GFX_focus_generic_army_tanks2
-		cost = 10
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.1
-				has_completed_focus = ICE_mobile_armour
-			}
-		}
-		prerequisite = {
-			focus = ICE_mobile_warfare
-		}
-		x = 26
-		y = 4
-		
-		completion_reward = {
-			add_tech_bonus = {
-				name = ICE_heaviest_tanks
-				bonus = 1
-				ahead_reduction = 1
-				uses = 2
-				category = cat_heavy_armor
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-	}
-	focus = {
-		id = ICE_pure_armour
-		icon = GFX_goal_generic_army_doctrines
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_mobile_armour
-			focus = ICE_heavy_armour
-		}
-		x = 25
-		y = 5
-		
-		completion_reward = {
-			add_ideas = ICE_armour_focused
-		}
-
-	}
-	focus = {
-		id = ICE_look_into_special
-		icon = GFX_goal_generic_secret_weapon
-		cost = 10
-		ai_will_do = {
-			factor = 2
-		}
-		prerequisite = {
-			focus = ICE_train_reserves
-		}
-		mutually_exclusive = {
-			focus = ICE_look_into_armour
-		}
-		
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = ICE_no_neutral_tt
-				NOT = { has_idea = ICE_icelandic_neutrality }
-				NOT = { has_idea = ICE_icelandic_neutrality2 }
-			}
-		}
-		
-		x = 29
-		y = 2
-		
-		completion_reward = {
-			add_tech_bonus = {
-				name = ICE_special_forces
-				bonus = 1
-				uses = 3
-				category = r56_jaeger_infantry_tech
-				category = r56_jungle_infantry_tech
-				category = r56_marines_infantry_tech
-				category = r56_mountain_infantry_tech
-				category = r56_paratroops_infantry_tech	
-				category = r56_shock_infantry_tech
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				add_doctrine_cost_reduction = {
-					name = special_forces_bonus
-					cost_reduction = 0.5
-					uses = 1
-					category = special_forces_doctrine
-				}
-			}
-			else = {
-				add_tech_bonus = {
-					name = special_forces_bonus
-					bonus = 0.5
-					uses = 1
-					category = r56_special_forces_training_tech 
-				}	
-			}	
-		    
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_ideas = ICE_elite_forces_1
-            hidden_effect = {
-                set_country_flag = cite_an_airborne_unit_flag
-            }
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-            unlock_decision_tooltip = { decision = cite_an_airborne_unit show_effect_tooltip = yes }			
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-	}
-	focus = {
-		id = ICE_mountain_focus
-		icon = GFX_goal_generic_special_forces
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_look_into_special
-		}
-		x = 27
-		y = 3
-		
-		completion_reward = {
-			#add_ideas = ICE_mountain_strong
-			add_tech_bonus = {
-				name = ICE_mountain_forces
-				bonus = 1
-				ahead_reduction = 1
-				uses = 2
-				category = mountaineers_tech
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = ICE_on_sea
-		icon = GFX_goal_generic_amphibious_assault
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_look_into_special
-		}
-		x = 29
-		y = 3
-		
-		completion_reward = {
-			#add_ideas = ICE_marine_strong
-			add_tech_bonus = {
-				name = ICE_marine_forces
-				bonus = 1
-				ahead_reduction = 1
-				uses = 1
-				category = marine_tech
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_tech_bonus = {
-				name = ICE_marine_forces2
-				bonus = 1
-				ahead_reduction = 1
-				uses = 1
-				category = tp_tech
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = ICE_by_air
-		icon = GFX_focus_generic_paratrooper
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_look_into_special
-		}
-		x = 31
-		y = 3
-		
-		completion_reward = {
-			#add_ideas = ICE_para_strong
-			add_tech_bonus = {
-				name = ICE_paratrooper_forces
-				bonus = 1
-				ahead_reduction = 1
-				uses = 1
-				category = para_tech
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_doctrine_cost_reduction = {
-				name = ICE_air_landings
-				cost_reduction = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = ICE_special_done
-		icon = GFX_goal_generic_CAS
-		cost = 10
-		ai_will_do = {
-			factor = 25 #Good Bonus
-		}
-		prerequisite = {
-			focus = ICE_mountain_focus
-		}
-		prerequisite = {
-			focus = ICE_on_sea
-		}
-		prerequisite = {
-			focus = ICE_by_air
-		}
-		x = 29
-		y = 4
-		
-		completion_reward = {
-			#remove_ideas = ICE_mountain_strong
-			#remove_ideas = ICE_marine_strong
-			#remove_ideas = ICE_para_strong
-			swap_ideas = {
-				remove_idea = ICE_elite_forces_1
-				add_idea = ICE_elite_forces_2
-			}
-		}
-	}
-	focus = {
-		id = ICE_create_ifv
-		icon = GFX_goal_generic_production
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_national_def_force
-		}
-		
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = ICE_no_neutral_tt
-				NOT = { has_idea = ICE_icelandic_neutrality }
-				NOT = { has_idea = ICE_icelandic_neutrality2 }
-			}
-		}
-		
-		x = 31
-		y = 1
-		
-		completion_reward = {
-			custom_effect_tooltip = ICE_create_ifv_tt
-		}
-	}
-	focus = {
-		id = ICE_reserve_focus
-		icon = GFX_goal_generic_defence
-		cost = 10
-		ai_will_do = {
-			factor = 2
-		}
-		prerequisite = {
-			focus = ICE_train_reserves
-		}
-		x = 34
-		y = 2
-		
-		completion_reward = {
-			add_ideas = ICE_home_defense
-		}
-
-	}
-	focus = {
-		id = ICE_local_militia
-		icon = GFX_focus_generic_commonwealth_build_infantry
-		cost = 10
-		ai_will_do = {
-			factor = 2
-		}
-		prerequisite = {
-			focus = ICE_reserve_focus
-		}
-		x = 34
-		y = 3
-		
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ICE_home_defense
-				add_idea = ICE_home_defense2
-			}
-		}
-		search_filters = { FOCUS_FILTER_MANPOWER }
-
-	}
-	focus = {
-		id = ICE_island_defence
-		icon = GFX_focus_generic_fortify_iceland
-		cost = 10
-		ai_will_do = {
-			factor = 2
-		}
-		prerequisite = {
-			focus = ICE_local_militia
-		}
-		
-		available = {
-			100 = { CONTROLLER = { tag = ICE } }
-		}
-		
-		x = 32
-		y = 4
-		
-		completion_reward = {
-			custom_effect_tooltip = ICE_island_defence_tt
-			hidden_effect = {
-				if = {
-					limit = { has_idea = ICE_home_defense2 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense2
-						add_idea = ICE_home_defense3
-					}
-				}
-				if = {
-					limit = { has_idea = ICE_home_defense4 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense4
-						add_idea = ICE_home_defense6
-					}
-				}
-				if = {
-					limit = { has_idea = ICE_home_defense5 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense5
-						add_idea = ICE_home_defense7
-					}
-				}
-				if = {
-					limit = { has_idea = ICE_home_defense9 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense9
-						add_idea = ICE_home_defense12
-					}
-				}
-				if = {
-					limit = { has_idea = ICE_home_defense11 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense11
-						add_idea = ICE_home_defense12
-					}
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			100 = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 2
-					instant_build = yes
-				}			
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = 12674
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = 4861
-					instant_build = yes
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			1043 = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 2
-					instant_build = yes
-				}			
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = 13331
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = 13325
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = 13332
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
-
-	}
-	focus = {
-		id = ICE_advanced_weapons
-		icon = GFX_goal_generic_build_tank
-		cost = 10
-		ai_will_do = {
-			factor = 2
-		}
-		prerequisite = {
-			focus = ICE_local_militia
-		}
-		x = 34
-		y = 4
-		
-		completion_reward = {
-			custom_effect_tooltip = ICE_advanced_weapons_tt
-			hidden_effect = {
-				if = {
-					limit = { has_idea = ICE_home_defense2 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense2
-						add_idea = ICE_home_defense4
-					}
-				}
-				if = {
-					limit = { has_idea = ICE_home_defense3 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense3
-						add_idea = ICE_home_defense8
-					}
-				}
-				if = {
-					limit = { has_idea = ICE_home_defense5 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense5
-						add_idea = ICE_home_defense9
-					}
-				}
-				if = {
-					limit = { has_idea = ICE_home_defense7 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense7
-						add_idea = ICE_home_defense12
-					}
-				}
-				if = {
-					limit = { has_idea = ICE_home_defense11 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense11
-						add_idea = ICE_home_defense12
-					}
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_MANPOWER }
-
-	}
-	focus = {
-		id = ICE_propaganda
-		icon = GFX_goal_generic_propaganda
-		cost = 10
-		ai_will_do = {
-			factor = 2
-		}
-		prerequisite = {
-			focus = ICE_local_militia
-		}
-		x = 36
-		y = 4
-		
-		completion_reward = {
-			custom_effect_tooltip = ICE_propaganda_tt			
-			hidden_effect = {
-				if = {
-					limit = { has_idea = ICE_home_defense2 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense2
-						add_idea = ICE_home_defense5
-					}
-				}
-				if = {
-					limit = { has_idea = ICE_home_defense3 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense3
-						add_idea = ICE_home_defense10
-					}
-				}
-				if = {
-					limit = { has_idea = ICE_home_defense4 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense4
-						add_idea = ICE_home_defense11
-					}
-				}
-				if = {
-					limit = { has_idea = ICE_home_defense7 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense7
-						add_idea = ICE_home_defense12
-					}
-				}
-				if = {
-					limit = { has_idea = ICE_home_defense8 }
-					swap_ideas = {
-						remove_idea = ICE_home_defense8
-						add_idea = ICE_home_defense12
-					}
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_stability = 0.05
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_war_support = 0.05
-		}
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
-
-	}
-	focus = {
-		id = ICE_sea_air
-		icon = GFX_goal_generic_air_naval_bomber
-		ai_will_do = {
-			factor = 1
-		}
-		cost = 10
-		prerequisite = {
 			focus = ICE_coastguard
 		}
-		x = 40
-		y = 1
+
 		
-		completion_reward = {
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				add_tech_bonus = {
-					name = ICE_sea_air
-					bonus = 1
-					uses = 1
-					category = air_equipment
-				}
+		relative_position_id = ICE_coastguard
 
-				custom_effect_tooltip = generic_skip_one_line_tt
 
-				add_tech_bonus = {
-					name = ICE_sea_air
-					bonus = 1
-					uses = 1
-					category = cat_torpedoes
-				}
-			}
-			else = {
-				add_tech_bonus = {
-					name = ICE_airsea_tech
-					bonus = 1
-					uses = 1
-					category = air_equipment
-				}
-
-				custom_effect_tooltip = generic_skip_one_line_tt
-
-				add_tech_bonus = {
-					name = ICE_airsea_tech2
-					bonus = 1
-					uses = 1
-					category = naval_bomber
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = ICE_land_and_sea
-		icon = GFX_goal_generic_air_doctrine
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_sea_air
-		}
-		x = 40
-		y = 2
-		
-		completion_reward = {
-			add_tech_bonus = {
-				name = ICE_landsea_tech
-				bonus = 1
-				uses = 1
-				category = air_equipment
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_doctrine_cost_reduction = {
-				name = ICE_landsea_tech2
-				cost_reduction = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-	}
-	focus = {
-		id = ICE_from_afar
-		icon = GFX_focus_rocketry
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_land_and_sea
-		}
-		x = 38
-		y = 3
-		
-		completion_reward = {
-			add_tech_bonus = {
-				name = ICE_from_afar
-				bonus = 0.50
-				uses = 2
-				category = rocketry
-				category = jet_technology
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_breakthrough_progress = {
-				specialization = specialization_air
-				value = 0.50
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_ideas = r56_generic_rocket_idea
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-	}
-	focus = {
-		id = ICE_air_doctrine
-		icon = GFX_focus_generic_air_defense
-		cost = 10
-		prerequisite = {
-			focus = ICE_land_and_sea
-		}
-		x = 40
-		y = 3
-		
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = ICE_air_doctrine_tech
-				cost_reduction = 0.5
-				uses = 3
-				category = air_doctrine
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-	}
-	focus = {
-		id = ICE_nav_doc
-		icon = GFX_goal_generic_blue_navy
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_coastguard
-		}
-		x = 42
+		x = 0
 		y = 1
 		
 		completion_reward = {
@@ -2627,16 +1807,19 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 	}
+
 	focus = {
 		id = ICE_build_dock
-		icon = GFX_goal_generic_navy_cruiser
-		cost = 10
+		icon = GFX_goal_generic_expand_the_naval_industry
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}
 		prerequisite = {
 			focus = ICE_coastguard
 		}
+		
+		relative_position_id = ICE_coastguard
 		
 		available = {
 			100 = { CONTROLLER = { tag = ICE } }
@@ -2655,19 +1838,15 @@ focus_tree = {
 			}
 		}
 		
-		x = 45
+		x = 2
 		y = 1
 		
 		completion_reward = {
-			random_core_state = {	
-				limit =	{
-					is_fully_controlled_by = ROOT
-					is_coastal = yes
-				}
+			100 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -2678,13 +1857,15 @@ focus_tree = {
 	focus = {
 		id = ICE_ships
 		icon = GFX_focus_generic_navy_battleship2
-		cost = 10
+		cost = 10.00
 		ai_will_do = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = ICE_build_dock
+			focus = ICE_establish_naval_academy
 		}
+
+		relative_position_id = ICE_coastguard
 		
 		available = {
 			custom_trigger_tooltip = {
@@ -2694,8 +1875,8 @@ focus_tree = {
 			}
 		}
 		
-		x = 43
-		y = 2
+		x = 2
+		y = 3
 		
 		completion_reward = {
 			add_tech_bonus = {
@@ -2711,66 +1892,68 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 	}
+
 	focus = {
-		id = ICE_dockyards_2
-		icon = GFX_goal_generic_construct_naval_dockyard
-		cost = 10
+		id = ICE_establish_naval_academy
+		icon = GFX_goal_generic_naval_academy
+		cost = 10.00
 		ai_will_do = {
 			factor = 3
 		}
 		prerequisite = {
 			focus = ICE_build_dock
 		}
+
+		relative_position_id = ICE_coastguard
 		
-		available = {
-			100 = { CONTROLLER = { tag = ICE } }
-		}
-		
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = construction_effort_tt
-				100 = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-		
-		x = 45
+		x = 2
 		y = 2
 		
 		completion_reward = {
-			random_core_state = {	
-				limit =	{
-					is_fully_controlled_by = ROOT
-					is_coastal = yes
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
+			add_ideas = ICE_navy_academy
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 	}
+
+	focus = {
+		id = ICE_nav_marine_corps
+		icon = GFX_goal_generic_marines2
+		cost = 5
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = { focus = ICE_establish_naval_academy }
+		prerequisite = { focus = ICE_nav_doc }
+
+		relative_position_id = ICE_coastguard
+		
+		x = 0
+		y = 3
+		
+		completion_reward = {
+			add_ideas = ICE_marine_idea
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+
 	focus = {
 		id = ICE_sub
 		icon = GFX_goal_generic_navy_submarine
-		cost = 10
+		cost = 10.00
 		ai_will_do = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = ICE_build_dock
+			focus = ICE_establish_naval_academy
 		}
-		x = 47
-		y = 2
+
+		
+		relative_position_id = ICE_coastguard
+
+		x = 4
+		y = 3
 		
 		completion_reward = {
 			add_tech_bonus = {
@@ -2784,54 +1967,19 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ICE_screen_ships
-		icon = GFX_goal_generic_navy_anti_submarine
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_dockyards_2
-			focus = ICE_sub
-		}
-		x = 46
-		y = 3
-		
-		completion_reward = {
-			add_tech_bonus = {
-				name = ICE_lc_tech
-				bonus = 1
-				uses = 2
-				category = cl_tech
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_tech_bonus = {
-				name = ICE_destroyer_tech
-				bonus = 1
-				uses = 2
-				category = dd_tech
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-	}
-	focus = {
 		id = ICE_fighting_ships
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		cost = 10
+		cost = 10.00
 		ai_will_do = {
 			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_dockyards_2
-			focus = ICE_screen_ships
 		}
 		prerequisite = {
 			focus = ICE_ships
 		}
-		x = 43
+
+		
+		relative_position_id = ICE_coastguard
+		x = 1
 		y = 4
 		
 		completion_reward = {
@@ -2841,9 +1989,6 @@ focus_tree = {
 				uses = 2
 				category = naval_equipment
 			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
 			add_doctrine_cost_reduction = {
 				name = SPR_navy_modernization
 				cost_reduction = 0.5
@@ -2853,488 +1998,285 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
-	focus = {
-		id = ICE_war_manu
-		icon = GFX_goal_generic_trade
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			has_war = yes
-		}
-		prerequisite = {
-			focus = ICE_mil_facs
-		}
-		x = 6
-		y = 5
-		
-		completion_reward = {
-			if = {
-				limit = { 
-					NOT = { has_idea = war_economy }
-					NOT = { has_idea = tot_economic_mobilisation }
-				}
-				add_ideas = war_economy
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = ICE_eng_defences
-		icon = GFX_focus_generic_coastal_fort
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {		
-			focus = ICE_close_eng
-			focus = ICE_guarantees
-			focus = ICE_strong_neutral
-		}
-		
-		available = {
-			NOT = { has_war_with = ENG }
-			100 = { CONTROLLER = { tag = ICE } }
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = ICE_no_neutral_tt
-					NOT = { has_idea = ICE_icelandic_neutrality }
-					NOT = { has_idea = ICE_icelandic_neutrality2 }
-				}
-				gives_military_access_to = ENG
-			}
-		}
-	
-		x = 8
-		y = 5
-		
-		completion_reward = {
-			100 = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 1
-					instant_build = yes
-				}	
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = 12674
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = 4861
-					instant_build = yes
-				}
-			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			1043 = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 1
-					instant_build = yes
-				}			
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = 13331
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = 13325
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = 13332
-					instant_build = yes
-				}
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = ICE_mountain_train
-		icon = GFX_goal_generic_special_forces
-		cost = 10
-		ai_will_do = {
-			factor = 2 
-		}
-		prerequisite = {
-			focus = ICE_eng_defences
-		}
-		
-		available = {
-			NOT = { has_war_with = ENG }
-		}
-		
-		x = 9
-		y = 6
-		
-		completion_reward = {
-			add_ideas = ICE_akureyi
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			ENG = { add_ideas = ICE_akureyi }
-		}
-
-	}
-	focus = {
-		id = ICE_eng_expand_airport
-		icon = GFX_goal_generic_air_production
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_eng_defences
-		}
-		
-		available = {
-			NOT = { has_war_with = ENG }
-			100 = { CONTROLLER = { tag = ICE } }
-		}
-		
-		x = 7
-		y = 6
-		
-		completion_reward = {
-			100 = {
-				add_building_construction = {
-					type = air_base
-					level = 4
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = anti_air_building
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-			
-
-	}
-	focus = {
-		id = ICE_ger_tech
-		icon = GFX_focus_ARG_fascist_researchers
-		cost = 10
-		ai_will_do = {
-			factor = 10
-		}
-		prerequisite = {
-			focus = ICE_ger_coop
-		}
-		x = 20
-		y = 7
-		
-		completion_reward = {
-			if = {
-				limit = { 
-					NOT = {
-						AND = {
-							has_completed_focus = ICE_discoveries
-						}
-					}
-				}
-				add_research_slot = 1
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			if = {
-				limit = { 
-					has_completed_focus = ICE_discoveries
-				}
-				remove_from_tech_sharing_group = DEN_ICE_research_group
-				DEN = { remove_from_tech_sharing_group = DEN_ICE_research_group }
-				add_to_tech_sharing_group = DEN_ICE_research_group2
-				DEN = { add_to_tech_sharing_group = DEN_ICE_research_group2 }
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = ICE_sov_tech
-		icon = GFX_focus_generic_socialist_science
-		cost = 10
-		ai_will_do = {
-			factor = 10
-		}
-		prerequisite = {
-			focus = ICE_join_com
-		}
-		x = 17
-		y = 7
-		
-		completion_reward = {
-			if = {
-				limit = { 
-					NOT = {
-						AND = {
-							has_completed_focus = ICE_discoveries
-						}
-					}
-				}
-				add_research_slot = 1
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			if = {
-				limit = { 
-					has_completed_focus = ICE_discoveries
-				}
-				remove_from_tech_sharing_group = DEN_ICE_research_group
-				DEN = { remove_from_tech_sharing_group = DEN_ICE_research_group }
-				add_to_tech_sharing_group = DEN_ICE_research_group2
-				DEN = { add_to_tech_sharing_group = DEN_ICE_research_group2 }
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-	}
-	focus = {
-		id = ICE_shieldmaidens
-		icon = GFX_goal_generic_defence
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_vikings
-			focus = ICE_fas_youth
-		}
-		x = 23
-		y = 6
-		
-		completion_reward = {
-			add_ideas = ICE_idea_shieldmaidens
-		}
-		search_filters = { FOCUS_FILTER_MANPOWER }
-
-	}
-	focus = {
-		id = ICE_com_kill_oppressors
-		icon = GFX_goal_generic_war_with_comintern
-		cost = 10
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				surrender_progress > 0.05 # We don't need more enemies
-			}
-		}
-		prerequisite = {
-			focus = ICE_join_com
-		}
-		prerequisite = {
-			focus = ICE_break_den
-		}
-		
-		available = {
-			NOT = { has_war_with = DEN }
-			NOT = { is_in_faction_with = DEN }
-			is_subject = no
-		}
-		
-		x = 16
-		y = 6
-		
-		completion_reward = {
-			add_war_support = 0.2
-			add_state_core = 99
-			add_state_core = 964
-			add_state_core = 37
-			add_state_core = 337
-			add_state_core = 101
-			add_state_core = 1025
-			add_state_core = 1024
-			declare_war_on = {
-				target = DEN
-				type = annex_everything
-			}
-		}
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_WAR_SUPPORT }
-
-	}
-	focus = {
-		id = ICE_ally_tech
-		icon = GFX_focus_research2
-		cost = 10
-		ai_will_do = {
-			factor = 10
-		}
-		
-		prerequisite = {
-			focus = ICE_join_allies
-		}
-		prerequisite = {			
-			focus = ICE_usa_airport
-			focus = ICE_eng_defences
-		}
-		x = 12
-		y = 6
-		
-		completion_reward = {
-			if = {
-				limit = { 
-					NOT = {
-						AND = {
-							has_completed_focus = ICE_discoveries
-						}
-					}
-				}
-				add_research_slot = 1
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			if = {
-				limit = { 
-					has_completed_focus = ICE_discoveries
-				}
-				remove_from_tech_sharing_group = DEN_ICE_research_group
-				DEN = { remove_from_tech_sharing_group = DEN_ICE_research_group }
-				add_to_tech_sharing_group = DEN_ICE_research_group2
-				DEN = { add_to_tech_sharing_group = DEN_ICE_research_group2 }
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = ICE_nuke
-		icon = GFX_focus_wonderweapons
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_air_doctrine
-			focus = ICE_expand_rocketry
-		}
-		
-		x = 40
-		y = 5
-		
-		completion_reward = {
-			IF = {
-				limit = {
-					NOT = {
-						has_tech = atomic_research
-					}
-				}
-				add_tech_bonus = {
-					name = ICE_nuke
-					bonus = 1.25
-					uses = 1
-					category = nuclear
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				add_breakthrough_progress = {
-					specialization = specialization_nuclear
-					value = 0.75
-				}
-			}
-			ELSE = {
-				add_breakthrough_progress = {
-					specialization = specialization_nuclear
-					value = 0.95
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-	}
-	focus = {
-		id = ICE_expand_rocketry
-		icon = GFX_focus_rocketry
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = ICE_from_afar
-		}
-		x = 38
-		y = 4
-		
-		completion_reward = {
-			add_tech_bonus = {
-				name = ICE_rocketry1
-				bonus = 1
-				ahead_reduction = 0.75
-				uses = 1
-				category = rocketry
-			}
-			custom_effect_tooltip = ICE_rocket_effort_tt
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_breakthrough_progress = {
-				specialization = specialization_air
-				value = 0.50
-			}
-			hidden_effect = {
-				add_tech_bonus = {
-					name = ICE_rocketry2
-					bonus = 1
-					ahead_reduction = 1
-					uses = 2
-					technology = rocket_artillery
-					technology = rocket_artillery2
-					technology = rocket_artillery3
-					technology = rocket_artillery4
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
 	focus = {
 		id = ICE_anti_sub
 		icon = GFX_goal_generic_wolf_pack
-		cost = 10
+		cost = 10.00
 		ai_will_do = {
 			factor = 1
 		}
 		prerequisite = {
 			focus = ICE_sub
-			focus = ICE_screen_ships
 		}
-		x = 47
+		relative_position_id = ICE_coastguard
+		x = 4
 		y = 4
 		
 		completion_reward = {
+			add_tech_bonus = {
+				name = ICE_lc_tech
+				bonus = 1
+				uses = 1
+				category = cl_tech
+			}
+			add_tech_bonus = {
+				name = ICE_destroyer_tech
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}
+			custom_effect_tooltip = ICE_lineskip
 			add_ideas = ICE_wolf_hunter
 		}
 	}
 	focus = {
 		id = ICE_coast_guard
-		icon = GFX_goal_generic_occupy_states_coastal
-		cost = 10
+		icon = GFX_goal_generic_multiple_ships
+		cost = 10.00
 		ai_will_do = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = ICE_screen_ships
 			focus = ICE_anti_sub
 		}
 		prerequisite = {
-			focus = ICE_dockyards_2
+			focus = ICE_ships
 		}
-		x = 45
+		relative_position_id = ICE_coastguard
+		x = 3
 		y = 5
 		
 		completion_reward = {
-			country_event = SCA_iceland.9
+			custom_effect_tooltip = ICE_merge_everything
+			custom_effect_tooltip = ICE_lineskip
+			add_ideas = ICE_merged_navy_spirit
+		}
+	}
+
+	###############
+	### AIR #######
+	###############
+
+	focus = {
+		id = ICE_airforce
+		icon = GFX_goal_generic_airport
+		cost = 5
+		prerequisite = { focus = ICE_coastguard }
+		relative_position_id = ICE_coastguard
+
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		x = -2
+		y = 1
+		
+		completion_reward = {
+			air_experience = 10
+			100 = { 
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_naval_airforce
+		icon = GFX_goal_naval_treaty
+		cost = 5
+		prerequisite = { focus = ICE_airforce }
+		relative_position_id = ICE_airforce
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		x = 1
+		y = 1
+		
+		completion_reward = {
+			add_ideas = ICE_navy_air_idea
+		}
+	}
+
+	focus = {
+		id = ICE_naval_bomber_development
+		icon = GFX_goal_generic_naval_bombers
+		cost = 10
+		prerequisite = { focus = ICE_naval_airforce }
+		relative_position_id = ICE_airforce
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		x = 1
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = QBC_naval_support_focus
+				bonus = 1
+				uses = 1
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_carrier
+		icon = GFX_goal_generic_aircraft_carrier
+		cost = 5
+		prerequisite = { focus = ICE_naval_bomber_development }
+		prerequisite = { focus = ICE_fighting_ships }
+		relative_position_id = ICE_airforce
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 2
+		y = 4
+		
+		completion_reward = {
+			air_experience = 5
+			navy_experience = 10
+		}
+	}
+
+	focus = {
+		id = ICE_independent_air_branch
+		icon = GFX_goal_ICE_air_patrol
+		cost = 5
+		prerequisite = { focus = ICE_airforce }
+		relative_position_id = ICE_airforce
+
+		mutually_exclusive = { focus = ICE_naval_airforce }
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -1
+		y = 1
+		
+		completion_reward = {
+			add_ideas = ICE_independent_air_idea
+		}
+	}
+
+	focus = {
+		id = ICE_fighter_development
+		icon = GFX_goal_generic_air_fighter2_new
+		cost = 10
+		prerequisite = { focus = ICE_independent_air_branch focus = ICE_naval_airforce }
+		relative_position_id = ICE_airforce
+
+		mutually_exclusive = { focus = ICE_naval_airforce }
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 0
+		y = 2
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_bomber_development
+		icon = GFX_goal_generic_air_bomber_new
+		cost = 10
+		prerequisite = { focus = ICE_independent_air_branch }
+		relative_position_id = ICE_airforce
+
+		mutually_exclusive = { focus = ICE_naval_airforce }
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -2
+		y = 2
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = ICE_bomber_development
+				bonus = 1
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_jet_development
+		icon = GFX_goal_generic_air_jet_new
+		cost = 10
+		prerequisite = { focus = ICE_bomber_development }
+		prerequisite = { focus = ICE_fighter_development }
+		relative_position_id = ICE_airforce
+
+		mutually_exclusive = { focus = ICE_naval_airforce }
+
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		x = -1
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_research
+				bonus = 1
+				uses = 1
+				category = jet_technology
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_radar_development
+		icon = GFX_goal_generic_radar2
+		cost = 5
+		prerequisite = { focus = ICE_airforce }
+		relative_position_id = ICE_airforce
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -3
+		y = 1
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = radar_focus
+				bonus = 1
+				uses = 1
+				category = radar_tech
+			}
 		}
 	}
 }

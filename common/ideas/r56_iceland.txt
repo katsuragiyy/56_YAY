@@ -2,6 +2,227 @@ ideas = {
 	
 	country = {
 
+		ICE_high_unemployement = { 
+			
+			picture = prc_low_popular_support3
+			
+			modifier = {
+				consumer_goods_factor = 0.2
+				political_power_factor = -0.15
+				stability_factor = -0.25
+			}
+		}
+
+		ICE_high_unemployement2 = { 
+			
+			picture = prc_low_popular_support2
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				political_power_factor = -0.075
+				stability_factor = -0.15
+			}
+		}
+
+		ICE_high_unemployement3 = { 
+			
+			picture = prc_low_popular_support1
+			
+			modifier = {
+				consumer_goods_factor = 0.04
+				political_power_factor = -0.05
+				stability_factor = -0.05
+			}
+		}
+
+		ICE_iceland_depression = { 
+			
+			picture = generic_economic_crisis
+			
+			modifier = {
+				production_speed_buildings_factor = -0.2
+				production_factory_efficiency_gain_factor = -0.2
+				industrial_capacity_dockyard = -0.10
+				industrial_capacity_factory = -0.10
+			}
+		}
+		
+		ICE_iceland_depression2 = { 
+			
+			picture = generic_economic_crisis
+			
+			modifier = {
+				production_speed_buildings_factor = -0.175
+				production_factory_efficiency_gain_factor = -0.2
+				industrial_capacity_dockyard = -0.08
+				industrial_capacity_factory = -0.08
+			}
+		}
+		
+		ICE_iceland_depression3 = { 
+			
+			picture = generic_economic_crisis
+			
+			modifier = {
+				production_speed_buildings_factor = -0.125
+				production_factory_efficiency_gain_factor = -0.15
+				industrial_capacity_dockyard = -0.06
+				industrial_capacity_factory = -0.06
+			}
+		}
+
+		ICE_iceland_depression4 = { 
+			
+			picture = generic_economic_crisis
+			
+			modifier = {
+				production_speed_buildings_factor = -0.1
+				production_factory_efficiency_gain_factor = -0.1
+				industrial_capacity_dockyard = -0.04
+				industrial_capacity_factory = -0.04
+			}
+		}
+
+		ICE_iceland_depression5 = { 
+			
+			picture = generic_economic_crisis
+			
+			modifier = {
+				production_speed_buildings_factor = -0.075
+				production_factory_efficiency_gain_factor = -0.05
+				industrial_capacity_dockyard = -0.02
+				industrial_capacity_factory = -0.02
+			}
+		}
+
+		ICE_iceland_depression6 = { 
+			
+			picture = generic_economic_crisis
+			
+			modifier = {
+				production_speed_buildings_factor = -0.02
+				production_factory_efficiency_gain_factor = -0.05
+			}
+		}
+
+		ICE_shattered_exports = { 
+			
+			picture = great_depression
+			
+			modifier = {
+				industrial_capacity_factory = -0.20
+				consumer_goods_factor = 0.2
+			}
+		}
+
+		ICE_fisher_farmers = { 
+			
+			picture = great_depression
+			
+			modifier = {
+				global_building_slots_factor = 0.1
+				monthly_population = 0.15
+			}
+		}
+
+		ICE_local_extraction = { 
+			
+			picture = great_depression
+			
+			modifier = {
+				local_resources_factor = 0.1
+			}
+		}
+
+
+
+		ICE_funding_a_military = { 
+			
+			picture = generic_economic_crisis
+			
+			modifier = {
+				industrial_capacity_factory = -0.10
+				consumer_goods_factor = 0.15
+				production_speed_buildings_factor = -0.05
+			}
+		}
+
+		ICE_army_recruitment = { 
+			
+			picture = generic_economic_crisis
+			
+			modifier = {
+				weekly_manpower = 200
+				mobilization_speed = 0.25
+			}
+		}
+
+		ICE_civilian_focus = { 
+			
+			picture = generic_economic_crisis
+			
+			modifier = {
+				industrial_capacity_factory = -0.15
+				production_speed_buildings_factor = 0.25
+				production_speed_arms_factory_factor = -0.5 
+			}
+		}
+
+		ICE_overlord_aid = { 
+			
+			picture = generic_economic_crisis
+			
+			modifier = {
+				cic_to_overlord_factor = 0.1
+				mic_to_overlord_factor = 0.25
+				extra_trade_to_overlord_factor = 0.25
+			}
+		}
+
+		ICE_trading = { 
+			
+			picture = generic_economic_crisis
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				political_power_factor = 0.15
+			}
+		}
+
+		ICE_fortifications = { 
+			
+			picture = generic_economic_crisis
+			
+			modifier = {
+				production_speed_bunker_factor = 0.1
+				production_speed_coastal_bunker_factor = 0.1
+			}
+		}
+
+		ICE_rifle_production = {
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+			}
+		}
+
+		ICE_convoy_production = {
+			equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.35 
+					instant = yes
+				}
+			}
+			modifier = {
+				production_speed_dockyard_factor = 0.05
+				industrial_capacity_dockyard = -0.2
+				industrial_capacity_factory = -0.15
+				production_speed_buildings_factor = 0.25
+				production_speed_arms_factory_factor = -0.5 
+			}
+		}
+
 		ICE_futile_resistance = { #idea to stop AI ICE from joining axis
 			
 			picture = generic_disjointed_gov
@@ -70,72 +291,59 @@ ideas = {
 			picture = can_patriation
 			
 			modifier = {
-				autonomy_gain = 0.4
+				autonomy_gain = 0.5
+				stability_weekly = -0.002
+				drift_defence_factor = -0.5
+				democratic_drift = -0.15
 			}
 		}
+
 		ICE_disloyal_democratic = {
 			
 			picture = can_patriation
-
-			cancel = {
-				is_subject = no
-			}
 			
 			modifier = {
-				autonomy_gain = 0.4
-				democratic_drift = 0.1
+				autonomy_gain = 0.5
+				stability_weekly = -0.002
+				drift_defence_factor = -0.25
+				democratic_drift = -0.1
 			}
 		}
+
 		ICE_disloyal_democratic2 = {
 			
 			picture = can_patriation
-
-			cancel = {
-				is_subject = no
-			}
 			
 			modifier = {
-				autonomy_gain = 0.6
-				democratic_drift = 0.2
+				autonomy_gain = 0.5
+				stability_weekly = -0.001
+				drift_defence_factor = -0.5
 			}
 		}
+
 		ICE_disloyal_communism = {
 			
 			picture = can_patriation
-
-			cancel = {
-				is_subject = no
-			}
 			
 			modifier = {
-				autonomy_gain = 0.4
-				communism_drift = 0.1
+				autonomy_gain = 0.5
+				stability_weekly = -0.001
+				drift_defence_factor = -0.5
+				communism_drift = 0.05
+				democratic_drift = -0.15
 			}
 		}
-		ICE_disloyal_communism2 = {
-			
-			picture = can_patriation
 
-			cancel = {
-				is_subject = no
-			}
-			
-			modifier = {
-				autonomy_gain = 0.6
-				communism_drift = 0.2
-			}
-		}
 		ICE_disloyal_fascism = {
 			
 			picture = can_patriation
-
-			cancel = {
-				is_subject = no
-			}
 			
 			modifier = {
-				autonomy_gain = 0.6
-				fascism_drift = 0.10
+				autonomy_gain = 0.5
+				stability_weekly = -0.001
+				drift_defence_factor = -0.5
+				democratic_drift = -0.15
+				fascism_drift = 0.05
 			}
 		}
 		
@@ -392,6 +600,72 @@ ideas = {
 			}
 		}
 		
+		ICE_independent_air_idea = {
+		
+			picture = generic_army_war_college #generic_special_forces - didnt exist
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				experience_gain_air = 0.05
+				air_range_factor = 0.05
+				air_night_penalty = -0.05
+				air_intercept_efficiency = 0.05			
+			}
+		}
+
+		ICE_navy_air_idea = {
+		
+			picture = generic_army_war_college #generic_special_forces - didnt exist
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				experience_gain_air = 0.03
+				experience_gain_navy = 0.03	
+				navy_weather_penalty = -0.025	
+				air_nav_efficiency = 0.10	
+			}
+		}
+
+		ICE_navy_academy = {
+		
+			picture = generic_army_war_college #generic_special_forces - didnt exist
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				navy_leader_cost_factor = -0.25
+				navy_org_factor = 0.1
+			}
+		}
+
+		ICE_marine_idea = {
+		
+			picture = generic_army_war_college #generic_special_forces - didnt exist
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				extra_marine_supply_grace = 36
+				marines_special_forces_contribution_factor = -0.25
+				invasion_preparation = -0.2				
+			}
+		}
+######################
+
+
+
+
+
 		ICE_home_defense = {
 			
 			picture = YUG_federal_defense_council
@@ -674,31 +948,44 @@ ideas = {
 					sub_detection = 0.1
 				}
 				screen_ship = {
-					sub_detection = 0.25
+					sub_detection = 0.1
+				}
+				submarine = {
+					sub_visibility = -0.05 surface_visibility = -0.05
+				}
+			}
+		}				
+
+		ICE_merged_navy_spirit = {
+			
+			picture = generic_navy_bonus #generic_wolf_pack - didnt exist
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				navy_leader_cost_factor = -0.5
+				navy_leader_start_level = 1  
+				navy_org_factor = 0.1
+				naval_coordination = 0.1
+			}
+			
+			equipment_bonus = {
+				carrier = {
+					sub_detection = 0.1
+				}
+				capital_ship = {
+					sub_detection = 0.1
+				}
+				screen_ship = {
+					sub_detection = 0.1
 				}
 				submarine = {
 					sub_visibility = -0.1 surface_visibility = -0.1
 				}
 			}
-		}
-		ICE_geothermic_banana_production = { # started in 1941, truly hit the market in 1945
 			
-			picture = banana_republic
-			
-			allowed = {
-				original_tag = ICE
-				always = no
-			}
-
-			allowed_civil_war = {
-
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				consumer_goods_factor = -0.05
-			}
 		}
 	}
 	
@@ -715,7 +1002,7 @@ ideas = {
 			}
 			
 			available = {
-				has_completed_focus = ICE_create_ifv
+			#	has_completed_focus = ICE_create_ifv
 			}
 			
 			research_bonus = {

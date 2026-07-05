@@ -14,7 +14,7 @@ characters={
 			expire="1965.1.1"
 			id=-1
 			traits={
-				r56_trait_opposed_to_fascism
+				ICE_hot_tempered_reformer #DLC trait, idk if I can keep it for non-dlc
 			}				
 		}
 		advisor={ #He was more than just the Prime Minister.
@@ -56,6 +56,19 @@ characters={
 					ICE_has_fascist_ai = yes
 				}
 			}
+		}
+	}
+	ICE_jon_baldvinsson={
+		name=ICE_jon_baldvinsson
+		portraits={
+			civilian={
+				large="gfx/leaders/kr_generic/Portrait_Europe_Generic_new_12.dds"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			expire="1965.1.1"
+			id=-1			
 		}
 	}
 	ICE_gisli_sigurbjornsson={
@@ -142,16 +155,15 @@ characters={
 			}
 		}
 	}
-	ICE_jon_baldvinsson={
-		name=ICE_jon_baldvinsson
+	ICE_jon_thorlaksson={
+		name=ICE_jon_thorlaksson
 		portraits={
 			civilian={
-				large = GFX_kr_portrait_europe_generic_12
-				small = GFX_kr_portrait_europe_generic_12_small
+				large="gfx/leaders/kr_generic/Portrait_Europe_Generic_new_11.dds"
 			}
 		}
 		country_leader={
-			ideology= social_nationalism
+			ideology=conservatism_n
 			expire="1965.1.1"
 			id=-1			
 		}
@@ -210,8 +222,7 @@ characters={
 		name=ICE_tryggvi_porhallsson
 		portraits={
 			civilian={
-				large = GFX_kr_portrait_europe_generic_6
-				small = GFX_kr_portrait_europe_generic_6_small
+				large="gfx/leaders/kr_generic/Portrait_Europe_Generic_new_6.dds"
 			}
 		}
 		country_leader={
@@ -297,6 +308,10 @@ characters={
 			idea_token = ICE_einar_olgeirsson_r56
 			allowed={
 				original_tag = ICE
+				OR = {
+					has_completed_focus = ICE_legacy_of_guttoslagurinn
+					has_government = communism
+				}
 			}
 			visible = {
 				NOT = {
@@ -304,7 +319,7 @@ characters={
 				}
 			}
 			traits={
-				communist_revolutionary
+				ICE_trade_unionist
 			}
 			do_effect = {
 				NOT = {
@@ -359,6 +374,7 @@ characters={
 			idea_token = ICE_eidur_kvaran
 			allowed={
 				original_tag = ICE
+				has_completed_focus = ICE_release_the_persecuted_nationalists
 			}
 			visible = {
 				NOT = {
@@ -378,6 +394,51 @@ characters={
 			}
 		}
 	}
+
+	ICE_isleifur_hognason = {
+		name = ICE_isleifur_hognason
+		portraits = {
+			civilian = {
+				small = GFX_portrait_ICE_isleifur_hognason_small
+			}
+
+		}		
+		
+		advisor = {
+			cost = 150
+			slot = political_advisor
+			idea_token = ICE_isleifur_hognason
+			allowed = {
+				original_tag = ICE
+			}
+			available = {
+				OR = {
+					has_government = communism
+					if = {
+						limit = {
+							has_global_flag = ICE_use_DLC_tree
+						}
+						has_completed_focus = ICE_political_unity
+					}
+					else = {
+						has_completed_focus = ICE_legacy_of_guttoslagurinn
+					}
+				}
+			}
+			visible = {
+			
+			}
+			traits = {
+				communist_revolutionary
+			}
+			ai_will_do = {
+				base = 1.0
+			}
+		}
+		
+		
+	}
+
 	ICE_bjorn_olafsson_r56={
 		name=ICE_bjorn_olafsson
 		portraits={
@@ -655,7 +716,7 @@ characters={
 			}
 		}
 		advisor={
-			slot = high_command	#changed from chief since he lacks XP gain
+			slot = air_chief
 			idea_token = ICE_borsteinn_jonsson
 			allowed={
 				original_tag = ICE
@@ -694,8 +755,9 @@ characters={
 			}
 		}
 		advisor={
-			slot = navy_chief
+			slot = high_command
 			idea_token = ICE_thor_jensen
+			ledger = navy
 			allowed={
 				original_tag = ICE
 			}
@@ -943,46 +1005,7 @@ characters={
 		
 		
 	}
-	ICE_isleifur_hognason = {
-		name = ICE_isleifur_hognason
-		portraits = {
-			civilian = {
-				small = GFX_portrait_ICE_isleifur_hognason_small
-			}
 
-		}		
-		
-		advisor = {
-			cost = 150
-			slot = political_advisor
-			idea_token = ICE_isleifur_hognason
-			allowed = {
-				original_tag = ICE
-			}
-			available = {
-				OR = {
-					has_government = communism
-					if = {
-						limit = {
-							has_global_flag = ICE_use_DLC_tree
-						}
-						has_completed_focus = ICE_political_unity
-					}
-				}
-			}
-			visible = {
-			
-			}
-			traits = {
-				ICE_trade_unionist
-			}
-			ai_will_do = {
-				base = 1.0
-			}
-		}
-		
-		
-	}
 	ICE_olaf_j_thorlacius = {
 		name = ICE_olaf_j_thorlacius
 		portraits = {

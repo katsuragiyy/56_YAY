@@ -1,5 +1,18 @@
 ﻿l_english:
  Iceland_focus:0 "Icelandic Focus Tree"
+
+ #STARTING IDEAS
+ ICE_christian_x_r56:0 "King Kristján X"
+ ICE_christian_x_r56_desc:0 "Kristján X, despite being our first monarch, is a reminder of the constant Danish oversight over our land. This makes him popular with unionists whilst making him extremely unpopular amongst republicans."
+ ICE_high_unemployement:0 "High Unemployement"
+ ICE_high_unemployement_desc:0 ""
+ ICE_iceland_depression:0 "The Great Depression"
+ ICE_iceland_depression_desc:0 "The economy of [ICE.GetNameDef] is still incredibly dependent on foreign export of mostly fishing-related goods. When the economic crisis hit the continent, the countries of the world were importing way less goods from [ICE.GetNameDef]\n\nIf we are to recover from this crisis, we are in a dire need to §Ydiversify the economy§!!"
+
+
+
+
+
  #FOCUS
  ICE_new_industry_tech:0 "New Industry"
  ICE_refineries:0 "Synthetic Experiments"
@@ -181,7 +194,7 @@
  ICE_land_and_sea:0 "Land and Sea"
  ICE_air_doctrine:0 "Establish Consistent Air Doctrine"
  ICE_air_doctrine_desc:0 "[ICE.GetNameDefCap] has only recently gotten involved in the war for the sky, but we already realize that our lack of vision hurts us. If we wish to rule the skies, we need to codify our aerial practices."
- ICE_build_dock:0 "Build True Dockyards"
+ ICE_build_dock:0 "Develop New Dockyards"
  ICE_build_dock_desc:0 "While [ICE.GetNameDef] has some small dockyards, it does not have dockyards comparable to other countries. If we wish to build ships of appreciable size, we need to build up an actual dockyard."
  ICE_dockyards_2:0 "Expand the Dockyards"
  ICE_dockyards_2_desc:0 "Our new dockyards have finally been finished, and we can finally begin building up our coast guard's fleet. Now we just need to expand them."
@@ -205,7 +218,7 @@
  ICE_anti_sub_desc:0 "Submarines threaten our existence by preying on our essential trading and fishing vessels. It is time that we taught these "wolfpacks" who the real top dog is."
  ICE_fighting_ships:0 "Fighting Ships"
  ICE_fighting_ships_desc:0 "[ICE.GetNameDefCap] must be able to defend itself from all who would do it harm. We must grant our coast guard ships large enough to protect us."
- ICE_coast_guard:0 "[ICE.GetNameDefCap]'s Navy"
+ ICE_coast_guard:0 "Repurpose the [ICE.GetAdjective] Coast Guard"
  ICE_coast_guard_desc:0 "[ICE.GetNameDefCap]'s coast guard is not a navy in the full sense of the word. They protect our shores and our skies, but their job has remained that of a protective guard force. It is time that we decide if they are a guard force or indeed the navy and air force of [ICE.GetNameDef]."
  ICE_steel_mill:0 "[ICE.GetAdjective] Steel Mill"
  ICE_steel_mill_desc:0 "Iceland has not had the infrastructure or technology to develop a proper steel mill. Now that we have that infrastructure and technology, we must use it."
@@ -213,7 +226,9 @@
  ICE_discoveries_desc:0 "Iceland has spent many years behind other countries when it comes to building large, modern facilities. However, our research into new building techniques and methods has prompted breakthroughs throughout our country."
 
  #IDEAS
-
+ r56_national_defence_forces:0 "National Defence Forces"
+ r56_national_defence_forces_desc:0 ""
+ 
  ICE_disloyal:0 "Disloyal Subject"
  ICE_disloyal_desc:0 "This country wishes to free itself from its overlord, although not necessarily immediately."
  ICE_disloyal_democratic:0 "Disloyal Subject"
@@ -224,13 +239,15 @@
  ICE_disloyal_communism_desc:0 "This country wishes to free itself from its overlord. They are promoting the idea of workers' rights and freedom from oppressors to promote this goal."
  ICE_disloyal_communism2:0 "Disloyal Subject"
  ICE_disloyal_communism2_desc:0 "This country wishes to free itself from its overlord. They are promoting the idea of workers' rights and freedom from oppressors to promote this goal."
- ICE_disloyal_fascism:0 "Disloyal Subject"
+ ICE_disloyal_fascism:0 "Nationalist Agitation"
  ICE_disloyal_fascism_desc:0 "This country wishes to free itself from its overlord. Nationalism and ideas of supremacy have become staples in the national debate, with some protests even turning violent."
- ICE_disloyal_fascism2:0 "Disloyal Subject"
+ ICE_disloyal_fascism2:0 "Nationalist Agitation"
  ICE_disloyal_fascism2_desc:0 "This country wishes to free itself from its overlord. Nationalism and ideas of supremacy have become staples in the national debate, with some protests even turning violent."
+ ICE_disloyal_fascism3:0 "Nationalist Agitation"
+ ICE_disloyal_fascism3_desc:0 "This country wishes to free itself from its overlord. Nationalism and ideas of supremacy have become staples in the national debate, with some protests even turning violent."
 
-#  ICE_christian_x:0 "Christian X" # same as vanilla
-#  ICE_christian_x_desc:0 "Despite his controversial status in Denmark and Iceland's growing desire for freedom, Christian X remains one of the most popular Danish monarchs in modern Icelandic history." # moved to replace
+ ICE_christian_x:0 "Christian X"
+ ICE_christian_x_desc:0 "Despite his controversial status in Denmark and Iceland's growing desire for freedom, Christian X remains one of the most popular Danish monarchs in modern Icelandic history."
 
  ICE_internal_conflicts:0 "Intra-Party Conflicts"
  ICE_internal_conflicts_desc:0 "Although the ruling party displays a strong front to its enemies, it is weakened by internal in-fighting and disagreements."
@@ -291,11 +308,10 @@
 
  ICE_wolf_hunter:0 "Wolf Hunters"
 
- ICE_geothermic_banana_production:0 "Geothermic Banana Production"
- ICE_geothermic_banana_production_desc:0 "The availability of geothermic source thanks to the volcanism of our island shoudl allow us to introduce the right conditions to produce a moderate amount of tropical fruits, especially bananas, and reduce our dependence on imports."
-
-#  ICE_magnus_jonsson:0 "Magnús Jónsson" # moved to replace
+ ICE_magnus_jonsson:0 "Magnús Jónsson"
+ ICE_einar_olgeirsson:0 "Einar Olgeirsson"
  ICE_stefan_stefansson:0 "Stefán Stefánsson"
+ ICE_bjorn_olafsson:0 "Björn Ólafsson"
  ICE_olafur_johannesson:0 "Ólafur Jóhannesson"
  ICE_eidur_kvaran:0 "Eiður Kvaran"
  ICE_bjorn_bordarson:0 "Björn Þórðarson"
@@ -306,19 +322,26 @@
  ICE_richard_thors:0 "Richard Thors"
  ICE_johannes_snorrason:0 "Jóhannes Snorrason"
  ICE_erling_ellingsen:0 "Erling Ellingsen"
+ ICE_olafur_thors:0 "Ólafur Thors"
  ICE_thor_jensen:0 "Thor Jensen"
  ICE_IFV:0 "Ísland Fyrstu Vopnin"
  ICE_kveldulfur:0 "Kveldúlfur"
  ICE_KEA:0 "KEA"
+ ICE_eimskip:0 "Eimskip"
  ICE_skeljung:0 "Skeljung Oil Company"
  ICE_siminn:0 "Síminn"
  ICE_flugfelag_akureyrar:0 "Flugfélag Akureyrar"
-#  ICE_eysteinn_jonsson:0 "Eysteinn Jónsson" # moved to replace
+ ICE_eysteinn_jonsson:0 "Eysteinn Jónsson"
  ICE_asgeir_asgeirsson:0 "Ásgeir Ásgeirsson"
 
  #LEADERS
+ ICE_hermann_jonasson:0 "Hermann Jónasson"
+ ICE_gisli_sigurbjornsson:0 "Gísli Sigurbjörnsson"
+ ICE_brynjolfur_bjarnason:0 "Brynjólfur Bjarnason"
  ICE_jon_baldvinsson:0 "Jón Baldvinsson"
+ ICE_sveinn_bjornsson:0 "Sveinn Björnsson"
  ICE_tryggvi_porhallsson:0 "Tryggvi Þórhallsson"
+ ICE_jon_thorlaksson:0 "Jón Þorláksson"
 
  #EVENTS
  ICE_combined_arms:0 "On Air and Sea"
@@ -404,3 +427,173 @@
  #MISC
  ICE_elite_infantry:0 "Yfirstétt Fótgöngulið"
  ICE_futile_resistance:0 "Futile Resistance"
+
+
+
+ ############################################################
+ ############################################################
+ ############## NEW ICELANDIC FOCUS TREE ####################
+ ############################################################
+ ############################################################
+
+
+ ###POLITICAL TREE
+ #Monarchist
+ ICE_closer_ties_with_denmark:0 "Closer Ties with [DEN.GetNameDef]"
+ ICE_closer_ties_with_denmark_desc:0 ""
+
+ #Republican
+ ICE_defy_denmark:0 "Oppose Danish Domination"
+ ICE_defy_denmark_desc:0 ""
+
+ ###########
+ #Communist#
+ ###########
+ ICE_legacy_of_guttoslagurinn:0 "Legacy of the Gúttóslagurinn"
+ ICE_legacy_of_guttoslagurinn_desc:0 ""
+ ICE_release_the_persecuted_nationalists:0 ""
+ ICE_release_the_persecuted_nationalists_desc:0 ""
+
+ #ARMY TREE
+ ICE_winter_equipment:0 "Develop Winter Equipment"
+ ICE_winter_equipment_desc:0 "Due to the harsh nordic climate it is obviously imperative that we outfit our soldiers with appropriate winter uniforms and training."
+ ICE_weapon_production:0 "Encourage Local Arms Production"
+ ICE_weapon_production_desc:0 "With the development of our independent armed forces comes the issue of equipment. Though some advises relying on foreign equipment, we have decided to produce our own."
+ ICE_weapon_research:0 "Expand Weapons Research"
+ ICE_weapon_research_desc:0 "With growing global tensions and the ever-present threat of conflict, the National Defence Forces must develop more effective arms to protect Iceland's sovereignity"
+ ICE_recruitment_initiatives:0 "Recruitment Initiatives"
+ ICE_recruitment_initiatives_desc:0 "We must expend incentives and benefits for those who wish to join the Icelandic army"
+ ICE_expand_doctrines:0 "Develop Local Doctrine"
+ ICE_expand_doctrines_desc:0 ""
+ ICE_motorized_research:0 "Motorized Development"
+ ICE_motorized_research_desc:0 ""
+ ICE_armor_research:0 "The Future of Warfare"
+ ICE_armor_research_desc:0 ""
+ ICE_reshuffle_high_command:0 "Reshuffle High Command"
+ ICE_reshuffle_high_command_desc:0 ""
+ ICE_expand_the_national_police:0 "Expand the National Police"
+ ICE_expand_the_national_police_desc:0 ""
+ ICE_effective_army_focus:0 "Strength in Might"
+ ICE_effective_army_focus_desc:0 ""
+ ICE_special_forces_army:0 "Specialize the Army"
+ ICE_special_forces_army_desc:0 "The situation of [ICE.GetNameDef] is unique. We now have the capacity to form a strong military yet we should look toward specializing our military forces."
+ ICE_conventional_army:0 "Conventional Armed Forces"
+ ICE_conventional_army_desc:0 ""
+ ICE_large_guns:0 "Focus on Artillery"
+ ICE_large_guns_desc:0 ""
+ ICE_expansive_army_focus:0 "Expand Conscription"
+ ICE_expansive_army_focus_desc:0 "If we wish to even stand a chance at defending our homeland we don't need fewer very well-trained soldiers we need more appropriately trained troops."
+ ICE_ensure_cohesion:0 "Ensure Cohesion"
+ ICE_ensure_cohesion_desc:0 ""
+ ICE_modernized_army:0 "Modernized Army"
+ ICE_modernized_army_desc:0 "Through extensive reforms and tough compromises, we managed to turn our small island's defence force into a real modern military!"
+ ICE_utilise_the_terrain:0 "Utilize the Terrain"
+ ICE_utilise_the_terrain_desc:0 ""
+
+ #navy tree
+ ICE_nav_marine_corps:0 "Form Specialized Marine Corps"
+ ICE_nav_marine_corps_desc:0 "[ICE.GetNameDef] is fully surrounded by water with no land borders whatsoever. In the event of war it would be impossible to reach our enemies without landing on their shores. As such, training marines especially to facilitate coastal breakthroughs will greatly facilitate this task."
+ ICE_establish_naval_academy:0 "Establish a Naval Academy"
+ ICE_establish_naval_academy_desc:0 ""
+ ICE_naval_bomber_development:0 "Naval Bomber Development"
+ ICE_naval_bomber_development_desc:0 ""
+
+ #air tree
+ ICE_airforce:0 "The [ICE.GetName] Air Force "
+ ICE_airforce_desc:0 ""
+ ICE_naval_airforce:0 "The Airforce Serves the Navy"
+ ICE_naval_airforce_desc:0 ""
+ ICE_independent_air_branch:0 "Form an Independent Air Council"
+ ICE_independent_air_branch_desc:0 ""
+ ICE_radar_development:0 "Radar Development"
+ ICE_radar_development_desc:0 ""
+ ICE_fighter_development:0 "Fighter Development"
+ ICE_fighter_development_desc:0 ""
+ ICE_bomber_development:0 "Bomber Development"
+ ICE_bomber_development_desc:0 ""
+ ICE_jet_development:0 "The Future of Aircrafts"
+ ICE_jet_development_desc:0 ""
+
+ #peaceful mini-tree
+ ICE_establish_merchant_marine:0 "Demilitarize the Naval Industry"
+ ICE_establish_merchant_marine_desc:0 ""
+ ICE_permanent_neutrality:0 "Permanent Neutrality"
+ ICE_permanent_neutrality_desc:0 ""
+ ICE_aid_denmark:0 "Contribute to the Danish Economy"
+ ICE_aid_denmark_desc:0 ""
+ ICE_focus_on_civ_sector:0 "Focus on the Civilian Sector"
+ ICE_focus_on_civ_sector_desc:0 ""
+ ICE_fortify_the_land:0 "Fortify the Land"
+ ICE_fortify_the_land_desc:0 ""
+ ICE_global_trade:0 "International Trade"
+ ICE_global_trade_desc:0 ""
+
+ #TOOLTIPS
+ ICE_winter_supplies_attrition_tt:0 "$ICE_modify_national_defence_forces$ \nWinter Attrition: §G-15%§!\n\n"
+ ICE_more_manpower_tt:0 "$ICE_modify_national_defence_forces$ \nRecruitable Population: §Y+1.00%§!\nMobilization Speed: §G+5%§!\n\n"
+ ICE_more_mp2_tt:0 "$ICE_modify_national_defence_forces$ \nRecruitable Population: §Y+2.50%§!\nPlanning Speed Factor: §G+10%§!\nDivision Training Time: §G-10%§!\n\n"
+ ICE_land_doctrine_reduction_tt:0 "$ICE_modify_national_defence_forces$ \nLand Doctrine Cost: §G-10%§!\n\n"
+ ICE_high_command_tt:0 "$ICE_modify_national_defence_forces$ \nArmy Experience Gain: §G10%§!\nMilitary Leader Cost: §G-25%§! \nMaximum Command Power Increase: §G+40§!\n\n"
+ ICE_cohesion_tt:0 "$ICE_modify_national_defence_forces$ \nDivision Organization: §G+10%§! \nDivision Recovery Rate: §G+10%§!\n\n"
+ ICE_modern_army_tt:0 "$ICE_modify_national_defence_forces$ \nEntrenchment Speed: §G+10%§! \nDivision Organization: §G+5%§! \nDivision Recovery Rate: §G+5%§!\n\n"
+ ICE_effective_army_tt:0 "$ICE_modify_national_defence_forces$ \nDivision Attack: §G+5%§! \nDivision Defence: §G+5%§! \nDivision Training Time: §R+10%§!\n\n"
+ ICE_special_forces_tt:0 "$ICE_modify_national_defence_forces$ \nSpecial Forces Capacity Multiplier: §G+25%§! \nSpecial Forces Attack: §G+10%§! \nSpecial Forces Defense: §G+10%§!\n\n"
+ ICE_inf_conventional_tt:0 "$ICE_modify_national_defence_forces$ \nInfantry Division Attack: §G+5%§! \nInfantry Division Defense: §G+5%§!\n\n"
+ ICE_large_guns_tt:0 "$ICE_modify_national_defence_forces$ \nArtillery Attack: §G+15%§! \nArtillery Defense: §G+15%§!\n\n"
+ ICE_attrition_factor_tt:0 "$ICE_modify_national_defence_forces$ \nDivision Attrition: §G-10%§!\n\n"
+
+ ICE_modify_national_defence_forces:0 "Modify §YThe National Defence Forces§! by"
+ #ARMY IDEAS
+ ICE_rifle_production:0 "Small Arms Production"
+ ICE_army_recruitment:0 "Army Recruitment"
+ ICE_funding_a_military:0 "Funding the Army"
+ ICE_overlord_aid:0 "Aiding the Danish Economy"
+ ICE_civilian_focus:0 "Demilitarization of Industry"
+ ICE_convoy_production:0 "Demilitarization of Industry"
+ ICE_fortifications:0 "Expanded Fortifications"
+ ICE_trading:0 "Expanded Trade"
+ ICE_marine_idea:0 "The [ICE.GetAdjectiveCap] Marines Corps"
+ ICE_independent_air_idea:0 "Independent Air Command"
+ ICE_navy_air_idea:0 "Joint Navy-Airforce Command"
+ ICE_navy_academy:0 "Reykjavík Naval Academy"
+
+ #ECONOMY TREE
+ ICE_regulate_imports:0 "Regulate Imports"
+ ICE_regulate_imports_desc:0 ""
+ ICE_expand_industrial_machinery:0 "Expand Industrial Machinery"
+ ICE_expand_industrial_machinery_desc:0 ""
+ ICE_generic_manufacturies:0 "Establish Manufacturies"
+ ICE_generic_manufacturies_desc:0 ""
+ ICE_resource_extraction:0 "Develop Local Resources"
+ ICE_resource_extraction_desc:0 ""
+ ICE_bolster_fishers_farmers:0 "Distribute Farmland to Fishermen"
+ ICE_bolster_fishers_farmers_desc:0 ""
+
+ #ECONOMY IDEAS
+ ICE_iceland_depression2:0 "The Great Depression"
+ ICE_iceland_depression3:0 "Stagnation"
+ ICE_iceland_depression4:0 "Emerging Recovery"
+ ICE_iceland_depression5:0 "Emerging Recovery"
+ ICE_iceland_depression6:0 "Emerging Recovery"
+ ICE_shattered_exports:0 "Shattered Exports"
+ ICE_fisher_farmers:0 "Bolstered Fisher-Farmers"
+ ICE_local_extraction:0 "Local Resource Extraction"
+ #ECONOMY DECISIONS
+ ICE_economical_recovery:0 "Icelandic Economy"
+ ICE_expand_interventionist_measures:0 "Expand interventionist Measures"
+ ICE_encourage_rural_life:0"Encourage Rural Relocalisation"
+ ICE_monopolize_foreign_currency_exchange:0 "Monoolize Foreign Currency Exchange"
+
+
+ #TOOLTIPS
+ ICE_scw_economy:0 "The §YSpanish Civil War§! has §RImpacted our Economy!§!"
+ ICE_economical_shock_tt:0 "Unlocks §YIcelandic Economy§! Decision Category"
+ ICE_economical_shock_tt2:0 "§RMake event for every political pathes economic direction for larp :)§! \n\nUnlocks §YIcelandic Economy§! Decisions"
+ ICE_ecomnoer:0 " §YEconomic Recovery§! measures are already §YIn Progress§!"
+ ICE_recovered_tt:0 "We §Yhaven't recovered§! from the §RGreat Depression§!"
+ ICE_unemployment_tt:0 "\nUnlocks §YExpand Public Work Program§! decision"
+ ICE_lineskip:0 " \n"
+ ICE_political_path:0 "We have §Ychosen§! our §YPolitical Direction§!"
+ ICE_merge_everything:0 "§YThis Focus will merge our National Spirits into a stronger one§!"
+ ICE_path_dependent:0 "The effect of this focus will §Ychange depending on the path chosen§!."
+ ICE_ww2:0 "War has begun in Europe"
