@@ -9,7 +9,7 @@ characters={
 		# Sat-Churmit Dazhy (president of the council of ministers), et le président du Præsidium du Petit Khoural (le parlement du pays), Adyg-Tyulyush Khemchik-ool. both executed in 1938. Could be ad hoc democratic and maybe non-aligned leaders.
 
 	TAN_salchak_toka={
-		name="TAN_salchak_toka"
+		name=TAN_salchak_toka
 		portraits={
 			civilian={
 				large="gfx/leaders/TAN/r56_portrait_TAN_Salchak_Toka.dds"
@@ -18,13 +18,13 @@ characters={
 		}
 		country_leader={
 			ideology=stalinism
+			desc = TAN_salchak_toka_leader_desc # R56
 			expire="1965.1.1"
 			id=-1
 			traits = {
 				savvy_politician
 				#staunch_stalinist Removed out of concern for focus tree balance
 			}
-			desc = TAN_salchak_toka_desc
 		}
 		field_marshal = { #only good choices -> found better?
 			visible = {
@@ -269,22 +269,29 @@ characters={
 	}
 	
 	TAN_kamby_lama={
-		name = TAN_kamby_lama
+		name="TAN_kamby_lama"
 		portraits={
 			civilian={
 				small = GFX_kr_portrait_central_asia_generic_1_small
 			}
 		}
-
-		advisor={
+		advisor = {
 			slot = political_advisor
-			idea_token = TAN_kamby_lama
-			allowed  = { original_tag = TAN }
 			cost = 250
-			available = { NOT = { has_government = communism } }
-			visible = { OR = { has_completed_focus = TAN_tuvan_nationalism has_completed_focus = TAN_restore_monastic_prerogatives } }
+			idea_token = TAN_kamby_lama
 			traits = {
 				kamby_lama
+			}
+			available = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			visible = {
+				OR = {
+					has_completed_focus = TAN_tuvan_nationalism
+					has_completed_focus = TAN_restore_monastic_prerogatives
+				}
 			}
 		}
 	}
@@ -697,25 +704,46 @@ characters={
 	}
 	
 	TAN_mongush_lopsan_chimit={
-		name="TAN_mongush_lopsan_chimit"
-		portraits={
-			army={
-				small=GFX_idea_TAN_advisor_mongush_lopsan_chimit
-			}
-		}
 		advisor={
 			slot = political_advisor
-			idea_token = TAN_mongush_lopsan_chimit_idea
+			idea_token = TAN_mongush_lopsan_chimit
 			allowed  = {
 				original_tag  = TAN
-			}
-			visible = {
-				has_completed_focus = TAN_rehabilitate_pre_revolutionary_practices
 			}
 			traits  = {
 				staunch_traditionalist
 			}
+			do_effect  = {
+				not  = {
+					has_government  = neutrality
+				}
+			}
 			available = {
+				has_completed_focus = TAN_rehabilitate_pre_revolutionary_practices
+			}
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_game_rule = {
+						rule = TAN_ai_behavior
+						option = NEUTRALITY
+					}
+					NOT = {
+						AND = {
+							is_puppet = yes
+							NOT = {
+								has_government = neutrality
+							}
+						}
+					}
+					add = 20
+				}
+			}
+		}
+		name="TAN_mongush_lopsan_chimit"
+		portraits={
+			army={
+				small=GFX_idea_TAN_advisor_mongush_lopsan_chimit
 			}
 		}
 	}
@@ -730,44 +758,31 @@ characters={
 			traits  = {
 				democratic_reformer 
 			}
+			available = {
+				has_completed_focus = TAN_Strenghten_Democracy
+			}
 			do_effect  = {
 				not  = {
-					has_government  = democratic 
+					has_government  = democratic
 				}
 			}
 			ai_will_do = {
 				factor = 0
-				#modifier = {
-				#	has_idea = GEN_Strenghten_Democracy_I
-				#	NOT = {
-				#		OR = {
-				#			AND = {
-				#				is_puppet = yes
-				#				NOT = {
-				#					has_government = democratic
-				#				}
-				#			}
-				#			democratic > 0.7
-				#			democratic < 0.15
-				#		}							
-				#	}
-				#	add = 20		
-				#}
-				#modifier = {
-				#	has_game_rule = {
-				#		rule = TAN_ai_behavior
-				#		option = DEMOCRATIC
-				#	}
-				#	NOT = {
-				#		AND = {
-				#			is_puppet = yes
-				#			NOT = {
-				#				has_government = democratic
-				#			}
-				#		}
-				#	}
-				#	add = 20
-				#}
+				modifier = {
+					has_game_rule = {
+						rule = TAN_ai_behavior
+						option = DEMOCRATIC
+					}
+					NOT = {
+						AND = {
+							is_puppet = yes
+							NOT = {
+								has_government = democratic
+							}
+						}
+					}
+					add = 20
+				}
 			}
 		}
 # TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
@@ -791,9 +806,10 @@ characters={
 					}
 				}
 				available = {
-					if = {
-						limit = { has_dlc = "Man the Guns" }	
-						NOT = { has_autonomy_state = autonomy_supervised_state }
+					NOT = {
+						has_completed_focus = TAN_tuvan_nationalism
+						has_completed_focus = TAN_rehabilitate_pre_revolutionary_practices
+						has_completed_focus = TAN_Strenghten_Democracy
 					}
 				}
 					
@@ -833,10 +849,7 @@ characters={
 				original_tag  = TAN
 			}
 			available = {
-				if = {
-					limit = { has_dlc = "Man the Guns" }	
-					NOT = { has_autonomy_state = autonomy_supervised_state }
-				}									
+				has_completed_focus = TAN_tuvan_nationalism
 			}
 
 			visible = {
@@ -864,21 +877,21 @@ characters={
 					}
 					add = 20
 				}
-				#modifier = {
-				#	has_game_rule = {
-				#		rule = TAN_ai_behavior
-				#		option = FASCISM
-				#	}
-				#	NOT = {
-				#		AND = {
-				#			is_puppet = yes
-				#			NOT = {
-				#				has_government = fascism
-				#			}
-				#		}
-				#	}
-				#	add = 20
-				#}
+				modifier = {
+					has_game_rule = {
+						rule = TAN_ai_behavior
+						option = FASCISM
+					}
+					NOT = {
+						AND = {
+							is_puppet = yes
+							NOT = {
+								has_government = fascism
+							}
+						}
+					}
+					add = 20
+				}
 			}
 		}
 		portraits={

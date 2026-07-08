@@ -59,6 +59,10 @@ continuous_focus_position = { x = 0 y = 1100 }
 
 		completion_reward = {
 			army_experience = 5
+			swap_ideas = {
+                remove_idea = TAN_disorganized_military
+                add_idea = TAN_disorganized_military_2
+            }
 
 			if = {
 				limit = {
@@ -86,18 +90,12 @@ continuous_focus_position = { x = 0 y = 1100 }
 			hidden_effect = {
 					set_country_flag = ABC_i_am_generic_army		
 			}
-
-            swap_ideas = {
-                remove_idea = TAN_disorganized_military
-                add_idea = TAN_disorganized_military_2
-            }
-
 		}
 	}
 	focus = { # continental climate + mountain = cold; + they sent lots of boots and furs to the USSR
 		id = TAN_winter_training
 		text = ARCTIC_winter_training
-		icon = GFX_goal_generic_military_sphere
+		icon = GFX_focus_generic_winter_warfare
 		prerequisite = { focus = TAN_call_for_army_readiness}
 		relative_position_id = TAN_call_for_army_readiness
 		x = -2
@@ -189,7 +187,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 		available_if_capitulated = yes
 
 		available = {
-			has_100_land_doctrine_mastery = yes
 		}
 
 		completion_reward = {
@@ -200,7 +197,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 				uses = 1
 				category = land_doctrine
 			}
-
+			custom_effect_tooltip = generic_skip_one_line_tt
 			remove_ideas = TAN_disorganized_military_2
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT }
@@ -378,6 +375,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 
 		completion_reward = {
 			add_ideas = special_forces
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_tech_bonus = {
 				name = special_forces_bonus
 				bonus = 2
@@ -396,6 +394,7 @@ continuous_focus_position = { x = 0 y = 1100 }
                 uses = 2
                 category = r56_special_forces_training_tech 
             }
+			custom_effect_tooltip = generic_skip_one_line_tt
 			hidden_effect = {
 				set_country_flag = cite_an_airborne_unit_flag
 			}
@@ -498,7 +497,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 
 
 		available = {
-			has_200_land_doctrine_mastery = yes
 		}
 		
 		ai_will_do = {
@@ -554,16 +552,10 @@ continuous_focus_position = { x = 0 y = 1100 }
 
 		completion_reward = {
 			army_experience = 5
+			add_ideas = ABC_establish_a_military_academy_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
 			every_army_leader = {
 				add_planning = 1
-			}
-			add_ideas = ABC_establish_a_military_academy_idea
-
-			if = {
-				limit = {
-					original_tag = LIB
-				}
-				unlock_decision_tooltip = LIB_fight_soldiers_superstition
 			}
 		}
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_MILITARY_IMPROVEMENT }
@@ -646,15 +638,16 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 
 		completion_reward = {
-			every_army_leader = {
-				add_logistics = 1
-			}
 			add_ideas = ABC_modern_logistics_idea
 			add_tech_bonus = {
                 name = motorized_bonus
 				bonus = 3
 				uses = 1
 				category = logistics_tech
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_army_leader = {
+				add_logistics = 1
 			}
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_RESEARCH }
@@ -684,10 +677,11 @@ continuous_focus_position = { x = 0 y = 1100 }
 				uses = 1
 				category = r56_special_forces_training_tech 
 			}		
+			add_ideas = ARCTIC_winter_readiness
+			custom_effect_tooltip = generic_skip_one_line_tt
 			every_army_leader = {
 				add_logistics = 1
 			}			
-			add_ideas = ARCTIC_winter_readiness
 				
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -740,7 +734,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 
 		completion_reward = {
 			add_ideas = ROM_gold_extraction_idea
-			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_industrial_concern
 			show_ideas_tooltip = TAN_mining_directorate
 		}
@@ -1011,12 +1004,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 					instant_build = yes
 				}
 				set_state_flag = TAN_Civilian_Two_1
-			}
-			if = {
-				limit = {
-					original_tag = HUN
-				}
-				unlock_decision_category_tooltip = HUN_gyor_program_decision_category
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -1369,22 +1356,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 					has_war = yes
 				}
 			}
-			modifier = {
-				factor = 0
-				date < 1939.1.1
-				OR = {
-					# we dont want chinese minors to go crazy on slots early since they get eaten
-					tag = GXC
-					tag = YUN
-					tag = SHX
-					tag = SIC
-					tag = XSM
-					tag = DEN
-
-					# we also dont want tiny nations to go crazy with slots right away
-					num_of_controlled_states < 2
-				}
-			}
 		}
 
 		#bypass = {
@@ -1481,9 +1452,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 
 		available = {
 			num_of_controlled_states > 0
-			NOT = {
-				original_tag = JAP
-			}
 			NOT = { has_government = communism }
 				JAP = {
 					exists = yes
@@ -1530,17 +1498,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 				uses = 1
 				category = industry
 			}
-			if = {
-				limit = {
-					JAP = {
-						has_government = ROOT
-						NOT = {
-							original_tag = JAP
-						}
-					}
-				}
-				#add_opinion_modifier = { target = JAP modifier = GEN_invited_german } Does this even work?
-			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 	}
@@ -1555,12 +1512,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 		x = 2
 		y = 1
 		relative_position_id = TAN_Military_Buildup
-
-		allow_branch = {
-			NOT = {
-				original_tag = SOV
-			}
-		}
 
 		cost = 5
 
@@ -1696,9 +1647,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 
 		available = {
 			num_of_controlled_states > 0
-			NOT = {
-				original_tag = JAP
-			}
 			NOT = { has_government = communism }
 				JAP = {
 					exists = yes
@@ -2135,21 +2083,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 		ai_will_do = {
 			factor = 10
-			modifier = {
-				factor = 0
-				AND = {
-					original_tag = PAR
-					date < 1936.4.4
-				}
-			}
-			modifier = {
-				factor = 0
-				AND = {
-					original_tag = PAR
-					is_historical_focus_on = yes
-					date < 1940.1.1 #Higinio Morínigo rise to power
-				}
-			}
 		}
 	
 		completion_reward = {
@@ -2187,46 +2120,13 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 0
 				AND = {
 					is_historical_focus_on = yes
-					is_subject = yes
+					is_puppet = yes
 					NOT = {
 						OVERLORD = {
 							OR = {
 								has_government = fascism
 								has_government = communism
 							}
-						}
-					}
-				}
-			}
-			modifier = {
-				factor = 11
-				AND = {
-					is_historical_focus_on = yes
-					original_tag = MON
-				}
-			}
-			modifier = {
-				factor = 11
-				AND = {
-					is_historical_focus_on = yes
-					original_tag = TAN
-				}
-			}
-			modifier = {
-				factor = 11
-				AND = {
-					is_historical_focus_on = yes
-					original_tag = PAR
-				}
-			}
-			modifier = {
-				factor = 0
-				AND = {
-					is_historical_focus_on = yes
-					NOT = {
-						OR = {
-							has_government = communism
-							has_government = fascism
 						}
 					}
 				}
@@ -2243,7 +2143,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 0.01
 				AND = {
 					is_historical_focus_on = no
-					is_subject = yes
+					is_puppet = yes
 					NOT = {
 						OVERLORD = {
 							OR = {
@@ -2258,7 +2158,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 0.02
 				AND = {
 					is_historical_focus_on = no
-					is_subject = no
+					is_puppet = no
 					OR = {
 						has_government = fascism
 						has_government = communism
@@ -2269,15 +2169,12 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 10
 				AND = {
 					is_historical_focus_on = no
-					is_subject = no
-					OR = {
-						AND = {
-							is_in_faction_with = SOV
-							SOV = {
-								has_government = communism
-							}
+					is_puppet = no
+					AND = {
+						is_in_faction_with = SOV
+						SOV = {
+							has_government = communism
 						}
-						tag = DDR
 					}
 				}
 			}
@@ -2310,14 +2207,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 			focus = TAN_gather_the_party_opposition
 		}
 	
-	
-		available = {
-			OR = {
-				fascism > 0.15
-				has_government = neutrality
-			}
-		}
-	
 		x = 1
 		y = 1
 		relative_position_id = TAN_Collectivist_Ethos
@@ -2336,67 +2225,15 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 10
 				AND = {
-					is_subject = yes
+					is_puppet = yes
 					OVERLORD = {
 						has_government = fascism
 					}
 				}
 			}
-			modifier = {
-				factor = 0
-				AND = {
-					is_historical_focus_on = yes
-					NOT = { has_government = fascism }
-				}
-			}
-			modifier = {
-				factor = 11
-				AND = {
-					is_historical_focus_on = yes
-					original_tag = PAR
-				}
-			}
 		}
 	
 		completion_reward = {
-			if = {
-				limit = {
-					original_tag = PAR
-					is_historical_focus_on = yes
-				}
-				ROOT = { #bad guy but not a 'bad guy'
-					add_ai_strategy = {
-						type = befriend
-						id = GER
-						value = -999
-					}
-					add_ai_strategy = {
-						type = befriend
-						id = ITA
-						value = -999
-					}
-					add_ai_strategy = {
-						type = befriend
-						id = JAP
-						value = -999
-					}
-					add_ai_strategy = {
-						type = befriend
-						id = USA
-						value = 125
-					}
-					add_ai_strategy = {
-						type = befriend
-						id = ENG
-						value = 10
-					}
-				}
-			}
-		# As AI uses ideological politicians this is useless
-		#	add_popularity = {
-		#		ideology = fascism
-		#		popularity = 0.04
-		#	}
 			if = {
 				limit = { 
 					any_unit_leader = { 
@@ -2496,6 +2333,8 @@ continuous_focus_position = { x = 0 y = 1100 }
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = TAN_fascist_guy
+			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = TAN_kamby_lama
 		}
 	}
@@ -2521,7 +2360,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 		completion_reward = {
 			army_experience = 25
 			add_war_support = 0.05
-			custom_effect_tooltip = generic_skip_one_line_tt
+	
 			if = {
 				limit = { has_idea = neutrality_idea }
 				remove_ideas = neutrality_idea
@@ -2562,7 +2401,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 					add_ideas = GEN_Organise_Youth_Fas_I
 				}
 			}
-	
 			if = {
 				limit = {
 					OR = {
@@ -2589,18 +2427,9 @@ continuous_focus_position = { x = 0 y = 1100 }
 	
 	
 		available = {
-			NOT  = {
-				original_tag = SOV
-			}
-			if = {
-				limit = { original_tag = CHI }
-				has_government = communism
-			}
-			else = {
-				OR = {
-					communism > 0.15
-					has_government = neutrality
-				}
+			OR = {
+				communism > 0.15
+				has_government = neutrality
 			}
 		}
 	
@@ -2619,7 +2448,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 10
 				OR = {
 					AND = {
-						is_subject = yes
+						is_puppet = yes
 						OVERLORD = {
 							has_government = communism
 						}
@@ -2630,7 +2459,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 							has_government = communism
 						}
 					}
-					tag = DDR
 				}
 			}
 			modifier = {
@@ -2650,31 +2478,18 @@ continuous_focus_position = { x = 0 y = 1100 }
 				}
 			}						
 			modifier = {
-				factor = 11
-				is_historical_focus_on = yes
-				date > 1938.1.1
-			}
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				OR = {
-					date < 1938.1.1
-					NOT = { has_government = communism }
-				}
-			}
-			modifier = {
 				factor = 2
 				is_historical_focus_on = no
 			}
 		}
 	
 		completion_reward = {
-			add_political_power = 100
+			set_province_name = { id = 7804 name = VICTORY_POINTS_7804_TOKA }
 			add_popularity = {
 				ideology = communism
 				popularity = 0.15
 			}
-			set_province_name = { id = 7804 name = VICTORY_POINTS_7804_TOKA }
+			add_political_power = 100
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = SOV_characters_will_be_purged_tt
 			retire_character = TAN_sat_churmit_dazhy
@@ -2721,39 +2536,21 @@ continuous_focus_position = { x = 0 y = 1100 }
         relative_position_id = TAN_Collectivist_Propaganda
 		ai_will_do = {
 			factor = 10
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0.5
-			}
 		}
 		available = {
 			has_government = communism
 		}
-		ai_will_do = {
-			modifier = {
-				factor = 11
-				is_historical_focus_on = yes
-				date > 1941.1.1
-			}
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				OR = {
-					date < 1941.1.1
-				}
-			}
-		}
 		completion_reward = {
 			add_ideas = TAN_fifth_constitution_enshrinements
-			custom_effect_tooltip = generic_skip_one_line_tt
-			set_cosmetic_tag = TAN_1941					
+			custom_effect_tooltip = TAN_1941_flag_change_tt
+			hidden_effect = { set_cosmetic_tag = TAN_1941 }							
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 	}
 	
 	focus = {
 		id = TAN_gather_the_party_opposition
-		icon = GFX_focus_PRC_rally_the_28_bolsheviks
+		icon = GFX_goal_TAN_gather_the_party_opposition
 		prerequisite = { focus = TAN_Collectivist_Ethos }
 		mutually_exclusive = {
 			focus = TAN_tuvan_nationalism
@@ -2762,18 +2559,9 @@ continuous_focus_position = { x = 0 y = 1100 }
 	
 	
 		available = {
-			NOT  = {
-				original_tag = SOV
-			}
-			if = {
-				limit = { original_tag = CHI }
-				has_government = communism
-			}
-			else = {
-				OR = {
-					communism > 0.15
-					has_government = neutrality
-				}
+			OR = {
+				communism > 0.15
+				has_government = neutrality
 			}
 		}
 	
@@ -2811,10 +2599,18 @@ continuous_focus_position = { x = 0 y = 1100 }
 				}
 			}
 			hidden_effect = {
-				news_event = {
-					id = tuva.2
-					days = 2
-					random_days = 5
+				every_country = {
+					limit = {
+						OR = {
+							is_on_same_continent_as = TAN
+							tag = SOV
+						}
+					}
+					news_event = {
+						id = tuva.2
+						days = 2
+						random_days = 5
+					}
 				}
 			}
 		}
@@ -2838,7 +2634,8 @@ continuous_focus_position = { x = 0 y = 1100 }
 		completion_reward = {
 			add_ideas = TAN_coexistence_of_socialism_and_buddhism
 			custom_effect_tooltip = generic_skip_one_line_tt
-			set_cosmetic_tag = TAN_1921
+			custom_effect_tooltip = TAN_1921_flag_change_tt
+			hidden_effect = { set_cosmetic_tag = TAN_1921 }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 	}
@@ -2858,6 +2655,8 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 	
 		completion_reward = {
+			add_ideas = MON_animal_husbandry_prioritised_idea_2
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
@@ -2867,7 +2666,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -2983,7 +2782,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 	
 	focus = {
 		id = TAN_indoctrination_focus
-		icon = GFX_postive_heroism
+		icon = GFX_focus_NOR_moscows_education_centers
 		prerequisite = { focus = TAN_the_fifth_constitution focus = TAN_the_basis_of_the_economy }
 		relative_position_id = TAN_the_fifth_constitution
 		text = indoctrination_focus
@@ -3021,26 +2820,11 @@ continuous_focus_position = { x = 0 y = 1100 }
 			is_in_faction_with = SOV
 		}
 		
-		ai_will_do = {
-			modifier = {
-				factor = 11
-				is_historical_focus_on = yes
-				date > 1943.1.1
-			}
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				OR = {
-					date < 1943.1.1
-				}
-			}
-		}
-		
 		completion_reward = {
 			add_war_support = 0.1
 			add_ideas = TAN_support_our_soviet_comrades
-			custom_effect_tooltip = generic_skip_one_line_tt
-			set_cosmetic_tag = TAN_1943
+			custom_effect_tooltip = TAN_1943_flag_change_tt
+			hidden_effect = { set_cosmetic_tag = TAN_1943 }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_HISTORICAL }
 	}
@@ -3356,6 +3140,55 @@ continuous_focus_position = { x = 0 y = 1100 }
 	}
 	
 	focus = {
+		id = TAN_rectify_the_darkhad_valley_transfer
+		icon = GFX_focus_generic_attack_mongolia
+		prerequisite = {
+			focus = TAN_Conquer
+			focus = TAN_mobilize_for_a_holy_war
+		}
+		x = 0
+		y = 3
+		relative_position_id = TAN_Conquer
+	
+		cost = 10
+	
+		available_if_capitulated = yes
+	
+		available = {
+			NOT = {
+				is_subject = yes
+			}
+			820 = {
+				owner = {
+					controls_state = 820
+					NOT = { is_ally_with = TAN }
+				}
+			}
+		}
+	
+		completion_reward = {
+			IF = {
+				limit = {
+					820 = { owner = { controls_state = 820 } }
+				}
+				820 = {
+					owner = {
+						country_event = {
+							id = tuva.11
+							days = 1
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = { 820 = { transfer_state_to = TAN } }
+			custom_effect_tooltip = generic_more_likely_to_accept_tt
+			custom_effect_tooltip = more_likely_to_accept_federalization_tt
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+	
+	focus = {
 		id = TAN_Fanaticism
 		icon = GFX_goal_generic_army_elite
 		prerequisite = { focus = TAN_Isolated focus = TAN_Intervene focus = TAN_Conquer }
@@ -3431,31 +3264,10 @@ continuous_focus_position = { x = 0 y = 1100 }
 		ai_will_do = {
 			factor = 10
 			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				is_subject = yes
-				OVERLORD = {
-					OR = {
-						has_government = fascism
-						has_government = communism
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				NOT = {
-					OR = {
-						has_government = democratic
-						has_government = neutrality
-					}
-				}
-			}
-			modifier = {
 				factor = 0.01
 				AND = {
 					is_historical_focus_on = no
-					is_subject = yes
+					is_puppet = yes
 					OVERLORD = {
 						OR = {
 							has_government = fascism
@@ -3468,7 +3280,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 				factor = 0.15
 				AND = {
 					is_historical_focus_on = no
-					is_subject = no
+					is_puppet = no
 					OR = {
 						has_government = fascism
 						has_government = communism
@@ -3482,12 +3294,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 					has_government = fascism
 					has_government = communism
 				}
-			}
-			modifier = {
-				factor = 10
-				is_historical_focus_on = no
-				is_subject = no
-				tag = WGR
 			}
 		}
 	
@@ -3517,28 +3323,19 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
-				is_subject = yes
-				NOT = {
-					OVERLORD = {
-						has_government = neutrality
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
 				NOT = {
 					has_government = neutrality
 				}
 			}
-			modifier = {
-				factor = 0.1
-				is_historical_focus_on = no
-				is_subject = no
-				NOT = {
-					has_government = neutrality
-				}
-			}
+			# They have a staunch traditionalist now I guess
+			#modifier = {
+			#	factor = 0.1
+			#	is_historical_focus_on = no
+			#	is_puppet = no
+			#	NOT = {
+			#		has_government = neutrality
+			#	}
+			#}
 			modifier = {
 				factor = 6
 				has_government = neutrality
@@ -3554,7 +3351,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 			
 			add_timed_idea = { idea = GEN_Strenghten_Monarchy_I days = 1395 }
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = TAN_mongush_lopsan_chimit_idea
+			show_ideas_tooltip = TAN_mongush_lopsan_chimit
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
@@ -3576,29 +3373,9 @@ continuous_focus_position = { x = 0 y = 1100 }
 		ai_will_do = {
 			factor = 10
 			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				is_subject = yes
-				NOT = {
-					OVERLORD = {
-						has_government = democratic
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				NOT = {
-					OR = {
-						has_government = democratic
-						tag = PRU
-					}
-				}
-			}
-			modifier = {
 				factor = 0.05
 				is_historical_focus_on = no
-				is_subject = yes
+				is_puppet = yes
 				NOT = {
 					OVERLORD = {
 						has_government = democratic
@@ -3608,7 +3385,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 0.2
 				is_historical_focus_on = no
-				is_subject = no
+				is_puppet = no
 				NOT = {
 					has_government = democratic
 				}
@@ -3616,12 +3393,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 			modifier = {
 				factor = 2
 				has_government = democratic
-			}
-			modifier = {
-				factor = 10
-				is_historical_focus_on = no
-				is_subject = no
-				tag = WGR
 			}
 		}
 	
@@ -3632,6 +3403,8 @@ continuous_focus_position = { x = 0 y = 1100 }
 				popularity = 0.1
 			}
 			add_timed_idea = { idea = GEN_Strenghten_Democracy_I days = 1395 }
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = TAN_democratic_guy
 			set_party_name = {
 				ideology = democratic
 				long_name = TAN_great_khural_party_long
@@ -3657,10 +3430,10 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 	
 		completion_reward = {
-			add_political_power = 50
-			add_stability = 0.1
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = TAN_kamby_lama
+			add_political_power = 50
+			add_stability = 0.1
 			#maybe the Tibetan decision about restoring the monasteries. If possible find another existing religious survivor.	
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -3813,10 +3586,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 	
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0
-				tag = AUS
-			}
 		}
 	
 		completion_reward = {
@@ -3849,10 +3618,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 	
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0
-				has_idea = neutrality_idea
-			}
 		}
 	
 		completion_reward = {
@@ -4021,10 +3786,16 @@ continuous_focus_position = { x = 0 y = 1100 }
 	
 		cost = 10
 	
-		available_if_capitulated = yes
+		available = {
+			owns_state = 654
+			controls_state = 654
+		}
 	
 		completion_reward = {
-			654 = { set_state_category = rural }
+			654 = {
+				set_state_category = rural
+				add_compliance = 25
+			}
 			build_railway = {
 				level = 1
 				fallback = yes
@@ -4047,8 +3818,6 @@ continuous_focus_position = { x = 0 y = 1100 }
 		}
 		
 		cost = 10
-	
-		available_if_capitulated = yes
 	
 		completion_reward = {
 			567 = {
@@ -4158,7 +3927,7 @@ continuous_focus_position = { x = 0 y = 1100 }
 	######################
 	focus = {
 		id = TAN_tuva_annex_ussr
-		icon = GFX_focus_chi_mission_to_the_soviet_union
+		icon = GFX_focus_eng_expose_the_belly_of_the_bear
 		
 		x = 80
 		y = 80

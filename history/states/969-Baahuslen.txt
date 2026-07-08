@@ -1,0 +1,25 @@
+state={
+	id=969
+	name="STATE_969"
+	manpower = 159307
+	
+	state_category = rural
+	
+	history = {
+		owner = SWE
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = SWE
+		add_to_array = { state_victory_points = 6310 }
+		victory_points = {
+			6310 1 
+		}
+	}
+	
+	provinces={
+		171 6310 
+	}
+	
+	local_supplies=0.0
+}

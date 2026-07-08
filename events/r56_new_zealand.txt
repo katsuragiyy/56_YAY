@@ -187,10 +187,437 @@ country_event = {
 	option = {
 		name = new_zealand.11.a
 		ai_chance = {
-			base = 100
+			base = 95
 		}
-		add_political_power = 10
-		activate_mission_tooltip = r56_SAM_mission_duration
-		NZL = { set_country_flag = r56_SAM_goodwill_mission_has_arrived_flag }
+		726 = {
+		    remove_dynamic_modifier = { modifier = mau_movement }
+			add_dynamic_modifier = { modifier = calm_mau_movement }
+			add_compliance = 30
+		}
+	}
+
+	option = {
+		name = new_zealand.11.b
+		release_on_controlled = SAM
+		NZL = {
+			set_autonomy = {
+				target = SAM
+				autonomous_state = autonomy_protectorate
+				freedom_level = 0.50
+			}
+        }
+		SAM = {
+			promote_character = {
+				character = SAM_council
+				ideology = oligarchism
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			set_party_name = {
+				ideology = neutrality
+				name = SAM_colonial_administration
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.35
+			}
+		    set_cosmetic_tag = SAM_TWS
+			add_ideas = SAM_goodwill_mission
+			add_to_tech_sharing_group = commonwealth_research
+			hidden_effect = {
+				726 = { set_demilitarized_zone = no }
+				USA = { give_guarantee = SAM }
+				load_oob = "SAM_1936"
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+				country_event = {
+					id = samoa_fautasi_race.1
+					days = 1
+					random_hours = 12
+					random_days = 1
+				}
+			}
+		}
+		726 = {
+		    remove_dynamic_modifier = { modifier = mau_movement }
+		}
+		ai_chance = {
+			base = 5
+		}
+	}
+	
+	option = {
+		name = new_zealand.11.c
+		release_on_controlled = SAM
+		NZL = {
+			set_autonomy = {
+				target = SAM
+				autonomous_state = autonomy_protectorate
+				freedom_level = 0.50
+			}		
+        }
+		SAM = {
+		    promote_character = {
+				character = SAM_council
+				ideology = oligarchism
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			set_party_name = {
+				ideology = neutrality
+				name = SAM_colonial_administration
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.35
+			}
+			set_cosmetic_tag = SAM_TWS
+			add_ideas = SAM_goodwill_mission
+			add_to_tech_sharing_group = commonwealth_research
+			hidden_effect = {
+				726 = { set_demilitarized_zone = no }
+				USA = { give_guarantee = SAM }
+				load_oob = "SAM_1936"
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+				country_event = {
+					id = samoa_fautasi_race.1
+					days = 1
+					random_hours = 12
+					random_days = 1
+				}
+			}
+			
+			change_tag_from = NZL
+		}
+		726 = {
+		    remove_dynamic_modifier = { modifier = mau_movement }
+		}
+		ai_chance = {
+			base = 5
+		}
 	}
 }
+
+# this were copied over from vanilla due to newly added states
+country_event = { #New Zealand demands islands (r56 version bcuz importing an additional vanilla file is bad
+	id = new_zealand.12
+	title = tfv_new_zealand.9.t
+	desc = tfv_new_zealand.9.desc
+	picture = GFX_report_event_ast_transfer_singapore
+
+	is_triggered_only = yes
+	
+	#take these dang islands
+	option = {
+		name = tfv_new_zealand.9.a
+		ai_chance = {
+			base = 10
+		}
+		effect_tooltip = {
+			if = {
+				limit = { controls_state = 284 }
+				FROM = { transfer_state = 284 }
+			}
+			if = {
+				limit = { controls_state = 1136 }
+				FROM = { transfer_state = 1136 }
+			}
+			if = {
+				limit = { controls_state = 629 }
+				FROM = { transfer_state = 629 }
+			}
+			if = {
+				limit = { controls_state = 630 }
+				FROM = { transfer_state = 630 }
+			}
+			if = {
+				limit = { controls_state = 631 }
+				FROM = { transfer_state = 631 }
+			}
+			if = {
+				limit = { controls_state = 632 }
+				FROM = { transfer_state = 632 }
+			}
+			if = {
+				limit = { controls_state = 633 }
+				FROM = { transfer_state = 633 }
+			}
+			if = {
+				limit = { controls_state = 634 }
+				FROM = { transfer_state = 634 }
+			}
+			if = {
+				limit = { controls_state = 635 }
+				FROM = { transfer_state = 635 }
+			}
+			if = {
+				limit = { controls_state = 1141 }
+				FROM = { transfer_state = 1141 }
+			}
+			if = {
+				limit = { controls_state = 636 }
+				FROM = { transfer_state = 636 }
+			}
+			if = {
+				limit = { controls_state = 638 }
+				FROM = { transfer_state = 638 }
+			}
+			if = {
+				limit = { controls_state = 639 }
+				FROM = { transfer_state = 639 }
+			}
+			if = {
+				limit = { controls_state = 641 }
+				FROM = { transfer_state = 641 }
+			}
+			if = {
+				limit = { controls_state = 642 }
+				FROM = { transfer_state = 642 }
+			}
+			if = {
+				limit = { controls_state = 643 }
+				FROM = { transfer_state = 643 }
+			}
+			if = {
+				limit = { controls_state = 645 }
+				FROM = { transfer_state = 645 }
+			}
+			if = {
+				limit = { controls_state = 646 }
+				FROM = { transfer_state = 646 }
+			}
+			if = {
+				limit = { controls_state = 647 }
+				FROM = { transfer_state = 647 }
+			}
+			if = {
+				limit = { controls_state = 648 }
+				FROM = { transfer_state = 648 }
+			}
+			if = {
+				limit = { controls_state = 684 }
+				FROM = { transfer_state = 684 }
+			}
+			if = {
+				limit = { controls_state = 723 }
+				FROM = { transfer_state = 723 }
+			}
+			if = {
+				limit = { controls_state = 1139 }
+				FROM = { transfer_state = 1139 }
+			}
+			if = {
+				limit = { controls_state = 1140 }
+				FROM = { transfer_state = 1140 }
+			}
+			if = {
+				limit = { controls_state = 725 }
+				FROM = { transfer_state = 725 }
+			}
+			if = {
+				limit = { controls_state = 726 }
+				FROM = { transfer_state = 726 }
+			}
+			if = {
+				limit = { controls_state = 727 }
+				FROM = { transfer_state = 727 }
+			}
+			if = {
+				limit = { controls_state = 734 }
+				FROM = { transfer_state = 734 }
+			}
+			if = {
+				limit = { controls_state = 1088 }
+				FROM = { transfer_state = 1088 }
+			}
+			if = {
+				limit = { controls_state = 1089 }
+				FROM = { transfer_state = 1089 }
+			}
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = large_increase
+				}
+			}
+		}
+		hidden_effect = {
+			FROM = { country_event = { id = new_zealand.13 } }
+		}
+	}
+	
+	#these are my islands, how dare you
+	option = {
+		name = tfv_new_zealand.9.b
+		ai_chance = {
+			base = 10
+			modifier = { #The USA shouldn't eagerly give away Hawaii if it is a state
+				NOT = { 629 = { is_core_of = ROOT } }
+				factor = 0
+			}
+		}
+		FROM = {
+			country_event = {
+				id = tfv_new_zealand.92
+				days = 2
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = small_decrease
+			}
+		}
+	}
+}
+
+country_event = { #New Zealand demands islands
+	id = new_zealand.13
+	title = tfv_new_zealand.91.t
+	desc = tfv_new_zealand.91.desc
+	picture = GFX_report_event_ast_transfer_singapore
+
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_new_zealand.91.a
+		ai_chance = { base = 10 }
+		hidden_effect = { clr_country_flag = is_demanding_flag }
+		FROM = {
+			if = {
+				limit = { controls_state = 284 }
+				FROM = { transfer_state = 284 }
+			}
+			if = {
+				limit = { controls_state = 1136 }
+				FROM = { transfer_state = 1336 }
+			}
+			if = {
+				limit = { controls_state = 629 }
+				FROM = { transfer_state = 629 }
+			}
+			if = {
+				limit = { controls_state = 630 }
+				FROM = { transfer_state = 630 }
+			}
+			if = {
+				limit = { controls_state = 631 }
+				FROM = { transfer_state = 631 }
+			}
+			if = {
+				limit = { controls_state = 632 }
+				FROM = { transfer_state = 632 }
+			}
+			if = {
+				limit = { controls_state = 633 }
+				FROM = { transfer_state = 633 }
+			}
+			if = {
+				limit = { controls_state = 634 }
+				FROM = { transfer_state = 634 }
+			}
+			if = {
+				limit = { controls_state = 635 }
+				FROM = { transfer_state = 635 }
+			}
+			if = {
+				limit = { controls_state = 1141 }
+				FROM = { transfer_state = 1141 }
+			}
+			if = {
+				limit = { controls_state = 636 }
+				FROM = { transfer_state = 636 }
+			}
+			if = {
+				limit = { controls_state = 638 }
+				FROM = { transfer_state = 638 }
+			}
+			if = {
+				limit = { controls_state = 639 }
+				FROM = { transfer_state = 639 }
+			}
+			if = {
+				limit = { controls_state = 641 }
+				FROM = { transfer_state = 641 }
+			}
+			if = {
+				limit = { controls_state = 642 }
+				FROM = { transfer_state = 642 }
+			}
+			if = {
+				limit = { controls_state = 643 }
+				FROM = { transfer_state = 643 }
+			}
+			if = {
+				limit = { controls_state = 645 }
+				FROM = { transfer_state = 645 }
+			}
+			if = {
+				limit = { controls_state = 646 }
+				FROM = { transfer_state = 646 }
+			}
+			if = {
+				limit = { controls_state = 647 }
+				FROM = { transfer_state = 647 }
+			}
+			if = {
+				limit = { controls_state = 648 }
+				FROM = { transfer_state = 648 }
+			}
+			if = {
+				limit = { controls_state = 684 }
+				FROM = { transfer_state = 684 }
+			}
+			if = {
+				limit = { controls_state = 723 }
+				FROM = { transfer_state = 723 }
+			}
+			if = {
+				limit = { controls_state = 1139 }
+				FROM = { transfer_state = 1139 }
+			}
+			if = {
+				limit = { controls_state = 1140 }
+				FROM = { transfer_state = 1140 }
+			}
+			if = {
+				limit = { controls_state = 725 }
+				FROM = { transfer_state = 725 }
+			}
+			if = {
+				limit = { controls_state = 726 }
+				FROM = { transfer_state = 726 }
+			}
+			if = {
+				limit = { controls_state = 727 }
+				FROM = { transfer_state = 727 }
+			}
+			if = {
+				limit = { controls_state = 734 }
+				FROM = { transfer_state = 734 }
+			}
+			if = {
+				limit = { controls_state = 1088 }
+				FROM = { transfer_state = 1088 }
+			}
+			if = {
+				limit = { controls_state = 1089 }
+				FROM = { transfer_state = 1089 }
+			}
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = large_increase
+				}
+			}
+		}
+	}
+}
+

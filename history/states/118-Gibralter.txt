@@ -1,0 +1,35 @@
+state=
+{
+	id=118
+	name="STATE_118"
+	manpower=18172
+	
+	state_category = enclave
+	history={
+		owner = ENG
+		victory_points = { 4135 5 }
+		buildings = {
+			infrastructure = 3
+			air_base = 2
+			4135 = {
+				naval_base = 5
+				coastal_bunker = 2
+			}
+		}
+		add_claim_by = SPR
+		add_to_array = { state_victory_points = 4135 }
+
+		strategic_province_location = {
+			defensible_coastline = 4135
+		}
+
+		strategic_province_location = {
+			defensive_chokepoint = 4135
+		}
+	}
+	provinces={
+		4135
+	}
+
+	local_supplies=0.0 
+}

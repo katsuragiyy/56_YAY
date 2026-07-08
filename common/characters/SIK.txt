@@ -12,6 +12,7 @@ characters={
 		}
 		country_leader={
 			ideology=stalinism
+			desc = SIK_sheng_shicai_leader_desc # R56
 			traits = {
 				baron_of_terror
 				corrupt
@@ -22,6 +23,7 @@ characters={
 		}
 		country_leader={
 			ideology= military_junta
+			desc = SIK_sheng_shicai_leader_desc # R56
 			traits = {
 				baron_of_terror
 				corrupt
@@ -32,6 +34,7 @@ characters={
 		}	
 		country_leader={
 			ideology= populism
+			desc = SIK_sheng_shicai_leader_desc # R56
 			traits = {
 				baron_of_terror
 				corrupt
@@ -42,6 +45,7 @@ characters={
 		}		
 		country_leader={
 			ideology= gen_nazism
+			desc = SIK_sheng_shicai_leader_desc # R56
 			traits = {
 				baron_of_terror
 				corrupt
@@ -102,6 +106,9 @@ characters={
 			legacy_id=-1
 			traits = {
 				trait_mountaineer
+			}
+			visible = {
+				has_government = communism
 			}
 		}
 	}
@@ -621,7 +628,8 @@ characters={
 			}
 
 			traits  = {
-				SWI_soviet_spy # not sure if good enough to be useful 
+				#SWI_soviet_spy # not sure if good enough to be useful 
+				SIK_soviet_consul_general_trait
 			}
 		}
 	}
