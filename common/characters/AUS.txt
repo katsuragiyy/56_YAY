@@ -403,6 +403,7 @@ characters = {
 		} 
 	}
 	
+	# R56 - Don't use please. Use HUN_otto_von_habsburg
 	AUS_otto_von_habsburg = {
 		#close copy of Hungary's
 		name = HUN_otto_von_habsburg

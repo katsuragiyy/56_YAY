@@ -7986,6 +7986,7 @@ country_event = {
 		name = wuw_GER_weltpolitik.10.a
 		trigger = {
 			has_global_flag = COG_refused_partition_flag
+			NOT = { original_tag = BEL }
 		}
 		ai_chance = {
 			base = 100
@@ -8042,6 +8043,7 @@ country_event = {
 		trigger = {
 			NOT = {
 				has_global_flag = COG_refused_partition_flag
+				original_tag = BEL
 			}
 		}
 		ai_chance = {
@@ -8054,6 +8056,10 @@ country_event = {
 			}
 			every_state = {
 				limit = {
+					OR = {
+						is_controlled_by = BEL
+						is_controlled_by = FROM
+					}
 					OR = {
 						state = 888
 						state = 889
@@ -8069,6 +8075,10 @@ country_event = {
 			every_state = {
 				limit = {
 					OR = {
+						is_controlled_by = BEL
+						is_controlled_by = FROM
+					}
+					OR = {
 						state = 295
 						state = 538
 						state = 718
@@ -8080,7 +8090,51 @@ country_event = {
 				transfer_state_to = ROOT
 			}
 		}
+	}
+	option = { # There's nothing to be done....
+		name = wuw_GER_weltpolitik.21.b #Intentional
+		trigger = {
+			NOT = {
+				has_global_flag = COG_refused_partition_flag
+			}
+			original_tag = BEL
+		}
+		ai_chance = {
+			base = 100
+		}	
 
+		effect_tooltip = {
+			every_state = {
+				limit = {
+					OR = {
+						is_controlled_by = ROOT
+						is_controlled_by = FROM
+					}
+					OR = {
+						state = 888
+						state = 889
+					}
+				}
+				transfer_state_to = ENG
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_controlled_by = ROOT
+						is_controlled_by = FROM
+					}
+					OR = {
+						state = 295
+						state = 538
+						state = 718
+						state = 890
+						state = 768
+						state = 769
+					}
+				}
+				transfer_state_to = GER
+			}
+		}
 	}
 }
 
@@ -8172,12 +8226,22 @@ country_event = {
 
 	option = { # We must destroy them for the protection of our people! ("CONGO SAID NO!!!")
 		name = wuw_GER_weltpolitik.11.a	
+		ai_chance = {
+			base = 75
+		}
 
 		create_wargoal = {
 			type = puppet_wargoal_focus
 			target = COG
 		}	
 		
+	}
+
+	option = { # We must destroy them for the protection of our people! ("CONGO SAID NO!!!")
+		name = wuw_GER_realpolitik.7.a #INtentional
+		ai_chance = {
+			base = 25
+		}	
 	}
 }
 
@@ -9115,6 +9179,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			RKB = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -9136,6 +9207,13 @@ country_event = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = GER_local_controlled_reichskommissariat
+		}
+		hidden_effect = {
+			RKB = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -9268,6 +9346,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			RKN = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -9316,6 +9401,13 @@ country_event = {
 					    target_country = AUS
 					    character = AUS_edmund_glaise_horstenau
 					}
+				}
+			}
+		}
+		hidden_effect = {
+			RKN = {
+				every_controlled_state = {
+					set_compliance = 25
 				}
 			}
 		}
@@ -9419,6 +9511,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			RKG = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -9443,6 +9542,13 @@ country_event = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = GER_local_controlled_reichskommissariat
+		}
+		hidden_effect = {
+			RKG = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -9499,6 +9605,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			RKU = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -9525,6 +9638,13 @@ country_event = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = GER_local_controlled_reichskommissariat
+		}
+		hidden_effect = {
+			RKU = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -9555,7 +9675,7 @@ country_event = {
 				BLR = {
 					set_nationality = {
 					    target_country = RKO
-					    character = BLR_radaslau_astrouski #R56
+					    character = BLR_radislau_astrouski #R56
 					}
 				}
 			}
@@ -9586,8 +9706,15 @@ country_event = {
 				RKO = {
 					set_nationality = {
 					    target_country = BLR
-					    character = BLR_radaslau_astrouski #R56
+					    character = BLR_radislau_astrouski #R56
 					}
+				}
+			}
+		}
+		hidden_effect = {
+			RKO = {
+				every_controlled_state = {
+					set_compliance = 25
 				}
 			}
 		}
@@ -9607,7 +9734,7 @@ country_event = {
 		}		
 		
 		RKO = {
-			BLR_radaslau_astrouski = { #R56
+			BLR_radislau_astrouski = { #R56
 				add_country_leader_role = {
 					promote_leader = yes
 					country_leader = {
@@ -9619,6 +9746,13 @@ country_event = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = GER_local_controlled_reichskommissariat
+		}
+		hidden_effect = {
+			RKO = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -9675,6 +9809,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			RKK = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -9701,6 +9842,13 @@ country_event = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = GER_local_controlled_reichskommissariat
+		}
+		hidden_effect = {
+			RKK = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -9816,6 +9964,13 @@ country_event = {
 				add_ideas = GER_german_controlled_reichskommissariat
 			}
 		}
+		hidden_effect = {
+			RKT = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -9859,6 +10014,13 @@ country_event = {
 					    target_country = ROOT
 					    character = GER_hasso_von_manteuffel
 					}
+				}
+			}
+		}
+		hidden_effect = {
+			RKT = {
+				every_controlled_state = {
+					set_compliance = 25
 				}
 			}
 		}
@@ -9919,6 +10081,13 @@ country_event = {
 					    character = SOV_konstantin_rodzayevsky
 					}
 				}
+			}			
+		}
+		hidden_effect = {
+			RKM = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
 			}
 		}
 	}
@@ -9949,6 +10118,13 @@ country_event = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = GER_local_controlled_reichskommissariat
+		}
+		hidden_effect = {
+			RKM = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -10525,6 +10701,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			GEN = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -10556,6 +10739,13 @@ country_event = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = GER_government_general_idea
+		}
+		hidden_effect = {
+			GEN = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -10679,6 +10869,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			RKH = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -10736,6 +10933,13 @@ country_event = {
 					    target_country = GER
 					    character = GER_johannes_blaskowitz
 					}
+				}
+			}
+		}
+		hidden_effect = {
+			RKH = {
+				every_controlled_state = {
+					set_compliance = 25
 				}
 			}
 		}
@@ -10806,6 +11010,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			RKI = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -10839,6 +11050,13 @@ country_event = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = GER_local_controlled_reichskommissariat
+		}
+		hidden_effect = {
+			RKI = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -10978,6 +11196,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			RKC = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -11040,6 +11265,13 @@ country_event = {
 					    target_country = GER
 					    character = GER_georghans_reinhardt
 					}
+				}
+			}
+		}
+		hidden_effect = {
+			RKC = {
+				every_controlled_state = {
+					set_compliance = 25
 				}
 			}
 		}
@@ -11168,6 +11400,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			RGB = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -11224,6 +11463,13 @@ country_event = {
 					    target_country = GER
 					    character = GER_otto_strasser
 					}
+				}
+			}
+		}
+		hidden_effect = {
+			RGB = {
+				every_controlled_state = {
+					set_compliance = 25
 				}
 			}
 		}
@@ -11516,6 +11762,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			RKA = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -11547,6 +11800,13 @@ country_event = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = GER_local_controlled_reichskommissariat
+		}
+		hidden_effect = {
+			RKA = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -11637,6 +11897,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			RKV = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -11682,6 +11949,13 @@ country_event = {
 				}
 			}
 			
+		}
+		hidden_effect = {
+			RKV = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -11825,6 +12099,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			RAN = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -11904,6 +12185,13 @@ country_event = {
 				}
 			}
 			
+		}
+		hidden_effect = {
+			RAN = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -12032,6 +12320,13 @@ country_event = {
 			}
 
 		}
+		hidden_effect = {
+			RCO = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -12092,6 +12387,13 @@ country_event = {
 				}
 			}
 			
+		}
+		hidden_effect = {
+			RCO = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -12237,6 +12539,13 @@ country_event = {
 			}
 
 		}
+		hidden_effect = {
+			RUS = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -12305,6 +12614,13 @@ country_event = {
 				}
 			}
 			
+		}
+		hidden_effect = {
+			RUS = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -12613,6 +12929,13 @@ country_event = {
 			}
 
 		}
+		hidden_effect = {
+			RAR = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -12679,6 +13002,13 @@ country_event = {
 				}
 			}
 			
+		}
+		hidden_effect = {
+			RAR = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -12817,6 +13147,13 @@ country_event = {
 			}
 
 		}
+		hidden_effect = {
+			RHD = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -12882,6 +13219,13 @@ country_event = {
 				}
 			}
 			
+		}
+		hidden_effect = {
+			RHD = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -12976,6 +13320,13 @@ country_event = {
 			}
 
 		}
+		hidden_effect = {
+			ROA = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -13021,6 +13372,13 @@ country_event = {
 				}
 			}
 			
+		}
+		hidden_effect = {
+			ROA = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -13160,6 +13518,13 @@ country_event = {
 			}
 
 		}
+		hidden_effect = {
+			RAA = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
+		}
 	}
 
 	option = { # It might be wise to use a local puppet
@@ -13225,6 +13590,13 @@ country_event = {
 				}
 			}
 			
+		}
+		hidden_effect = {
+			RAA = {
+				every_controlled_state = {
+					set_compliance = 25
+				}
+			}
 		}
 	}
 }
@@ -17002,14 +17374,31 @@ country_event = {
 		ai_chance = {
 			base = 5
 		}
-		# R56
-		set_country_flag = GER_kaiserreich_decided_not_to_attack_poland
 
-		add_state_core = 85
-		add_state_core = 807
-		add_state_core = 86
-		add_state_core = 762
-		###
+		hidden_effect = {
+			set_country_flag = GER_kaiserreich_decided_not_to_attack_poland
+		}
+		effect_tooltip = {
+			unlock_national_focus = GER_demand_further_polish_concessions
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		every_state = {
+			limit = {
+				OR = {
+					state = 85 #Danzig
+					state = 807 #Gdnyia
+					state = 86 #Poznan
+					state = 762 #Katovice
+				}
+				is_fully_controlled_by = FROM
+			}
+			display_individual_scopes = yes
+			ROOT = {
+				add_state_core = PREV
+			}
+		}
 	}
 }
 
@@ -24037,7 +24426,7 @@ country_event = {
 				}
 				activate_shine_on_focus = GER_strengthen_the_waffen_ss
 				set_country_flag = { flag = GER_strengthen_the_waffen_ss_in_progress_flag days = @inner_circle_time_tier_2_flag value = 1 }
-				country_event = { id = GER_inner_circle_himmler.02 days = @inner_circle_time_tier_3 }
+				country_event = { id = GER_inner_circle_himmler.02 days = @inner_circle_time_tier_2 }
 			}
 			else_if = {
 				limit = {
@@ -24045,7 +24434,7 @@ country_event = {
 				}
 				activate_shine_on_focus = GER_hegemony_of_the_ss
 				set_country_flag = { flag = GER_hegemony_of_the_ss_in_progress_flag days = @inner_circle_time_tier_3_flag value = 1 }
-				country_event = { id = GER_inner_circle_himmler.02 days = @inner_circle_time_tier_2 }
+				country_event = { id = GER_inner_circle_himmler.02 days = @inner_circle_time_tier_3 }
 			}
 		}
 		else_if = {

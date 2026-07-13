@@ -606,7 +606,7 @@ focus_tree = {
 				is_subject = yes
 				is_in_faction = yes
 				has_country_flag = PRC_said_no_to_cuf
-				AND = {
+				AND = { # R56
 					has_non_aggression_pact_with = CHI
 					CHI = { has_country_flag = KMT_no_true_enemy_flag }
 				}
@@ -2126,7 +2126,7 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			if = {
+			if = { # R56
 				limit = {
 					is_in_faction = yes
 				}
@@ -2358,7 +2358,7 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			if = {
+			if = { # R56
 				limit = {
 					is_in_faction = yes
 				}
@@ -7789,7 +7789,7 @@ focus = {
 
 		available = {
 			is_subject = no
-			NOT = {
+			NOT = { # R56
 				any_other_country = {
 					is_literally_china_tooltip = yes
 					NOT = {
@@ -8023,11 +8023,13 @@ focus = {
 
 		available = {
 			is_subject = no
-			any_enemy_country = {
-				NOT = {
-					original_tag = MON
-					original_tag = TAN
-					original_tag = SOV
+			NOT = {
+				any_enemy_country = {
+					OR = {
+						original_tag = MON
+						original_tag = TAN
+						original_tag = SOV
+					}
 				}
 			}
 		}
@@ -13030,7 +13032,7 @@ focus = {
 					has_dlc = "By Blood Alone"
 				}
 				OR = {
-					has_tech = bba_improved_transport_plane
+					#has_tech = bba_early_transport_plane # R56
 					has_tech = iw_small_airframe
 					has_tech = iw_medium_airframe
 					has_tech = iw_large_airframe
@@ -13040,7 +13042,7 @@ focus = {
 				OR = {
 					has_tech = early_fighter
 					has_tech = early_bomber
-					has_tech = improved_transport_plane
+					#has_tech = early_transport_plane # R56
 				}
 			}
 		}

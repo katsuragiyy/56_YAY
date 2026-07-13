@@ -497,8 +497,10 @@ initial_show_position = {
 				category = industry
 				name = PHI_national_fiscal_policy
 			}
-            custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = PHI_focus_time_reduced_T1_tt
+
 			hidden_effect = {
 				PHI_central_focuses_done_T1 = yes
 			}
@@ -793,8 +795,10 @@ initial_show_position = {
 				PHI_the_great_depression_consumer_goods_factor = -0.10
 				tooltip = consumer_goods_factor_tt
 			}
-            custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = PHI_focus_time_reduced_T1_tt
+
 			hidden_effect = {
 				PHI_central_focuses_done_T1 = yes
 			}
@@ -829,8 +833,10 @@ initial_show_position = {
 				idea = PHI_subsidies_timed_idea
 				days = 365
 			}
-            custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = PHI_focus_time_reduced_T1_tt
+
 			hidden_effect = {
 				PHI_central_focuses_done_T1 = yes
 			}
@@ -871,8 +877,10 @@ initial_show_position = {
 				tooltip = monthly_population_tt
 			}
 			add_stability = 0.05
-            custom_effect_tooltip = generic_skip_one_line_tt
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = PHI_focus_time_reduced_T1_tt
+
 			hidden_effect = {
 				PHI_central_focuses_done_T1 = yes
 			}
@@ -1293,7 +1301,7 @@ initial_show_position = {
 			}
 		}
 
-		bypass = {
+		bypass = { # R56
 			623 = {
 				infrastructure > 4
 			}
@@ -1427,7 +1435,7 @@ initial_show_position = {
 			}
 		}
 
-		bypass = {
+		bypass = { # R56
 			1109 = {
 				infrastructure > 4
 			}
@@ -1545,8 +1553,10 @@ initial_show_position = {
 				custom_effect_tooltip = generic_skip_one_line_tt
 				custom_effect_tooltip = PHI_american_intervention_change_value_medium_increase_tt ## Only show the tooltip if have the decision, but add the variable regardless
 			}
-            custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = PHI_focus_time_reduced_T2_tt
+
 			hidden_effect = {
 				PHI_central_focuses_done_T2 = yes
 			}
@@ -1906,8 +1916,10 @@ initial_show_position = {
 			add_political_power = 75
 			add_war_support = 0.1
 			add_stability = 0.05
-            custom_effect_tooltip = generic_skip_one_line_tt
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = PHI_focus_time_reduced_T2_tt
+
 			hidden_effect = {
 				PHI_central_focuses_done_T2 = yes
 			}
@@ -2117,7 +2129,7 @@ initial_show_position = {
 			every_character = {
 				limit = {
 					OR = {
-						is_character = PHI_juan_sumulong #R56
+						is_character = PHI_juan_samulong
 						is_character = PHI_jose_laurel
 						is_character = PHI_manuel_roxas
 					}
@@ -2128,12 +2140,12 @@ initial_show_position = {
 			hidden_effect = {
 				#Samulong
 				remove_trait = {
-					character = PHI_juan_sumulong #R56
+					character = PHI_juan_samulong
 					slot = political_advisor
 					trait = PHI_mercantalist
 				}
 				add_trait = {
-					character = PHI_juan_sumulong #R56
+					character = PHI_juan_samulong
 					slot = political_advisor
 					trait = PHI_mercantalist_improved
 				}
@@ -2356,8 +2368,9 @@ initial_show_position = {
 				tooltip = consumer_goods_factor_tt
 			}
 
-            custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = PHI_focus_time_reduced_T3_tt
+
 			hidden_effect = {
 				PHI_central_focuses_done_T3 = yes
 			}
@@ -2493,8 +2506,9 @@ initial_show_position = {
 				}
 			}
 
-           	custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = PHI_focus_time_reduced_T3_tt
+
 			hidden_effect = {
 				PHI_central_focuses_done_T3 = yes
 			}
@@ -2675,9 +2689,8 @@ initial_show_position = {
 						has_cosmetic_tag = PHI_asean_tag
 						has_cosmetic_tag = PHI_reino_de_filipinas_tag
 						has_cosmetic_tag = PHI_hispanic_empire_tag
-
-						has_cosmetic_tag = PHI_reino_de_filipinas_tag_war
 						has_cosmetic_tag = PHI_hispanic_empire_tag_war
+						has_cosmetic_tag = PHI_reino_de_filipinas_tag_war
 					}
 				}
 				custom_effect_tooltip = PHI_manila_tag_tt
@@ -4361,6 +4374,15 @@ initial_show_position = {
 			custom_effect_tooltip = PHI_usa_catchup_tt
 			hidden_effect = {
 				PHI_usa_focus_done = yes
+				USA_douglas_macarthur = {
+					set_portraits = {
+						army = { 
+							large ="GFX_portrait_PHI_douglas_macarthur"
+							small ="GFX_portrait_PHI_douglas_macarthur_small"
+						}
+						civilian = { large ="GFX_portrait_PHI_douglas_macarthur" }
+					}
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
@@ -4459,8 +4481,8 @@ initial_show_position = {
 
 		bypass = {
 		}
-		
-        ai_will_do = {
+
+		ai_will_do = {
 			base = 1
 
 			modifier = {
@@ -4473,6 +4495,7 @@ initial_show_position = {
 				date > 1939.1.1
 			}
 		}
+
 		available_if_capitulated = no
 	
 		completion_reward = {
@@ -4498,6 +4521,25 @@ initial_show_position = {
 		}
 
 		bypass = {
+		}
+
+		ai_will_do = {
+			base = 0.5
+
+			modifier = {
+				add = 0.5
+				has_completed_focus = PHI_national_defense_act
+			}
+
+			modifier = {
+				factor = 2
+				date > 1938.1.1
+			}
+
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
 		}
 
 		available_if_capitulated = no
@@ -4583,6 +4625,25 @@ initial_show_position = {
 			has_war_with = JAP
 		}
 
+		ai_will_do = {
+			base = 0.5
+
+			modifier = {
+				add = 0.5
+				has_completed_focus = PHI_national_defense_act
+			}
+
+			modifier = {
+				factor = 1.5
+				date > 1942.1.1
+			}
+
+			modifier = {
+				factor = 3
+				date > 1943.1.1
+			}
+		}
+
 		enable_automatic_bypass = no
 
 		available_if_capitulated = no
@@ -4624,9 +4685,24 @@ initial_show_position = {
 		cost = 10
 
 		available = {
+			has_tech = atomic_research
 		}
 
 		bypass = {
+		}
+
+		ai_will_do = {
+			base = 1
+
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+
+			modifier = {
+				factor = 2
+				date > 1941.1.1
+			}
 		}
 
 		available_if_capitulated = no
@@ -4689,7 +4765,9 @@ initial_show_position = {
 					specialization = specialization_nuclear
 					value = 0.5
 				}
-			}			
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas =  PHI_sea_of_cobalt_idea				
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -4715,6 +4793,25 @@ initial_show_position = {
 
 		bypass = {
 			has_war_with = ENG
+		}
+
+		ai_will_do = {
+			base = 0.5
+
+			modifier = {
+				add = 0.5
+				has_completed_focus = PHI_national_defense_act
+			}
+
+			modifier = {
+				factor = 1.1
+				date > 1942.1.1
+			}
+
+			modifier = {
+				factor = 2
+				date > 1943.1.1
+			}
 		}
 
 		enable_automatic_bypass = no
@@ -4840,10 +4937,27 @@ initial_show_position = {
 		bypass = {
 		}
 
+		ai_will_do = {
+			base = 1
+
+			modifier = {
+				factor = 1.5
+				date > 1942.1.1
+			}
+
+			modifier = {
+				factor = 5
+				date > 1944.1.1
+			}
+		}
+
 		available_if_capitulated = no
 	
 		completion_reward = {
-			add_ideas =  PHI_cobalt_supremacy_idea  
+			swap_ideas = {
+				remove_idea = PHI_sea_of_cobalt_idea
+				add_idea = PHI_cobalt_supremacy_idea
+			}
 		}
 	}
 
@@ -5051,7 +5165,7 @@ initial_show_position = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = PHI_philippine_resistance_movement_dynamic_modifier_tt
-			add_to_variable = { PHI_resistance_resistance_target_on_our_occupied_states = 0.1 tooltip = resistance_target_on_our_occupied_states_tt }
+			add_to_variable = { PHI_resistance_resistance_target_on_our_occupied_states = 0.10 tooltip = resistance_target_on_our_occupied_states_tt }
 			add_to_variable = { PHI_resistance_resistance_damage_to_garrison_on_our_occupied_states = 0.05 tooltip = resistance_damage_to_garrison_on_our_occupied_states_tt }
 			add_to_variable = { PHI_resistance_communism_drift = 0.02 tooltip = communism_drift_tt }
 			
@@ -5100,13 +5214,13 @@ initial_show_position = {
 					has_completed_focus = PHI_encourage_chinese_immigration
 				}
 				custom_effect_tooltip = PHI_philippine_resistance_movement_dynamic_modifier_tt
-				add_to_variable = { PHI_resistance_resistance_target_on_our_occupied_states = 0.1 tooltip = resistance_target_on_our_occupied_states_tt }
+				add_to_variable = { PHI_resistance_resistance_target_on_our_occupied_states = 0.10 tooltip = resistance_target_on_our_occupied_states_tt }
 			}
 			else = {
 				custom_effect_tooltip = PHI_if_chinese_immigration_tt
 				effect_tooltip = {
 					custom_effect_tooltip = PHI_philippine_resistance_movement_dynamic_modifier_tt
-					add_to_variable = { PHI_resistance_resistance_target_on_our_occupied_states = 0.1 tooltip = resistance_target_on_our_occupied_states_tt }
+					add_to_variable = { PHI_resistance_resistance_target_on_our_occupied_states = 0.10 tooltip = resistance_target_on_our_occupied_states_tt }
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 				custom_effect_tooltip = generic_current_effects
@@ -6048,14 +6162,14 @@ initial_show_position = {
 		available = {
 			is_subject_of = USA
 		}
-		
+
 		bypass = {
 			NOT = {
 				is_subject_of = USA
 			}
 		}
 
-		bypass_effect = {
+		bypass_effect = { # R56
 			if = {
 				limit = {
 					has_completed_focus = PHI_hispanic_overtures
@@ -6135,7 +6249,7 @@ initial_show_position = {
 				limit = {
 					has_completed_focus = PHI_hispanic_overtures
 				}
-				IF = {
+				IF = { # R56
 					limit = {
 						has_dlc = "No Compromise, No Surrender"
 					}
@@ -6570,6 +6684,28 @@ initial_show_position = {
 	
 		completion_reward = {
 			unlock_decision_category_tooltip = PHI_relations_with_spanish_america
+
+			if = {
+				limit = {
+					has_completed_focus = PHI_treaty_of_manila
+					is_in_faction = no
+					is_subject = no
+				}
+				create_faction = PHI_hispanic_coalition
+				every_other_country = {
+					limit = {
+						has_country_flag = PHI_agreed_to_ally
+						NOT = {
+							has_war_with = ROOT
+						}
+						is_subject = no
+						is_in_faction = no
+					}
+					ROOT = {
+						add_to_faction = PREV
+					}
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -6697,14 +6833,20 @@ initial_show_position = {
 				add_country_leader_role = {
 					promote_leader = yes
 					country_leader = {
-						ideology = despotism
+						ideology = absolute_monarchism # R56
 						expire = "1965.1.1.1"
 						traits = { ICE_the_navy_king }
 					}
 				}
 			}
 
-			#custom_effect_tooltip = generic_skip_one_line_tt
+			set_politics = {
+				ruling_party = neutrality
+				long_name = PHI_bourbon_party_long
+				name = PHI_bourbon_party
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			set_cosmetic_tag = PHI_reino_de_filipinas_tag
 
@@ -7284,6 +7426,17 @@ initial_show_position = {
 		available_if_capitulated = no
 	
 		completion_reward = {
+
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = PHI_hukbalahap
+					}
+				}
+				show_unit_leaders_tooltip = PHI_luis_taruc
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_popularity = {
 				ideology = communism
 				popularity = 0.05
@@ -7299,7 +7452,6 @@ initial_show_position = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = PHI_vicente_lava
 		}
@@ -7662,7 +7814,7 @@ initial_show_position = {
 		available_if_capitulated = no
 	
 		completion_reward = {
-			add_to_variable = {
+			add_to_variable = { # R56
 				PHI_convoy_bonus_amount = -0.1
 			}
 			custom_effect_tooltip = PHI_island_nation_dynamic_modifier_tt
@@ -7672,13 +7824,14 @@ initial_show_position = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-			swap_ideas = {
+			swap_ideas = { # R56
 				remove_idea = PHI_island_nations_convoy_bonus
 				add_idea = PHI_island_nations_convoy_bonus_improved
 			}
 			
 			IF = {
 				limit = { has_dlc = "Arms Against Tyranny"}
+
 				custom_effect_tooltip = generic_skip_one_line_tt
 				mio:PHI_compania_maritima_de_cebu_organization = {
 					add_mio_size = 1
@@ -7896,11 +8049,11 @@ initial_show_position = {
 
 		available = {
 			is_subject = no
-			has_government = communism
+			has_government = communism # R56
 		}
 
 		bypass = {
-			OR = {
+			OR = { # R56
 				is_faction_leader = yes
 				AND = {
 					is_in_faction = yes
@@ -7914,7 +8067,7 @@ initial_show_position = {
 		available_if_capitulated = no
 	
 		completion_reward = {
-			if = {
+			if = { # R56
 				limit = {
 					is_in_faction = yes
 					faction_leader = {
@@ -8083,6 +8236,7 @@ initial_show_position = {
 		available_if_capitulated = no
 	
 		completion_reward = {
+			# R56
 			effect_tooltip = {
 				army_experience = 25
 			}
@@ -8095,6 +8249,7 @@ initial_show_position = {
 			}
 			navy_experience = 25
 			air_experience = 25
+			##
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = PHI_philippine_army_dynamic_modifier_tt
@@ -8537,37 +8692,59 @@ initial_show_position = {
 		available_if_capitulated = no
 	
 		completion_reward = {
+
 			IF = {
 				limit = {
-					not = { is_special_project_completed = sp:sp_land_stronghold_network }
+					has_dlc = "Gotterdammerung"
 				}
-				complete_special_project = sp:sp_land_stronghold_network
-			}
-			IF = {
-				limit = {
-					1110 = { #Bataan
-						is_fully_controlled_by = ROOT
-						stronghold_network < 1
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = yes
+
+				IF = {
+					limit = {
+						NOT = { is_special_project_completed = sp:sp_land_stronghold_network }
+					}
+					complete_special_project = sp:sp_land_stronghold_network
+				}
+				IF = {
+					limit = {
+						1110 = { #Bataan
+							is_fully_controlled_by = ROOT
+							stronghold_network < 1
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
 						}
 					}
+					1110 = { #Bataan
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = stronghold_network
+							level = 1
+							instant_build = yes
+						}
+					}	
 				}
-				1110 = { #Bataan
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = stronghold_network
-						level = 1
-						instant_build = yes
-					}
-				}	
-			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+			}
+			ELSE = {
+
+				1110 = {
+					add_dynamic_modifier = {
+						modifier = PHI_no_gtd_concrete_battleship
+						scope = PHI 
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+			}
+			
 			PHI_add_or_modify_defense_strategy = yes
 			add_to_variable = { PHI_defense_strategy_land_bunker_effectiveness_factor = 0.1 tooltip = land_bunker_effectiveness_factor_tt }
+
 		}
 	}
 
@@ -8616,9 +8793,23 @@ focus = {
 				name = PHI_philippine_scouts
 				cost_reduction = 0.25
 				uses = 2
-				category = cat_rangers_doctrine
+				category = special_forces_doctrine
 			}
-			
+			custom_effect_tooltip = ranger_subdoctrines_default_add_mastery_bonus_effect_tooltip
+			hidden_effect = {
+				add_mastery_bonus = {
+					name = PHI_philippine_scouts
+					bonus = 0.1
+					days = 240
+					sub_doctrine = rangers_1
+				}
+				add_mastery_bonus = {
+					name = PHI_philippine_scouts
+					bonus = 0.1
+					days = 240
+					sub_doctrine = rangers_2
+					}
+				}			
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_potential_special_forces_tree = yes
 		}
@@ -9431,7 +9622,22 @@ focus = {
 					name = PHI_marine_corps
 					cost_reduction = 0.25
 					uses = 1
-					category = cat_marines_doctrine
+					category = special_forces_doctrine
+				}
+				custom_effect_tooltip = marine_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = PHI_marine_corps
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_1
+					}
+					add_mastery_bonus = {
+						name = PHI_marine_corps
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_2
+					}
 				}
 			}
 			add_tech_bonus = {
@@ -9829,6 +10035,9 @@ focus = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
+
+
+
 }	
 
 

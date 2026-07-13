@@ -1,18 +1,19 @@
 ideas = {
 
-	mobilization_laws = { 
+	mobilization_laws = {
 		law = yes
 		use_list_view = yes
-		
+
 		disarmed_nation = {
-						
+
 			cost = 150
 			removal_cost = -1
 			level = 7
-			
+
 			available = {
 				#has_manpower_for_recruit_change_to = { value = 0.005 group = mobilization_laws }
-				if = { 
+				# R56
+				if = {
 					limit = {
 					 	original_tag = SWI
 						has_global_flag = SWI_R56_focus_tree
@@ -23,38 +24,58 @@ ideas = {
 					limit = { original_tag = CAN }
 					has_completed_focus = r56_CAN_conscription_crisis
 				}
+				##
 			}
 
-			allowed_to_remove = {
+			modifier = {
+				conscription = 0.01
+				mobilization_speed = 0.01 # R56
+				research_speed_factor = 0.01 # R56
+			}
+
+			cancel_if_invalid = no
+			on_add = {
+				if = {
+					limit = { SIA_should_add_national_savings_bond = yes }
+					SIA_refresh_nsb_spirit = yes
+					add_ideas = idea_SIA_nsb_disarmed_nation
+				}
+
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree # R56
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_manpower_law > -1 } }
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_manpower_law = -1 }
+				}
+			}
+
+			allowed_to_remove = { # R56
 				if = {
 					limit = { original_tag = CYP }
 					has_completed_focus = CYP_found_army
 				}
 			}
-
-			modifier = {
-				conscription = 0.01
-				mobilization_speed = 0.01
-				research_speed_factor = 0.01
-			}
-			
-			cancel_if_invalid = no
 		}
-		
+
 		volunteer_only = {
-						
+
 			cost = 150
 			removal_cost = -1
 			level = 6
-			
+
 			available = {
 				#has_manpower_for_recruit_change_to =  { value = 0.015 group = mobilization_laws }
-				if = {
-					limit = {
-						original_tag = BHU
-					}
-					NOT = { has_idea = BHU_no_army }
-				}
 				IF = {
 					limit = {
 						original_tag = HUN
@@ -108,7 +129,17 @@ ideas = {
 						}
 					}
 				}
-				if = { 
+
+				if = {
+					limit = {
+						DEN_aat_is_subject = yes
+					}
+					NOT = { has_country_flag = DEN_had_volunteer_only_flag }
+				}
+				NOT = { has_idea = undisturbed_isolation }
+				NOT = { has_idea = isolation }
+				# R56
+				if = {
 					limit = {
 					 	original_tag = SWI
 						has_global_flag = SWI_R56_focus_tree
@@ -116,16 +147,8 @@ ideas = {
 					NOT = { has_country_flag = SWI_reliance_on_militia } 
 				}
 				if = {
-					limit = {
-						original_tag = USA
-					}
-					NOT = { has_idea = undisturbed_isolation }
-				}
-				if = {
-					limit = {
-						original_tag = SAU
-					}
-					NOT = { has_idea = isolation }
+					limit = { original_tag = BHU }
+					NOT = { has_idea = BHU_no_army }
 				}
 				if = { 
 					limit = {
@@ -142,6 +165,7 @@ ideas = {
 				#		has_completed_focus = LIE_enact_the_1921_defence_act
 				#	}
 				#}
+				##
 			}
 
 			ai_will_do = {
@@ -149,81 +173,59 @@ ideas = {
 
    				modifier = {
 					factor = 60 # being disarmed is bad in a wargame yo
-					has_idea = disarmed_nation 
+					has_idea = disarmed_nation
 				}
 			}
 
 			modifier = {
 				conscription = 0.015
-				mobilization_speed = 0.015
-				army_attack_factor = 0.015 #Volunteer armies tend to function better than conscripted armies 
+				mobilization_speed = 0.015 # R56
+				army_attack_factor = 0.015 # R56 #Volunteer armies tend to function better than conscripted armies 
 			}
-			
+
 			default = yes
-			
+
 			cancel_if_invalid = no
+
+			on_add = {
+				if = {
+					limit = { SIA_should_add_national_savings_bond = yes }
+					SIA_refresh_nsb_spirit = yes
+					add_ideas = idea_SIA_nsb_volunteer_only
+				}
+
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree # R56
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_manpower_law > 0 } }
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_manpower_law = 0 }
+				}
+			}
 		}
-		
+
 		limited_conscription = {
-					
+
 			cost = 150
 			removal_cost = -1
 			level = 5
 
 			available = {
 				#has_manpower_for_recruit_change_to =  { value = 0.025 group = mobilization_laws }
-				IF = {
-					limit = {
-						has_idea = GER_no_conscription
-					}
-					OR = {
-						NOT = { has_idea = GER_no_conscription }
-						has_war_with_major = yes
-					}
-				}
-				if = {
-					limit = {
-						original_tag = BHU
-					}
-					NOT = { has_idea = BHU_no_army }
-				}
 				has_war_support > 0.1
-				if = {
-					limit = {
-						original_tag = HON
-						has_completed_focus = HON_free_our_markets
-					}
-					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
-				}
-				if = {
-					limit = {
-						original_tag = SWE
-					}
-					NOT = { 
-						has_idea = SWE_swedish_disarmament_idea 
-						has_idea = SWE_swedish_disarmament_1_idea
-					} 
-				}				
-				if = { 
-					limit = {
-						original_tag = SWI
-					   has_global_flag = SWI_R56_focus_tree
-					 }
-					NOT = { has_country_flag = SWI_reliance_on_militia } 
-				}
-				if = {
-					limit = {
-						original_tag = USA
-					}
-					NOT = { has_idea = undisturbed_isolation }
-				}
-				if = {
-					limit = {
-						original_tag = SAU
-					}
-					NOT = { has_idea = isolation }
-				}
-				if = {
+				NOT = { has_idea = undisturbed_isolation }
+				NOT = { has_idea = isolation }
+				if = { # R56 - Support for both Australian trees
 					limit = { original_tag = AST }
 					if = {
 						limit = { has_dlc = "Thunder at Our Gates" }
@@ -239,33 +241,7 @@ ideas = {
 						}
 					}
 				}
-				if = { 
-					limit = {
-					 	original_tag = CAN
-					}
-					has_completed_focus = r56_CAN_conscription_crisis
-				}
-				if = {
-					limit = {
-						original_tag = RAJ
-					}
-					OR = {
-						is_subject = no
-						has_autonomy_state = autonomy_dominion
-						AND = {
-							has_war_support > 0.8
-							num_of_factories > 75
-						}
-					}
-					custom_trigger_tooltip = {
-						tooltip = raj_not_in_famine
-						NOT = {
-							has_idea = RAJ_agrarian_economy_famine
-							has_idea = RAJ_agrarian_economy_recovery
-						}
-					}
-				}
-				
+
 				IF = {
 					limit = {
 						original_tag = HUN
@@ -343,14 +319,90 @@ ideas = {
 				}
 				if = {
 					limit = {
-						original_tag = MON
+						has_global_flag = DEN_use_DLC_tree # R56
+						DEN_aat_is_subject = yes
 					}
+					NOT = { has_country_flag = DEN_cannot_increase_conscription_law }
+				}
+				if = {
+					limit = {
+						has_global_flag = aus_dlc_focus_tree # R56
+						original_tag = AUS
+					}
+					NOT = {
+						has_idea = AUS_treaty_of_saint_germain_en_laye
+					}
+				}
+				IF = {
+					limit = {
+						has_global_flag = afg_dlc_focus_tree # R56
+						original_tag = AFG
+					}
+					has_completed_focus = AFG_adopt_nufus
+				}
+				# R56
+				IF = {
+					limit = { has_idea = GER_no_conscription }
+					OR = {
+						NOT = { has_idea = GER_no_conscription }
+						has_war_with_major = yes
+					}
+				}
+				if = {
+					limit = { original_tag = BHU }
+					NOT = { has_idea = BHU_no_army }
+				}
+				if = {
+					limit = {
+						original_tag = HON
+						has_completed_focus = HON_free_our_markets
+					}
+					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
+				}
+				if = {
+					limit = { original_tag = SWE }
+					NOT = { 
+						has_idea = SWE_swedish_disarmament_idea 
+						has_idea = SWE_swedish_disarmament_1_idea
+					} 
+				}
+				if = {
+					limit = {
+						original_tag = SWI
+					   	has_global_flag = SWI_R56_focus_tree
+					 }
+					NOT = { has_country_flag = SWI_reliance_on_militia } 
+				}
+				if = {
+					limit = {
+						original_tag = RAJ
+					}
+					OR = {
+						is_subject = no
+						has_autonomy_state = autonomy_dominion
+						AND = {
+							has_war_support > 0.8
+							num_of_factories > 75
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = raj_not_in_famine
+						NOT = {
+							has_idea = RAJ_agrarian_economy_famine
+							has_idea = RAJ_agrarian_economy_recovery
+						}
+					}
+				}
+				if = { 
+					limit = { original_tag = CAN }
+					has_completed_focus = r56_CAN_conscription_crisis
+				}
+				if = {
+					limit = { original_tag = MON }
 					NOT = { has_completed_focus = MON_changes_within }
 				}
 				if = { 
-					limit = {
-					 	original_tag = QUE
-					}
+					limit = { original_tag = QUE }
 					has_completed_focus = QUE_a_standing_army
 				}
 				if = {
@@ -358,21 +410,16 @@ ideas = {
 						original_tag = MPL
 						has_idea = MPL_mandate
 					}
-					NOT = {
-						has_idea = MPL_mandate
-					}
+					NOT = { has_idea = MPL_mandate }
 				}
 				if = { 
-					limit = {
-					 	original_tag = LIE
-					}
+					limit = { original_tag = LIE }
 					OR = {
-						NOT = {
-							has_idea = LIE_legacy_of_1866
-						}
+						NOT = { has_idea = LIE_legacy_of_1866 }
 						has_completed_focus = LIE_reintroduce_conscription
 					}
 				}
+				##
 			}
 		
 
@@ -391,20 +438,20 @@ ideas = {
 
 			modifier = {
 				conscription = 0.025
-				mobilization_speed = 0.025
+				mobilization_speed = 0.025 # R56
 			}
-			
+
 			ai_will_do = {
-   				factor = 2
-				   modifier = {
+   				factor = 1
+				modifier = {
 					# Ignore if high on manpower
-					factor = 0.7
-					manpower_per_military_factory > 2000
+					factor = 0.5
+					manpower_per_military_factory > 5000
 				}
 				modifier = {
 					#Prio if low on manpower
-					factor = 50
-					manpower_per_military_factory < 1000
+					factor = 20
+					manpower_per_military_factory < 2000
 				}
 				modifier = {
 					tag = ENG
@@ -412,20 +459,81 @@ ideas = {
 					factor = 20
 				}
 				modifier = {
-					factor = 30
-
-					original_tag = SOV
-					has_manpower < 1000000
+					tag = ENG
+					AND = {
+						is_historical_focus_on = yes
+						has_game_rule = {
+							rule = ENG_ai_behavior
+							option = DEFAULT
+						}
+					}
+					date > 1939.1.1
+					date < 1939.9.1
+					has_war = no
+					NOT = { has_guaranteed = POL }
+					factor = 0
+				}
+				modifier = {
+					tag = SOV
+					threat > 0.8
+					factor = 3
+				}
+				modifier = {
+					tag = SOV
+					is_historical_focus_on = yes
+					date > 1939.1.1
+					has_idea = volunteer_only
+					factor = 201
 				}
 				modifier = {
 					factor = 0
 					NOT = { has_idea = volunteer_only }
 				}
+				modifier = {
+					original_tag = JAP
+					has_idea = volunteer_only
+					OR = {
+						has_active_mission = JAP_army_faction_demands_conscription_law_change
+						has_active_mission = JAP_naval_faction_demands_conscription_law_change
+					}
+					factor = 10
+				}
 			}
-			
+
+			on_add = {
+				if = { # R56?
+					limit = { tag = DEN }
+					set_variable = { den_conscription_focus_cost = 5 }
+				}
+				
+				if = {
+					limit = { SIA_should_add_national_savings_bond = yes }
+					SIA_refresh_nsb_spirit = yes
+					add_ideas = idea_SIA_nsb_limited_conscription
+				}
+
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree # R56
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_manpower_law > 1 } }
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_manpower_law = 1 }
+				}
+			}
 			cancel_if_invalid = no
 		}
-	
+
+		# R56 - Unique Afghan conscription law
 		# Afghansitan Hasht Nafari # - (Eight Man System)
 		AFG_hasht_nafari = {
 
@@ -516,37 +624,47 @@ ideas = {
 			
 			available = {
 				#has_manpower_for_recruit_change_to = { value = 0.05 group = mobilization_laws }
-				IF = {
-					limit = {
-						has_idea = GER_no_conscription
-					}
-					OR = {
-						NOT = { has_idea = GER_no_conscription }
-						has_war_with_major = yes
-					}
-				}
-				if = {
-					limit = {
-						original_tag = BHU
-					}
-					NOT = { has_idea = BHU_no_army }
-				}
 				OR = {
 					has_government = fascism
 					has_government = communism
-
 					if = {
-						limit = { PHI_SEA = yes }
+						limit = {
+							PHI_SEA = yes
+						}
 						if = {
-							limit = { has_idea = PHI_ties_with_republican_spain }
+							limit = {
+								has_idea = PHI_ties_with_republican_spain
+							}
 							has_idea = PHI_ties_with_republican_spain
 						}
 						else_if = {
-							limit = { has_idea = PHI_ties_with_republican_spain_2 }
+							limit = {
+								has_idea = PHI_ties_with_republican_spain_2
+							}
 							has_idea = PHI_ties_with_republican_spain_2
 						}
 						else = {
 							hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+						}
+					}
+					else = {
+						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+					}
+					if = { # R56
+						limit = {
+							original_tag = SWE
+							has_global_flag = SWE_use_DLC_tree
+						}
+						SWE_rapid_mob_manpower_law_trigger = yes
+					}
+					if = {
+						limit = {
+							original_tag = DEN
+							has_global_flag = DEN_use_DLC_tree # R56
+						}
+						has_country_leader = {
+							ruling_only = yes
+							character = DEN_christian_x
 						}
 					}
 					else = {
@@ -557,47 +675,25 @@ ideas = {
 						enemies_strength_ratio > 0.5
 						#any_enemy_country = {
 						#	strength_ratio = {
-						#		tag = ROOT 
+						#		tag = ROOT
 						#		ratio > 0.5
 						#	}
 						#}
 					}
-					if = { # Should be able to replace Hasht Nafari on AFG
+
+					if = {
 						limit = {
-							original_tag = AFG
-						}
-						OR = {
-							# if = { # Causes CTD, BOP checks dont work
-							# 	limit = {
-							# 		original_tag = AFG
-							# 		has_power_balance = {
-							# 			id = AFG_power_balance
-							# 		}
-							# 	}
-							# 	power_balance_value = {
-							# 		id = AFG_power_balance
-							# 		value < -0.30
-							# 	}
-							# }
-							has_completed_focus = AFG_army_modernization
-							has_completed_focus = AFG_depose_the_king
-							has_completed_focus = AFG_annul_the_hasht_nafari
-							has_completed_focus = AFG_push_army_reforms
+							has_global_flag = SWE_use_DLC_tree
+							has_autonomy_state = autonomy_aat_defense_council_member
+							is_subject_of = SWE
 						}
 					}
 					else = {
-						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+						hidden_trigger = { always = no }  #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
 					}
 				}
 				has_war_support > 0.2
-				if = {
-					limit = {
-						original_tag = HON
-						has_completed_focus = HON_free_our_markets
-					}
-					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
-				}
-				if = {
+				if = { # R56 - Support for both Australian trees
 					limit = { original_tag = AST }
 					if = {
 						limit = { has_dlc = "Thunder at Our Gates" }
@@ -613,13 +709,7 @@ ideas = {
 						}
 					}
 				}
-				if = { 
-					limit = {
-					 	original_tag = CAN
-					 }
-					has_completed_focus = r56_CAN_conscription_crisis
-				}
-				if = {
+				if = { # R56
 					limit = {
 						original_tag = RAJ
 					}
@@ -688,6 +778,123 @@ ideas = {
 						}
 					}
 				}
+
+				if = {
+					limit = {
+						original_tag = ENG
+						has_completed_focus = ENG_concessions_to_the_trade_unions
+					}
+					NOT = { has_country_flag = ENG_cannot_increase_conscription_law }
+				}
+				if = {
+					limit = {
+						original_tag = SPR
+						has_dlc = "La Resistance"
+					}
+					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
+				}
+				if = {
+					limit = {
+						original_tag = BUL
+						has_global_flag = bul_bftb_focus_tree
+					}
+					NOT = { has_idea = BUL_army_restrictions }
+				}
+				if = {
+					limit = {
+						has_global_flag = DEN_use_DLC_tree # R56
+						DEN_aat_is_subject = yes
+					}
+					NOT = { has_country_flag = DEN_cannot_increase_conscription_law }
+				}
+				if = {
+					limit = {
+						has_global_flag = aus_dlc_focus_tree # R56
+						original_tag = AUS
+					}
+					NOT = {
+						has_idea = AUS_treaty_of_saint_germain_en_laye
+					}
+				}
+				IF = {
+					limit = {
+						has_global_flag = afg_dlc_focus_tree # R56
+						original_tag = AFG
+					}
+					has_completed_focus = AFG_adopt_nufus
+				}
+				# R56
+				IF = {
+					limit = { has_idea = GER_no_conscription }
+					OR = {
+						NOT = { has_idea = GER_no_conscription }
+						has_war_with_major = yes
+					}
+				}
+				if = {
+					limit = { original_tag = BHU }
+					NOT = { has_idea = BHU_no_army }
+				}
+				if = { # Should be able to replace Hasht Nafari on AFG
+					limit = {
+						original_tag = AFG
+					}
+					OR = {
+						# if = { # Causes CTD, BOP checks dont work
+						# 	limit = {
+						# 		original_tag = AFG
+						# 		has_power_balance = {
+						# 			id = AFG_power_balance
+						# 		}
+						# 	}
+						# 	power_balance_value = {
+						# 		id = AFG_power_balance
+						# 		value < -0.30
+						# 	}
+						# }
+						has_completed_focus = AFG_army_modernization
+						has_completed_focus = AFG_depose_the_king
+						has_completed_focus = AFG_annul_the_hasht_nafari
+						has_completed_focus = AFG_push_army_reforms
+					}
+				}
+				else = {
+					hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+				}
+				if = {
+					limit = {
+						original_tag = HON
+						has_completed_focus = HON_free_our_markets
+					}
+					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
+				}
+				if = {
+					limit = { original_tag = USA }
+					NOT = { has_idea = undisturbed_isolation }
+				}
+				if = {
+					limit = { original_tag = SAU }
+					NOT = { has_idea = isolation }
+				}
+				if = { 
+					limit = { original_tag = CAN }
+					has_completed_focus = r56_CAN_conscription_crisis
+				}
+				if = {
+					limit = { original_tag = MON }
+					NOT = { has_completed_focus = MON_changes_within }
+				}
+				if = {
+					limit = {
+						original_tag = MPL
+						has_idea = MPL_mandate
+					}
+					NOT = { has_idea = MPL_mandate }
+				}
+				if = { 
+					limit = { original_tag = QUE }
+					has_completed_focus = QUE_a_standing_army
+				}
 				if = {
 					limit = {
 						original_tag = SWE
@@ -704,75 +911,84 @@ ideas = {
 					}
 					NOT = { has_country_flag = SWI_reliance_on_militia } 
 				}
-				if = {
-					limit = {
-						original_tag = USA
-					}
-					NOT = { has_idea = undisturbed_isolation }
-				}
-				if = {
-					limit = {
-						original_tag = SAU
-					}
-					NOT = { has_idea = isolation }
-				}
-				if = {
-					limit = {
-						original_tag = ENG
-						has_completed_focus = ENG_concessions_to_the_trade_unions
-					}
-					NOT = { has_country_flag = ENG_cannot_increase_conscription_law }
-				}
-				if = {
-					limit = {
-						original_tag = SPR
-						has_dlc = "La Resistance"
-					}
-					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
-				}
-				if = { 
-					limit = {
-					 	original_tag = QUE
-					 }
-					has_completed_focus = QUE_a_standing_army
-				}
-
-				if = {
-					limit = {
-						original_tag = BUL
-						has_global_flag = bul_bftb_focus_tree
-					}
-					NOT = { has_idea = BUL_army_restrictions }
-				}
-				if = {
-					limit = {
-						original_tag = MON
-					}
-					NOT = { has_completed_focus = MON_changes_within }
-				}
-				if = {
-					limit = {
-						original_tag = MPL
-						has_idea = MPL_mandate
-					}
-					NOT = {
-						has_idea = MPL_mandate
-					}
-				}
+				##
 			}
-
 			ai_will_do = {
-   				factor = 2
-				   modifier = {
+   				factor = 1
+
+				modifier = {
+					# Ignore if high on manpower
+					factor = 0.5
+					manpower_per_military_factory > 3000
+				}
+
+				modifier = {
 					#Prio if low on manpower
 					factor = 20
-					manpower_per_military_factory <  700
+					manpower_per_military_factory <  800
 				}
+
 				modifier = {
-					#Lower chance if has decent amount
-					factor = 0.5
-					manpower_per_military_factory >  1000
+					tag = TUR
+					has_global_flag = tur_bftb_focus_tree # R56
+					factor = 50
 				}
+
+				# china relies a lot on throwing bodies at the enemy
+				modifier = {
+					factor = 3
+
+					original_tag = CHI
+					has_manpower < 300000
+				}
+
+				# soviet also relies a lot on throwing bodies at the enemy
+				modifier = {
+					factor = 3
+
+					original_tag = SOV
+					has_manpower < 300000
+				}
+
+				modifier = {
+					factor = 5
+
+					original_tag = SOV
+					has_war = yes
+					has_manpower < 1000000
+				}
+
+				modifier = {
+					factor = 0
+					NOT = { has_idea = limited_conscription }
+				}
+
+				modifier = {
+					factor = 100
+					OR = {
+						original_tag = URG
+						original_tag = PAR
+					}
+					has_completed_focus = GUAY_coup_detat
+				}
+
+				modifier = {
+					original_tag = JAP
+					has_idea = limited_conscription
+					OR = {
+						has_active_mission = JAP_army_faction_demands_conscription_law_change
+						has_active_mission = JAP_naval_faction_demands_conscription_law_change
+					}
+					factor = 10
+				}
+
+				# R56
+				modifier = { # germany needs this before russia, badly
+					factor = 50
+					original_tag = GER
+					has_manpower < 450000
+				}
+				
 				modifier = {
 					#Block has plenty manpower
 					factor = 0
@@ -781,85 +997,72 @@ ideas = {
 					#NOT = { tag = GER }
 					manpower_per_military_factory >  3000
 				}
-
-				modifier = { # china relies a lot on throwing bodies at the enemy
-					factor = 5
-
-					original_tag = CHI
-					has_manpower < 200000
-				}
-
-				modifier = {
-					factor = 5
-
-					original_tag = SOV
-					has_manpower < 400000
-				}
-
-				modifier = { # germany needs this before russia, badly
-					factor = 50
-
-					original_tag = GER
-					has_manpower < 450000
-				}
+				##
 			}
-			
+
 			cost = 150
 			removal_cost = -1
 			level = 4
-			
+
 			modifier = {
 				conscription = 0.05
-				mobilization_speed = 0.05
+				mobilization_speed = 0.05 # R56
 				#industrial_capacity_factory = -0.1
 				#production_speed_buildings_factor = -0.1
 				training_time_factor = 0.1
 			}
-			
+
 			cancel_if_invalid = no
+
+			on_add = {
+				if = {
+					limit = { SIA_should_add_national_savings_bond = yes }
+					SIA_refresh_nsb_spirit = yes
+					add_ideas = idea_SIA_nsb_extensive_conscription
+				}
+
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree # R56
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_manpower_law > 2 } }
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_manpower_law = 2 }
+				}
+			}
 		}
-	
+
 		service_by_requirement = {
-			
+
 
 			available = {
 				#has_manpower_for_recruit_change_to =  { value = 0.1 group = mobilization_laws }
-				IF = {
-					limit = {
-						has_idea = GER_no_conscription
-					}
-					OR = {
-						NOT = { has_idea = GER_no_conscription }
-						has_war_with_major = yes
-					}
-				}
-				if = {
-					limit = {
-						original_tag = BHU
-					}
-					NOT = { has_idea = BHU_no_army }
-				}
 				OR = {
 					has_government = fascism
 					has_government = communism
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.6
-						#any_enemy_country = {
-						#	strength_ratio = {
-						#		tag = ROOT 
-						#		ratio > 0.6
-						#	}
-						#}
-					}
 					if = {
-						limit = { PHI_SEA = yes }
+						limit = {
+							PHI_SEA = yes
+						}
 						if = {
-							limit = { has_idea = PHI_ties_with_republican_spain }
+							limit = {
+								has_idea = PHI_ties_with_republican_spain
+							}
 							has_idea = PHI_ties_with_republican_spain
 						}
 						else_if = {
-							limit = { has_idea = PHI_ties_with_republican_spain_2 }
+							limit = {
+								has_idea = PHI_ties_with_republican_spain_2
+							}
 							has_idea = PHI_ties_with_republican_spain_2
 						}
 						else = {
@@ -869,19 +1072,30 @@ ideas = {
 					else = {
 						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
 					}
+					if = { # R56
+						limit = {
+							original_tag = SWE
+							has_global_flag = SWE_use_DLC_tree
+						}
+						SWE_rapid_mob_manpower_law_trigger = yes
+					}
+					AND = {
+						has_war = yes
+						enemies_strength_ratio > 0.6
+						#any_enemy_country = {
+						#	strength_ratio = {
+						#		tag = ROOT
+						#		ratio > 0.6
+						#	}
+						#}
+					}
 				}
 				OR = {
 					has_war_support > 0.6
 					surrender_progress > 0
 				}
-				if = {
-					limit = {
-						original_tag = HON
-						has_completed_focus = HON_free_our_markets
-					}
-					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
-				}
-				if = {
+
+				if = { # R56 - Support for both Australian trees
 					limit = { original_tag = AST }
 					if = {
 						limit = { has_dlc = "Thunder at Our Gates" }
@@ -897,13 +1111,8 @@ ideas = {
 						}
 					}
 				}
-				if = { 
-					limit = {
-					 	original_tag = CAN
-					 }
-					has_completed_focus = r56_CAN_conscription_crisis
-				}
-				if = {
+
+				if = { # R56
 					limit = {
 						original_tag = RAJ
 					}
@@ -992,8 +1201,59 @@ ideas = {
 				}
 				if = {
 					limit = {
-						original_tag = SWE
+						original_tag = BUL
+						has_global_flag = bul_bftb_focus_tree
 					}
+					NOT = { has_idea = BUL_army_restrictions }
+				}
+				if = {
+					limit = {
+						has_global_flag = DEN_use_DLC_tree # R56
+						DEN_aat_is_subject = yes
+					}
+					NOT = { has_country_flag = DEN_cannot_increase_conscription_law }
+				}
+				if = {
+					limit = {
+						has_global_flag = aus_dlc_focus_tree # R56
+						original_tag = AUS
+					}
+					NOT = {
+						has_idea = AUS_treaty_of_saint_germain_en_laye
+					}
+				}
+				IF = {
+					limit = {
+						has_global_flag = afg_dlc_focus_tree # R56
+						original_tag = AFG
+					}
+					has_completed_focus = AFG_adopt_nufus
+				}
+				# R56
+				IF = {
+					limit = { has_idea = GER_no_conscription }
+					OR = {
+						NOT = { has_idea = GER_no_conscription }
+						has_war_with_major = yes
+					}
+				}
+				if = {
+					limit = { original_tag = BHU }
+					NOT = { has_idea = BHU_no_army }
+				}
+				if = {
+					limit = {
+						original_tag = HON
+						has_completed_focus = HON_free_our_markets
+					}
+					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
+				}
+				if = { 
+					limit = { original_tag = CAN }
+					has_completed_focus = r56_CAN_conscription_crisis
+				}
+				if = {
+					limit = { original_tag = SWE }
 					NOT = { 
 						has_idea = SWE_swedish_disarmament_idea 
 						has_idea = SWE_swedish_disarmament_1_idea
@@ -1007,34 +1267,19 @@ ideas = {
 					NOT = { has_country_flag = SWI_reliance_on_militia } 
 				}
 				if = {
-					limit = {
-						original_tag = USA
-					}
+					limit = { original_tag = USA }
 					NOT = { has_idea = undisturbed_isolation }
 				}
 				if = {
-					limit = {
-						original_tag = SAU
-					}
+					limit = { original_tag = SAU }
 					NOT = { has_idea = isolation }
 				}
 				if = {
-					limit = {
-						original_tag = BUL
-						has_global_flag = bul_bftb_focus_tree
-					}
-					NOT = { has_idea = BUL_army_restrictions }
-				}
-				if = {
-					limit = {
-						original_tag = MON
-					}
+					limit = { original_tag = MON }
 					NOT = { has_completed_focus = MON_changes_within }
 				}
 				if = { 
-					limit = {
-					 	original_tag = QUE
-					}
+					limit = { original_tag = QUE }
 					has_completed_focus = QUE_a_standing_army
 				}
 				if = {
@@ -1042,12 +1287,9 @@ ideas = {
 						original_tag = MPL
 						has_idea = MPL_mandate
 					}
-					NOT = {
-						has_idea = MPL_mandate
-					}
+					NOT = { has_idea = MPL_mandate }
 				}
 			}
-
 
 			ai_will_do = {
    				factor = 1
@@ -1066,21 +1308,63 @@ ideas = {
 					factor = 0
 					NOT = { tag = CHI }
 					NOT = { tag = SOV }
+					NOT = { AND = { tag = GER date > 1940.11.1 } }
 					manpower_per_military_factory >  3000
 				}
 
 				modifier = { # china relies a lot on throwing bodies at the enemy
 					factor = 3
 
-					tag = CHI
+					original_tag = CHI
 					has_manpower < 200000
 				}
+
+				modifier = {
+					factor = 5
+
+					original_tag = SOV
+					has_manpower < 400000
+				}
+
 				modifier = { # germany needs this before russia, badly
 					factor = 10
 
 					original_tag = GER
 					has_manpower < 2000000
 				}
+
+				modifier = { # germany needs this before russia, badly
+					factor = 10
+
+					original_tag = GER
+					date > 1941.1.1
+				}
+
+				modifier = {
+					factor = 0
+					NOT = { has_idea = extensive_conscription }
+				}
+
+				modifier = {
+					factor = 100
+					OR = {
+						original_tag = URG
+						original_tag = PAR
+					}
+					has_completed_focus = GUAY_coup_detat
+				}
+
+				modifier = {
+					original_tag = JAP
+					has_idea = extensive_conscription
+					OR = {
+						has_active_mission = JAP_army_faction_demands_conscription_law_change
+						has_active_mission = JAP_naval_faction_demands_conscription_law_change
+					}
+					factor = 5
+				}
+
+				# R56
 				modifier = {
 					factor = 1000
 					original_tag = SOV
@@ -1088,43 +1372,54 @@ ideas = {
 					check_variable = { manpower_k < 800 }
 				}
 			}
-			
+
 			cost = 150
 			removal_cost = -1
 			level = 3
 
 			modifier = {
 				conscription = 0.1
-				mobilization_speed = 0.1
+				mobilization_speed = 0.1 # R56
 				industrial_capacity_factory = -0.1
-				industrial_capacity_dockyard = -0.1   
+				industrial_capacity_dockyard = -0.1
 				production_speed_buildings_factor = -0.1
 				training_time_factor = 0.2
 			}
-			
+
 			cancel_if_invalid = no
-		}
-		
-		all_adults_serve = {
-			
-			
-			available = {
-				IF = {
-					limit = {
-						has_idea = GER_no_conscription
-					}
-					OR = {
-						NOT = { has_idea = GER_no_conscription }
-						has_war_with_major = yes
-					}
+
+			on_add = {
+				if = {
+					limit = { SIA_should_add_national_savings_bond = yes }
+					SIA_refresh_nsb_spirit = yes
+					add_ideas = idea_SIA_nsb_service_by_requirement
 				}
-				#has_manpower_for_recruit_change_to =  { value = 0.2 group = mobilization_laws }
+
 				if = {
 					limit = {
-						original_tag = BHU
+						has_global_flag = sia_dlc_focus_tree # R56
+						original_tag = SIA
 					}
-					NOT = { has_idea = BHU_no_army }
+					if = {
+						limit = { check_variable = { SIA_current_manpower_law > 3 } }
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_manpower_law = 3 }
 				}
+			}
+		}
+
+		all_adults_serve = {
+
+
+			available = {
+				#has_manpower_for_recruit_change_to =  { value = 0.2 group = mobilization_laws }
 				has_war = yes
 				OR = {
 					has_war_support > 0.7
@@ -1133,18 +1428,12 @@ ideas = {
 				enemies_strength_ratio > 0.75
 				#any_enemy_country = {
 				#	strength_ratio = {
-				#		tag = ROOT 
+				#		tag = ROOT
 				#		ratio > 0.75
 				#	}
 				#}
-				if = {
-					limit = {
-						original_tag = HON
-						has_completed_focus = HON_free_our_markets
-					}
-					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
-				}
-				if = {
+
+				if = { # R56 - Support for both Australian trees
 					limit = { original_tag = AST }
 					if = {
 						limit = { has_dlc = "Thunder at Our Gates" }
@@ -1163,13 +1452,8 @@ ideas = {
 						}
 					}
 				}
-				if = { 
-					limit = {
-					 	original_tag = CAN
-					 }
-					has_completed_focus = r56_CAN_conscription_crisis
-				}
-				if = {
+
+				if = { # R56
 					limit = {
 						original_tag = RAJ
 					}
@@ -1244,28 +1528,6 @@ ideas = {
 
 				if = {
 					limit = {
-						original_tag = SWE
-					}
-					NOT = { 
-						has_idea = SWE_swedish_disarmament_idea 
-						has_idea = SWE_swedish_disarmament_1_idea
-					} 
-				}				
-				if = {
-					limit = {
-						original_tag = SWI
-						has_global_flag = SWI_R56_focus_tree
-					}
-					NOT = { has_country_flag = SWI_reliance_on_militia } 
-				}
-				if = {
-					limit = {
-						original_tag = USA
-					}
-					NOT = { has_idea = undisturbed_isolation }
-				}
-				if = {
-					limit = {
 						original_tag = ENG
 						has_completed_focus = ENG_concessions_to_the_trade_unions
 					}
@@ -1280,28 +1542,81 @@ ideas = {
 				}
 				if = {
 					limit = {
-						original_tag = SAU
-					}
-					NOT = { has_idea = isolation }
-				}
-				if = {
-					limit = {
 						original_tag = BUL
 						has_global_flag = bul_bftb_focus_tree
 					}
 					NOT = { has_idea = BUL_army_restrictions }
 				}
-				if = { 
-					limit = {
-					 	original_tag = QUE
-					}
-					has_completed_focus = QUE_a_standing_army
-				}
-					
 				if = {
 					limit = {
-						original_tag = MON
+						has_global_flag = DEN_use_DLC_tree # R56
+						DEN_aat_is_subject = yes
 					}
+					NOT = { has_country_flag = DEN_cannot_increase_conscription_law }
+				}
+				if = {
+					limit = {
+						has_global_flag = aus_dlc_focus_tree # R56
+						original_tag = AUS
+					}
+					NOT = {
+						has_idea = AUS_treaty_of_saint_germain_en_laye
+					}
+				}
+				IF = {
+					limit = {
+						has_global_flag = afg_dlc_focus_tree # R56
+						original_tag = AFG
+					}
+					has_completed_focus = AFG_adopt_nufus
+				}
+				# R56
+				IF = {
+					limit = { has_idea = GER_no_conscription }
+					OR = {
+						NOT = { has_idea = GER_no_conscription }
+						has_war_with_major = yes
+					}
+				}
+				if = {
+					limit = { original_tag = BHU }
+					NOT = { has_idea = BHU_no_army }
+				}
+				if = {
+					limit = { original_tag = SAU }
+					NOT = { has_idea = isolation }
+				}
+				if = { 
+					limit = { original_tag = QUE }
+					has_completed_focus = QUE_a_standing_army
+				}
+				if = {
+					limit = { original_tag = SWE }
+					NOT = { 
+						has_idea = SWE_swedish_disarmament_idea 
+						has_idea = SWE_swedish_disarmament_1_idea
+					} 
+				}
+				if = {
+					limit = {
+						original_tag = HON
+						has_completed_focus = HON_free_our_markets
+					}
+					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
+				}				
+				if = {
+					limit = {
+						original_tag = SWI
+						has_global_flag = SWI_R56_focus_tree
+					}
+					NOT = { has_country_flag = SWI_reliance_on_militia } 
+				}
+				if = {
+					limit = { original_tag = USA }
+					NOT = { has_idea = undisturbed_isolation }
+				}
+				if = {
+					limit = { original_tag = MON }
 					NOT = { has_completed_focus = MON_changes_within }
 				}
 				if = {
@@ -1309,99 +1624,125 @@ ideas = {
 						original_tag = MPL
 						has_idea = MPL_mandate
 					}
-					NOT = {
-						has_idea = MPL_mandate
-					}
+					NOT = { has_idea = MPL_mandate }
 				}
 				if = {
-					limit = {
-						original_tag = LIE
-					}
-					NOT = {
-						has_idea = LIE_legacy_of_1866
-					}
+					limit = { original_tag = CAN }
+					has_completed_focus = r56_CAN_conscription_crisis
+				}
+				if = {
+					limit = { original_tag = LIE }
+					NOT = { has_idea = LIE_legacy_of_1866 }
 				}
 			}
 
 			ai_will_do = {
-				factor = 1
+   				factor = 1
 				modifier = {
-				 	#Prio if low on manpower
-					 factor = 20
-					 manpower_per_military_factory <  600
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory <  600
 				}
-				 modifier = {
-					 #Lower chance if has decent amount
-					 factor = 0.5
-					 manpower_per_military_factory >  1000
+				modifier = {
+					#Lower chance if has decent amount
+					factor = 0.5
+					manpower_per_military_factory >  1000
 				}
-			 	modifier = {
-				 #Block has plenty manpower
-					 factor = 0
-					 NOT = { tag = CHI }
-					 manpower_per_military_factory >  2800
-			 	}
+				modifier = {
+					#Block has plenty manpower
+					factor = 0
+					NOT = { tag = CHI }
+					manpower_per_military_factory >  2800
+				}
 
-			 	modifier = { # china relies a lot on throwing bodies at the enemy
+				modifier = { # china relies a lot on throwing bodies at the enemy
 					factor = 3
 
-				 	tag = CHI
+					tag = CHI
 					has_manpower < 200000
 				}
-
 				modifier = {
 					factor = 10
 					original_tag = SOV
 					date > 1943.1.1
-			 		has_manpower < 2000000
+					has_manpower < 2000000
 				}
 
 				modifier = {
 					factor = 0
-			 		NOT = { has_idea = service_by_requirement }
-		 		}	
+					NOT = { has_idea = service_by_requirement }
+				}
+
+				modifier = {
+					original_tag = JAP
+					has_idea = service_by_requirement
+					OR = {
+						has_active_mission = JAP_army_faction_demands_conscription_law_change
+						has_active_mission = JAP_naval_faction_demands_conscription_law_change
+					}
+					factor = 3
+				}
 
 			}
-		
+
+			on_add = {
+				if = {
+					limit = {
+						#has_dlc = "Arms Against Tyranny" # R56
+						original_tag = FIN
+						has_completed_focus = FIN_militarized_society
+						NOT = { has_idea = FIN_militarized_society }
+					}
+					add_ideas = FIN_militarized_society
+				}
+
+				if = {
+					limit = { SIA_should_add_national_savings_bond = yes }
+					SIA_refresh_nsb_spirit = yes
+					add_ideas = idea_SIA_nsb_all_adults_serve
+				}
+
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree # R56
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_manpower_law > 4 } }
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_manpower_law = 4 }
+				}
+			}
+
 			cost = 150
 			removal_cost = -1
 			level = 2
-			
+
 			modifier = {
 				conscription = 0.2
-				mobilization_speed = 0.2
+				mobilization_speed = 0.2 # R56
 				industrial_capacity_factory = -0.3
 				industrial_capacity_dockyard = -0.3
 				production_speed_buildings_factor = -0.3
 				#XP from reinforcement penalty (small)
 				training_time_factor = 0.3
 			}
-			
+
 			cancel_if_invalid = no
 		}
-		
+
 		scraping_the_barrel = {
-			
-			
+
 			available = {
 				#has_manpower_for_recruit_change_to =  { value = 0.25 group = mobilization_laws }
-				IF = {
-					limit = {
-						has_idea = GER_no_conscription
-					}
-					OR = {
-						NOT = { has_idea = GER_no_conscription }
-						has_war_with_major = yes
-					}
-				}
-				if = {
-					limit = {
-						original_tag = BHU
-					}
-					NOT = { has_idea = BHU_no_army }
-				}
 				has_war = yes
-
 				OR = {
 					has_war_support > 0.85
 					surrender_progress > 0.25
@@ -1409,18 +1750,11 @@ ideas = {
 				enemies_strength_ratio > 1
 				#any_enemy_country = {
 				#	strength_ratio = {
-				#		tag = ROOT 
+				#		tag = ROOT
 				#		ratio > 1
 				#	}
 				#}
-				if = {
-					limit = {
-						original_tag = HON
-						has_completed_focus = HON_free_our_markets
-					}
-					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
-				}
-				if = {
+				if = { # R56 - Support for both Australian trees
 					limit = { original_tag = AST }
 					if = {
 						limit = { has_dlc = "Thunder at Our Gates" }
@@ -1439,17 +1773,11 @@ ideas = {
 						}
 					}
 				}
-				if = { 
-					limit = {
-					 	original_tag = CAN
-					 }
-					has_completed_focus = r56_CAN_conscription_crisis
-				}
 				if = {
 					limit = {
 						original_tag = RAJ
 					}
-					always = no
+					always = no # R56
 				}
 
 				IF = {
@@ -1508,8 +1836,77 @@ ideas = {
 				
 				if = {
 					limit = {
-						original_tag = SWE
+						original_tag = ENG
+						has_completed_focus = ENG_concessions_to_the_trade_unions
 					}
+					NOT = { has_country_flag = ENG_cannot_increase_conscription_law }
+				}
+				if = {
+					limit = {
+						original_tag = SPR
+						has_dlc = "La Resistance"
+					}
+					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
+				}
+				if = {
+					limit = {
+						original_tag = BUL
+						has_global_flag = bul_bftb_focus_tree
+					}
+					NOT = { has_idea = BUL_army_restrictions }
+				}
+				if = {
+					limit = {
+						has_global_flag = DEN_use_DLC_tree # R56
+						DEN_aat_is_subject = yes
+					}
+					NOT = { has_country_flag = DEN_cannot_increase_conscription_law }
+				}
+				if = {
+					limit = {
+						has_global_flag = aus_dlc_focus_tree # R56
+						original_tag = AUS
+					}
+					NOT = {
+						has_idea = AUS_treaty_of_saint_germain_en_laye
+					}
+				}
+				IF = {
+					limit = {
+						has_global_flag = afg_dlc_focus_tree # R56
+						original_tag = AFG
+					}
+					has_completed_focus = AFG_adopt_nufus
+				}	
+				# R56
+				IF = {
+					limit = { has_idea = GER_no_conscription }
+					OR = {
+						NOT = { has_idea = GER_no_conscription }
+						has_war_with_major = yes
+					}
+				}
+				if = {
+					limit = { original_tag = BHU }
+					NOT = { has_idea = BHU_no_army }
+				}
+				if = {
+					limit = {
+						original_tag = HON
+						has_completed_focus = HON_free_our_markets
+					}
+					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
+				}
+				if = { 
+					limit = { original_tag = CAN }
+					has_completed_focus = r56_CAN_conscription_crisis
+				}
+				if = { 
+					limit = { original_tag = QUE }
+					has_completed_focus = QUE_a_standing_army
+				}
+				if = {
+					limit = { original_tag = SWE }
 					NOT = { 
 						has_idea = SWE_swedish_disarmament_idea 
 						has_idea = SWE_swedish_disarmament_1_idea
@@ -1523,48 +1920,15 @@ ideas = {
 					NOT = { has_country_flag = SWI_reliance_on_militia } 
 				}
 				if = {
-					limit = {
-						original_tag = USA
-					}
+					limit = { original_tag = USA }
 					NOT = { has_idea = undisturbed_isolation }
 				}
 				if = {
-					limit = {
-						original_tag = SAU
-					}
+					limit = { original_tag = SAU }
 					NOT = { has_idea = isolation }
 				}
 				if = {
-					limit = {
-						original_tag = ENG
-						has_completed_focus = ENG_concessions_to_the_trade_unions
-					}
-					NOT = { has_country_flag = ENG_cannot_increase_conscription_law }
-				}
-				if = {
-					limit = {
-						original_tag = SPR
-						has_dlc = "La Resistance"
-					}
-					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
-				}
-				if = { 
-					limit = {
-					 	original_tag = QUE
-					}
-					has_completed_focus = QUE_a_standing_army
-				}
-				if = {
-					limit = {
-						original_tag = BUL
-						has_global_flag = bul_bftb_focus_tree
-					}
-					NOT = { has_idea = BUL_army_restrictions }
-				}
-				if = {
-					limit = {
-						original_tag = MON
-					}
+					limit = { original_tag = MON }
 					NOT = { has_completed_focus = MON_changes_within }
 				}
 				if = {
@@ -1572,17 +1936,11 @@ ideas = {
 						original_tag = MPL
 						has_idea = MPL_mandate
 					}
-					NOT = {
-						has_idea = MPL_mandate
-					}
+					NOT = { has_idea = MPL_mandate }
 				}
 				if = {
-					limit = {
-						original_tag = LIE
-					}
-					NOT = {
-						has_idea = LIE_legacy_of_1866
-					}
+					limit = { original_tag = LIE }
+					NOT = { has_idea = LIE_legacy_of_1866 }
 				}
 			}
 
@@ -1592,7 +1950,7 @@ ideas = {
 					#Prio if low on manpower
 					factor = 20
 					manpower_per_military_factory <  500
-				}				
+				}
 				modifier = {
 					#Lower chance if has decent amount
 					factor = 0.5
@@ -1603,6 +1961,58 @@ ideas = {
 					factor = 0
 					manpower_per_military_factory >  5000
 				}
+
+				modifier = {
+					factor = 0
+					NOT = { has_idea = all_adults_serve }
+				}
+
+				modifier = {
+					original_tag = JAP
+					has_idea = all_adults_serve
+					OR = {
+						has_active_mission = JAP_army_faction_demands_conscription_law_change
+						has_active_mission = JAP_naval_faction_demands_conscription_law_change
+					}
+					factor = 2
+				}
+
+			}
+
+			on_add = {
+				if = {
+					limit = {
+						#has_dlc = "Arms Against Tyranny" # R56
+						original_tag = FIN
+						has_completed_focus = FIN_militarized_society
+						NOT = { has_idea = FIN_militarized_society }
+					}
+					add_ideas = FIN_militarized_society
+				}
+
+				if = {
+					limit = { SIA_should_add_national_savings_bond = yes }
+					SIA_refresh_nsb_spirit = yes
+					add_ideas = idea_SIA_nsb_scraping_the_barrel
+				}
+
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree # R56
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_manpower_law > 5 } }
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_manpower_law = 5 }
+				}
 			}
 
 			cost = 150
@@ -1611,16 +2021,15 @@ ideas = {
 
 			modifier = {
 				conscription = 0.25
-				mobilization_speed = 0.25
+				mobilization_speed = 0.25 # R56
 				industrial_capacity_factory = -0.4
 				industrial_capacity_dockyard = -0.4
 				production_speed_buildings_factor = -0.4
 				training_time_factor = 0.5
 			}
-			
+
 			cancel_if_invalid = no
 		}
-		
 
 		### Ethiopian National Levy
 		ETH_chitet_law = {
@@ -1637,7 +2046,7 @@ ideas = {
 			}
 
 			ai_will_do = {
-					factor = 0
+   				factor = 0
 			}
 
 			modifier = {
@@ -1667,7 +2076,7 @@ ideas = {
 			}
 
 			ai_will_do = {
-					factor = 0
+   				factor = 0
 			}
 
 			modifier = {
@@ -1721,7 +2130,7 @@ ideas = {
 				always = no
 			}
 			allowed_to_remove = {
-					has_completed_focus = SWI_professionalize_militias
+ 				has_completed_focus = SWI_professionalize_militias
 				has_completed_focus = SWI_join_the_allies
 				has_completed_focus = SWI_join_france
 				has_completed_focus = SWI_jump_into_action
@@ -1737,4 +2146,6 @@ ideas = {
 			}
 		}
 	}
+
+
 }

@@ -5064,7 +5064,7 @@ characters = {
 					is_country_leader = no
 				}
 				ELSE = {
-					has_completed_focus = GER_re_establish_free_elections_ww
+					has_completed_focus = GER_monarchist_sentiment
 				}
 			}
 			cost = 50

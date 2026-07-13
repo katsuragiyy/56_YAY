@@ -36,7 +36,7 @@ characters = {
 		}
 	}
 	
-	BLR_radaslau_astrouski = {
+	BLR_radislau_astrouski = {
 		name = BLR_radislau_astrouski
 		portraits = {
 			civilian = {

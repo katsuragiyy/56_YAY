@@ -358,10 +358,6 @@ its_1527_all_over_again = {
 			tooltip = its_1527_all_over_again_tt
 			OR = {
 				has_country_leader = { 
-					character = AUS_otto_von_habsburg
-					ruling_only = yes 
-				}
-				has_country_leader = { 
 					character = HUN_otto_von_habsburg
 					ruling_only = yes 
 				}

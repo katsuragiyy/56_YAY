@@ -1278,7 +1278,7 @@ characters={
 			}
 		}
 	}
-	PHI_juan_sumulong = {
+	PHI_juan_samulong = {
 		instance = {
 			allowed = {
 				has_dlc = "No Compromise, No Surrender"

@@ -6,8 +6,10 @@ autonomy_state = {
 	manpower_influence = 0.2
 	
 	rule = {
+		desc = "RULE_DESC_IS_A_SUBJECT"
+	
 		can_not_declare_war = yes
-		can_decline_call_to_war = no
+		can_decline_call_to_war = no # R56
 		can_be_spymaster = yes
 	}
 	
@@ -15,10 +17,19 @@ autonomy_state = {
 		autonomy_manpower_share = 0.0
 		extra_trade_to_overlord_factor = 0.25
 		overlord_trade_cost_factor = -0.25
+		peace_score_ratio_transferred_to_overlord = 0.05
+		lend_lease_tension_with_overlord = -0.1
+		faction_influence_contribution_factor = -0.1
 	}
 	
 	ai_subject_wants_higher = {
 		factor = 0.0
+		modifier = {
+			has_dlc = "Graveyard of Empires"
+			original_tag = RAJ
+			has_completed_focus = RAJ_red_in_the_shadows
+			add = 10
+		}
 	}
 	
 	ai_overlord_wants_lower = {
@@ -30,18 +41,70 @@ autonomy_state = {
 	}
 
 	allowed = {
-		NOT = { has_government = fascism }
+		OVERLORD = { NOT = { has_government = fascism } }
+		
 		NOT = {
-			has_game_rule = {
-				rule = colour_of_subjects_setting
-				option = SUBJECT_COLOUR_ON
+			AND = {
+				OVERLORD = { has_government = fascism } 
+				OVERLORD = { tag = JAP } 
+			}
+			AND = {
+				OVERLORD = { has_government = neutrality } 
+				OVERLORD = { tag = JAP } 
+			}
+		}
+
+		if = {
+			limit = {
+				has_global_flag = chi_dlc_focus_tree # R56
+			}
+
+			NOT = {
+				AND = {
+					OVERLORD = { has_government = fascism } 
+					OVERLORD = { tag = CHI } 
+				}
+				AND = {
+					OVERLORD = { has_government = neutrality } 
+					OVERLORD = { tag = CHI } 
+				}
 			}
 		}
 	}
-
+	
 	can_take_level = {
-		NOT = {
+		NOT = { # R56
 			original_tag = AOI
+		}
+		if = {
+			limit = {
+				original_tag = AST
+			}
+			IF = {
+				limit = {
+					has_dlc = "Thunder at Our Gates"
+				}
+				OR = {
+					has_completed_focus = AST_ratify_westminster_adoption_act
+					has_completed_focus = AST_refuse_british_wars
+				}
+			}
+			ELSE = {
+				OR = {
+					has_completed_focus = AST_R56_dreams_of_a_republic # R56
+					has_completed_focus = AST_R56_appeal_to_the_labour_dissidents # R56
+					has_completed_focus = AST_R56_australia_first # R56
+				}
+			}
+		}
+		if = {
+			limit = {
+				original_tag = SAF
+			}
+			OR = {
+				has_completed_focus = SAF_push_the_unp_towards_independence
+				has_completed_focus = SAF_radicalize_the_afrikaner_broederbond
+			}
 		}
 		IF = {
 			limit = {
@@ -53,75 +116,34 @@ autonomy_state = {
 				has_completed_focus = CONGO_dominion_of_congo
 			}
 		}
-	}
-
-	can_lose_level = {
-		IF = {
+		if = {
 			limit = {
-				OVERLORD = { original_tag = BEL } 
-				original_tag = COG
-				has_dlc = "Gotterdammerung"			
+				original_tag = RAJ
+				has_global_flag = raj_dlc_focus_tree
+				NOT = { has_completed_focus = RAJ_his_majestys_loyal_government }
+			}
+			OR = {
+				has_completed_focus = RAJ_a_secular_state
+				has_completed_focus = RAJ_united_bengal
+				has_completed_focus = RAJ_eastern_pakistan
+			}
+		}
+		if = {
+			limit = {
+				original_tag = RAJ
+				has_global_flag = raj_dlc_focus_tree
+				has_completed_focus = RAJ_his_majestys_loyal_government
+			}
+			has_completed_focus = RAJ_the_dominion_of_india
+			has_completed_focus = RAJ_keep_calm_and_carry_on
+			has_completed_focus = RAJ_holding_the_gates_of_india
+		}
+		if = {
+			limit = {
+				original_tag = INS
 			}
 			NOT = {
-				has_completed_focus = CONGO_dominion_of_congo
-			}
-		}
-	}
-}
-
-autonomy_state = {
-	id = autonomy_dominion
-	
-	use_overlord_color = yes	#coloring subjects	- Fantom
-	
-	min_freedom_level = 0.8
-	
-	manpower_influence = 0.2
-	
-	rule = {
-		can_not_declare_war = yes
-		can_decline_call_to_war = no
-		can_be_spymaster = yes
-	}
-	
-	modifier = {
-		autonomy_manpower_share = 0.0
-		extra_trade_to_overlord_factor = 0.25
-		overlord_trade_cost_factor = -0.25
-	}
-	
-	ai_subject_wants_higher = {
-		factor = 0.0
-	}
-	
-	ai_overlord_wants_lower = {
-		factor = 1.0
-	}
-
-	ai_overlord_wants_garrison = {
-		always = no
-	}
-
-	allowed = {
-		NOT = { has_government = fascism }
-		has_game_rule = {
-			rule = colour_of_subjects_setting
-			option = SUBJECT_COLOUR_ON
-		}
-	}
-
-	can_take_level = {
-		NOT = {
-			original_tag = AOI
-		}
-		IF = {
-			limit = {
-				original_tag = COG
-				has_dlc = "Gotterdammerung"			
-			}
-			has_completed_focus = CONGO_republic_of_congo
-			NOT = {
-				has_completed_focus = CONGO_dominion_of_congo
+				has_idea = idea_INS_netherlands_most_precious_jewel
 			}
 		}
 	}

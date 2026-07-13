@@ -1939,7 +1939,7 @@ country_event = {
 			modifier = {
 				add = 1
 				has_country_leader = {
-					character = AFG_haji_mirzali_khan
+					character = AFG_faqir_of_ipi
 					ruling_only = yes
 				}
 			}
@@ -2001,7 +2001,7 @@ country_event = {
 			modifier = {
 				add = 2
 				has_country_leader = {
-					character = AFG_haji_mirzali_khan
+					character = AFG_faqir_of_ipi
 					ruling_only = yes
 				}
 			}
@@ -2106,7 +2106,7 @@ country_event = {
 			modifier = {
 				add = 3
 				has_country_leader = {
-					character = AFG_haji_mirzali_khan
+					character = AFG_faqir_of_ipi
 					ruling_only = yes
 				}
 			}
@@ -2126,7 +2126,7 @@ country_event = {
 			modifier = {
 				add = 1
 				has_country_leader = {
-					character = AFG_haji_mirzali_khan
+					character = AFG_faqir_of_ipi
 					ruling_only = yes
 				}
 			}
@@ -2194,7 +2194,7 @@ country_event = {
 			modifier = {
 				add = 2
 				has_country_leader = {
-					character = AFG_haji_mirzali_khan
+					character = AFG_faqir_of_ipi
 					ruling_only = yes
 				}
 			}
@@ -2250,7 +2250,7 @@ country_event = {
 			modifier = {
 				add = 1
 				has_country_leader = {
-					character = AFG_haji_mirzali_khan
+					character = AFG_faqir_of_ipi
 					ruling_only = yes
 				}
 			}
@@ -2291,7 +2291,7 @@ country_event = {
 			modifier = {
 				add = 4
 				has_country_leader = {
-					character = AFG_haji_mirzali_khan
+					character = AFG_faqir_of_ipi
 					ruling_only = yes
 				}
 			}

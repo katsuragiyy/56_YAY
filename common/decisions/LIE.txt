@@ -888,9 +888,18 @@ LIE_support_monarchy_in_AUS_category = {
 		}
 
 		available = {
-			AUS = {
-				neutrality > 0.25
+			NOT = {
+				HUN = {
+					OR = {
+						has_country_leader = {
+							character = HUN_otto_von_habsburg
+							ruling_only = yes
+						}
+						has_idea = HUN_hungarian_monarchy_resored_habsburgs_otto
+					}
+				}
 			}
+			AUS = { neutrality > 0.25 }
 		}
 
 		visible = {
@@ -940,7 +949,7 @@ LIE_support_monarchy_in_AUS_category = {
 							original_tag = AUS
 							has_government = neutrality
 						}
-						AUS_otto_von_habsburg = {
+						HUN_otto_von_habsburg = {
 							set_nationality = PREV
 							add_country_leader_role = {
 								promote_leader = yes
@@ -1016,11 +1025,11 @@ LIE_support_monarchy_in_AUS_category = {
 					AUS = {
 						if = {
 							limit = {
-								NOT = {
-									has_character = AUS_otto_von_habsburg
+								NOT = { 
+									has_character = HUN_otto_von_habsburg
 								}
 							}
-							AUS_otto_von_habsburg = {
+							HUN_otto_von_habsburg = {
 								set_nationality = PREV
 								add_country_leader_role = {
 									promote_leader = yes
@@ -1032,7 +1041,7 @@ LIE_support_monarchy_in_AUS_category = {
 								}
 							}
 							else = {	
-								AUS_otto_von_habsburg = {
+								HUN_otto_von_habsburg = {
 									add_country_leader_role = {
 										promote_leader = yes
 										country_leader = {

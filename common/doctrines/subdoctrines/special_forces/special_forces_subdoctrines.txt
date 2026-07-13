@@ -814,6 +814,7 @@ rangers_2 = {
     }
 }
 
+# R56 - Shocktroop Doctrine
 shocktroops_1 = {
     track = { special_forces_first special_forces_second }
     name = shocktroop_level_1_a

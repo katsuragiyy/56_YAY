@@ -131,9 +131,9 @@ barbarossa_north = {
 		13 # Eastern Finland  
 		265 # East Karelia
 		150 # Archangelsk
-		278 # Western Finland
+		#278 # Western Finland # R56 - Not in the mod
 		279 # Gulf of Botnia
-		277 # Northern Finland
+		#277 # Northern Finland # R56 - Not in the mod
 		12 # Kola
 		191 # Northern Norway
 		46 # Barents Sea
@@ -369,8 +369,8 @@ scandinavia = {
 		275 # Jutland Peninsula
 		173 # Eastern North Sea
 		279 # Gulf of Bothnia
-		277 # Northern Finland
-		278 # Western Finland
+		#277 # Northern Finland # R56 - Not in the mod
+		#278 # Western Finland # R56 - Not in the mod
 		9 # Gulf of Finland
 		
 	}

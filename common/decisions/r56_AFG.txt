@@ -375,7 +375,7 @@ AFG_balance_of_power_category = {
 			custom_effect_tooltip = AFG_get_haji_mirzali_tt
 			custom_effect_tooltip = AFG_get_zmarak_zadran_tt
 			custom_effect_tooltip = available_military_high_command
-			show_ideas_tooltip = AFG_haji_mirzali_khan_chief
+			show_ideas_tooltip = AFG_faqir_of_ipi_chief
 			show_ideas_tooltip = AFG_zmarak_khan_zadran
 		}
 
@@ -6883,7 +6883,7 @@ AFG_internal_crisis = {
 						has_government = fascism
 					}
 					promote_character = {
-						character = AFG_haji_mirzali_khan
+						character = AFG_faqir_of_ipi
 						ideology = islamism
 					}
 				}

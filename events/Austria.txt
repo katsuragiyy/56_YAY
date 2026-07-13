@@ -850,9 +850,9 @@ country_event = { #habsburg moderate return
 			}
 			drop_cosmetic_tag = yes
 		}
-		AUS_otto_von_habsburg = {
+		HUN_otto_von_habsburg = {
 			add_country_leader_role = {
-				character = AUS_otto_von_habsburg
+				character = HUN_otto_von_habsburg
 				promote_leader = yes
 				country_leader = { 
 					ideology = constitutional_monarchy
@@ -913,9 +913,9 @@ country_event = { #habsburg lose power
 		hidden_effect = {
 			set_cosmetic_tag = AUS_EMPIRE
 		}
-		AUS_otto_von_habsburg = {
+		HUN_otto_von_habsburg = {
 			add_country_leader_role = {
-				character = AUS_otto_von_habsburg
+				character = HUN_otto_von_habsburg
 				promote_leader = yes
 				country_leader = { 
 					ideology = socialism
@@ -946,15 +946,15 @@ country_event = {
 			ideology = neutrality
 			popularity = 0.05
 		}
-		AUS_otto_von_habsburg = {
+		HUN_otto_von_habsburg = {
 			swap_country_leader_traits = {
 				remove = AUS_constrained_figurehead
 				add = AUS_constrained_no_longer
 			}
 		}
-		AUS_otto_von_habsburg = {
+		HUN_otto_von_habsburg = {
 			set_portraits = {
-				character = AUS_otto_von_habsburg
+				character = HUN_otto_von_habsburg
 				civilian = {
 					large = GFX_Portrait_hungary_otto_von_hapsburg
 					small = GFX_Portrait_hungary_otto_von_hapsburg_small

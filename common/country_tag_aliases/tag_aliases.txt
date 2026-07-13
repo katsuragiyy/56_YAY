@@ -15,7 +15,7 @@
 #	# if none of the following targets are defined, the game will check all existing countries but this is highly discouraged for performance reasons
 #	original_tag = GER # pick a country that has original_tag of GER
 #	targets = { GER FRA ENG } # search within the list of tags/variables
-#	target_array = array_name # search within an array 
+#	target_array = array_name # search within an array
 #
 #	# by default alias will return the first existing country that it matches and fulfils the triggers. you can also define a scoring system like this and it will pick the tag with the highest score > 0
 #	country_score = {
@@ -47,7 +47,10 @@
 
 SPA = {
 	original_tag = SPR
-	has_country_flag = SPR_nationalist_spain_flag
+	OR = {
+		has_country_flag = SPR_nationalist_spain_flag
+		has_country_flag = scw_no_lar_nationalists
+	}
 }
 
 SPB = {
@@ -70,7 +73,7 @@ SPD = {
 
 VIC = {
 	original_tag = FRA
-	has_country_flag = is_vichy_france
+	has_country_flag = is_vichy_france #  R56
 	#ACTIVATE 1.10.2
 	#has_focus_tree = vichy_french_focus
 }
@@ -103,10 +106,10 @@ SOP = {
 	original_tag = SOV
 	has_cosmetic_tag = SOV_PROVISIONAL
 }
-SOU = { #Tag for Stalinist SOV with other options in case it doesn't exist. 
+SOU = { #Tag for Stalinist SOV with other options in case it doesn't exist.
 	original_tag = SOV
 	country_score = {
-		base = 1 
+		base = 1
 		modifier = {
 			add = 1
 			has_cosmetic_tag = SOV_right_opposition
@@ -116,14 +119,14 @@ SOU = { #Tag for Stalinist SOV with other options in case it doesn't exist.
 			add = 2
 			AND = {
 				has_cosmetic_tag = SOV_left_opposition
-				exists = yes 
+				exists = yes
 			}
 		}
 		modifier = {
 			add = 5
 			AND = {
 				has_cosmetic_tag = stalinist_soviet_union
-				exists = yes 
+				exists = yes
 			}
 		}
 	}
@@ -131,7 +134,7 @@ SOU = { #Tag for Stalinist SOV with other options in case it doesn't exist.
 
 RSI = { #Republica Socialista Italiana (Axis) (put road to 56 flags in here too in case you want to restore the old paths (for non-DLC))
 	original_tag = ITA
-	OR ={
+	OR ={ # R56
 		has_country_flag = ITA_rsi_cw_flag
 		has_cosmetic_tag = ITA_RSI
 		has_cosmetic_tag = ITA_RSI_fascism
@@ -160,6 +163,8 @@ SB3 = {
 SB4 = {
 	variable = SWI.SWI_country_to_appease_4
 }
+
+#### AAT ####
 
 FNO = { # Alias for Fascist Norway 
 	original_tag = NOR 
@@ -192,3 +197,4 @@ FGR = {
 MOT = {
 	variable = generic_operation_target
 }
+

@@ -3,15 +3,15 @@
 modifiers = {
 	### Fighters ###
 	fighter_good = {
-		type = { fighter interceptor }
-		chance = 0.3
+		type = { fighter heavy_fighter interceptor }
+		chance = 0.9
 		effect = {
 			air_attack_factor = 0.03
 			air_maximum_speed_factor = 0.03
 			air_agility_factor = 0.05
 		}
 	}
-	fighter_good_attack = {
+	fighter_good_attack = { # R56
 		type = { fighter interceptor }
 		chance = 0.3
 		effect = {
@@ -20,7 +20,7 @@ modifiers = {
 			air_agility_factor = 0.02
 		}
 	}
-	fighter_good_agility = {
+	fighter_good_agility = { # R56
 		type = { fighter interceptor }
 		chance = 0.3
 		effect = {
@@ -30,7 +30,7 @@ modifiers = {
 		}
 	}
 	fighter_unique = {
-		type = { fighter interceptor }
+		type = { fighter heavy_fighter interceptor }
 		chance = 0.4
 		effect = {
 			air_attack_factor = 0.06
@@ -38,7 +38,7 @@ modifiers = {
 			air_agility_factor = 0.1
 		}
 	}
-	fighter_unique_attack = {
+	fighter_unique_attack = { # R56
 		type = { fighter interceptor }
 		chance = 0.4
 		effect = {
@@ -48,15 +48,15 @@ modifiers = {
 		}
 	}
 	fighter_genius = {
-		type = { fighter interceptor }
-		chance = 0.025
+		type = { fighter heavy_fighter interceptor }
+		chance = 0.05
 		effect = {
 			air_attack_factor = 0.1
 			air_maximum_speed_factor = 0.08
 			air_agility_factor = 0.15
 		}
 	}
-	fighter_genius_attack = {
+	fighter_genius_attack = { # R56
 		type = { fighter interceptor }
 		chance = 0.025
 		effect = {
@@ -68,15 +68,15 @@ modifiers = {
 
 	### Bombers ###
 	bomber_good = {
-		type = { tactical_bomber strategic_bomber }
+		type = { tactical_bomber strategic_bomber } # R56
 		chance = 0.3
 		effect = {
 			air_strategic_bomber_bombing_factor = 0.05
 			air_range_factor = 0.03
-			ground_attack_factor = 0.03
+			ground_attack_factor = 0.03 # R56
 		}
 	}
-	bomber_good_range = {
+	bomber_good_range = { # R56
 		type = { tactical_bomber strategic_bomber }
 		chance = 0.3
 		effect = {
@@ -85,7 +85,7 @@ modifiers = {
 			air_range_factor = 0.01
 		}
 	}
-	bomber_good_bombing = {
+	bomber_good_bombing = { # R56
 		type = { tactical_bomber strategic_bomber }
 		chance = 0.3
 		effect = {
@@ -95,15 +95,15 @@ modifiers = {
 		}
 	}
 	bomber_unique = {
-		type = { tactical_bomber strategic_bomber }
+		type = { tactical_bomber strategic_bomber } # R56
 		chance = 0.4
 		effect = {
 			air_strategic_bomber_bombing_factor = 0.10
-			ground_attack_factor = 0.08
+			ground_attack_factor = 0.08 # R56
 			air_range_factor = 0.06
 		}
 	}
-	bomber_unique_bombing = {
+	bomber_unique_bombing = { # R56
 		type = { tactical_bomber strategic_bomber }
 		chance = 0.2
 		effect = {
@@ -112,7 +112,7 @@ modifiers = {
 			air_range_factor = 0.03
 		}
 	}
-	bomber_unique_range = {
+	bomber_unique_range =  {  # R56
 		type = { tactical_bomber strategic_bomber }
 		chance = 0.2
 		effect = {
@@ -122,14 +122,14 @@ modifiers = {
 		}
 	}
 	bomber_genius = {
-		type = { tactical_bomber strategic_bomber }
+		type = { tactical_bomber strategic_bomber } # R56
 		chance = 0.05
 		effect = {
 			air_strategic_bomber_bombing_factor = 0.15
 			air_range_factor = 0.1
 		}
 	}
-	bomber_genius_bombing = {
+	bomber_genius_bombing = { # R56
 		type = { tactical_bomber strategic_bomber }
 		chance = 0.05
 		effect = {
@@ -138,7 +138,7 @@ modifiers = {
 			air_range_factor = 0.05
 		}
 	}
-	bomber_genius_range = {
+	bomber_genius_range = { # R56
 		type = { tactical_bomber strategic_bomber }
 		chance = 0.05
 		effect = {
@@ -149,17 +149,16 @@ modifiers = {
 	}
 
 	### Support ###
-
 	support_good = {
 		type = { cas tactical_bomber naval_bomber }
-		chance = 0.3
+		chance = 0.9
 		effect = {
 			naval_strike_targetting_factor = 0.05
 			ground_attack_factor = 0.03
 			air_agility_factor = 0.05
 		}
 	}
-	support_good_bombing = {
+	support_good_bombing = { # R56
 		type = { cas tactical_bomber naval_bomber }
 		chance = 0.3
 		effect = {
@@ -167,7 +166,7 @@ modifiers = {
 			ground_attack_factor = 0.04
 		}
 	}
-	support_good_agility = {
+	support_good_agility = { # R56
 		type = { cas tactical_bomber naval_bomber }
 		chance = 0.3
 		effect = {
@@ -185,7 +184,7 @@ modifiers = {
 			air_agility_factor = 0.1
 		}
 	}
-	support_unique_bombing = {
+	support_unique_bombing = { # R56
 		type = { cas tactical_bomber naval_bomber }
 		chance = 0.2
 		effect = {
@@ -194,7 +193,7 @@ modifiers = {
 			air_agility_factor = 0.05
 		}
 	}
-	support_unique_agility = {
+	support_unique_agility = { # R56
 		type = { cas tactical_bomber naval_bomber }
 		chance = 0.2
 		effect = {
@@ -212,7 +211,7 @@ modifiers = {
 			air_agility_factor = 0.15
 		}
 	}
-	support_genius_bombing = {
+	support_genius_bombing = { # R56
 		type = { cas tactical_bomber naval_bomber }
 		chance = 0.025
 		effect = {
@@ -221,7 +220,7 @@ modifiers = {
 			air_agility_factor = 0.08
 		}
 	}
-	support_genius_agility = {
+	support_genius_agility = { # R56
 		type = { cas tactical_bomber naval_bomber }
 		chance = 0.025
 		effect = {

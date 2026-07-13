@@ -651,7 +651,7 @@ characters = {
 			legacy_id = -1
 		}
 	}
-	AFG_haji_mirzali_khan = {
+	AFG_faqir_of_ipi = {
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/AFG/r56_portrait_AFG_Faqir_Of_Ipi.dds"
@@ -674,7 +674,7 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = AFG_haji_mirzali_khan
+			idea_token = AFG_faqir_of_ipi
 			allowed = {
 				original_tag = AFG
 			}
@@ -687,7 +687,7 @@ characters = {
 				has_completed_focus = AFG_contact_faqir
 				NOT = {
 					has_country_leader = {
-						character = AFG_haji_mirzali_khan
+						character = AFG_faqir_of_ipi
 						ruling_only = yes
 					}
 					has_government = communism
@@ -779,7 +779,7 @@ characters = {
 			}
 			slot = high_command
 			ledger = army
-			idea_token = AFG_haji_mirzali_khan_army
+			idea_token = AFG_faqir_of_ipi_army
 			traits = {
 				army_infantry_2
 			}
@@ -817,7 +817,7 @@ characters = {
 			}
 			slot = army_chief
 			ledger = army
-			idea_token = AFG_haji_mirzali_khan_chief
+			idea_token = AFG_faqir_of_ipi_chief
 			traits = {
 				army_chief_morale_2
 			}
@@ -3735,29 +3735,6 @@ characters = {
 			}
 		}
 	}
-	AFG_faqir_of_ipi = {
-		name = AFG_faqir_of_ipi
-		portraits = {
-			army = {
-				large = GFX_portrait_AFG_faqir_of_ipi
-				small = GFX_portrait_AFG_faqir_of_ipi_small
-			}
-		}
-		field_marshal = {
-			traits = {
-				organizer
-			}
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 1
-			legacy_id = -1
-			visible = {
-				has_character_flag = AFG_rural_cw_started
-			}
-		}
-	}
 	AFG_mazrak_zadran = {
 		name = AFG_mazrak_zadran
 		portraits = {
@@ -3797,6 +3774,26 @@ characters = {
 			id = -1
 			traits = {
 				AFG_general_secretary
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_nisar_muhammad_yousafzai
+			allowed  = {
+				original_tag = AFG
+			}
+			visible = { has_global_flag = afg_dlc_focus_tree } # R56
+			available = {
+				has_completed_focus = AFG_renew_soviet_trade_agreement
+				NOT = {
+					has_country_leader = {
+						ruling_only = yes
+						character = AFG_nisar_muhammad_yousafzai
+					}	
+				}
+			}
+			traits  = {
+				ARG_communist_insurrectionist
 			}
 		}
 	}

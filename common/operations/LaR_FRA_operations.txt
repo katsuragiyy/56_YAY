@@ -17,7 +17,7 @@ FRA_instigate_workers_revolution_britain = { ### 1/25
 		}
 	}
 	visible = {
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_intervention_committee # R56
 		FROM = {
 			tag = ENG
 		}
@@ -130,7 +130,7 @@ FRA_instigate_workers_revolution_britain = { ### 1/25
 				tooltip = intelligency_agency_resistance_boost_tt
 			}
 		}
-		ROOT = {
+		ROOT = { # R56
 			country_event = {
 				id = lar_operative_event.7
 			}
@@ -171,7 +171,7 @@ FRA_instigate_workers_revolution_italy = { ### 1/25
 		original_tag = FRA
 	}
 	available = { 
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_intervention_committee # R56
 		ITA = {
 			NOT = {
 				has_war_with = ROOT
@@ -179,7 +179,7 @@ FRA_instigate_workers_revolution_italy = { ### 1/25
 		}
 	}
 	visible = {
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_intervention_committee # R56
 		FROM = {
 			tag = ITA
 			NOT = { has_government = communism }
@@ -227,7 +227,7 @@ FRA_instigate_workers_revolution_italy = { ### 1/25
 		ITA = {
 			add_popularity = { ideology = communism popularity = 0.25 }
 		}
-		ROOT = {
+		ROOT = { # R56
 			country_event = {
 				id = lar_operative_event.7
 			}
@@ -302,7 +302,7 @@ FRA_instigate_workers_revolution_spain = { ### 1/25
 		original_tag = FRA
 	}
 	available = { 
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_intervention_committee # R56
 		SPR = {
 			NOT = {
 				has_war_with = ROOT
@@ -311,7 +311,7 @@ FRA_instigate_workers_revolution_spain = { ### 1/25
 		}
 	}
 	visible = {
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_intervention_committee # R56
 		FROM = {
 			tag = SPR
 			NOT = { has_government = communism }
@@ -357,7 +357,7 @@ FRA_instigate_workers_revolution_spain = { ### 1/25
 	outcome_extra_chance = 0.25
 	outcome_execute = {
 		SPR = { add_popularity = { ideology = communism popularity = 0.25 } }
-		ROOT = {
+		ROOT = { # R56
 			country_event = {
 				id = lar_operative_event.7
 			}
@@ -432,7 +432,7 @@ FRA_instigate_workers_revolution_germany = { ### 1/25
 		original_tag = FRA
 	}
 	available = { 
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_intervention_committee # R56
 		GER = {
 			NOT = {
 				has_war_with = ROOT
@@ -440,7 +440,7 @@ FRA_instigate_workers_revolution_germany = { ### 1/25
 		}
 	}
 	visible = {
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_intervention_committee # R56
 		FROM = {
 			tag = GER
 			NOT = { has_government = communism }
@@ -486,7 +486,7 @@ FRA_instigate_workers_revolution_germany = { ### 1/25
 	outcome_extra_chance = 0.25
 	outcome_execute = {
 		GER = { add_popularity = { ideology = communism popularity = 0.25 } }
-		ROOT = {
+		ROOT = { # R56
 			country_event = {
 				id = lar_operative_event.7
 			}
@@ -657,7 +657,7 @@ FRA_coup_in_north_africa = { ### 1/50
 				transfer_state = PREV
 			}
 		}
-		ROOT = {
+		ROOT = { # R56
 			country_event = {
 				id = lar_operative_event.7
 			}
@@ -774,7 +774,7 @@ FRA_coup_in_syria = { ### 1/50
 				transfer_state = PREV
 			}
 		}
-		ROOT = {
+		ROOT = { # R56
 			country_event = {
 				id = lar_operative_event.7
 			}
@@ -913,7 +913,7 @@ FRA_coup_in_indochina = { ### 1/50
 				transfer_state = PREV
 			}
 		}
-		ROOT = {
+		ROOT = { # R56
 			country_event = {
 				id = lar_operative_event.7
 			}
@@ -1035,7 +1035,7 @@ FRA_coup_in_central_africa = { ### 1/50
 				transfer_state = PREV
 			}
 		}
-		ROOT = {
+		ROOT = { # R56
 			country_event = {
 				id = lar_operative_event.7
 			}
@@ -1168,7 +1168,7 @@ FRA_coup_in_west_africa = { ### 1/50
 				transfer_state = PREV
 			}
 		}
-		ROOT = {
+		ROOT = { # R56
 			country_event = {
 				id = lar_operative_event.7
 			}
@@ -1249,7 +1249,7 @@ FRA_coup_in_madagascar = { ### 1/50
 		VIC = { country_event = LaR_france_vichy_notification_events.12 }
 		ROOT = {
 			 transfer_state = 543 
-			 country_event = {
+			 country_event = { # R56
 				id = lar_operative_event.7
 			}		
 		}

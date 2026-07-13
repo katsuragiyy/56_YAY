@@ -294,7 +294,7 @@ defined_text = {
 }
 
 
-#TODO_Manu: This does not work for a character name because of missing scope (regardless of checking inside ROOT and OWNER scopes)
+#MM: This does not work for a character name because of missing scope (regardless of checking inside ROOT and OWNER scopes)
 defined_text = {
 	name = GetGrandCouncilName
 	text = {
@@ -665,15 +665,15 @@ defined_text = { #Options for Purge the Party News Event
 defined_text = { #The Trial of Mussolini Title
 	name = GetTrialOfMussoliniTitles
 	text = { #INNOCENT
-		trigger = {
+		trigger = { 
 			FROM = {
-				has_country_flag = ITA_mussolini_is_innocent 	
+				has_country_flag = ITA_mussolini_is_innocent 
 			}
 		}
 		localization_key = bba_news.102.t_innocent
 	}
 	text = { #GUILTY
-		trigger = {
+		trigger = { 
 			FROM = {
 				has_country_flag = ITA_mussolini_is_guilty
 			}
@@ -685,7 +685,7 @@ defined_text = { #The Trial of Mussolini Title
 defined_text = { #The Trial of Mussolini Description
 	name = GetTrialOfMussoliniDesc
 	text = { #INNOCENT
-		trigger = {
+		trigger = { 
 			FROM = {
 				has_country_flag = ITA_mussolini_is_innocent 	
 			}
@@ -693,7 +693,7 @@ defined_text = { #The Trial of Mussolini Description
 		localization_key = bba_news.102.desc_innocent
 	}
 	text = { #GUILTY
-		trigger = {
+		trigger = { 
 			FROM = {
 				has_country_flag = ITA_mussolini_is_guilty	
 			}
@@ -705,7 +705,7 @@ defined_text = { #The Trial of Mussolini Description
 defined_text = { #The Assassination of Mussolini Title
 	name = GetAssassinationOfMussoliniTitles
 	text = { #Communists
-		trigger = {
+		trigger = { 
 			FROM = {
 				has_country_flag = ITA_mussolini_blame_communists	
 			}
@@ -713,7 +713,7 @@ defined_text = { #The Assassination of Mussolini Title
 		localization_key = bba_news.103.t_communists
 	}
 	text = { #Cover Story
-		trigger = {
+		trigger = { 
 			FROM = {
 				has_country_flag = ITA_mussolini_cover_story	
 			}
@@ -733,7 +733,7 @@ defined_text = { #The Assassination of Mussolini Description
 		localization_key = bba_news.103.desc_communists
 	}
 	text = { #Cover Story
-		trigger = {
+		trigger = { 
 			FROM = {
 				has_country_flag = ITA_mussolini_cover_story	
 			}

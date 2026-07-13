@@ -776,15 +776,16 @@
  RULE_OPTION_NO_FACTIONS:0 "No Starting Factions"
  RULE_OPTION_NO_FACTIONS_DESC:0 "There will be no starting factions at the beginning of the game, but Britain, the USA, Germany, and the USSR still begin with the ability to form factions."
 
- #UI
- RULE_COLOUR_OF_SUBJECTS:0 "Color of Subjects"
- RULE_COLOUR_OF_SUBJECTS_DESC:0 "Subject states and their color. Which one do you like?"
- RULE_OPTION_NO_CHANGES:0 "No Changes"
- RULE_OPTION_NO_CHANGES_DESC:0 "Subject states will keep their color like the base game."
- RULE_OPTION_SUBJECT_COLOUR_LOW_AUTONOMY_LEVEL:0 "Only Low-Autonomy Subjects"
- RULE_OPTION_SUBJECT_COLOUR_LOW_AUTONOMY_LEVEL_DESC:0 "Low autonomy subjects will be colored just like their overlords. Protectorates, dominions, satellites, free cities and imperial subjects are excluded."
- RULE_OPTION_SUBJECT_COLOUR_ON:0 "All Subjects Colored"
- RULE_OPTION_SUBJECT_COLOUR_ON_DESC:0 "Subjects will adopt the color of the respective overlord."
+ # Removed for causing gameplay issues. Can be added when a simple fix is discovered.
+ ##UI
+ #RULE_COLOUR_OF_SUBJECTS:0 "Color of Subjects"
+ #RULE_COLOUR_OF_SUBJECTS_DESC:0 "Subject states and their color. Which one do you like?"
+ #RULE_OPTION_NO_CHANGES:0 "No Changes"
+ #RULE_OPTION_NO_CHANGES_DESC:0 "Subject states will keep their color like the base game."
+ #RULE_OPTION_SUBJECT_COLOUR_LOW_AUTONOMY_LEVEL:0 "Only Low-Autonomy Subjects"
+ #RULE_OPTION_SUBJECT_COLOUR_LOW_AUTONOMY_LEVEL_DESC:0 "Low autonomy subjects will be colored just like their overlords. #Protectorates, dominions, satellites, free cities and imperial subjects are excluded."
+ #RULE_OPTION_SUBJECT_COLOUR_ON:0 "All Subjects Colored"
+ #RULE_OPTION_SUBJECT_COLOUR_ON_DESC:0 "Subjects will adopt the color of the respective overlord."
 
  #starting cores
  RULE_OPTION_DEFAULT_STARTING_CORES_DESC:0 "The nation will use its default starting releasable country cores."

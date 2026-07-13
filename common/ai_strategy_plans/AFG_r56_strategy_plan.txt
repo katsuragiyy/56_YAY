@@ -689,7 +689,7 @@ AFG_mirzali_plan = {
 	ideas = {
 		AFG_sardar_shah_wali_khan = 0
 		r56_AFG_abdul_majid_zabuli = 100
-		AFG_haji_mirzali_khan = 100
+		AFG_faqir_of_ipi = 100
 		AFG_amanullah_khan = 100
 		r56_AFG_mohammad_gul_khan_momand = 0
 		AFG_hashim_khan = 0
@@ -788,7 +788,7 @@ AFG_maududi_plan = {
 	}
 
 	ideas = {
-		AFG_haji_mirzali_khan = 100
+		AFG_faqir_of_ipi = 100
 		AFG_mubashir_al_tarazi = 100
 		AFG_fazl_omar_mojadidi = 100
 		AFG_amin_al_husseini = 75

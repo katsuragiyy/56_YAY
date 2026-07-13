@@ -10949,7 +10949,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = r56_newline
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = AFG_haji_mirzali_khan
+			show_ideas_tooltip = AFG_faqir_of_ipi
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -11714,7 +11714,7 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.05
 			effect_tooltip = {
-				AFG_haji_mirzali_khan = {
+				AFG_faqir_of_ipi = {
 					add_country_leader_role = {
 						country_leader = {
 							expire = "1965.1.1"
@@ -11729,11 +11729,11 @@ focus_tree = {
 			}
 			hidden_effect = {
 				promote_character = {
-					character = AFG_haji_mirzali_khan
+					character = AFG_faqir_of_ipi
 					ideology = islamism
 				}
 				add_trait = {
-					character = AFG_haji_mirzali_khan
+					character = AFG_faqir_of_ipi
 					ideology = islamism
 					trait = AFG_golden_emir
 				}

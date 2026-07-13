@@ -10,7 +10,7 @@ special_forces_quantity = {
             has_tech = marines
             has_tech = paratroopers
             has_tech = rangers_tech
-            has_tech = shocktroops
+            has_tech = shocktroops # R56 - Support for Shocktroopers
         }
     }
 
@@ -85,7 +85,7 @@ special_forces_quality = {
             has_tech = marines
             has_tech = paratroopers
             has_tech = rangers_tech
-            has_tech = shocktroops
+            has_tech = shocktroops # R56 - Support for Shocktroopers
         }
     }
 

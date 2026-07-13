@@ -128,7 +128,7 @@ set_popularities = {
 
 recruit_character = BLR_vasil_zacharka
 recruit_character = BLR_nikolay_abramchik
-recruit_character = BLR_radaslau_astrouski
+recruit_character = BLR_radislau_astrouski
 recruit_character = BLR_panteleimon_ponomarenko
 recruit_character = BLR_adam_stankievic
 recruit_character = BLR_natalia_arsenyeva

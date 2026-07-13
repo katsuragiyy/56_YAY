@@ -18,7 +18,7 @@ raid_trotskys_villa = { ### 1/50
 		}
 	}
 	visible = {
-		OR = {
+		OR = { # R56
 			has_completed_focus = SOV_behead_the_snake
 			has_completed_focus = SOV_nkvd_primacy_old
 		}
@@ -125,7 +125,7 @@ murder_trotsky = { ### 1/50
 
 	}
 	visible = {
-		OR = {
+		OR = { # R56
 			has_completed_focus = SOV_behead_the_snake
 			has_completed_focus = SOV_nkvd_primacy_old
 		}

@@ -8,6 +8,7 @@
 # localization_key -> points to the localization key
 # that'll be used if trigger passes
 
+#MM: UNUSED after WW (replaced by GetKfdWagenNames)
 defined_text = { # Country
 	name = GetKdfWagenName
 	text = {
@@ -32,6 +33,7 @@ defined_text = { # Country
 	}
 }
 
+#MM: UNUSED after WW (replaced by GetReichsWerkeName)
 defined_text = { # Country
 	name = GetHermannGoringWerkeName
 	text = {
@@ -60,6 +62,7 @@ defined_text = { # Country
 	}
 }
 
+# R56?
 defined_text = { # Country
 	name = GetPolStrengthenDevalue
 	text = {
@@ -251,6 +254,7 @@ defined_text = { #
 		localization_key = SS_rebellious
 	}
 }
+# R56?
 defined_text = { 
 	name = GetIwLoyalty
 	text = {
@@ -573,6 +577,7 @@ defined_text = {
 		}
 	}
 }
+
 defined_text = {
 	name = GETUKPROKINGNEWSPAPER
 	text = {
@@ -1172,13 +1177,13 @@ defined_text = { # Country
 	name = GetFrenchCoronationCity
 	text = {
 		trigger = {
-			has_completed_focus = FRA_action_francaise
+			has_completed_focus = FRA_action_francaise # R56
 		}
 		localization_key = LaR_France_Reims
 	}
 	text = {
 		trigger = {
-			OR = {
+			OR = { # R56
 				has_completed_focus = FRA_brumaire_movement
 				has_completed_focus = FRA_side_with_the_orleanists
 			}
@@ -1191,19 +1196,19 @@ defined_text = { # Country
 	name = GetFrenchRoyalTitle
 	text = {
 		trigger = {
-			has_completed_focus = FRA_action_francaise
+			has_completed_focus = FRA_action_francaise # R56
 		}
 		localization_key = LaR_France_King
 	}
 	text = {
 		trigger = {	
-			has_completed_focus = FRA_side_with_the_orleanists
+			has_completed_focus = FRA_side_with_the_orleanists # R56
 		}
 		localization_key = LaR_France_King_of_The_French
 	}
 	text = {
 		trigger = {	
-			has_completed_focus = FRA_brumaire_movement
+			has_completed_focus = FRA_brumaire_movement  # R56
 		}
 		localization_key = LaR_France_Emperor
 	}
@@ -1272,6 +1277,7 @@ defined_text = {
 	}
 }
 
+# R56
 defined_text = { #For Switzerland
 	name = SWI_fascist_leader
 	text = {
@@ -1303,6 +1309,7 @@ defined_text = { #For Switzerland
 		localization_key = "[GER.GetNameDef]"
 	}
 }
+##
 
 defined_text = {
 	name = GetOperationName
@@ -1584,7 +1591,7 @@ defined_text = {
 	name = GetBulwarkName
 	text = {
 		trigger = {
-			OR = {
+			OR = { # R56
 				any_country_with_original_tag = {
 					original_tag_to_check = SOV
 					has_cosmetic_tag = stalinist_soviet_union
@@ -1601,7 +1608,7 @@ defined_text = {
 			SOV = {
 				has_government = fascism
 			}
-			NOT = {
+			NOT = { # R56
 				SOS = {
 					exists = yes
 				}
@@ -1617,7 +1624,7 @@ defined_text = {
 					has_government = democratic
 				}
 			}
-			NOT = {
+			NOT = { # R56
 				SOS = {
 					exists = yes
 				}
@@ -1939,7 +1946,7 @@ defined_text = {
 		localization_key = SOV_STRIKE_AT_THE_SOURCE_DESC_EXILES
 	}
 }
-
+# R56
 defined_text = {
 	name = GetARMPurgeFocus
 	text = {

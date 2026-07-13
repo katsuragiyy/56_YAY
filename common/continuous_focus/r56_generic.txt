@@ -1,17 +1,78 @@
-#####---------------------------------------------------------------------> edited by Greatexperiment
-
 continuous_focus_palette = {
-
-	id = lemur_generic_focus
+	id = lemur_generic_focus # R56
 	
 	country = {
-		factor = 1000
+		factor = 1000  # R56
 	}
 	
 	default = yes
 	reset_on_civilwar = no
 			
-	position = { x = 50 y = 2000 }
+	position = { x = 50 y = 2000 } # R56
+
+	focus = {
+		id = DEN_undermine_overlord_continuous_focus
+		
+		icon = GFX_focus_DEN_undermine_overlord_continuous_focus
+		
+		available = {
+			is_subject = yes
+			hidden_trigger = { 
+				has_global_flag = DEN_use_DLC_tree # R56
+				original_tag = DEN
+			}
+		}
+
+		enable = {
+			has_power_balance = {
+				id = DEN_occupation_balance
+			}
+		}
+
+		modifier = {
+			power_balance_weekly = 0.01
+		}
+		
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 10
+				has_completed_focus = DEN_escalate_the_sabotages
+				has_completed_focus = DEN_expand_the_resistance
+			}
+			modifier = {
+				factor = 10
+				power_balance_value = {
+					id = DEN_occupation_balance
+					value < 0.9
+				}
+			}
+			modifier = {
+				factor = 0	
+				has_completed_focus = DEN_declare_independence
+				power_balance_value = {
+					id = DEN_occupation_balance
+					value > 0.9
+				}
+			}
+		}
+		
+		supports_ai_strategy = ai_focus_defense
+		
+		daily_cost = 1
+				
+		available_if_capitulated = yes
+
+		select_effect = {
+
+		}
+		
+
+		cancel_effect = {
+		
+		}
+	}
+
 	focus = {
 		id = ETH_strengthen_the_black_lions
 		
@@ -185,7 +246,8 @@ continuous_focus_palette = {
 		cancel_effect = {
 		
 		}
-	}		
+	}
+
 	focus = {
 		id = continuous_naval_production
 		
@@ -194,13 +256,13 @@ continuous_focus_palette = {
 		available = {
 		}
 		
-		modifier = {
+		modifier = { # R56
 			industrial_capacity_dockyard = 0.2
 		}
 		
 		ai_will_do = {
 			factor = 1
-			modifier = {
+			modifier = { # R56
 				factor = 0
 				
 				num_of_naval_factories < 3
@@ -222,9 +284,9 @@ continuous_focus_palette = {
 		available = {
 		}
 		
-		idea = idea_continuous_air_production
+		idea = continuous_air_production
 		
-		ai_will_do = {
+		ai_will_do = { # R56
 			factor = 1
 		}
 		
@@ -243,28 +305,29 @@ continuous_focus_palette = {
 		available = {
 		}
 		
+		
 		modifier = {
 			production_speed_infrastructure_factor = 0.1
 			production_speed_rail_way_factor = 0.1
 			production_speed_supply_node_factor = 0.1
 			production_speed_air_base_factor = 0.1
 			production_speed_naval_base_factor = 0.1
-			production_speed_synthetic_refinery_factor = 0.1
-			production_speed_rubber_refinery_factor = 0.1
-			production_speed_aluminum_mill_factor = 0.1
-			production_speed_steel_mill_factor = 0.1
+			#production_speed_synthetic_refinery_factor = 0.1
+			production_speed_fuel_silo_factor = 0.1 
+			production_speed_aluminum_mill_factor = 0.1 # R56
+			production_speed_steel_mill_factor = 0.1 # R56
 			production_speed_rocket_site_factor = 0.1
 			production_speed_nuclear_reactor_factor = 0.1
-			production_speed_fuel_silo_factor = 0.1
+			production_speed_synthetic_refinery_factor = 0.1 # R56
 			production_speed_bunker_factor = 0.2
 			production_speed_coastal_bunker_factor = 0.2
 			production_speed_anti_air_building_factor = 0.2
-			production_speed_radar_station_factor = 0.2			
+			production_speed_radar_station_factor = 0.2 		
 		}
 		
 		ai_will_do = {
 			factor = 1
-			modifier = {
+			modifier = { # R56
 				factor = 0
 				
 				num_of_controlled_states < 1
@@ -290,7 +353,7 @@ continuous_focus_palette = {
 			training_time_army_factor = -0.25
 		}
 		
-		ai_will_do = {
+		ai_will_do = { # R56
 			factor = 1
 		}
 		
@@ -411,7 +474,7 @@ continuous_focus_palette = {
 			autonomy_gain = 0.5
 		}
 
-		enable = {
+		enable = { # R56
 			if = {
 				limit = { #undermines content, reason to restrict it. 
 					original_tag = RAJ
@@ -447,7 +510,8 @@ continuous_focus_palette = {
 		}
 
 		modifier = {
-			subjects_autonomy_gain = -0.5
+			custom_modifier_tooltip = subject_autonomy_mod_tt
+			hidden_modifier = { subjects_autonomy_gain = -0.5 }
 		}
 		
 		ai_will_do = {
@@ -461,6 +525,7 @@ continuous_focus_palette = {
 		available_if_capitulated = yes
 	}
 
+	# R56
 	focus = {
 		id = population_growth_i
 		
@@ -557,5 +622,6 @@ continuous_focus_palette = {
 		
 		available_if_capitulated = yes
 	}
+	##
 	
 }

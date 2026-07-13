@@ -26,8 +26,10 @@ on_actions = {
 					remove_ideas = AFG_illiteracy
 					remove_ideas = r56_AFG_zahir_shah_idea
 					remove_ideas = AFG_bank_millie_afghan
-					remove_ideas = AFG_hasht_nafari
-					add_ideas = volunteer_only
+					swap_ideas = {
+						remove_idea = AFG_hasht_nafari
+    					add_idea = volunteer_only
+					}
 					remove_dynamic_modifier = {
 						modifier = AFG_afghan_army
 					}
@@ -64,15 +66,18 @@ on_actions = {
 					set_variable = { AFG_training_time_factor = 0 }
 					set_variable = { AFG_max_planning_factor = 0 }
 					set_variable = { AFG_planning_speed = 0 }
+					set_variable = { AFG_army_supply_consumption_factor = 0 }
+					set_variable = { AFG_army_supply_combat_penalties_on_core_factor = 0 }
+
 				
 				
 					add_dynamic_modifier = {
 						modifier = AFG_quami_modifier
 					}
 
-					AFG_haji_mirzali_khan = {
+					AFG_faqir_of_ipi = {
 						remove_country_leader_role = {
-							character = AFG_haji_mirzali_khan
+							character = AFG_faqir_of_ipi
 							ideology = islamism
 						}
 					}
@@ -543,6 +548,20 @@ on_actions = {
 					remove_country_leader_trait = AUS_rock_and_a_hard_place
 					remove_country_leader_trait = dislikes_germany
 					add_country_leader_trait = AUS_under_german_pressure
+					swap_ideas = {
+						remove_idea = limited_conscription
+    					add_idea = volunteer_only
+					}
+					set_party_name = {
+					    ideology = fascism
+					    long_name = AUS_vaterlandische_front_party_long
+					    name = AUS_vaterlandische_front_party
+					}
+					set_party_name = {
+					    ideology = neutrality
+					    long_name = AUS_haus_habsburg_party
+					    name = AUS_haus_habsburg_party
+					}
 					remove_ideas = {
 						AUS_july_followed_june
 						AUS_memories_of_februarkampfe

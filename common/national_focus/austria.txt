@@ -229,12 +229,12 @@ focus_tree = {
 
 			add_popularity = {
 				ideology = communism
-				popularity = 0.1
+				popularity = 0.025
 			}
 
 			add_popularity = {
 				ideology = democratic
-				popularity = 0.1
+				popularity = 0.025
 			} 
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -302,7 +302,7 @@ focus_tree = {
 
 			add_popularity = {
 				ideology = fascism
-				popularity = -0.1
+				popularity = -0.05
 			}
 		}
 	}
@@ -423,7 +423,7 @@ focus_tree = {
 	
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = AUS_otto_bauer
-			show_ideas_tooltip = AUS_bruno_frei
+			show_ideas_tooltip = AUS_bruno_frei # 56?
 
 
 			hidden_effect = {
@@ -468,7 +468,7 @@ focus_tree = {
 			add_to_variable = { AUS_austromarxism_stability_factor = -0.1 tooltip = stability_factor_tt }
 			add_to_variable = { AUS_austromarxism_communism_support = 0.02 tooltip = communism_drift_tt }
 			add_to_variable = { AUS_austromarxism_democratic_support = 0.01 tooltip = democratic_drift_tt }
-			custom_effect_tooltip = available_political_advisor
+			custom_effect_tooltip = available_political_advisor # 56?
 			show_ideas_tooltip = AUS_ernst_fischer
 		}
 	}
@@ -527,7 +527,7 @@ focus_tree = {
 
 				set_politics = {
 					ruling_party = fascism
-					last_election = "1930.11.9" 
+					last_election = "1934.11.9" 
 					election_frequency = 48
 					elections_allowed = no
 				}
@@ -573,7 +573,7 @@ focus_tree = {
 			}
 			add_popularity = {
 				ideology = communism
-				popularity = 0.15
+				popularity = 0.1
 			}
 
 			add_war_support = -0.05
@@ -773,7 +773,7 @@ focus_tree = {
 
 				custom_effect_tooltip = generic_skip_one_line_tt
 
-				show_unit_leaders_tooltip = AUS_julius_deutsch
+				show_unit_leaders_tooltip = AUS_julius_deutsch # 56
 
 				custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -819,6 +819,7 @@ focus_tree = {
 			factor = 10
 		}
 
+
 		completion_reward = {
 			add_timed_idea = {
 				idea = AUS_emergency_measures
@@ -861,6 +862,8 @@ focus_tree = {
 			
 		}
 
+
+
 		offset = {
 			x = 2
 			y = 0
@@ -872,6 +875,7 @@ focus_tree = {
 				has_completed_focus = AUS_hold_elections
 			}
 		}
+
 
 		completion_reward = {
 
@@ -947,6 +951,7 @@ focus_tree = {
 				exists = no
 			}	
 		}
+
 
 		completion_reward = {
 			add_manpower = 5000
@@ -2796,6 +2801,7 @@ focus_tree = {
 				ideology = democratic
 				popularity = 0.15
 			}
+			# 56
 			add_popularity = {
 				ideology = fascism
 				popularity = -0.05
@@ -2835,15 +2841,15 @@ focus_tree = {
 			
 			add_popularity = {
 				ideology = democratic
-				popularity = 0.25
+				popularity = 0.15
 			}
 			add_popularity = {
 				ideology = fascism
-				popularity = -0.12
+				popularity = -0.075
 			}
 			add_popularity = {
 				ideology = neutrality
-				popularity = -0.12
+				popularity = -0.075
 			}
 		}
 	}
@@ -3354,7 +3360,7 @@ focus_tree = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = AUS_franz_winkler
 
-			#IF = {		- Character doesn't exist in our files
+			#IF = {		56 - Character doesn't exist in our files
 				#limit = {
 					#NOT = {
 						#has_country_leader = {
@@ -3672,7 +3678,7 @@ focus_tree = {
 	}
 
 	focus = { # DEMOCRATIC
-		id = AUS_form_evidenzburo # dsn is agency called Direktion Staatsschutz und Nachrichtendienst
+		id = AUS_form_evidenzburo
 		icon = GFX_focus_AUS_the_evidenzburo_democratic
 		prerequisite = { focus = AUS_at_the_ready focus = AUS_the_political_front }
 		x = -1
@@ -3691,7 +3697,7 @@ focus_tree = {
 					has_dlc = "La Resistance" 
 					has_intelligence_agency = no
 				}
-				create_intelligence_agency = { 
+				create_intelligence_agency = { # 56 - dsn is agency called Direktion Staatsschutz und Nachrichtendienst
 					name = "Direktion Staatsschutz und Nachrichtendienst"
 					icon = GFX_intelligence_agency_logo_AUS_dsn
 				}
@@ -3711,7 +3717,7 @@ focus_tree = {
 					IF = {
 						limit = {
 							NOT = {
-								has_done_agency_upgrade =upgrade_economy_civilian 
+								has_done_agency_upgrade = upgrade_economy_civilian 
 							}
 						}
 						upgrade_intelligence_agency = upgrade_economy_civilian 
@@ -4123,7 +4129,7 @@ focus_tree = {
 				}
 				has_country_leader = {
 					ruling_only = yes # default = yes
-					character = AUS_otto_von_habsburg
+					character = HUN_otto_von_habsburg
 				}
 			}
 		}
@@ -4500,7 +4506,7 @@ focus_tree = {
 
 		completion_reward = {
 
-			set_cosmetic_tag = AUS_european_union_leader
+			set_cosmetic_tag = AUS_european_union_leader # 56
 			custom_effect_tooltip = generic_skip_one_line_tt
 			set_faction_name = BEL_european_union
 			custom_effect_tooltip = AUS_via_danube_to_europe_tt
@@ -4527,6 +4533,17 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 10
+		}
+
+		available = {
+			HUN = { # 56
+				NOT = {
+					has_country_leader = {
+						character = HUN_otto_von_habsburg
+						ruling_only = yes
+					}
+				}
+			}
 		}
 
 		allow_branch = {
@@ -4564,13 +4581,13 @@ focus_tree = {
 
 			hidden_effect = {
 				AUS_herrenhaus_and_vf_leaders_setup = yes
-				set_politics = {
+				set_politics = { # 56
 					ruling_party = neutrality
 					last_election = "1936.1.1"
 					election_frequency = 48
 					elections_allowed = no
 				}
-				add_popularity = {
+				add_popularity = { # 56
 					ideology = neutrality
 					popularity = 0.2
 				}
@@ -4605,15 +4622,12 @@ focus_tree = {
 						has_global_flag = HUN_otto_von_habsburg_has_joined_hungary_flag
 					}
 				}
-				AUS_otto_von_habsburg = {
-					promote_character = yes
+				HUN = {
+					HUN_otto_von_habsburg = { 
+						set_nationality = AUS
+						promote_character = yes
+					}
 				}
-				#HUN = {
-				#	HUN_otto_von_habsburg = { 
-				#		set_nationality = AUS
-				#		promote_character = yes
-				#	}
-				#}
 
 				set_global_flag = AUS_otto_von_habsburg_has_joined_austria_flag
 
@@ -4651,8 +4665,8 @@ focus_tree = {
 				ideology = fascism
 				long_name = AUS_fascism_vaterlandische_front_long
 				name = AUS_fascism_vaterlandische_front
-			}
-
+			}	
+			# 56
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = AUS_ernst_karl_winter
 			show_ideas_tooltip = AUS_hans_karl_zessner_spitzenberg
@@ -4680,7 +4694,7 @@ focus_tree = {
 			OR = {
 				has_country_leader = {
 					ruling_only = yes # default = yes
-					character = AUS_otto_von_habsburg 
+					character = HUN_otto_von_habsburg 
 				}
 				has_country_leader = {
 					ruling_only = yes 
@@ -4713,7 +4727,7 @@ focus_tree = {
 				limit = {
 					has_country_leader = {
 						ruling_only = yes # default = yes
-						character = AUS_otto_von_habsburg
+						character = HUN_otto_von_habsburg
 					}
 				}
 
@@ -4865,7 +4879,7 @@ focus_tree = {
 			OR = {
 				has_country_leader = {
 					ruling_only = yes # default = yes
-					character = AUS_otto_von_habsburg 
+					character = HUN_otto_von_habsburg 
 				}
 				has_country_leader = {
 					ruling_only = yes 
@@ -4880,7 +4894,7 @@ focus_tree = {
 				limit = {
 					has_country_leader = {
 						ruling_only = yes 
-						character = AUS_otto_von_habsburg
+						character = HUN_otto_von_habsburg
 					}
 				}
 				swap_ruler_traits = { remove = HUN_the_habsburg_prince add = AUS_king_of_austria }
@@ -5558,7 +5572,7 @@ focus_tree = {
 			has_government = neutrality
 			has_country_leader = {
 				ruling_only = yes
-				character = AUS_otto_von_habsburg #Ernst is more an annex guy
+				character = HUN_otto_von_habsburg #Ernst is more an annex guy
 			}
 			is_subject = no
 			NOT = {
@@ -5695,7 +5709,7 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					GER = {
+					GER = { # 56
 						exists = yes
 						OR = {
 							has_government = fascism
@@ -5718,7 +5732,7 @@ focus_tree = {
 
 			ELSE_IF = { #If Germany has died, check Italy
 				limit = {
-					ITA = {
+					ITA = { # 56
 						exists = yes
 						OR = {
 							has_government = fascism
@@ -5767,7 +5781,6 @@ focus_tree = {
 				icon = GFX_faction_logo_generic_13
 			}
 
-
 			custom_effect_tooltip = AUS_reforming_the_central_powers_tt
 
 			hidden_effect = {
@@ -5777,7 +5790,7 @@ focus_tree = {
 							exists = yes
 							NOT = { has_war_with = ROOT }
 							is_in_faction = no
-							is_subject = no
+							is_subject = no 
 							OR = {
 								has_government = neutrality
 								has_government = fascism
@@ -5799,7 +5812,7 @@ focus_tree = {
 							exists = yes
 							NOT = { has_war_with = ROOT }
 							is_in_faction = no
-							is_subject = no
+							is_subject = no 
 							OR = {
 								has_government = neutrality
 								has_government = fascism
@@ -5821,7 +5834,7 @@ focus_tree = {
 							exists = yes
 							NOT = { has_war_with = ROOT }
 							is_in_faction = no
-							is_subject = no
+							is_subject = no 
 							OR = {
 								has_government = neutrality
 								has_government = fascism
@@ -5866,6 +5879,7 @@ focus_tree = {
 
 		available = {
 			is_in_faction = no
+			is_subject = no
 			has_government = neutrality
 		}
 
@@ -5918,7 +5932,7 @@ focus_tree = {
 						AND = {
 							has_country_leader = {
 								ruling_only = yes # default = yes
-								character = AUS_otto_von_habsburg
+								character = HUN_otto_von_habsburg
 							}
 							is_in_faction = no
 							ENG = {
@@ -5944,7 +5958,7 @@ focus_tree = {
 						AND = {
 							has_country_leader = {
 								ruling_only = yes # default = yes
-								character = AUS_otto_von_habsburg
+								character = HUN_otto_von_habsburg
 							}
 							ENG = {
 								OR = {
@@ -6364,6 +6378,31 @@ focus_tree = {
 						}
 					}
 				}
+
+				IF = {
+					limit = { 
+						ALB = { 
+							exists = yes 
+							capital_scope = {
+								NOT = {
+									is_in_array = {
+										array = AUS.expansion_targets
+										value = THIS
+									}
+								}
+							} 
+						}
+					}
+
+					ALB = {
+						capital_scope = {
+							add_to_array = {
+								array = AUS.expansion_targets
+								value = THIS
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -6500,7 +6539,7 @@ focus_tree = {
 				limit = {
 					has_country_leader = {
 						ruling_only = yes # default = yes
-						character = AUS_otto_von_habsburg
+						character = HUN_otto_von_habsburg
 					}
 				}
 
@@ -6565,7 +6604,7 @@ focus_tree = {
 		available = {
 			has_country_leader = {
 				ruling_only = yes # default = yes
-				character = AUS_otto_von_habsburg
+				character = HUN_otto_von_habsburg
 			}
 			SWI = {
 				exists = yes
@@ -6668,8 +6707,8 @@ focus_tree = {
 			}
 		}
 		offset = {
-			x = 4
-			y = -1
+			x = 4 # 56
+			y = -1 # 56
 			trigger = {
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
@@ -6839,6 +6878,19 @@ focus_tree = {
 					hours = 3
 				}
 			}
+
+			custom_effect_tooltip = if_they_accept_tt
+			event_option_tooltip = AUS_political_events.56.a
+
+			custom_effect_tooltip = if_they_refuse_tt
+			effect_tooltip = {
+				create_wargoal = {
+					type = take_claimed_state
+					target = ITA
+					generator = { 39 850 } # optional 
+				}
+			}
+			event_option_tooltip = AUS_political_events.57.a
 		}
 	}
 
@@ -6934,7 +6986,54 @@ focus_tree = {
 					id = AUS_political_events.55
 					hours = 3
 				}
-			}		
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+			event_option_tooltip = AUS_political_events.56.a
+			custom_effect_tooltip = generic_skip_one_line_tt
+			effect_tooltip = {
+				ITA = {
+					random_owned_controlled_state = {
+						limit = {
+							is_core_of = ITA
+							NOT = {
+								state = 39
+								state = 850
+							}
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				ROOT = {
+					
+					random_owned_controlled_state = {
+						limit = {
+							is_core_of = AUS
+							industrial_complex > 2
+						}
+
+						remove_building = {
+							type = industrial_complex
+							level = 2
+						}
+					}
+				}
+
+				
+				add_opinion_modifier = {
+					target = ITA
+					modifier = medium_increase
+				}
+				
+			}
 		}
 	}
 
@@ -6963,6 +7062,18 @@ focus_tree = {
 					option = HIDE
 				}
 				has_completed_focus = AUS_demand_hungarian_submission
+			}
+		}
+
+		offset = {
+			x = 1
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = AUS_bring_hungary_back_into_the_fold
 			}
 		}
 
@@ -7578,6 +7689,108 @@ focus_tree = {
 
 			custom_effect_tooltip = AUS_bring_hungary_back_into_the_fold_tt
 			custom_effect_tooltip = target_yug_tt
+		}
+	}
+
+	focus = { # MONARCHIST & FASCIST
+		id = AUS_take_albania
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = AUS_reclaiming_yugoslavian_territories }
+		mutually_exclusive = { }
+		x = 2
+		y = 1
+		relative_position_id = AUS_reclaiming_yugoslavian_territories
+
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				has_idea = AUS_treaty_of_saint_germain_en_laye
+				has_war_with = ALB
+				934 = { is_fully_controlled_by = ROOT }
+				44 = { is_fully_controlled_by = ROOT }
+				805 = { is_fully_controlled_by = ROOT }
+			}
+			is_subject = no
+			ALB = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		
+		bypass = {
+			OR = {
+
+				AND = {
+					934 = { #Shkodër
+						OR = {
+							is_fully_controlled_by = ROOT
+							any_country = {
+								is_in_faction_with = ROOT
+								controls_state = 934
+							}
+							OWNER = {
+								has_war_with = ROOT
+							}
+						}
+					}
+
+					44 = { #Central Albania
+						OR = {
+							is_fully_controlled_by = ROOT
+							any_country = {
+								is_in_faction_with = ROOT
+								controls_state = 44
+							}
+							OWNER = {
+								has_war_with = ROOT
+							}
+						}
+					}
+
+					805 = { #Northern Epirus
+						OR = {
+							is_fully_controlled_by = ROOT
+							any_country = {
+								is_in_faction_with = ROOT
+								controls_state = 805
+							}
+							OWNER = {
+								has_war_with = ROOT
+							}
+						}
+					}
+				}
+				ALB = {
+					OR = {
+						is_subject_of = AUS
+						exists = no
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			ALB = {
+				capital_scope = {
+					add_to_array = {
+						array = AUS.expansion_targets
+						value = THIS
+					}
+				}
+			}
+
+			custom_effect_tooltip = AUS_bring_hungary_back_into_the_fold_tt
+			custom_effect_tooltip = target_alb_tt
 		}
 	}
 
@@ -8816,8 +9029,6 @@ focus_tree = {
 		y = 2
 		relative_position_id = AUS_clamp_down_on_dnsap
 
-		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_STABILITY }#I mean technically... it just went really badly...
-
 		cost = 10
 
 		ai_will_do = {
@@ -8828,6 +9039,7 @@ focus_tree = {
 			}
 		}
 
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_STABILITY }#I mean technically... it just went really badly...
 		completion_reward = {
 
 			add_stability = 0.05
@@ -9195,6 +9407,7 @@ focus_tree = {
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 
+			# 56
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = AUS_emil_fey
 
@@ -9376,7 +9589,7 @@ focus_tree = {
 		icon = GFX_focus_AUS_frontmiliz_focus
 		prerequisite = { focus = AUS_heimwehr_support }
 		prerequisite = { focus = AUS_rapid_rearmament }
-		x = 4
+		x = 5
 		y = 2
 		relative_position_id = AUS_heimwehr_support
 
@@ -9683,7 +9896,7 @@ focus_tree = {
 		}
 
 		offset = {
-			x = 11
+			x = 10
 			y = 0
 			trigger = {
 				has_game_rule = {
@@ -9709,7 +9922,7 @@ focus_tree = {
 		
 
 		offset = {
-			x = -4
+			x = -3
 			y = 0
 			trigger = {
 				has_game_rule = {
@@ -10008,13 +10221,13 @@ focus_tree = {
 					ruling_only = yes # default = yes
 					character = AUS_ernst_rudiger_starhemberg
 				}
-				#has_country_leader = {		- Character doesn't exist in our files
+				#has_country_leader = {		56 - Character doesn't exist in our files
 					#ruling_only = yes # default = yes
 					#character = AUS_vinzenz_schumy
 				#}
 				has_country_leader = {
 					ruling_only = yes # default = yes
-					character = AUS_otto_von_habsburg
+					character = HUN_otto_von_habsburg
 				}
 			}
 		}
@@ -11879,10 +12092,11 @@ focus_tree = {
 				ELSE = {
 					add_tech_bonus = {
 						name = AUS_radar_effort
-						bonus = 1
+						bonus = 0.5
 						uses = 1
 						category = radar_tech
 					}
+					# 56
 					custom_effect_tooltip = generic_skip_one_line_tt
 					add_breakthrough_progress = {
 						specialization = specialization_air
@@ -12239,7 +12453,22 @@ focus_tree = {
 					name = AUS_osterreichische_fallschirmsjager
 					cost_reduction = 0.3
 					uses = 2
-					category = cat_paratroopers_doctrine
+					category = special_forces_doctrine
+				}
+				custom_effect_tooltip = paratrooper_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = AUS_osterreichische_fallschirmsjager
+						bonus = 0.1
+						days = 240
+						sub_doctrine = paratroopers_1
+					}
+					add_mastery_bonus = {
+						name = AUS_osterreichische_fallschirmsjager
+						bonus = 0.1
+						days = 240
+						sub_doctrine = paratroopers_2
+					}
 				}
 			}
 
@@ -12277,17 +12506,42 @@ focus_tree = {
 					name = AUS_osterreichische_gebirgsjager
 					cost_reduction = 0.2
 					uses = 2
-					category = cat_mountaineers_doctrine
+					category = special_forces_doctrine
 				}
+				custom_effect_tooltip = mountaineer_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = AUS_osterreichische_gebirgsjager
+						bonus = 0.1
+						days = 240
+						sub_doctrine = mountaineers_1
+					}
+					add_mastery_bonus = {
+						name = AUS_osterreichische_gebirgsjager
+						bonus = 0.1
+						days = 240
+						sub_doctrine = mountaineers_2
+					}
+				}				
 			}
 
 			custom_effect_tooltip = ROM_mountain_artillery_tech_tt
-			hidden_effect = { set_technology = { mountain_gun = 1 } }
+			hidden_effect = { 
+				set_technology = { 
+					mountain_gun = 1 
+					popup = no
+				} 
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = AUS_osterreichische_gebirgsjager_tt
-			hidden_effect = { set_technology = { mountain_defensive_training = 1 } }
+			hidden_effect = { 
+				set_technology = { 
+					mountain_defensive_training = 1 
+					popup = no
+				} 
+			}
 		}
 	}
 
@@ -12324,8 +12578,23 @@ focus_tree = {
 					name = AUS_osterreichische_seebataillon
 					cost_reduction = 0.5
 					uses = 2
-					category = cat_marines_doctrine
+					category = special_forces_doctrine
 				}
+				custom_effect_tooltip = marine_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = AUS_osterreichische_seebataillon
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_1
+					}
+					add_mastery_bonus = {
+						name = AUS_osterreichische_seebataillon
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_2
+					}
+				}				
 			}
 		}
 	}
@@ -12520,6 +12789,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+
 			IF = {
 				limit = {
 					OR = {
@@ -12550,6 +12820,7 @@ focus_tree = {
 				show_unit_leaders_tooltip = AUS_mauritz_von_wiktorin
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
+
 			show_unit_leaders_tooltip = AUS_wilhelm_gebauer
 		}
 	}
@@ -13061,8 +13332,8 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = AUS_follow_the_jansa_plan_tt2
-			show_ideas_tooltip = AUS_franz_bohme_chief
-			custom_effect_tooltip = generic_skip_one_line_tt
+			show_ideas_tooltip = AUS_franz_bohme_chief # 56
+			custom_effect_tooltip = generic_skip_one_line_tt # 56
 
 			IF = {
 				limit = {
@@ -13956,4 +14227,5 @@ focus_tree = {
 			add_ideas = AUS_naval_efficiency_idea
 		}
 	}
+
 }

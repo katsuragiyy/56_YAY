@@ -1596,20 +1596,18 @@ focus_tree = {
 			}
 		}
 
+		enable_automatic_bypass = no
+
+		ai_will_do = {
+			factor = 10 
+		}
+
 		bypass_effect = {
 
 			set_rule = { 
 				can_create_factions = yes
 			}
 
-		}
-	
-		search_filters = {}
-
-		enable_automatic_bypass = no
-
-		ai_will_do = {
-			factor = 10 
 		}
 	
 		completion_reward = {
@@ -1725,6 +1723,7 @@ focus_tree = {
 					tooltip = production_factory_efficiency_gain_factor_tt
 				}
 			}
+
 			IF = {
 				limit = {
 					CHI_zhu_jiahua = {
@@ -1744,6 +1743,7 @@ focus_tree = {
 				    trait = CHI_minister_of_transport_trait_2
 				}
 			}
+
 		}
 	}
 
@@ -1970,7 +1970,7 @@ focus_tree = {
 				limit = {
 					is_in_faction = no
 				}
-				create_faction_from_template = {
+				create_faction_from_template = { # R56
 					template = faction_template_generic_dominance
 					name = CHI_pacific_entente_faction
 					icon = GFX_faction_logo_generic_15
@@ -2540,6 +2540,7 @@ focus_tree = {
 				}
 				CHI_concessions_add_medium_amount_of_days = yes
 			}
+
 			IF = {
 				limit = {
 					CHI_zhu_jiahua = {
@@ -2559,6 +2560,7 @@ focus_tree = {
 				    trait = CHI_minister_of_transport_trait_2
 				}
 			}
+
 		}
 	}
 
@@ -8006,6 +8008,7 @@ focus_tree = {
 					name = CHI_seek_out_western_fascist_cooperation
 				}
 			}
+
 			IF = {
 				limit = {
 					CHI_zhu_jiahua = {
@@ -8025,6 +8028,7 @@ focus_tree = {
 				    trait = CHI_minister_of_transport_trait_2
 				}
 			}
+
 		}
 	}
 
@@ -10111,9 +10115,11 @@ focus_tree = {
 				id = SEA_china_improvement.1
 				days = 2
 			} 
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = CHI_crackdown_on_corruption_in_recruitment_tt
+
 		}
 	}
 
@@ -10218,8 +10224,9 @@ focus_tree = {
 				CHI_corruption_in_the_armed_forces_max_planning_factor = 0.02
 				tooltip = max_planning_factor_tt
 			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
-			unlock_decision_tooltip = CHI_invest_in_officer_training
+			unlock_decision_tooltip = CHI_invest_in_officer_training 
 
 			IF = {
 				limit = {
@@ -10965,6 +10972,7 @@ focus_tree = {
 				category = cat_anti_air
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			IF = {
 				limit = { 
 					608 = { state_is_fully_controlled_by_ROOT_or_subject = yes } # Beijing
@@ -11094,6 +11102,7 @@ focus_tree = {
 				category = cat_fortification
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			IF = {
 				limit = {
 					608 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
@@ -11130,7 +11139,7 @@ focus_tree = {
 				limit = {
 					613 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				}
-				613 = { # Shanghai TODO_JNS Change if needed
+				613 = { # Shanghai
 					add_building_construction = {
 						type = coastal_bunker
 						level = 1
@@ -11694,9 +11703,7 @@ focus_tree = {
 		}
 
 		search_filters = {  }
-		ai_will_do = {
-			factor = 10 
-		}
+		
 		completion_reward = {
 
 			custom_effect_tooltip = CHI_modify_ROCAF_tt
@@ -11707,7 +11714,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			custom_effect_tooltip = CHI_bring_the_war_home_tt
+			custom_effect_tooltip = CHI_bring_the_war_home_tt 
 			IF = { #R56?
 				limit = {
 					has_dlc = "Arms Against Tyranny"
@@ -12515,8 +12522,23 @@ focus_tree = {
 					name = CHI_hongxiang_force
 					cost_reduction = 0.5
 					uses = 2
-					category = cat_paratroopers_doctrine
-				}	
+					category = special_forces_doctrine
+				}
+				custom_effect_tooltip = paratrooper_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = CHI_hongxiang_force
+						bonus = 0.1
+						days = 240
+						sub_doctrine = paratroopers_1
+					}
+					add_mastery_bonus = {
+						name = CHI_hongxiang_force
+						bonus = 0.1
+						days = 240
+						sub_doctrine = paratroopers_2
+					}
+				}					
 			}
 			
 		}

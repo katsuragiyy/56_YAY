@@ -54,12 +54,9 @@ characters={
 					has_country_flag = LIE_otto_von_habsburg_in_the_house
 					AUS = {
 						NOT = {
-							OR = {
-								has_country_leader = {
-									character = AUS_otto_von_habsburg
-									ruling_only = yes
-								}
-								has_idea = AUS_otto_von_habsburg
+							has_country_leader = {
+								character = HUN_otto_von_habsburg
+								ruling_only = yes
 							}
 						}
 					}

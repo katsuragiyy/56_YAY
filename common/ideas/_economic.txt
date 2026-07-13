@@ -31,14 +31,20 @@ ideas = {
 			}
 
 			allowed_to_remove = {
-				OR = {
-					has_war_support > 0.5
-					has_war = yes
-					if = {
-						limit = {
-							original_tag = USA
-						}
-						has_completed_focus = USA_limited_intervention	
+				IF = {
+					limit = {
+						original_tag = USA
+					}
+					OR = {
+						has_war_support > 0.5
+						has_war = yes
+						has_completed_focus = USA_limited_intervention
+					}
+				}
+				ELSE = {
+					OR = {
+						has_war_support > 0.5
+						has_war = yes
 					}
 				}
 			}
@@ -71,14 +77,20 @@ ideas = {
 				factory_energy_consumption = -0.3
 			}
 			allowed_to_remove = {
-				OR = {
-					has_war_support > 0.75
-					has_war = yes
-					if = {
-						limit = {
-							original_tag = USA
-						}
-						has_completed_focus = USA_limited_intervention	
+				IF = {
+					limit = {
+						original_tag = USA
+					}
+					OR = {
+						has_war_support > 0.75
+						has_war = yes
+						has_completed_focus = USA_limited_intervention
+					}
+				}
+				ELSE = {
+					OR = {
+						has_war_support > 0.75
+						has_war = yes
 					}
 				}
 			}
@@ -106,6 +118,27 @@ ideas = {
 			default = yes
 
 			cancel_if_invalid = no
+
+			on_add = {
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree # R56
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_economy_law > 0 } }
+						SIA_increase_civilian_approval = yes
+						SIA_decrease_military_approval = yes
+
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_economy_law = 0 }
+				}
+			}
 		}
 
 		low_economic_mobilisation = {
@@ -176,7 +209,7 @@ ideas = {
 					has_war_support > 0.3
 					congress_high_support_trigger = yes
 				}
-				# if = {
+				# if = { # R56 ig
 				# 	limit = {
 				# 		original_tag = TUR
 				# 		has_dlc = "Battle for the Bosporus"
@@ -189,21 +222,6 @@ ideas = {
 				# 		}
 				# 	}
 				# }
-				if = {	#56?
-					limit = {
-						original_tag = GER
-						OR = {
-							has_idea = GER_treaty_of_versailles
-							has_idea = GER_treaty_of_versailles_2
-							has_idea = GER_treaty_of_versailles_3
-						}
-					}
-					NOT = {
-						has_idea = GER_treaty_of_versailles
-						has_idea = GER_treaty_of_versailles_2
-						has_idea = GER_treaty_of_versailles_3
-					}
-				}
 				if = {
 					limit = {
 						original_tag = CZE
@@ -219,6 +237,23 @@ ideas = {
 						}
 					}
 				}
+				# R56
+				if = {
+					limit = {
+						original_tag = GER
+						OR = {
+							has_idea = GER_treaty_of_versailles
+							has_idea = GER_treaty_of_versailles_2
+							has_idea = GER_treaty_of_versailles_3
+						}
+					}
+					NOT = {
+						has_idea = GER_treaty_of_versailles
+						has_idea = GER_treaty_of_versailles_2
+						has_idea = GER_treaty_of_versailles_3
+					}
+				}
+				##
 			}
 			on_add = {
 				if = {
@@ -228,6 +263,24 @@ ideas = {
 						has_defensive_war = no
 					}
 					USA_congress_large_opposition = yes
+				}
+
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree # R56
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_economy_law > 1 } }
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_economy_law = 1 }
 				}
 			}
 
@@ -286,7 +339,7 @@ ideas = {
 							NOT = { has_idea = HUN_treaty_of_triannon_aat }
 						}
 					}
-					ELSE = {
+					ELSE = { # R56
 						has_completed_focus = HUN_secret_rearmament
 						NOT = { has_idea = HUN_treaty_of_triannon }
 					}
@@ -322,7 +375,7 @@ ideas = {
 					has_war_support > 0.5
 					congress_high_support_trigger = yes
 				}
-				# if = {
+				# if = { # R56
 				# 	limit = {
 				# 		original_tag = TUR
 				# 		has_dlc = "Battle for the Bosporus"
@@ -335,21 +388,6 @@ ideas = {
 				# 		}
 				# 	}
 				# }
-				if = {	#56?
-					limit = {
-						original_tag = GER
-						OR = {
-							has_idea = GER_treaty_of_versailles
-							has_idea = GER_treaty_of_versailles_2
-							has_idea = GER_treaty_of_versailles_3
-						}
-					}
-					NOT = {
-						has_idea = GER_treaty_of_versailles
-						has_idea = GER_treaty_of_versailles_2
-						has_idea = GER_treaty_of_versailles_3
-					}
-				}
 				if = {
 					limit = {
 						original_tag = CZE
@@ -365,6 +403,23 @@ ideas = {
 						}
 					}
 				}
+				# R56
+				if = {
+					limit = {
+						original_tag = GER
+						OR = {
+							has_idea = GER_treaty_of_versailles
+							has_idea = GER_treaty_of_versailles_2
+							has_idea = GER_treaty_of_versailles_3
+						}
+					}
+					NOT = {
+						has_idea = GER_treaty_of_versailles
+						has_idea = GER_treaty_of_versailles_2
+						has_idea = GER_treaty_of_versailles_3
+					}
+				}
+				##
 			}
 
 			cost = 150
@@ -387,6 +442,24 @@ ideas = {
 						has_defensive_war = no
 					}
 					USA_congress_large_opposition = yes
+				}
+
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree # R56
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_economy_law > 2 } }
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_economy_law = 2 }
 				}
 			}
 			ai_will_do = {
@@ -479,6 +552,29 @@ ideas = {
 				OR = {
 					has_government = fascism
 					has_government = communism
+					if = {
+						limit = {
+							PHI_SEA = yes
+						}
+						if = {
+							limit = {
+								has_idea = PHI_ties_with_nationalist_spain
+							}
+							has_idea = PHI_ties_with_nationalist_spain
+						}
+						else_if = {
+							limit = {
+								has_idea = PHI_ties_with_nationalist_spain_2
+							}
+							has_idea = PHI_ties_with_nationalist_spain_2
+						}
+						else = {
+							hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+						}
+					}
+					else = {
+						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+					}
 					custom_trigger_tooltip = { tooltip = or_clarification_tooltip always = no }
 					AND = {
 						has_war = yes
@@ -488,23 +584,6 @@ ideas = {
 								ratio > 0.4
 							}
 						}
-					}
-					if = {
-						limit = { PHI_SEA = yes }
-						if = {
-							limit = { has_idea = PHI_ties_with_nationalist_spain }
-							has_idea = PHI_ties_with_nationalist_spain
-						}
-						else_if = {
-							limit = { has_idea = PHI_ties_with_nationalist_spain_2 }
-							has_idea = PHI_ties_with_nationalist_spain_2
-						}
-						else = {
-							hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
-						}
-					}
-					else = {
-						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
 					}
 				}
 
@@ -584,21 +663,6 @@ ideas = {
 				# 		}
 				# 	}
 				# }
-				if = {	#56?
-					limit = {
-						original_tag = GER
-						OR = {
-							has_idea = GER_treaty_of_versailles
-							has_idea = GER_treaty_of_versailles_2
-							has_idea = GER_treaty_of_versailles_3
-						}
-					}
-					NOT = {
-						has_idea = GER_treaty_of_versailles
-						has_idea = GER_treaty_of_versailles_2
-						has_idea = GER_treaty_of_versailles_3
-					}
-				}
 				if = {
 					limit = {
 						original_tag = CZE
@@ -614,6 +678,23 @@ ideas = {
 						}
 					}
 				}
+				# R56
+				if = {
+					limit = {
+						original_tag = GER
+						OR = {
+							has_idea = GER_treaty_of_versailles
+							has_idea = GER_treaty_of_versailles_2
+							has_idea = GER_treaty_of_versailles_3
+						}
+					}
+					NOT = {
+						has_idea = GER_treaty_of_versailles
+						has_idea = GER_treaty_of_versailles_2
+						has_idea = GER_treaty_of_versailles_3
+					}
+				}
+				##
 			}
 
 			cost = 150
@@ -637,6 +718,24 @@ ideas = {
 					}
 					USA_congress_large_opposition = yes
 				}
+
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree # R56
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_economy_law > 3 } }
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_economy_law = 3 }
+				}
 			}
 			ai_will_do = {
    				base = 3
@@ -645,15 +744,6 @@ ideas = {
 					#High prio on production
 					factor = 20
 					manpower_per_military_factory >  1000
-				}
-
-				modifier = {	#56
-					factor = 20
-					original_tag = ROM
-					OR = {
-						has_government = communism
-						has_government = fascism
-					}
 				}
 
 				modifier = {
@@ -686,11 +776,48 @@ ideas = {
 					has_civil_war = yes
 					has_government = neutrality
 				}
+
+				modifier = {
+					# They will take the focus to gain this for free, so they shouldn't spend pp on it too willy-nilly 
+					factor = 0.5
+					original_tag = JAP
+					OR = {
+						is_historical_focus_on = yes
+						has_country_flag = JAP_AI_RANDOM_FASCIST
+						has_country_flag = JAP_AI_RANDOM_NEUTRALITY
+					}
+
+				}
+				modifier = {	#56
+					factor = 20
+					original_tag = ROM
+					OR = {
+						has_government = communism
+						has_government = fascism
+					}
+				}
    			}
 		}
 
 		tot_economic_mobilisation = {
-			
+
+			visible = {
+				if = {
+					limit = {
+						original_tag = GER
+					}
+					NOT = { has_completed_focus = GER_totaler_krieg }
+				}
+				if = {
+					limit = {
+						original_tag = JAP
+					}
+					NOT = { 
+						has_completed_focus = JAP_sea_national_defense_state 
+						has_completed_focus = JAP_prepare_for_the_final_war 
+					}
+				}
+			}
 
 			available = {
 				has_war = yes
@@ -778,21 +905,6 @@ ideas = {
 				# 		}
 				# 	}
 				# }
-				if = {	#56
-					limit = {
-						original_tag = GER
-						OR = {
-							has_idea = GER_treaty_of_versailles
-							has_idea = GER_treaty_of_versailles_2
-							has_idea = GER_treaty_of_versailles_3
-						}
-					}
-					NOT = {
-						has_idea = GER_treaty_of_versailles
-						has_idea = GER_treaty_of_versailles_2
-						has_idea = GER_treaty_of_versailles_3
-					}
-				}
 				if = {
 					limit = {
 						original_tag = CZE
@@ -808,6 +920,21 @@ ideas = {
 						}
 					}
 				}
+				if = {	#56
+					limit = {
+						original_tag = GER
+						OR = {
+							has_idea = GER_treaty_of_versailles
+							has_idea = GER_treaty_of_versailles_2
+							has_idea = GER_treaty_of_versailles_3
+						}
+					}
+					NOT = {
+						has_idea = GER_treaty_of_versailles
+						has_idea = GER_treaty_of_versailles_2
+						has_idea = GER_treaty_of_versailles_3
+					}
+				}
 			}
 			on_add = {
 				if = {
@@ -818,9 +945,27 @@ ideas = {
 					}
 					USA_congress_large_opposition = yes
 				}
+
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree # R56
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_economy_law > 4 } }
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_economy_law = 4 }
+				}
 			}
 			ai_will_do = {
-   				factor = 1
+   				base = 1
 
 				modifier = {
 					factor = 25
@@ -849,6 +994,7 @@ ideas = {
 					factor = 0
 
 					tag = GER
+					NOT = { has_doctrine = last_stand }
 					has_war = yes
 					date < 1944.01.01
 				}
@@ -885,7 +1031,6 @@ ideas = {
 		}
 
 		totaler_krieg_economy = {
-			picture = PLACEHOLDER_idea_icon
 
 			visible = {
 				original_tag = GER
@@ -1044,6 +1189,7 @@ ideas = {
 				stability_factor = -0.15
 				political_power_factor = -0.1
 				factory_energy_consumption = 0.35
+
 			}
 
 			cancel_if_invalid = no
@@ -1060,7 +1206,6 @@ ideas = {
 			allowed = {
 				always = no
 			}
-			
 			allowed_to_remove = {
 				OR = {
 					surrender_progress > 0.75
@@ -1105,6 +1250,10 @@ ideas = {
 			removal_cost = -1
 			picture = isolation
 
+			rule = {
+				can_access_market = no
+			}
+
 			modifier = {
 				min_export = 0.25
 				consumer_goods_expected_value = 0.05
@@ -1115,7 +1264,7 @@ ideas = {
 			}
 
 			allowed_to_remove = {
-				if = {
+				if = { # R56
 					limit = {
 						original_tag = POL
 					}
@@ -1136,7 +1285,7 @@ ideas = {
 						}
 					}
 				}
-				if = {	#To represent USA Embargo upon the oil nationalization
+				if = {	#To represent USA Embargo upon the oil nationalization # 56
 					limit = {
 						original_tag = MEX
 					}
@@ -1150,7 +1299,7 @@ ideas = {
 			}
 
 			on_remove = {
-				if = {
+				if = { # 56
 					limit = {
 						tag = POL
 						85 = { is_demilitarized_zone = no }
@@ -1186,23 +1335,26 @@ ideas = {
 					}
 					NOT = { has_completed_focus = GER_autarky_efforts }
 				}
-				if = {	#56
+
+				if = {
 					limit = {
-						has_completed_focus = HON_free_our_markets
+						original_tag = PRC
+						has_dlc = "No Compromise, No Surrender"
 					}
+					NOT = { has_completed_focus = PRC_promote_paper_bills }
+				}
+				# 56
+				if = {
+					limit = { has_completed_focus = HON_free_our_markets }
 					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
 				}
 				
-				if = {	#56
-					limit = {
-						original_tag = MON
-					}
+				if = {
+					limit = { original_tag = MON }
 					NOT = { has_completed_focus = MON_changes_within }
 				}
 				if = {
-					limit = {
-						original_tag = ISR
-					}
+					limit = { original_tag = ISR }
 					OR = {
 						has_completed_focus = ISR_limited_austerity
 						has_completed_focus = ISR_lessen_austerity
@@ -1211,6 +1363,7 @@ ideas = {
 						has_completed_focus = ISR_end_austerity
 					}
 				}
+				##
 			}
 
 			cost = 150
@@ -1249,11 +1402,39 @@ ideas = {
 					date > 1943.1.1 # at this point we can probably cash in on rubber lack in the world
 				}
 
+				modifier = {
+					factor = 400
+					original_tag = SWE
+					date > 1941.6.1
+				}
+
 				# Oil for hitlers oil throne!
 				modifier = {
 					factor = 600
 					tag = ROM
 					is_in_faction_with = GER
+				}
+   			}
+
+   			on_add = {
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree # 56
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_trade_law > 0 } }
+
+
+						SIA_increase_civilian_approval = yes
+						SIA_decrease_military_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_trade_law = 0 }
 				}
    			}
 		}
@@ -1262,6 +1443,42 @@ ideas = {
 
 			available = {
 
+
+				#if = { # R56
+				#	limit = {
+				#		original_tag = CHI
+				#		has_dlc = "Waking the Tiger"
+				#	}
+				#	NOT = { has_idea = CHI_nine_power_treaty }
+				#}
+				if = {
+					limit = {
+						original_tag = SPR
+						has_dlc = "La Resistance"
+					}
+					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
+				}
+				if = {
+					limit = {
+						original_tag = GER
+					}
+					NOT = { has_completed_focus = GER_autarky_efforts }
+				}
+
+				if = {
+					limit = {
+						original_tag = PRC
+						has_dlc = "No Compromise, No Surrender"
+					}
+					NOT = { has_completed_focus = PRC_promote_paper_bills }
+				}
+				# 56
+				if = {
+					limit = {
+						original_tag = MON
+					}
+					NOT = { has_completed_focus = MON_changes_within }
+				}
 				if = {
 					limit = {
 						original_tag = HON
@@ -1270,22 +1487,7 @@ ideas = {
 					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
 				}
 				if = {
-					limit = {
-						original_tag = SPR
-						has_dlc = "La Resistance"
-					}
-					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
-				}
-				if = {	#56
-					limit = {
-						original_tag = MON
-					}
-					NOT = { has_completed_focus = MON_changes_within }
-				}
-				if = {	#56
-					limit = {
-						original_tag = ISR
-					}
+					limit = { original_tag = ISR }
 					OR = {
 						has_completed_focus = ISR_limited_austerity
 						has_completed_focus = ISR_lessen_austerity
@@ -1294,12 +1496,7 @@ ideas = {
 						has_completed_focus = ISR_end_austerity
 					}
 				}
-				if = {
-					limit = {
-						original_tag = GER
-					}
-					NOT = { has_completed_focus = GER_autarky_efforts }
-				}
+
 			}
 
 
@@ -1326,18 +1523,7 @@ ideas = {
 
 				modifier = {
 					factor = 0
-					num_of_military_factories > 29
-					OR = {
-						has_idea = limited_exports
-						has_idea = autarkic_economy
-						has_idea = autarkic_economy_improved
-						has_idea = closed_economy
-					}
-				
-				}
-				modifier = {
-					factor = 0
-					
+
 					is_major = no
 					has_war = no
 					is_in_faction = no
@@ -1350,6 +1536,44 @@ ideas = {
 						tag = PER
 						tag = IRQ
 					}
+				}
+				modifier = {
+					factor = 1000
+					has_idea = uncontrolled_exports #Poland should try and escape this as soon as they can
+				}
+				
+				modifier = { # 56
+					factor = 0
+					num_of_military_factories > 29
+					OR = {
+						has_idea = limited_exports
+						has_idea = autarkic_economy
+						has_idea = autarkic_economy_improved
+						has_idea = closed_economy
+					}
+				
+				}
+   			}
+
+   			on_add = {
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_trade_law > 1 } }
+
+
+						SIA_increase_civilian_approval = yes
+						SIA_decrease_military_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_trade_law = 1 }
 				}
    			}
 		}
@@ -1395,20 +1619,13 @@ ideas = {
 						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
 					}
 				}
-
-				if = {
-					limit = {
-						original_tag = HON	#56
-						has_completed_focus = HON_free_our_markets	#56
-					}	#56
-					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }	#56
-				}	#56
-				if = {
-					limit = {
-						original_tag = VEN	#56
-					}
-					NOT = { has_country_flag = VEN_has_venezuelan_oil }	#56
-				}
+				#if = { # 56
+				#	limit = {
+				#		original_tag = CHI
+				#		has_dlc = "Waking the Tiger"
+				#	}
+				#	NOT = { has_idea = CHI_nine_power_treaty }
+				#}
 				if = {
 					limit = {
 						original_tag = SPR
@@ -1416,7 +1633,19 @@ ideas = {
 					}
 					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
 				}
-				if = {	#56
+				# 56
+				if = {
+					limit = {
+						original_tag = HON
+						has_completed_focus = HON_free_our_markets
+					}
+					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
+				}
+				if = {
+					limit = { original_tag = VEN }
+					NOT = { has_country_flag = VEN_has_venezuelan_oil }
+				}
+				if = {
 					limit = {
 						original_tag = ISR
 					}
@@ -1426,7 +1655,7 @@ ideas = {
 						has_completed_focus = ISR_undo_austerity
 						has_completed_focus = ISR_open_economy
 						has_completed_focus = ISR_end_austerity
-					}
+					}				
 				}
 			}
 
@@ -1480,7 +1709,7 @@ ideas = {
 					has_large_ally_not_pick_closed_economy = yes
 				}
 				modifier = { #Germany should keep its Autarkic Economy
-					factor = 0 # was 0.5 in the base game
+					factor = 0 # was 0.5 in the base game # 56
 					original_tag = GER
 					OR = {
 						has_idea = autarkic_economy
@@ -1488,13 +1717,43 @@ ideas = {
 					}
 				}
    			}
+			on_add = {
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_trade_law > 2 } }
+
+
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_trade_law = 2 }
+				}
+   			}
 		}
 
 		autarkic_economy = {
 			visible = {
-				original_tag = GER
-				has_completed_focus = GER_autarky_efforts
-				NOT = { has_completed_focus = GER_autarky_achieved }
+				OR = {
+					AND = {
+						original_tag = GER
+						has_completed_focus = GER_autarky_efforts
+						NOT = { has_completed_focus = GER_autarky_achieved }
+					}
+					AND = {
+						has_dlc = "Thunder at Our Gates"
+						original_tag = AST
+						has_completed_focus = AST_autarky
+					}
+				}
 			}
 
 			available = {
@@ -1579,24 +1838,63 @@ ideas = {
 
 
 			available = {
+
 				has_war = yes
-				OR = {
-					has_government = fascism
-					has_government = communism
+
+				IF = {
+					limit = {
+						NOT = {
+							original_tag = JAP
+						}
+					}
+					OR = {
+						has_government = fascism
+						has_government = communism
+					}
 				}
+				ELSE_IF = {
+					limit = {
+						original_tag = JAP
+					}
+					OR = {
+						has_government = fascism
+						has_government = communism
+						AND = {
+							has_completed_focus = JAP_sea_state_general_mobilization_law
+							has_government = neutrality
+						}
+					}
+				}
+				
 				OR = {
 					has_idea = war_economy
 					has_idea = tot_economic_mobilisation
-					if = {
+					IF = {
 						limit = {
 							original_tag = GER
 						}
 						has_idea = totaler_krieg_economy
 					}
-					else = {
+					ELSE_IF = {
+						limit = {
+							original_tag = JAP
+						}
+						#has_completed_focus = JAP_sea_state_general_mobilization_law
+						has_idea = national_defense_state
+					}
+					ELSE = {
 						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
 					}
 				}
+
+				#IF = { #56
+				#	limit = {
+				#		original_tag = CHI
+				#		has_dlc = "Waking the Tiger"
+				#	}
+				#	NOT = { has_idea = CHI_nine_power_treaty }
+				#}
+				# 56
 				if = {
 					limit = {
 						original_tag = HON
@@ -1605,19 +1903,21 @@ ideas = {
 					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
 				}
 				if = {
-					limit = {
-						original_tag = VEN
-					}
+					limit = { original_tag = VEN }
 					NOT = { has_country_flag = VEN_has_venezuelan_oil }
 				}
 				if = {
-					limit = {
-						original_tag = SOV
-					}
+					limit = { original_tag = SOV }
 					NOT = { has_opinion_modifier = MR_pact }
 				}
+
 			}
-			
+
+			rule = {
+				can_access_market = no
+				desc = can_not_access_market_closed_economy
+			}
+
 			cost = 150
 			removal_cost = -1
 
@@ -1628,11 +1928,6 @@ ideas = {
 				cic_construction_boost = -0.1
 			}
 
-			
-			on_add = {
-				custom_effect_tooltip = closed_economy_TT
-			}
-			
 			cancel_if_invalid = no
 
 			ai_will_do = {
@@ -1660,6 +1955,38 @@ ideas = {
 					# don't take if we have a reasonable sized ally
 					# since they will require our trades
 					has_large_ally_not_pick_closed_economy = yes
+				}
+				modifier = { #Germany should keep its Autarkic Economy
+					factor = 0.5
+					original_tag = GER
+					is_in_faction = yes
+					OR = {
+						has_idea = autarkic_economy
+						has_idea = autarkic_economy_improved
+					}
+				}
+   			}
+
+   			on_add = {
+   				custom_effect_tooltip = closed_economy_TT # 56
+				if = {
+					limit = {
+						has_global_flag = sia_dlc_focus_tree
+						original_tag = SIA
+					}
+					if = {
+						limit = { check_variable = { SIA_current_trade_law > 3 } }
+
+
+						SIA_decrease_military_approval = yes
+						SIA_increase_civilian_approval = yes
+					}
+					else = {
+						SIA_increase_military_approval = yes
+						SIA_decrease_civilian_approval = yes
+					}
+
+					set_variable = { SIA_current_trade_law = 3 }
 				}
    			}
 		}

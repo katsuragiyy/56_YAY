@@ -1397,7 +1397,7 @@ focus_tree = {
 					is_subject = no
 					NOT = { has_war_with = ROOT }
 					has_country_leader = {
-						character = AUS_otto_von_habsburg
+						character = HUN_otto_von_habsburg
 						ruling_only = yes
 					}
 				}
@@ -1415,7 +1415,7 @@ focus_tree = {
 						is_in_faction = no
 						NOT = { has_war_with = ROOT }
 						has_country_leader = {
-							character = AUS_otto_von_habsburg
+							character = HUN_otto_von_habsburg
 							ruling_only = yes
 						}
 					}
@@ -1450,7 +1450,7 @@ focus_tree = {
 					AUS = {
 						NOT = { has_war_with = ROOT }
 						has_country_leader = {
-							character = AUS_otto_von_habsburg
+							character = HUN_otto_von_habsburg
 							ruling_only = yes
 						}
 					}
@@ -1904,7 +1904,7 @@ focus_tree = {
 					is_subject = no
 					NOT = { has_war_with = ROOT }
 					has_country_leader = {
-						character = AUS_otto_von_habsburg
+						character = HUN_otto_von_habsburg
 						ruling_only = yes
 					}
 				}
@@ -1922,7 +1922,7 @@ focus_tree = {
 						is_in_faction = no
 						NOT = { has_war_with = ROOT }
 						has_country_leader = {
-							character = AUS_otto_von_habsburg
+							character = HUN_otto_von_habsburg
 							ruling_only = yes
 						}
 					}
@@ -1957,7 +1957,7 @@ focus_tree = {
 					AUS = {
 						NOT = { has_war_with = ROOT }
 						has_country_leader = {
-							character = AUS_otto_von_habsburg
+							character = HUN_otto_von_habsburg
 							ruling_only = yes
 						}
 					}
@@ -2055,7 +2055,7 @@ focus_tree = {
 					exists = yes
 					NOT = { has_war_with = ROOT }
 					has_country_leader = {
-						character = AUS_otto_von_habsburg
+						character = HUN_otto_von_habsburg
 						ruling_only = yes
 					}
 				}
@@ -2073,7 +2073,7 @@ focus_tree = {
 					AUS = {
 						NOT = { has_war_with = ROOT }
 						has_country_leader = {
-							character = AUS_otto_von_habsburg
+							character = HUN_otto_von_habsburg
 							ruling_only = yes
 						}
 					}
@@ -2192,7 +2192,7 @@ focus_tree = {
 					OR = {
 						is_subject_of = LIE
 						has_country_leader = {
-							character = AUS_otto_von_habsburg
+							character = HUN_otto_von_habsburg
 							ruling_only = yes
 						}
 					}

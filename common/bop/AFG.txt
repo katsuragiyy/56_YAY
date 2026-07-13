@@ -213,10 +213,10 @@ AFG_power_balance = {
 					set_country_flag = AFG_dissatisfied_haji_mirzali_khan
 					custom_effect_tooltip = AFG_dissatisfied_haji_mirzali_khan
 					effect_tooltip = {
-						retire_character = AFG_haji_mirzali_khan
+						retire_character = AFG_faqir_of_ipi
 						retire_character = AFG_zmarak_khan_zadran
 						custom_effect_tooltip = remove_military_high_command
-						show_ideas_tooltip = AFG_haji_mirzali_khan_chief
+						show_ideas_tooltip = AFG_faqir_of_ipi_chief
 						show_ideas_tooltip = AFG_zmarak_khan_zadran
 					}
 				}
