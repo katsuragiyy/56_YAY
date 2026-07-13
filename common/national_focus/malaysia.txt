@@ -1,4 +1,4 @@
-# Army and Eco reworked by Katsuragiyy. Politics given a tiny revamp. Maybe further down the road we'll touch upon that too.
+# Army and Eco reworked by Katsuragiyy.
 #!gfx:interface\r56_goals.gfx
 
 focus_tree = {
@@ -1459,15 +1459,11 @@ focus_tree = {
 		icon = GFX_goal_MAL_coa_army
 
 		cost = 5
-		x = 40
+		x = 38
 		y = 15
 
 		available = {
-			OR = {
-				threat > 0.05
-				has_war_support > 0.1
-				has_war = yes
-			}
+			
 		}
 
 		completion_reward = {
@@ -1480,186 +1476,167 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MAL_jungle_training_r56
-		icon = GFX_goal_generic_jungle_warfare
-		prerequisite = { focus = MAL_conduct_an_army_review_r56 }
-		relative_position_id = MAL_conduct_an_army_review_r56
-
-		cost = 8
-		x = 2
-		y = 1
-
-		available = {
-		}
-
-		completion_reward = {
-			show_unit_leaders_tooltip = MAL_ian_stewart
-			add_tech_bonus = {
-				name = POR_utilize_the_inland_terrain
-				bonus = 0.85
-				uses = 3
-				category = camo_tech
-				category = summer_clothing_tech
-				category = rangers_tech_cat
-				category = r56_jungle_infantry_tech
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = FRI_tame_the_forests_tt
-			hidden_effect = {
-				set_technology = { FRI_forest_training = 1 }
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			random_army_leader = {
-				if = {
-					limit = { NOT = { has_trait = jungle_rat } }
-					add_trait = { trait = jungle_rat }
-				}
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = MAL_mountain_training_r56
-		icon = GFX_goal_generic_mountain_warfare
-		prerequisite = { focus = MAL_conduct_an_army_review_r56 }
-		relative_position_id = MAL_conduct_an_army_review_r56
-
-		cost = 8
-		x = -2
-		y = 1
-
-		available = {
-		}
-
-		completion_reward = {
-			if = {
-				limit = { has_dlc = "Arms Against Tyranny" }
-				add_doctrine_cost_reduction = {
-					name = POR_utilize_the_inland_terrain
-					cost_reduction = 0.5
-					uses = 2
-					category = special_forces_doctrine
-				}
-			}
-			else = {
-				add_tech_bonus = {
-					name = POR_utilize_the_inland_terrain
-					bonus = 1.0
-					uses = 2
-					category = r56_special_forces_training_tech
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_tech_bonus = {
-				name = POR_utilize_the_inland_terrain
-				bonus = 0.85
-				ahead_reduction = 1
-				uses = 2
-				category = mountaineers_tech
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			random_army_leader = {
-				if = {
-					limit = { NOT = { has_trait = trait_mountaineer } }
-					add_trait = { trait = trait_mountaineer }
-				}
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = MAL_modernize_equipment_r56
+		id = MAL_malaya_command_r56
 		icon = GFX_goal_iron_people
-		prerequisite = { focus = MAL_conduct_an_army_review_r56 }
-		relative_position_id = MAL_conduct_an_army_review_r56
 
-		cost = 8
-		x = 0
-		y = 1
+		cost = 5
+		x = 34
+		y = 15
 
 		available = {
-		}
-
-		completion_reward = {
-			# research buffs to infantry and support equipment. maybe additional buffs regarding cp and xp
 			
 		}
 
-		search_filters = { }
-	}
-
-	focus = {
-		id = MAL_establish_academy_in_capital_r56
-		icon = GFX_goal_generic_military_research_2
-		prerequisite = { focus = MAL_modernize_equipment_r56 }
-		relative_position_id = MAL_modernize_equipment_r56
-
-		cost = 8
-		x = 0
-		y = 1
-
-		available = {
-		}
-
 		completion_reward = {
-			
+			army_experience = 20
+			add_command_power = 10
+			show_unit_leaders_tooltip = MAL_adnan_saidi
 		}
 
-		search_filters = { }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 	}
 
-	focus = {
-		id = MAL_army_placeholder_r56
-		icon = GFX_goal_iron_people
-		prerequisite = { focus = MAL_modernize_equipment_r56 }
-		mutually_exclusive = { focus = MAL_army_placeholder_second_r56 }
-		relative_position_id = MAL_modernize_equipment_r56
+	#focus = {
+	#	id = MAL_jungle_training_r56
+	#	icon = GFX_goal_generic_jungle_warfare
+	#	prerequisite = { focus = MAL_conduct_an_army_review_r56 }
+	#	relative_position_id = MAL_conduct_an_army_review_r56
+#
+	#	cost = 8
+	#	x = 2
+	#	y = 1
+#
+	#	completion_reward = {
+	#		show_unit_leaders_tooltip = MAL_ian_stewart
+	#		add_tech_bonus = {
+	#			name = POR_utilize_the_inland_terrain
+	#			bonus = 0.85
+	#			uses = 3
+	#			category = camo_tech
+	#			category = summer_clothing_tech
+	#			category = rangers_tech_cat
+	#			category = r56_jungle_infantry_tech
+	#		}
+#
+	#		custom_effect_tooltip = generic_skip_one_line_tt
+	#		custom_effect_tooltip = FRI_tame_the_forests_tt
+	#		hidden_effect = { set_technology = { FRI_forest_training = 1 } }
+	#		
+	#		custom_effect_tooltip = generic_skip_one_line_tt
+	#		random_army_leader = {
+	#			if = {
+	#				limit = { NOT = { has_trait = jungle_rat } }
+	#				add_trait = { trait = jungle_rat }
+	#			}
+	#		}
+	#	}
+#
+	#	search_filters = { FOCUS_FILTER_RESEARCH }
+	#}
+#
+	#focus = {
+	#	id = MAL_mountain_training_r56
+	#	icon = GFX_goal_generic_mountain_warfare
+	#	prerequisite = { focus = MAL_conduct_an_army_review_r56 }
+	#	relative_position_id = MAL_conduct_an_army_review_r56
+#
+	#	cost = 8
+	#	x = -2
+	#	y = 1
+#
+	#	available = {
+	#		OR = { # Where the mountain ranges go through
+	#			915 = { is_controlled_by_ROOT_or_subject = yes } # Central Malaya (Entire FMS)
+	#			960 = { is_controlled_by_ROOT_or_subject = yes } # Kelantan
+	#		}
+	#	}
+#
+	#	completion_reward = {
+	#		if = {
+	#			limit = { has_dlc = "Arms Against Tyranny" }
+	#			add_doctrine_cost_reduction = {
+	#				name = POR_utilize_the_inland_terrain
+	#				cost_reduction = 0.5
+	#				uses = 2
+	#				category = special_forces_doctrine
+	#			}
+	#		}
+	#		else = {
+	#			add_tech_bonus = {
+	#				name = POR_utilize_the_inland_terrain
+	#				bonus = 1.0
+	#				uses = 2
+	#				category = r56_special_forces_training_tech
+	#			}
+	#		}
+	#		custom_effect_tooltip = generic_skip_one_line_tt
+	#		add_tech_bonus = {
+	#			name = POR_utilize_the_inland_terrain
+	#			bonus = 0.85
+	#			ahead_reduction = 1
+	#			uses = 2
+	#			category = mountaineers_tech
+	#		}
+	#		custom_effect_tooltip = generic_skip_one_line_tt
+	#		random_army_leader = {
+	#			if = {
+	#				limit = { NOT = { has_trait = trait_mountaineer } }
+	#				add_trait = { trait = trait_mountaineer }
+	#			}
+	#		}
+	#	}
+#
+	#	search_filters = { FOCUS_FILTER_RESEARCH }
+	#}
+#
+	#focus = {
+	#	id = MAL_modernize_equipment_r56
+	#	icon = GFX_goal_iron_people
+	#	prerequisite = { focus = MAL_conduct_an_army_review_r56 }
+	#	relative_position_id = MAL_conduct_an_army_review_r56
+#
+	#	cost = 8
+	#	x = 0
+	#	y = 1
+#
+	#	available = {
+	#	}
+#
+	#	completion_reward = {
+	#		# research buffs to infantry and support equipment. maybe additional buffs regarding cp and xp
+	#		
+	#	}
+#
+	#	search_filters = { }
+	#}
+#
+	#focus = {
+	#	id = MAL_establish_academy_in_capital_r56
+	#	icon = GFX_goal_generic_military_research_2
+	#	prerequisite = { focus = MAL_modernize_equipment_r56 }
+	#	relative_position_id = MAL_modernize_equipment_r56
+#
+	#	cost = 8
+	#	x = 0
+	#	y = 1
+#
+	#	available = {
+	#	}
+#
+	#	completion_reward = {
+	#		
+	#	}
+#
+	#	search_filters = { }
+	#}
 
-		cost = 8
-		x = -1
-		y = 2
-
-		available = {
-		}
-
-		completion_reward = {
-			
-		}
-
-		search_filters = { }
-	}
-
-	focus = {
-		id = MAL_army_placeholder_second_r56
-		icon = GFX_goal_iron_people
-		prerequisite = { focus = MAL_modernize_equipment_r56 }
-		mutually_exclusive = { focus = MAL_army_placeholder_r56 }
-		relative_position_id = MAL_modernize_equipment_r56
-
-		cost = 8
-		x = 1
-		y = 2
-
-		available = {
-		}
-
-		completion_reward = {
-			
-		}
-
-		search_filters = { }
-	}
-
+	# Navy
 	focus = {
 		id = MAL_lay_foundations_for_navy_r56
 		icon = GFX_goal_MAL_coa_navy
 
 		cost = 5
-		x = 56
+		x = 58
 		y = 15
 
 		available = {
@@ -1716,415 +1693,438 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
 	}
 
-	focus = {
-		id = MAL_torpedos_r56
-		icon = GFX_goal_generic_air_naval_bomber
-		prerequisite = { focus = MAL_create_mvaf_r56 focus = MAL_lay_foundations_for_navy_r56 }
-		relative_position_id = MAL_create_mvaf_r56
-	
-		cost = 5
-		x = 2
-		y = 1
-		
-		completion_reward = { #yoinked from siam
-			if = {
-				limit = { has_dlc = "By Blood Alone" }
-				add_tech_bonus = {
-					bonus = 0.75
-					uses = 2
-					category = cat_torpedoes
-					technology = air_torpedoe_1
-					technology = air_torpedoe_2
-					technology = air_torpedoe_3
-				}
-			}
-			else = {
-				add_tech_bonus = {
-					bonus = 0.75
-					uses = 2
-					category = naval_bomber
-					category = cat_torpedoes
-				}
-			}
-		}
-	
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
+	#focus = {
+	#	id = MAL_torpedos_r56
+	#	icon = GFX_goal_generic_air_naval_bomber
+	#	prerequisite = { focus = MAL_create_mvaf_r56 focus = MAL_lay_foundations_for_navy_r56 }
+	#	relative_position_id = MAL_create_mvaf_r56
+	#
+	#	cost = 5
+	#	x = 2
+	#	y = 1
+	#	
+	#	completion_reward = { #yoinked from siam
+	#		if = {
+	#			limit = { has_dlc = "By Blood Alone" }
+	#			add_tech_bonus = {
+	#				bonus = 0.75
+	#				uses = 2
+	#				category = cat_torpedoes
+	#				technology = air_torpedoe_1
+	#				technology = air_torpedoe_2
+	#				technology = air_torpedoe_3
+	#			}
+	#		}
+	#		else = {
+	#			add_tech_bonus = {
+	#				bonus = 0.75
+	#				uses = 2
+	#				category = naval_bomber
+	#				category = cat_torpedoes
+	#			}
+	#		}
+	#	}
+	#
+	#	search_filters = { FOCUS_FILTER_RESEARCH }
+	#}
 
-	focus = {
-		id = MAL_parachute_regiment_r56
-		icon = GFX_focus_generic_paratrooper
-		prerequisite = { focus = MAL_conduct_an_army_review_r56 focus = MAL_create_mvaf_r56 }
-		relative_position_id = MAL_conduct_an_army_review_r56
+	#focus = {
+	#	id = MAL_parachute_regiment_r56
+	#	icon = GFX_focus_generic_paratrooper
+	#	prerequisite = { focus = MAL_conduct_an_army_review_r56 focus = MAL_create_mvaf_r56 }
+	#	relative_position_id = MAL_conduct_an_army_review_r56
+#
+	#	cost = 6
+	#	x = 4
+	#	y = 1
+#
+	#	completion_reward = {
+	#		if = {
+	#			limit = { has_dlc = "Arms Against Tyranny" }
+	#			add_doctrine_cost_reduction = {
+	#				name = SIA_parachute_infantry_battalion_r56
+	#				cost_reduction = 0.5
+	#				uses = 2
+	#				category = cat_paratroopers_doctrine
+	#			}	
+	#		}
+	#		else = {
+	#			add_tech_bonus = {
+	#				name = SIA_parachute_infantry_battalion_r56
+	#				bonus = 0.5
+	#				uses = 2
+	#				category = r56_special_forces_training_tech
+	#			}
+	#		}
+	#		add_tech_bonus = {
+	#			name = SIA_parachute_infantry_battalion_r56
+	#			ahead_reduction = 1
+	#			uses = 1
+	#			category = para_tech
+	#		}
+#
+	#		custom_effect_tooltip = generic_skip_one_line_tt
+	#		hidden_effect = { set_country_flag = cite_an_airborne_unit_flag }
+    #        unlock_decision_tooltip = { decision = cite_an_airborne_unit show_effect_tooltip = yes }
+	#	}
+#
+	#	search_filters = { FOCUS_FILTER_RESEARCH }
+	#}
 
-		cost = 6
-		x = 4
-		y = 1
-
-		completion_reward = {
-			if = {
-				limit = { has_dlc = "Arms Against Tyranny" }
-				add_doctrine_cost_reduction = {
-					name = SIA_parachute_infantry_battalion_r56
-					cost_reduction = 0.5
-					uses = 2
-					category = cat_paratroopers_doctrine
-				}	
-			}
-			else = {
-				add_tech_bonus = {
-					name = SIA_parachute_infantry_battalion_r56
-					bonus = 0.5
-					uses = 2
-					category = r56_special_forces_training_tech
-				}
-			}
-			add_tech_bonus = {
-				name = SIA_parachute_infantry_battalion_r56
-				ahead_reduction = 1
-				uses = 1
-				category = para_tech
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			hidden_effect = { set_country_flag = cite_an_airborne_unit_flag }
-            unlock_decision_tooltip = { decision = cite_an_airborne_unit show_effect_tooltip = yes }
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = MAL_air_facility_focus_r56
-		icon = GFX_goal_generic_military_research
-		prerequisite = { focus = MAL_create_mvaf_r56 }
-		relative_position_id = MAL_create_mvaf_r56
-
-		cost = 10
-		x = -2
-		y = 1
-
-		available = { has_200_air_doctrine_mastery = yes }
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = ROOT
-					air_facility < 1
-					land_facility < 1
-					naval_facility < 1
-					nuclear_facility < 1
-				}
-				prioritize = { 915 }
-				add_building_construction = {
-					type = air_facility
-					level = 1
-					instant_build = yes
-					province = 10297 # Kuala Lumpur
-				}
-			}
-
-			# add research slot if havent completed other focuses giving facilities
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
-	}
-
-	focus = {
-		id = MAL_radar_r56
-		icon = GFX_goal_generic_radar
-		prerequisite = { focus = MAL_air_facility_focus_r56 }
-		relative_position_id = MAL_air_facility_focus_r56
-
-		cost = 8
-		x = -1
-		y = 1
-
-		bypass = {
-			is_special_project_completed = sp:sp_air_radar
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = NZL_improve_the_radars
-				bonus = 1
-				uses = 1
-				category = radar_tech
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_breakthrough_progress = {
-				specialization = specialization_air
-				value = 0.25
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_ideas = r56_generic_radar_idea
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = MAL_send_pilots_abroad_r56
-
-		icon = {
-			trigger = { is_subject_of = ENG }
-			value = GFX_goal_fighters_uk
-		}
-
-		icon = {
-			trigger = { NOT = { is_subject_of = ENG } }
-			value = GFX_focus_PRC_pilot_training
-		}
-
-		prerequisite = { focus = MAL_create_mvaf_r56 }
-		relative_position_id = MAL_create_mvaf_r56
-
-		cost = 7.2
-		x = 0
-		y = 1
-
-		completion_reward = {
-			air_experience = 10
-			add_doctrine_cost_reduction = {
-				name = air_doc_bonus
-				cost_reduction = 0.85
-				uses = 1
-				category = air_doctrine	
-			}
-			add_ideas = MAL_foreign_expertise_airforce_r56
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT }
-	}
-
-	focus = {
-		id = MAL_study_fighter_technology_r56
-		icon = GFX_focus_generic_copy_plane_designs
-		prerequisite = { focus = MAL_send_pilots_abroad_r56 }
-		mutually_exclusive = { focus = MAL_enhance_bomber_capabilities_r56 }
-		relative_position_id = MAL_send_pilots_abroad_r56
-
-		cost = 10
-		x = -1
-		y = 1
-
-		completion_reward = {
-			if = {
-				limit = { has_dlc = "By Blood Alone" }
-				add_tech_bonus = {
-					name = MAL_study_fighte_technology_r56_name
-					technology =  basic_small_airframe
-					technology  = improved_small_airframe
-					technology = advanced_small_airframe
-					bonus = 0.5
-					uses = 2
-				}
-			}
-			else = {
-				add_tech_bonus = {
-					name = MAL_study_fighte_technology_r56_name
-					bonus = 0.5
-					uses = 2
-					category = light_fighter
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			if = {
-				limit = { has_subdoctrine_in_track = fighter_aircraft }
-				add_daily_mastery = {
-					name = MAL_study_fighte_technology_r56_name
-					amount = 0.25
-					days = 180
-					track = fighter_aircraft
-				}
-				else = {
-					custom_effect_tooltip = MAL_has_fighter_airfcraft_doctrine_tt
-					effect_tooltip = {
-						add_daily_mastery = {
-							name = MAL_enhance_bomber_capabilities_r56_name
-							amount = 0.25
-							days = 180
-							track = strike_aircraft
-						}
-					}
-				}
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = MAL_enhance_bomber_capabilities_r56
-		icon = GFX_goal_generic_air_bomber_new
-		prerequisite = { focus = MAL_send_pilots_abroad_r56 }
-		mutually_exclusive = { focus = MAL_study_fighter_technology_r56 }
-		relative_position_id = MAL_send_pilots_abroad_r56
-
-		cost = 10
-		x = 1
-		y = 1
-
-		completion_reward = {
-			if = {
-				limit = { has_dlc = "By Blood Alone" }
-				add_tech_bonus = {
-					name = MAL_enhance_bomber_capabilities_r56_name
-					technology = basic_medium_airframe
-					technology = improved_medium_airframe
-					technology = advanced_medium_airframe
-					bonus = 0.5
-					uses = 2
-				}
-			}
-			else = {
-				add_tech_bonus = {
-					name = MAL_enhance_bomber_capabilities_r56_name
-					bonus = 0.5
-					uses = 2
-					category = cat_heavy_fighter
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			if = {
-				limit = { has_subdoctrine_in_track = strike_aircraft }
-				add_daily_mastery = {
-					name = MAL_enhance_bomber_capabilities_r56_name
-					amount = 0.25
-					days = 180
-					track = strike_aircraft
-				}
-				else = {
-					custom_effect_tooltip = MAL_has_strike_aircraft_doctrine_tt
-					effect_tooltip = {
-						add_daily_mastery = {
-							name = MAL_enhance_bomber_capabilities_r56_name
-							amount = 0.25
-							days = 180
-							track = strike_aircraft
-						}
-					}
-				}
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = MAL_increase_aircraft_production_r56
-		icon = GFX_SOV_increase_aircraft_production_ccp_2d_sov_compatibility
-		prerequisite = { focus = MAL_enhance_bomber_capabilities_r56 focus = MAL_study_fighter_technology_r56 }
-		mutually_exclusive { focus = MAL_purchase_foreign_obsolete_aircraft_r56 }
-		relative_position_id = MAL_study_fighter_technology_r56
-
-		cost = 8
-		x = 0
-		y = 1
-
-		completion_reward = {
-			if = {
-				limit = { has_dlc = "Arms Against Tyranny" }
-				add_equipment_subsidy = {
-					cic = 450
-					equipment_type = small_plane_airframe
-					seller_trigger = is_allied_seller_trigger
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			if = {
-				limit = { has_completed_focus = MAL_enhance_bomber_capabilities_r56 }
-				add_ideas = MAL_prioritizing_bomber_output_r56
-
-				else_if = {
-					limit = { has_completed_focus = MAL_study_fighter_technology_r56 }
-					add_ideas = MAL_prioritizing_fighter_output_r56
-				}
-
-				else = { custom_effect_tooltip = MAL_we_get_idea_for_whatever_focus_we_complete }
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MILITARY_EQUIPMENT }
-	}
-
-	focus = {
-		id = MAL_purchase_foreign_obsolete_aircraft_r56
-		icon = GFX_focus_SMB_purchase_aircraft
-		prerequisite = { focus = MAL_enhance_bomber_capabilities_r56 focus = MAL_study_fighter_technology_r56 }
-		mutually_exclusive { focus = MAL_increase_aircraft_production_r56 }
-		relative_position_id = MAL_enhance_bomber_capabilities_r56
-
-		cost = 8
-		x = 0
-		y = 1
-
-		completion_reward = {
-			# unlocks decisions to purchase foreing obsolete aircraft every 180 days at the cost of 25 pp and 10% consumers the entire duration
-		}
-
-		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT }
-	}
-
-	focus = {
-		id = MAL_avenging_in_the_shadows_r56
-		icon = GFX_goal_flying_tiger_neutral
-		prerequisite = { focus = MAL_increase_aircraft_production_r56 focus = MAL_purchase_foreign_obsolete_aircraft_r56 }
-		relative_position_id = MAL_increase_aircraft_production_r56
-
-		cost = 5
-		x = 1
-		y = 1
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = MAL_foreign_expertise_airforce_r56
-				add_idea = MAL_malaysian_airforce_r56
-			}
-		}
-
-		search_filters = {  }
-	}
-
-	focus = {
-		id = MAL_jet_r56
-		icon = GFX_goal_generic_air_jet_new
-		prerequisite = { focus = MAL_air_facility_focus_r56 }
-		prerequisite = { focus = MAL_avenging_in_the_shadows_r56 }
-		relative_position_id = MAL_air_facility_focus_r56
-
-		cost = 8
-		x = 0
-		y = 4
-
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = jet_technology
-				category = rocketry
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_breakthrough_progress = {
-				specialization = specialization_air
-				value = 0.50
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_ideas = r56_generic_jet_idea
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
+	#focus = {
+	#	id = MAL_air_facility_focus_r56
+	#	icon = GFX_goal_generic_military_research
+	#	prerequisite = { focus = MAL_create_mvaf_r56 }
+	#	relative_position_id = MAL_create_mvaf_r56
+#
+	#	cost = 10
+	#	x = -2
+	#	y = 1
+#
+	#	available = { has_200_air_doctrine_mastery = yes }
+#
+	#	completion_reward = {
+	#		random_owned_controlled_state = {
+	#			limit = {
+	#				is_core_of = ROOT
+	#				air_facility < 1
+	#				land_facility < 1
+	#				naval_facility < 1
+	#				nuclear_facility < 1
+	#			}
+	#			prioritize = { 915 }
+	#			add_building_construction = {
+	#				type = air_facility
+	#				level = 1
+	#				instant_build = yes
+	#				province = 10297 # Kuala Lumpur
+	#			}
+	#		}
+#
+	#		# add research slot if havent completed other focuses giving facilities
+	#	}
+#
+	#	search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+	#}
+#
+	#focus = {
+	#	id = MAL_radar_r56
+	#	icon = GFX_goal_generic_radar
+	#	prerequisite = { focus = MAL_air_facility_focus_r56 }
+	#	relative_position_id = MAL_air_facility_focus_r56
+#
+	#	cost = 6
+	#	x = -1
+	#	y = 1
+#
+	#	bypass = { is_special_project_completed = sp:sp_air_radar }
+#
+	#	completion_reward = {
+	#		add_tech_bonus = {
+	#			name = NZL_improve_the_radars
+	#			bonus = 1
+	#			uses = 1
+	#			category = radar_tech
+	#		}
+	#		
+	#		custom_effect_tooltip = generic_skip_one_line_tt
+	#		add_breakthrough_progress = {
+	#			specialization = specialization_air
+	#			value = 0.15
+	#		}
+	#		
+	#		custom_effect_tooltip = generic_skip_one_line_tt
+	#		add_ideas = r56_generic_radar_idea
+	#	}
+#
+	#	search_filters = { FOCUS_FILTER_RESEARCH }
+	#}
+#
+	#focus = {
+	#	id = MAL_send_pilots_abroad_r56
+#
+	#	icon = {
+	#		trigger = { is_subject_of = ENG }
+	#		value = GFX_goal_fighters_uk
+	#	}
+#
+	#	icon = {
+	#		trigger = { NOT = { is_subject_of = ENG } }
+	#		value = GFX_focus_PRC_pilot_training
+	#	}
+#
+	#	prerequisite = { focus = MAL_create_mvaf_r56 }
+	#	relative_position_id = MAL_create_mvaf_r56
+#
+	#	cost = 7.2
+	#	x = 0
+	#	y = 1
+#
+	#	completion_reward = {
+	#		air_experience = 35
+	#		add_doctrine_cost_reduction = {
+	#			name = air_doc_bonus
+	#			cost_reduction = 0.85
+	#			uses = 1
+	#			category = air_doctrine	
+	#		}
+	#		add_ideas = MAL_foreign_expertise_airforce_r56
+	#	}
+#
+	#	search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT }
+	#}
+#
+	#focus = {
+	#	id = MAL_study_fighter_technology_r56
+	#	icon = GFX_focus_generic_copy_plane_designs
+	#	prerequisite = { focus = MAL_send_pilots_abroad_r56 }
+	#	mutually_exclusive = { focus = MAL_enhance_bomber_capabilities_r56 }
+	#	relative_position_id = MAL_send_pilots_abroad_r56
+#
+	#	cost = 10
+	#	x = -1
+	#	y = 1
+#
+	#	completion_reward = {
+	#		add_doctrine_cost_reduction = {
+	#			name = air_doc_bonus
+	#			cost_reduction = 0.5
+	#			uses = 1
+	#			category = air_doctrine	
+	#		}
+	#		if = {
+	#			limit = { has_dlc = "By Blood Alone" }
+	#			add_tech_bonus = {
+	#				name = MAL_study_fighte_technology_r56_name
+	#				technology =  basic_small_airframe
+	#				technology  = improved_small_airframe
+	#				technology = advanced_small_airframe
+	#				bonus = 0.5
+	#				uses = 2
+	#			}
+	#		}
+	#		else = {
+	#			add_tech_bonus = {
+	#				name = MAL_study_fighte_technology_r56_name
+	#				bonus = 0.5
+	#				uses = 2
+	#				category = light_fighter
+	#			}
+	#		}
+	#		custom_effect_tooltip = generic_skip_one_line_tt
+	#		if = {
+	#			limit = { has_subdoctrine_in_track = fighter_aircraft }
+	#			add_daily_mastery = {
+	#				name = MAL_study_fighte_technology_r56_name
+	#				amount = 0.25
+	#				days = 180
+	#				track = fighter_aircraft
+	#			}
+	#			else = {
+	#				custom_effect_tooltip = MAL_has_fighter_airfcraft_doctrine_tt
+	#				effect_tooltip = {
+	#					add_daily_mastery = {
+	#						name = MAL_enhance_bomber_capabilities_r56_name
+	#						amount = 0.25
+	#						days = 180
+	#						track = strike_aircraft
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+#
+	#	search_filters = { FOCUS_FILTER_RESEARCH }
+	#}
+#
+	#focus = {
+	#	id = MAL_enhance_bomber_capabilities_r56
+	#	icon = GFX_goal_generic_air_bomber_new
+	#	prerequisite = { focus = MAL_send_pilots_abroad_r56 }
+	#	mutually_exclusive = { focus = MAL_study_fighter_technology_r56 }
+	#	relative_position_id = MAL_send_pilots_abroad_r56
+#
+	#	cost = 10
+	#	x = 1
+	#	y = 1
+#
+	#	completion_reward = {
+	#		add_doctrine_cost_reduction = {
+	#			name = air_doc_bonus
+	#			cost_reduction = 0.5
+	#			uses = 1
+	#			category = air_doctrine	
+	#		}
+	#		if = {
+	#			limit = { has_dlc = "By Blood Alone" }
+	#			add_tech_bonus = {
+	#				name = MAL_enhance_bomber_capabilities_r56_name
+	#				technology = basic_medium_airframe
+	#				technology = improved_medium_airframe
+	#				technology = advanced_medium_airframe
+	#				bonus = 0.5
+	#				uses = 2
+	#			}
+	#		}
+	#		else = {
+	#			add_tech_bonus = {
+	#				name = MAL_enhance_bomber_capabilities_r56_name
+	#				bonus = 0.5
+	#				uses = 2
+	#				category = cat_heavy_fighter
+	#			}
+	#		}
+	#		custom_effect_tooltip = generic_skip_one_line_tt
+	#		if = {
+	#			limit = { has_subdoctrine_in_track = strike_aircraft }
+	#			add_daily_mastery = {
+	#				name = MAL_enhance_bomber_capabilities_r56_name
+	#				amount = 0.25
+	#				days = 180
+	#				track = strike_aircraft
+	#			}
+	#			else = {
+	#				custom_effect_tooltip = MAL_has_strike_aircraft_doctrine_tt
+	#				effect_tooltip = {
+	#					add_daily_mastery = {
+	#						name = MAL_enhance_bomber_capabilities_r56_name
+	#						amount = 0.25
+	#						days = 180
+	#						track = strike_aircraft
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+#
+	#	search_filters = { FOCUS_FILTER_RESEARCH }
+	#}
+#
+	#focus = {
+	#	id = MAL_increase_aircraft_production_r56
+	#	icon = GFX_SOV_increase_aircraft_production_ccp_2d_sov_compatibility
+	#	prerequisite = { focus = MAL_enhance_bomber_capabilities_r56 focus = MAL_study_fighter_technology_r56 }
+	#	mutually_exclusive { focus = MAL_purchase_foreign_obsolete_aircraft_r56 }
+	#	relative_position_id = MAL_study_fighter_technology_r56
+#
+	#	cost = 8
+	#	x = 0
+	#	y = 1
+#
+	#	completion_reward = {
+	#		if = {
+	#			limit = { has_dlc = "Arms Against Tyranny" }
+	#			add_equipment_subsidy = {
+	#				cic = 500
+	#				equipment_type = small_plane_airframe
+	#				seller_trigger = is_allied_seller_trigger
+	#			}
+	#			custom_effect_tooltip = generic_skip_one_line_tt
+	#		}
+	#		random_owned_controlled_state = {
+	#			limit = { is_core_of = ROOT }
+	#			add_extra_state_shared_building_slots = 1
+	#			add_building_construction = {
+	#				type = arms_factory
+	#				level = 1
+	#				instant_build = yes
+	#			}
+	#		}
+	#		custom_effect_tooltip = generic_skip_one_line_tt
+	#		if = {
+	#			limit = { has_completed_focus = MAL_enhance_bomber_capabilities_r56 }
+	#			add_ideas = MAL_prioritizing_bomber_output_r56
+#
+	#			else_if = {
+	#				limit = { has_completed_focus = MAL_study_fighter_technology_r56 }
+	#				add_ideas = MAL_prioritizing_fighter_output_r56
+	#			}
+#
+	#			else = { custom_effect_tooltip = MAL_we_get_idea_for_whatever_focus_we_complete }
+	#		}
+	#	}
+#
+	#	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MILITARY_EQUIPMENT }
+	#}
+#
+	#focus = {
+	#	id = MAL_purchase_foreign_obsolete_aircraft_r56
+	#	icon = GFX_focus_SMB_purchase_aircraft
+	#	prerequisite = { focus = MAL_enhance_bomber_capabilities_r56 focus = MAL_study_fighter_technology_r56 }
+	#	mutually_exclusive { focus = MAL_increase_aircraft_production_r56 }
+	#	relative_position_id = MAL_enhance_bomber_capabilities_r56
+#
+	#	cost = 8
+	#	x = 0
+	#	y = 1
+#
+	#	completion_reward = {
+	#		# unlocks decisions to purchase foreing obsolete aircraft every 180 days at the cost of 25 pp and 10% consumers the entire duration
+	#	}
+#
+	#	search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT }
+	#}
+#
+	#focus = {
+	#	id = MAL_avenging_in_the_shadows_r56
+	#	icon = GFX_goal_flying_tiger_neutral
+	#	prerequisite = { focus = MAL_increase_aircraft_production_r56 focus = MAL_purchase_foreign_obsolete_aircraft_r56 }
+	#	relative_position_id = MAL_increase_aircraft_production_r56
+#
+	#	cost = 5
+	#	x = 1
+	#	y = 1
+#
+	#	available = { # condition should be always completed, but better be safe.
+	#		count_triggers = {
+	#		    amount > 1
+	#			has_subdoctrine_in_track = fighter_aircraft
+	#			has_subdoctrine_in_track = strike_aircraft
+	#			has_subdoctrine_in_track = medium_aircraft
+	#			has_subdoctrine_in_track = heavy_aircraft
+	#		}
+	#	}
+#
+	#	completion_reward = {
+	#		# 1 year reduction too? maybe with some air xp in addition
+	#		swap_ideas = {
+	#			remove_idea = MAL_foreign_expertise_airforce_r56
+	#			add_idea = MAL_malaysian_airforce_r56
+	#		}
+	#	}
+#
+	#	search_filters = {  }
+	#}
+#
+	#focus = {
+	#	id = MAL_jet_r56
+	#	icon = GFX_goal_generic_air_jet_new
+	#	prerequisite = { focus = MAL_air_facility_focus_r56 }
+	#	prerequisite = { focus = MAL_avenging_in_the_shadows_r56 }
+	#	relative_position_id = MAL_air_facility_focus_r56
+#
+	#	cost = 8
+	#	x = 0
+	#	y = 4
+#
+	#	completion_reward = {
+	#		add_tech_bonus = {
+	#			bonus = 1.0
+	#			uses = 1
+	#			category = jet_technology
+	#			category = rocketry
+	#		}
+	#		custom_effect_tooltip = generic_skip_one_line_tt
+	#		add_breakthrough_progress = {
+	#			specialization = specialization_air
+	#			value = 0.35
+	#		}
+	#		custom_effect_tooltip = generic_skip_one_line_tt
+	#		add_ideas = r56_generic_jet_idea
+	#	}
+#
+	#	search_filters = { FOCUS_FILTER_RESEARCH }
+	#}
 
 	# Dynamic Branches for Malaya's allies
 	focus = { # Commonwealth Aligned
@@ -2135,7 +2135,7 @@ focus_tree = {
 		relative_position_id = MAL_create_mvaf_r56
 
 		cost = 5
-		x = 4
+		x = 5
 		y = 1
 
 		available = {
@@ -2148,6 +2148,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MAL_we_will_lose_commonwealth_branch
 			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_tech_sharing_group = commonwealth_research
 			add_doctrine_cost_reduction = {
 				name = naval_doctrine
 				cost_reduction = 0.85

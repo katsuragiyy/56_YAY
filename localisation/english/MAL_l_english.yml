@@ -605,6 +605,11 @@ MAL_singapore_tooltip:0 "This currently does nothing"
  MAL_assume_protection_over_singapore_r56_desc:0 ""
 
  # Decision(s) and Decision Categories
+ MAL_purchasing_aircraft_r56:0 "Purchassing Foreign Aircraft"
+ MAL_purchasing_aircraft_r56_desc:0 "Due to our limited industrial capabilities, we will have to find an alternative to producing aircraft domestically. A probable solution is to purchase obsolete aircraft from other countries which have no use for them."
+ 
+ MAL_begin_purchasing_german_aircraft_r56:0 "Secure a Deal with [GER.GetNonIdeologyName]"
+ 
  #MAL_airforce_decisions_r56:0 "Situation in the Skies"
  #MAL_airforce_decisions_r56_desc:0 "Many have come to #doubt the Singapore strategy, especially after seeing #the recent technological developments in attack aircraft and their effectiveness against sea vessels. Some of our strategists have suggested that we should also take precautionary steps to form an airforce of our own in order to protect ourselves from any potential future threats that may arise."
 #

@@ -222,12 +222,14 @@ characters={
 		name = MAL_ian_stewart
 		portraits = {
 			army = {
+				large = GFX_portrait_asia_generic_land_7 #MALAYSIA TODO
 				small = GFX_idea_kay_hai
 			}
 		}
 
 		advisor = {
 			slot = army_chief
+			cost = 100
 			idea_token = MAL_ian_stewart
 			allowed = { original_tag = MAL }
 			available = { has_completed_focus = MAL_jungle_training_r56 }
