@@ -1,8 +1,8 @@
-﻿capital = 915 #Kuala Lumpur
+﻿capital = 1130 #Kuala Lumpur
 set_cosmetic_tag = MAL_FMS
+oob = "MAL_1936"
 set_research_slots = 3
 add_to_tech_sharing_group = commonwealth_research
-oob = "MAL_1936"
 set_convoys = 25
 
 set_party_name = { ideology = neutrality  long_name = MAL_neutrality_party_puppet name = MAL_neutrality_party_puppet }
