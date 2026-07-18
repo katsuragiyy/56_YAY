@@ -12,7 +12,7 @@ news_event = {
 	id = aat_news.1
 	title = aat_news.1.t
 	desc = aat_news.1.desc
-	picture = GFX_news_event_sweden_icelandic_independence
+	picture = GFX_news_event_sweden_icelandic_independence # 56
 	
 	major = yes
 	
@@ -28,7 +28,7 @@ news_event = {
 	id = aat_news.2
 	title = aat_news.2.t
 	desc = aat_news.2.desc
-	picture = GFX_news_event_ICE_port
+	picture = GFX_news_event_ICE_port # 56
 	
 	major = yes
 	
@@ -340,7 +340,7 @@ news_event = {
 	id = aat_news.666
 	title = aat_news.666.t
 	desc = aat_news.666.desc
-	picture = GFX_news_event_danish_liberation
+	picture = GFX_news_event_danish_liberation # 56
 	
 	major = yes
 	
@@ -357,7 +357,7 @@ news_event = {
 	id = aat_news.777
 	title = aat_news.777.t
 	desc = aat_news.777.desc
-	picture = GFX_news_event_gustaf_exiled
+	picture = GFX_news_event_gustaf_exiled # 56
 	
 	major = yes
 	

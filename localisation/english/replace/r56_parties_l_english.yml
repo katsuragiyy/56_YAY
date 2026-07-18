@@ -328,11 +328,11 @@
  CAM_neutrality_party:0 "Norodom"
  CAM_neutrality_party_long:0 "House of Norodom"
 
- #CAP
- CAP_communism_party:0 "PAIGC"
- CAP_communism_party_long:0 "Partido Africano para a Independência da Guiné e Cabo Verde"
- CAP_democratic_party:0 "PAIGC (TD)"
- CAP_democratic_party_long:0 "Partido Africano para a Independência da Guiné e Cabo Verde (Transição Democrática)"
+ #CBV
+ CBV_communism_party:0 "PAIGC"
+ CBV_communism_party_long:0 "Partido Africano para a Independência da Guiné e Cabo Verde"
+ CBV_democratic_party:0 "PAIGC (TD)"
+ CBV_democratic_party_long:0 "Partido Africano para a Independência da Guiné e Cabo Verde (Transição Democrática)"
 
  #CAR
  CAR_democratic_party:0 "MESAN"

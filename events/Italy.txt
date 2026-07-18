@@ -15,12 +15,13 @@ country_event = {
 	
 	option = {
 		name = italy.1.a
-		annex_country = { target = FROM }
-		add_named_threat = { threat = 1 name = ITA_albania_war_goal }
 
-		#BBA		-from vanilla
+		annex_country = { target = FROM }
+		add_named_threat = { threat = 1 name = ITA_albania_war_goal } # 56 - Adjusted WT
+
+		#BBA
 		# The king is an idea
-		if = { #TODO_Manu: Handle this via News Event?
+		if = {
 			limit = {
 				has_idea = vittorio_emanuele
 			}
@@ -49,11 +50,12 @@ country_event = {
 				ITA_vittorio_emanuele_iii = { set_character_flag = ITA_king_of_albania_flag } #Used to add the NS of the king back after having removed it (Christian Democracy)
 			}
 		}
+
 		USA = {
 			set_country_flag = { flag = USA_albania_window days = 60 value = 1 }
 		}
 		hidden_effect = {
-			news_event = { 
+			news_event = { # 56
 				id = news.22 
 				days = 1
 			}
@@ -75,14 +77,14 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = FROM
+			generator = { 44 805 }
 		}
-		ITA = {
-			remove_resource_rights = 44
-			remove_resource_rights = 910
-		}
-									
 		hidden_effect = {
 			news_event = { days = 1 id = news.23 }
+		}
+		ITA = { # 56
+			remove_resource_rights = 44
+			remove_resource_rights = 910
 		}
 	}
 }
@@ -101,7 +103,7 @@ country_event = {
 		ai_chance = {
 			base = 40
 			modifier = {
-				factor = 0				
+				factor = 0
 				any_other_country = {
 					OR = {
 						is_major = yes
@@ -118,19 +120,22 @@ country_event = {
 				factor = 0.5
 				OR = {
 					has_government = communism
-					has_government = fascism #glorious Albania will never yield!
+					has_government = fascism #glorious Albania will never yield! #Actually, there is nothing glorious to be found in fascism ;)
 				}
 			}
 			modifier = {
 				factor = 5
-				is_subject_of = ITA
+				is_subject_of = FROM
 			}
 		}
-		ITA = {
+		
+		FROM = {
 			country_event = { days = 1 id = italy.1 }
+			# 56
 			remove_resource_rights = 44
 			remove_resource_rights = 910
-		}	
+			##
+		}
 		custom_effect_tooltip = GAME_OVER_TT
 	}
 	option = { # Resist
@@ -162,7 +167,7 @@ country_event = {
 						is_in_faction = no 
 						NOT = {
 							any_other_country = {
-								NOT = { tag = ITA }
+								NOT = { tag = FROM }
 								has_guaranteed = ROOT
 							} 
 						}
@@ -172,24 +177,27 @@ country_event = {
 			modifier = {
 				add = 100
 				is_in_faction = yes
-				NOT = { is_in_faction_with = ITA }
+				NOT = { is_in_faction_with = FROM }
 			}
 			modifier = {
 				add = 100
 				is_subject = yes
-				NOT = { is_subject_of = ITA }
+				NOT = { is_subject_of = FROM }
 			}
 		}
-		ITA = {
+		FROM = {
 			effect_tooltip = {
 				create_wargoal = {
 					type = take_state_focus
 					target = ROOT
+					generator = { 44 }
 				}
 			}
 			country_event = { days = 1 id = italy.2 }
+			# 56
 			remove_resource_rights = 44
-			remove_resource_rights = 910				
+			remove_resource_rights = 910
+			##			
 		}
 	}
 }
@@ -260,7 +268,7 @@ country_event = {
 		}
 		# REVISIT Balance research bonus, also in event below
 		add_tech_bonus = {
-			name = special_forces_bonus
+			name = mountaineers2_bonus
 			bonus = 1.0
 			uses = 1
 			technology = tech_mountaineers2
@@ -268,7 +276,7 @@ country_event = {
 		}
 		add_doctrine_cost_reduction = {
 			name = naval_doc_bonus
-			cost_reduction = 0.5
+			cost_reduction = 0.35
 			uses = 2
 			category = naval_doctrine
 		}
@@ -331,6 +339,59 @@ country_event = {
 	}
 }
 
+# 56 - This focus below is useless. Use a generic event.
+# French national focus - French asks Italy to join french faction
+country_event = {
+	id = italy.8
+	title = italy.8.t
+	desc = italy.8.d
+	picture = GFX_report_event_german_parade_paris
+
+	is_triggered_only = yes
+	
+	option = {
+		name = italy.8.a
+		FRA = {
+			if = {
+				limit = { is_in_faction = no }
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = {
+					template = faction_template_european_dominance
+					name = domination_francaise
+				}
+			}
+		}
+		FRA = {	add_to_faction = ITA }
+		ITA = {
+			add_ai_strategy = {
+				type = alliance
+				id = FRA
+				value = 200
+			}
+		}
+		FRA = {
+			add_ai_strategy = {
+				type = alliance
+				id = ITA
+				value = 200
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.181 }
+		}
+	}
+	option = {
+		name = italy.8.b
+		ai_chance = { factor = 0 }
+		FRA = {
+			add_opinion_modifier = { target = ITA modifier = ITA_FRA_woo_italy_reject }
+		}	
+		hidden_effect = {
+			news_event = { hours = 6 id = news.183 }
+		}
+	}
+}
+
 # Request Balearic Islands from Spain
 country_event = {
 	id = italy.9
@@ -374,7 +435,12 @@ country_event = {
 	option = {
 		name = italy.10.a
 		ITA = { transfer_state = 177 }
-		remove_opinion_modifier = { target = ITA modifier = ita_supported_spain_civil_war }
+		FROM = {
+			if = {
+				limit = { has_opinion_modifier = ita_supported_spain_civil_war }
+				remove_opinion_modifier = { target = ITA modifier = ita_supported_spain_civil_war }
+			}
+		}
 	}
 }
 
@@ -398,7 +464,7 @@ country_event = {
 	id = italy.12
 	title = italy.12.t
 	desc = italy.12.d
-	picture = GFX_report_event_hitler_croatia_handshake
+	picture = GFX_report_event_generic_croatia_handshake
 
 	is_triggered_only = yes
 	
@@ -510,7 +576,7 @@ country_event = {
 	}
 }
 
-# Italy (First Ljubljana Award) from german focus
+# Italy (First Ljubljana Award) from German focus
 country_event = {
 	id = italy.13
 	title = italy.13.t

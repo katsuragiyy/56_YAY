@@ -2413,11 +2413,11 @@ country_event = {
 			}
 			if = {
 				limit = {
-					CAP = { exists = no }
+					CBV = { exists = no }
 					controls_state = 702		
 				}
-				release = CAP
-				CAP = {
+				release = CBV
+				CBV = {
 					set_politics = { 
 						ruling_party = communism
 						elections_allowed = no

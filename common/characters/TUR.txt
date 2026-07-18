@@ -193,7 +193,7 @@ characters={
 					small="GFX_idea_tur_ismet_inonu"
 				}
 				civilian={
-					large="gfx/leaders/TUR/Portrait_Turkey_Ismet_Inonu.dds"
+					large="gfx/leaders/TUR/r56_portrait_TUR_Ismet_Inonu.dds"
 				}
 			}
 			advisor={
@@ -253,7 +253,7 @@ characters={
 			name=TUR_ismet_inonu
 			portraits={
 				civilian={
-					large="gfx/leaders/TUR/Portrait_Turkey_Ismet_Inonu.dds"
+					large="gfx/leaders/TUR/r56_portrait_TUR_Ismet_Inonu.dds"
 				}
 			}
 			country_leader={

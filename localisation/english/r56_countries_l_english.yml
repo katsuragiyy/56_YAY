@@ -134,18 +134,18 @@
  BRM_ENG_subject_DEF:0 "the Colony of Burma"
  BRM_ENG_subject_ADJ:0 "Burma"
 
- #CAP
- CAP:0 "Cape Verde"
- CAP_DEF:0 "Cape Verde"
- CAP_ADJ:0 "Cape Verdean"
- CAP_communism:0 "Socialist Republic of Cape Verde"
- CAP_communism_DEF:0 "the Socialist Republic of Cape Verde"
- CAP_democratic:0 "Republic of Cape Verde"
- CAP_democratic_DEF:0 "the Republic of Cape Verde"
- CAP_neutrality:0 "Republic of Cape Verde"
- CAP_neutrality_DEF:0 "the Republic of Cape Verde"
- CAP_fascism:0 "State of Cape Verde"
- CAP_fascism_DEF:0 "the State of Cape Verde"
+ #CBV
+ CBV:0 "Cape Verde"
+ CBV_DEF:0 "Cape Verde"
+ CBV_ADJ:0 "Cape Verdean"
+ CBV_communism:0 "Socialist Republic of Cape Verde"
+ CBV_communism_DEF:0 "the Socialist Republic of Cape Verde"
+ CBV_democratic:0 "Republic of Cape Verde"
+ CBV_democratic_DEF:0 "the Republic of Cape Verde"
+ CBV_neutrality:0 "Republic of Cape Verde"
+ CBV_neutrality_DEF:0 "the Republic of Cape Verde"
+ CBV_fascism:0 "State of Cape Verde"
+ CBV_fascism_DEF:0 "the State of Cape Verde"
 
  #CNR
  CHT_neutrality:0 "Kingdom of Rekohu"

@@ -13993,7 +13993,7 @@ form_ethiopian_empire_category  = {
 			}
 			842 = {
 				add_victory_points = {
-					province = 13237
+					province = 13286
 					value = 5
 				}
 				ETH_upgrade_state_category = yes 

@@ -13,7 +13,7 @@ news_event = {
 
 	option = {
 		name = bba_news.0.a
-		set_global_flag = league_of_nations_gone
+		set_global_flag = league_of_nations_gone # 56
 	}
 	# TODO make better/more texts 
 }
@@ -159,6 +159,7 @@ news_event = {
 			
 	picture = GFX_news_event_italian_tank_desert
 	
+	#major = no # 56 - useless
 	is_triggered_only = yes
 
 	option = {
@@ -253,7 +254,8 @@ news_event = {
 		}
 	}
 	picture = GFX_news_event_ITA_purged_fascists
-	 
+	
+	#major = no # 56 - useless
 	is_triggered_only = yes
 
 	option = {
@@ -311,6 +313,7 @@ news_event = {
 	desc = bba_news.104.desc
 	picture = GFX_news_event_generic_sign_treaty2
 	
+	#major = no # 56 - useless
 	is_triggered_only = yes
 
 	option = {
@@ -325,11 +328,12 @@ news_event = {
 	desc = bba_news.105.desc
 	picture = GFX_news_event_generic_sign_treaty1
 	
+	#major = no # 56 - useless
 	is_triggered_only = yes
 
 	option = {
 		name = bba_news.105.a
-		ITA_vittorio_emanuele_iii = { add_country_leader_trait = king_of_albania }
+		ITA_vittorio_emanuele_iii = { add_country_leader_trait = king_of_albania } # 56
 	}
 }
 
@@ -340,6 +344,7 @@ news_event = {
 	desc = bba_news.106.desc
 	picture = GFX_news_event_ITA_vittorio_emanuele_III
 	
+	#major = no # 56 - useless
 
 	fire_only_once = yes
 
@@ -364,7 +369,7 @@ news_event = {
 	option = {
 		name = bba_news.106.a
 
-		if = { #Double check that the Vittorio is in fact King and country leader
+		IF = { #Double check that the Vittorio is in fact King and country leader
 			limit = {
 				has_country_leader = {
 					character = ITA_vittorio_emanuele_iii
@@ -435,6 +440,7 @@ news_event = {
 	desc = bba_news.107.desc
 	picture = GFX_news_event_generic_funeral
 	
+	#major = no # 56 - useless
 
 	fire_only_once = yes
 
@@ -526,6 +532,7 @@ news_event = {
 	desc = bba_news.109.desc
 	picture = GFX_news_event_ITA_grand_council
 	
+	#major = no # 56 - useless
 	
 	is_triggered_only = yes
 
@@ -715,7 +722,7 @@ news_event = {
 	id = bba_africa_news.1
 	title = bba_africa_news.1.t
 	desc = bba_africa_news.1.desc
-	picture = GFX_news_event_african_diplomats
+	picture = GFX_news_event_african_diplomats # 56
 	
 	
 	
@@ -743,7 +750,7 @@ news_event = {
 	id = bba_africa_news.2
 	title = bba_africa_news.2.t
 	desc = bba_africa_news.2.desc
-	picture = GFX_news_event_african_diplomats
+	picture = GFX_news_event_african_diplomats # 56
 	
 	
 	
@@ -819,7 +826,7 @@ news_event = {
 	id = bba_italian_formables_news.1
 	title = bba_italian_formables_news.1.t
 	desc = bba_italian_formables_news.1.desc
-	picture = GFX_news_event_ITA_greater_italy
+	picture = GFX_news_event_ITA_greater_italy # 56
 	
 	
 	

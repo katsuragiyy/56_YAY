@@ -1184,7 +1184,7 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			NOT = { FROM = { tag = GNB } }
 			NOT = { FROM = { tag = TML } }
 			NOT = { FROM = { tag = SAO } }
-			NOT = { FROM = { tag = CAP } }
+			NOT = { FROM = { tag = CBV } }
 		}
 	}
 	if = { # Avoid exploitation 

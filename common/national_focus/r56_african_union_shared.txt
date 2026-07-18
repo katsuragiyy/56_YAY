@@ -43,7 +43,7 @@
 				original_tag = SEY
 				original_tag = MAU
 				original_tag = SAO
-				original_tag = CAP
+				original_tag = CBV
 				original_tag = COM			
                 original_tag = GNB		
 				##

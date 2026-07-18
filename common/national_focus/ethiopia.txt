@@ -1634,7 +1634,7 @@ focus_tree = {
 					build_only_on_allied = yes
 					fallback = yes
 					start_province = 5010
-					target_province = 13237
+					target_province = 13286
 				}
 			}
 			# Otherwise, connect new capital with Addis as that's the central rail hub
@@ -6338,7 +6338,7 @@ focus_tree = {
 				build_railway = {
 					#level = 1
 					start_province = 5010 
-					target_province = 13237
+					target_province = 13286
 				}
 				build_railway = {
 					#level = 1
@@ -6356,7 +6356,7 @@ focus_tree = {
 				842 = {
 					add_building_construction = {
 						type = supply_node
-						province = 13237
+						province = 13286
 						level = 1
 						instant_build = yes
 					}

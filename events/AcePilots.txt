@@ -77,7 +77,7 @@ country_event = {
 			}
 		}
 	}
-	picture = GFX_r56_event_picture_finnish_pilot #DNM - unique pic for event
+	picture = GFX_r56_event_picture_finnish_pilot # 56
 	
 	is_triggered_only = yes
 	minor_flavor = yes
@@ -125,7 +125,7 @@ country_event = {
 	option = {
 		name = ace_died.1.a
 
-		add_manpower = -1
+		add_manpower = -1 # 56
 	}
 }
 
@@ -203,7 +203,7 @@ country_event = {
 			}
 		}
 	}
-	picture = GFX_report_event_AST_funeral_2 #DNM - unique pic for event
+	picture = GFX_report_event_AST_funeral_2 # 56
 	
 	is_triggered_only = yes
 	minor_flavor = yes
@@ -211,7 +211,7 @@ country_event = {
 	option = {
 		name = ace_killed_by_ace.1.a
 
-		add_manpower = -1
+		add_manpower = -1 # 56
 	}
 }
 
@@ -289,7 +289,7 @@ country_event = {
 			}
 		}
 	}
-	picture = GFX_report_event_eng_royal_family #DNM - unique pic for event
+	picture = GFX_report_event_eng_royal_family # 56
 	
 	is_triggered_only = yes
 	minor_flavor = yes
@@ -373,7 +373,7 @@ country_event = {
 			}
 		}
 	}	
-	picture = GFX_report_event_ace_died #DNM - unique pic for event
+	picture = GFX_report_event_ace_died # 56
 	
 	is_triggered_only = yes
 	minor_flavor = yes
@@ -381,6 +381,6 @@ country_event = {
 	option = {
 		name = aces_killed_each_other.1.a
 
-		add_manpower = -1
+		add_manpower = -1 # 56
 	}
 }
