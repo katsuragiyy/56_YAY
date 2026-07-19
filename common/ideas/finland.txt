@@ -152,7 +152,7 @@ ideas = {
 
 		######## FAKE NS FOR BOOKMARKS
 
-		FIN_finnish_army_fake = { #Only used for 1939 bookmark (dynamic modifiers don't show up there)
+		FIN_finnish_army_fake = { #Only used for tooltip when adding the DM in focus
 			name = FIN_finnish_army
 
 			removal_cost = -1

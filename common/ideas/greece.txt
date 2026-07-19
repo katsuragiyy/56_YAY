@@ -1,6 +1,7 @@
 ideas = {
 
-	country = {
+	country = { 
+
 		GRE_agrarian_society = {
 				
 			allowed = {
@@ -36,7 +37,7 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				consumer_goods_factor = -0.15	
+				consumer_goods_factor = -0.15
 				stability_factor = 0.1
 				political_power_factor = 0.05
 				conscription_factor = -0.15
@@ -78,7 +79,7 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				consumer_goods_factor = -0.15		
+				consumer_goods_factor = -0.15	
 				conscription_factor = -0.07				
 			}
 		}
@@ -197,7 +198,7 @@ ideas = {
 				
 			modifier = {
 				stability_factor = -0.1	
-				consumer_goods_factor = 0.3	
+				consumer_goods_factor = 0.30	
 			}
 		}
 
@@ -222,7 +223,7 @@ ideas = {
 				
 			modifier = {
 				stability_factor = -0.1	
-				consumer_goods_factor = 0.2
+				consumer_goods_factor = 0.20
 			}
 		}
 
@@ -247,7 +248,7 @@ ideas = {
 				
 			modifier = {
 				stability_factor = -0.1	
-				consumer_goods_factor = 0.05	
+				consumer_goods_factor = 0.10	
 			}
 		}
 
@@ -321,7 +322,7 @@ ideas = {
 				
 			modifier = {
 				stability_factor = 0.1
-				consumer_goods_factor = -0.15	
+				consumer_goods_factor = -0.15
 				political_power_factor	= 0.05				
 			}
 		}
@@ -338,6 +339,8 @@ ideas = {
 			}
 			
 			picture = generic_research_bonus
+
+			removal_cost = -1
 			
 			modifier = {
 				political_power_factor	= 0.05
@@ -345,6 +348,7 @@ ideas = {
 			}
 		}
 
+		#MM: Never used. Not localized
 		GRE_memories_of_the_anatolian_catastrophe = {
 				
 			allowed = {
@@ -719,7 +723,7 @@ ideas = {
 			modifier = {
 				trade_laws_cost_factor = 0.75
 				economy_cost_factor	= 0.25
-				consumer_goods_factor = 0.45
+				consumer_goods_factor = 0.40
 				trade_opinion_factor = 0.25
 			}
 		}
@@ -741,7 +745,7 @@ ideas = {
 			modifier = {
 				trade_laws_cost_factor = 0.75
 				economy_cost_factor	= 0.25
-				consumer_goods_factor = 0.3
+				consumer_goods_factor = 0.30
 				trade_opinion_factor = 0.25
 			}
 		}
@@ -763,7 +767,7 @@ ideas = {
 			modifier = {
 				trade_laws_cost_factor = 0.75
 				economy_cost_factor	= 0.25
-				consumer_goods_factor = 0.2
+				consumer_goods_factor = 0.20
 				trade_opinion_factor = 0.25
 			}
 		}
@@ -785,7 +789,7 @@ ideas = {
 			modifier = {
 				trade_laws_cost_factor = 0.75
 				economy_cost_factor	= 0.25
-				consumer_goods_factor = 0.1
+				consumer_goods_factor = 0.10
 				trade_opinion_factor = 0.25
 			}
 		}
@@ -846,7 +850,7 @@ ideas = {
 				always = no
 			}
 
-			cancel = {
+			cancel = { # 56
 				has_war = yes
 			}
 
@@ -880,8 +884,8 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				production_speed_industrial_complex_factor = 0.15
-				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.25
+				production_speed_arms_factory_factor = 0.15
 				production_speed_dockyard_factor = 0.1
 				production_speed_infrastructure_factor = 0.05
 				political_power_factor = -0.1
@@ -929,7 +933,7 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				navy_leader_cost_factor = -0.50
+				navy_leader_cost_factor = -0.3
 				navy_leader_start_level = 1
 				navy_leader_start_defense_level = 2
 				navy_leader_start_maneuvering_level = 2
@@ -971,7 +975,7 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				conscription = 0.002
+				conscription = 0.005
 			}
 		}
 
@@ -991,6 +995,7 @@ ideas = {
 				
 			modifier = {
 				army_morale_factor = 0.10
+				army_org_factor = 0.03
 			}
 		}
 
@@ -1009,8 +1014,9 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				conscription = 0.002
+				conscription = 0.005
 				army_morale_factor = 0.10 
+				army_org_factor = 0.03
 			}
 		}		
 
@@ -1029,9 +1035,10 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				conscription = 0.004
+				conscription = 0.007
 				army_morale_factor = 0.10 
 				land_reinforce_rate = 0.05
+				army_org_factor = 0.03
 			}
 		}
 
@@ -1081,6 +1088,7 @@ ideas = {
 			modifier = {
 				air_ace_generation_chance_factor = 0.1
 				air_accidents_factor = -0.1
+				experience_gain_air_factor = 0.05
 			}
 		}
 
@@ -1282,17 +1290,16 @@ ideas = {
 				original_tag = GRE
 			}
 
-			cancel = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = { # 56
 				OR = { 
 					has_government = communism
 					has_government = fascism 
 					has_government = democratic 
-					is_in_faction = yes
 				}
-			}
-
-			allowed_civil_war = {
-				always = yes
 			}
 
 			picture = gre_metaxism
@@ -1318,17 +1325,16 @@ ideas = {
 				original_tag = GRE
 			}
 
-			cancel = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = { # 56
 				OR = { 
 					has_government = communism
 					has_government = fascism 
 					has_government = democratic 
-					is_in_faction = yes
 				}
-			}
-
-			allowed_civil_war = {
-				always = yes
 			}
 
 			picture = gre_metaxism
@@ -1354,17 +1360,16 @@ ideas = {
 				original_tag = GRE
 			}
 
-			cancel = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = { # 56
 				OR = { 
 					has_government = communism
 					has_government = fascism 
 					has_government = democratic 
-					is_in_faction = yes
 				}
-			}
-
-			allowed_civil_war = {
-				always = yes
 			}
 
 			picture = gre_metaxism
@@ -1389,17 +1394,16 @@ ideas = {
 				original_tag = GRE
 			}
 
-			cancel = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = { # 56
 				OR = { 
 					has_government = communism
 					has_government = fascism 
 					has_government = democratic 
-					is_in_faction = yes
 				}
-			}
-
-			allowed_civil_war = {
-				always = yes
 			}
 
 			picture = gre_metaxism
@@ -1422,7 +1426,11 @@ ideas = {
 		GRE_metaxism_5 = {
 				
 			allowed = {
-				original_tag = GRE
+				original_tag = GRE	
+			}
+
+			allowed_civil_war = {
+				always = yes
 			}
 
 			cancel = {
@@ -1430,12 +1438,7 @@ ideas = {
 					has_government = communism
 					has_government = fascism 
 					has_government = democratic 
-					is_in_faction = yes
 				}
-			}
-
-			allowed_civil_war = {
-				always = yes
 			}
 
 			picture = gre_metaxism
@@ -1462,6 +1465,10 @@ ideas = {
 				original_tag = GRE
 			}
 
+			allowed_civil_war = {
+				always = yes
+			}
+
 			cancel = {
 				OR = {
 					NOT = {
@@ -1473,10 +1480,6 @@ ideas = {
 					has_government = communism
 					has_government = democratic 
 				}
-			}
-
-			allowed_civil_war = {
-				always = yes
 			}
 
 			picture = gre_metaxism_empowered
@@ -1500,6 +1503,10 @@ ideas = {
 				original_tag = GRE
 			}
 
+			allowed_civil_war = {
+				always = yes
+			}
+
 			cancel = {
 				OR = {
 					NOT = {
@@ -1511,10 +1518,6 @@ ideas = {
 					has_government = communism
 					has_government = democratic 
 				}
-			}
-
-			allowed_civil_war = {
-				always = yes
 			}
 
 			picture = gre_metaxism_empowered
@@ -1583,7 +1586,7 @@ ideas = {
 				always = yes
 			}
 
-			available = {
+			cancel = { # 56
 				if = {
 					limit = {
 						is_puppet = yes
@@ -1617,7 +1620,7 @@ ideas = {
 				always = yes
 			}
 
-			available = {
+			cancel = { # 56
 				if = {
 					limit = {
 						is_puppet = yes
@@ -1652,7 +1655,7 @@ ideas = {
 				always = yes
 			}
 
-			available = {
+			cancel = { # 56
 				if = {
 					limit = {
 						is_puppet = yes
@@ -1688,7 +1691,7 @@ ideas = {
 				always = yes
 			}
 
-			available = {
+			cancel = { # 56
 				if = {
 					limit = {
 						is_puppet = yes
@@ -1743,7 +1746,7 @@ ideas = {
 				always = yes
 			}
 
-			available = {
+			cancel = { # 56
 				if = {
 					limit = {
 						is_puppet = yes
@@ -1778,7 +1781,7 @@ ideas = {
 				always = yes
 			}
 
-			available = {
+			cancel = { # 56
 				if = {
 					limit = {
 						is_puppet = yes
@@ -1814,7 +1817,7 @@ ideas = {
 				always = yes
 			}
 
-			available = {
+			cancel = { # 56
 				if = {
 					limit = {
 						is_puppet = yes
@@ -1849,13 +1852,13 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
-			
+
 			picture = generic_foreign_capital
 				
 			removal_cost = -1
 				
 			modifier = {
-				consumer_goods_factor = 0.1		
+				consumer_goods_factor = 0.10		
 				min_export = 0.1			
 			}
 		}
@@ -1875,7 +1878,7 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				consumer_goods_factor = 0.3		
+				consumer_goods_factor = 0.30	
 				min_export = 0.25			
 			}
 		}
@@ -1914,14 +1917,13 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				consumer_goods_factor = 0.2
+				consumer_goods_factor = 0.20	
 			}
 		}
 
 		GRE_small_investment = {
-				
 			allowed = {
-				NOT = {
+				NOT = { # 56
 					has_war_with = GRE
 				}
 			}
@@ -1935,14 +1937,13 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				consumer_goods_factor = 0.1
+				consumer_goods_factor = 0.10
 			}
 		}
 
 		GRE_moderate_investment = {
-				
 			allowed = {
-				NOT = {
+				NOT = { # 56
 					has_war_with = GRE
 				}
 			}
@@ -1961,9 +1962,8 @@ ideas = {
 		}
 
 		GRE_heavy_investment = {
-				
 			allowed = {
-				NOT = {
+				NOT = { # 56
 					has_war_with = GRE
 				}
 			}
@@ -1997,7 +1997,7 @@ ideas = {
 				
 			modifier = {
 				resistance_damage_to_garrison = -0.25
-				resistance_decay = -0.25
+				resistance_decay_on_our_occupied_states = -0.25
 			}
 		}
 
@@ -2016,9 +2016,10 @@ ideas = {
 				attack_bonus_against = 0.25
 				defense_bonus_against = 0.15
 			}
-		}
+		}																													
 
-      GRE_depression = {
+		# 56
+      	GRE_depression = {
 
 			allowed = {
 				original_tag = GRE
@@ -3651,6 +3652,7 @@ GRE_opla = {
    }
  }
 }
+##
 
 ###---> Companies <><> <><> <><>
 
@@ -3779,7 +3781,7 @@ GRE_opla = {
 			ai_will_do = {
 				factor = 1
 			}
-		}		
+		}
 	}
 
 #-> Material Manufacturer <><>

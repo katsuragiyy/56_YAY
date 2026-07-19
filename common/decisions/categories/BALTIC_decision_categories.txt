@@ -14,7 +14,7 @@ LIT_iron_wolf_coup = {
 	visible = {
 		has_government = neutrality
 		NOT = { has_completed_focus = BALTIC_overthrow_the_government }
-		has_global_flag = LIT_vanilla_focus_tree
+		has_global_flag = LIT_vanilla_focus_tree # 56
 	}
 	priority = 10
 }
@@ -31,7 +31,7 @@ LIT_iron_wolf_appeasement = {
 	visible = {
 		has_completed_focus = LIT_free_voldemares
 		has_government = neutrality
-		has_global_flag = LIT_vanilla_focus_tree
+		has_global_flag = LIT_vanilla_focus_tree # 56
 	}
 	priority = 9
 }
@@ -49,7 +49,7 @@ support_polish_falange_decisions = {
 		has_completed_focus = LIT_support_polish_fascists
 		NOT = { POL = { has_government = fascism } }
 		NOT = { POL = { has_country_flag = banned_fascism_flag } }
-		has_global_flag = LIT_vanilla_focus_tree
+		has_global_flag = LIT_vanilla_focus_tree # 56
 	}
 	priority = 9
 }
@@ -84,7 +84,7 @@ EST_fight_vaps_decisions = {
 
 	visible = {
 		has_completed_focus = EST_fight_the_vaps
-		has_global_flag = EST_vanilla_focus_tree
+		has_global_flag = EST_vanilla_focus_tree # 56
 	}
 	priority = 9
 }
@@ -104,7 +104,7 @@ march_through_estonia = {
 			has_country_flag = EST_vapsid_takeover_finland
 			has_government = fascism 
 		}
-		has_global_flag = EST_vanilla_focus_tree
+		has_global_flag = EST_vanilla_focus_tree # 56
 	}
 	
 	on_map_area = {
@@ -136,7 +136,7 @@ EST_convert_FIN_cat = {
 				}
 			}
 		}
-		has_global_flag = EST_vanilla_focus_tree
+		has_global_flag = EST_vanilla_focus_tree # 56
 	}
 	
 	on_map_area = {
@@ -163,7 +163,7 @@ LAT_perkonkrust_revolt_category = {
 	visible = {
 		has_completed_focus = LAT_empower_paramilitarists
 		NOT = { has_completed_focus = BALTIC_overthrow_the_government }
-		has_global_flag = LAT_vanilla_focus_tree
+		has_global_flag = LAT_vanilla_focus_tree # 56
 	}
 	priority = 10
 }
@@ -179,7 +179,7 @@ LAT_delay_perkonkrust_decisions = {
 
 	visible = {
 		has_completed_focus = LAT_latvia_for_latvians
-		has_global_flag = LAT_vanilla_focus_tree
+		has_global_flag = LAT_vanilla_focus_tree # 56
 	}
 	priority = 9
 }
@@ -195,7 +195,7 @@ promote_baltic_fascism_cat = {
 
 	visible = {
 		has_completed_focus = LAT_support_baltic_fascists
-		has_global_flag = LAT_vanilla_focus_tree
+		has_global_flag = LAT_vanilla_focus_tree # 56
 	}
 	priority = 9
 }
@@ -223,7 +223,7 @@ BALTIC_entente = {
 			has_completed_focus = LAT_formalize_baltic_entente
 			has_completed_focus = LIT_formalize_baltic_entente
 		}
-		OR = {
+		OR = { # 56
 			has_global_flag = EST_vanilla_focus_tree
 			has_global_flag = LAT_vanilla_focus_tree
 			has_global_flag = LIT_vanilla_focus_tree
@@ -247,7 +247,7 @@ convert_neighbours_baltic_cat = {
 	visible = {
 		has_completed_focus = BALTIC_influence_neighbours
 		NOT = { has_completed_focus = BALTIC_united_baltic_ssr }
-		OR = {
+		OR = { # 56
 			has_global_flag = EST_vanilla_focus_tree
 			has_global_flag = LAT_vanilla_focus_tree
 			has_global_flag = LIT_vanilla_focus_tree
@@ -289,7 +289,7 @@ infiltrate_belarus_decisions = {
 			AND = {
 				has_completed_focus = BALTIC_belarus_ssr
 				NOT = { has_completed_focus = BALTIC_seek_support_of_soviets }
-				OR = {
+				OR = { # 56
 					has_global_flag = EST_vanilla_focus_tree
 					has_global_flag = LAT_vanilla_focus_tree
 					has_global_flag = LIT_vanilla_focus_tree
@@ -315,7 +315,7 @@ BALTIC_forest_brother_resistance_cat = {
 
 	visible = {
 		has_government = communism
-		OR = {
+		OR = { # 56
 			has_global_flag = EST_vanilla_focus_tree
 			has_global_flag = LAT_vanilla_focus_tree
 			has_global_flag = LIT_vanilla_focus_tree

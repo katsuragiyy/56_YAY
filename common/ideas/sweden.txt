@@ -27,6 +27,38 @@ ideas = {
 			traits = { SWE_former_autocrat }
 			
 		}
+
+		SWE_gustaf_v_idea_upgraded = {
+			
+			allowed = {
+				original_tag = SWE
+			}
+			picture = SWE_king_gustaf
+			allowed_civil_war = {
+				NOT ={
+					has_government = communism
+				}
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = neutrality 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				fascism_acceptance = 20
+				neutrality_acceptance = 20
+				neutrality_drift = 0.01
+				command_power_gain_mult = 0.15
+			}
+			
+		}
 	
 		en_svensk_tiger = {
 			
@@ -69,7 +101,7 @@ ideas = {
 				max_dig_in_factor = -1
 				army_org_factor = -0.9
 				army_speed_factor = 0.5
-				supply_consumption_factor = -0.75
+				supply_consumption_factor = 0.75
 			}
 		}
 
@@ -164,7 +196,7 @@ ideas = {
 			
 			modifier = {
 				army_attack_factor = -0.1
-			army_defence_factor = -0.1
+				army_defence_factor = -0.1
 			}
 		}
 
@@ -178,7 +210,11 @@ ideas = {
 			}
 
 			cancel = {
-				num_of_civilian_factories > 40
+				num_of_civilian_factories > 45
+			}
+
+			on_remove = {
+				add_political_power = 120
 			}
 			removal_cost = -1
 
@@ -196,7 +232,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
-			cancel = { check_variable = { stability > var:hungershield_stability_threshold_1 } }
+			cancel = { check_variable = { stability > var:hungershield_stability_threshold_1 } } # 56?
 			removal_cost = -1
 
 			picture = FRA_matignon_agreements
@@ -206,7 +242,7 @@ ideas = {
 				production_speed_dockyard_factor = -0.15
 				industrial_capacity_factory = -0.2
 				industrial_capacity_dockyard = -0.2
-				political_power_factor = -0.15
+				political_power_factor = -0.25
 			}
 		}
 
@@ -219,7 +255,7 @@ ideas = {
 				always = yes
 			}
 
-			cancel = { check_variable = { stability > var:hungershield_stability_threshold_2 } }
+			cancel = { check_variable = { stability > var:hungershield_stability_threshold_2 } } # 56?
 
 			removal_cost = -1
 
@@ -230,7 +266,7 @@ ideas = {
 				production_speed_dockyard_factor = -0.4
 				industrial_capacity_factory = -0.4
 				industrial_capacity_dockyard = -0.4
-				political_power_factor = -0.3
+				political_power_factor = -0.4
 			}
 		}
 
@@ -248,6 +284,7 @@ ideas = {
 
 			cancel = {
 			 	has_war_with = GER
+			 	has_country_flag = cancel_german_trade_agreement
 			}
 
 			targeted_modifier = {
@@ -325,7 +362,7 @@ ideas = {
 			allowed_civil_war = { always = yes }
 
 			modifier = {
-				consumer_goods_factor = 0.12
+				consumer_goods_factor = 0.06
 				political_power_factor = 0.05
 				stability_factor = 0.03
 				production_factory_max_efficiency_factor = 0.06
@@ -347,6 +384,7 @@ ideas = {
 			}
 		}
 
+		#MM: Never used. Unlocalized
 		SWE_small_scale_strikes = {
 			picture = generic_production_bonus
 
@@ -611,7 +649,7 @@ ideas = {
 			}
 			allowed_civil_war = { always = yes }
 			modifier = {
-				consumer_goods_factor = 0.12
+				consumer_goods_factor = 0.06
 				line_change_production_efficiency_factor = 0.1
 				war_stability_factor = 0.15
 			}
@@ -642,7 +680,7 @@ ideas = {
 			}
  			allowed_civil_war = { always = yes }
 			modifier = {
-				consumer_goods_factor = -0.12
+				consumer_goods_factor = -0.03
 				stability_factor = 0.01
 			}
 		}
@@ -678,7 +716,7 @@ ideas = {
 			}
 			allowed_civil_war = { always = yes }
 			modifier = {
-				conscription = 0.005
+				conscription = 0.01
 				mobilization_speed = 0.15
 			}
 		}
@@ -688,16 +726,16 @@ ideas = {
 				tag = SWE
 			}
 			allowed_civil_war = { always = yes }
-			modifier = {
-				army_armor_speed_factor = 0.05
-				cavalry_defence_factor = -0.05
+			modifier = { 
+				army_armor_speed_factor = 0.04
+				cavalry_defence_factor = -0.05 # 56
 				cavalry_attack_factor = 0.1
 				modifier_army_sub_unit_cavalry_speed_factor = 0.1
 				#max_dig_in = -1
 			}
 			equipment_bonus = {
 				armor = {
-					breakthrough = 0.05
+					breakthrough = 0.06
 					armor_value = -0.05
 					instant = yes
 				}
@@ -796,7 +834,7 @@ ideas = {
 				land_reinforce_rate = 0.01
 				army_morale_factor = 0.05
 				pocket_penalty = -0.2
-				supply_factor = 0.1
+				supply_consumption_factor = -0.1
 				no_supply_grace = 72
 			}
 		}
@@ -816,7 +854,7 @@ ideas = {
 				land_reinforce_rate = 0.01
 				army_morale_factor = 0.05
 				pocket_penalty = -0.2
-				supply_factor = 0.1
+				supply_consumption_factor = -0.1
 				no_supply_grace = 72
 				cas_damage_reduction = 0.1
 				enemy_army_bonus_air_superiority_factor = -0.1
@@ -842,7 +880,7 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.1
 				weekly_manpower = 2250
 				minimum_training_level = -0.15
-			army_defence_factor = 0.2
+				defence = 0.2
 			}
 		}
 
@@ -1061,8 +1099,8 @@ ideas = {
 			removal_cost = -1
 			picture = generic_war_preparation
 			modifier = {
-				army_attack_factor = 0.1
-				army_speed_factor = 0.1
+				army_attack_factor = 0.08
+				army_speed_factor = 0.08
 			}
 		}
 
@@ -1101,7 +1139,7 @@ ideas = {
 			}
 
 			modifier = {
-				consumer_goods_factor = 0.1
+				consumer_goods_factor = 0.05
 			}
 		}
 
@@ -1218,7 +1256,7 @@ ideas = {
 			modifier = {
 				air_superiority_efficiency = 0.1
 				army_armor_attack_factor = 0.05
-				army_armor_speed_factor = 0.1
+				army_armor_speed_factor = 0.08
 			}
 		}
 
@@ -1241,7 +1279,7 @@ ideas = {
 			modifier = {
 				air_superiority_efficiency = 0.1
 				army_armor_attack_factor = 0.05
-				army_armor_speed_factor = 0.1
+				army_armor_speed_factor = 0.08
 			}
 		}
 
@@ -1276,7 +1314,7 @@ ideas = {
 			modifier = {
 				air_superiority_efficiency = 0.1
 				army_armor_attack_factor = 0.05
-				army_armor_speed_factor = 0.1
+				army_armor_speed_factor = 0.08
 
 			}
 		}
@@ -1300,38 +1338,15 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+
+			cancel = {
+				SWE = { has_completed_focus = SWE_nordic_protection_complex }
+			}
 			picture = generic_oppression
 			modifier = {
 				army_attack_factor = -0.3
 				army_defence_factor = -0.3
 				army_org_factor = -0.3
-			}
-		}
-
-		SWE_nordic_decentralized_army = {
-			allowed_civil_war = {
-				always = yes
-			}
-			picture = eng_preparing_the_second_front
-			modifier = {
-				surrender_limit = 0.3
-				cic_to_overlord_factor = 0.25
-				war_support_factor = 0.05
-				mobilization_speed = 0.15
-				training_time_factor = -0.05
-			}
-		}
-
-		SWE_economic_strain = {
-			allowed_civil_war = {
-				always = yes
-			}
-			picture = MEX_callistas
-			modifier = {
-				stability_weekly = -0.0015
-				war_support_weekly = -0.0015
-				civilian_factory_use = 5
-				industrial_capacity_factory = -0.15
 			}
 		}
 
@@ -1351,6 +1366,34 @@ ideas = {
 				
 			}
 		}
+		# 56 - what is this?
+		SWE_nordic_decentralized_army = {
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = eng_preparing_the_second_front
+			modifier = {
+				surrender_limit = 0.3
+				cic_to_overlord_factor = 0.25
+				war_support_factor = 0.05
+				mobilization_speed = 0.15
+				training_time_factor = -0.05
+			}
+		}
+		##
+
+		SWE_economic_strain = {
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = MEX_callistas
+			modifier = {
+				stability_weekly = -0.0015
+				war_support_weekly = -0.0015
+				civilian_factory_use = 5
+				industrial_capacity_factory = -0.15
+			}
+		}
 
 		SWE_gateway_to_peace = {
 			allowed_civil_war = {
@@ -1367,6 +1410,7 @@ ideas = {
 		}
 
 		SWE_SOV_embarassment_of_the_red_army = {
+			picture = SOV_red_army
 			cancel = { 
 				OR = {
 					any_enemy_country = {
@@ -1417,7 +1461,7 @@ ideas = {
 				war_support_factor = 0.1
 				production_speed_arms_factory_factor = 0.1
 				production_speed_dockyard_factor = 0.1
-				consumer_goods_factor = 0.2
+				consumer_goods_factor = 0.1
 				stability_factor = -0.1
 			}
 		}
@@ -1459,6 +1503,7 @@ ideas = {
 			}
 			picture = generic_volunteer_expedition_bonus
 			modifier = {
+				send_volunteer_divisions_required = -0.5
 				air_volunteer_cap = 1
 				send_volunteer_size = 1
 				send_volunteers_tension = -0.8
@@ -1471,6 +1516,7 @@ ideas = {
 			}
 			picture = generic_volunteer_expedition_bonus
 			modifier = {
+				send_volunteer_divisions_required = -0.5
 				air_volunteer_cap = 2
 				send_volunteer_size = 4
 				send_volunteers_tension = -0.8
@@ -1499,7 +1545,7 @@ ideas = {
 			picture = SPR_crush_the_revolution
 			modifier = {
 				neutrality_drift = 0.10
-				consumer_goods_factor = -0.4
+				consumer_goods_factor = -0.20
 			}
 		}
 
@@ -1537,7 +1583,7 @@ ideas = {
 				war_support_factor = 0.1
 				production_speed_arms_factory_factor = 0.05
 				production_speed_dockyard_factor = 0.05
-				consumer_goods_factor = -0.15
+				consumer_goods_factor = -0.05
 			}
 }
 
@@ -1561,7 +1607,7 @@ ideas = {
 				political_power_factor = -0.2
 				research_speed_factor = -0.05
 				drift_defence_factor = 0.1
-				consumer_goods_factor = 0.08
+				consumer_goods_factor = 0.04
 			}
 		}
 		SWE_adopted_ger_lang_idea = {
@@ -1627,6 +1673,7 @@ ideas = {
 			}
 		}
 
+		#MM: Never used. Unlocalized
 		SWE_political_commisars = {
 			picture = generic_fascism_drift_bonus
 			cancel = {
@@ -1732,7 +1779,7 @@ ideas = {
 			}
 			
 			modifier = {
-			army_defence_factor = 0.1
+				defence = 0.1
 				dig_in_speed_factor = 0.1
 				land_reinforce_rate = 0.01
 				army_morale_factor = 0.05
@@ -1754,7 +1801,7 @@ ideas = {
 			}
 			
 			modifier = {
-				consumer_goods_factor = 0.2
+				consumer_goods_factor = 0.1
 				research_speed_factor = 0.08
 				stability_factor = 0.1
 				resistance_target = -0.15
@@ -1775,7 +1822,7 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.1
 				industrial_capacity_dockyard = 0.1
-				consumer_goods_factor = 0.12
+				consumer_goods_factor = 0.06
 			}
 
 			picture = generic_goods_red_bonus

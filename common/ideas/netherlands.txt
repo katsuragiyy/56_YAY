@@ -11,6 +11,7 @@
 #Robert van Genechten -> war propaganda nsb
 	
 ideas = {
+
 	country = {
 
 		HOL_flag_will_fly = {
@@ -65,7 +66,7 @@ ideas = {
 		}
 
 		HOL_internationally_controversial_aggression = {
-			picture = SWE_fallen_riksdag_trait
+			picture = AUS_aggression
 			allowed = {
 				original_tag = HOL
 				has_dlc = "Thunder at Our Gates"
@@ -85,7 +86,7 @@ ideas = {
 		}
 
 		HOL_internationally_controversial_aggression_2 = {
-			picture = SWE_fallen_riksdag_trait
+			picture = AUS_aggression
 			allowed = {
 				original_tag = HOL
 				has_dlc = "Thunder at Our Gates"
@@ -106,7 +107,7 @@ ideas = {
 
 		HOL_wilhelmina = {
 
-			picture = hol_wilhelmina
+			picture = HOL_wilhelmina_ns
 			
 			allowed = {
 				original_tag = HOL
@@ -132,34 +133,6 @@ ideas = {
 			traits = { popular_figurehead }
 		}
 
-		HOL_juliana = {
-
-			picture = HOL_juliana
-			
-			allowed = {
-				original_tag = HOL
-			}
-
-			allowed_civil_war = {
-				NOT ={
-					has_government = communism
-				}
-				NOT = {
-					any_other_country = {
-						original_tag = HOL
-						has_government = democratic 
-						NOT = {
-							tag = ROOT
-						}
-					}
-				}
-			}
-			
-			removal_cost = -1
-			
-			traits = { popular_figurehead2 }
-		}
-
 		HOL_aloof_neutrality = {
 
 			picture = hol_aloof_neutrality
@@ -168,7 +141,7 @@ ideas = {
 				always = no
 			}
 			
-			cancel = {
+			cancel = { # 56
 				OR = {
 					has_war = yes
 					is_subject = yes
@@ -207,14 +180,14 @@ ideas = {
 				always = yes
 			}
 
-			cancel = {
+			cancel = { # 56
 				has_defensive_war = yes
 			}
 			
 			removal_cost = -1
 						
 			modifier = {
-				conscription_factor = -0.5
+				conscription_factor = -0.25
 				industrial_capacity_factory = -0.25
 				industrial_capacity_dockyard = -0.1
 			}
@@ -234,14 +207,14 @@ ideas = {
 				always = yes
 			}
 
-			cancel = {
+			cancel = { # 56
 				has_defensive_war = yes
 			}
 			
 			removal_cost = -1
 						
 			modifier = {
-				conscription_factor = -0.4
+				conscription_factor = -0.15
 				industrial_capacity_factory = -0.2
 				industrial_capacity_dockyard = -0.06
 			}
@@ -261,14 +234,14 @@ ideas = {
 				always = yes
 			}
 
-			cancel = {
+			cancel = { # 56
 				has_defensive_war = yes
 			}
 			
 			removal_cost = -1
 						
 			modifier = {
-				conscription_factor = -0.3
+				conscription_factor = -0.1
 				industrial_capacity_factory = -0.15
 				industrial_capacity_dockyard = -0.03
 			}
@@ -288,14 +261,13 @@ ideas = {
 				always = yes
 			}
 
-			cancel = {
+			cancel = { # 56
 				has_defensive_war = yes
 			}
 			
 			removal_cost = -1
 						
 			modifier = {
-				conscription_factor = -0.2
 				industrial_capacity_factory = -0.1
 			}
 		}
@@ -314,14 +286,13 @@ ideas = {
 				always = yes
 			}
 
-			cancel = {
+			cancel = { # 56
 				has_defensive_war = yes
 			}
 			
 			removal_cost = -1
 						
 			modifier = {
-				conscription_factor = -0.1
 				industrial_capacity_factory = -0.05
 			}
 		}
@@ -522,53 +493,7 @@ ideas = {
 			removal_cost = -1
 						
 			modifier = {
-				autonomy_gain = -2
-			}
-		}
-
-		HOL_reclaim_the_crown_jewel_idea = {
-
-			picture = hol_expand_the_colonial_army
-
-			name = HOL_reclaim_the_crown_jewel
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			removal_cost = -1
-						
-			targeted_modifier = {
-				tag = INS
-				attack_bonus_against = 0.1
-				defense_bonus_against = 0.1
-			}
-		}
-
-		HOL_anti_partisan_effort_idea = {
-
-			picture = generic_oppression
-
-			name = HOL_anti_partisan_effort
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			removal_cost = -1
-						
-			modifier = {
-				conscription = 0.01
-				resistance_damage_to_garrison = -0.1
-				compliance_gain = 0.02
+				autonomy_gain = -1.5
 			}
 		}
 
@@ -652,53 +577,53 @@ ideas = {
 						
 			equipment_bonus = {
 				small_plane_airframe = {
-					build_cost_ic = -0.05
 					instant = yes
+					build_cost_ic = -0.05
 				}
 				cv_small_plane_airframe = {
-					build_cost_ic = -0.05
 					instant = yes
+					build_cost_ic = -0.05
 				}
 				small_plane_cas_airframe = {
-					build_cost_ic = -0.05
 					instant = yes
+					build_cost_ic = -0.05
 				}
 				cv_small_plane_cas_airframe = {
-					build_cost_ic = -0.05
 					instant = yes
+					build_cost_ic = -0.05
 				}
 				small_plane_naval_bomber_airframe = {
-					build_cost_ic = -0.05
 					instant = yes
+					build_cost_ic = -0.05
 				}
 				cv_small_plane_naval_bomber_airframe = {
-					build_cost_ic = -0.05
 					instant = yes
+					build_cost_ic = -0.05
 				}
 				medium_plane_airframe = {
-					build_cost_ic = -0.05
 					instant = yes
+					build_cost_ic = -0.05
 				}
 				medium_plane_fighter_airframe = {
-					build_cost_ic = -0.05
 					instant = yes
+					build_cost_ic = -0.05
 				}
 				medium_plane_scout_plane_airframe = {
-					build_cost_ic = -0.05
 					instant = yes
+					build_cost_ic = -0.05
 				}
 				large_plane_airframe = {
-					build_cost_ic = -0.05
 					instant = yes
+					build_cost_ic = -0.05
 				}
 				large_plane_maritime_patrol_plane_airframe = {
-					build_cost_ic = -0.05
 					instant = yes
+					build_cost_ic = -0.05
 				}
 				transport_plane_equipment = {
 					instant = yes
 					build_cost_ic = -0.05
-				}				
+				}
 			}
 		}
 
@@ -720,53 +645,53 @@ ideas = {
 						
 			equipment_bonus = {
 				small_plane_airframe = {
-					build_cost_ic = -0.1
 					instant = yes
+					build_cost_ic = -0.1
 				}
 				cv_small_plane_airframe = {
-					build_cost_ic = -0.1
 					instant = yes
+					build_cost_ic = -0.1
 				}
 				small_plane_cas_airframe = {
-					build_cost_ic = -0.1
 					instant = yes
+					build_cost_ic = -0.1
 				}
 				cv_small_plane_cas_airframe = {
-					build_cost_ic = -0.1
 					instant = yes
+					build_cost_ic = -0.1
 				}
 				small_plane_naval_bomber_airframe = {
-					build_cost_ic = -0.1
 					instant = yes
+					build_cost_ic = -0.1
 				}
 				cv_small_plane_naval_bomber_airframe = {
-					build_cost_ic = -0.1
 					instant = yes
+					build_cost_ic = -0.1
 				}
 				medium_plane_airframe = {
-					build_cost_ic = -0.1
 					instant = yes
+					build_cost_ic = -0.1
 				}
 				medium_plane_fighter_airframe = {
-					build_cost_ic = -0.1
 					instant = yes
+					build_cost_ic = -0.1
 				}
 				medium_plane_scout_plane_airframe = {
-					build_cost_ic = -0.1
 					instant = yes
+					build_cost_ic = -0.1
 				}
 				large_plane_airframe = {
-					build_cost_ic = -0.1
 					instant = yes
+					build_cost_ic = -0.1
 				}
 				large_plane_maritime_patrol_plane_airframe = {
-					build_cost_ic = -0.1
 					instant = yes
+					build_cost_ic = -0.1
 				}
 				transport_plane_equipment = {
 					instant = yes
 					build_cost_ic = -0.1
-				}							
+				}
 			}
 		}
 
@@ -938,53 +863,53 @@ ideas = {
 
 			equipment_bonus = {
 				small_plane_airframe = {
-					build_cost_ic = -0.2
 					instant = yes
+					build_cost_ic = -0.2
 				}
 				cv_small_plane_airframe = {
-					build_cost_ic = -0.2
 					instant = yes
+					build_cost_ic = -0.2
 				}
 				small_plane_cas_airframe = {
-					build_cost_ic = -0.2
 					instant = yes
+					build_cost_ic = -0.2
 				}
 				cv_small_plane_cas_airframe = {
-					build_cost_ic = -0.2
 					instant = yes
+					build_cost_ic = -0.2
 				}
 				small_plane_naval_bomber_airframe = {
-					build_cost_ic = -0.2
 					instant = yes
+					build_cost_ic = -0.2
 				}
 				cv_small_plane_naval_bomber_airframe = {
-					build_cost_ic = -0.2
 					instant = yes
+					build_cost_ic = -0.2
 				}
 				medium_plane_airframe = {
-					build_cost_ic = -0.2
 					instant = yes
+					build_cost_ic = -0.2
 				}
 				medium_plane_fighter_airframe = {
-					build_cost_ic = -0.2
 					instant = yes
+					build_cost_ic = -0.2
 				}
 				medium_plane_scout_plane_airframe = {
-					build_cost_ic = -0.2
 					instant = yes
+					build_cost_ic = -0.2
 				}
 				large_plane_airframe = {
-					build_cost_ic = -0.2
 					instant = yes
+					build_cost_ic = -0.2
 				}
 				large_plane_maritime_patrol_plane_airframe = {
-					build_cost_ic = -0.2
 					instant = yes
+					build_cost_ic = -0.2
 				}
 				transport_plane_equipment = {
 					instant = yes
 					build_cost_ic = -0.2
-				}				
+				}
 			}
 		}
 
@@ -1084,7 +1009,7 @@ ideas = {
 
 			modifier = {
 				fascism_drift = 0.1
-				war_support_factor = 0.20
+				war_support_factor = 0.1
 			}
 		}
 
@@ -1767,7 +1692,7 @@ ideas = {
 
 		HOL_staff_plan_eng = {
 
-			picture = fra_fortification_focus
+			picture = FRA_fortification_focus
 			
 			allowed = {
 				always = no
@@ -1787,7 +1712,7 @@ ideas = {
 
 		HOL_staff_plan_fra = {
 
-			picture = fra_fortification_focus
+			picture = FRA_fortification_focus
 			
 			allowed = {
 				always = no
@@ -1807,7 +1732,7 @@ ideas = {
 
 		HOL_staff_plan_ger = {
 
-			picture = fra_fortification_focus
+			picture = FRA_fortification_focus
 			
 			allowed = {
 				always = no
@@ -1970,7 +1895,7 @@ ideas = {
 			removal_cost = -1
 						
 			modifier = {
-				resistance_target_on_our_occupied_states = 0.5
+				resistance_target_on_our_occupied_states = 0.25 
 			}
 		}
 
@@ -2152,7 +2077,79 @@ ideas = {
 				consumer_goods_factor = -0.1
 			}
 		}
+		# 56
+		HOL_juliana = {
 
+			picture = HOL_juliana
+			
+			allowed = {
+				original_tag = HOL
+			}
+
+			allowed_civil_war = {
+				NOT ={
+					has_government = communism
+				}
+				NOT = {
+					any_other_country = {
+						original_tag = HOL
+						has_government = democratic 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+			
+			removal_cost = -1
+			
+			traits = { popular_figurehead2 }
+		}
+		HOL_reclaim_the_crown_jewel_idea = {
+
+			picture = hol_expand_the_colonial_army
+
+			name = HOL_reclaim_the_crown_jewel
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+						
+			targeted_modifier = {
+				tag = INS
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+
+		HOL_anti_partisan_effort_idea = {
+
+			picture = generic_oppression
+
+			name = HOL_anti_partisan_effort
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+						
+			modifier = {
+				conscription = 0.01
+				resistance_damage_to_garrison = -0.1
+				compliance_gain = 0.02
+			}
+		}
 		HOL_volunteers_for_the_cause = {
 			
 			picture = FRA_scw_intervention_republicans_focus

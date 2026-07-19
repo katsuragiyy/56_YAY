@@ -1912,32 +1912,8 @@ spriteType = {
 
 ###------> FIN <><> <><> <><> <><> <><>
 	spriteType = {
-		name = "GFX_idea_FIN_carl_mannerheim"
-		texturefile = "gfx/interface/ideas/fin/advisors/r56_idea_FIN_advisor_Carl_Mannerheim.dds"
-	}
-	spriteType = {
-		name = "GFX_idea_FIN_karl_oesch"
-		texturefile = "gfx/interface/ideas/fin/advisors/r56_idea_FIN_advisor_karl_oesch.dds"
-	}
-	spriteType = {
-		name = "GFX_idea_FIN_vilho_petter_nenonen"
-		texturefile = "gfx/interface/ideas/fin/advisors/r56_idea_FIN_vilho_nenonen.dds"
-	}
-	spriteType = {
 		name = "GFX_idea_FIN_erkki_raappana"
 		texturefile = "gfx/interface/ideas/fin/advisors/r56_idea_FIN_erkki_raappana.dds"
-	}
-	spriteType = {
-		name = "GFX_idea_FIN_hugo_osterman"
-		texturefile = "gfx/interface/ideas/fin/advisors/r56_idea_FIN_hugo_osterman.dds"
-	}
-	spriteType = {
-		name = "GFX_idea_FIN_ruben_lagus"
-		texturefile = "gfx/interface/ideas/fin/advisors/r56_idea_FIN_ruben_lagus.dds"
-	}
-	spriteType = {
-		name = "GFX_idea_FIN_erik_heinrichs"
-		texturefile = "gfx/interface/ideas/fin/advisors/r56_idea_FIN_erik_heinrichs.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_FIN_juho_paasikivi"
@@ -1951,11 +1927,6 @@ spriteType = {
 		name = "GFX_idea_FIN_aimo_aaltonen"
 		texturefile = "gfx/interface/ideas/fin/advisors/r56_idea_FIN_aimo_aaltonen.dds"
 	}
-	spriteType = {
-		name = "GFX_idea_FIN_vilho_annala"
-		texturefile = "gfx/interface/ideas/fin/advisors/r56_idea_FIN_vilho_annala.dds"
-	}
-
 
 ###------> FRA <><> <><> <><> <><> <><>
 	spriteType = {
@@ -3087,18 +3058,12 @@ spriteType = {
 	}
 
 	spriteType = {
-		name = "GFX_idea_minister_italy_roberto_farinacci"
-		texturefile = "gfx/interface/ideas/ita/idea_minister_italy_roberto_farinacci.dds"
-	}
-
-	spriteType = {
 		name = "GFX_idea_minister_italy_dino_grandi"
 		texturefile = "gfx/interface/ideas/ita/idea_minister_italy_dino_grandi.dds"
 	}
-
 	spriteType = {
-		name = "GFX_idea_minister_italy_pietro_koch"
-		texturefile = "gfx/interface/ideas/ita/idea_minister_italy_pietro_koch.dds"
+		name = "GFX_idea_ITA_pietro_koch_small" # Unused vanilla advisor
+		texturefile = "gfx/interface/ideas/portrait_ITA_pietro_koch_small.dds"
 	}
 
 	spriteType = {

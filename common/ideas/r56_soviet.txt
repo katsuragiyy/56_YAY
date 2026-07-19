@@ -415,6 +415,43 @@ ideas = {
 			}
 		}
 
+		SOV_siberian_forest_soldiers_idea = {
+
+			picture = MEX_politicised_army
+	
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+	
+			allowed_civil_war = {
+				original_tag = SOV
+			}
+			
+			modifier = {
+				army_org_factor = -0.03
+				terrain_penalty_reduction = 0.1
+				trait_ranger_xp_gain_factor = 0.33
+			}
+		}
+		
+		SOV_russia_okhrana_idea = {
+
+			picture = ast_classify_aliens
+
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+			
+			modifier = {
+				operative_slot = 1
+			}
+			
+		}
+
 		SOV_industrial_assistance = {
 
 			removal_cost = -1
@@ -2786,7 +2823,55 @@ ideas = {
 			ai_will_do = {
 				factor = 0
 			}			
-		}		
+		}
+
+		leningrad_polytechnical_institute_old = {
+			
+			name = leningrad_polytechnical_institute
+
+			picture = leningrad_polytechnical_institute
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			visible = {
+				has_global_flag = sov_old_focus_tree
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+			
+			modifier = {
+			}
+		}
+
+		stalingrad_tractor_factory_old = {
+		
+			name = stalingrad_tractor_factory
+
+			picture = stalingrad_tractor_factory
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			visible = {
+				has_global_flag = sov_old_focus_tree
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+			
+			modifier = {
+			}
+		}
 	}
 	
 	materiel_manufacturer = {

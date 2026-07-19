@@ -3332,7 +3332,7 @@ news_event = {
 #			ideology = democratic
 #			popularity = 0.03
 #		}
-#		FIN_risto_heikki_ryti = {
+#		FIN_risto_ryti = {
 #			promote_character = yes
 #		}
 #	}
@@ -3352,14 +3352,14 @@ news_event = {
 #		OR = {
 #			AND = {
 #				has_country_leader = {
-#					character = FIN_risto_heikki_ryti
+#					character = FIN_risto_ryti
 #					ruling_only = yes
 #				}
 #				date > 1944.8.03
 #			}
 #			AND = {
 #				has_country_leader = {
-#					character = FIN_risto_heikki_ryti
+#					character = FIN_risto_ryti
 #					ruling_only = yes
 #				}
 #				OR = {

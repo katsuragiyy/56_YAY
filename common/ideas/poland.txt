@@ -63,7 +63,7 @@ country = {
 			communism_drift = 0.15
 			production_speed_buildings_factor = -0.5
 			industrial_capacity_factory = -0.5
-			consumer_goods_factor = 0.5
+			consumer_goods_factor = 0.50
 			stability_factor = -0.2
 		}
 	}
@@ -88,6 +88,8 @@ country = {
 	}
 
 	POL_four_year_plan_complete_bad = {
+		name = POL_four_year_plan_idea
+
 		allowed = {
 			original_tag = POL
 			always = no
@@ -103,7 +105,7 @@ country = {
 
 		modifier = {
 			production_speed_buildings_factor = -0.15
-			consumer_goods_factor = 0.2
+			consumer_goods_factor = 0.10
 			industrial_capacity_factory	= -0.15
 		}
 	}
@@ -143,7 +145,7 @@ country = {
 
 		modifier = {
 			production_speed_buildings_factor = 0.1
-			consumer_goods_factor = -0.1
+			consumer_goods_factor = -0.075
 		}
 	}
 
@@ -1008,8 +1010,8 @@ country = {
 		picture = generic_intel_bonus
 
 		modifier = {
-			justify_war_goal_time = -0.3
-			generate_wargoal_tension = -0.3
+			justify_war_goal_time = -0.25
+			generate_wargoal_tension = -0.4
 			war_support_factor = 0.05
 		}
 	}
@@ -1033,7 +1035,48 @@ country = {
 			justify_war_goal_time = -0.33
 			generate_wargoal_tension = -0.4
 			war_support_factor = 0.1
-			resistance_growth = -0.2
+			resistance_target = -0.15
+		}
+	}
+
+	POL_internationalism_focus = {
+
+		allowed = {
+			original_tag = POL
+			always = no
+		}
+
+		allowed_civil_war = {
+			always = yes
+		}
+
+		removal_cost = -1
+
+		picture = generic_goods_red_bonus
+
+		modifier = {
+			trade_opinion_factor = 0.2
+		}
+	}
+
+	POL_empowered_sejm_idea = {
+
+		allowed = {
+			original_tag = POL
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = communism
+		}
+
+		removal_cost = -1
+
+		picture = generic_democratic_drift_bonus
+
+		modifier = {
+			neutrality_drift = -0.1
+			stability_factor = 0.1
 		}
 	}
 
@@ -1351,7 +1394,29 @@ country = {
 		}
 	}
 
-	POL_state_catholicism = {	#only used by PfOT CZE
+	POL_balachowicz_brigades = {
+
+		allowed = {
+			original_tag = POL
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = fascism
+		}
+
+		removal_cost = -1
+
+		picture = ast_volunteer_defence_corps
+
+		modifier = {
+			send_volunteers_tension = -1
+			send_volunteer_divisions_required = -0.25
+			send_volunteer_size = 3
+		}
+	}
+
+	POL_state_catholicism = {
 
 		allowed = {
 			original_tag = POL
@@ -1438,6 +1503,76 @@ country = {
 		}
 	}
 
+	POL_nationalist_constitution = {
+
+		allowed = {
+			original_tag = POL
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = fascism
+		}
+
+		removal_cost = -1
+
+		picture = POL_april_constitution
+
+		modifier = {
+			stability_factor = -0.1
+			fascism_drift = 0.05
+		}
+	}
+
+	POL_nationalist_constitution_1 = {
+
+		allowed = {
+			original_tag = POL
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = fascism
+		}
+
+		removal_cost = -1
+
+		picture = POL_april_constitution
+
+		modifier = {
+			war_support_factor = 0.1
+			political_power_factor = 0.1
+			fascism_drift = 0.1
+		}
+	}
+
+	POL_german_training = {
+
+		allowed = {
+			original_tag = POL
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = fascism
+		}
+
+		removal_cost = -1
+
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = -0.1
+			defense_bonus_against = -0.1
+		}
+
+		picture = generic_manpower_bonus
+
+		modifier = {
+			training_time_factor = -0.2
+			industrial_capacity_factory = 0.15
+		}
+	}
+
 	POL_konfederacja_narodu = {
 
 		allowed = {
@@ -1462,6 +1597,32 @@ country = {
 		modifier = {
 			conscription_factor = 0.05
 			war_support_factor = 0.1
+		}
+	}
+
+	POL_german_staff = {
+
+		allowed = {
+			original_tag = POL
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = fascism
+		}
+
+		removal_cost = -1
+
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = -0.1
+			defense_bonus_against = -0.1
+		}
+
+		picture = generic_fascism_drift_2
+
+		modifier = {
+			conscription = 0.02
 		}
 	}
 
@@ -1492,6 +1653,146 @@ country = {
 		}
 	}
 
+	POL_underground_conscripts = {
+
+		allowed = {
+			original_tag = POL
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = fascism
+		}
+
+		removal_cost = -1
+
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+		}
+
+		picture = MEX_revolutionary_army
+
+		modifier = {
+			weekly_manpower = 1000
+		}
+	}
+
+	POL_polish_upper_class = {
+
+		allowed = {
+			original_tag = POL
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = fascism
+		}
+
+		removal_cost = -1
+
+		picture = generic_intel_bonus
+
+		modifier = {
+			stability_factor = 0.1
+			global_building_slots_factor = 0.2
+			resistance_growth = 0.1
+		}
+	}
+
+	POL_privatized_education = {
+
+		allowed = {
+			original_tag = POL
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = fascism
+		}
+
+		removal_cost = -1
+
+		picture = generic_goods_red_bonus
+
+		modifier = {
+			consumer_goods_factor = -0.05
+		}
+	}
+
+	POL_radicalized_anti_germans = {
+
+		allowed = {
+			original_tag = POL
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = fascism
+		}
+
+		removal_cost = -1
+
+		picture = FRA_matignon_agreements
+
+		targeted_modifier = {
+			tag = GER
+			compliance_gain = 0.01
+			compliance_growth = 0.2
+		}
+
+		modifier = {
+
+		}
+	}
+
+	POL_anti_blitz_tactics = {
+
+		allowed = {
+			original_tag = POL
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = fascism
+		}
+
+		removal_cost = -1
+
+		picture = generic_manpower_bonus
+
+		equipment_bonus = {
+			motorized_equipment = {
+				build_cost_ic = -0.1
+				instant = yes
+			}
+			mechanized_equipment = {
+				build_cost_ic = -0.1
+				instant = yes
+			}
+		}
+	}
+
+	POL_anti_germans_abroad = {
+
+		allowed = {
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = fascism
+		}
+
+		removal_cost = -1
+
+		picture = generic_fascism_drift_bonus
+
+		modifier = {
+			fascism_drift = 0.1
+			fascism_acceptance = 80
+		}
+	}
 	POL_falangist_propaganda = {
 
 		allowed = {
@@ -1632,14 +1933,14 @@ country = {
 		}
 	}
 	
-	POL_payment_for_weapons = {
+	POL_payment_for_weapons = { # 56
 		picture = generic_economic_increase
 		modifier = {
 			consumer_goods_factor = 0.1
 		}
 	}
 	
-	POL_rushed_small_arms_production = {
+	POL_rushed_small_arms_production = { # 56
 		picture = generic_production_bonus
 	
 		equipment_bonus = {
@@ -1665,7 +1966,7 @@ country = {
 
 			picture = generic_infantry_equipment_manufacturer_2
 			
-			available = {
+			available = { # 56
 				#OR = {
 					#has_completed_focus = POL_Expand_the_Lucznik_State_Arms_Factory
 					#has_idea = POL_Strict_Equipment_Standards
@@ -1679,7 +1980,7 @@ country = {
 
 			traits = { infantry_equipment_manufacturer }
 
-			equipment_bonus = {
+			equipment_bonus = { # 56
 				infantry_equipment = {
 					build_cost_ic = 0.05
 					reliability = 0.05
@@ -1707,7 +2008,7 @@ country = {
 			traits = { motorized_equipment_manufacturer }
 
 			modifier = {
-				production_speed_infrastructure_factor = 0.05
+				production_speed_infrastructure_factor = 0.05 # 56
 			}
 		}
 
@@ -1794,7 +2095,7 @@ country = {
 			}
 
 			modifier = {
-				consumer_goods_factor = 0.04
+				consumer_goods_factor = 0.05
 			}
 		}
 
@@ -1828,7 +2129,7 @@ country = {
 			}
 
 			modifier = {
-				consumer_goods_factor = 0.04
+				consumer_goods_factor = 0.05
 			}
 		}
 

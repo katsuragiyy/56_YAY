@@ -1371,7 +1371,7 @@ characters={
 		name="Pietro Koch"
 		portraits={
 			army={
-				small="GFX_idea_minister_italy_pietro_koch"
+				small=GFX_idea_ITA_pietro_koch_small
 			}
 		}
 		advisor={

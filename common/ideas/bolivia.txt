@@ -115,7 +115,7 @@ ideas = {
 				original_tag = BOL
 			}
 		
-			traits = { railway_company }
+			traits = { railway_company } 
 		}
 	}
 }

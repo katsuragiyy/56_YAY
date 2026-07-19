@@ -14,7 +14,6 @@
 #!gfx:interface\r56_goals.gfx
 # ^^ For HOI4 Mod Utilities Support - Do not delete
 
-#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = soviet_focus
 
@@ -29,7 +28,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 55 y = 1500 }
+	continuous_focus_position = { x = 55 y = 1600 }
 
 
 ##    ##  #######      ######  ######## ######## ########     ########     ###     ######  ##    ## 
@@ -54,7 +53,7 @@ focus_tree = {
 	focus = {
 		id = SOV_infrastructure_effort_nsb
 
-		icon = GFX_goal_generic_road2
+		icon = GFX_goal_generic_road2 # 56
 		x = 1
 		y = 0
 		cost = 5
@@ -75,8 +74,20 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
 
-		completion_reward = { #TODO_Manu: This is just copy-pasted from the old focus -> Is this what we want?
+		complete_tooltip = {
+			every_state = {
+				limit = { has_state_flag = SOV_infrastructure_effort_3Inf }
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
 			if = {
 				limit = {
 					all_owned_state = {
@@ -158,18 +169,14 @@ focus_tree = {
 			}
 			#added this to motivate player to invest into industry #Fantom
 			if = {
-				limit = {
-					has_idea = SOV_poor_railnetworks_0
-				}
+				limit = { has_idea = SOV_poor_railnetworks_0 }
 				swap_ideas = { 
 					remove_idea = SOV_poor_railnetworks_0
 					add_idea = SOV_poor_railnetworks_1
 				}
 				else = {
 					if = {
-						limit = {
-							has_idea = SOV_poor_railnetworks_1
-						}
+						limit = { has_idea = SOV_poor_railnetworks_1 }
 						swap_ideas = { 
 							remove_idea = SOV_poor_railnetworks_1 
 							add_idea = SOV_poor_railnetworks_2
@@ -178,13 +185,12 @@ focus_tree = {
 				}
 			}
 		}
-		search_filters = {FOCUS_FILTER_INDUSTRY}
 	}
 
 	focus = {
 		id = SOV_heavy_industry
 
-		icon = GFX_goal_communist_factory
+		icon = GFX_goal_communist_factory # 56
 		x = 2
 		y = 0
 		relative_position_id = SOV_infrastructure_effort_nsb
@@ -193,8 +199,24 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
 
-		completion_reward = { #TODO_Manu: This is just copy-pasted from the old focus -> Is this what we want?
+		complete_tooltip = {
+			every_state = {
+				limit = { 
+					has_state_flag = SOV_finish_five_year_plan_2IC 
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
 			IF = {
 				limit = {
 					any_owned_state = {
@@ -302,10 +324,9 @@ focus_tree = {
 				}
 			}
 		}
-		search_filters = {FOCUS_FILTER_INDUSTRY}
 	}
 
-	focus = {
+	focus = { # 56
 		id = SOV_Mass_Immunizations
 		icon = GFX_goal_medicine
 		prerequisite = { focus = SOV_heavy_industry }
@@ -319,28 +340,20 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		select_effect = {
-			set_country_flag = SOV_mass_immunizations_happened
-		}
+		select_effect = { set_country_flag = SOV_mass_immunizations_happened }
 
 		completion_reward = {
 			if = {
-				limit = {
-					has_idea = SOV_risk_of_disease
-				}
-			 remove_ideas = SOV_risk_of_disease
+				limit = { has_idea = SOV_risk_of_disease }
+			 	remove_ideas = SOV_risk_of_disease
 			}
 			if = {
-				limit = {
-					has_idea = SOV_proliferation_of_disease
-				}
-			 remove_ideas = SOV_proliferation_of_disease
+				limit = { has_idea = SOV_proliferation_of_disease }
+			 	remove_ideas = SOV_proliferation_of_disease
 			}
 			if = {
-				limit = {
-					has_idea = SOV_widespread_outbreaks
-				}
-			 remove_ideas = SOV_widespread_outbreaks
+				limit = { has_idea = SOV_widespread_outbreaks }
+			 	remove_ideas = SOV_widespread_outbreaks
 			}
 			add_tech_bonus = {
 				name = SOV_Mass_Immunizations
@@ -355,7 +368,7 @@ focus_tree = {
 	focus = {
 		id = SOV_finish_the_five_year_plan
 
-		icon = GFX_five_year_plan_continue
+		icon = GFX_five_year_plan_continue # 56
 		prerequisite = { focus = SOV_infrastructure_effort_nsb }
 		prerequisite = { focus = SOV_heavy_industry }
 		x = 1
@@ -370,8 +383,21 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
 
-		completion_reward = { #TODO_Manu: This is just copy-pasted from the old focus -> Is this what we want?
+		complete_tooltip = {
+			every_state = {
+				limit = { has_state_flag = SOV_finish_five_year_plan_2IC }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
 					industrial_complex > 0
@@ -407,21 +433,18 @@ focus_tree = {
 				set_state_flag = SOV_finish_five_year_plan_2IC
 			}
 
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = SOV_lazar_kaganovich
-			if = {
-				limit = {
-					has_idea = SOV_poor_railnetworks_0
-				}
+			if = { # 56
+				limit = { has_idea = SOV_poor_railnetworks_0 }
 				swap_ideas = { 
 					remove_idea = SOV_poor_railnetworks_0
 					add_idea = SOV_poor_railnetworks_1
 				}
 				else = {
 					if = {
-						limit = {
-							has_idea = SOV_poor_railnetworks_1
-						}
+						limit = { has_idea = SOV_poor_railnetworks_1 }
 						swap_ideas = { 
 							remove_idea = SOV_poor_railnetworks_1 
 							add_idea = SOV_poor_railnetworks_2
@@ -430,22 +453,22 @@ focus_tree = {
 				}
 			}
 		}
-		search_filters = {FOCUS_FILTER_INDUSTRY}
 	}
 
 	focus = {
 		id = SOV_improve_railway_network
 
-		icon = GFX_focus_generic_public_works_A
+		icon = GFX_focus_generic_public_works_A # 56
 		prerequisite = { focus = SOV_finish_the_five_year_plan }
 		x = -2
 		y = 1
 		relative_position_id = SOV_finish_the_five_year_plan
-		cost = 5
+		cost = 5 # 56
 
 		ai_will_do = {
-			factor = 11
+			factor = 11 # 56
 		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		completion_reward = {
 			# Moscow - Rostov on Don
@@ -496,29 +519,29 @@ focus_tree = {
 				}
 			}
 
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = SOV_soviet_railways
 
+			# 56
 			#Stops Industry slowdown events from firing
-			hidden_effect = {
-				set_country_flag = SOV_fixed_choo_choo
-			}
+			hidden_effect = { set_country_flag = SOV_fixed_choo_choo }
 
 			if = {
-				limit = {
-					has_idea = SOV_industry_slow_down
-				}
+				limit = { has_idea = SOV_industry_slow_down }
+				custom_effect_tooltip = generic_skip_one_line_tt
 				remove_ideas = SOV_industry_slow_down
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			remove_ideas = SOV_poor_railnetworks_2
+			##
 		}
-		search_filters = {FOCUS_FILTER_INDUSTRY}
 	}
 
 	focus = {
 		id = SOV_third_five_year_plan
 
-		icon = GFX_5year_plan_complete
+		icon = GFX_5year_plan_complete # 56
 		prerequisite = { focus = SOV_finish_the_five_year_plan }
 		x = 0
 		y = 1
@@ -539,7 +562,7 @@ focus_tree = {
 		completion_reward = {
 			hidden_effect = {
 				add_to_variable = { SOV_fyp_production_factory_efficiency_gain_factor = 0.05 }
-				add_to_variable = { SOV_fyp_consumer_goods_factor = -0.05 }
+				add_to_variable = { SOV_fyp_consumer_goods_factor = 0.10 }
 			}
 			if = {
 				limit = {
@@ -551,6 +574,7 @@ focus_tree = {
 					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
 				}
 				custom_effect_tooltip = SOV_third_five_year_plan_ns_tt
+				# 56
 				random_owned_controlled_state = {
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
@@ -567,6 +591,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
+				##
 				add_tech_bonus = {
 					name = SOV_third_five_year_plan_default
 					bonus = 0.75
@@ -581,6 +606,7 @@ focus_tree = {
 					remove_dynamic_modifier = { modifier = SOV_second_five_year_plan_dynamic_modifier }
 					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier_alt }
 				}
+				# 56
 				random_owned_controlled_state = {
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
@@ -597,6 +623,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
+				##
 				add_tech_bonus = {
 					name = SOV_third_five_year_plan_alt
 					bonus = 0.75
@@ -610,7 +637,7 @@ focus_tree = {
 	focus = {
 		id = SOV_reorganize_the_pc_of_heavy_industry
 
-		icon = GFX_goal_generic_election_chaos
+		icon = GFX_goal_generic_election_chaos # 56
 		prerequisite = { focus = SOV_third_five_year_plan }
 		x = -2
 		y = 2
@@ -632,7 +659,7 @@ focus_tree = {
 
 		completion_reward = {
 			hidden_effect = {
-				add_to_variable = { SOV_fyp_consumer_goods_factor = -0.03 }
+				add_to_variable = { SOV_fyp_consumer_goods_factor = -0.05 }
 			}
 			custom_effect_tooltip = SOV_reorganize_the_pc_of_heavy_industry_ns_tt
 			if = {
@@ -644,7 +671,7 @@ focus_tree = {
 					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
 					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_civilian_dynamic_modifier }
 				}
-				random_owned_controlled_state = {
+				random_owned_controlled_state = { # 56
 					limit = {
 						free_building_slots = {
 							building = industrial_complex
@@ -673,7 +700,7 @@ focus_tree = {
 					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier_alt}
 					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_civilian_dynamic_modifier_alt }
 				}
-				random_owned_controlled_state = {
+				random_owned_controlled_state = { # 56
 					limit = {
 						free_building_slots = {
 							building = arms_factory
@@ -702,7 +729,7 @@ focus_tree = {
 	focus = {
 		id = SOV_industrial_modernization
 
-		icon = GFX_goal_reichsautobahn
+		icon = GFX_goal_reichsautobahn # 56
 		prerequisite = { focus = SOV_reorganize_the_pc_of_heavy_industry }
 		x = 0
 		y = 3
@@ -738,7 +765,7 @@ focus_tree = {
 	focus = {
 		id = SOV_increase_state_reserves
 
-		icon = GFX_goal_oil
+		icon = GFX_goal_oil # 56
 		prerequisite = { focus = SOV_third_five_year_plan }
 		x = 0
 		y = 1
@@ -836,7 +863,7 @@ focus_tree = {
 	focus = {
 		id = SOV_shift_to_armaments_production
 
-		icon = GFX_focus_generic_combined_arms
+		icon = GFX_focus_generic_combined_arms # 56
 		prerequisite = { focus = SOV_third_five_year_plan }
 		x = 2
 		y = 2
@@ -873,12 +900,12 @@ focus_tree = {
 			else = {
 				hidden_effect = {
 					#Swap dynamic modifier to change icon
-					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
-					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier }
+					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier_alt }
+					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier_alt }
 				}
 			}
 			custom_effect_tooltip = SOV_shift_to_armaments_production_ns_tt
-			random_owned_controlled_state = {
+			random_owned_controlled_state = { # 56
 				limit = {
 					free_building_slots = {
 						building = arms_factory
@@ -905,7 +932,7 @@ focus_tree = {
 	focus = {
 		id = SOV_optimize_production_lines
 
-		icon = GFX_focus_generic_tank_production
+		icon = GFX_focus_generic_tank_production # 56
 		prerequisite = { focus = SOV_shift_to_armaments_production }
 		x = 0
 		y = 3
@@ -938,7 +965,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
+	focus = { # 56
 		id = SOV_urbanization #Forced Urbanization
 		icon = GFX_forced_urbanization
 		prerequisite = { focus = SOV_industrial_modernization focus = SOV_optimize_production_lines }
@@ -964,7 +991,7 @@ focus_tree = {
 	focus = {
 		id = SOV_steel_casting_industry
 
-		icon = GFX_focus_generic_steel
+		icon = GFX_focus_generic_steel # 56
 		prerequisite = { focus = SOV_reorganize_the_pc_of_heavy_industry focus = SOV_shift_to_armaments_production }
 		x = 2
 		y = 1
@@ -973,7 +1000,7 @@ focus_tree = {
 
 		available = {
 			any_owned_state = {
-				is_controlled_by = ROOT
+				is_controlled_by = ROOT # 56
 				has_resources_amount = {
 					resource = steel
 					amount > 0
@@ -988,7 +1015,7 @@ focus_tree = {
 			NOT = { has_completed_focus = SOV_curtailment_of_the_collective_farms }
 		}
 		
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STEEL }
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STEEL } # 56
 
 		completion_reward = {
 			set_variable = { SOV_fyp_industrial_capacity_factory = 0.05 }
@@ -996,10 +1023,9 @@ focus_tree = {
 
 			custom_effect_tooltip = SOV_steel_casting_industry_ns_tt
 
+			# 56
 			if = {
-				limit = {
-					NOT = { has_tech = assembly_line_production }
-				}
+				limit = { NOT = { has_tech = assembly_line_production } }
 				add_tech_bonus = {
 					name = industrial_bonus
 					bonus = 1
@@ -1009,9 +1035,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = {
-					has_tech = assembly_line_production
-				}
+				limit = { has_tech = assembly_line_production }
 				add_tech_bonus = {
 					name = SOV_steel_casting_industry
 					bonus = 0.5
@@ -1019,7 +1043,7 @@ focus_tree = {
 					category = construction_tech
 				}
 			}
-
+			##
 			random_owned_controlled_state = {
 				limit = {
 					has_resources_amount = {
@@ -1040,7 +1064,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 8
+					amount = 5
 				}
 				set_state_flag = SOV_steel_casting_industry_flag
 			}
@@ -1080,7 +1104,7 @@ focus_tree = {
 					}
 					add_resource = {
 						type = steel
-						amount = 8
+						amount = 5
 					}
 					set_state_flag = SOV_steel_casting_industry_flag
 				}
@@ -1091,7 +1115,7 @@ focus_tree = {
 	focus = {
 		id = SOV_synthetic_rubber
 
-		icon = GFX_focus_generic_rubber
+		icon = GFX_focus_generic_rubber # 56
 		prerequisite = { focus = SOV_steel_casting_industry }
 		x = -1
 		y = 1
@@ -1099,7 +1123,7 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			has_tech = rubber_plant_a
+			has_tech = rubber_plant_a # 56
 			SOV_third_five_year_plan_available = yes
 			NOT = { has_completed_focus = SOV_curtailment_of_the_collective_farms }
 			has_full_control_of_state = 219 #MOSCOW
@@ -1109,7 +1133,7 @@ focus_tree = {
 			}
 		}
 		
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_RUBBER }
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_RUBBER } # 56
 
 		completion_reward = {
 			# ADD SYNTHETICS IN HISTORICAL STATES (VORONEZH AND TULA)
@@ -1118,9 +1142,9 @@ focus_tree = {
 					has_full_control_of_state = 260 #VORONEZH
 				}
 				260 = { #VORONEZH
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
-						type = rubber_refinery
+						type = rubber_refinery # 56
 						level = 1
 						instant_build = yes
 					}
@@ -1141,9 +1165,9 @@ focus_tree = {
 					has_full_control_of_state = 223 #TULA
 				}
 				223 = { #TULA
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
-						type = rubber_refinery
+						type = rubber_refinery # 56
 						level = 1
 						instant_build = yes
 					}
@@ -1165,19 +1189,19 @@ focus_tree = {
 	focus = {
 		id = SOV_oil_production
 
-		icon = GFX_goal_refining
+		icon = GFX_goal_refining # 56
 		prerequisite = { focus = SOV_steel_casting_industry }
 		x = 1
 		y = 1
 		relative_position_id = SOV_steel_casting_industry
-		cost = 7.16
+		cost = 7.16 # 56
 
 		available = {
 			SOV_third_five_year_plan_available = yes
 			NOT = { has_completed_focus = SOV_curtailment_of_the_collective_farms }
 		}
 		
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_OIL }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_OIL } # 56
 
 		completion_reward = {
 			set_variable = { SOV_fyp_fuel_gain_factor_from_states = 0.05 }
@@ -1203,8 +1227,8 @@ focus_tree = {
 					if = {
 						limit = {
 							check_variable = { SOV_silos_from_focus = 2 compare = less_than_or_equals }
-						}		
-						add_extra_state_shared_building_slots = 1	
+						}				
+						add_extra_state_shared_building_slots = 1 # 56	
 						add_building_construction = {
 							type = fuel_silo
 							level = 1
@@ -1237,22 +1261,17 @@ focus_tree = {
 					path = { 3668 3682 3672 }
 				}
 			}
+			# 56
 			if = {
-				limit = {
-					has_country_flag = prospect_volga_ural_basin
-				}
+				limit = { has_country_flag = prospect_volga_ural_basin }
 				add_resource = {
 					type = oil
 					amount = 2
 					state = 249
-				}				
+				}
 			}
 			if = {
-				limit = {
-					NOT = {
-						has_country_flag = prospect_volga_ural_basin
-					}
-				}
+				limit = { NOT = { has_country_flag = prospect_volga_ural_basin } }
 				add_resource = {
 					type = oil
 					amount = 2
@@ -1263,9 +1282,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_full_control_of_state = 229
-					NOT = {
-						has_country_flag = prospect_volga_ural_basin
-					}					
+					NOT = { has_country_flag = prospect_volga_ural_basin }					
 				}
 				add_resource = {
 					type = oil
@@ -1279,9 +1296,7 @@ focus_tree = {
 						has_full_control_of_state = 229
 						is_puppet_of = SOV
 					}
-					NOT = {
-						has_country_flag = prospect_volga_ural_basin
-					}
+					NOT = { has_country_flag = prospect_volga_ural_basin }
 				}
 				add_resource = {
 					type = oil
@@ -1295,9 +1310,7 @@ focus_tree = {
 						has_full_control_of_state = 229
 						is_puppet_of = SOV
 					}
-					NOT = {
-						has_country_flag = prospect_volga_ural_basin
-					}					
+					NOT = { has_country_flag = prospect_volga_ural_basin }				
 				}
 				add_resource = {
 					type = oil
@@ -1317,13 +1330,14 @@ focus_tree = {
 					state = 651
 				}				
 			}
+			##
 		}
 	}
 
 	focus = { #unlock this focus once the war with a major is over
 		id = SOV_restoration_and_development
 
-		icon = GFX_focus_generic_modernize_industry
+		icon = GFX_focus_generic_modernize_industry # 56
 		prerequisite = { focus = SOV_industrial_modernization focus = SOV_optimize_production_lines }
 		x = 2
 		y = 1
@@ -1361,7 +1375,7 @@ focus_tree = {
 	focus = {
 		id = SOV_fourth_five_year_plan
 
-		icon = GFX_goal_generic_industrial_unionism
+		icon = GFX_SOV_fourth_five_year_plan_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_restoration_and_development }
 		x = 0
 		y = 1
@@ -1555,14 +1569,14 @@ focus_tree = {
 				custom_effect_tooltip = SOV_found_the_comecon_program_tt
 			}
 
-			unlock_decision_category_tooltip = SOV_comecon_dec_cat
+			#unlock_decision_category_tooltip = SOV_comecon_dec_cat		#not allowed by visible statement, decisions presume communism and category lacks description and icon
 		}
 	}
 
 	focus = {
 		id = SOV_no_time_for_peace
 
-		icon = GFX_goal_soviet_rocketry
+		icon = GFX_goal_soviet_rocketry # 56
 		prerequisite = { focus = SOV_fourth_five_year_plan }
 		prerequisite = { focus = SOV_national_academies_of_sciences }
 		x = 3
@@ -1573,6 +1587,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
+			# 56
 			add_tech_bonus = {
 				name = SOV_no_time_for_peace
 				bonus = 0.50
@@ -1585,13 +1600,14 @@ focus_tree = {
 			#TODO_r56 rework this ideas modifers:
 			#add_ideas = SOV_no_time_for_peace_idea
 			custom_effect_tooltip = generic_skip_one_line_tt
+			##
 			add_breakthrough_progress = {
 				specialization = specialization_nuclear
-				value = 0.50
+				value = 0.75
 			}
 			add_breakthrough_progress = {
 				specialization = specialization_air
-				value = 0.50
+				value = 0.75
 			}
 		}
 	}
@@ -1599,7 +1615,7 @@ focus_tree = {
 	focus = {
 		id = SOV_national_specialists
 
-		icon = GFX_goal_generic_citizens
+		icon = GFX_goal_generic_citizens # 56
 		prerequisite = { focus = SOV_finish_the_five_year_plan }
 		x = 3
 		y = 1
@@ -1623,7 +1639,7 @@ focus_tree = {
 	focus = {
 		id = SOV_foreign_experts
 
-		icon = GFX_focus_spa_the_spanish_miracle
+		icon = GFX_focus_spa_the_spanish_miracle # 56
 		prerequisite = { focus = SOV_finish_the_five_year_plan }
 		x = 2
 		y = 0
@@ -1643,7 +1659,7 @@ focus_tree = {
 	focus = {
 		id = SOV_eastern_development
 
-		icon = GFX_goal_generic_construction_tools
+		icon = GFX_goal_generic_construction_tools # 56
 		prerequisite = { focus = SOV_national_specialists focus = SOV_foreign_experts }
 		x = 0
 		y = 1
@@ -1836,7 +1852,7 @@ focus_tree = {
 	focus = {
 		id = SOV_develop_the_urals
 
-		icon = GFX_goal_generic_light_industry
+		icon = GFX_goal_generic_light_industry # 56
 		prerequisite = { focus = SOV_national_specialists focus = SOV_foreign_experts }
 		x = 2
 		y = 0
@@ -1967,7 +1983,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				add_resource = {
+				add_resource = { # 56
 					type = oil
 					amount = 2
 					state = 582
@@ -1999,7 +2015,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				add_resource = {
+				add_resource = { # 56
 					type = chromium
 					amount = 3
 					state = 573
@@ -2033,7 +2049,7 @@ focus_tree = {
 					}
 				}
 			}
-			add_resource = {
+			add_resource = { # 56
 				type = aluminium
 				amount = 1
 				state = 581
@@ -2044,7 +2060,7 @@ focus_tree = {
 	focus = {
 		id = SOV_the_ussr_academy_of_sciences
 
-		icon = GFX_goal_SOV_education_initiative
+		icon = GFX_goal_SOV_education_initiative # 56
 		prerequisite = { focus = SOV_eastern_development }
 		prerequisite = { focus = SOV_develop_the_urals }
 		x = 1
@@ -2102,6 +2118,7 @@ focus_tree = {
 			}
 		}
 	}
+	# 56
 	focus = {
 		id = SOV_Social_Welfare
 		icon = GFX_social_welfare
@@ -2210,6 +2227,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 	}
+	##
 
 	focus = {
 		id = SOV_national_academies_of_sciences
@@ -2224,11 +2242,19 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			custom_effect_tooltip = SOV_national_academies_of_sciences_tt
+			if = { 
+				limit = { #DEFAULT COMMUNISM
+					has_government = communism
+				}
+				custom_effect_tooltip = SOV_national_academies_of_sciences_tt
+			}
+			else = { #ALT IDEOLOGY
+				custom_effect_tooltip = SOV_national_academies_of_sciences_alt_tt
+			}
 		}
 	}
 
-	focus = {
+	focus = { # 56
 		id = SOV_progress_cult
 		icon = GFX_goal_supremacy_of_will
 		prerequisite = { focus = SOV_national_academies_of_sciences }
@@ -2281,7 +2307,7 @@ focus_tree = {
 		x = 2
 		y = 0
 		relative_position_id = SOV_no_time_for_peace
-		cost = 10
+		cost = 10 # 56
 
 		allow_branch = {
 			has_government = communism
@@ -2420,10 +2446,8 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = SOV_transformation_of_nature
-			if = {
-				limit = {
-					has_full_control_of_state = 404
-				}
+			if = { # 56
+				limit = { has_full_control_of_state = 404 }
 				add_resource = {
 					type = rubber
 					amount = 8
@@ -2447,7 +2471,7 @@ focus_tree = {
 	focus = {
 		id = SOV_transpolar_flights
 
-		icon = GFX_goal_generic_air_fighter2
+		icon = GFX_SOV_transpolar_flights_ccp_2d_sov_compatibility
 		x = 10
 		y = 0
 		relative_position_id = SOV_infrastructure_effort_nsb
@@ -2458,22 +2482,22 @@ focus_tree = {
 		}
 
 		available = {
-			has_war = no
+			has_war = no # 56
 		}
 
-		bypass = {
+		bypass = { # 56
 			AND = {
 				date > 1939.1.1
 				has_war = yes
 			}
 		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR_XP } # 56
 
 		completion_reward = {
 			air_experience = 5
+			# 56
 			if = {
-				limit = {
-					has_dlc = "La Resistance"
-				}
+				limit = { has_dlc = "La Resistance" }
 				add_tech_bonus = {
 					name = SOV_transpolar_flights
 					bonus = 1.0
@@ -2491,8 +2515,8 @@ focus_tree = {
 				idea = SOV_transpolar_flights_idea
 				days = 435
 			}
+			##
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR_XP }
 	}
 
 	focus = {
@@ -2561,17 +2585,12 @@ focus_tree = {
 					}
 				}
 			}
-
-			IF = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}	
+			IF = { # 56
+				limit = { has_dlc = "Arms Against Tyranny" }	
 				custom_effect_tooltip = available_mio_tt
 				show_mio_tooltip = SOV_okb_19_organization
-				mio:SOV_okb_19_organization = {
-					add_mio_funds = 500
-				}
-			}		
+				mio:SOV_okb_19_organization = { add_mio_funds = 500 }
+			}	
 		}
 	}
 
@@ -2583,14 +2602,14 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_expand_the_aircraft_industry
-		cost = 5
+		cost = 5 # 56
 
 		completion_reward = {
 			add_to_variable = { SOV_soviet_airforce_air_fuel_consumption_factor = -0.05 }
 			add_to_variable = { SOV_soviet_airforce_air_range_factor = 0.05 }
 			add_to_variable = { SOV_soviet_airforce_air_agility_factor = 0.05 }
 			custom_effect_tooltip = SOV_modernize_aircraft_facilities_ns_tt
-
+			
 			custom_effect_tooltip = SOV_modernize_aircraft_facilities_tt
 			hidden_effect = {
 				IF = {
@@ -2667,26 +2686,29 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
+
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.75
+			}
+
 			add_tech_bonus = {
 				name = SOV_found_the_jet_institute
 				bonus = 0.5
 				uses = 2
 				category = jet_technology
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_breakthrough_progress = {
-				specialization = specialization_air
-				value = 0.75
-			}
+			# 56
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = r56_generic_jet_idea
+			##
 		}
 	}
 
 	focus = {
 		id = SOV_increase_aircraft_production
 
-		icon = GFX_focus_generic_aircraft_production
+		icon = GFX_SOV_increase_aircraft_production_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_expand_the_aircraft_industry }
 		x = 0
 		y = 2
@@ -2794,7 +2816,7 @@ focus_tree = {
 	focus = {
 		id = SOV_raskovas_aviation_group
 
-		icon = GFX_women_in_aviation
+		icon = GFX_SOV_raskovas_aviation_group_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_women_in_aviation }
 		x = 1
 		y = 1
@@ -2881,7 +2903,7 @@ focus_tree = {
 	focus = {
 		id = SOV_intensify_pilot_training_program
 
-		icon = GFX_goal_generic_air_doctrine
+		icon = GFX_SOV_intensify_pilot_training_program_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_foster_flying_clubs }
 		x = 0
 		y = 2
@@ -2912,7 +2934,7 @@ focus_tree = {
 	focus = {
 		id = SOV_expand_aviation_institutes
 
-		icon = GFX_focus_generic_military_academy
+		icon = GFX_SOV_expand_aviation_institutes_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_expand_the_aircraft_industry focus = SOV_foster_flying_clubs }
 		x = 1
 		y = 1
@@ -2933,7 +2955,7 @@ focus_tree = {
 	focus = {
 		id = SOV_ground_support
 
-		icon = GFX_goal_generic_air_fighter
+		icon = GFX_SOV_ground_support_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_increase_aircraft_production focus = SOV_intensify_pilot_training_program }
 		x = 0
 		y = 1
@@ -2947,11 +2969,9 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SOV_soviet_airforce_air_cas_present_factor = 0.1 }
 			custom_effect_tooltip = SOV_ground_support_ns_tt
-
+			# 56
 			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
+				limit = { has_dlc = "By Blood Alone" }
 				add_tech_bonus = {
 					name = SOV_ground_support
 					bonus = 0.75
@@ -2975,14 +2995,14 @@ focus_tree = {
 					category = cas_bomber
 				}
 			}
-
+			##
 		}
 	}
 
 	focus = {
 		id = SOV_long_range_aircraft
 
-		icon = GFX_goal_generic_air_bomber
+		icon = GFX_SOV_long_range_aircraft_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_increase_aircraft_production focus = SOV_intensify_pilot_training_program }
 		x = 0
 		y = 1
@@ -2996,11 +3016,9 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SOV_soviet_airforce_strategic_bomb_visibility = -0.1 }
 			custom_effect_tooltip = SOV_long_range_aircraft_ns_tt
-
+			# 56
 			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
+				limit = { has_dlc = "By Blood Alone" }
 				add_tech_bonus = {
 					name = SOV_long_range_aircraft
 					bonus = 0.75
@@ -3019,14 +3037,14 @@ focus_tree = {
 					category = cat_strategic_bomber
 				}
 			}
-
+			##
 		}
 	}
 
 	focus = {
 		id = SOV_the_modern_war_in_the_skies
 
-		icon = GFX_goal_generic_CAS
+		icon = GFX_SOV_the_modern_war_in_the_skies_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_ground_support focus = SOV_long_range_aircraft }
 		x = 1
 		y = 1
@@ -3063,7 +3081,7 @@ focus_tree = {
 	focus = {
 		id = SOV_expand_the_red_fleet
 
-		icon = GFX_goal_generic_build_navy
+		icon = GFX_SOV_expand_the_red_fleet_ccp_2d_sov_compatibility
 		x = 6
 		y = 0
 		relative_position_id = SOV_transpolar_flights
@@ -3105,7 +3123,7 @@ focus_tree = {
 	focus = {
 		id = SOV_reinforce_western_naval_bases
 
-		icon = GFX_focus_SOV_reinforce_western_naval_bases
+		icon = GFX_SOV_reinforce_western_naval_bases_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_expand_the_red_fleet }
 		x = -3
 		y = 1
@@ -3251,7 +3269,7 @@ focus_tree = {
 	focus = {
 		id = SOV_reinforce_northern_naval_bases
 
-		icon = GFX_focus_SOV_reinforce_northern_naval_bases
+		icon = GFX_SOV_reinforce_northern_naval_bases_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_expand_the_red_fleet }
 		x = -1
 		y = 1
@@ -3341,7 +3359,7 @@ focus_tree = {
 	focus = {
 		id = SOV_reinforce_southern_naval_bases
 
-		icon = GFX_focus_SOV_reinforce_southern_naval_bases
+		icon = GFX_SOV_reinforce_southern_naval_bases_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_expand_the_red_fleet }
 		x = 1
 		y = 1
@@ -3468,9 +3486,8 @@ focus_tree = {
 		}
 	}
 
-	focus = {
+	focus = { # 56
 		id = SOV_reinforce_caspian_naval_bases
-
 		icon = GFX_goal_coastal_navy
 		prerequisite = { focus = SOV_reinforce_southern_naval_bases focus = SOV_reinforce_eastern_naval_bases }
 		x = 1
@@ -3480,15 +3497,9 @@ focus_tree = {
 
 		available = {
 			OR = {
-				229 = { #ODESSA
-					is_owned_and_controlled_by = ROOT
-				}
-				584 = { #CRIMEA
-					is_owned_and_controlled_by = ROOT
-				}
-				587 = { #ROSTOV
-					is_owned_and_controlled_by = ROOT
-				}
+				229 = { is_owned_and_controlled_by = ROOT } #ODESSA
+				584 = { is_owned_and_controlled_by = ROOT } #CRIMEA
+				587 = { is_owned_and_controlled_by = ROOT } #ROSTOV
 			}
 		}
 		
@@ -3496,9 +3507,7 @@ focus_tree = {
 
 		completion_reward = {
 			if = { #BAKU - Improved naval base + AA + coastal fort
-				limit = {
-					has_full_control_of_state = 229
-				}
+				limit = { has_full_control_of_state = 229 }
 				229 = {
 					add_building_construction = {
 						type = anti_air_building
@@ -3521,9 +3530,7 @@ focus_tree = {
 				}
 			}
 			if = { #KRASNOVODSK - Improved naval base + coastal fort
-				limit = {
-					has_full_control_of_state = 584
-				}
+				limit = { has_full_control_of_state = 584 }
 				584 = {
 					add_building_construction = {
 						type = naval_base
@@ -3541,9 +3548,7 @@ focus_tree = {
 				}
 			}
 			if = { #MELOVOYE - Improved naval base + coastal fort
-				limit = {
-					has_full_control_of_state = 587
-				}
+				limit = { has_full_control_of_state = 587 }
 				587 = {
 					add_building_construction = {
 						type = naval_base
@@ -3566,7 +3571,7 @@ focus_tree = {
 	focus = {
 		id = SOV_reinforce_eastern_naval_bases
 
-		icon = GFX_focus_SOV_reinforce_eastern_naval_bases
+		icon = GFX_SOV_reinforce_eastern_naval_bases_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_expand_the_red_fleet }
 		x = 3
 		y = 1
@@ -3654,7 +3659,7 @@ focus_tree = {
 	focus = {
 		id = SOV_expand_shipbuilding_plants
 
-		icon = GFX_goal_generic_construct_naval_dockyard
+		icon = GFX_SOV_expand_shipbuilding_plants_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_reinforce_western_naval_bases focus = SOV_reinforce_northern_naval_bases focus = SOV_reinforce_southern_naval_bases focus = SOV_reinforce_eastern_naval_bases }
 		x = 1
 		y = 1
@@ -3758,7 +3763,7 @@ focus_tree = {
 	focus = {
 		id = SOV_pc_of_the_ussr_navy
 
-		icon = GFX_goal_generic_navy_cruiser
+		icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_expand_the_red_fleet }
 		x = 4
 		y = 2
@@ -3807,7 +3812,7 @@ focus_tree = {
 	focus = {
 		id = SOV_surface_warfare
 
-		icon = GFX_focus_generic_destroyer
+		icon = GFX_SOV_surface_warfare_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_pc_of_the_ussr_navy }
 		x = -2
 		y = 1
@@ -3852,7 +3857,7 @@ focus_tree = {
 	focus = {
 		id = SOV_submarine_warfare
 
-		icon = GFX_goal_generic_navy_submarine
+		icon = GFX_SOV_submarine_warfare_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_pc_of_the_ussr_navy }
 		x = 2
 		y = 1
@@ -3898,7 +3903,7 @@ focus_tree = {
 	focus = {
 		id = SOV_offensive_maritime_strategy
 
-		icon = GFX_goal_generic_battleship
+		icon = GFX_SOV_offensive_maritime_strategy_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_surface_warfare }
 		x = -1
 		y = 1
@@ -3942,8 +3947,9 @@ focus_tree = {
 				bonus = 1.0
 				uses = 1
 				category = ca_tech
-				category = cl_tech
+				category = cl_tech # 56
 			}
+			#Kronshtadt Class Battlecruiser
 			create_equipment_variant = {
 				name = "Kronshtadt Class"		
 				type = ship_hull_heavy_2
@@ -4026,7 +4032,7 @@ focus_tree = {
 				add_breakthrough_progress = {
 					specialization = specialization_naval
 					value = 0.5
-				}					
+					}					
 			}
 			#Sovietsky Soyuz Super-Heavy Battleship has to be added
 			if = {
@@ -4105,7 +4111,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
+	focus = { # 56
 		id = SOV_improve_our_naval_doctrine
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = SOV_surface_warfare focus = SOV_submarine_warfare }
@@ -4115,7 +4121,7 @@ focus_tree = {
 		cost = 10
 
 		available_if_capitulated = yes
-
+		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		ai_will_do = {
 			factor = 1
@@ -4139,7 +4145,7 @@ focus_tree = {
 				category = naval_doctrine
 			}
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		
 	}
 
 	focus = {
@@ -4169,7 +4175,7 @@ focus_tree = {
 	focus = {
 		id = SOV_long_range_raiders
 
-		icon = GFX_goal_generic_navy_anti_submarine
+		icon = GFX_SOV_long_range_raiders_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_submarine_warfare }
 		x = 1
 		y = 1
@@ -4281,7 +4287,7 @@ focus_tree = {
 	focus = {
 		id = SOV_expand_the_morskaya_aviatsiya
 
-		icon = GFX_goal_generic_navy_carrier
+		icon = GFX_SOV_expand_the_morskaya_aviatsiya_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_increase_aircraft_production focus = SOV_intensify_pilot_training_program }
 		prerequisite = { focus = SOV_advanced_maneuvers }
 		x = -2
@@ -4447,7 +4453,7 @@ focus_tree = {
 	focus = {
 		id = SOV_naval_infantry
 
-		icon = GFX_goal_generic_amphibious_assault
+		icon = GFX_focus_generic_naval_invasion # 56
 		prerequisite = { focus = SOV_advanced_maneuvers }
 		x = 0
 		y = 1

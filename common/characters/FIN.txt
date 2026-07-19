@@ -1,5 +1,5 @@
 characters={
-	FIN_risto_heikki_ryti={
+	FIN_risto_ryti={
 		name=FIN_risto_ryti
 		portraits={
 			civilian={
@@ -113,7 +113,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/FIN/r56_portrait_FIN_vilho_annala.dds"
-				small = "GFX_idea_FIN_vilho_annala" #r56
+				small = GFX_portrait_FIN_vilho_annala_small
 			}
 		}
 		country_leader={
@@ -315,7 +315,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/FIN/r56_portrait_FIN_erik_axel_heinrichs.dds"
-				small="GFX_idea_FIN_erik_heinrichs"
+				small=GFX_portrait_FIN_erik_heinrichs_small
 			}
 		}
 		corps_commander={
@@ -385,7 +385,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/FIN/r56_portrait_FIN_nenonen.dds"
-				small="GFX_idea_FIN_vilho_petter_nenonen"
+				small=GFX_portrait_FIN_vilho_petter_nenonen_small
 			}
 		}
 		advisor={
@@ -577,7 +577,7 @@ characters={
 		name=FIN_hugo_osterman
 		portraits={
 			army={
-				small="GFX_idea_FIN_hugo_osterman"
+				small=GFX_portrait_FIN_hugo_osterman_small
 				large="gfx/leaders/FIN/r56_portrait_FIN_hugo_osterman.dds"
 			}
 		}
@@ -741,7 +741,7 @@ characters={
 		# "Karl Lennart Oesch"
 		portraits={
 			army={
-				small="GFX_idea_FIN_karl_oesch"
+				small=GFX_portrait_FIN_karl_oesch_small
 				large="gfx/leaders/FIN/r56_portrait_FIN_Karl_Lennart_Oesch.dds"
 			}
 		}
@@ -783,8 +783,8 @@ characters={
 		name=FIN_ruben_lagus
 		portraits={
 			army={
-				large="gfx/leaders/FIN/portrait_FIN_ruben_lagus.dds"
-				small="GFX_idea_FIN_ruben_lagus"
+				large=GFX_portrait_FIN_ruben_lagus
+				small=GFX_portrait_FIN_ruben_lagus_small
 			}
 		}
 		corps_commander = {

@@ -95,9 +95,7 @@ ideas = {
 
 			available = {
 				if = { # R56
-					limit = {
-						has_global_flag = DEN_use_DLC_tree
-					}
+					limit = { has_global_flag = DEN_use_DLC_tree }
 					DEN_designer_can_be_improved = yes
 				}
 			}
@@ -149,9 +147,7 @@ ideas = {
 
 			available = {
 				if = { # R56
-					limit = {
-						has_global_flag = DEN_use_DLC_tree
-					}
+					limit = { has_global_flag = DEN_use_DLC_tree }
 					has_completed_focus = DEN_danske_stalvalsevaerket
 				}
 				else = {
@@ -175,23 +171,13 @@ ideas = {
 			}
 		}
 		DEN_oresunds_chemsike_fabriker = { # R56
-			name = DEN_oresunds_chemsike_fabriker 
-		
+			name = DEN_oresunds_chemsike_fabriker
 			picture = generic_refining_concern_1
-		
-			allowed = {
-				original_tag = DEN
-			}
-			
+			allowed = { original_tag = DEN }
 			modifier = { production_speed_synthetic_refinery_factor = 0.05 industrial_capacity_factory = 0.05 }
-
 			research_bonus = { synth_resources = 0.15 steel_tech = 0.05 }
-			
 			traits = { chemical_concern }
-			
-			ai_will_do = {
-				factor = 1
-			}
+			ai_will_do = { factor = 1 }
 		}
 	}
 
@@ -791,6 +777,7 @@ ideas = {
 		}
 
 	#FAKE IDEAS FOR BOOKMARK
+		#1936
 		DEN_fake_industrial_capability_ns = { 
 			name = DEN_industrial_capability_dynamic_modifier
 			removal_cost = -1
