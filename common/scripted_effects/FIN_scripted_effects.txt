@@ -197,7 +197,12 @@ FIN_pact_for_continuation_war_start = { #To be used on FIN's scope - Used immedi
 			}
 		}
 	}
-	GER = { give_guarantee = FIN }
+	if = {
+		limit = {
+			GER = { NOT = { has_guaranteed = FIN } }
+		}
+		GER = { give_guarantee = FIN }
+	}
 }
 
 ######## ##     ## ########    ########     ###    ######## ##     ##    ########  #######      ######   #######   ######  ####    ###    ##       ####  ######  ##     ## 
@@ -238,7 +243,6 @@ FIN_purchase_soviet_equipment_for_cw = {
 			allow_without_tech = yes
 			model = "SOV_armored_car_0_entity"
 			icon = "GFX_SOV_armored_car1_medium"
-			#design_team = mio:my_mio_token # Optional. accepts mio:token, variable or keyword #TODO_Manu
 		}
 		add_equipment_to_stockpile = { 
 			type = gw_armored_car_equipment
@@ -423,7 +427,6 @@ FIN_purchase_german_equipment_for_cw = {
 			allow_without_tech = yes
 			model = "GER_armored_car_0_entity"
 			icon = "GFX_GER_armored_car1_medium"
-			#design_team = mio:my_mio_token # Optional. accepts mio:token, variable or keyword #TODO_Manu
 		}
 		add_equipment_to_stockpile = { 
 			type = gw_armored_car_equipment
@@ -1234,38 +1237,27 @@ FIN_bop_very_low_decrease_effect = {
 	}
 }
 
+# 56
 FIN_remove_sisu = {
 	if = {
-		limit = {
-			has_idea = FIN_sisu_1
-		}
+		limit = { has_idea = FIN_sisu_1 }
 		remove_ideas = FIN_sisu_1
 		else_if = {
-			limit = {
-				has_idea = FIN_sisu_2
-			}
+			limit = { has_idea = FIN_sisu_2 }
 			remove_ideas = FIN_sisu_2
 		}
 		else_if = {
-			limit = {
-				has_idea = FIN_sisu_3
-			}
+			limit = { has_idea = FIN_sisu_3 }
 			remove_ideas = FIN_sisu_3
 		}
 		else_if = {
-			limit = {
-				has_idea = FIN_sisu_4
-			}
+			limit = { has_idea = FIN_sisu_4 }
 			remove_ideas = FIN_sisu_4
 		}
 		else_if = {
-			limit = {
-				has_idea = FIN_sisu_5
-			}
+			limit = { has_idea = FIN_sisu_5 }
 			remove_ideas = FIN_sisu_5
 		}
-		else = {
-			remove_ideas = sisu
-		}
+		else = { remove_ideas = sisu }
 	}
 }

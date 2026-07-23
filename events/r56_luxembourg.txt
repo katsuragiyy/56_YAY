@@ -237,6 +237,28 @@ country_event = {		# Maulkuerfgesetz passes; focus tree fired
 		}
 		add_stability = -0.03
 		clr_country_flag = LUX_chamberofdeputies_KPL_button_pressed
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 5
+				NOT = {
+					is_historical_focus_on = yes
+					has_game_rule = {
+						rule = LUX_AI_BEHAVIOR
+						option = HISTORICAL
+					}
+					has_game_rule = {
+						rule = LUX_AI_BEHAVIOR
+						option = SOCIALIST
+					}
+					has_game_rule = {
+						rule = LUX_AI_BEHAVIOR
+						option = COMMUNISM
+					}
+				}
+			}
+		}
 	}
 	option = {			# law doesnt pass
 		name = luxembourg.202.b
@@ -244,6 +266,28 @@ country_event = {		# Maulkuerfgesetz passes; focus tree fired
 		add_ideas = r56_LUX_polarized_society
 		custom_effect_tooltip = r56_newline
 		add_stability = 0.02
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 5
+				OR = {
+					is_historical_focus_on = yes
+					has_game_rule = {
+						rule = LUX_AI_BEHAVIOR
+						option = HISTORICAL
+					}
+					has_game_rule = {
+						rule = LUX_AI_BEHAVIOR
+						option = SOCIALIST
+					}
+					has_game_rule = {
+						rule = LUX_AI_BEHAVIOR
+						option = COMMUNISM
+					}
+				}
+			}
+		}
 	}
 }
 country_event = {		# 1937 elections starting
@@ -329,11 +373,23 @@ country_event = {		# snap elections
 				random_hours = 6
 			}
 		}
+
+		ai_chance = {
+			base = 0
+			modifier = {
+				factor = 10
+				has_game_rule = {
+					rule = LUX_ai_behavior
+					option = FASCISM
+				}
+			}
+		}
 	}
 	option = {			# no snap election
 		name = luxembourg.216.b
-
 		add_stability = 0.02
+
+		ai_chance = { base = 1 }
 	}
 }
 country_event = {		# 1937 elections over; PD victory
@@ -1791,9 +1847,13 @@ country_event = {		# forming benelux
 	option = {
 		name = luxembourg.243.a
 		set_cosmetic_tag = UNL_UNIFIED
+		custom_effect_tooltip = generic_skip_one_line_tt
 		add_ideas = generic_recent_political_unification
+		custom_effect_tooltip = generic_skip_one_line_tt
 		add_ideas = generic_recent_army_unification
+		custom_effect_tooltip = generic_skip_one_line_tt
 		add_ideas = generic_recent_economic_unification
+		custom_effect_tooltip = generic_skip_one_line_tt
 		hidden_effect = {
 			news_event = { id = wtt_news.58 hours = 6 }
 			set_global_flag = form_united_netherlands_flag
@@ -1805,7 +1865,11 @@ country_event = {		# forming benelux
 				transfer_navy = { target = ROOT }
 				ROOT = { puppet = PREV }
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_army_leader = { set_nationality = ROOT }
+			custom_effect_tooltip = generic_skip_one_line_tt
 			transfer_navy = { target = ROOT }
+			custom_effect_tooltip = generic_skip_one_line_tt
 			every_core_state = { add_core_of = ROOT }
 			every_state = {
 				limit = { is_claimed_by = FROM }
@@ -1817,6 +1881,7 @@ country_event = {		# forming benelux
 					transfer_troops = yes
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 		}
 	}
 }

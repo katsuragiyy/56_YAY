@@ -9,7 +9,7 @@ foreign_influence = {
 		icon = eng_propaganda_campaigns
 
 		days_remove = 120
-		
+
 		available = {
 			FROM = {
 				is_puppet_of = ROOT
@@ -18,8 +18,8 @@ foreign_influence = {
 				democratic < 0.9
 			}
 			OR = {
-				political_power_daily > 0.1
-				has_political_power > 12
+				political_power_daily > 0.1 # 56
+				has_political_power > 12 # 56
 			}
 		}
 
@@ -44,24 +44,24 @@ foreign_influence = {
 		}
 
 		modifier = {
-			political_power_cost = 0.1
+			political_power_cost = 0.1 # 56
 		}
 
 		ai_will_do = {
-			factor = 0
-			modifier = { 
+			base = 0
+			modifier = { # 56
 				has_political_power > 300
 				add = 3
 			}			
 		}
 	}
-	
+
 	socialist_education = {
 
 		icon = eng_propaganda_campaigns
 
 		days_remove = 120
-		
+
 		available = {
 			FROM = {
 				is_puppet_of = ROOT
@@ -70,8 +70,8 @@ foreign_influence = {
 				communism < 0.9
 			}
 			OR = {
-				political_power_daily > 0.1
-				has_political_power > 12
+				political_power_daily > 0.1 # 56
+				has_political_power > 12 # 56
 			}
 		}
 
@@ -113,24 +113,24 @@ foreign_influence = {
 			}
 		}
 		modifier = {
-			political_power_cost = 0.1
+			political_power_cost = 0.1 # 56
 		}
 
 		ai_will_do = {
-			factor = 0
-			modifier = { 
+			base = 0
+			modifier = { # 56
 				has_political_power > 300
 				add = 3
 			}			
 		}
 	}
-	
+
 	paramilitary_training = {
 
 		icon = eng_propaganda_campaigns
 
 		days_remove = 120
-		
+
 		available = {
 			FROM = {
 				is_puppet_of = ROOT
@@ -139,8 +139,8 @@ foreign_influence = {
 				fascism < 0.9
 			}
 			OR = {
-				political_power_daily > 0.1
-				has_political_power > 12
+				political_power_daily > 0.1 # 56
+				has_political_power > 12 # 56
 			}
 		}
 
@@ -183,32 +183,32 @@ foreign_influence = {
 		}
 
 		modifier = {
-			political_power_cost = 0.1
+			political_power_cost = 0.1 # 56
 		}
 
 		ai_will_do = {
-			factor = 0
-			modifier = { 
+			base = 0
+			modifier = { # 56
 				has_political_power > 300
 				add = 3
 			}			
 		}
 	}
-	
+
 	military_parade = {
 
 		icon = eng_propaganda_campaigns
 
 		days_remove = 120
-		
+
 		available = {
 			FROM = {
 				is_puppet_of = ROOT
 				neutrality < 0.9
 			}
 			OR = {
-				political_power_daily > 0.1
-				has_political_power > 12
+				political_power_daily > 0.1 # 56
+				has_political_power > 12 # 56
 			}
 		}
 
@@ -235,24 +235,24 @@ foreign_influence = {
 		}
 
 		modifier = {
-			political_power_cost = 0.1
+			political_power_cost = 0.1 # 56
 		}
 
 		ai_will_do = {
-			factor = 0
-			modifier = { 
+			base = 0
+			modifier = { # 56
 				has_political_power > 300
 				add = 10
 			}			
 		}
 	}
-	
+
 	police_action = {
 
 		icon = generic_prepare_civil_war
-		
+
 		cost = 50
-		
+
 		available = {
 			FROM = {
 				is_puppet_of = ROOT
@@ -273,6 +273,9 @@ foreign_influence = {
 			FROM = {
 				is_puppet_of = ROOT
 				NOT = { has_government = democratic }
+			}
+			NOT = {
+				has_dlc = "Thunder at Our Gates"
 			}
 		}
 
@@ -299,22 +302,22 @@ foreign_influence = {
 				}
 			}
 		}
-		
+
 		ai_will_do = {
-			factor = 0
-			modifier = { 
+			base = 0
+			modifier = { # 56
 				has_political_power > 300
 				add = 10
 			}			
 		}
 	}
-	
+
 	fraternal_republic = {
 
 		icon = generic_prepare_civil_war
-		
+
 		cost = 50
-		
+
 		available = {
 			FROM = {
 				is_puppet_of = ROOT
@@ -373,22 +376,22 @@ foreign_influence = {
 				}
 			}
 		}
-		
+
 		ai_will_do = {
-			factor = 0
-			modifier = { 
+			base = 0
+			modifier = { # 56
 				has_political_power > 300
 				add = 10
 			}			
 		}
 	}
-	
+
 	ultranationalist_coup = {
 
 		icon = generic_prepare_civil_war
-		
+
 		cost = 50
-		
+
 		available = {
 			FROM = {
 				is_puppet_of = ROOT
@@ -447,22 +450,22 @@ foreign_influence = {
 				}
 			}
 		}
-		
+
 		ai_will_do = {
-			factor = 0
-			modifier = { 
+			base = 0
+			modifier = { # 56
 				has_political_power > 300
 				add = 10
 			}			
 		}
 	}
-	
+
 	military_dictatorship = {
 
 		icon = generic_prepare_civil_war
-		
+
 		cost = 50
-		
+
 		available = {
 			FROM = {
 				is_puppet_of = ROOT
@@ -506,19 +509,19 @@ foreign_influence = {
 				}
 			}
 		}
-		
+
 		ai_will_do = {
-			factor = 0
-			modifier = { 
+			base = 0
+			modifier = { # 56
 				has_political_power > 300
 				add = 10
 			}			
 		}
 	}
-	
+
 	instantiate_collaboration = {
 		icon = generic_prepare_civil_war
-		
+
 		cost = 0
 
 		available = {
@@ -526,41 +529,20 @@ foreign_influence = {
 				occupied_country_tag = FROM
 				modifier = compliance_80
 			}
+			# 56
 			if = {
-				limit = {
-					original_tag = SPR
-				}
-				NOT = {
-					FROM = {
-						original_tag = SPR
-					}
-				}
+				limit = { original_tag = SPR }
+				NOT = { FROM = { original_tag = SPR } }
 			}
 			if = {
-				limit = {
-					original_tag = MON
-				}
-				NOT = {
-					FROM = {
-						original_tag = MEN
-					}
-				}
+				limit = { original_tag = MON }
+				NOT = { FROM = { original_tag = MEN } }
 			}
 			if = {
-				limit = {
-					original_tag = MEN
-				}
-				NOT = {
-					FROM = {
-						original_tag = MON
-					}
-				}
+				limit = { original_tag = MEN }
+				NOT = { FROM = { original_tag = MON } }
 			}					
-			NOT = {
-				FROM = { #Added to avoid weird civil war collaboration governments
-					original_tag = ROOT
-				}
-			}	
+			NOT = { FROM = { original_tag = ROOT } } #Added to avoid weird civil war collaboration governments	
 		}
         visible = {
 			has_rule = can_create_collaboration_government
@@ -575,34 +557,29 @@ foreign_influence = {
 			set_temp_variable = { country_to_initiate = FROM }
 			instantiate_collaboration_government = yes
 		}
-		
+
 		target_non_existing = yes
 		target_array = occupied_countries
-		
-		
+
+
 		ai_will_do = {
 			base = 10
 			# priotize larger countries
-			
+
 			modifier = {
 				# blocks our focus tree for libyan oil
 				tag = ITA
 				FROM = {
 					tag = LBA
 				}
-				
+
 				factor = 0
 			}
-			modifier = {
+			modifier = { # 56
 				# blocks our focus tree for libyan oil
 				tag = ITA
-				NOT = {
-					controls_state = 109
-				}
-				FROM = {
-					tag = CRO
-				}
-				
+				NOT = { controls_state = 109 }
+				FROM = { tag = CRO }
 				factor = 0
 			}			
 			modifier = {
@@ -612,7 +589,7 @@ foreign_influence = {
 
 				factor = 0
 			}
-			modifier = { 
+			modifier = {
 			# feels wierd to generate random ppl here over the nazis running the show and hoi doesnt have those except perhaps Von Neurath, but he didnt really run things past 41 so best just block it from ai while at war honestly.
 				tag = GER
 				FROM = { tag = CZE }
@@ -620,38 +597,38 @@ foreign_influence = {
 
 				factor = 0
 			}
-			
+
 			modifier = {
 				# neutrals won't do collaboration until 1944 and they are at peace
-				
+
 				has_government = neutrality
 				# allow neutral GER
 				not = { tag = GER }
-				
+
 				OR = {
 					has_war = yes
 					date < 1944.01.01
 				}
-				
+
 				factor = 0
 			}
-			
+
 			modifier = {
 				# calculating cores we control
 				set_temp_variable = { num_cores_we_control = 0 }
 				all_of_scopes = {
 					array = FROM.core_states
-					
+
 					if = {
 						limit = { is_controlled_by = PREV }
 						add_to_temp_variable = { num_cores_we_control = 1 }
 					}
 				}
-				
+
 				# more score if more cores are controlled by us
 				add = num_cores_we_control
-			}			
-			
+			}
+
 			# dont make too many collaboratios
 			modifier = {
 				# as number of collaboration subjects increases
@@ -666,36 +643,53 @@ foreign_influence = {
 						add_to_temp_variable = { num_min_cores = 0.7 }
 					}
 				}
-				
+
 				check_variable = { num_cores_we_control < num_min_cores }
-				
+
 				factor = 0
 			}
 
-			modifier = { 
+			modifier = {
 			# [softly] Don't...
 				tag = TUR
 				FROM = { tag = KUR }
 
 				factor = 0
 			}
-			modifier = { 
-				# [softly] Don't...
-					tag = ITA
+			modifier = {
+				FROM = {
+					tag = POL
+					is_ai = no
+				}
+
+				factor = 0
+			}
+			# don't create collab governments if you have contested cores
+			modifier = {
+				any_core_state = {
 					OR = {
-						has_government = fascism
-						has_government = neutrality
+						is_controlled_by = ROOT
+						is_owned_by = ROOT
 					}
-					FROM = { tag = CRO }
-					NOT = {
-						controls_state = 103
-					}
-					factor = 0
-				}			
+					is_core_of = FROM
+				}
+				factor = 0
+			}
+			modifier = { # 56
+			# [softly] Don't...
+				tag = ITA
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+				FROM = { tag = CRO }
+				NOT = { controls_state = 103 }
+				factor = 0
+			}			
 		}
 	}
 
-	support_puppet_government = {
+	support_puppet_government = { # 56
 
 		icon = hol_exchange_intelligence_data
 		
@@ -748,5 +742,4 @@ foreign_influence = {
 			}			
 		}
 	}
-
 }

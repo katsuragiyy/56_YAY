@@ -3,7 +3,7 @@ characters = {
 		name = ALB_king_zog
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/ALB/r56_portrait_ALB_King_Zog.dds"
+				large = GFX_portrait_King_Zog
 			}
 		}
 		country_leader = {
@@ -11,7 +11,7 @@ characters = {
 			expire = "1965.1.1"
 			id = -1
 			traits = {
-				divisive_absolute_monarch
+				divisive_absolute_monarch assassination_survivor
 			}
 		}
 		#field_marshal = {

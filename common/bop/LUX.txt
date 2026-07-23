@@ -39,6 +39,8 @@ LUX_neutrality_balance = {
 
 				army_core_attack_factor = 0.15
 				army_core_defence_factor = 0.20
+
+				mobilization_laws_cost_factor = -0.25
 			}
 			on_activate = {}
 			on_deactivate = {}
@@ -59,6 +61,8 @@ LUX_neutrality_balance = {
 
 				army_core_attack_factor = 0.10
 				army_core_defence_factor = 0.15
+
+				mobilization_laws_cost_factor = -0.25
 			}
 			on_activate = {}
 			on_deactivate = {}
@@ -79,6 +83,8 @@ LUX_neutrality_balance = {
 
 				army_core_attack_factor = 0.05
 				army_core_defence_factor = 0.10
+
+				mobilization_laws_cost_factor = -0.25
 			}
 			on_activate = {}
 			on_deactivate = {}

@@ -699,7 +699,7 @@ and_i_took_that_personally = {
  
     happened = {
 		has_country_leader = {
-			name = "Ma Hushan"
+			character = KHM_ma_hushan
 			ruling_only = yes
 		}
 		owns_state = 618
@@ -708,6 +708,7 @@ and_i_took_that_personally = {
 		owns_state = 760
 		owns_state = 287
 		owns_state = 759
+		owns_state = 1121
 		AND = {
 			has_war_with = SOV
 			is_in_faction = no #Not going to make it 'never joinned a faction' cause I'm not an asshole
@@ -735,7 +736,6 @@ chile_of_the_orient = {
 		owns_state = 1013
 		owns_state = 323
 		owns_state = 1091
-		
 	}		
 }
 

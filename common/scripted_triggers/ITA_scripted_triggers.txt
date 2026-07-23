@@ -558,9 +558,7 @@ ITA_is_historical_ai = {
 			option = FASCIST_HISTORICAL
 		}
 	}
-	NOT = {
-		has_country_flag = ITA_accepted_aus
-	}
+	NOT = { has_country_flag = ITA_accepted_aus } # 56
 }
 
 ITA_is_alt_fascist_balbo_ai = {
@@ -570,7 +568,7 @@ ITA_is_alt_fascist_balbo_ai = {
 			rule = ITA_ai_behavior
 			option = ALT_FASCIST_BALBO
 		}
-		has_country_flag = ITA_accepted_aus
+		has_country_flag = ITA_accepted_aus # 56
 	}
 }
 

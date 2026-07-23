@@ -1,60 +1,26 @@
 characters={
 	RUT_avgustyn_voloshyn={ #desc = "POLITICS_EDVARD_BENES_DESC"
-		instance = {
-			allowed = {
-				has_dlc = "Peace For Our Time"
-			}
-			name = RUT_augustin_voloshyn
-			portraits = {
-				civilian = {
-					large = GFX_portrait_RUT_augustin_voloshyn
-					small = GFX_portrait_RUT_augustin_voloshyn_small
-				}
-			}
-			country_leader={
-				ideology=conservatism
-				expire="1965.1.1"
-				id=-1
-				traits = {
-					RUT_independence_minded_priest
-				}
-			}
-			country_leader={
-				ideology= conservatism_n
-				expire="1965.1.1"
-				id=-1
-				traits = {
-					priest
-				}
+		name=RUT_augustin_voloshyn
+		portraits={
+			civilian={
+				large="gfx/leaders/RUT/r56_portrait_RUT_Avgustyn_Voloshyn.dds"
+				small = GFX_portrait_RUT_augustin_voloshyn_small
 			}
 		}
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "Peace For Our Time"
-				}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1"
+			id=-1
+			traits = {
+				RUT_independence_minded_priest
 			}
-			name=RUT_augustin_voloshyn
-			portraits={
-				civilian={
-					large="gfx/leaders/RUT/r56_portrait_RUT_Avgustyn_Voloshyn.dds"
-				}
-			}
-			country_leader={
-				ideology=conservatism
-				expire="1965.1.1"
-				id=-1
-				traits = {
-					priest
-				}
-			}
-			country_leader={
-				ideology= conservatism_n
-				expire="1965.1.1"
-				id=-1
-				traits = {
-					priest
-				}
+		}
+		country_leader={
+			ideology= conservatism_n
+			expire="1965.1.1"
+			id=-1
+			traits = {
+				RUT_independence_minded_priest
 			}
 		}
 	}

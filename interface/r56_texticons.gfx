@@ -293,4 +293,20 @@ spriteTypes = {
 		textureFile = "gfx/flags/small/AFG_fascism.tga"
 		legacy_lazy_load = no
 	}
+	###------> LUX GAME RULES FLAGS
+	spriteType = {
+		name = "GFX_gamerules_LUX_communist"
+		textureFile = "gfx/flags/small/LUX_communist_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_gamerules_LUX_german_flag"
+		textureFile = "gfx/flags/small/LUX_gau_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_gamerules_LUX_monarchist"
+		textureFile = "gfx/flags/small/LUX_neutrality.tga"
+		legacy_lazy_load = no
+	}
 }

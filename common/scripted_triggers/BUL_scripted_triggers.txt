@@ -56,6 +56,7 @@ BUL_state_is_in_the_black_sea = {
 			state = 355
 			state = 356
 			state = 347
+			state = 826
 		}
 	}
 }
@@ -67,15 +68,21 @@ BUL_state_is_in_the_adriatic_sea = {
 			state = 185
 			state = 805
 			state = 44
+			state = 910
 			state = 105
 			state = 103
 			state = 163
 			state = 736
+			state = 852
 			state = 160
 			state = 161
 			state = 157
 			state = 117
 			state = 156
+			state = 849
+			state = 958
+			state = 912
+			state = 957
 		}
 	}
 }
@@ -204,6 +211,7 @@ BUL_is_balkan_nation = {
 			original_tag = CRO
 			original_tag = KOS
 			original_tag = MNT
+			original_tag = TRA
 		}
 	}
 }
@@ -225,6 +233,7 @@ BUL_is_balkan_nation_no_bulgaria = {
 			original_tag = CRO
 			original_tag = KOS
 			original_tag = MNT
+			original_tag = TRA
 		}
 	}
 }
@@ -245,6 +254,7 @@ BUL_is_balkan_state = {
 		is_core_of = CRO
 		is_core_of = KOS
 		is_core_of = MNT
+		original_tag = TRA
 	}
 	is_on_continent = europe
 }

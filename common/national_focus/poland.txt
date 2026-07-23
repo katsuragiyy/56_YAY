@@ -17236,7 +17236,7 @@ focus_tree = {
 				}
 				create_field_marshal = {
 					name = "Konstanty Rokossowski"
-					picture = "r56_portrait_POL_Konstanty_Rokossowski.dds"
+					picture = "gfx/leaders/SOV/Portrait_Soviet_Konstantin_Rokossovsky.dds"
 					traits = { politically_connected panzer_leader panzer_expert offensive_doctrine thorough_planner aggressive_assaulter }
 					id = 3179
 					skill = 5

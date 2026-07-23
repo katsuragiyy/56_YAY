@@ -1067,7 +1067,7 @@ form_united_netherlands_category = {
 				tooltip = form_eu_belgium_required_states_tt
 				controls_state = 6
 				controls_state = 34
-				controls_state = 965
+				#controls_state = 965 - Can be taken by germany and ruin the formable.
 				controls_state = 1094
 				controls_state = 1095
 			}

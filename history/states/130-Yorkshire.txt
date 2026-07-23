@@ -33,6 +33,9 @@ state={
 			11297 = {
 				naval_base = 5
 			}
+
+			# https://en.wikipedia.org/wiki/Rivelin_Dams
+			9315 = { dam = 1 }
 		}
 		add_core_of = ENG
 		add_to_array = { state_victory_points = 9379 }

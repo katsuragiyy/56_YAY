@@ -220,7 +220,7 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = BEL_national_redoubt_at_antwerp_available_tt
 				OR = {
-					1094 = {	#56 - Antwerpen
+					1094 = { #Antwerpen
 						free_building_slots = {
 							building = bunker
 							size > 1
@@ -1098,7 +1098,39 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			if = {
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				add_doctrine_cost_reduction = {
+					name = BEL_resist_and_bite
+					cost_reduction = 0.25
+					uses = 2
+					category = special_forces_doctrine
+				}
+				custom_effect_tooltip = ranger_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = BEL_resist_and_bite
+						bonus = 0.1
+						days = 240
+						sub_doctrine = rangers_1
+					}
+					add_mastery_bonus = {
+						name = BEL_resist_and_bite
+						bonus = 0.1
+						days = 240
+						sub_doctrine = rangers_2
+					}
+				}				
+				add_tech_bonus = {
+					name = BEL_resist_and_bite
+					bonus = 1
+					uses = 1
+					category = rangers_tech_cat
+				}
+			}
+			ELSE_IF = {
 				limit = {
 					has_dlc = "Arms Against Tyranny"
 				}
@@ -1106,15 +1138,37 @@ focus_tree = {
 					name = BEL_resist_and_bite
 					cost_reduction = 0.25
 					uses = 2
-					category = cat_mountaineers_doctrine
+					category = special_forces_doctrine
 				}
+				add_tech_bonus = {
+					name = BEL_resist_and_bite
+					bonus = 1
+					uses = 1
+					category = mountaineers_tech
+				}
+				custom_effect_tooltip = mountaineer_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = BEL_resist_and_bite
+						bonus = 0.1
+						days = 240
+						sub_doctrine = mountaineers_1
+					}
+					add_mastery_bonus = {
+						name = BEL_resist_and_bite
+						bonus = 0.1
+						days = 240
+						sub_doctrine = mountaineers_2
+					}
+				}				
 			}
-			add_tech_bonus = {
-				name = BEL_resist_and_bite
-				bonus = 1
-				uses = 1
-				category = mountaineers_tech
-				category = r56_jaeger_infantry_tech	#56
+			ELSE = {
+				add_tech_bonus = {
+					name = BEL_resist_and_bite
+					bonus = 1
+					uses = 1
+					category = mountaineers_tech
+				}
 			}
 		}
 
@@ -1291,22 +1345,39 @@ focus_tree = {
 		cost = 10
 	
 		completion_reward = {
-			mio:BEL_fonderie_royale_de_canons_liege_organization = {
-				add_mio_size = 2
-				add_mio_funds_gain_factor = 0.2
-				add_mio_research_bonus = 0.05
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			mio:BEL_vickers_armstrong_bel_organization = {
-				add_mio_size = 1
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny"}
 
-				unlock_mio_trait_tooltip = BEL_mio_trait_fonderie_royale_canons
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			mio:BEL_renault_organization = {
-				add_mio_size = 1
+				mio:BEL_fonderie_royale_de_canons_liege_organization = {
+					add_mio_size = 2
+					add_mio_funds_gain_factor = 0.2
+					add_mio_research_bonus = 0.05
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				mio:BEL_vickers_armstrong_bel_organization = {
+					add_mio_size = 1
 
-				unlock_mio_trait_tooltip = BEL_mio_trait_fonderie_royale_canons
+					unlock_mio_trait_tooltip = BEL_mio_trait_fonderie_royale_canons
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				mio:BEL_renault_organization = {
+					add_mio_size = 1
+
+					unlock_mio_trait_tooltip = BEL_mio_trait_fonderie_royale_canons
+				}
+			}
+
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = fonderie_royale_de_canons_liege
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = vickers_armstrong_bel
+				custom_effect_tooltip = generic_skip_one_line_tt
+				
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = renault_bel
 			}
 		}
 
@@ -1372,13 +1443,13 @@ focus_tree = {
 				}
 				add_dynamic_modifier = { modifier = BEL_academies_of_belgium_dynamic_modifier }
 				add_to_variable = { 
-					specialization_nuclear_speed_factor = 0.05
+					BEL_academies_of_belgium_specialization_nuclear_speed_factor = 0.05
 					tooltip = specialization_nuclear_speed_factor_tt				
 				}	
 				else = {
 					custom_effect_tooltip = BEL_academies_of_belgium_dynamic_modifier_tt
 					add_to_variable = { 
-						specialization_nuclear_speed_factor = 0.05
+						BEL_academies_of_belgium_specialization_nuclear_speed_factor = 0.05
 						tooltip = specialization_nuclear_speed_factor_tt				
 					}	 
 				}		 
@@ -1590,12 +1661,30 @@ focus_tree = {
 		available_if_capitulated = yes
 	
 		completion_reward = {
-			mio:BEL_fn_herstal_organization = {
-				add_mio_size = 1
-				add_mio_funds_gain_factor = 0.2
-				add_mio_research_bonus = 0.05
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny"}
 
-				unlock_mio_trait_tooltip = BEL_mio_trait_outsourced_production
+				mio:BEL_fn_herstal_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.2
+					add_mio_research_bonus = 0.05
+
+					unlock_mio_trait_tooltip = BEL_mio_trait_outsourced_production
+				}
+			}
+
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = fn_herstal
+			}
+			
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_industrial_capacity_factory = 0.05
+				tooltip = industrial_capacity_factory_tt				
 			}
 		}
 
@@ -1676,18 +1765,43 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	
 		completion_reward = {
-			mio:BEL_minerva_imperia_armored_car_organization = {
-				add_mio_size = 1
-				add_mio_funds_gain_factor = 0.2
-				add_mio_research_bonus = 0.05
 
-				unlock_mio_trait_tooltip = BEL_mio_trait_knight_engines
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny"}
+
+				IF = {
+					limit = { has_dlc = "La Resistance"}
+
+					mio:BEL_minerva_imperia_armored_car_organization = {
+						add_mio_size = 1
+						add_mio_funds_gain_factor = 0.2
+						add_mio_research_bonus = 0.05
+
+						unlock_mio_trait_tooltip = BEL_mio_trait_knight_engines
+					}
+					custom_effect_tooltip = generic_skip_one_line_tt
+				}
+
+				
+				mio:BEL_minerva_imperia_motorized_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.2
+					add_mio_research_bonus = 0.05
+				}
 			}
+
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = minerva_imperia_motorized
+			}
+			
+
 			custom_effect_tooltip = generic_skip_one_line_tt
-			mio:BEL_minerva_imperia_motorized_organization = {
-				add_mio_size = 1
-				add_mio_funds_gain_factor = 0.2
-				add_mio_research_bonus = 0.05
+
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_industrial_capacity_factory = 0.05
+				tooltip = industrial_capacity_factory_tt				
 			}
 		}
 
@@ -1715,8 +1829,7 @@ focus_tree = {
 		available_if_capitulated = yes
 	
 		completion_reward = {
-
-			IF = {
+			IF = { # 56?
 				limit = {
 					has_dynamic_modifier = {
 						modifier = BEL_scars_of_ww1_dynamic_modifier
@@ -2005,7 +2118,7 @@ focus_tree = {
 
 		relative_position_id = BEL_government_resigns
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_COMPLETED_BY_EVENT }
 			
 		x = 2
 		y = 1
@@ -2140,7 +2253,7 @@ focus_tree = {
 
 		relative_position_id = BEL_royal_intervention
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_COMPLETED_BY_EVENT }
 			
 		x = -2
 		y = 1
@@ -2516,6 +2629,8 @@ focus_tree = {
 			custom_effect_tooltip = BEL_the_council_of_europe_tt
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = BEL_european_community_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_cosmetic_tag = european_union_leader
 
 			hidden_effect = {
 				IF = { 
@@ -2531,6 +2646,7 @@ focus_tree = {
 						hours = 24
 					}
 					
+					news_event = { id = mtg_news.54 days = 1 }
 				}
 			}
 		}
@@ -2579,7 +2695,7 @@ focus_tree = {
 
 		mutually_exclusive = { focus = BEL_paul_emile_janson }	
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL_CHARACTER }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_COMPLETED_BY_EVENT }
 			
 		x = 3
 		y = 1
@@ -3302,6 +3418,7 @@ focus = {
 			add_offsite_building = {
 				type = industrial_complex
 				level = 2
+				instant_build = yes
 			}
 		}
 
@@ -3402,11 +3519,50 @@ focus = {
 				}
 				custom_effect_tooltip = BEL_the_european_crusade_tt
 			}
-			add_dynamic_modifier = { modifier = BEL_european_crusade_dynamic_modifier }
+
+			IF = { 
+				limit = { 
+					NOT = { 
+						has_completed_focus = BEL_support_the_rexists
+						has_completed_focus = BEL_support_the_vnv
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = BEL_european_crusade_dynamic_modifier_rexist_tt
+				add_to_variable = { 
+					BEL_european_crusade_conscription_factor = 0.10
+					tooltip = conscription_factor_tt
+				}
+				add_to_variable = { 
+					BEL_european_crusade_production_factory_max_efficiency_factor = 0.05
+					tooltip = production_factory_max_efficiency_factor_tt				
+				}
+				add_to_variable = { 
+					BEL_european_crusade_supply_consumption_factor = -0.10
+					tooltip = supply_consumption_factor_tt				
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				custom_effect_tooltip = BEL_european_crusade_dynamic_modifier_vnv_tt
+				add_to_variable = { 
+					BEL_european_crusade_army_org_factor = 0.05
+					tooltip = army_org_factor_tt				
+				}
+				add_to_variable = { 
+					BEL_european_crusade_army_attack_against_major_factor = 0.05
+					tooltip = army_attack_against_major_factor_tt				
+				}
+				add_to_variable = { 
+					BEL_european_crusade_army_defence_against_major_factor = 0.05
+					tooltip = army_defence_against_major_factor_tt				
+				}
+			}
 			IF = {
 				limit = {
 					has_completed_focus = BEL_support_the_rexists
 				}
+				add_dynamic_modifier = { modifier = BEL_european_crusade_dynamic_modifier }
 				custom_effect_tooltip = BEL_european_crusade_dynamic_modifier_tt
 				add_to_variable = { 
 					BEL_european_crusade_conscription_factor = 0.10
@@ -3425,6 +3581,7 @@ focus = {
 				limit = {
 					has_completed_focus = BEL_support_the_vnv
 				}
+				add_dynamic_modifier = { modifier = BEL_european_crusade_dynamic_modifier }
 				custom_effect_tooltip = BEL_european_crusade_dynamic_modifier_tt
 				add_to_variable = { 
 					BEL_european_crusade_army_org_factor = 0.05
@@ -3844,6 +4001,7 @@ focus = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
+		will_lead_to_war_with = FRA
 		x = -6
 		y = 1
 	
@@ -4804,14 +4962,14 @@ focus = {
 				custom_effect_tooltip = available_mio_tt
 				show_mio_tooltip = SOV_kirov_organization
 
-				mio:SOV_kirov_organization = {	#56?
+				mio:SOV_kirov_organization = {
 					add_mio_size = 2
 				}
 			}
 
 			ELSE = {
 				custom_effect_tooltip = available_designer
-				show_ideas_tooltip = SOV_kirov_organization
+				show_ideas_tooltip = BEL_kirov
 			}
 			
 		}
@@ -5064,7 +5222,12 @@ focus = {
 	
 		completion_reward = {
 
-			complete_special_project = sp:sp_land_stronghold_network
+			IF = {
+				limit = {
+					not = { is_special_project_completed = sp:sp_land_stronghold_network }
+				}
+				complete_special_project = sp:sp_land_stronghold_network
+			}
 
 			IF = {
 				limit = {
@@ -5100,7 +5263,7 @@ focus = {
 
 		relative_position_id = BEL_government_resigns	
 
-		search_filters = { FOCUS_FILTER_POLITICAL }		
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_COMPLETED_BY_EVENT }		
 
 		x = 23
 		y = 1
@@ -5973,11 +6136,16 @@ focus = {
 		y = 3
 	
 		cost = 10
+
 	
 		completion_reward = {
 			custom_effect_tooltip = BEL_european_community_tt
 			custom_effect_tooltip = generic_skip_one_line_tt
-			set_cosmetic_tag = BEL_european_union_leader
+			set_cosmetic_tag = european_union_leader
+
+			hidden_effect = {
+				news_event = { id = mtg_news.54 days = 1 }
+			}
 		}
 
 	}
@@ -6093,7 +6261,7 @@ focus = {
 	
 		completion_reward = {
 			add_country_leader_role = {	#56
-			    character = BEL_king_leopold_iii
+			    character = BEL_king_leopold_iii 
 			    promote_leader = yes
 			    country_leader = {
 			        ideology = despotism
@@ -6350,7 +6518,7 @@ focus = {
 				}
 			}
 
-			add_stability = -0.1	#56?
+			add_stability = -0.1
 			add_political_power = 200
 		}
 	}
@@ -6655,7 +6823,6 @@ focus = {
 				}		 
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-
 			IF = {
 				limit = {
 					is_government_in_exile = yes
@@ -7127,11 +7294,11 @@ focus = {
 			34 = {
 				add_resource = {
 					type = steel
-					amount = 12
+					amount = 8
 				}
 				add_resource = {
 					type = coal
-					amount = 15
+					amount = 18
 				}
 			}
 			add_tech_bonus = {
@@ -7590,12 +7757,34 @@ focus = {
 		cost = 5
 	
 		completion_reward = {
-			mio:BEL_renard_organization = {
-				add_mio_size = 1
-				add_mio_funds_gain_factor = 0.1
-				add_mio_research_bonus = 0.05
+			custom_effect_tooltip = {
+				localization_key = available_scientist_one_line_tt
+				CHARACTER = BEL_alfred_renard
 			}
-			custom_effect_tooltip = "TOGO_GK Add Renard scientist"
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:BEL_renard_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.1
+					add_mio_research_bonus = 0.05
+				}
+			}
+
+			ELSE_IF = {
+				limit = { NOT = { has_completed_focus = BEL_stampe_et_vertrongen }}
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = renard
+			}
+
+			ELSE = {
+				air_experience = 25
+			}
+
 		}
 
 	}
@@ -7616,12 +7805,26 @@ focus = {
 		cost = 5
 	
 		completion_reward = {
-			mio:BEL_renard_organization = {
-				add_mio_size = 1
-				add_mio_funds_gain_factor = 0.1
-				add_mio_research_bonus = 0.05
 
-				unlock_mio_trait_tooltip = BEL_mio_trait_stampe_et_vertrongen
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:BEL_renard_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.1
+					add_mio_research_bonus = 0.05
+				}
+			}
+
+			ELSE_IF = {
+				limit = { NOT = { has_completed_focus = BEL_renard_constructions_aeronautiques }}
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = renard
+			}
+
+			ELSE = {
+				air_experience = 25
 			}
 		}
 
@@ -8068,6 +8271,28 @@ focus = {
 		cost = 10
 	
 		completion_reward = {
+
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny"}
+
+				mio:BEL_cockerill_shipyards_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.2
+					add_mio_research_bonus = 0.05
+				}
+			}
+
+			ELSE = {
+				add_doctrine_cost_reduction = {
+					name = BEL_cockerill_shipyards
+					cost_reduction = 0.5
+					uses = 1
+					category = naval_doctrine # optional 
+					# tecnology  = technology_id # optional
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 			1094 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {

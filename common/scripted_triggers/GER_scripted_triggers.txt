@@ -590,7 +590,7 @@ GER_is_RKI_state = {
 	}
 }
 
-# Reichskommissariat Balkan Zone
+# Initial Reichskommissariat Balkan Zone
 GER_is_RKC_state = {
 	OR = {
 		state = 109
@@ -710,7 +710,7 @@ GER_is_RGB_ireland_state = {
 	}
 }
 
-## Reichskommissariat Nordafrika Zone 
+# Reichskommissariat Nordafrika Zone 
 GER_is_RNA_state = {
 	OR = {
 		state = 458

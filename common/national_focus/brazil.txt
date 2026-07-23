@@ -749,25 +749,6 @@ focus_tree = {
 		}
 	}
 
-	#focus = {
-	#	id = BRA_placeholder_1
-	#	#icon = 
-	#	prerequisite = { focus = BRA_decree_no_37 focus = BRA_federal_employment_plan }
-	#	x = 1
-	#	y = 1
-	#	relative_position_id = BRA_decree_no_37
-	#	cost = 10
-	#	available = {
-	#	}
-	#	bypass = {
-	#		# Place holder just to keep the tree playable for now
-	#		original_tag = BRA
-	#	}
-	#	search_filters = { }
-	#	completion_reward = {
-	#	}
-	#}
-
 	focus = {
 		id = BRA_reward_army_loyalty
 		icon = GFX_goal_generic_military_sphere
@@ -1939,12 +1920,18 @@ focus_tree = {
 					tooltip = MODIFIER_STATE_RESOURCES_FACTOR_tt
 				}
 			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
-	
+
+			unlock_decision_tooltip = {
+				decision = develop_guapore_casserite_deposits
+				show_effect_tooltip = no
+			}	
 			unlock_decision_tooltip = {
 				decision = rename_guapore_to_rondonia_decision
 				show_effect_tooltip = no
-			}
+			}	
+
 		}
 	}
 
@@ -1967,10 +1954,14 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = BRA_centralize_development_tt
+			set_capital = {
+				state = 505
+				remember_old_capital = no
+			}
 			505 = {
 				add_victory_points = {
 					province = 8140
-					value = 15
+					value = 10
 				}
 				add_dynamic_modifier = { modifier = BRA_new_capital_modifier }
 				add_building_construction = {
@@ -1979,18 +1970,14 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}	
+				build_railway = {
+					level = 1
+					build_only_on_allied = yes
+					fallback = yes
+					start_province = 12977
+					target_province = 8140
+				}			
 			}
-			set_capital = {
-				state = 505
-				remember_old_capital = no
-			}
-			build_railway = {
-				level = 1
-				build_only_on_allied = yes
-				fallback = yes
-				start_province = 12977
-				target_province = 8140 # Brasília
-			}			
 			hidden_effect = {
 				set_province_name = { id = 8140 name = BRA_new_capital }
 			}
@@ -2233,6 +2220,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+
 			set_rule = {
 				can_create_factions = yes
 			}
@@ -2240,6 +2228,7 @@ focus_tree = {
 				template = faction_template_pan_american
 				name = BRA_org_american_states_faction
 			}
+
 		}
 	}
 
@@ -2542,9 +2531,11 @@ focus_tree = {
 		available = {
 			is_subject = no
 			USA = {
-				OR = {
-					has_war = yes
-					is_in_faction = yes
+
+				has_war = yes
+				is_in_faction = yes
+				any_allied_country = {
+					is_major = yes 
 				}
 			}
 		}
@@ -2571,8 +2562,8 @@ focus_tree = {
 				}
 				ROOT = {
 					add_to_war = {
-						targeted_alliance = USA
-						enemy = PREV
+					    targeted_alliance = USA
+					    enemy = PREV
 					    hostility_reason = asked_to_join
 					}
 				}
@@ -2684,7 +2675,7 @@ focus_tree = {
 						498 = {
 							free_building_slots = {
 								building = air_base
-								size > 1
+								size > 1 
 							}
 						}
 					}
@@ -2702,7 +2693,7 @@ focus_tree = {
 						498 = {
 							free_building_slots = {
 								building = air_base
-								size > 0
+								size > 0 
 							}
 						}
 					}
@@ -2821,10 +2812,12 @@ focus_tree = {
 						}
 						has_government = fascism
 						NOT = {
-							original_tag = ELS
-							original_tag = MEX
-							original_tag = DOM
-							original_tag = PAN
+							OR = {
+								original_tag = ELS
+								original_tag = MEX
+								original_tag = DOM
+								original_tag = PAN
+							}
 						}
 					}
 					ROOT = {
@@ -3418,7 +3411,11 @@ focus_tree = {
 					amount = 1
 				}
 			}
-			###
+			
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.5
+			}
 		}
 
 	}
@@ -4384,7 +4381,7 @@ focus_tree = {
 			}
 		}
 		available = {
-			is_subject = no # R56
+			is_subject = no
 			is_in_faction = no
 		}
 
@@ -6423,6 +6420,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+
 			set_rule = { can_create_factions = yes }
 			create_faction_from_template = {
 				template = faction_template_POR_popular_front_bloc
@@ -6498,7 +6496,7 @@ focus_tree = {
 				# Add character with propaganda bonus
 				add_ideas = BRA_sway_the_neighbors_lar
 				create_operative_leader = {
-					name = "BRA_julieta_soria"
+					name = BRA_julieta_soria
 					traits = { operative_double_agent operative_natural_orator }
 					female = yes
 					bypass_recruitment = yes
@@ -6584,10 +6582,10 @@ focus_tree = {
 						}
 						NOT = {
 							OR = {
-							original_tag = ELS
-							original_tag = MEX
-							original_tag = DOM
-							original_tag = PAN
+								original_tag = ELS
+								original_tag = MEX
+								original_tag = DOM
+								original_tag = PAN
 							}
 						}
 					}
@@ -6658,6 +6656,10 @@ focus_tree = {
 			add_political_power = 100
 			custom_effect_tooltip = BRA_monarch_choice_2_tt
 			show_ideas_tooltip = BRA_king_vassouras
+			add_victory_points = {
+				province = 5172
+				value = 1
+			}	
 		}
 	}
 
@@ -6682,6 +6684,10 @@ focus_tree = {
 			add_political_power = 100
 			custom_effect_tooltip = BRA_monarch_choice_1_tt
 			show_ideas_tooltip = BRA_king_petropolis
+			add_victory_points = {
+				province = 12334
+				value = 1
+			}
 		}
 	}
 
@@ -6756,7 +6762,7 @@ focus_tree = {
 			set_cosmetic_tag = BRA_const_kingdom
 			add_political_power = 120
 			hidden_effect = {
-				news_event = { hours = 12 id =JUNO_brazil_news.2 }
+				news_event = { hours = 12 id = JUNO_brazil_news.2 }
 			}
 		}
 	}
@@ -7033,6 +7039,16 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+			OR = {
+				has_subject = POR
+				POR = {
+					exists = no 
+				}
+				has_war_with = POR
+			}
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 
 		completion_reward = {
@@ -7043,6 +7059,66 @@ focus_tree = {
 					hours = 1
 				}
 			}
+		}
+	}
+
+	focus = {
+		id = BRA_claim_the_french_throne
+
+		allow_branch = {
+			IF = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = { 
+					has_completed_focus = BRA_prepare_for_second_intentona 
+					has_completed_focus = BRA_tribunal_de_seguranca_nacional
+				}
+			}
+			has_country_flag = BRA_pedro_de_alcantara_dead_flag
+		}
+
+		available = {
+			is_subject = no 
+			FRA = {
+				exists = yes 
+				NOT = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+
+		bypass = {
+		}
+
+		prerequisite = { focus = BRA_united_kingdom_of_brazil_and_portugal }
+		
+		icon = GFX_focus_focus_fra_orleans_restoration
+		x = 0
+		y = 1
+		relative_position_id = BRA_united_kingdom_of_brazil_and_portugal
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			
+			create_wargoal = {
+				type = annex_everything
+				target = FRA
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			FRA = {
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
+			
 		}
 	}
 

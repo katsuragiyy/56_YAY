@@ -403,15 +403,11 @@ defined_text = {
 	}
 	# R56
 	text = {
-		trigger = {
-			ISR_suez_contested = yes
-		}
+		trigger = { ISR_suez_contested = yes }
 		localization_key = ISR_suez_contested
 	}
 	text = {
-		trigger = {
-			ISR_egypt_blockaded_suez = yes
-		}
+		trigger = { ISR_egypt_blockaded_suez = yes }
 		localization_key = ISR_egypt_blockaded_suez
 	}
 	##

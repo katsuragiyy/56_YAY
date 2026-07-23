@@ -10075,7 +10075,7 @@ political_actions = {
 			}
 			has_country_flag = ENG_abdication_crisis_normal_marriage
 			has_country_flag = edward_viii_married_wallis_simpson
-			NOT = { has_country_flag = created_american_monarchy }
+			NOT = { has_country_flag = created_american_monarchy has_country_flag = created_panamerican_state } # 56
 			has_completed_focus = ENG_unite_the_anglosphere
 		}
 
@@ -10087,8 +10087,8 @@ political_actions = {
 			}
 			release = USA
 			puppet = USA
-			386 = { set_state_name = "Duchy of Wallington" }
-			set_province_name = { id = 3957 name = "Wallington" }
+			386 = { set_state_name = STATE_386_WALLIS_SIMPSON }
+			set_province_name = { id = 3957 name = VICTORY_POINTS_3957_WALLIS_SIMPSON }
 			USA = {
 				hidden_effect = {
 					set_cosmetic_tag = USA_wallis_simpson
@@ -10098,6 +10098,11 @@ political_actions = {
 				    popularity = 0.5
 				}
 				set_politics = { ruling_party = neutrality elections_allowed = no }
+				if = { # 56
+					limit = { NOT = { has_country_flag = ENG_are_we_the_baddies } }
+					set_party_name = { ideology = neutrality name = ENG_neutrality_party_english_royal long_name = ENG_neutrality_party_english_royal_long }
+					else = { set_party_name = { ideology = neutrality name = ENG_neutrality_party_german_royal long_name = ENG_neutrality_party_german_royal_long } }
+				}
 				USA_wallis_simpson = {
 					set_character_name = { name = USA_wallis_royal_name }
 					add_country_leader_role = {
@@ -10132,7 +10137,7 @@ political_actions = {
 			}
 			has_country_flag = ENG_abdication_crisis_normal_marriage
 			has_country_flag = edward_viii_married_wallis_simpson
-			NOT = { has_country_flag = created_american_monarchy }
+			NOT = { has_country_flag = created_american_monarchy has_country_flag = created_panamerican_state } # 56
 			has_completed_focus = ENG_unite_the_anglosphere
 		}
 
@@ -10142,9 +10147,9 @@ political_actions = {
 				629 = { add_core_of = USA }
 				463 = { add_core_of = USA }
 			}
-			386 = { set_state_name = "Duchy of Wallington" }
-			361 = { set_state_name = "Marriedland" }
-			set_province_name = { id = 3957 name = "Wallington" }
+			386 = { set_state_name = STATE_386_WALLIS_SIMPSON }
+			361 = { set_state_name = STATE_361_WALLIS_SIMPSON }
+			set_province_name = { id = 3957 name = VICTORY_POINTS_3957_WALLIS_SIMPSON }
 			USA = {
 				hidden_effect = {
 					set_cosmetic_tag = USA_wallis_simpson
@@ -10154,6 +10159,11 @@ political_actions = {
 				    popularity = 0.5
 				}
 				set_politics = { ruling_party = neutrality elections_allowed = no }
+				if = { # 56
+					limit = { NOT = { has_country_flag = ENG_are_we_the_baddies } }
+					set_party_name = { ideology = neutrality name = ENG_neutrality_party_english_royal long_name = ENG_neutrality_party_english_royal_long }
+					else = { set_party_name = { ideology = neutrality name = ENG_neutrality_party_german_royal long_name = ENG_neutrality_party_german_royal_long } }
+				}
 				USA_wallis_simpson = {
 					set_character_name = { name = USA_wallis_royal_name }
 					add_country_leader_role = {
@@ -10167,6 +10177,73 @@ political_actions = {
 						}
 					}
 				}
+			}
+			hidden_effect = { news_event = { id = mtg_news.56 hours = 6 } }
+		}
+	}
+
+	ENG_install_american_monarchy_in_panamerican_state = { # 56 Addition
+
+		icon = eng_install_government
+		
+		available = {
+			NOT = {
+				any_of = {
+					array = USA.core_states
+					var:v = { NOT = { is_owned_and_controlled_by = CAN } }
+				}
+			}
+			CAN = { is_subject_of = ROOT }
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			CAN = {
+				is_subject_of = ROOT
+				has_cosmetic_tag = CAN_north_america_dominion
+			}
+			has_country_flag = ENG_abdication_crisis_normal_marriage
+			has_country_flag = edward_viii_married_wallis_simpson
+			NOT = { has_country_flag = created_american_monarchy }
+		}
+
+		complete_effect = {
+			set_country_flag = created_american_monarchy
+			hidden_effect = {
+				629 = { add_core_of = CAN }
+				463 = { add_core_of = CAN }
+			}
+			set_province_name = { id = 3957 name = VICTORY_POINTS_3957_WALLIS_SIMPSON }
+			386 = { set_state_name = STATE_386_WALLIS_SIMPSON }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			USA = { USA_wallis_simpson = { set_nationality = CAN } }
+			CAN = {
+				hidden_effect = { set_cosmetic_tag = USA_wallis_simpson set_capital = { state = 361 remember_old_capital = no } }
+				add_popularity = {
+				    ideology = neutrality
+				    popularity = 0.5
+				}
+				set_politics = { ruling_party = neutrality elections_allowed = no }
+				custom_effect_tooltip = generic_skip_one_line_tt
+				if = {
+					limit = { NOT = { has_country_flag = ENG_are_we_the_baddies } }
+					set_party_name = { ideology = neutrality name = ENG_neutrality_party_english_royal long_name = ENG_neutrality_party_english_royal_long }
+					else = { set_party_name = { ideology = neutrality name = ENG_neutrality_party_german_royal long_name = ENG_neutrality_party_german_royal_long } }
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_country_leader_role = {
+					character = USA_wallis_simpson
+					promote_leader = yes
+					country_leader = {
+						ideology = absolute_monarchism
+						expire = "1965.1.1"
+						traits = {
+							unpopular_monarch socialite_connections wallis_fancy_title
+						}
+					}
+				}
+				USA_wallis_simpson = { set_character_name = { name = USA_wallis_royal_name } }
 			}
 			hidden_effect = { news_event = { id = mtg_news.56 hours = 6 } }
 		}
@@ -10212,7 +10289,7 @@ political_actions = {
 		}
 
 		complete_effect = {
-			set_country_flag = created_american_monarchy
+			set_country_flag = created_panamerican_state
 			hidden_effect = {
 				629 = { add_core_of = USA }
 				463 = { add_core_of = USA }
@@ -10255,45 +10332,37 @@ political_actions = {
 				}
 			}
 			hidden_effect = { news_event = { id = mtg_news.57 hours = 6 } }
+			# 56
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = ENG_install_american_monarchy_in_panamerican_state
+			##
 		}
 	}
 
-	ENG_embrace_royal_german_heritage = {
-
+	ENG_embrace_royal_german_heritage = { # 56 Addition
 		icon = generic_monarchy
-
+		cost = 10
+		allowed = { original_tag = ENG }
+		fire_only_once = yes
 		#targets = { GER }
 
-		allowed = {
-			tag = ENG
-		}
-
 		available = {
+			NOT = { has_war_with = GER }
 			has_country_leader = { 
-				name = "Edward VIII"
+				character = ENG_edward_viii
 				ruling_only = yes
 			}
-			NOT = {
-				has_war_with = GER
-			}
 		}
-
-		cost = 10
-
-		fire_only_once = yes
 
 		visible = {
 			has_country_leader = { 
-				name = "Edward VIII"
+				character = ENG_edward_viii
 				ruling_only = yes
 			}
 			OR = {
 				has_completed_focus = ENG_alliance_with_germany
 				has_completed_focus = ENG_london_pact
 				is_in_faction_with = GER
-			}
-			NOT = {
-				has_war_with = GER
 			}
 		}
 
@@ -10308,13 +10377,12 @@ political_actions = {
 					value = -0.05
 				}			
 			}
+			set_country_flag = ENG_are_we_the_baddies
 			add_stability = embrace_german_heritage_var
-			set_party_name = { ideology = neutrality name = "Saxe-Coburg and Gotha" long_name = "House of Saxe-Coburg and Gotha" }
+			set_party_name = { ideology = neutrality name = ENG_neutrality_party_german_royal long_name = ENG_neutrality_party_german_royal_long }
 		}
 
-		ai_will_do = {
-			factor = 200 #Gotta allow the Americans to help
-		}
+		ai_will_do = { base = 200 }
 	}
 
 }

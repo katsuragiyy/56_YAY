@@ -38,10 +38,8 @@ recruit_character = KHM_khoja_niyaz
 recruit_character = KHM_ehmetjan_qasim
 recruit_character = KHM_air_chief
 recruit_character = KHM_navy_chief
-IF = {
-	limit = {
-		has_dlc = "No Compromise, No Surrender"
-	}
+if = {
+	limit = { has_dlc = "No Compromise, No Surrender" }
 	KHM_ma_hushan = {
 		set_portraits = {
 			army = {

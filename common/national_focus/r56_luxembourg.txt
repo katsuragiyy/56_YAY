@@ -1979,9 +1979,10 @@ focus_tree = {
 		relative_position_id = LUX_demonstrate_our_will
 		prerequisite = { focus = LUX_demonstrate_our_will }
 		mutually_exclusive = { focus = LUX_oust_socialists }
+		bypass = { NOT = { has_idea = r56_LUX_polarized_society } }
 		completion_reward = {
-			remove_ideas = r56_LUX_polarized_society
 			add_political_power = -100
+			remove_ideas = r56_LUX_polarized_society
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_HISTORICAL }
 	}

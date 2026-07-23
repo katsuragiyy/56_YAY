@@ -67,6 +67,10 @@ FIN_can_purchase_equipment_from_country = {
 	exists = yes
 	has_capitulated = no
 	NOT = { has_war_with = ROOT }
+	NOT = {
+		is_embargoing = ROOT
+		is_embargoed_by = ROOT
+	}
 	ROOT = {
 		OR = {
 			is_in_faction_with = PREV #Ally

@@ -18269,6 +18269,7 @@ focus_tree = {
 		
 		available = {
 			is_subject = no
+			country_exists = SIK # 56
 		}
 		
 		search_filters = {FOCUS_FILTER_ANNEXATION}

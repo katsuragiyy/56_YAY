@@ -137,7 +137,6 @@ country_event = {	# monarchist & fascist
 	days = 6
 }
 
-
 if = {
 	limit = {
 		has_dlc = "La Resistance"
@@ -170,4 +169,3 @@ if = {
 	}
 	
 }
-

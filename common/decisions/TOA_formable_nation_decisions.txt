@@ -13,9 +13,11 @@ hispaniola_category = {
 		}
 
 		available = {
+			
 			319 = {
 				is_controlled_by = ROOT
 			}
+
 			318 = {
 				is_controlled_by = ROOT
 			}
@@ -28,16 +30,16 @@ hispaniola_category = {
 				original_tag = DOM # Dominican Republic
 			}
 			
-			NOT = {
+			NOT = { 
 				OR = {
-					has_cosmetic_tag = CAB
-					has_global_flag = hispaniola_flag
-				} 
+					has_cosmetic_tag = CAB # 56
+					has_global_flag = hispaniola_flag 
+				}
 			}
 			
 		}
 		
-		highlight_states = {
+		highlight_states = { # 56
 			highlight_state_targets = {
                 state = 318
                 state = 319
@@ -79,10 +81,13 @@ hispaniola_category = {
 				}
 
 			}
+			# 56
 			add_political_power = -50
 
 			add_ideas = generic_recent_political_unification
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = generic_recent_army_unification
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = generic_recent_economic_unification
 
 		}
@@ -107,11 +112,8 @@ peru_bolivia_category = {
 		}
 
 		available = {
-
-			if = {
-				limit = {
-					original_tag = PRU 
-				}
+			if = { # 56
+				limit = { original_tag = PRU  }
 				NOT = { 
 					has_country_flag = formed_peru_bolivia
 					has_country_flag = PRU_no_peru_bolivia
@@ -361,7 +363,9 @@ peru_bolivia_category = {
 			}
 
 			add_ideas = generic_recent_political_unification
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = generic_recent_army_unification
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = generic_recent_economic_unification			
 
 			hidden_effect = {
@@ -380,7 +384,7 @@ peru_bolivia_category = {
 		}
 	}
 
-	peruvian_bolivian_joint_command = {
+	peruvian_bolivian_joint_command = { # 56
 		icon = generic_form_nation
 
 		allowed = {
@@ -553,7 +557,9 @@ guianas_category = {
 			}
 
 			add_ideas = generic_recent_political_unification
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = generic_recent_army_unification
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = generic_recent_economic_unification			
 
 			hidden_effect = {
@@ -564,6 +570,7 @@ guianas_category = {
 					days = 1
 					random_days = 2
 				}
+
 			}
 		}
 

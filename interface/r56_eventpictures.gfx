@@ -1501,11 +1501,11 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_news_event_CZE_capitulation_germany"
-		texturefile = "gfx/event_pictures/CZE/news_event_CZE_capitulation_germany.tga"
+		texturefile = "gfx/event_pictures/CZE/news_event_CZE_capitulation_germany.dds"
 	}	
 	spriteType = {
 		name = "GFX_news_event_CZE_capitulation"
-		texturefile = "gfx/event_pictures/CZE/news_event_CZE_capitulation.tga"
+		texturefile = "gfx/event_pictures/CZE/news_event_CZE_capitulation.dds"
 	}
 	spriteType = {
 		name = "GFX_news_event_CZE_capitulation_SOV"
@@ -2277,37 +2277,37 @@ spriteTypes = {
 	}	
 	spriteType = {
 		name = "GFX_report_GRE_klaras"
-		texturefile = "gfx/event_pictures/GRE/gre_klaras.tga"
+		texturefile = "gfx/event_pictures/GRE/gre_klaras.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_report_GRE_fascist_victory"
-		texturefile = "gfx/event_pictures/GRE/gre_fascist_victory.tga"
+		texturefile = "gfx/event_pictures/GRE/gre_fascist_victory.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_report_GRE_third_civ"
-		texturefile = "gfx/event_pictures/GRE/gre_third_civ.tga"
+		texturefile = "gfx/event_pictures/GRE/gre_third_civ.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_report_GRE_communist_victory"
-		texturefile = "gfx/event_pictures/GRE/gre_communist_victory.tga"
+		texturefile = "gfx/event_pictures/GRE/gre_communist_victory.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_report_GRE_unrest"
-		texturefile = "gfx/event_pictures/GRE/gre_unrest.tga"
+		texturefile = "gfx/event_pictures/GRE/gre_unrest.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_report_GRE_demertzis_funeral"
-		texturefile = "gfx/event_pictures/GRE/gre_demertzis_funeral.tga"
+		texturefile = "gfx/event_pictures/GRE/gre_demertzis_funeral.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_report_GRE_civil_war"
-		texturefile = "gfx/event_pictures/GRE/gre_civil_war.tga"
+		texturefile = "gfx/event_pictures/GRE/gre_civil_war.dds"
 	}
 	spriteType = {
 		name = "GFX_report_GRE_metaxas"
@@ -3657,67 +3657,67 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_AIML_INC_Conference"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_AIML_INC_Conference.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_AIML_INC_Conference.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_generic_election"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_generic_election.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_generic_election.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Government_Formation"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Government_Formation.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Government_Formation.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Indian_National_Congress"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Indian_National_Congress.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Indian_National_Congress.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Provincial_Result"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_AIML_INC_Conference.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Provincial_Result.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Hyderabad_Palace"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Hyderabad_Palace.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Hyderabad_Palace.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Indian_Brigade"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Indian_Brigade.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Indian_Brigade.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Indian_Brigade_Women"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Indian_Brigade_Women.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Indian_Brigade_Women.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Kashmir_Palace"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Kashmir_Palace.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Kashmir_Palace.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Mysore_Palace"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Mysore_Palace.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Mysore_Palace.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Naval_Cadets"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Naval_Cadets.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Naval_Cadets.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Railway"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Railway.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Railway.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_House_of_Parliament"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_House_of_Parliament.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_House_of_Parliament.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Imperial_Conference"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Imperial_Conference.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Imperial_Conference.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Westminster"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Westminster.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Westminster.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_picture_RAJ_Viceroys_Mansion"
-		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Viceroys_Mansion.tga"
+		texturefile = "gfx/event_pictures/RAJ/event_picture_RAJ_Viceroys_Mansion.dds"
 	}
 	spriteType = {
 		name = "GFX_news_event_indian_independence"

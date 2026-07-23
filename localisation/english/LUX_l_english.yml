@@ -615,7 +615,7 @@
  r56_LUX_favor_the_royalist:0 "Royalist Entrenchment"
  r56_LUX_favor_the_fasicts:0 "Incorporated Youth Groups"
  r56_legacy_of_luxembourg_crisis:0 "Legacy of the Luxembourg Crisis"
- r56_legacy_of_luxembourg_crisis_desc:0 "Luxembourg has adhered to a policy of neutrality since the Luxembourg Crisis of 1867. Although, with the German occupation of our country in the Great War and their recent rearmament campaigns has caused support for neutrality to erode."
+ r56_legacy_of_luxembourg_crisis_desc:0 "Luxembourg has adhered to a policy of neutrality since the Luxembourg Crisis of 1867. Although, with the German occupation of our country in the Great War and their recent rearmament campaigns, many have begun to question the policy, and support for neutrality has begun dwindling both within the government and the wider populace."
  r56_lux_stand_agaisnt_authoritarianism:0 "Stand Against Authoritarianism"
  r56_LUX_politcal_safe_heaven:0 "Political Safe Heaven"
  r56_LUX_coaltition_with_kpl:0 "Elevated Labor Unions"
@@ -1305,3 +1305,20 @@
  # party names
  LUX_republic_neutrality:0 "PD"
  LUX_republic_neutrality_long:0 "Rietspartei/Parti de la droite/Rechtspartei"
+
+ # Game Rules
+ LUX_AI_BEHAVIOR:0 "@LUX Luxembourg"
+ RULE_OPTION_HISTORICAL_LUX_AI:0 "@LUX Historical - PD"
+ RULE_HISTORICAL_LUX_AI_DESC:0 "Luxembourg will hold democratic elections, in which the Party of the Right (PD) will come out victorious. The party, under the leadership of Pierre Dupong, will strengthen the agricultural sector of the economy and attempt to reinforce the nation's neutrality."
+
+ RULE_OPTION_ALTDEMOCRATIC_LUX_AI:0 "@LUX Democratic - PRL"
+ RULE_ALTDEMOCRATIC_LUX_AI_DESC:0 "Luxembourg will hold democratic elections, in which the Radical Liberal Party (PRL) will come out victorious. The party, under the leadership of Gaston Diderich, will privatise industries and attempt to reinforce the nation's neutrality"
+
+ RULE_OPTION_SOCIALIST_LUX_AI:0 "@LUX Democratic - LSAP"
+ RULE_SOCIALIST_LUX_AI_DESC:0 "Luxembourg will hold democratic elections, in which the Luxembourg Socialist Workers' Party (LSAP) will come out victorious. The party, under the leadership of Pierre Krier, will expand social benefits and attempt to abolish the monarchy, whilst maintaining the nation's neutrality."
+
+ RULE_OPTION_COMMUNISM_LUX_AI:0 "£GFX_gamerules_LUX_communist   Communist - KPL"
+ RULE_COMMUNISM_LUX_AI_DESC:0 "Luxembourg will hold democratic elections, in which the Communist Party of Luxembourg (KPL) will come out victorious. The party, under the leadership of Dominique Urbany, will pursue socialist economic policies and oust the monarchy. The nation will then attempt to align with the Soviet Union, and may attempt to spread the revolution to the rest of Western Europe."
+
+ RULE_OPTION_FASCISM_LUX_AI:0 "£GFX_gamerules_LUX_german_flag   Fascist Contested - LNP"
+ RULE_FASCISM_LUX_AI_DESC:0 "Due to low confidence and low voter turnout in the elections, Ultranationalists under Damian Kratzenberg will contest the elections and attempt to secure power. Once they do so, Luxembourg will be set down a path of ultranationalism, which may see Luxembourg annexed into the German Reich."

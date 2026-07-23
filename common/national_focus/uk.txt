@@ -12632,7 +12632,7 @@ focus_tree = {
 			add_political_power = 120
 			if = {
 				limit = {
-					has_country_leader = { ruling_only = yes name = "Edward VIII" }
+					has_country_leader = { ruling_only = yes character = ENG_edward_viii }
 				}
 				remove_country_leader_trait = inexperienced_imperialist
 				add_country_leader_trait = autocratic_imperialist
@@ -13155,7 +13155,7 @@ focus_tree = {
 		completion_reward = {
 			set_rule = { can_send_volunteers = yes }
 			add_ideas = ENG_the_kings_party_idea
-			set_party_name = { ideology = neutrality name = "House of Windsor" }
+			set_party_name = { ideology = neutrality name = ENG_neutrality_party_english_royal long_name = ENG_neutrality_party_english_royal_long }
 			set_politics = { ruling_party = neutrality elections_allowed = no }
 			add_popularity = { ideology = neutrality popularity = 0.15 }
 			remove_ideas = ENG_king_edward
@@ -13348,7 +13348,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_country_leader = { 
-						name = "Edward VIII"
+						character = ENG_edward_viii
 						ruling_only = yes
 					}
 				}
@@ -13974,7 +13974,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_country_leader = { 
-						name = "Edward VIII"
+						character = ENG_edward_viii
 						ruling_only = yes
 					}
 				}
@@ -14233,7 +14233,7 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					has_country_leader = { ruling_only = yes name = "Edward VIII" }
+					has_country_leader = { ruling_only = yes character = ENG_edward_viii }
 				}
 				add_stability = 0.05
 				remove_country_leader_trait = inexperienced_imperialist
@@ -14241,7 +14241,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					NOT = { has_country_leader = { ruling_only = yes name = "Edward VIII" } }
+					NOT = { has_country_leader = { ruling_only = yes character = ENG_edward_viii } }
 				}
 				add_stability = 0.05
 				add_war_support = 0.1
@@ -14658,6 +14658,9 @@ focus_tree = {
 				target = USA
 				expire = 0
 			}
+			custom_effect_tooltip = ENG_after_conquering_usa_we_unlock
+			unlock_decision_tooltip = ENG_declare_american_monarchy
+			unlock_decision_tooltip = ENG_create_pan_north_american_state
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
@@ -17672,7 +17675,7 @@ focus_tree = {
 			#COMPLETE THIS
 			if = {
 				limit = {
-					has_country_leader = { ruling_only = yes name = "Edward VIII" }
+					has_country_leader = { ruling_only = yes character = ENG_edward_viii }
 				}
 				add_stability = 0.05
 				remove_country_leader_trait = inexperienced_imperialist

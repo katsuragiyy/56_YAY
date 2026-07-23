@@ -14511,21 +14511,32 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			if = {
+			IF = {
 				limit = {
 					NOT = { has_rule = can_create_factions }
 				}
 				set_rule = { can_create_factions = yes }
 			}
-			if = {
+
+			IF = {
 				limit = {
 					is_in_faction = no
 				}
-				create_faction_from_template = {
-					template = faction_template_italy_empire_faction
-					name = italy_empire_faction
-					icon = GFX_faction_logo_generic_fascist
+				create_faction_from_template = faction_template_italy_empire_faction
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			ELSE_IF = {
+				limit = {
+					is_faction_leader = yes
 				}
+				set_faction_name = italy_empire_faction 
+				IF = {
+					limit = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+					set_faction_manifest = faction_manifest_pax_romana
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 
 			unlock_decision_tooltip = form_roman_empire
@@ -14577,11 +14588,16 @@ focus_tree = {
 				uses = 1
 				category = heavy_air
 			}
-			add_tech_bonus = { #Changed to require the tech to complete this focus, and give template and production line
-				name = ITA_mare_nostrum_bba
-				bonus = 1.0
-				uses = 1
-				technology = ship_hull_super_heavy
+			#add_tech_bonus = { #Changed to require the tech to complete this focus, and give template and production line
+				#name = ITA_mare_nostrum_bba
+				#bonus = 1.0
+				#uses = 1
+				#technology = ship_hull_super_heavy
+			#}
+
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.75
 			}
 
 			if = {

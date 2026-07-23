@@ -23,6 +23,9 @@ state={
 			6300 = {
 				naval_base = 5
 			}
+
+			# https://en.wikipedia.org/wiki/Gartmorn_Dam
+			9383 = { dam = 1 }
 		}
 		add_core_of = ENG
 		add_to_array = { state_victory_points = 9392 }

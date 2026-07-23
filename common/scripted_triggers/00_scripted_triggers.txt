@@ -1,5 +1,5 @@
 #	Example:
-# 
+#
 #	example_trigger = {
 #		tag = GER
 #		is_ai = no
@@ -9,7 +9,7 @@
 #	In a script file:
 #
 #	trigger = {
-#		exampel_trigger = yes
+#		example_trigger = yes
 #	}
 #
 
@@ -33,9 +33,10 @@ is_border_conflict_defender_vs_FROM = {
 }
 
 has_not_initiated_border_incident_with_FROM = {
+	# NOTE this check is very expensive! Use it with caution.
 	custom_trigger_tooltip = {
 		tooltip = not_initiated_border_incident_with_FROM
-		NOT = {		
+		NOT = {
 			any_state = {
 				check_variable = { FROM.defender_state_vs_@PREV = id }
 			}
@@ -44,6 +45,7 @@ has_not_initiated_border_incident_with_FROM = {
 }
 
 has_not_initiated_border_incident_with_ROOT = {
+	# NOTE this check is very expensive! Use it with caution.
 	custom_trigger_tooltip = {
 		tooltip = not_initiated_border_incident_with_ROOT
 		NOT = {
@@ -99,6 +101,24 @@ check_has_focus_tree_to_switch_to_fascism = { # R56
 				has_completed_focus = SPR_the_popular_front
 			}
 			has_dlc = "La Resistance"
+		}
+	}
+	NOT = {
+		AND = {
+			tag = HUN
+			has_dlc = "Gotterdammerung"
+		}
+	}
+	NOT = {
+		AND = {
+			original_tag = PHI
+			has_dlc =  "No Compromise, No Surrender"
+		}
+	}
+	NOT = {
+		AND = {
+			original_tag = CHI
+			has_global_flag = chi_dlc_focus_tree
 		}
 	}
 	NOT = {
@@ -163,6 +183,26 @@ check_has_focus_tree_to_switch_to_democratic = { # R56
 			NOT = {
 				has_completed_focus = JAP_pre_emptive_coup
 			}
+		}
+	}
+	NOT = {
+		AND = {
+			original_tag = PHI
+			has_dlc =  "No Compromise, No Surrender"
+		}
+	}
+	NOT = {
+		AND = {
+			original_tag = CHI 
+			has_global_flag = chi_dlc_focus_tree
+		}
+	}
+	NOT = {
+		AND = {
+			OR = {
+				original_tag = INS
+			}
+			has_global_flag = ins_dlc_focus_tree
 		}
 	}
 	NOT = {
@@ -247,7 +287,7 @@ check_has_focus_tree_to_switch_to_communism = { # R56
 			NOT = {
 				OR = {
 					has_completed_focus = JAP_cast_the_die
-					has_civil_war = yes						
+					has_civil_war = yes
 				}
 			}
 		}
@@ -301,6 +341,32 @@ check_has_focus_tree_to_switch_to_communism = { # R56
 		original_tag = ROM
 		original_tag = SIA	#Check on release of next DLC for if this should be a has_focus_tree check?
 	}
+	NOT = {
+		AND = {
+			original_tag = NOR
+			has_global_flag = NOR_use_DLC_tree
+		}
+	}
+	NOT = {
+		AND = {
+			original_tag = ARG
+			has_dlc =  "Trial of Allegiance"
+		}
+	}
+	NOT = {
+		AND = {
+			original_tag = PHI
+			has_dlc =  "No Compromise, No Surrender"
+		}
+	}
+	NOT = {
+		AND = {
+			OR = {
+				original_tag = INS
+			}
+			has_global_flag = ins_dlc_focus_tree
+		}
+	}
 }
 
 #State scope
@@ -352,6 +418,7 @@ is_controlled_by_ROOT_or_ally = {
 	}
 }
 
+#State scope
 is_not_controlled_by_ROOT_or_ally = {
 	custom_trigger_tooltip = {
 		tooltip = is_not_controlled_by_ROOT_or_ally
@@ -440,7 +507,7 @@ CHI_is_on_historical_plan_trigger = {
 			has_game_rule = {
 				rule = CHI_ai_behavior
 				option = DEFAULT
-			}	
+			}
 		}
 		has_country_flag = CHI_AI_RANDOM_HISTORICAL
 		has_game_rule = {
@@ -541,7 +608,7 @@ ENG_is_on_historical_plan_trigger = {
 SOV_save_pp_for_manpower_trouble = {
 	has_manpower < 1000000
 	has_political_power < 200
-	surrender_progress > 0	
+	surrender_progress > 0
 }
 
 anti_submarine_strategy_required_trigger = {
@@ -611,7 +678,7 @@ should_USA_invade_europe_or_africa = {
 			OR = {
 				AND = {
 					has_government = democratic
-					ENG = { has_government = democratic } 
+					ENG = { has_government = democratic }
 					OR = {
 						GER = { has_government = fascism }
 						ITA = { has_government = fascism }
@@ -707,6 +774,12 @@ enemy_has_equal_or_better_radar_tech_trigger = {
 }
 
 is_available_to_collaboration_government = { # occupied_countries.1 should be updated along with this
+	is_subject = no
+	NOT = {
+		FROM = {
+			original_tag = SDL
+		}
+	}
 	NOT = {
 		AND = { # R56
 			FROM = { 
@@ -738,7 +811,7 @@ is_available_to_collaboration_government = { # occupied_countries.1 should be up
 has_large_ally_not_pick_closed_economy = {
 	any_of_scopes = {
 		array = faction_members
-		
+
 		NOT = { tag = PREV }
 		num_of_military_factories > 30
 	}
@@ -959,7 +1032,7 @@ state_is_in_the_mediterranean_sea = {
 	}
 }
 
-state_is_in_the_baltic_sea = { # Checks if the state borders the Baltic Sea
+state_is_in_the_baltic_sea = { # Checks if the state borders the Baltic Sea  
 	# R56 note: order is mostly following the coast
 	OR = {	
 		state = 37		#DEN, Sjaelland
@@ -1030,7 +1103,6 @@ is_initial_ethiopian_state = {
 
 has_subject_autonomy_feature = {
 	has_dlc = "Together for Victory"
-	#TODO_Manu: More DLCs?
 }
 
 is_organization_of_african_unity_member = {
@@ -1117,9 +1189,9 @@ is_alpine_state = {
 			state = 848 #Vorarlberg - AUS
 			state = 153 #Tyrol - AUS 
 			state = 152 #Upper Austria - AUS 
-			state = 1054 #Styria - AUS # R56
-			state = 1086 #Burgenland - AUS # R56
 			state = 4 #Lower Austria 
+			state = 1086 #Burgenland - AUS # R56 
+			state = 1054 #Styria - AUS # R56
 		}
 	}
 }
@@ -1150,6 +1222,10 @@ state_has_any_resource = {
 			resource = chromium
 			amount > 0
 		}
+		has_resources_amount = {
+			resource = coal
+			amount > 0
+		}
 	}
 }
 
@@ -1164,6 +1240,7 @@ country_can_be_reasonable_target_of_wargoal = { #Expected scopes: Target country
 	}
 }
 
+# Countries will be less likely to try and liberate or puppet these nations 
 is_unlikely_country_tag = {
 	OR = {
 	    tag = BRI
@@ -1211,9 +1288,49 @@ is_unlikely_country_tag = {
 		tag = KAR
 		tag = SIL
 		tag = KSH
+		tag = ALT
+		tag = BUK
+		tag = KHI
+		tag = SMI
+		tag = QUE
+		tag = YUC
+		tag = RIG
+		tag = WLA
+		tag = GRN
+		tag = EVE
+		tag = SHL
+		tag = MEK
+		tag = HAN
+		tag = SAX
+		tag = PRE
+		tag = BAY
+		tag = WUR
+		tag = THU
+		tag = HES
+		tag = RHI
+		tag = RNG 
+		tag = PSR 
+		tag = GXC
+		tag = YUN
+		tag = SHX
+		tag = XSM
+		tag = SIK
+		tag = GDC
+		tag = SND
+		tag = SIC
+		tag = NXM
+		tag = GSM
+		tag = XIC
+		tag = KHM
+		tag = KUM
+		tag = HBC
 		# R56
 		tag = EIS
 		tag = WPG
+		tag = GUK
+		tag = TER
+		tag = CHT
+		tag = SDL
 	}
 }
 
@@ -1327,10 +1444,10 @@ has_any_tank_tech = {
 		limit = {
 			has_dlc = "No Step Back"
 		}
-	OR = {
-		has_tech = basic_light_tank_chassis
-		has_tech = basic_medium_tank_chassis
-		has_tech = basic_heavy_tank_chassis
+		OR = {
+			has_tech = basic_light_tank_chassis
+			has_tech = basic_medium_tank_chassis
+			has_tech = basic_heavy_tank_chassis
 		}
 	}
 	else = {
@@ -1343,13 +1460,13 @@ has_any_tanks = {
 		limit = {
 			has_dlc = "No Step Back"
 		}
-	OR = {
-		has_equipment = { light_tank_chassis_0 > 0}
-		has_equipment = { medium_tank_chassis > 0 }
-		has_equipment = { light_tank_chassis > 0 }
-		has_equipment = { heavy_tank_chassis > 0 }
+		OR = {
+			has_equipment = { light_tank_chassis_0 > 0}
+			has_equipment = { medium_tank_chassis > 0 }
+			has_equipment = { light_tank_chassis > 0 }
+			has_equipment = { heavy_tank_chassis > 0 }
+		}
 	}
-}
 	else = {
 		OR = {
 			has_equipment = { gw_tank_equipment > 0	}
@@ -1384,7 +1501,7 @@ is_danish_belt_state = { # Checks if state should be considered to be around the
 		state = 998 # Schleswig 
 		state = 58 # Holstein 
 		state = 61 # Mecklenburg
-		state = 62 # Vorpommern
+		state = 62 # Vorpommern   
 	}
 } 
 

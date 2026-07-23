@@ -535,7 +535,7 @@ focus_tree = {
 			completion_reward = {
 				add_political_power = 25
 				add_ideas = absolute_influence
-				
+
 				custom_effect_tooltip = generic_skip_one_line_tt
 				add_country_leader_role = {
 					character = ALB_king_zog
@@ -543,13 +543,12 @@ focus_tree = {
 						expire = "1965.1.1"
 						ideology = fascism_ideology
 						traits = {
-							absolute_monarch
+							absolute_monarch assassination_survivor
 						}
 					}
 					promote_leader = yes
 				}
 			}
-
 		}
 		
 		focus = {

@@ -282,14 +282,14 @@ country_event = {
     id = albania.8
 	title = albania.8.t
 	desc = albania.8.d
-    fire_only_once = yes
     picture = GFX_report_event_albanian_partisans
+
+	fire_only_once = yes
 	is_triggered_only = yes
 
     option = {
         name = albania.8.a
-     }
-	 
+    } 
 }
 
 country_event = {
@@ -310,22 +310,23 @@ country_event = {
 
     option = {
         name = albania.9.a
-		add_stability = -0.20
+		add_stability = -0.2
 		add_political_power = -150
     }
 	 
 	option = {
         name = albania.9.b
 		add_timed_idea = {
-				idea = strikes_1
-				days = 150
-			}
+			idea = strikes_1
+			days = 150
+		}
 		custom_effect_tooltip = 9_ALB_tt
 		hidden_effect = {
-		random_list = { 60 = { add_stability = 0.05 }
-                    40 = { country_event = albania.11 } }
+		random_list = { 
+			60 = { add_stability = 0.05 }
+            40 = { country_event = albania.11 } }
 		}
-     }
+    }
 }
 
 country_event = {
@@ -337,7 +338,6 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_report_event_bul_muraviev_protest
 
-
     option = {
         name = albania.11.a
 		add_popularity = {
@@ -347,7 +347,6 @@ country_event = {
 		add_stability = -0.05
 		add_war_support = -0.15
     }
-	 
 }
 
 country_event = {

@@ -243,6 +243,7 @@ JAP_will_support = {
 		}
 	}
 }
+
 CHI_tank_seller_for_subsidy = {
 	GER = {
 		NOT = {
@@ -281,7 +282,7 @@ CHI_indo_chinese_states = {
 	} 
 }
 
-CHI_northwest_highway_states = { # TODO_JNS Check if missing states
+CHI_northwest_highway_states = {
 	OR = {
 		state = 617 # Urumqi
 		state = 759 # Kunlun Shan
@@ -291,14 +292,14 @@ CHI_northwest_highway_states = { # TODO_JNS Check if missing states
 	}
 }
 
-CHI_hanoi_route_states = { # TODO_JNS Check if missing states
+CHI_hanoi_route_states = {
 	OR = {
 		state = 325 # Yunnan
 		state = 671 # Tonkin
 	}
 }
 
-CHI_the_hump_states = { # TODO_JNS Check if missing states
+CHI_the_hump_states = {
 	OR = {
 		state = 601 # Xikang
 		state = 434 # Arunachal Pradesh
@@ -306,7 +307,7 @@ CHI_the_hump_states = { # TODO_JNS Check if missing states
 	}
 }
 
-CHI_the_burma_road_states = { # TODO_JNS Check if missing states
+CHI_the_burma_road_states = {
 	OR = {
 		state = 1020 	#Bago - R56 - 995 in vanilla
 		state = 640		#Mandalay
@@ -351,7 +352,7 @@ CHI_northern_mandate_states = {	#R56_TODO
 	}
 }
 
-CHI_southern_mandate_states = {	#R56_TODO
+CHI_southern_mandate_states = {
 	OR = {
 		region = 142 # North Indochina
 		region = 228 # South IndoChina
@@ -371,7 +372,7 @@ CHI_southern_mandate_states = {	#R56_TODO
 	}
 }
 
-CHI_greater_game_states = {		#R56_TODO
+CHI_greater_game_states = {
 	OR = {
 		region = 136 # Alash
 		region = 268 # Ferghana

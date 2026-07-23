@@ -650,6 +650,9 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 				FROM = { tag = SID }
 				FROM = { tag = ORO }
 				FROM = { tag = QEM }
+				# 56
+				FROM = { tag = SOM }
+				FROM = { tag = ERI }
 			}
 		}
 		custom_trigger_tooltip = {
@@ -663,6 +666,10 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			NOT = { FROM = { tag = SID } }
 			NOT = { FROM = { tag = ORO } }
 			NOT = { FROM = { tag = QEM } }
+			# 56
+			NOT = { FROM = { tag = SOM } }
+			NOT = { FROM = { tag = ERI } }
+			##
 			NOT = {
 				all_of_scopes = {
 					array = ITA_initial_ethiopian_states

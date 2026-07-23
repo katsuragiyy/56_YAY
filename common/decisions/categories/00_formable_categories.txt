@@ -222,7 +222,7 @@ form_united_netherlands_category = {
 					# Belgium
 					state = 6
 					state = 34
-					state = 965
+					#state = 965 - Can be taken by germany and ruin the formable.
 					state = 1094
 					state = 1095
 					# Luxembourg

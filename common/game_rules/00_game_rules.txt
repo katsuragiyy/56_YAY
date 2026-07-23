@@ -2308,6 +2308,53 @@ LIT_ai_behavior = {
 	}
 }
 
+#-> LUX: Luxembourg <><>
+LUX_ai_behavior = {
+	name = "LUX_AI_BEHAVIOR"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = HISTORICAL
+		text = "RULE_OPTION_HISTORICAL_LUX_AI"
+		desc = "RULE_HISTORICAL_LUX_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ALT_DEMOCRATIC
+		text = "RULE_OPTION_ALTDEMOCRATIC_LUX_AI"
+		desc = "RULE_ALTDEMOCRATIC_LUX_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = SOCIALIST
+		text = "RULE_OPTION_SOCIALIST_LUX_AI"
+		desc = "RULE_SOCIALIST_LUX_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = COMMUNISM
+		text = "RULE_OPTION_COMMUNISM_LUX_AI"
+		desc = "RULE_COMMUNISM_LUX_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = FASCISM
+		text = "RULE_OPTION_FASCISM_LUX_AI"
+		desc = "RULE_FASCISM_LUX_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+		allow_achievements = no
+	}
+}
+
 #-> MAN: Manchuria <><>
 MAN_ai_behavior = {
 	name = "MAN_AI_BEHAVIOR"

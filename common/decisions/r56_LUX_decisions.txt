@@ -602,6 +602,7 @@ economy_decisions = {
 				has_idea = r56_LUX_economic_dependence_4
 				has_idea = r56_LUX_economic_dependence_5
 			}
+			is_neighbor_of = HOL
 		}
 		available = {
 			HOL = {

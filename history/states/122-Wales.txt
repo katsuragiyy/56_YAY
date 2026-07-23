@@ -22,6 +22,7 @@ state= {
 			industrial_complex = 1
 			377 = {
 				naval_base = 3
+				dam = 1 # https://en.wikipedia.org/wiki/Llanishen_Reservoir
 			}
 		}
 		add_core_of = ENG

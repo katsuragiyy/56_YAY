@@ -10528,19 +10528,41 @@ on_actions = {
 					AFG = { set_country_flag = AFG_watan_party_wins }
 				}
 			}
-
-			
+			LUX = {
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								is_historical_focus_on = no
+								has_game_rule = {
+									rule = LUX_AI_BEHAVIOR
+									option = DEFAULT
+								}
+							}
+							has_game_rule = {
+								rule = LUX_AI_BEHAVIOR
+								option = RANDOM
+							}
+						}
+					}
+					random_list = {
+						20 = { set_country_flag = LUX_AI_RANDOM_HISTORICAL }
+						20 = { set_country_flag = LUX_AI_RANDOM_ALT_DEMOCRATIC }
+						20 = { set_country_flag = LUX_AI_RANDOM_SOCIALIST }
+						20 = { set_country_flag = LUX_AI_RANDOM_COMMUNISM }
+						20 = { set_country_flag = LUX_AI_RANDOM_FASCISM }
+					}
+				}
+			}
+			if = {
+				limit = { LUX = { is_ai = yes } }
+				LUX = { set_country_flag = LUX_beep_boop_i_am_ai_be_patient_please }
+			}
 
 			#Egyptian resistance buff
 			if = {
-				limit = {
-					EGY = {
-						is_ai = yes
-					}
-				}
-				EGY = {
-					add_ideas = EGY_ai_resistance_boost
-				}
+				limit = { EGY = { is_ai = yes } }
+				EGY = {  add_ideas = EGY_ai_resistance_boost }
 			}
 
 			#Insane AI Option
@@ -10558,9 +10580,7 @@ on_actions = {
 			304 = {
 				add_province_modifier = {
 					static_modifiers = { darien_gap }
-					province = {
-						id = 10482
-					}
+					province = { id = 10482 }
 				}
 			}
 			#Quebec conscription crisis: canada
@@ -10575,47 +10595,35 @@ on_actions = {
 						state = 863
 					}
 				}
-				add_dynamic_modifier = {
-					modifier = quebec_conscription_crisis
-				}
+				add_dynamic_modifier = { modifier = quebec_conscription_crisis }
 				set_state_flag = quebec_conscription_crisis_flag
 			}
 			#Anglo Persian oil concessions (limited for Khuzestan for now for balance reason)
-			PER = {
-				give_resource_rights = { receiver = ENG state = 413 }
-			}
+			PER = { give_resource_rights = { receiver = ENG state = 413 } }
+
 			#Soviet-Japanese agreement over North Sakhalin oil (lasted roughtly until lake Kassan)
-			SOV = {
-				give_resource_rights = { receiver = JAP state = 655 }
-			}
+			SOV = { give_resource_rights = { receiver = JAP state = 655 } }
+
 			#Concession of Japanese capital in Indochina, existed because of a rise in japanese demand in iron.
-			FRI = {
-				give_resource_rights = { receiver = JAP state = 928 }
-			}
+			FRI = { give_resource_rights = { receiver = JAP state = 928 } }
+
 			#Italian control over Albanian underground
 			ALB = {
 				give_resource_rights = { receiver = ITA state = 910 }
 				give_resource_rights = { receiver = ITA state = 44 }
 			}
+
 			# British control over the very small amount of Sudanese aluminum
-			EGY = {
-				give_resource_rights = { receiver = ENG state = 884 }
-			}
-			884 = {
-				set_state_flag = EGY_britain_owns_darfur_resources
-			}
+			EGY = { give_resource_rights = { receiver = ENG state = 884 } }
+			884 = { set_state_flag = EGY_britain_owns_darfur_resources }
+
 			EGY = { #Starts the feedback loop for Sudanese agitation mission. EGY_counter_rebels_in_sudan_category / EGY_sudanese_agitation = here for folder search reasons
 				if = {
-					limit = {
-						EGY = {
-							exists = yes
-						}
-					}
-					EGY = {
-						set_country_flag = EGY_sudanese_activity_feedback_loop
-					}
+					limit = { EGY = { exists = yes } }
+					EGY = { set_country_flag = EGY_sudanese_activity_feedback_loop }
 				}
 			}
+
 			DEN = {
 				den_calculate_eqilibirum_monthly = yes
 				remove_ideas = DEN_Disarmed_Military
