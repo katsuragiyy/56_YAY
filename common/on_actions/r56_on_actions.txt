@@ -10623,7 +10623,9 @@ on_actions = {
 					EGY = { set_country_flag = EGY_sudanese_activity_feedback_loop }
 				}
 			}
-
+			PRU = {
+				remove_ideas = r56_idea_PRU_peruvian_economy_fake_idea
+			}
 			DEN = {
 				den_calculate_eqilibirum_monthly = yes
 				remove_ideas = DEN_Disarmed_Military
