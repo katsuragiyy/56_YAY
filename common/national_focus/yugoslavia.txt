@@ -2716,6 +2716,7 @@ focus_tree = {
 						original_tag = TRA
 						original_tag = MNT
 						original_tag = KOS
+						original_tag = BUL
 						AND = {
 							original_tag = HUN
 							has_cosmetic_tag = vojvodina

@@ -1,7 +1,7 @@
 on_actions = {
 
 	on_startup = {
-		# Launch Ethiopian BoP events
+		# Launch Ethipoian BoP events
 		effect = {
 			ETH = {
 				country_event = {
@@ -10,6 +10,8 @@ on_actions = {
 					random_days = 35
 				}
 			}
+		}
+		effect = {
 			if = {
 				limit = {
 					has_dlc = "By Blood Alone"
@@ -22,7 +24,8 @@ on_actions = {
 					SWI_find_democratic_planes_seller = yes
 				}
 			}
-
+		}
+		# Albanian oil concessions are triggered in r56_on_actions
 			# League of Nations Members
 			every_country = {
 				limit = {
@@ -145,6 +148,8 @@ on_actions = {
 					}
 				}
 			}
+		}
+		effect = {
 			if = {
 				limit = {
 					SWI_bba = yes
@@ -156,7 +161,6 @@ on_actions = {
 					SWI_update_neighbor_opinion_balance = yes
 				}
 			}
-
 		}
 	}
 
@@ -167,16 +171,38 @@ on_actions = {
 				limit = {
 					original_tag = ETH
 					has_completed_focus = ETH_declare_for_italy
+					ITA = {
+						NOT = {
+							OR = {
+								has_government = communism
+								has_government = democratic
+							}
+						}
+					}
+				}
+				every_owned_state = { #TODO_TA Make an event out this?
+					limit = {
+						has_state_flag = ETH_cede_state_flag
+					}
+					ITA = { transfer_state = PREV }
+					remove_core_of = ROOT
 				}
 			}
-			every_owned_state = { #TODO_TA Make an event out this?
+			else_if = {
 				limit = {
-					has_state_flag = ETH_cede_state_flag
+					original_tag = ETH
+					has_completed_focus = ETH_declare_for_italy
+					}
+				every_owned_state = { #TODO_TA Make an event out this?
+					limit = {
+						has_state_flag = ETH_cede_state_flag
+					}
+					clr_state_flag = ETH_cede_state_flag
 				}
-				ITA = { transfer_state = PREV }
-				remove_core_of = ROOT
 			}
 		}
+	
+
 
 		#End of Italian CW - Manage BoP -> If Monarchist, bring it back, but against communists
 		effect = {
@@ -400,7 +426,8 @@ on_actions = {
 		}
 	}
 	#ROOT = country that joined a war
-	on_war = {
+	#on_war is fired when a country goes to war against anyone and is not fired again when it enters war against another country unless it went to peace first
+	on_war = { 
 		effect = {
 			IF = {
 				limit = {
@@ -451,7 +478,28 @@ on_actions = {
 				SWI_make_helvetia_war = yes
 			}
 		}
+
 	}
+	#ROOT = attacking side
+	#FROM = defending side
+	#fired when two countries end up at war with each other ()
+	on_war_relation_added = {
+		effect = {
+			if = {
+				limit = {
+					SWI_bba = yes 
+					has_dynamic_modifier = { modifier = SWI_swiss_gold_market}
+				}
+				every_enemy_country = {
+					limit = {
+						has_dynamic_modifier = { modifier = SWI_gold_trade_with_switzerland }
+					}
+					SWI_seize_gold = yes 
+				}
+			}
+		}	
+	}
+
 	#ROOT = attacking side
 	#FROM = defending side
 	#fired when two countries end up at war with each other (on_war is fired when a country goes to war against anyone and is not fired again when it enters war against another country unless it went to peace first)
@@ -463,11 +511,11 @@ on_actions = {
 					NOT = { has_global_flag = LoN_disbanded_flag }
 					FROM = {
 						# is_major = yes
-						has_country_flag = league_of_nations_member_flag
+						has_country_flag = league_of_nations_member_flag # 56
 					}
 					ROOT = {
 						is_major = yes
-						has_country_flag = league_of_nations_member_flag
+						has_country_flag = league_of_nations_member_flag # 56
 					}
 				}
 				set_global_flag = LoN_disbanded_flag
@@ -508,6 +556,7 @@ on_actions = {
 						remove_power_balance = {
 							id = ETH_centralization_balance
 						}
+						mark_focus_tree_layout_dirty = yes
 					}
 				}
 				ITA = {
@@ -533,7 +582,7 @@ on_actions = {
 					}
 				}
 				set_variable = { FROM.ETH_haile_selassie_country = ROOT }
-				FROM  ={
+				FROM = {
 					country_event = {
 						id = BBA_ethiopia_fascist_events.10
 						hours = 4
@@ -903,10 +952,12 @@ on_actions = {
 								is_in_faction_with = ETH
 								has_war_with = PREV.owner
 							}
+
 							owner = {
 								has_war_with = ETH
 							}
 						}
+
 						set_state_controller_to = ETH
 					}
 				}
@@ -1005,12 +1056,49 @@ on_actions = {
 						original_tag = AUS
 					}
 					ITA = {
-						has_completed_focus = ITA_guarantee_austrian_independence
+						OR = {
+							has_completed_focus = ITA_guarantee_austrian_independence
+							has_guaranteed = AUS
+							has_country_flag = AUS_got_ita_guarantee_flag
+							has_country_flag = ITA_accepted_aus # 56 - Support for Austrian 56 tree
+						}
+						
 					}
 				}
 
 				AUS = {
 					give_military_access = ITA
+				}
+
+				ITA = {
+					add_timed_idea = {
+						idea = ITA_alpine_defense
+						days = 360
+					}
+				}
+			}
+		}
+
+		effect = {
+			#Italy defends Austria from Germany
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = ITA
+					}
+					FROM = {
+						original_tag = GER
+						has_country_flag = AUS_annexed
+					}
+					ITA = {
+						OR = {
+							has_completed_focus = ITA_guarantee_austrian_independence
+							has_guaranteed = AUS
+							has_country_flag = AUS_got_ita_guarantee_flag
+							has_country_flag = ITA_accepted_aus # 56 - Support for Austrian 56 tree
+						}
+						
+					}
 				}
 
 				ITA = {
@@ -1086,6 +1174,10 @@ on_actions = {
 					#	log = "Lost colony but no BoP impact"
 					#}
 				}
+				# For guaranteeing the balance of power tick will be removed when reconquered
+				FROM.FROM = {
+					set_state_flag = ITA_lost_state_flag
+				} 
 			}
 			else_if = { #Italy gets a core state back
 				limit = {
@@ -1098,7 +1190,7 @@ on_actions = {
 						}
 					}
 					FROM.FROM = {
-						is_owned_by = ITA
+						has_state_flag = ITA_lost_state_flag
 					}
 				}
 				if = {
@@ -1123,6 +1215,51 @@ on_actions = {
 				}
 				else = {
 					ITA_bop_very_low_increase_effect = yes
+				}
+				FROM.FROM = {
+					clr_state_flag = ITA_lost_state_flag
+				}
+			}
+		}
+
+		#FOR SWITZERLAND!!! AVANTI!
+		effect = {
+			if = {
+				limit = { #Losing a core State
+					FROM = { original_tag = SWI }
+					FROM.FROM = { is_core_of = SWI }
+				}
+				FROM.FROM = {
+					if = {
+						limit = { #Destroys infra and railways on lost states
+					 		has_dynamic_modifier = { modifier = SWI_infrastructure_rigged_to_blow }
+						}
+						damage_building = {
+							type = rail_way
+							damage = 5
+						}
+						damage_building = {
+							type = infrastructure
+							damage = 5
+						}
+						damage_building = {
+							type = arms_factory
+							damage = 2
+						}
+						damage_building = {
+							type = industrial_complex
+							damage = 2
+						}
+						damage_building = {
+							type = bunker
+							damage = 10
+						}
+						damage_building = {
+							type = supply_node
+							damage = 1
+						}
+						remove_dynamic_modifier = { modifier = SWI_infrastructure_rigged_to_blow }
+					}
 				}
 			}
 		}
@@ -1280,7 +1417,7 @@ on_actions = {
 					has_government = communism
 					NOT = {
 						has_country_leader = {
-							name = "Kim Il-sung"
+							character = KOR_kim_il_sung
 							ruling_only = no
 						}
 					}
@@ -1290,7 +1427,7 @@ on_actions = {
 					limit = {
 						original_tag = KOR
 						has_country_leader = {
-							name = "Kim Il-sung"
+							character = KOR_kim_il_sung
 							ruling_only = no
 						}
 						NOT = { has_government = communism }
@@ -1428,6 +1565,27 @@ on_actions = {
 				}
 			}
 		}
+		effect = { #This is so Switzerland can keep its SWI_biggest_fascist and SWI_best_dem_ally updated. 
+			if ={
+				limit = { 
+					NOT = { has_global_flag = SWI_R56_focus_tree } # 56
+					SWI = { exists = yes }
+					any_owned_state = { is_capital = yes } # ignore civil war generated countries with no defined capital.
+					OR = {
+						tag = USA
+						ROOT = {
+							capital_scope = { is_on_continent = europe }
+						}		
+					}
+				}
+				SWI = {
+					SWI_update_neighbor_opinion_balance = yes
+					SWI_find_biggest_fascist_neighbor = yes
+					SWI_find_best_democratic_ally = yes
+					SWI_find_democratic_planes_seller = yes 
+				}
+			}
+		}	
 	}
 	#on_unit_leader_promote_from_ranks_green
 	on_unit_leader_promote_from_ranks_green = { # This uses the UNIT LEADER sub scope of a character, FROM == country

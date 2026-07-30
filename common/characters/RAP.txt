@@ -2,7 +2,7 @@ characters = {
 
 	# 4 year old at the game start
 	RAP_valentino_riroroko_tuki = { 
-		name = "RAP_valentino_riroroko_tuki"
+		name = RAP_valentino_riroroko_tuki
 		portraits = {
 			civilian = {
 				large = GFX_portrait_RAP_valentino_riroroko_tuki_council
@@ -11,15 +11,15 @@ characters = {
 			
 		}
 		country_leader = {
-			ideology = oligarchism
-			traits = { rapa_nui_ariki }
+			ideology = absolute_monarchism # for the larps
+			traits = { rapa_nui_ariki anti_communist }
 			expire = "2017.1.1.1"
 			id = -1
 		}
 	}
 
 	RAP_juan_tepano = { 
-		name = "RAP_juan_tepano"
+		name = RAP_juan_tepano
 		portraits = {
 			civilian = {
 				large = GFX_portrait_RAP_juan_tepano
@@ -36,35 +36,20 @@ characters = {
 	}
 	
 	RAP_sebastian_englert = { 
-		name="RAP_sebastian_englert"
+		name=RAP_sebastian_englert
 		portraits = {
 			civilian = {
-				large = "GFX_portrait_RAP_juan_tepano"
-				small = "GFX_portrait_RAP_juan_tepano_small"
+				small = GFX_idea_AFG_daoud_khan_political
 			}
 		}
 		advisor={
 			slot = political_advisor
 			idea_token = RAP_sebastian_englert
 			cost = 150
-			allowed = {
-				original_tag = SAM
-			}
+			allowed = { original_tag = RAP }
 			
-			available = {
-			}
-			
-			visible = {
-			}
-			
-			traits  = {
-				religious_figure 
-			}
-			ai_will_do = {
-				factor = 1
-			}			
+			traits = { religious_figure }
+			ai_will_do = { base = 1 }	
 		}
 	}
-
-	
 }

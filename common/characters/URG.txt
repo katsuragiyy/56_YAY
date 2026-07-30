@@ -134,7 +134,7 @@ characters={
 		name="Luis Alberto de Herrera"
 		portraits={
 			civilian={
-				large="gfx/leaders/URG/Portrait_Uruguay_Luis_Alberto_De_Herrera.dds"
+				large=GFX_portrait_URG_luis_alberto_herrera
 			}
 		}
 		country_leader={

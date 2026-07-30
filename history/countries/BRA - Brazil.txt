@@ -323,6 +323,7 @@ IF = {
 	recruit_character = BRA_julio_caetano_horta_barbosa
 	recruit_character = BRA_mario_xavier
 	recruit_character = BRA_antonio_apel_neto
+	recruit_character = BRA_pedro_gastao
 
 
 	recruit_character = BRA_thiers_fleming

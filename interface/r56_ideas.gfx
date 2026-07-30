@@ -862,7 +862,7 @@ spriteType = {
 	}
 	spriteType = {
 		name = "GFX_idea_BRA_don_pedro"
-		texturefile = "gfx/interface/ideas/r56_idea_BRA_don_pedro_constmonarch.dds"
+		texturefile = "gfx/interface/ideas/bra/r56_idea_BRA_don_pedro_constmonarch.dds"
 	}
 
 ##--> Unique brazilian icons <><> <><>

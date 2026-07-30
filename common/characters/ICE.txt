@@ -63,7 +63,7 @@ characters={
 		portraits={
 			civilian={
 				small = GFX_portrait_ICE_gisli_sigurbjornsson_small
-				large="gfx/leaders/ICE/r56_portrait_ICE_Gisli_Sigurbjornsson.dds"
+				large=GFX_portrait_ICE_gisli_sigurbjornsson
 			}
 		}
 		country_leader={
@@ -106,7 +106,7 @@ characters={
 		name=ICE_brynjolfur_bjarnason
 		portraits={
 			civilian={
-				large="gfx/leaders/ICE/r56_portrait_ICE_Brynjolfur_Bjarnason.dds"	#large = GFX_portrait_ICE_brynjolfur_bjarnason
+				large=GFX_portrait_ICE_brynjolfur_bjarnason
 				small = GFX_portrait_ICE_brynjolfur_bjarnason_small
 			}
 		}

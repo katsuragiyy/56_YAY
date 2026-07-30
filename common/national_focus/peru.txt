@@ -13534,7 +13534,7 @@ focus = {
 	}
 	focus = {
 		id = PRU_diversify_steel_production
-		icon = GFX_goal_ROM_steel_mill_investment
+		icon = GFX_goal_BEL_steel
 		x = 13
 		y = 0
 		relative_position_id = PRU_industrial_modernization
@@ -13613,7 +13613,7 @@ focus = {
 	
 	focus = {
 		id = PRU_strengthen_locomotive_industry
-		icon = GFX_goal_generic_train
+		icon = GFX_focus_generic_railroad
 		relative_position_id = PRU_industrial_modernization
 		x = -1
 		y = 1
@@ -13699,8 +13699,8 @@ focus = {
 		id = PRU_centralize_the_railway_network
 		icon = GFX_goal_COG_Jungle_Railroad
 		relative_position_id = PRU_strengthen_locomotive_industry
-		x = 0
-		y = 2
+		x = 1
+		y = 1
 		cost = 8
 		prerequisite = { focus = PRU_strengthen_locomotive_industry }
 
@@ -13941,7 +13941,7 @@ focus = {
 	
 	focus = {
 		id = PRU_enlarge_paita_seaport
-		icon = GFX_goal_ROM_naval_dockyards
+		icon = GFX_focus_POL_develop_polish_shipbuilding
 		relative_position_id = PRU_rely_on_international_trade
 		x = 1
 		y = 1
@@ -14013,7 +14013,7 @@ focus = {
 	
 	focus = {
 		id = PRU_economic_centralization
-		icon = GFX_goal_generic_urban
+		icon = GFX_goal_generic_industrial_planning
 		relative_position_id = PRU_enlarge_paita_seaport
 		x = 1
 		y = 1
@@ -14105,7 +14105,7 @@ focus = {
 	
 	focus = {
 		id = PRU_end_the_lima_arequipa_rivalry
-		icon = GFX_goal_generic_heavy_industry
+		icon = GFX_goal_generic_strenght_through_industry
 		relative_position_id = PRU_enlarge_paita_seaport
 		x = 3
 		y = 1
@@ -14450,7 +14450,7 @@ focus = {
 	
 	focus = {
 		id = PRU_construct_the_pan_american_highway
-		icon = GFX_focus_generic_road_investment
+		icon = GFX_focus_CHL_work_on_the_panamerican_highway
 		relative_position_id = PRU_rely_on_international_trade
 		x = 6
 		y = 2
@@ -14688,7 +14688,7 @@ focus = {
 
 	focus = {
 		id = PRU_talara_refinery_expansion
-		icon = GFX_goal_generic_basic_oil
+		icon = GFX_goal_oil
 		relative_position_id = PRU_prioritize_self_sufficiency
 		x = -1
 		y = 1
@@ -14863,7 +14863,7 @@ focus = {
 
 	focus = {
 		id = PRU_expand_gold_and_silver_mining
-		icon = GFX_goal_generic_gold_money
+		icon = GFX_focus_generic_expand_gold_mining
 		relative_position_id = PRU_support_private_resource_ventures
 		x = 0
 		y = 2
@@ -14959,7 +14959,7 @@ focus = {
 
 	focus = {
 		id = PRU_seize_foreign_businesses
-		icon = GFX_goal_PAL_seize_british_assets
+		icon = GFX_goal_generic_banking_legislation
 		relative_position_id = PRU_prioritize_self_sufficiency
 		x = 0
 		y = 2
@@ -15173,7 +15173,7 @@ focus = {
 
 	focus = {
 		id = PRU_foundation_for_the_urban_normal_school
-		icon = GFX_goal_ROM_balkan_research_institute
+		icon = GFX_focus_generic_education
 		relative_position_id = PRU_prioritize_self_sufficiency
 		x = 1
 		y = 1

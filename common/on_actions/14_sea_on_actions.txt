@@ -132,6 +132,7 @@ on_actions = {
 
 		#KOREA/JAPAN - Set up the resistance DMs 
 		effect = {
+
 			IF = {
 				limit = {
 					NOT = {
@@ -156,6 +157,7 @@ on_actions = {
 					}
 				}
 			}
+
 		}
 
 		# Adding in the Great Wall province effect
@@ -368,6 +370,7 @@ on_actions = {
 				}
 			}
 		}
+
 		effect = {
 			SPR = {
 				every_core_state = {
@@ -2142,6 +2145,7 @@ on_actions = {
 						}
 					}
 				}
+
 				if = {
 					limit = {
 						NOT = { has_global_flag = PRC_timed_window_for_war }
@@ -2159,6 +2163,7 @@ on_actions = {
 							}
 						}
 					}
+
 					set_global_flag = {
 						flag = PRC_timed_window_for_war
 						days = 90
@@ -2175,61 +2180,6 @@ on_actions = {
 						PRC = {
 							has_war_with = CHI	
 							has_war_with = JAP
-						}
-					}
-					set_global_flag = achievement_PRC_battle_royale
-				}
-			}
-			if = {
-				limit = {
-					has_dlc = "No Compromise, No Surrender"
-					is_ironman = yes #This only applies if you can get achievements
-					date < 1940.1.1
-					has_global_flag = PRC_timed_window_for_war
-					OR = {
-						AND = {
-							ROOT = {
-								OR = {
-									tag = PRC
-									tag = JAP
-								}
-							}
-							FROM = {
-								OR = {
-									tag = PRC
-									tag = JAP
-								}
-							}
-						}
-						AND = {
-							ROOT = {
-								OR = {
-									tag = PRC
-									tag = CHI
-								}
-							}
-							FROM = {
-								OR = {
-									tag = PRC
-									tag = CHI
-								}
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						PRC = {
-							OR = {
-								AND = {
-									has_war_with = CHI
-									NOT = { has_war_with = JAP }
-								}
-								AND = {
-									has_war_with = JAP
-									NOT = { has_war_with = CHI }
-								}
-							}
 						}
 					}
 					set_global_flag = achievement_PRC_battle_royale
@@ -3164,7 +3114,6 @@ on_actions = {
 				}
 				if = {
 					limit = {
-
 						check_variable = { warlord_subjects^num > 0 }
 					}
 					if = {
@@ -3894,6 +3843,7 @@ on_actions = {
 		}
 	}
 
+	# ROOT is winner, FROM is loser (called for all winners against all losers)
 	on_before_peace_conference_start = {
 		effect = {
 			IF = {
@@ -3907,9 +3857,10 @@ on_actions = {
 
 	# ROOT is the winner, FROM is the loser 
 	on_peaceconference_ended = {
+
         effect = {
             FROM = {
-                if = {    #This prevents the country capping again after just having been puppeted
+                IF = {    #This prevents the country capping again after just having been puppeted
                     limit = {
                         has_idea = BEL_surrender_ns
                     }
@@ -3917,7 +3868,7 @@ on_actions = {
                 }
             }
         }
-        
+
         effect = {
             FROM = {
                 IF = {
@@ -3938,7 +3889,8 @@ on_actions = {
                 }
             }
         }
-		effect = {
+
+        effect = {
             FROM = {
                 IF = {    #This prevents Japan from capping again after just having been puppeted
                     limit = {
@@ -4041,8 +3993,9 @@ on_actions = {
         		}
         	}
         }
+
     }
-    
+
     # ROOT is the subject, FROM is the overlord
     on_subject_annexed = {
 

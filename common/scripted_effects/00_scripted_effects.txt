@@ -2566,9 +2566,7 @@ abandon_colony_tag = {
 			set_cosmetic_tag = INS_HOL
 		}
 		else_if = { # R56
-			limit = {
-				original_tag = LES
-			}
+			limit = { original_tag = LES }
 			set_cosmetic_tag = LES_ENG
 		}
 	}
@@ -3352,6 +3350,8 @@ add_ruling_to_neu = {
 		}
 	}
 }
+
+
 on_daily = {
 
 }
@@ -3360,7 +3360,9 @@ on_daily = {
 #	# you can specify an on daily action for a specific country
 #}
 
-#
+###Game weight variables for faction load balancing.
+###We store these on germany because ... we have to
+# R56 - Removed for some reason
 
 ###BBA COPY PASTE BELOW
 
