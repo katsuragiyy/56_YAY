@@ -1,0 +1,16 @@
+characters = {
+	SAB_jainal_abirin_ii={
+		name=SAB_jainal_abirin_ii
+		portraits={
+			civilian={
+				large = "gfx/leaders/Arabia/portrait_arabia_generic_land_6.dds"
+			}
+		}
+		country_leader={
+			ideology= constitutional_monarchy
+			expire="1965.1.1"
+			traits = { fierce_patriot likes_usa }
+			id=-1
+		}
+	}
+}

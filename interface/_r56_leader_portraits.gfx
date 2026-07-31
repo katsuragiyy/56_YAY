@@ -14,7 +14,7 @@ spriteTypes = {
 	spriteType = { name = GFX_Portrait_BRA_cyro_espirito_santo_cardoso_small texturefile = "gfx/interface/ideas/bra/advisors/r56_portrait_SPR_BRA_cyro_espirito_santo_cardoso.dds" }
 
 #-> BRM <><>
-	spriteType = { name = GFX_Portrait_BRM_Archibald_Cochrane texturefile = "gfx/leaders/BRM/GFX_portrait_BRM_Archibald_Cochrane.dds" }
+	spriteType = { name = GFX_Portrait_BRM_Archibald_Cochrane texturefile = "gfx/leaders/BRM/r56_portrait_BRM_Archibald_Cochrane.dds" }
 
 #->  CHI <><>
 	spriteType = { name = "GFX_r56_Portrait_CHI_Carsun_Chang" texturefile = "gfx/leaders/CHI/r56_portrait_CHI_Carsun_Chang.dds" }

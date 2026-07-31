@@ -1,5 +1,5 @@
-﻿capital = 916 #Sandakan
-
+﻿capital = 626 #Sandakan
+# used to be sabah. now sulu
 # Starting tech
 set_technology = {
 	# Extended Technologies
@@ -13,17 +13,17 @@ set_technology = {
 	mtg_transport = 1
 }
 
-set_convoys = 10
+set_convoys = 25
+recruit_character = SAB_jainal_abirin_ii
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = neutrality
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
 set_popularities = {
-	democratic = 60
-	fascism = 20
-	communism = 10
-	neutrality = 10
+	democratic = 30
+	fascism = 10
+	neutrality = 60
 }

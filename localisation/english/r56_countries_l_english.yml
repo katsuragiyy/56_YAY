@@ -116,36 +116,10 @@
  BRB_fascism:0 "State of Barbados"
  BRB_fascism_DEF:0 "the State of Barbados"
 
- #BRN
- BRN:0 "Brunei"
- BRN_DEF:0 "Brunei"
- BRN_ADJ:0 "Bruneian"
- BRN_neutrality:0 "Sultanate of Brunei"
- BRN_neutrality_DEF:0 "the Sultanate of Brunei, the Abode of Peace"
- BRN_democratic:0 "State of Brunei Darussalam"
- BRN_democratic_DEF:0 "the State of Brunei Darussalam"
- BRN_fascism:0 "Sultanate of Brunei"
- BRN_fascism_DEF:0 "the Bruneian Sultanate"
- BRN_communism:0 "People's State of Brunei Darussalam"
- BRN_communism_DEF:0 "the People's State of Brunei Darussalam"
-
  #BRM
  BRM_ENG_subject:0 "Colony of Burma"
  BRM_ENG_subject_DEF:0 "the Colony of Burma"
  BRM_ENG_subject_ADJ:0 "Burma"
-
- #CBV
- CBV:0 "Cape Verde"
- CBV_DEF:0 "Cape Verde"
- CBV_ADJ:0 "Cape Verdean"
- CBV_communism:0 "Socialist Republic of Cape Verde"
- CBV_communism_DEF:0 "the Socialist Republic of Cape Verde"
- CBV_democratic:0 "Republic of Cape Verde"
- CBV_democratic_DEF:0 "the Republic of Cape Verde"
- CBV_neutrality:0 "Republic of Cape Verde"
- CBV_neutrality_DEF:0 "the Republic of Cape Verde"
- CBV_fascism:0 "State of Cape Verde"
- CBV_fascism_DEF:0 "the State of Cape Verde"
 
  #CHT
  CHT_neutrality:0 "Kingdom of Rekohu"
@@ -584,18 +558,6 @@
  PGR_communism_ADJ:0 "Beiyang"
  PGR_communism_DEF:0 "the Beiyang Socialist Republic"
 
- #PLU
- PLU:0 "Palau"
- PLU_ADJ:0 "Palauan"
- PLU_democratic:0 "Republic of Palau"
- PLU_democratic_DEF:0 "the Republic of Palau"
- PLU_neutrality:0 "Chiefdom of Koror"
- PLU_neutrality_DEF:0 "the Chiefdom of Koror"
- PLU_fascism:0 "Empire of Palau"
- PLU_fascism_DEF:0 "the Empire of Palau"
- PLU_communism:0 "Palauan Soviet Republic"
- PLU_communism_DEF:0 "the Palauan Soviet Republic"
-
  #PRS (cosmetic tag for Danzig)
  PRS_fascism:0 "Free State of Prussia"
  PRS_fascism_DEF:0 "the Free State of Prussia"
@@ -626,24 +588,6 @@
  RGR_communism:0 "Chinese Socialist State"
  RGR_communism_ADJ:0 "Reformed Chinese"
  RGR_communism_DEF:0 "the Chinese Socialist State"
-
- #RUT
- RUT:0 "Carpatho-Ukraine"
- RUT_ADJ:0 "Carpatho-Ukrainian"
- RUT_fascism:0 "Ruthenian State"
- RUT_fascism_DEF:0 "the Ruthenian State"
- RUT_democratic:0 "Carpatho-Ukraine"
- RUT_democratic_DEF:0 "Carpatho-Ukraine"
- RUT_neutrality:0 "Carpatho-Ukraine"
- RUT_neutrality_DEF:0 "Carpatho-Ukraine"
- RUT_communism:0 "Transcarpathian People's Republic"
- RUT_communism_DEF:0 "the Transcarpathian People's Republic"
- RUT_fascism_ADJ:0 "Ruthenian"
- RUT_democratic_ADJ:0 "Carpatho-Ukrainian"
- RUT_neutrality_ADJ:0 "Carpatho-Ukrainian"
- RUT_communism_ADJ:0 "Transcarpathian"
- RUT3_fascism:0 "Ukrainian Insurgent Army"
- RUT3_fascism_def:0 "The Ukrainian Insurgent Army"
 
  #SAD
  SAD_fascism:0 "State of Sardinia"
@@ -743,22 +687,6 @@
  SEY_fascism:0 "Empire of the Black Parrot"
  SEY_fascism_DEF:0 "the Empire of the Black Parrot"
 
- #SNG
- SNG:0 "Singapore"
- SNG_ADJ:0 "Singaporean"
- SNG_communism:0 "People's Republic of Singapore"
- SNG_communism_DEF:0 "the People's Republic of Singapore"
- SNG_communism_ADJ:0 "Singaporean"
- SNG_democratic:0 "Republic of Singapore"
- SNG_democratic_DEF:0 "the Republic of Singapore"
- SNG_democratic_ADJ:0 "Singaporean"
- SNG_fascism:0 "Republic of Singapore"
- SNG_fascism_DEF:0 "the Republic of Singapore"
- SNG_fascism_ADJ:0 "Singaporean"
- SNG_neutrality:0 "Kingdom of Singapore"
- SNG_neutrality_DEF:0 "the Kingdom of Singapore"
- SNG_neutrality_ADJ:0 "Singaporean"
-
  #SSU
  SSU:0 "South Sudan"
  SSU_DEF:0 "South Sudan"
@@ -831,20 +759,6 @@
  SWA_ENG_subject_DEF:0 "the Swaziland Protectorate"
  SWA_ENG_subject_ADJ:0 "Swazi"
 
- #SAR
- SAR_communism:0 "North Borneo People's Republic"
- SAR_communism_DEF:0 "the North Borneo People's Republic"
- SAR_communism_ADJ:0 "North Bornean"
- SAR_democratic:0 "North Borneo Federation"
- SAR_democratic_DEF:0 "the North Borneo Federation"
- SAR_democratic_ADJ:0 "North Bornean"
- SAR_fascism:0 "Sultanate of Sarawak"
- SAR_fascism_DEF:0 "the Sultanate of Sarawak"
- SAR_fascism_ADJ:0 "Sarawakian"
- SAR_neutrality:0 "Kingdom of Sarawak"
- SAR_neutrality_DEF:0 "the Kingdom of Sarawak"
- SAR_neutrality_ADJ:0 "Sarawakian"
-
  #SZL
  SZK_ADJ:0 "Székely"
  SZK:0 "Szeklerland"
@@ -875,23 +789,9 @@
  TER_democratic_ADJ:0 "Tereki"
  TER_neutrality_ADJ:0 "Tereki"
 
- #TML
- TML:0 "Timor-Leste"
- TML_DEF:0 "Timor-Leste"
- TML_ADJ:0 "Timorese"
- TML_democratic:0 "Democratic Republic of Timor-Leste"
- TML_democratic_DEF:0 "the Democratic Republic of Timor-Leste"
- TML_neutrality:0 "Kingdom of Timor-Leste"
- TML_neutrality_DEF:0 "the Kingdom of Timor-Leste"
- TML_fascism:1 "Timor-Leste State"
- TML_fascism_DEF:1 "the Timor-Leste State"
- TML_communism:1 "Timor-Leste Socialist Republic"
- TML_communism_DEF:1 "the Timor-Leste Soviet Socialist Republic"
- TML_POR_neutrality:0 "Portuguese Timor"
- TML_POR_neutrality_DEF:0 "Portuguese Timor"
-
  #TON
  TON:0 "Tonga"
+ TON_DEF:0 "Tonga"
  TON_ADJ:0 "Tongan"
  TON_neutrality:0 "Kingdom of Tonga"
  TON_neutrality_DEF:0 "the Kingdom of Tonga"

@@ -26,6 +26,7 @@ on_actions = {
 			}
 		}
 		# Albanian oil concessions are triggered in r56_on_actions
+		effect = {
 			# League of Nations Members
 			every_country = {
 				limit = {

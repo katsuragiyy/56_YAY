@@ -3601,9 +3601,7 @@ country_event = {
 	desc = JUNO_brazil_events.202.d
 	picture = GFX_report_event_election_vote
 
-	mean_time_to_happen = { days = 30 }
 	hidden = yes
-	#fire_only_once = no # 56
 	is_triggered_only = yes
 
 	immediate = {
