@@ -15,11 +15,7 @@ focus_tree = {
 		}
 	}
 	default = no
-
-	continuous_focus_position = {
-		x = 1150
-		y = 1100
-	}
+	continuous_focus_position = { x = 1150 y = 1100 } # 56
 
 	############################
 	#### INDUSTRIAL SECTION ####
@@ -11791,7 +11787,8 @@ focus_tree = {
 		available = {
 			SOV = {
 				exists = yes
-				NOT = { is_ally_with = ROOT }
+				NOT = { is_subject_of = ROOT }
+				NOT = { is_in_faction_with = ROOT }
 			}
 		}
 				
@@ -11882,14 +11879,16 @@ focus_tree = {
 						AND = {
 							is_core_of = SOV
 							NOT = {
-								is_core_of = AZR
-								is_core_of = GEO
-								is_core_of = ARM
-								is_core_of = TMS
-								is_core_of = UZB
-								is_core_of = KAZ
-								is_core_of = TAJ
-								is_core_of = KYR
+								OR = {
+									is_core_of = AZR
+									is_core_of = GEO
+									is_core_of = ARM
+									is_core_of = TMS
+									is_core_of = UZB
+									is_core_of = KAZ
+									is_core_of = TAJ
+									is_core_of = KYR
+								}
 							}
 						}
 						is_core_of = YUG
@@ -11996,6 +11995,7 @@ focus_tree = {
 					infantry = { x = 1 y = 1 }
 					infantry = { x = 1 y = 2 }
 					infantry = { x = 1 y = 3 }
+
 					artillery_brigade = { x = 2 y = 0 }
 					artillery_brigade = { x = 2 y = 1 }
 				}
@@ -12020,7 +12020,7 @@ focus_tree = {
 
 	focus = {
 		id = POL_support_monarchism_in_LIT
-		icon = GFX_goal_LIT_restore_the_monarchy
+		icon = GFX_focus_generic_monarchy_2
 		prerequisite = { focus = POL_restoration_of_the_royal_sejm }
 		prerequisite = { focus = POL_claiming_lithuania }
 		relative_position_id = POL_restoration_of_the_royal_sejm
@@ -12068,7 +12068,7 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = POL_support_monarchy_in_LIT_tt
-			show_unit_leaders_tooltip = POL_stefan_dab_biernacki
+			show_unit_leaders_tooltip = POL_stefan_dab_biernacki # 56
 		}
 	}
 
@@ -12531,7 +12531,7 @@ focus_tree = {
 
 	focus = {
 		id = POL_push_for_ruthenia
-		icon = GFX_focus_generic_public_works_A
+		icon = GFX_focus_generic_public_works_A # 56
 		prerequisite = { focus = POL_lithuanian_rail }
 		relative_position_id = POL_lithuanian_rail
 
@@ -12588,7 +12588,7 @@ focus_tree = {
 
 	focus = {
 		id = POL_warsaw_to_crimea_railway
-		icon = GFX_cold_railway_2
+		icon = GFX_cold_railway_2 # 56
 		prerequisite = { focus = POL_push_for_ruthenia }
 		relative_position_id = POL_push_for_ruthenia
 
@@ -12757,6 +12757,7 @@ focus_tree = {
 		}
 
 		will_lead_to_war_with = SOV
+
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			claim_greater_LIT_effect = yes
@@ -12986,7 +12987,7 @@ focus_tree = {
 
 	focus = {
 		id = POL_merge_internal_governments
-		icon = GFX_ROM_POL_alliance
+		icon = GFX_ROM_POL_alliance # 56
 		prerequisite = { focus = POL_king_michaels_coup }
 		relative_position_id = POL_king_michaels_coup
 
@@ -13062,9 +13063,14 @@ focus_tree = {
 				add_core_of = POL
 			}
 			set_cosmetic_tag = POL_ROM_UNION
+			# 56
+			custom_effect_tooltip = generic_skip_one_line_tt
             add_ideas = generic_recent_political_unification
+            custom_effect_tooltip = generic_skip_one_line_tt
             add_ideas = generic_recent_army_unification
-            add_ideas = generic_recent_economic_unification			
+            custom_effect_tooltip = generic_skip_one_line_tt
+            add_ideas = generic_recent_economic_unification
+            ##		
 		}
 	}
 
@@ -13120,7 +13126,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#add_ideas = { ROM_flexible_foreign_policy_2	}
+			#add_ideas = { ROM_flexible_foreign_policy_2 }  # 56
 			add_popularity = {
 				popularity = 0.15
 				ideology = democratic
@@ -13215,7 +13221,7 @@ focus_tree = {
 
 	focus = {
 		id = POL_royal_dictatorship
-		icon = GFX_focus_generic_monarchy_1
+		icon = GFX_focus_rom_royal_dictatorship
 		prerequisite = { focus = POL_merge_internal_governments }
 		relative_position_id = POL_merge_internal_governments
 
@@ -13242,7 +13248,7 @@ focus_tree = {
 
 	focus = {
 		id = POL_demand_slovakia
-		icon = GFX_goal_SLO_map_revolt
+		icon = GFX_goal_SLO_slovak_freedom # 56
 		prerequisite = { focus = POL_royal_dictatorship }
 		relative_position_id = POL_royal_dictatorship
 
@@ -13314,9 +13320,6 @@ focus_tree = {
 			73 = {
 				add_claim_by = POL
 			}
-			996 = {
-				add_claim_by = POL
-			}
 			664 = {
 				add_claim_by = POL
 			}
@@ -13329,6 +13332,7 @@ focus_tree = {
 			72 = {
 				add_claim_by = POL
 			}
+			996 = { add_claim_by = POL } # 56
 			if = {
 				limit = {
 					SLO = { exists = yes }

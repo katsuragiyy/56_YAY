@@ -592,7 +592,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_align_nationalist_parties
-		icon = GFX_goal_CZE_nationalism
+		icon = GFX_goal_generic_political_pressure
 
 		prerequisite = {
 			focus = CZE_petition_the_nobles
@@ -855,6 +855,7 @@ focus_tree = {
 								has_cosmetic_tag = CZE_ONLY
 								has_cosmetic_tag = CZE_great_moravia
 								has_cosmetic_tag = CZE_SLO_bohemia_expansion
+								has_cosmetic_tag = EUR_UNIFIED
 							}
 						}
 					}
@@ -1105,7 +1106,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_align_with_germany
-		icon = GFX_goal_GER_kaiser_deal
+		icon = GFX_focus_ger_revive_kaiserreich
 
 		relative_position_id = CZE_restore_the_monarchy
 		x = 1
@@ -1264,7 +1265,7 @@ focus_tree = {
 				add_ideas = CZE_trade_agreement
 			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = generic_skip_one_line_tt # 56
 			unlock_decision_tooltip = form_austria_hungary
 		}
 		search_filters = { FOCUS_FILTER_INTERNATIONAL_TRADE }
@@ -1374,7 +1375,12 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			show_unit_leaders_tooltip = CZE_josef_snejdarek
+			if = {
+				limit = {
+					has_character = CZE_josef_snejdarek
+				}
+				show_unit_leaders_tooltip = CZE_josef_snejdarek
+			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_MILITARY_CHARACTER }
 	}
@@ -1529,7 +1535,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_demand_katowice
-		icon = GFX_goal_GER_prepare_to_invade_poland #R56
+		icon = GFX_goal_demand_sudetenland
 
 		prerequisite = {
 			focus = CZE_claim_lands_of_the_bohemian_crown
@@ -1633,9 +1639,15 @@ focus_tree = {
 		}
 
 		bypass_effect = {
-			add_state_claim = 86
-			add_state_claim = 807
-			add_state_claim = 85
+			86 = {
+				add_claim_by = ROOT
+			}
+			807 = {
+				add_claim_by = ROOT
+			}
+			85 = {
+				add_claim_by = ROOT
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
@@ -1667,9 +1679,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_state_claim = 86
-			add_state_claim = 807
-			add_state_claim = 85
+			86 = {
+				add_claim_by = ROOT
+			}
+			807 = {
+				add_claim_by = ROOT
+			}
+			85 = {
+				add_claim_by = ROOT
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
@@ -1746,6 +1764,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			set_cosmetic_tag = CZE_SLO_bohemia_expansion
+
 			mark_focus_tree_layout_dirty = yes
 		}
 		search_filters = { FOCUS_FILTER_MANPOWER }
@@ -1753,7 +1772,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_integrate_lost_territories
-		icon = GFX_goal_fire_paper_peoples
+		icon = GFX_goal_generic_territory_or_war
 
 		prerequisite = {
 			focus = CZE_proclaim_the_restoration_of_bohemia
@@ -1803,17 +1822,25 @@ focus_tree = {
 					transfer_troops = yes
 				}
 			}
-			add_state_core = 65
-			add_state_core = 86
-			add_state_core = 807
-			add_state_core = 85
+			65 = {
+				add_core_of = CZE
+			}
+			86 = {
+				add_core_of = CZE
+			}
+			807 = {
+				add_core_of = CZE
+			}
+			85 = {
+				add_core_of = CZE
+			}
 		}
 		search_filters = { FOCUS_FILTER_MANPOWER }
 	}
 
 	focus = {
 		id = CZE_deepen_ties_with_puppet_kingdoms
-		icon = GFX_form_south_german_federation
+		icon = GFX_form_south_german_federation # 56
 
 		prerequisite = {
 			focus = CZE_dismantle_poland
@@ -1976,6 +2003,7 @@ focus_tree = {
 			}
 		}
 	}
+
 	############################
 	#####     Fascist     ######
 	############################
@@ -2026,6 +2054,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = CZE_karel_schwarzenberg
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_timed_idea = {
@@ -2072,6 +2101,7 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = {
 				localization_key = remove_character_as_tt
 				CHARACTER = CZE_jan_sramek
@@ -2096,6 +2126,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			CZE_get_rid_of_agrarian_politics_with_less_steps = yes
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_timed_idea = {
@@ -2107,7 +2138,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_cooperate_with_the_sdp
-		icon = GFX_goal_CZE_accept_the_karlsbader_programm
+		icon = GFX_goal_generic_dangerous_deal
 
 		
 		prerequisite = {
@@ -2341,6 +2372,7 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_timed_idea = {
 				idea = CZE_pro_rearmament_propaganda_idea
 				days = 180
@@ -2436,6 +2468,7 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			show_unit_leaders_tooltip = CZE_emanuel_moravec
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_POLITICAL }
@@ -2443,7 +2476,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_power_to_the_military
-		icon = GFX_goal_military_government #R56
+		icon = GFX_focus_generic_military_mission
 
 		prerequisite = {
 			focus = CZE_revert_1926_anti_military_laws
@@ -2481,6 +2514,7 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_command_power = 25
 
 			if = {
@@ -2493,6 +2527,7 @@ focus_tree = {
 				CZE_bop_very_low_increase_effect = yes
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
+
 			hidden_effect = {
 				if = {
 					limit = {
@@ -2577,9 +2612,12 @@ focus_tree = {
 					}
 				}
 			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_ideas = CZE_militarized_organizations
+
+			#custom_effect_tooltip = generic_skip_one_line_tt
 			
 			if = {
 				limit = {
@@ -2658,6 +2696,7 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = CZE_aggressive_foreign_policy_idea
 
 			effect_tooltip = { #in the idea
@@ -3085,7 +3124,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_set_up_polish_puppet_state
-		icon = GFX_goal_prometheism
+		icon = GFX_focus_GRE_a_land_of_mountains
 
 		prerequisite = {
 			focus = CZE_negotiate_sphere_of_influence
@@ -3098,7 +3137,7 @@ focus_tree = {
 		y = 1
 
 		available = {
-			any_state = {
+			any_state = { # 56
 				OR = {
 					state = 88
 					state = 91
@@ -3110,7 +3149,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			every_state = {
+			every_state = { # 56
 				limit = {
 					OR = {
 						state = 88
@@ -3316,7 +3355,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		
-		cost = 5 #R56?
+		cost = 10
 		
 		available = {
 			any_controlled_state = {
@@ -3335,7 +3374,19 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = CZE_concessions_to_rakousko
+			#stolen from formable to avoid duplicate loc
+			custom_effect_tooltip = form_country_austria_coring_states_tt
+			hidden_effect = {
+				every_state = { # 56
+					limit = {
+						OR = {
+							is_core_of = AUS
+							is_core_of = LIE
+						}
+					}
+					add_core_of = ROOT
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_MANPOWER }
 	}
@@ -4056,10 +4107,13 @@ focus_tree = {
 		id = CZE_central_european_faction
 		icon = {
 			GFX_focus_GER_european_confederation = {
-				has_completed_focus = CZE_petition_the_nobles
+				ROOT = {
+					has_completed_focus = CZE_petition_the_nobles
+				}
 			}
 			GFX_focus_generic_subjugation = yes
 		}
+		
 
 		prerequisite = {
 			focus = CZE_claim_lands_of_the_bohemian_crown
@@ -4129,7 +4183,7 @@ focus_tree = {
 
 	focus = { 
 		id = CZE_complete_capitulation
-		icon = GFX_goal_CZE_capitulate_the_state
+		icon = GFX_focus_CZE_german_puppet
 		prerequisite = { focus = CZE_feeding_the_alligator }
 		mutually_exclusive = {
 			focus = CZE_work_with_germany
@@ -4457,6 +4511,7 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = CZE_form_the_government_army_idea
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -4702,7 +4757,12 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			show_unit_leaders_tooltip = CZE_josef_snejdarek
+			if = {
+				limit = {
+					has_character = CZE_josef_snejdarek
+				}
+				show_unit_leaders_tooltip = CZE_josef_snejdarek
+			}
 			division_template = {
 				name = "Czech and Slovak Legion"
 				priority = 2
@@ -4808,7 +4868,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_placate_benes_faction
-		icon = GFX_goal_CZE_a_new_king_of_the_castle
+		icon = GFX_focus_generic_befriend_czechoslovakia
 		prerequisite = { focus = CZE_coalition_building }
 		mutually_exclusive = {
 			focus = CZE_negotiations_with_the_autonomous_bloc
@@ -5106,6 +5166,7 @@ focus_tree = {
 					popup = no
 				}
 			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_command_power = 25
@@ -5116,6 +5177,7 @@ focus_tree = {
 	focus = {
 		id = CZE_integrated_paramilitaries
 		icon = GFX_focus_RAJ_a_private_military
+		
 		x = 0
 		y = 1
 		cost = 5
@@ -5136,7 +5198,6 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = CZE_ceskoslovenska_armada_ns_intro_tt
-
 			add_to_variable = {
 				CZE_ceskoslovenska_armada_modifier_army_sub_unit_militia_defence_factor = 0.10
 				tooltip = modifier_army_sub_unit_militia_defence_factor_tt
@@ -5176,7 +5237,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_MANPOWER }
 	}
-	
+
 	focus = {
 		id = CZE_wielding_the_hammer
 		icon = GFX_focus_AUS_lawmaking_leniency
@@ -5621,6 +5682,7 @@ focus_tree = {
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
+
 
 			effect_tooltip = {
 				release_autonomy = {
@@ -6105,7 +6167,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_apart_but_togather
-		icon = GFX_goal_CZE_start_reintegration_process
+		icon = GFX_goal_generic_national_unity
 		prerequisite = { focus = CZE_comprise_with_the_carpathians focus = CZE_cut_carpathia_loose }
 		relative_position_id = CZE_comprise_with_the_carpathians
 		x = 1
@@ -6186,7 +6248,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_reorient_the_broad_coalition
-		icon = GFX_focus_ETH_re-convene_the_parliament	
+		icon = GFX_focus_ETH_re-convene_the_parliament
 		prerequisite = { focus = CZE_placate_benes_faction focus = CZE_negotiations_with_the_autonomous_bloc }
 		relative_position_id =  CZE_placate_benes_faction
 		x = 6
@@ -6333,7 +6395,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_truth_prevails
-		icon = GFX_goal_democracy_people #R56
+		icon = GFX_focus_ARG_defense_and_democracy
 		prerequisite = { focus = CZE_compromise_with_the_veteran_agrarian focus = CZE_deepend_ties_with_the_trademans }
 		relative_position_id = CZE_compromise_with_the_veteran_agrarian
 		x = 1
@@ -6479,7 +6541,7 @@ focus_tree = {
 							original_tag = AUS
 						}
 					}
-					OR = { #TODO_logan better checks then doing stats, use has_railway_connection
+					OR = { #TODO_logan better checks then doing states, use has_railway_connection
 						#state = 89
 						#state = 88
 						state = 762
@@ -6822,7 +6884,18 @@ focus_tree = {
 		prerequisite = { focus = CZE_revisit_custom_union_talks }
 		relative_position_id = CZE_revisit_custom_union_talks
 		x = 0
-		y = 1
+		y = 2
+		offset = {
+			x = 0
+			y = -1
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = CZE_negotiations_with_the_autonomous_bloc
+			}
+		}
 	
 		cost = 10
 	
@@ -6849,7 +6922,6 @@ focus_tree = {
 			set_cosmetic_tag = CZE_CEF
 
 			set_country_flag = CZE_form_the_european_federation_flag
-			
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -6883,6 +6955,103 @@ focus_tree = {
 				}
 			}
 		}
+	}
+
+	
+	focus = {
+		id = CZE_bend_the_bars
+		icon = GFX_focus_generic_the_council_of_europe
+	
+		prerequisite = { focus = CZE_form_a_federation focus = CZE_demand_guarantees  }					
+
+		relative_position_id = CZE_form_a_federation
+
+		x = -1
+		y = 2
+		offset = {
+			x = -1
+			y = -1
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = CZE_negotiations_with_the_autonomous_bloc
+			}
+		}
+
+		offset = {
+			x = -3
+			y = -1
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = CZE_placate_benes_faction
+			}
+		}
+	
+		cost = 10
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		available = {
+			is_major = yes
+			custom_trigger_tooltip = {
+				tooltip = CZE_bop_no_divided_nation_tt
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = CZE_a_divided_nation_dynamic_modifier
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = CZE_bop_no_agrarians_tt
+				NOT = {
+					has_idea = CZE_agrarian_politics_3
+					has_idea = CZE_agrarian_politics_2
+					has_idea = CZE_agrarian_politics_1
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = CZE_bop_no_industrialists_tt
+				NOT = {
+					has_idea = CZE_industrialists_veto
+					has_idea = CZE_industrialists_veto_2
+				}
+			}
+			NOT = {
+				has_power_balance = {
+    				id = CZE_bop_army_readiness
+				}
+			}
+			is_subject = no
+		}
+	
+		completion_reward = {
+			add_political_power = 150
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					is_subject_of = ROOT
+					
+				}
+				add_autonomy_score = {
+    				value = -25
+    				localization = CZE_bend_the_bars
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			unlock_decision_tooltip = form_european_union
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -7760,10 +7929,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = CZE_destroy_the_fascist_threats
+		id = CZE_destroy_the_fascist_threats #todo_logan prob needs dynamic local for when Czech's are fascist
 		icon = {
 			GFX_goal_generic_major_war = {
-				has_government = fascism
+				ROOT = {
+					has_government = fascism
+				}
 			}
 			GFX_focus_ITA_liberation_or_death = yes
 		}
@@ -7921,7 +8092,7 @@ focus_tree = {
 
 	focus = { 
 		id = CZE_contact_henlein
-		icon = GFX_goal_CZE_henlein
+		icon = GFX_focus_RAJ_red_in_the_shadows
 		prerequisite = { focus = CZE_placate_benes_faction }
 
 
@@ -8315,7 +8486,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_closer_ties_with_the_moderate_germany_parties
-		icon = GFX_focus_generic_befriend_germany_democratic
+		icon = GFX_focus_generic_befriend_germany_democratic 
 		prerequisite = { focus = CZE_no_compromise_with_the_sdp }
 		relative_position_id = CZE_no_compromise_with_the_sdp
 		x = 2
@@ -8776,7 +8947,7 @@ focus_tree = {
 		}
 
 		available = {
-			GER = {
+			GER = { # 56
 				OR = {
 					has_completed_focus = GER_oppose_hitler_ww
 					has_completed_focus = GER_kill_hitler #R56
@@ -8787,7 +8958,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_stability = 0.03
-			custom_effect_tooltip = generic_skip_one_line_tt			if = {
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
 				limit = {
 					has_power_balance = {
     					id = CZE_bop_army_readiness
@@ -8802,7 +8974,7 @@ focus_tree = {
 				days = 180
 			}
 		}
-		search_filters = { FOCUS_FILTER_BALANCE_OF_POWER FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_BALANCE_OF_POWER FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
 	}
 
 	focus = {
@@ -9092,6 +9264,7 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = CZE_revolutionary_brigades_idea
 		}
 		search_filters = { FOCUS_FILTER_MANPOWER }
@@ -9243,6 +9416,7 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = CZE_control_organizations
 		}
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
@@ -9624,6 +9798,7 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			if = {
 				limit = {
 					NOT = {
@@ -9658,7 +9833,8 @@ focus_tree = {
 			custom_effect_tooltip = CZE_purge_two_random_commanders_tt
 		
 			hidden_effect = {
-				#WARNING: Random_list isn't a good idea because very unlucky players can end up without any commanders
+				#marijn211: if these random_character blocks ever have a bug, they could perhaps be switched to unit_leader scopes, I hadn't been aware those automatically exclude hidden commanders, but I don't want to risk breaking anything by replacing now
+				#WARNING: running a random_list on each commander isn't a good idea because very unlucky players can end up without any commanders
 				random_character = {
 					limit = {
 						is_field_marshal = yes
@@ -9780,6 +9956,8 @@ focus_tree = {
 				CZE_ceskoslovenska_armada_dynamic_modifier_party_popularity_stability_factor = 0.05
 				tooltip = party_popularity_stability_factor_tt
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = CZE_recruit_communist_generic_general_tt
 			custom_effect_tooltip = generic_skip_one_line_tt
 			show_unit_leaders_tooltip = CZE_richard_tesarik
@@ -10736,7 +10914,7 @@ focus_tree = {
 	focus = {
 		id = CZE_vonapo_20
 		icon = {
-			GFX_goal_HON_nkvd_assistance = {
+			GFX_focus_JAP_learn_from_the_nkvd = {
 				SOV = {
 					has_government = communism
 				}
@@ -10767,6 +10945,7 @@ focus_tree = {
 				exists = no
 			}
 		}
+
 		completion_reward = {
 			if = {
 				limit = {
@@ -11266,7 +11445,6 @@ focus_tree = {
 				idea = CZE_forgive_trading_debts_idea
 				days = 180
 			}
-
 		}
 	}
 
@@ -11630,8 +11808,6 @@ focus_tree = {
 			}
 			GFX_focus_generic_attack_hungary = yes
 		}
-
-		dynamic = yes
 
 		cost = 5
 
@@ -12253,7 +12429,9 @@ focus_tree = {
 		id = CZE_double_down_on_heavy_industry
 		icon = {
 			GFX_focus_generic_communist_industry = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_focus_generic_military_industry = yes
 		}
@@ -12474,7 +12652,9 @@ focus_tree = {
 		id = CZE_demand_corridor_to_ussr
 		icon = {
 			GFX_focus_generic_communist_attack_poland = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_focus_GER_danzig_or_war = yes
 		}
@@ -12696,6 +12876,7 @@ focus_tree = {
 				}
 			}
 		}
+
 		completion_reward = {
 			if = {
 				limit = {
@@ -13388,10 +13569,13 @@ focus_tree = {
 		id = CZE_complete_the_power_grid
 		icon = {
 			GFX_focus_AFG_helmand_river_authority = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_focus_generic_energy = yes
 		}
+		
 		prerequisite = { focus = CZE_raise_more_industrial_funds }
 		relative_position_id = CZE_raise_more_industrial_funds
 		x = -7
@@ -13670,7 +13854,7 @@ focus_tree = {
 
 	focus = { 
 		id = CZE_devaluate_the_koruna
-		icon = GFX_goal_CZE_the_1936_currency_devaluation
+		icon = GFX_focus_ITA_devaluate_the_lire
 		overlay = GFX_focus_overlay_cze_level_four
 		prerequisite = { focus = CZE_raise_more_industrial_funds }
 
@@ -14011,10 +14195,13 @@ focus_tree = {
 		id = CZE_shrink_educational_disparities 
 		icon = {
 			GFX_focus_NOR_moscows_education_centers = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_focus_generic_education = yes
 		}
+		
 		prerequisite = { focus = CZE_balance_industrial_invevestments}
 		relative_position_id = CZE_balance_industrial_invevestments
 		x = 1
@@ -14061,7 +14248,9 @@ focus_tree = {
 		id = CZE_grow_ckd_secondary_facilities 
 		icon = {
 			GFX_focus_generic_communist_industry = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_focus_generic_industry_1 = yes
 		}
@@ -14293,7 +14482,7 @@ focus_tree = {
 
 	focus = { 
 		id = CZE_expand_trinec_ironworks
-		icon =  GFX_focus_CZE_trinec_ironwork
+		icon = GFX_focus_CZE_trinec_ironwork
 		prerequisite = { focus = CZE_bolster_domestic_construction focus = CZE_joint_stock_schemes }
 
 		relative_position_id = CZE_bolster_domestic_construction
@@ -14703,7 +14892,9 @@ focus_tree = {
 		id = CZE_invest_in_vhht
 		icon = {
 			GFX_goal_generic_soviet_construction = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_focus_generic_public_works = yes
 		}
@@ -14952,7 +15143,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			# if = { #R56?
+			# if = { #R56
 			# 	limit = {
 			# 		NOT = {
 			# 			has_tech = advanced_equipment_conversion
@@ -15752,6 +15943,7 @@ focus_tree = {
 				}
 			}
 
+
 			random_owned_controlled_state = {
 				prioritize = { 9 }
 				limit = {
@@ -16198,7 +16390,9 @@ focus_tree = {
 		id = CZE_force_the_industrialists_hand
 		icon = {
 			GFX_focus_spr_class_war = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_focus_RAJ_union_busting = yes
 		}
@@ -16319,16 +16513,21 @@ focus_tree = {
 		id = CZE_embrace_corporatism 
 		icon = {
 			GFX_focus_ICE_state_corporatism = {
-				has_government = fascism
-				NOT = {
-					has_completed_focus = CZE_catholic_focus
+				ROOT = {
+					has_government = fascism
+					NOT = {
+						has_completed_focus = CZE_catholic_focus
+					}
 				}
 			}
 			GFX_focus_BEL_christian_corporatism = {
-				has_completed_focus = CZE_catholic_focus
+				ROOT = {
+					has_completed_focus = CZE_catholic_focus
+				}
 			}
 			GFX_focus_generic_industrialists = yes
 		}
+		
 		mutually_exclusive = { focus = CZE_force_the_industrialists_hand }
 
 
@@ -17858,7 +18057,6 @@ focus_tree = {
     				add_idea = CZE_an_industrial_legacy_idea
 				}
 			}
-
 			if = {
 				limit = {
 					has_idea = CZE_skoda_works_2
@@ -17966,7 +18164,6 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-			
 			if = { #Should always have this idea, also for TT
 				limit = {
 					NOT = {
@@ -18434,10 +18631,13 @@ focus_tree = {
 		id = CZE_trust_in_old_guard
 		icon = {
 			GFX_focus_PER_the_peoples_airforce = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_focus_generic_air_partners = yes
 		}
+
 		prerequisite = { focus = CZE_expand_airfield_capacity }
 
 		relative_position_id = CZE_expand_airfield_capacity
@@ -18975,18 +19175,21 @@ focus_tree = {
 	}
 
 	focus = {
-		id = CZE_mobilize_the_reserves 
+		id = CZE_mobilize_the_reserves
 		icon = {
 			GFX_focus_SOV_mobilization_plan = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
-		}
-		icon = {
 			GFX_focus_generic_fascist_troops = {
-				has_government = fascism
+				ROOT = {
+					has_government = fascism
+				}
 			}
 			GFX_focus_generic_limited_social_mobilization = yes
 		}
+		
 		prerequisite = { focus = CZE_national_defense_act }
 		relative_position_id = CZE_national_defense_act
 		x = 1
@@ -20515,7 +20718,9 @@ focus_tree = {
 		id = CZE_opl_exercises
 		icon = {
 			GFX_focus_PRC_a_modern_army = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_goal_generic_army_doctrines = yes
 		}
@@ -20657,7 +20862,9 @@ focus_tree = {
 		id = CZE_redouble_tank_development_efforts
 		icon = {
 			GFX_focus_generic_army_tanks2 = {
-				has_government = fascism
+				ROOT = {
+					has_government = fascism
+				}
 			}
 			GFX_goal_generic_army_tanks = yes
 		}
@@ -20977,12 +21184,16 @@ focus_tree = {
 		id = CZE_expand_the_land_department_of_vtu
 		icon = {
 			GFX_focus_generic_socialist_science = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_focus_ARG_fascist_researchers = {
-				has_government = fascism
+				ROOT = {
+					has_government = fascism
+				}
 			}
-			GFX_focus_CZE_military_research_institute = yes
+			GFX_focus_research = yes
 		}
 		overlay = GFX_focus_overlay_cze_military_equipment
 		prerequisite = { focus = CZE_the_tvp_project }
@@ -21458,7 +21669,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = available_theorist
-			show_ideas_tooltip = CZE_silvestr_blaha
+			show_ideas_tooltip = CZE_silvestr_blaha # 56
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -21729,7 +21940,9 @@ focus_tree = {
 		id = CZE_improve_the_current_officer_pool
 		icon = {
 			GFX_focus_PRC_army_command = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_focus_generic_military_academy = yes
 		}
@@ -21837,10 +22050,14 @@ focus_tree = {
 		id = CZE_lessons_of_war
 		icon = {
 			GFX_focus_SOV_the_glory_of_the_red_army_communism = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_focus_generic_advanced_military_studies = {
-				has_government = neutrality
+				ROOT = {
+					has_government = neutrality
+				}
 			}
 			GFX_focus_generic_army_doctrines_2 = yes
 		}
@@ -22084,8 +22301,7 @@ focus_tree = {
     				remove_idea = CZE_national_defense_act_idea
     				add_idea = CZE_the_lions_roar_idea
 				}
-			}
-			
+			}		
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_XP }
 	}
@@ -22567,7 +22783,9 @@ focus_tree = {
 		id = CZE_reform_the_naval_detachment
 		icon = {
 			GFX_focus_PHI_maritime_communism = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_goal_generic_build_navy = yes
 		}
@@ -23136,7 +23354,9 @@ focus_tree = {
 		id = CZE_a_modern_navy
 		icon = {
 			GFX_focus_PER_the_peoples_navy = {
-				has_government = communism
+				ROOT = {
+					has_government = communism
+				}
 			}
 			GFX_focus_SMB_blue_water_fleet = yes
 		}

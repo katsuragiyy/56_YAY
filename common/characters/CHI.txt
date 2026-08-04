@@ -3439,7 +3439,7 @@ characters = {
 		name=CHI_wang_jingwei
 		portraits={
 			civilian={
-				large="GFX_portrait_chi_wang_jingwei"
+				large="gfx/leaders/CHI/portrait_chi_wang_jingwei.dds"
 			}
 		}
 	}

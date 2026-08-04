@@ -3,7 +3,7 @@ characters={
 		name="Namgang Dazang Damdu" # = Tsarong_Tsaza
 		portraits={
 			civilian={
-				large="gfx/leaders/TIB/r56_portrait_TIB_Tsarong_Tsaza.dds"
+				large="gfx/leaders/TIB/portrait_TIB_tsarong_dzasa.dds"
 				small="GFX_idea_TIB_tsarong_dzasa"
 			}
 			army = {
@@ -173,7 +173,7 @@ characters={
 		portraits={
 			civilian={
 				small="gfx/interface/ideas/tib/advisors/r56_idea_TIB_advisor_kunphela.dds"
-				large="gfx/leaders/TIB/r56_portrait_TIB_Thubten_Kunphela.dds"
+				large="gfx/leaders/TIB/portrait_TIB_thubten_kunphela.dds"
 			}
 		}
 		country_leader={

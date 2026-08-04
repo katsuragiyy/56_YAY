@@ -526,6 +526,7 @@ ideas = {
 				political_advisor_cost_factor = -0.10
 			}
 		}
+
 		CZE_militarized_organizations = {	#fascist version
 			picture = ast_volunteer_defence_corps
 
@@ -1039,7 +1040,7 @@ ideas = {
 				stability_factor = -0.05
 				communism_drift = -0.05
 				war_support_weekly = 0.005
-				mobilization_laws_cost_factor = -0.05	
+				mobilization_laws_cost_factor = -0.05			
 			}
 		}
 
@@ -1391,6 +1392,7 @@ ideas = {
 				}
 			}
 		}
+
 		CZE_state_catholicism = {
 
 			allowed = {
@@ -1910,7 +1912,7 @@ ideas = {
 			}
 			
 		}
-		
+
 		CZE_only_the_best_is_good_enough_idea = {
 			name = "CZE_only_the_best_is_good_enough"
 			picture = SOV_organize_wreckers
@@ -2003,7 +2005,7 @@ ideas = {
 			}
 			
 		}
-		
+
 		CZE_an_industrial_legacy_idea = {
 			name = "CZE_an_industrial_legacy"
 			picture = ARG_construction_guilds
@@ -2035,6 +2037,7 @@ ideas = {
 				global_building_slots_factor = 0.3
 				production_factory_max_efficiency_factor = 0.2
 			}
+
 		}
 
 		CZE_powerhouse_of_europe_idea = {
@@ -2054,6 +2057,7 @@ ideas = {
 			research_bonus = { #From CZE_giant_of_central_europe_industry_idea
 				industry = 0.10
 			}
+
 			modifier = {
 				#From CZE_czech_state_mines 
 				local_resources_factor = 0.1
@@ -2069,9 +2073,9 @@ ideas = {
 				global_building_slots_factor = 0.3
 				production_factory_max_efficiency_factor = 0.2
 			}
-			
 		}
 		#End capstone ideas merge swaps
+
 		CZE_czech_state_oil = {
 			picture = ARG_resource_extration_focus
 
@@ -2089,7 +2093,6 @@ ideas = {
 				fuel_gain_factor = 0.10
 				out_of_power_impact_factor = 0.10
 			}
-			
 		}
 
 		CZE_mobilize_the_reserves_idea = {
@@ -3149,7 +3152,7 @@ ideas = {
 				drift_defence_factor = 0.10
 			}
 		}
-		
+
 		CZE_forgive_trading_debts_idea = {
 			picture = generic_foreign_capital
 
@@ -3192,7 +3195,7 @@ ideas = {
 				stability_factor = -0.25
 			}
 		}
-
+		
 		CZE_back_against_the_mountains_RUT = { #For RUT, so they don't get any bad ideas
 			picture = YUG_federal_defense_council
 
@@ -3208,11 +3211,11 @@ ideas = {
 				original_tag = RUT
 			}
 
-			on_add = { #R56(?)
+			on_add = {
 				set_rule = { can_join_factions = no }
 			}
 
-			on_remove = { #R56(?)
+			on_remove = {
 				set_rule = { can_join_factions = yes }
 			}
 
@@ -3233,6 +3236,7 @@ ideas = {
 				}
 			}
 		}
+
 
 		CZE_back_against_the_mountains_RUT_player = { #For RUT player
 			picture = YUG_federal_defense_council
@@ -3259,6 +3263,7 @@ ideas = {
 				weekly_manpower = 100
 			}
 		}
+		
 
 		CZE_integrate_czech_manufacturers_GER_idea_aat = { #For GER_integrate_czech_manufacturers 
 			picture = ARG_rapid_militarization
@@ -3561,7 +3566,7 @@ ideas = {
 				}
 			}
 		}
-		
+
 		CZE_national_defense_act_idea = { #merges down into the lions roar
 			picture = YUG_federal_defense_council
 
@@ -3640,6 +3645,8 @@ ideas = {
 				faction_trade_opinion_factor = 0.25
 			}
 		}
+
+
 		CZE_central_european_faction_idea = {
 			picture = generic_pp_unity_bonus
 			name = "CZE_central_european_faction"
@@ -3668,6 +3675,7 @@ ideas = {
 				faction_trade_opinion_factor = 0.10
 			}
 		}
+
 		CZE_peace_on_our_time_idea = {
 			name = "CZE_peace_on_our_time"
 			picture = SPR_torchbearers_of_tomorrow
@@ -3766,6 +3774,7 @@ ideas = {
 				weekly_bombing_war_support = 0.001
 			}
 		}
+
 		#Raids
 
 		CZE_sokolov_raid_pfot_limited_success_ns = {
@@ -4205,7 +4214,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				consumer_goods_factor = -0.10						#r56
+				consumer_goods_factor = -0.10
 				production_factory_efficiency_gain_factor = 0.05
 				#trade_opinion_factor = 0.10						#r56
 				#trade_laws_cost_factor = -0.10						#r56
@@ -5424,6 +5433,7 @@ ideas = {
 					has_completed_focus = POL_join_CZE_industry
 				}
 			}
+
 			research_bonus = {
 				infantry_weapons = 0.05
 				support_tech = 0.10
@@ -5636,7 +5646,7 @@ ideas = {
 				factor = 1
 			}
 		}
-		
+
 		CZE_praga_aviation = {
 
 			picture = cze_praga_aviation
@@ -6234,9 +6244,9 @@ ideas = {
 			traits = { consumer_goods_conglomerate }
 
 			
-			modifier = { 
-				#consumer_goods_factor = 0.025
-			}
+			#modifier = { 
+			#	consumer_goods_factor = 0.02
+			#}
 
 			research_bonus = { 
 				support_tech = 0.05

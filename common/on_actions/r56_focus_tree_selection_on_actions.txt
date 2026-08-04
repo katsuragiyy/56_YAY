@@ -2543,7 +2543,6 @@ on_actions = {
 						}
 						set_portraits = {
 							civilian = {
-								large = GFX_portrait_INS_tan_malaka
 								small = GFX_portrait_INS_tan_malaka_small
 							}
 						}
@@ -2552,7 +2551,6 @@ on_actions = {
 					INS_mohammad_hatta = {
 						set_portraits = {
 							civilian = {
-								large = GFX_portrait_INS_mohammad_hatta
 								small = GFX_portrait_INS_mohammad_hatta_small
 							}
 						}
@@ -2567,7 +2565,6 @@ on_actions = {
 					INS_sukarno = {
 						set_portraits = {
 							civilian = {
-								large=  GFX_portrait_INS_sukarno
 								small = GFX_portrait_INS_sukarno_small
 							}
 						}

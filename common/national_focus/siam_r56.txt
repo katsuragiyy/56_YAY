@@ -4177,7 +4177,7 @@ focus_tree = {
 	focus = {
 		id = SIA_address_the_eastern_border_r56
 		prerequisite = { focus = SIA_negotiation_with_the_old_powers_r56 }
-		icon = GFX_goal_indochina_stronger_hand
+		icon = GFX_indochina
 		x = 2
 		y = 1
 		relative_position_id = SIA_negotiation_with_the_old_powers_r56
@@ -4240,7 +4240,7 @@ focus_tree = {
 	focus = {
 		id = SIA_avenge_chulaloks_legacy_r56
 		prerequisite = { focus = SIA_address_the_eastern_border_r56 }
-		icon = GFX_goal_attack_indochina
+		icon = GFX_focus_SIA_recover_indochina
 		x = 0
 		y = 1
 		relative_position_id = SIA_address_the_eastern_border_r56
@@ -4569,7 +4569,7 @@ focus_tree = {
 	#POLITICS
 	focus = {
 		id = SIA_address_rama_viis_abdication_r56
-		icon = GFX_goal_siam_monarchy_question
+		icon = GFX_focus_SIA_ascend_the_throne
 		cost = 5
 		ai_will_do = { base = 99 }
 		x = 15
@@ -5240,7 +5240,7 @@ focus_tree = {
 	focus = {
 		id = SIA_wartime_economic_policies_r56
 		prerequisite = { focus = SIA_respond_to_the_international_crisis_r56 }
-		icon = GFX_focus_PRC_equipment_from_copper_coins
+		icon = GFX_ammunitions
 		cost = 10
 		ai_will_do = { base = 1 }
 		x = -1
@@ -5357,7 +5357,7 @@ focus_tree = {
 		id = SIA_return_to_international_prestige_r56
 		prerequisite = { focus = SIA_respond_to_the_international_crisis_r56 }
 		prerequisite = { focus = SIA_remodel_the_fine_arts_department_r56 }
-		icon = GFX_goal_generic_flames_of_rebellion
+		icon = GFX_focus_ETH_freedom_at_gunpoint
 		cost = 4
 		ai_will_do = { base = 1 }
 		x = 5
@@ -5720,7 +5720,7 @@ focus_tree = {
 	focus = {
 		id = SIA_restore_the_honor_of_the_chakri_r56
 		prerequisite = { focus = SIA_secure_the_armed_forces_r56 }
-		icon = GFX_goal_siam_rama_vii_restoration
+		icon = GFX_focus_SIA_meet_with_prajadhipok
 		cost = 6
 		ai_will_do = { base = 1 }
 		x = -2
@@ -6214,7 +6214,7 @@ focus_tree = {
 			focus = SIA_songsuradets_ascendency_r56
 			focus = SIA_phibuns_takeover_r56
 		}
-		icon = GFX_focus_PER_strengthen_the_tudeh
+		icon = GFX_focus_SIA_shuffle_pridi_to_the_minister_of_interior
 		cost = 2
 		ai_will_do = { base = 1 }
 		x = 0
@@ -6416,7 +6416,7 @@ focus_tree = {
 		id = SIA_the_question_of_the_regency_r56
 		prerequisite = { focus = SIA_rewrite_the_1932_constitution_r56 }
 		prerequisite = { focus = SIA_deal_with_the_armed_forces_r56 }
-		icon = GFX_goal_siam_monarchy
+		icon = GFX_goal_siam_monarchy_question
 		cost = 5
 		ai_will_do = { base = 9 }
 		x = 1
@@ -6805,7 +6805,7 @@ focus_tree = {
 
 	focus = {
 		id = SIA_phibuns_takeover_r56
-		icon = GFX_focus_RAJ_military_into_the_workforce
+		icon = GFX_focus_SIA_phibuns_premiership
 		cost = 2
 		prerequisite = { focus = SIA_phahon_steps_down_r56 }
 		mutually_exclusive = {
@@ -7026,7 +7026,7 @@ focus_tree = {
 
 	focus = {
 		id = SIA_restorer_of_thailands_power_and_modernity_r56
-		icon = GFX_goal_generic_authority
+		icon = GFX_focus_SIA_pan_thaiism
 		cost = 8
 		prerequisite = {
 			focus = SIA_form_a_cult_of_personality_r56
@@ -7135,7 +7135,7 @@ focus_tree = {
 	focus = {
 		id = SIA_push_for_universal_education_r56
 		prerequisite = { focus = SIA_siamese_national_banking_bureau_r56 }
-		icon = GFX_focus_research2
+		icon = GFX_focus_generic_university_2
 		cost = 10
 		ai_will_do = { base = 1 }
 		x = 0
@@ -7188,7 +7188,7 @@ focus_tree = {
 			focus = SIA_improve_the_siamese_countryside_r56
 			focus = SIA_escalate_industrial_policy_r56
 		}
-		icon = GFX_goal_generic_trade
+		icon = GFX_focus_SIA_the_hammers_that_strike
 		cost = 8
 		ai_will_do = { base = 1 }
 		x = 1
@@ -7202,7 +7202,7 @@ focus_tree = {
 	focus = {
 		id = SIA_escalate_industrial_policy_r56
 		prerequisite = { focus = SIA_siamese_national_banking_bureau_r56 }
-		icon = GFX_goal_NZL_bt
+		icon = GFX_focus_generic_industry_investment
 		cost = 10
 		ai_will_do = { base = 2 }
 		x = 1
@@ -7508,7 +7508,7 @@ focus_tree = {
 
 	focus = {
 		id = SIA_return_to_the_world_stage_r56
-		icon = GFX_goal_siam_revanchism
+		icon = GFX_focus_SIA_for_the_preservation_of_siamese_independence
 		prerequisite = { focus = SIA_opportunistic_militarization_r56 }
 		mutually_exclusive = { focus = SIA_forced_out_of_neutrality_r56 }
 		x = -1
@@ -7749,7 +7749,7 @@ focus_tree = {
 
 	focus = {
 		id = SIA_everything_for_victory_r56
-		icon = GFX_goal_generic_end_century_humiliation
+		icon = GFX_focus_SIA_order_discipline_and_unity
 		prerequisite = { focus = SIA_prove_thailands_worth_r56 }
 		x = -1
 		y = 1

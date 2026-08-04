@@ -1544,12 +1544,12 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_Portrait_por_bento_goncalves.dds"
-		texturefile = "gfx/leaders/POR/portrait_por_bento_goncalves.dds"
+		name = "GFX_Portrait_por_bento_goncalves" # 56
+		texturefile = "gfx/leaders/POR/r56_portrait_POR_Bento_Goncalves.dds"
 	}
 
 	spriteType = {
-		name = "GFX_Portrait_por_bento_goncalves.dds_small"
+		name = "GFX_Portrait_por_bento_goncalves_small" # 56
 		texturefile = "gfx/interface/ideas/idea_POR_bento_goncalves.dds"
 	}
 
@@ -4968,7 +4968,6 @@ spriteType = {
 
 	spriteType = {
 		name = GFX_portrait_GRE_ioannis_metaxas
-		# texturefile = "gfx/leaders/GRE/Portrait_Greece_Ioannis_Metaxas.dds"
 		texturefile = "gfx/leaders/GRE/r56_portrait_GRE_ioannis_metaxas.dds"
 	}
 
@@ -5112,10 +5111,10 @@ spriteType = {
 		texturefile = "gfx/leaders/South America/Portrait_South_America_Generic_3.dds"
 	}
 
-	spriteType = {
-		name = GFX_portrait_INS_sukarno
-		texturefile = "gfx/leaders/Asia/Portrait_Asia_Generic_land_5.dds"
-	}
+	#spriteType = { # 56
+	#	name = GFX_portrait_INS_sukarno
+	#	texturefile = "gfx/leaders/Asia/Portrait_Asia_Generic_land_5.dds"
+	#}
 
 	spriteType = {
 		name = GFX_portrait_INS_amir_sjarifuddin_harahap
@@ -5262,11 +5261,6 @@ spriteType = {
 		name = GFX_portrait_ITA_luigi_einaudi_small
 		texturefile = "gfx/interface/ideas/idea_europe_generic_4.dds"
 	}
-
-	# spriteType = {
-	# 	name = GFX_portrait_JAP_emperor_hirohito
-	# 	texturefile = "gfx/leaders/JAP/Portrait_Japan_Hirohito.dds"
-	# }
 
 	spriteType = {
 		name = GFX_portrait_JAP_tomoyuki_yamashita
@@ -5932,10 +5926,10 @@ spriteType = {
 		name = GFX_portrait_johan_ludwig_mowinckel
 		texturefile = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
 	}
-	
+
 	spriteType = {
 		name = GFX_portrait_NOR_adam_egede_nissen
-		texturefile = "gfx/leaders/Europe/portrait_europe_generic_4.dds"
+		texturefile = "gfx/leaders/Europe/Portrait_Europe_Generic_4.dds"
 	}
 
 	spriteType = {
@@ -5947,7 +5941,7 @@ spriteType = {
 		name = GFX_portrait_NOR_vidkun_quisling_1
 		texturefile = "gfx/leaders/NOR/Portrait_Norway_Vidkun_Quisling.dds"
 	}
-
+	
 	spriteType = {
 		name = GFX_portrait_NOR_wilhelm_von_tangen_hansteen
 		texturefile = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
@@ -6797,7 +6791,6 @@ spriteType = {
 
 	spriteType = {
 		name = GFX_portrait_SOV_aleksandr_kerensky
-		# texturefile = "gfx/leaders/SOV/Portrait_Soviet_Generic_1.dds"
 		texturefile = "gfx/leaders/r56_generic/r56_generic_portrait_white_russia_1.dds"
 	}
 	spriteType = { name = GFX_portrait_SOV_alexandr_rodzyanko texturefile = "gfx/leaders/r56_generic/r56_generic_portrait_white_russia_2.dds" } # R56
@@ -7009,7 +7002,7 @@ spriteType = {
 
 	spriteType = {
 		name = GFX_portrait_Jamphel_Yeshe_Gyaltsen
-		texturefile = "gfx/leaders/TIB/Portrait_Tibet_Jamphel_Yeshe_Gyaltsen.dds"
+		texturefile = "gfx/leaders/TIB/portrait_TIB_jamphel_yeshe_gyaltsen.dds"
 	}
 
 	spriteType = {
@@ -7268,18 +7261,18 @@ spriteType = {
 	}
 
 	spriteType = {
-		name = GFX_portrait_USA_♥_mcnair
+		name = GFX_portrait_USA_leslie_mcnair
 		texturefile = "gfx/leaders/USA/Portrait_USA_Lesley_McNair.dds"
 	}
 
 	spriteType = {
-		name = GFX_portrait_USA_♥_mcnair_small
+		name = GFX_portrait_USA_leslie_mcnair_small
 		texturefile = "gfx/interface/ideas/idea_USA_lesley_mcnair.dds"
 	}
 
 	spriteType = {
 		name = GFX_portrait_USA_jonathan_wainwright
-		texturefile = "gfx/leaders/USA/Portrait_USA_Jonathan_Wainwright.dds"
+		texturefile = "gfx/leaders/USA/Portrait_USA_jonathan_wainwright.dds"
 	}
 
 	spriteType = {
@@ -7670,8 +7663,7 @@ spriteType = {
 
 	spriteType = {
 		name = GFX_portrait_Josef_Grohe
-		# texturefile = gfx/leaders/GER/Portrait_Germany_Generic_3.dds
-		texturefile = gfx/leaders/GER/r56_portrait_GER_Josef_Grohe.dds
+		texturefile = gfx/leaders/GER/r56_portrait_GER_Josef_Grohe.dds # 56
 	}
 
 	spriteType = {
@@ -8001,7 +7993,7 @@ spriteType = {
 
 	spriteType = {
 		name = GFX_portrait_Ahmed_Husayn
-		texturefile = gfx/leaders/SAU/Portrait_Arabia_Generic_1.dds
+		texturefile = gfx/leaders/SAU/Portrait_Arabia_Generic_3.dds
 	}
 
 	spriteType = {
@@ -8151,8 +8143,7 @@ spriteType = {
 
 	spriteType = {
 		name = GFX_portrait_Qazi_Muhammad
-		# texturefile = gfx/leaders/SYR/Portrait_Arabia_Generic_1.dds
-		texturefile = "gfx/leaders/KUR/r56_portrait_KUR_Qazi_Muhammad.dds"
+		texturefile = "gfx/leaders/KUR/r56_portrait_KUR_Qazi_Muhammad.dds" # 56
 	}
 
 	spriteType = {
@@ -8454,6 +8445,7 @@ spriteType = {
 	SpriteType = { name = "GFX_portrait_tur_recep_peker" texturefile = "gfx/leaders/Europe/portrait_europe_generic_4.dds" }
 	SpriteType = { name = "GFX_portrait_tur_sevket_sureyya_aydemir" texturefile = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds" }
 	### BBA ###
+
 
 	# ITA
 
@@ -9152,7 +9144,7 @@ spriteType = {
 
 	spriteType = {
 		name = "GFX_portrait_INS_amir_sjarifuddin"
-		texturefile = "gfx/leaders/INS/portrait_INS_amir_sjarifuddin.dds"
+		texturefile = "gfx/leaders/INS/r56_portrait_INS_Amir_Sjarifuddin_Harahap.dds" # 56 - This will be replaced if DLC is enabled
 	}
 	spriteType = {
 		name = "GFX_portrait_ins_at_van_starkenborgh"
@@ -9164,15 +9156,15 @@ spriteType = {
 	}
 	spriteType = {
 		name = "GFX_portrait_INS_mohammad_hatta"
-		texturefile = "gfx/leaders/INS/portrait_INS_mohammad_hatta.dds"
+		texturefile = "gfx/leaders/INS/r56_portrait_INS_Mohammad_Hatta.dds" # 56 - This will be replaced if DLC is enabled
 	}
 	spriteType = {
 		name = "GFX_portrait_INS_sukarno"
-		texturefile = "gfx/leaders/INS/portrait_INS_sukarno.dds"
+		texturefile = "gfx/leaders/INS/r56_portrait_INS_Sukarno.dds" # 56 - This will be replaced if DLC is enabled
 	}
 	spriteType = {
 		name = "GFX_portrait_INS_tan_malaka"
-		texturefile = "gfx/leaders/INS/portrait_INS_tan_malaka.dds"
+		texturefile = "gfx/leaders/INS/r56_portrait_INS_Tan_Malaka.dds" # 56 - This will be replaced if DLC is enabled
 	}
 	spriteType = {
 		name = "GFX_portrait_AST_john_collins"
@@ -9184,7 +9176,7 @@ spriteType = {
 	}
 	spriteType = {
 		name = "GFX_portrait_INS_kartosoewirjo"
-		texturefile = "gfx/leaders/INS/portrait_INS_kartosoewirjo.dds"
+		texturefile = "gfx/leaders/INS/r56_portrait_INS_sekarmadji_kartosuwirjo.dds" # 56 - This will be replaced if DLC is enabled
 	}
 	spriteType = {
 		name = "GFX_portrait_INS_dewa_geg"
@@ -9256,21 +9248,48 @@ spriteType = {
 	spriteType = { name = "GFX_portrait_POL_anna_anderson" texturefile = "gfx/leaders/kr_operatives/EuropeFemale19.dds" }
 
 	# REPLACE 56
-	# ICE
+
+	# ICE - AAT
 	spriteType = { name = "GFX_portrait_ICE_gisli_sigurbjornsson" texturefile = "gfx/leaders/ICE/r56_portrait_ICE_Gisli_Sigurbjornsson.dds" }
 	spriteType = { name = "GFX_portrait_ICE_brynjolfur_bjarnason" texturefile = "gfx/leaders/ICE/r56_portrait_ICE_Brynjolfur_Bjarnason.dds" }
-	
-	# KHM
-	spriteType = { name = "GFX_Portrait_Ma_Hushan" texturefile = "gfx/leaders/KHM/r56_KHM_Ma_Hushan.dds" }
 
-	# BOL
+	# BOL - TOA
 	spriteType = { name = "GFX_portrait_BOL_david_toro" texturefile = "gfx/leaders/BOL/r56_portrait_BOL_David_Toro.dds" }
 	spriteType = { name = "GFX_portrait_BOL_enrique_penaranda" texturefile = "gfx/leaders/BOL/r56_portrait_BOL_Enrique_Penaranda.dds" }
 	spriteType = { name = "GFX_portrait_BOL_carlos_quintanilla" texturefile = "gfx/leaders/BOL/r56_portrait_BOL_Carlos_Quintanilla.dds" }
 
-
-	# URG
+	# URG - TOA
 	spriteType = { name = "GFX_portrait_URG_luis_alberto_herrera" texturefile = "gfx/leaders/URG/r56_portrait_URG_Luis_Alberto_de_Herrera.dds" }
+
+	# KHM - NCNS
+	spriteType = { name = "GFX_Portrait_Ma_Hushan" texturefile = "gfx/leaders/KHM/r56_KHM_Ma_Hushan.dds" }
+
+	# CZE - MUN
+	spriteType = { name = "GFX_portrait_CZE_antonin_hasal" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Antonin_Hasal.dds" }
+	spriteType = { name = "GFX_portrait_CZE_emil_hacha" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Emil_Hacha.dds" }
+	spriteType = { name = "GFX_portrait_CZE_jan_syrovy" texturefile = "gfx/leaders/CZE/Portrait_Czech_Jan_Syrovy.dds" }
+	spriteType = { name = "GFX_portrait_CZE_milan_hodza" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Milan_Hodza.dds" }
+	spriteType = { name = "GFX_portrait_CZE_radola_gajda" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Radola_Gajda.dds" }
+	spriteType = { name = "GFX_portrait_CZE_josef_votruba" texturefile = "gfx/leaders/CZE/Portrait_Czech_Josef_Votruba.dds" }
+	spriteType = { name = "GFX_portrait_CZE_karel_schwarzenberg" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Karel_VI.dds" }
+	spriteType = { name = "GFX_portrait_CZE_lev_prchala" texturefile = "gfx/leaders/CZE/Portrait_Czech_Lev_Prchala.dds" }
+	spriteType = { name = "GFX_portrait_CZE_zdenko_hudecek" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Zdenko_Hudecek.dds" }
+
+	# AST - TAOG
+	spriteType = { name = "GFX_portrait_AST_jack_miles" texturefile = "gfx/leaders/AST/r56_portrait_AST_JB_Miles.dds" }
+	spriteType = { name = "GFX_portrait_AST_joseph_lyons" texturefile = "gfx/leaders/AST/r56_portrait_AST_Joseph_Lyons.dds" }
+	spriteType = { name = "GFX_portrait_AST_leslie_morshead" texturefile = "gfx/leaders/AST/r56_portrait_AST_Leslie_Morshead.dds" }
+
+	# INS - TAOG
+	spriteType = { name = "GFX_portrait_INS_sudirman" texturefile = "gfx/leaders/INS/r56_portrait_INS_Sudirman2.dds" }
+	spriteType = { name = "GFX_portrait_INS_gatot_soebroto" texturefile = "gfx/leaders/INS/r56_portrait_INS_Gatot_Subroto.dds" }
+	spriteType = { name = "GFX_portrait_INS_jacob_pesman"  texturefile = "gfx/leaders/INS/r56_portrait_INS_Jacob_Pesman.dds" }
+	spriteType = { name = "GFX_portrait_INS_mas_pardi" texturefile = "gfx/leaders/INS/r56_portrait_INS_Mas_Pardi.dds" }
+	spriteType = { name = "GFX_portrait_INS_murk_boersta" texturefile = "gfx/leaders/INS/r56_portrait_INS_Murk_Boerstra.dds" }
+	spriteType = { name = "GFX_portrait_INS_musso" texturefile = "gfx/leaders/INS/r56_portrait_INS_Musso_Munawar.dds" }
+	spriteType = { name = "GFX_portrait_INS_oerip_soemohardjo" texturefile = "gfx/leaders/INS/r56_portrait_INS_Urip_Sumoharjo.dds" }
+	spriteType = { name = "GFX_portrait_INS_tjalling_bakker" texturefile = "gfx/leaders/INS/r56_portrait_INS_Tjalling_Bakker.dds" }
+	spriteType = { name = "GFX_portrait_INS_geradus_berenschot" texturefile = "gfx/leaders/INS/r56_portrait_INS_Gerardus_Berenschot.dds" }
 
 	##################
 	### OPERATIVES ###

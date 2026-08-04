@@ -186,11 +186,11 @@ characters = {
 		name=POL_wladyslaw_sikorski
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/POL/r56_portrait_POL_Wladyslaw_Sikorski.dds"
+				large = GFX_portrait_POL_wladyslaw_sikorski
 				small = "GFX_idea_POL_Wladyslaw_Sikorski_politician"
 			}
 			army = {
-				large = "gfx/leaders/POL/r56_portrait_POL_Wladyslaw_Sikorski.dds"
+				large = GFX_portrait_POL_wladyslaw_sikorski
 				small = "GFX_idea_POL_Wladyslaw_Sikorski_army"
 			}
 		}
@@ -264,7 +264,7 @@ characters = {
 				small=GFX_portrait_POL_ignacy_moscicki_small
 			}
 			civilian = {
-				large="gfx/leaders/POL/r56_portrait_POL_ignacy_moscicki.dds"
+				large=GFX_portrait_POL_ignacy_moscicki
 			}
 		}
 		advisor={

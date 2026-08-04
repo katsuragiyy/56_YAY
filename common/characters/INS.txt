@@ -67,7 +67,7 @@ characters = {
 			name = INS_amir_syarifuddin_harahap
 			portraits = {
 				civilian = {
-					large = GFX_portrait_INS_amir_syarifuddin
+					large = GFX_portrait_INS_amir_sjarifuddin
 				}
 				army = {
 					small = GFX_advisor_INS_amir_syarifuddin
@@ -806,7 +806,7 @@ characters = {
 		name = INS_munawar_musso
 		portraits = {
 			civilian = {
-				large = GFX_portrait_INS_musso_munawar
+				large = GFX_portrait_INS_musso
 			}
 			army = {
 				small = GFX_advisor_INS_munawar_musso
@@ -951,7 +951,7 @@ characters = {
 		name = INS_sekarmaji_kartosuwiryo
 		portraits = {
 			civilian= {
-				large = GFX_portrait_INS_kartosuwiryo
+				large = GFX_portrait_INS_kartosoewirjo
 				small = GFX_advisor_INS_kartosuwiryo
 			}
 		}
@@ -1280,7 +1280,7 @@ characters = {
 		name = INS_dr_sutomo
 		portraits = {
 			civilian = {
-				large = GFX_portrait_INS_sutomo
+				large = "gfx/leaders/INS/r56_portrait_INS_Sutomo.dds"
 			}
 			army = {
 				small = GFX_advisor_INS_sutomo
@@ -1451,7 +1451,7 @@ characters = {
 		name = INS_murk_boerstra
 		portraits = {
 			army = {
-				large = GFX_portrait_INS_murk_boerstra
+				large = GFX_portrait_INS_murk_boersta
 				small = GFX_advisor_INS_murk_boerstra
 			}
 		}
@@ -1529,7 +1529,7 @@ characters = {
 		name = INS_tjalling_bakker
 		portraits = {
 			army = {
-				large = GFX_portrait_INS_Tjalling_Bakker
+				large = GFX_portrait_INS_tjalling_bakker
 				small = GFX_advisor_INS_Tjalling_Bakker
 			}
 		}
@@ -1566,7 +1566,7 @@ characters = {
 		portraits = {
 			army = {
 				small = GFX_advisor_INS_berenschot
-				large = GFX_portrait_INS_gerardus_berenschot
+				large = GFX_portrait_INS_geradus_berenschot
 			}
 		}
 		field_marshal = {
@@ -1639,7 +1639,7 @@ characters = {
 		portraits = {
 			army = {
 				small = GFX_advisor_INS_Jacob_Pesman
-				large = GFX_portrait_INS_Jacob_Pesman
+				large = GFX_portrait_INS_jacob_pesman
 			}
 		}
 		corps_commander = {
@@ -2158,7 +2158,7 @@ characters = {
 			name = INS_urip_sumoharjo
 			portraits = {
 				army = {
-					large = GFX_portrait_INS_urip
+					large = GFX_portrait_INS_oerip_soemohardjo
 					small = GFX_advisor_INS_urip
 				}
 			}
@@ -2211,7 +2211,7 @@ characters = {
 		name = INS_gatot_subroto
 		portraits = {
 			army = {
-				large = GFX_portrait_INS_subroto
+				large = GFX_portrait_INS_gatot_soebroto
 				small = GFX_advisor_INS_subroto
 			}
 		}
@@ -2282,7 +2282,7 @@ characters = {
 		name = INS_didi_kartasasmita
 		portraits = {
 			army = {
-				large = GFX_portrait_INS_didi_kartasasmita
+				large = "gfx/leaders/INS/r56_portrait_INS_Didi_Kartasasmita.dds"
 				small = GFX_advisor_INS_didi_kartasasmita
 			}
 		}
@@ -2586,7 +2586,7 @@ characters = {
 	INS_moestopo = {
 		name = INS_moestopo
 		portraits = {
-			army = { large = GFX_portrait_INS_Moestopo }
+			army = { large = GFX_portrait_INS_moestopo }
 		}
 	}
 
@@ -2607,7 +2607,7 @@ characters = {
 	INS_soedirman = {
 		name = INS_soedirman
 		portraits = {
-			army = { large = "gfx/leaders/INS/r56_portrait_INS_Sudirman2.dds" }
+			army = { large = GFX_portrait_INS_sudirman }
 		}
 	}
 
@@ -3399,7 +3399,7 @@ characters = {
 		name = INS_sutomo
 		portraits = {
 			army = {
-				large = "GFX_portrait_INS_sutomo"
+				large = "gfx/leaders/INS/r56_portrait_INS_Sutomo.dds"
 				small = "GFX_portrait_INS_sutomo_small"
 			}
 		}

@@ -13,26 +13,18 @@ spriteTypes = {
 	spriteType = { name = GFX_Portrait_BRA_cyro_espirito_santo_cardoso texturefile = "gfx/leaders/BRA/r56_portrait_BRA_cyro_espirito_santo_cardoso.dds" }
 	spriteType = { name = GFX_Portrait_BRA_cyro_espirito_santo_cardoso_small texturefile = "gfx/interface/ideas/bra/advisors/r56_portrait_SPR_BRA_cyro_espirito_santo_cardoso.dds" }
 
-#-> BRM <><>
-	spriteType = { name = GFX_Portrait_BRM_Archibald_Cochrane texturefile = "gfx/leaders/BRM/r56_portrait_BRM_Archibald_Cochrane.dds" }
-
 #->  CHI <><>
 	spriteType = { name = "GFX_r56_Portrait_CHI_Carsun_Chang" texturefile = "gfx/leaders/CHI/r56_portrait_CHI_Carsun_Chang.dds" }
 
 #->  COL <><>
 	spriteType = { name = "GFX_Portrait_Gabriel_Paris_Gordillo" texturefile = "gfx/leaders/COL/r56_portrait_COL_Gustavo_Rojas.dds" }
 
-#->  CZE <><>
-	spriteType = { name = "GFX_CZE_Portrait_milan_hodza" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Milan_Hodza.dds" }
-	spriteType = { name = "GFX_CZE_Portrait_radola_gajda" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Radola_Gajda.dds" }
-	spriteType = { name = "GFX_CZE_Portrait_jan_syrovy" texturefile = "gfx/leaders/CZE/Portrait_Czech_Jan_Syrovy.dds" }
-
 #->  CUB <><>
 	spriteType = { name = "GFX_Portrait_Cuba_Federico_Laredo_Bru" texturefile = "gfx/leaders/CUB/Portrait_Cuba_Federico_Laredo_Bru.dds" }
 	spriteType = { name = "GFX_Portrait_Cuba_Miguel_Mariano_Gomez" texturefile = "gfx/leaders/CUB/Portrait_Cuba_Miguel_Mariano_Gomez.dds" }
 	spriteType = { name = "GFX_Portrait_Cuba_Mario_Garcia_Menocal" texturefile = "gfx/leaders/CUB/Portrait_Cuba_Mario_Garcia_Menocal.dds" }
 	spriteType = { name = "GFX_Portrait_Cuba_Blas_Roca_Calderio" texturefile = "gfx/leaders/CUB/Portrait_Cuba_Blas_Roca_Calderio.dds" }
-	spriteType = { name = "GFX_Portrait_Cuba_Fulgencio_Batista" texturefile = "gfx/leaders/CUB/Portrait_Cuba_Fulgencio_Batista.dds" }
+	spriteType = { name = "GFX_Portrait_Cuba_Fulgencio_Batista" texturefile = "gfx/leaders/CUB/r56_portrait_CUB_Fulgencio_Batista.dds" }
 	spriteType = { name = "GFX_Portrait_Cuba_Genovevo_Perez_Damera" texturefile = "gfx/leaders/CUB/r56_portrait_CUB_Genovevo_Perez_Damera.dds" }
 
 #-> DOU <><>
@@ -115,28 +107,21 @@ spriteTypes = {
 
 #->  INS <><>
 	spriteType = { name = "GFX_portrait_INS_abikusno" texturefile = "gfx/leaders/INS/r56_portrait_INS_Abikusno_Cokrosuyoso.dds" }
-	spriteType = { name = "GFX_portrait_INS_amir_syarifuddin" texturefile = "gfx/leaders/INS/r56_portrait_INS_Amir_Sjarifuddin_Harahap.dds" }
 	spriteType = { name = "GFX_portrait_INS_amir_syarifuddin_army" texturefile = "gfx/leaders/INS/r56_portrait_INS_Amir_Sjarifuddin_Army.dds" }
 	spriteType = { name = "GFX_portrait_INS_andries_graeff" texturefile = "gfx/leaders/INS/r56_portrait_INS_Andries_Graeff.dds" }
 	spriteType = { name = "GFX_portrait_INS_cornelis_de_jonge" texturefile = "gfx/leaders/INS/r56_portrait_INS_Cornelis_De_Jonge.dds" }
 	spriteType = { name = "GFX_portrait_INS_dipa_nusantara" texturefile = "gfx/leaders/INS/r56_portrait_INS_Dipa_Nusantara.dds" }
 	spriteType = { name = "GFX_portrait_INS_douwes_dekker" texturefile = "gfx/leaders/INS/r56_portrait_INS_Douwes_Dekker.dds" }
 	spriteType = { name = "GFX_portrait_INS_ferwerda" texturefile = "gfx/leaders/INS/r56_portrait_INS_Hendrikus_Ferwerda.dds" }
-	spriteType = { name = "GFX_portrait_INS_gerardus_berenschot" texturefile = "gfx/leaders/INS/r56_portrait_INS_Berenschot_Gerardus.dds" }
 	spriteType = { name = "GFX_portrait_INS_hamengkubuwono_viii" texturefile = "gfx/leaders/INS/r56_portrait_INS_Hamengkubuwono_VIII.dds" }
 	spriteType = { name = "GFX_portrait_INS_hamengkubuwono_viii_army" texturefile = "gfx/leaders/INS/r56_portrait_INS_Hamengkubuwono_VIII_Army.dds" }
 	spriteType = { name = "GFX_portrait_INS_hamengkubuwono_ix" texturefile = "gfx/leaders/INS/r56_portrait_INS_Hamengkubuwono_IX.dds" }
 	spriteType = { name = "GFX_portrait_INS_hamengkubuwono_ix_army" texturefile = "gfx/leaders/INS/r56_portrait_INS_Hamengkubuwono_IX_Army.dds" }
 	spriteType = { name = "GFX_portrait_INS_Gustav_Ilgen" texturefile = "gfx/leaders/INS/r56_portrait_INS_Gustav_Ilgen.dds" }
-	spriteType = { name = "GFX_portrait_INS_Jacob_Pesman" texturefile = "gfx/leaders/INS/r56_portrait_INS_Jacob_Pesman.dds" }
-	spriteType = { name = "GFX_portrait_INS_kartosuwiryo" texturefile = "gfx/leaders/INS/r56_portrait_INS_Kartosuwiryo.dds" }
 	spriteType = { name = "GFX_portrait_INS_sekarmaji_kartosuwiryo" texturefile = "gfx/leaders/INS/r56_portrait_INS_sekarmadji_kartosuwirjo.dds" }
 	spriteType = { name = "GFX_portrait_INS_maarten_van_dulm" texturefile = "gfx/leaders/INS/r56_portrait_INS_Maarten_van_Dulm.dds" }
 	spriteType = { name = "GFX_portrait_INS_mangkunegara_vii" texturefile = "gfx/leaders/INS/r56_portrait_INS_Mangkunegara_VII.dds" }
-	spriteType = { name = "GFX_portrait_INS_mohammad_hatta" texturefile = "gfx/leaders/INS/r56_portrait_INS_Mohammad_Hatta.dds" }
 	spriteType = { name = "GFX_portrait_INS_mohammad_natsir" texturefile = "gfx/leaders/INS/r56_portrait_INS_Mohammad_Natsir.dds" }
-	spriteType = { name = "GFX_portrait_INS_murk_boerstra" texturefile = "gfx/leaders/INS/r56_portrait_INS_Murk_Boerstra.dds" }
-	spriteType = { name = "GFX_portrait_INS_musso_munawar" texturefile = "gfx/leaders/INS/r56_portrait_INS_Musso_Munawar.dds" }
 	spriteType = { name = "GFX_portrait_INS_national_committee" texturefile = "gfx/leaders/INS/r56_portrait_INS_National_Committee.dds" }
 	spriteType = { name = "GFX_portrait_INS_Nazir_Isa" texturefile = "gfx/leaders/INS/r56_portrait_INS_Nazir_Isa.dds" }
 	spriteType = { name = "GFX_portrait_INS_pakubuwono_x" texturefile = "gfx/leaders/INS/r56_portrait_INS_Pakubuwono_X.dds" }
@@ -152,23 +137,14 @@ spriteTypes = {
 	spriteType = { name = "GFX_portrait_INS_semaun" texturefile = "gfx/leaders/INS/r56_portrait_INS_Semaun.dds" }
 	spriteType = { name = "GFX_portrait_INS_simon_spoor" texturefile = "gfx/leaders/INS/r56_portrait_INS_Simon_Hendrik_Spoor.dds" }
 	spriteType = { name = "GFX_portrait_INS_statius_muller" texturefile = "gfx/leaders/INS/r56_portrait_INS_Statius_Muller.dds" }
-	spriteType = { name = "GFX_portrait_INS_subroto" texturefile = "gfx/leaders/INS/r56_portrait_INS_Gatot_Subroto.dds" }
-	spriteType = { name = "GFX_portrait_INS_sudirman" texturefile = "gfx/leaders/INS/r56_portrait_INS_Sudirman.dds" }
-	spriteType = { name = "GFX_portrait_INS_sudirman2" texturefile = "gfx/leaders/INS/r56_portrait_INS_Sudirman2.dds" }
-	spriteType = { name = "GFX_portrait_INS_sukarno" texturefile = "gfx/leaders/INS/r56_portrait_INS_Sukarno.dds" }
 	spriteType = { name = "GFX_portrait_INS_supomo" texturefile = "gfx/leaders/INS/r56_portrait_INS_Supomo.dds" }
 	spriteType = { name = "GFX_portrait_INS_sutan_syahrir" texturefile = "gfx/leaders/INS/r56_portrait_INS_Sutan_Syahrir.dds" }
-	spriteType = { name = "GFX_portrait_INS_sutomo" texturefile = "gfx/leaders/INS/r56_portrait_INS_Sutomo.dds" }
-	spriteType = { name = "GFX_portrait_INS_tan_malaka" texturefile = "gfx/leaders/INS/r56_portrait_INS_Tan_Malaka.dds" }
 	spriteType = { name = "GFX_portrait_INS_thamrin" texturefile = "gfx/leaders/INS/r56_portrait_INS_Husni_Thamrin.dds" }
 	spriteType = { name = "GFX_portrait_INS_Tjarda_van_Starkenborgh" texturefile = "gfx/leaders/INS/r56_portrait_INS_Tjarda_van_Starkenborgh.dds" }
-	spriteType = { name = "GFX_portrait_INS_Tjalling_Bakker" texturefile = "gfx/leaders/INS/r56_portrait_INS_Tjalling_Bakker.dds" }
-	spriteType = { name = "GFX_portrait_INS_urip" texturefile = "gfx/leaders/INS/r56_portrait_INS_Urip_Sumoharjo.dds" }
 	spriteType = { name = "GFX_portrait_INS_van_mook" texturefile = "gfx/leaders/INS/r56_portrait_INS_Hubertus_van_Mook.dds" }
 	spriteType = { name = "GFX_portrait_INS_van_rees" texturefile = "gfx/leaders/INS/r56_portrait_INS_Van_Rees.dds" }
 	spriteType = { name = "GFX_portrait_INS_wuryaningrat" texturefile = "gfx/leaders/INS/r56_portrait_INS_Wuryaningrat.dds" }
 	spriteType = { name = "GFX_portrait_INS_laurens_walraven" texturefile = "gfx/leaders/INS/r56_portrait_INS_Laurens_Walraven.dds" }
-	spriteType = { name = GFX_portrait_INS_Moestopo texturefile = "gfx/leaders/INS/r56_portrait_INS_Moestopo.dds" }
 	spriteType = { name = GFX_portrait_INS_Suharto texturefile = "gfx/leaders/INS/r56_portrait_INS_Suharto.dds" }
 	spriteType = { name = GFX_portrait_INS_Alimin texturefile = "gfx/leaders/INS/r56_portrait_INS_Alimin.dds" }
 	spriteType = { name = GFX_portrait_INS_Achmad_Yani texturefile = "gfx/leaders/INS/r56_portrait_INS_Achmad_Yani.dds" }

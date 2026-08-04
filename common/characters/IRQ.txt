@@ -53,7 +53,7 @@ characters = {
 					small = GFX_portrait_IRQ_ghazi_i_small
 				}
 				army = {
-					large="gfx/leaders/IRQ/r56_portrait_IRQ_ghazi_I.dds"	#Roles defined in on_action
+					large=GFX_portrait_iraq_ghazi	#Roles defined in on_action
 					small="GFX_idea_IRQ_ghazi"
 				}
 			}
@@ -119,7 +119,7 @@ characters = {
 					large = GFX_portrait_iraq_ghazi
 				}
 				army = {
-					large="gfx/leaders/IRQ/r56_portrait_IRQ_ghazi_I.dds"	#Roles defined in on_action
+					large=GFX_portrait_iraq_ghazi	#Roles defined in on_action
 					small="GFX_idea_IRQ_ghazi"
 				}
 			}

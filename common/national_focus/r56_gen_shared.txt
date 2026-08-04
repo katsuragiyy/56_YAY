@@ -1997,6 +1997,13 @@
 			}
 		}
 		offset = {
+			x = -50
+			y = 0
+			trigger = {
+				has_focus_tree = SLO_generic_focus
+			}
+		}
+		offset = {
 			x = 8
 			y = 0
 			trigger = {
@@ -3685,6 +3692,13 @@
 					tag = COS
 					has_focus_tree = west_africa_focus
 				}
+			}
+		}
+		offset = {
+			x = -50
+			y = 0
+			trigger = {
+				has_focus_tree = SLO_generic_focus
 			}
 		}
 		offset = {

@@ -42,7 +42,7 @@ characters = {
 #		}
 	
 	SLO_jozef_tiso = {
-		name = "Jozef Tiso"
+		name = SLO_jozef_tiso
 		portraits = {
 			civilian = {
 				large ="gfx/leaders/SLO/r56_portrait_SLO_Jozef_Tiso.dds"
@@ -181,7 +181,7 @@ characters = {
 		}
 	}
 	SLO_augustin_malar = {
-		name = "Augustin Malár"
+		name = SLO_augustin_malar
 		portraits = {
 			army = {
 				large = "gfx/leaders/SLO/r56_portrait_SLO_Augustin_Malar.dds"
@@ -213,7 +213,7 @@ characters = {
 	}
 	
 	SLO_stefan_jurech = {
-		name = "Stefan Jurech"
+		name = SLO_stefan_jurech
 		portraits = {
 			army = {
 				large = "gfx/leaders/SLO/r56_portrait_SLO_Stefan_Jurech.dds"
@@ -335,7 +335,7 @@ characters = {
 		}		
 	}	
 	SLO_rudolf_viest = {
-		name = SLO_rudolf_viest
+		name = CZE_rudolf_viest
 		portraits = {
 			army = {
 				large = "gfx/leaders/SLO/r56_portrait_SLO_Rudolf_Viest.dds"
@@ -906,7 +906,7 @@ characters = {
 		}		
 	}	
 	SLO_vojtech_tuka = { 
-		name = "Vojtech Tuka" 
+		name = CZE_vojtech_tuka
 		portraits = {
 			army = {
 				small = "GFX_idea_CZE_vojtech_tuka"

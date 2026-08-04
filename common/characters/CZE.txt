@@ -1033,10 +1033,10 @@ characters={
 					has_dlc = "Peace For Our Time"
 				}
 			}
-			name="Karel Schwarzenberg"
+			name=CZE_karel_schwarzenberg
 			portraits={
 				civilian={
-					large="gfx/leaders/r56_generic/r56_portrait_generic_politician_europe_7.dds"
+					large=GFX_portrait_CZE_karel_schwarzenberg
 				}
 			}
 			country_leader={
@@ -1484,11 +1484,11 @@ characters={
 					has_dlc = "Peace For Our Time"
 				}
 			}
-			name="Milan Hodža"
+			name=CZE_milan_hodza
 			#desc = "CZE_milan_hodza_desc"
 			portraits={
 				civilian={
-					large = GFX_CZE_Portrait_milan_hodza
+					large = GFX_portrait_CZE_milan_hodza
 					small="GFX_idea_CZE_milan_hodza"
 				}
 			}
@@ -1547,11 +1547,11 @@ characters={
 					has_dlc = "Peace For Our Time"
 				}
 			}
-			name="Radola Gajda"
+			name=CZE_radola_gajda
 			#desc = "CZE_radola_gajda_desc"
 			portraits={
 				civilian={
-					large= GFX_CZE_Portrait_radola_gajda
+					large= GFX_portrait_CZE_radola_gajda
 				}
 				army={
 					small="GFX_idea_CZE_radola_gajda"
@@ -1562,6 +1562,7 @@ characters={
 				ideology=fascism_ideology
 				traits = {
 					dislikes_germany
+					anti_communist
 					dictator
 				}
 				expire="1965.1.1"
@@ -3450,10 +3451,10 @@ characters={
 	}
 
 	CZE_lev_prchala = {
-		name="Lev Prchala"
+		name=CZE_lev_prchala
 		portraits={
 			army={
-				large="gfx/leaders/CZE/Portrait_Czech_Lev_Prchala.dds"
+				large=GFX_portrait_CZE_lev_prchala
 				small="GFX_idea_CZE_lev_prchala"
 			}
 		}
@@ -3876,10 +3877,10 @@ characters={
 			allowed = {
 				NOT = { has_dlc = "Peace For Our Time" }
 			}
-			name="Zdenko Hudeček"
+			name=CZE_zdenko_hudecek
 			portraits={
 				army={
-					large = "gfx/leaders/CZE/r56_portrait_CZE_Zdenko_Hudecek.dds"
+					large = GFX_portrait_CZE_zdenko_hudecek
 					small="GFX_idea_CZE_zdenko_hudecek"
 				}
 			}
@@ -4215,11 +4216,11 @@ characters={
 					has_dlc = "Peace For Our Time"
 				}
 			}
-			name="Jan Syrový"
+			name=CZE_jan_syrovy
 			#desc = CZE_jan_syrovy_desc
 			portraits={
 				civilian={ 
-					large = GFX_CZE_Portrait_jan_syrovy
+					large = GFX_portrait_CZE_jan_syrovy
 				}
 				army={
 					small="GFX_idea_CZE_jan_syrovy"
@@ -4405,7 +4406,7 @@ characters={
 			name=CZE_rudolf_viest
 			portraits={
 				army={
-					large=GFX_portrait_CZE_rudolf_viest
+					large="gfx/leaders/SLO/r56_portrait_SLO_Rudolf_Viest.dds" # 56 - You can never top off an Eggz portrait
 					small=GFX_portrait_CZE_rudolf_viest_small
 				}
 			}
@@ -4759,10 +4760,10 @@ characters={
 					has_dlc = "Peace For Our Time"
 				}
 			}
-			name="Josef Votruba"
+			name=CZE_josef_votruba
 			portraits={
 				army={
-					large="gfx/leaders/CZE/Portrait_Czech_Josef_Votruba.dds"
+					large=GFX_portrait_CZE_josef_votruba
 				}
 			}
 			corps_commander={
@@ -4884,10 +4885,10 @@ characters={
 					has_dlc = "Peace For Our Time"
 				}
 			}
-			name="Antonin Hasal"
+			name=CZE_antonin_hasal_new
 			portraits={
 				army={
-					large = "gfx/leaders/CZE/r56_portrait_CZE_Antonin_Hasal.dds"
+					large = GFX_portrait_CZE_antonin_hasal
 					small = GFX_idea_CZE_antonin_hasal
 				}
 			}

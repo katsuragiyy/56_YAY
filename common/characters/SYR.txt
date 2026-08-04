@@ -1,9 +1,9 @@
 characters={
 	SYR_hashim_al_atassi={
-		name="SYR_hashim_al_atassi"
+		name=SYR_hashim_al_atassi
 		portraits={
 			civilian={
-				large="gfx/leaders/SYR/r56_portrait_SYR_Hashim_al_Atassi.dds"
+				large=GFX_portrait_SYR_hashim_al_atassi
 			}
 		}
 		country_leader={

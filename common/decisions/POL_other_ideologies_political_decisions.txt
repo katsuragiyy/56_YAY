@@ -507,7 +507,7 @@ liberalism_on_the_rise = {
 			if = { limit = { NOT = { has_unit_leader = 3154 } }
 				create_field_marshal = {
 					name = "Władysław Sikorski"
-					picture = "Portrait_Poland_Wladyslaw_Sikorski.dds"
+					picture = GFX_portrait_POL_wladyslaw_sikorski
 					traits = { politically_connected career_officer media_personality offensive_doctrine  }
 					id = 3154
 					skill = 3

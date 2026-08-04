@@ -86,11 +86,11 @@ characters={
 		name = "Fulgencio Batista"
 		portraits={
 			civilian = {
-				large = "gfx/leaders/CUB/r56_portrait_CUB_Fulgencio_Batista.dds"
+				large = GFX_Portrait_Cuba_Fulgencio_Batista
 				small = "GFX_idea_CUB_batista"
 			}
 			army={
-				large="gfx/leaders/CUB/r56_portrait_CUB_Fulgencio_Batista.dds"
+				large=GFX_Portrait_Cuba_Fulgencio_Batista
 				small="GFX_idea_CUB_batista"
 			}
 		}

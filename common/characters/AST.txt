@@ -54,7 +54,7 @@ characters = {
 		name = AST_joseph_lyons
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/AST/r56_portrait_AST_Joseph_Lyons.dds"
+				large = GFX_portrait_AST_joseph_lyons
 			}
 		}
 		country_leader = {
@@ -88,7 +88,7 @@ characters = {
 		name = AST_jack_miles
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/AST/r56_portrait_AST_JB_Miles.dds"
+				large = GFX_portrait_AST_jack_miles
 			}
 		}
 		country_leader = {
@@ -202,7 +202,7 @@ characters = {
 		name = AST_leslie_morshead
 		portraits = {
 			army = {
-				large = "GFX_AST_leslie_morshead"
+				large = GFX_portrait_AST_leslie_morshead
 				small = "GFX_idea_AST_leslie_morshead"
 			}
 		}
@@ -1046,6 +1046,7 @@ characters = {
 		name = AST_ben_chifley
 		portraits = {
 			army = {
+				large = GFX_portrait_AST_ben_chifley
 				small = "GFX_idea_AST_ben_chifley"				#small="GFX_idea_generic_political_advisor_europe_3"
 			}
 		}

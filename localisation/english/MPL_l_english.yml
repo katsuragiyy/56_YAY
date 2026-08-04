@@ -54,7 +54,7 @@
  MPL_start_desc:0 "On the 29th of September 1923, the Mandate for Palestine was proclaimed. It was stated it would be a temporary measure in order to prepare the region for independence. However, over 12 years later and little to no progress has been made. We must push forward to find a solution for the region."
  MPL_unions:0 "Communal Unions Empowered"
  MPL_liberalized:0 "Liberalized Economy"
- MPL_religious_freedom:0 "Religious Freedom"
+ MPL_religious_freedom:0 "Guarantee Religious Freedom"
  MPL_universities:0 "Public School Funding"
  MPL_public_school_funding:0 "University Funding"
  MPL_beacon_idea:0 "A Beacon in the Dark"
@@ -66,10 +66,10 @@
 
  #FOCUS
  #FOCUS - START
- MPL_development_haifa:0 "Develop Haifa Region"
- MPL_development_haifa_desc:0 "We should develop the Jewish region of Haifa to gain their support."
- MPL_development_nablus:0 "Develop Nablus Region"
- MPL_development_nablus_desc:0 "We should develop the Arab region of Nablus to gain their support."
+ MPL_development_haifa:0 "Renovate the Naval Base at Haifa"
+ MPL_development_haifa_desc:0 "Let us direct a portion of our funds to the renovation of our naval base at Haifa city, in the hopes it will both boost the [ROOT.GetAdjective] economy and sway the local inhabitants of the city to our cause."
+ MPL_development_nablus:0 "Sponsor Local Manufacturing in Nablus"
+ MPL_development_nablus_desc:0 "Nablus has in recent years overseen a gradual build up of it's manufacturing industry. We should direct a a sizable amount of our funds to the cities development in the hopes it will both help the city in it's gradual development and sway the local Arab inhabitants over to our cause."
  #FOCUS - ARAB REVOLT
  MPL_arab_revolt:0 "The 1936 Arab Revolt"
  MPL_arab_revolt_desc:0 "A general strike has been called by Arab leaders over the country. We must make sure this does not get out of hand."
@@ -84,36 +84,36 @@
  MPL_peel_commision:0 "The Peel Commission"
  MPL_peel_commision_desc:0 "In order to find out the best solution for the crisis we find ourselves in, we must look into the leading causes for the revolt. Lord Peel is a good man for the job, we can trust his finding."
 
- MPL_levantine_union:0 "A Levantine Confederation"
+ MPL_levantine_union:0 "Strive Towards a Levantine Union"
  MPL_levantine_union_desc:0 "The Peel Commission has revealed that the best solution for the conflict in the region is an independent union between the Jews and Arabs. This will be a difficult task to achieve, but it will come with many long term benefits."
 
- MPL_two_states:0 "A Levantine Dissolution"
+ MPL_two_states:0 "A Peaceful Partition"
  MPL_two_states_desc:0 "The Peel Commission has revealed that the best solution for the conflict in the region is to partition the land between the Jews and Arabs, with Jerusalem as a neutral state. Hopefully this should prevent any further conflicts in the region."
 
- MPL_jews_negotiate:0 "Negotiate with Jewish Parties"
- MPL_jews_negotiate_desc:0 "The majority of the strikers may come from the Arabic demographic, however we cannot ignore the needs of the Jewish populations as well if we are to create a unitary society."
+ MPL_jews_negotiate:0 "Seek an Audience with Zionist Politicians"
+ MPL_jews_negotiate_desc:0 "On the other, aligning the Zionist leaders to our cause will help with easing the concerns of the rapidly increasing Jewish population within our borders, and may decrease the popularity of radical Zionist paramilitaries operating on the grounds of an independent Zionist state, which stand in the way of our end goals of unifying the Arab and Jewish people's."
  MPL_jews_ministers:0 "Hire Jewish Ministers"
- MPL_jews_ministers_desc:0 "We should hire some jewish ministers to support the independence preparations."
+ MPL_jews_ministers_desc:0 "We should hire some Jewish ministers to support the independence preparations."
 
- MPL_arabs_negotiate:0 "Support the Arab Parties"
- MPL_arabs_negotiate_desc:0 "We must support the Arab parties in the country in order for a peaceful solution to emerge from this mess."
+ MPL_arabs_negotiate:0 "Seek Mediation With Arab Nationalists"
+ MPL_arabs_negotiate_desc:0 "On one hand, we must begin Immediate talks with Arab leaders who hold much influence over the Arab populations in our borders. Aligning them with our cause will for sure ease the ongoing strikes and help repair our reputation amongst the Arab population, whilst hopefully inspiring Arab citizens to halt their support for radical Arab paramilitaries operating on the grounds of an independent Arab state."
  MPL_arabs_ministers:0 "Hire Arab Ministers"
  MPL_arabs_ministers_desc:0 "We should hire some Arab ministers to support the independence preparations."
 
  MPL_first_round:0 "Complete First Round of Negotiations"
  MPL_first_round_desc:0 "Completing the first round of independence negotiations should weaken the ongoing revolt."
 
- MPL_development_ramallah:0 "Develop Ramallah Area"
- MPL_development_ramallah_desc:0 "We should develop the Arab region of Ramallah to gain their support."
- MPL_development_tel_aviv:0 "Develop Tel Aviv Area"
- MPL_development_tel_aviv_desc:0 "We should develop the Jewish region of Tel Aviv to gain their support."
+ MPL_development_ramallah:0 "Invest Into Ramallah's Agricultural Sector"
+ MPL_development_ramallah_desc:0 "Investing into Ramallah's agricultural centre may potentially ease the worries of the local Arab inhabitants of the city, and hopefully paint a better image of our government for the rest of the Arab population within our borders."
+ MPL_development_tel_aviv:0 "Support Tel Aviv's Rapid Urbanization"
+ MPL_development_tel_aviv_desc:0 "Tel Aviv is a rapidly growing city within our nation, with multiple developments ongoing within the cities boundaries. By supporting their development, we may sway some of the inhabitants to our cause and paint a better picture of ourselves to the rest of the Jewish population within the Mandate."
 
  MPL_end_the_strike:0 "End the Strikes"
  MPL_end_the_strike_desc:0 "With our reforms and negotiations almost complete, we can convince the strikers to end their strike and support us."
 
  MPL_develop_arab_communities:0 "Recruit Arab Police Officers"
  MPL_develop_arab_communities_desc:0 "We should recruit Arab police officers to further our independence."
- MPL_jewish_recruit:0 "Recruit Jewish Soldiers"
+ MPL_jewish_recruit:0 "Recruit Jewish Officers"
  MPL_jewish_recruit_desc:0 "We should recruit Jewish soldiers into the military to gain their support."
 
  MPL_two_people_union:0 "[MPLGetUnion]"
@@ -121,7 +121,7 @@
 
  #FOCUS - INDEPENDENT
 
- MPL_aliyah_question:0 "The Aliyah Question"
+ MPL_aliyah_question:0 "Settle the Matter of Jewish Immigration"
  MPL_aliyah_question_desc:0 "With the formation of the new state, many Jewish refugees from around the world flock to enter the country. However, not all citizens agree on how to handle this crisis. We must decide our course of action."
 
  MPL_start_military_industry:0 "Create Military Industry"
@@ -169,15 +169,16 @@
  MPL_build_convoys:0 "Build Convoys"
  MPL_build_convoys_desc:0 "Our trade industry must be improved, with the use of convoys, for our nation to truly prosper"
 
- MPL_open_politics:0 "Open Politics"
- MPL_open_politics_desc:0 "In our union, It would be hypocritical not to allow both peoples to vote and to run for office. We will be a place where a Jew willingly votes for an Arab, and an Arab willingly votes for a Jew!"
+ MPL_open_politics:0 "Open up the [ROOT.GetAdjective] Political Sphere"
+ MPL_open_politics_desc:0 "In our union, it would be hypocritical not to allow both peoples to vote and to run for office. We will be a place where a Jew willingly votes for an Arab, and an Arab willingly votes for a Jew!"
 
- MPL_elections:0 "Elections"
+ MPL_elections:0 "Host Elections"
  MPL_elections_desc:0 "The country awaits with bated breath.."
+ MPL_we_must_have_X_to_do_this: "\nIf we are either §YIndependent§! or have a §RCommunist§! overlord:"
 
 
 
- MPL_communism_victory:0 "Communist Party Victory"
+ MPL_communism_victory:0 "Palestinian Communist Party Triumphs"
  MPL_communism_victory_desc:0 "After the recent victory of the PCP in the first election of the Union, the first elected government of the Union is a socialist one!"
 
  MPL_democratic_victory:0 "Unionist Party Victory"
@@ -192,10 +193,10 @@
  MPL_increase_industrial_subsidies:0 "Increase Industrial Subsidies"
  MPL_increase_industrial_subsidies_desc:0 "Our nation must industrialize, as our weak economy is a playing factor in the instability of the union."
 
- MPL_liberalize_economy:0 "Liberalize the Economy"
+ MPL_liberalize_economy:0 "Enact Liberal Economic Reforms"
  MPL_liberalize_economy_desc:0 "Our Industry must be liberalized, to increase our economy's strength, and to serve the people even more."
 
- MPL_open_trade:0 "Open Our Trade"
+ MPL_open_trade:0 "Adopt an Open Trade Policy"
  MPL_open_trade_desc:0 "Part of our economic liberalization campaign includes free trade laws, to increase imports and exports"
 
  MPL_united:0 "We Brought Peace Upon Us"
@@ -207,7 +208,7 @@
  MPL_middle_east_accords:0 "The Middle East Peace Accords"
  MPL_middle_east_accords_desc:0 "To further spread Democracy into the middle east, and prevent it from the inevitability of war, we must establish the Middle East Peace Accords, a league of middle eastern nations, regardless of ideology, for the purpose of settling any disputes or conflicts that might occur."
 
- MPL_constitution:0 "Establish a Constitution"
+ MPL_constitution:0 "Draft a Constitution for Our Nation"
  MPL_constitution_desc:0 "An effective constitution is essential for a democratic state to survive. We must establish one to protect our young democracy."
 
  MPL_secularization:0 "Secularization"
@@ -217,7 +218,7 @@
 
  MPL_university_funding_campaign:0 "University Funding Campaign"
  MPL_university_funding_campaign_desc:0 "Our nation hosts some of the brightest unrealized minds of the century. We must do everything in our power to support them."
- MPL_public_schools:0 "Fund Public Schools"
+ MPL_public_schools:0 "Fund Public Education"
  MPL_public_schools_desc:0 "Due to a history of privatized community schools, much of the populace is uneducated. We must open state funded public schools to combat this."
 
  MPL_beacon:0 "A Beacon in the Dark"
@@ -259,16 +260,16 @@
  MPL_the_final_crusade:0 "The Final Crusade"
  MPL_the_final_crusade_desc:0 "So long ago, the crusades destroyed our once glorious land. Now, the tables have turned, and we our in control of our own destiny for the first time in centuries. It is time to realize our destiny. The Middle East will be liberated!"
 
- MPL_stalinist_industrialization:0 "Stalinist Industrialization"
+ MPL_stalinist_industrialization:0 "Copy the Stalinist Model"
  MPL_stalinist_industrialization_desc:0 "We must learn from the successes of Stalin's Soviet Union if we are to turn our agricultural economy into a modernized industrial one."
 
- MPL_demonize_the_monarchy:0 "Demonize the Monarchy"
+ MPL_demonize_the_monarchy:0 "Demonize the House of Windsor"
  MPL_demonize_the_monarchy_desc:0 "The British monarchy has oppressed our people for decades. We must make them the common enemy that unifies the people."
 
- MPL_heavy_political_crackdowns:0 "Political Crackdowns"
+ MPL_heavy_political_crackdowns:0 "Crackdown on Political Opposition"
  MPL_heavy_political_crackdowns_desc:0 "We cannot let any anti-unionist sentiments be spread among our population in order for our nation to survive."
 
- MPL_land_reforms:0 "Land Reforms"
+ MPL_land_reforms:0 "Enact Major Land Reforms"
  MPL_land_reforms_desc:0 "We must reform our current land ownership system if we are to make sure that it is evenly distributed among our populace."
 
  MPL_complete_centralization:0 "Complete Centralization"
@@ -283,25 +284,25 @@
  MPL_join_soviet:0 "Join the Comintern"
  MPL_join_soviet_desc:0 "Time and time again, it has been proved that [SOV.GetNameDef] is the greatest ally to communism. We must join them in their grand struggle."
 
- MPL_go_alone:0 "Go it Alone"
+ MPL_go_alone:0 "Lead the Middle Eastern Revolution"
  MPL_go_alone_desc:0 "We cannot trust any outsiders to understand the needs of our people. We must go it alone through this part of history."
 
- MPL_jordan_revolution:0 "Fund a Jordanian Revolution"
+ MPL_jordan_revolution:0 "Supply Revolutionaries Across the River"
  MPL_jordan_revolution_desc:0 "Jordan is a critical part of our Levantine Unity, however due to our resources both diplomatically and militarily, we cannot declare war upon them.Instead, we must support a pro-levantine coup against the government."
 
- MPL_seize_lebanon:0 "Seize Lebanon"
+ MPL_seize_lebanon:0 "Launch a Military Operation Into Lebanon"
  MPL_seize_lebanon_desc:0 "Lebanon, a multi-ethnic multi-religious area much like ours is a very strategic part of the Levant. It must be secured if we are to come one step closer to reunification."
 
- MPL_syria_war:0 "War in Syria"
+ MPL_syria_war:0 "End the [FRA.GetAdjective] Protectorate Over Syria"
  MPL_syria_war_desc:0 "Syria, the largest part of our Levantine unification effort, must be captured for the sake of our peoples' union."
 
- MPL_annex_jordan:0 "Annex Jordan"
+ MPL_annex_jordan:0 "Unite Both Sides of the River"
  MPL_annex_jordan_desc:0 "Following our coup in Jordan, the time is fit for the full annexation. There is no more need for jordanian sovereignty, instead, a further goal for the Levantian unification."
 
  MPL_fund_secret_police:0 "Fund Secret Police Forces"
  MPL_fund_secret_police_desc:0 "With the instability that our unification is causing, we must make sure our laws are enforced to the upmost degree."
 
- MPL_unify_the_levant:0 "Unify the Levant"
+ MPL_unify_the_levant:0 "Unite the Levantine People's"
  MPL_unify_the_levant_desc:0 "After all of our efforts and conflicts, we have finally reunited the area of the Levant. Glory to the Levantine Commune!"
 
  #FOCUS - BRITAIN
@@ -972,10 +973,12 @@
 
  MPL_request_support_GER:0 "Request Support From [GER.GetNameDef] [GER.GetFlag]"
  MPL_request_support_ITA:0 "Request Support From [ITA.GetNameDef] [ITA.GetFlag]"
+ MPL_buy_guns_CZE: "Request Support from [CZE.GetNameDef] [CZE.GetFlag]"
  MPL_request_support_SOV:0 "Request Support From [SOV.GetNameDef] [SOV.GetFlag]"
  MPL_request_support_ENG:0 "Request Support From [ENG.GetNameDef] [ENG.GetFlag]"
  MPL_request_support_FRA:0 "Request Support From [FRA.GetNameDef] [FRA.GetFlag]"
  MPL_request_support_USA:0 "Request Support From [USA.GetNameDef] [USA.GetFlag]"
+ MPL_support_ISR: "Has agreed to §GSupport§! us." # Used only in ISR focus about CZE
 
  MPL_buy_guns_GER:0 "Buy German Infantry Equipment [GER.GetFlag]"
  MPL_buy_guns_ITA:0 "Buy Italian Infantry Equipment [ITA.GetFlag]"
@@ -1085,10 +1088,12 @@
  MPL_merge_local_governments:0 "Merge Local Governments"
  MPL_upgrade_central_railway:0 "Upgrade the Central Railway"
  MPL_upgrade_coastal_railway:0 "Upgrade the Coastal Railway"
- MPL_continue_haifa_construction:0 "Continue Port of Haifa Construction"
+ MPL_continue_haifa_construction:0 "Continue Constitution on the Port of Haifa"
  MPL_purchase_military_equipment:0 "Purchase Military Equipment"
  MPL_conduct_training:0 "Conduct Army Training"
  MPL_centralize_command_structure:0 "Centralize Army Command Structure"
+
+ MPL_support_majdal_industries: "Support Al-Majdal Textile Industries"
 
 
 #MISC

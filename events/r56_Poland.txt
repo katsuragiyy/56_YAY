@@ -7158,7 +7158,7 @@ country_event = {
 		}		
 		create_country_leader = {
 			name = "Władysław Sikorski"
-			picture = "Portrait_Poland_Wladyslaw_Sikorski.dds"
+			picture = GFX_portrait_POL_wladyslaw_sikorski
 			expire = "1965.1.1"
 			ideology = liberalism
 			traits = {

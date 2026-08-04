@@ -241,11 +241,6 @@ characters = {
 			}
 			
 		}
-		portraits = {
-			civilian = {
-				small = "gfx/interface/ideas/idea_generic_fascist_arab.dds"
-			}
-		}
 	}
 	MPL_albert_einstein = {
 		portraits = {

@@ -210,7 +210,7 @@ ideas = {
 		SIA_high_illiteracy_r56 = {
 			allowed_civil_war = { original_tag = SIA }
 			removal_cost = -1
-			picture = poor_literacy
+			picture = indochina_illiteracy
 			allowed_civil_war = { always = yes }
 			modifier = {
 				research_speed_factor = -0.25
@@ -222,7 +222,7 @@ ideas = {
 			name = SIA_high_illiteracy_r56
 			allowed_civil_war = { original_tag = SIA }
 			removal_cost = -1
-			picture = poor_literacy
+			picture = indochina_illiteracy
 			allowed_civil_war = { always = yes }
 			modifier = {
 				research_speed_factor = -0.2
@@ -232,7 +232,7 @@ ideas = {
 		SIA_illiteracy_r56 = {
 			allowed_civil_war = { original_tag = SIA }
 			removal_cost = -1
-			picture = poor_literacy
+			picture = indochina_illiteracy
 			allowed_civil_war = { always = yes }
 			modifier = {
 				research_speed_factor = -0.12
@@ -242,7 +242,7 @@ ideas = {
 		SIA_rapidly_improving_illiteracy_r56 = {
 			allowed_civil_war = { original_tag = SIA }
 			removal_cost = -1
-			picture = poor_literacy
+			picture = indochina_illiteracy
 			allowed_civil_war = { always = yes }
 			modifier = {
 				research_speed_factor = -0.06

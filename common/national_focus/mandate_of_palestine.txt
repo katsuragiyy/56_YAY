@@ -27,7 +27,7 @@ focus_tree = {
 		x = 0
 		y = 0
 		cost = 14.3
-		icon = GFX_goal_MPL_start
+		icon = GFX_focus_generic_league_of_nations
 		available = {
 			NOT = {
 				has_completed_focus = MPL_arab_revolt
@@ -192,6 +192,31 @@ focus_tree = {
 				}
 			}
 		}
+
+		offset = {
+			x = 5
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MPL_a_forgone_conclusion
+			}
+		}
+
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = { has_completed_focus = MPL_british_occupation }
+			}
+		}
+
 		select_effect = {
 			overlord = {
 				country_event = {
@@ -405,7 +430,7 @@ focus_tree = {
 		id = MPL_jews_negotiate
 		icon = GFX_goal_generic_befriend_israel
 		relative_position_id = MPL_a_forgone_conclusion
-		x = 3
+		x = 2
 		y = 3
 		prerequisite = {
 			focus = MPL_levantine_union
@@ -551,6 +576,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_military_high_command
 			show_ideas_tooltip = MPL_yigal_allon
+			custom_effect_tooltip = generic_skip_one_line_tt
 			show_ideas_tooltip = MPL_yitshak_sadeh
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_power_balance_value = {
@@ -591,7 +617,7 @@ focus_tree = {
 		id = MPL_arabs_negotiate
 		icon = GFX_goal_generic_befriend_palestine
 		relative_position_id = MPL_a_forgone_conclusion
-		x = -3
+		x = -2
 		y = 3
 		prerequisite = {
 			focus = MPL_levantine_union
@@ -639,9 +665,6 @@ focus_tree = {
     				instant_build = yes
 				}
 			}
-			949 = {
-				add_extra_state_shared_building_slots = 1
-			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_power_balance_value = {
 				id = MPL_power_balance
@@ -670,6 +693,8 @@ focus_tree = {
 			}
 			custom_effect_tooltip = MPL_political_up_10
 			custom_effect_tooltip = MPL_economic_up_5
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = MPL_support_majdal_industries
 			
 		}
 		search_filters = {
@@ -780,7 +805,7 @@ focus_tree = {
 	
 	focus = {
 		id = MPL_development_tel_aviv
-		icon = GFX_goal_generic_munitions_factories
+		icon = GFX_focus_generic_low_cost_housing
 		relative_position_id = MPL_jews_negotiate
 		x = -1
 		y = 1
@@ -866,7 +891,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MPL_development_ramallah
-		icon = GFX_goal_generic_strenght_through_industry
+		icon = GFX_goal_generic_farming
 		relative_position_id = MPL_arabs_negotiate
 		x = 1
 		y = 1
@@ -953,7 +978,7 @@ focus_tree = {
 
 	focus = {
 		id = MPL_development_haifa
-		icon = GFX_focus_generic_industry_1
+		icon = GFX_focus_POL_develop_polish_shipbuilding
 		relative_position_id = MPL_development_tel_aviv
 		x = 1
 		y = 1
@@ -1014,6 +1039,12 @@ focus_tree = {
     				level = 1
     				instant_build = yes
 				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 1065
+					instant_build = yes
+				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_power_balance_value = {
@@ -1034,6 +1065,7 @@ focus_tree = {
 				MPL_total_independence = 15
 			}
 			custom_effect_tooltip = MPL_economic_up_15
+			unlock_decision_tooltip = MPL_continue_haifa_construction
 		}
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
@@ -1043,7 +1075,7 @@ focus_tree = {
 
 	focus = {
 		id = MPL_development_nablus
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_focus_generic_military_industry
 		relative_position_id = MPL_development_ramallah
 		x = -1
 		y = 1
@@ -1998,7 +2030,7 @@ focus_tree = {
 		id = MPL_elite_soldier_training
 		icon = GFX_goal_generic_army_professionalism
 		relative_position_id = MPL_modernize_army
-		x = -1
+		x = 1
 		y = 1
 		prerequisite = {
 			focus = MPL_modernize_army
@@ -2179,8 +2211,8 @@ focus_tree = {
 		id = MPL_open_tel_aviv_university
 		icon = GFX_focus_research2
 		relative_position_id = MPL_start_military_industry
-		x = -3
-		y = 1
+		x = -2
+		y = 2
 		prerequisite = {
 			focus = MPL_start_military_industry
 
@@ -2197,7 +2229,7 @@ focus_tree = {
 		id = MPL_invite_einstein
 		icon = GFX_goal_MPL_einstein
 		relative_position_id = MPL_open_tel_aviv_university
-		x = 0
+		x = 1
 		y = 1
 		prerequisite = {
 			focus = MPL_open_tel_aviv_university
@@ -2273,9 +2305,9 @@ focus_tree = {
 	}
 	focus = {
 		id = MPL_build_convoys
-		icon = GFX_focus_POL_develop_polish_shipbuilding
+		icon = GFX_goal_generic_expand_the_naval_industry
 		relative_position_id = MPL_develop_ports
-		x = 0
+		x = -1
 		y = 1
 		prerequisite = {
 			focus = MPL_develop_ports
@@ -2308,7 +2340,7 @@ focus_tree = {
 		id = MPL_purchase_foreign_ships
 		icon = GFX_goal_navy_funding
 		relative_position_id = MPL_develop_ports
-		x = 2
+		x = 1
 		y = 1
 		prerequisite = {
 			focus = MPL_develop_ports
@@ -2395,6 +2427,36 @@ focus_tree = {
 				days = 1
 				random_hours = 12
 			}
+			custom_effect_tooltip = report_reward
+			effect_tooltip = {
+				add_stability = -0.1
+				swap_ideas = {
+					remove_idea = MPL_aliyah_start
+					add_idea = MPL_floodgates
+				}
+				custom_effect_tooltip = MPL_jewish_up_25
+				custom_effect_tooltip = MPL_arab_down_15
+				custom_effect_tooltip = MPL_minority_down_5
+
+				custom_effect_tooltip = alternative_diplomatic_reward
+				swap_ideas = {
+					remove_idea = MPL_aliyah_start
+					add_idea = MPL_small_aliyah
+				}
+				custom_effect_tooltip = MPL_jewish_up_10
+				custom_effect_tooltip = MPL_arab_down_5
+
+				custom_effect_tooltip = alternative_diplomatic_reward
+				remove_ideas = MPL_aliyah_start
+				custom_effect_tooltip = generic_skip_one_line_tt
+				promote_character = {
+					character = MPL_raghib_nashashibi
+					ideology = liberalism
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = MPL_jewish_down_15
+				custom_effect_tooltip = MPL_arab_up_20
+			}
 		}
 		search_filters = {
 			FOCUS_FILTER_STABILITY
@@ -2445,6 +2507,32 @@ focus_tree = {
 				id = mandate_palestine.40
 				days = 1
 				random_hours = 12
+			}
+			custom_effect_tooltip = report_reward
+			effect_tooltip = {
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.2
+				}
+				complete_national_focus = MPL_democratic_victory
+				custom_effect_tooltip = generic_skip_one_line_tt
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}
+
+				custom_effect_tooltip = MPL_we_must_have_X_to_do_this
+				custom_effect_tooltip = alternative_diplomatic_reward
+				add_popularity = {
+					ideology = communism
+					popularity = 0.25
+				}
+				complete_national_focus = MPL_communism_victory
+				custom_effect_tooltip = generic_skip_one_line_tt
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = yes
+				}
 			}
 		}
 		search_filters = {
@@ -3501,7 +3589,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MPL_liberalize_economy
-		icon = GFX_goal_generic_industrial_democracy
+		icon = GFX_goal_FRA_reynaud_economic_reforms
 		relative_position_id = MPL_democratic_victory
 		x = -4
 		y = 1
@@ -3785,7 +3873,7 @@ focus_tree = {
 	
 	focus = {
 		id = MPL_depoliticize_army
-		icon = GFX_goal_rhineland
+		icon = GFX_goal_MON_separate_army_and_politics
 		relative_position_id = MPL_democratic_victory
 		x = 5
 		y = 1
@@ -3871,7 +3959,7 @@ focus_tree = {
 
 	focus = {
 		id = MPL_university_funding_campaign
-		icon = GFX_goal_generic_education
+		icon = GFX_focus_generic_university_2
 		relative_position_id = MPL_democratic_victory
 		x = 3
 		y = 1
@@ -3890,7 +3978,7 @@ focus_tree = {
 
 	focus = {
 		id = MPL_public_schools
-		icon = GFX_focus_generic_military_academy
+		icon = GFX_goal_generic_education
 		relative_position_id = MPL_secularization
 		x = 1
 		y = 1
@@ -4469,6 +4557,31 @@ focus_tree = {
 				}
 			}
 		}
+
+		offset = {
+			x = -5
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MPL_british_occupation
+			}
+		}
+
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = { has_completed_focus = MPL_a_forgone_conclusion }
+			}
+		}
+
 		cost = 10
 		completion_reward = {
 			set_variable = {
@@ -4634,7 +4747,7 @@ focus_tree = {
 
 	focus = {
 		id = MPL_arab_farmland
-		icon = GFX_goal_generic_farming
+		icon = GFX_focus_generic_modernizing_agriculture
 		relative_position_id = MPL_arrest_arab
 		available = {
 			is_subject = yes
@@ -5024,6 +5137,22 @@ focus_tree = {
 				always = no
 			}
 		}
+
+		offset = {
+			x = -3
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				OR = {
+					has_completed_focus = MPL_a_forgone_conclusion
+					has_completed_focus = MPL_british_occupation
+				}
+			}
+		}
+
 		completion_reward = { 
 			custom_effect_tooltip = MPL_collapse_tt_3
 			effect_tooltip = {

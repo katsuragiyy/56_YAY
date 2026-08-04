@@ -84,11 +84,11 @@ characters = {
 		name = BRM_ba_maw
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/MISC/portrait_BRM_ba_maw.dds"
+				large = GFX_portrait_BRM_ba_maw
 				small = "GFX_idea_BRM_ba_maw"
 			}
 			army = {
-				large = "gfx/leaders/BRM/r56_portrait_BRM_Ba_Maw_army.dds"
+				large = GFX_portrait_BRM_ba_maw
 				small = "GFX_idea_BRM_ba_maw_army"
 			}
 		}
@@ -122,8 +122,8 @@ characters = {
 			expire = "1965.1.1"
 			id = -1
 			traits = {
-				r56_trait_opposed_to_communism
-				mon_dynasty_descendant			#vanilla trait
+				r56_trait_opposed_to_communism # 56
+				mon_dynasty_descendant
 			}
 		}
 		field_marshal = {
@@ -255,7 +255,7 @@ characters = {
 		name = BRM_ne_win
 		portraits = {
 			army = {
-				large = "gfx/leaders/MISC/portrait_BRM_ne_win.dds"
+				large = GFX_portrait_BRM_ne_win
 				small = "GFX_idea_BRM_ne_win"
 			}
 		}

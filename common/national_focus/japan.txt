@@ -18870,7 +18870,7 @@ focus_tree = {
 					ruling_only = yes
 					character = JAP_yamakawa_kikue
 				}
-			}	
+			}
 		}
 
 		bypass = {
@@ -18921,7 +18921,7 @@ focus_tree = {
 					ruling_only = yes
 					character = JAP_yamakawa_kikue
 				}
-			}	
+			}
 		}
 
 		bypass = {
@@ -27765,7 +27765,7 @@ focus_tree = {
 
 	focus = {
 		id = JAP_build_up_korean_industries
-		icon = GFX_focus_JAP_build_up_korean_industries
+		icon = GFX_goal_KOR_empire # 56
 		
 		#mutually_exclusive = {
 		#	focus = 

@@ -124,7 +124,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_dealing_with_irgun
-		icon = GFX_goal_control_army
+		icon = GFX_focus_RAJ_union_busting
 		cost = 2
 		relative_position_id = ISR_consolidate_haganah
 		x = 2
@@ -142,7 +142,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_subvert_irgun_influence 
-		icon = GFX_goal_generic_break_army
+		icon = GFX_goal_MAN_confront_gorillas
 		cost = 2
 		relative_position_id = ISR_dealing_with_irgun
 		x = 1
@@ -151,11 +151,11 @@ focus_tree = {
 			focus = ISR_dealing_with_irgun
 		}
 		completion_reward = {
+			add_political_power = -25
 			add_popularity = {
 				ideology = neutrality
 				popularity = -0.05
 			}
-			add_political_power = -25
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -181,7 +181,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_purge_irgun
-		icon = GFX_goal_generic_army_purges
+		icon = GFX_focus_generic_conspiracy
 		cost = 3
 		relative_position_id = ISR_form_the_idf
 		x = 1
@@ -208,9 +208,9 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_ben_gurion_strategy
-		icon = GFX_goal_plan
+		icon = GFX_goal_ISR_ben_gurion
 		relative_position_id = ISR_consolidate_haganah
-		x = -1 
+		x = 0 
 		y = 1
 		cost = 3
 		prerequisite = {
@@ -235,9 +235,9 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_southern_plan
-		icon = GFX_goal_wargaming
+		icon = GFX_focus_generic_desert_training
 		relative_position_id = ISR_ben_gurion_strategy
-		x = 0 
+		x = -1
 		y = 1
 		cost = 3
 		prerequisite = {
@@ -314,7 +314,7 @@ focus_tree = {
 		id = ISR_operation_yoav
 		icon = GFX_goal_generic_tank_map
 		relative_position_id = ISR_southern_plan
-		x = 0
+		x = 1
 		y = 1
 		prerequisite = {
 			focus = ISR_southern_plan
@@ -363,8 +363,12 @@ focus_tree = {
 		}
 		cancel_if_invalid = no
 		continue_if_invalid = yes
-		cost = 3
+		cost = 2
 		available = {
+			if = {
+				limit = { CZE = { is_subject_of = SOV } }
+				SOV = { has_country_flag = MPL_support_ISR }
+			}
 			CZE = {
 				exists = yes
 				has_opinion = {
@@ -374,10 +378,21 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_1
-				amount = 500
-				producer = CZE
+			CZE = {
+				country_event = {
+					id = mandate_palestine.402
+					days = 2
+				}
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				unlock_decision_tooltip = MPL_buy_guns_CZE
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 500
+					producer = CZE
+				}
 			}
 		}
 	}
@@ -466,7 +481,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_spread_revisionist_media
-		icon = GFX_goal_generic_propaganda
+		icon = GFX_goal_generic_phone_crisis
 		relative_position_id = ISR_subvert_haganah
 		x = -1
 		y = 1
@@ -475,11 +490,11 @@ focus_tree = {
 			focus = ISR_subvert_haganah
 		}
 		completion_reward = {
+			add_political_power = -50
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.1
 			}
-			add_political_power = -50
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -487,7 +502,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_steal_haganah_weapons
-		icon = GFX_goal_generic_seize_stockpiles
+		icon = GFX_focus_FIN_oy_alkoholiliike
 		relative_position_id = ISR_subvert_haganah
 		x = 1
 		y = 1
@@ -541,9 +556,9 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_begin_approach
-		icon = GFX_goal_generic_revolt
+		icon = GFX_goal_ISR_begin
 		relative_position_id = ISR_gather_irgun
-		x = 1
+		x = 0
 		y = 1
 		cost = 3
 		prerequisite = {
@@ -581,7 +596,7 @@ focus_tree = {
 		id = ISR_jerusalem_strategy
 		icon = GFX_goal_generic_defense_of_the_lands
 		relative_position_id = ISR_begin_approach
-		x = 0
+		x = 1
 		y = 1
 		cost = 3
 		prerequisite = {
@@ -643,9 +658,9 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_the_west_bank
-		icon = GFX_goal_defensive_position2
+		icon = GFX_goal_generic_seize_railway
 		relative_position_id = ISR_jerusalem_strategy
-		x = 0
+		x = -1
 		y = 1
 		cost = 3
 		prerequisite = {
@@ -1135,7 +1150,7 @@ focus_tree = {
 		id = ISR_mapai
 		icon = GFX_goal_ISR_mapai_2
 		relative_position_id = ISR_convene_knesset
-		x = -6
+		x = -5
 		y = 1 
 		mutually_exclusive = {
 			focus = ISR_hashomer
@@ -5532,9 +5547,6 @@ focus_tree = {
 		x = 0
 		y = 4
 		prerequisite = {
-			focus = ISR_judea_fell
-		}
-		prerequisite = {
 			focus = ISR_expand_support_uses
 		}
 		prerequisite = {
@@ -8576,10 +8588,18 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_daily_mastery = {
+				name = fleet_in_being_bonus
+				amount = 0.2
+				days = 180
+				grand_doctrine = new_fleet_in_being
+			}
+
+
 			add_doctrine_cost_reduction = {
 				name = fleet_in_being_bonus
 				cost_reduction = 0.5
-				uses = 2
+				uses = 1
 				category = fleet_in_being_tree
 			}
 		}
@@ -8671,18 +8691,14 @@ focus_tree = {
 			}
 		}
 
-		bypass = {
-		}
-
-
 		completion_reward = {
-			USA = {
-				add_ai_strategy = {
-					type = support
-					id = ROOT
-					value = 25
-				}
-			}
+			#USA = {
+			#	add_ai_strategy = {
+			#		type = support
+			#		id = ROOT
+			#		value = 25
+			#	}
+			#}
 			add_ideas = GEN_american_ship_production_methods
 			add_opinion_modifier = { target = USA modifier = gen_ships_american }
 		}
@@ -8719,13 +8735,13 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			ENG = {
-				add_ai_strategy = {
-					type = support
-					id = ROOT
-					value = 25
-				}
-			}
+			#ENG = {
+			#	add_ai_strategy = {
+			#		type = support
+			#		id = ROOT
+			#		value = 25
+			#	}
+			#}
 			add_ideas = ENG_escort_effort_focus
 
 			add_opinion_modifier = { target = ENG modifier = gen_ships_british }
@@ -8894,7 +8910,7 @@ focus_tree = {
 				category = bc_tech
 			}
 
-			custom_effect_tooltip = GEN_Generals_Other_nav_tt
+			#custom_effect_tooltip = GEN_Generals_Other_nav_tt
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -9006,15 +9022,38 @@ focus_tree = {
 			}
 		}
 
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = fleet_in_being_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = fleet_in_being_tree
+		available = {
+			count_triggers = {
+			    amount > 1
+				has_subdoctrine_in_track = submarines
+				has_subdoctrine_in_track = screens
+				has_subdoctrine_in_track = carriers
+				has_subdoctrine_in_track = capital_ships
 			}
-			custom_effect_tooltip = GEN_Generals_Other_nav_tt
 		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_daily_mastery = {
+				name = fleet_in_being_bonus
+				amount = 0.2
+				days = 180
+				folder = naval
+			}
+		}
+
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
 
