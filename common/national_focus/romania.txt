@@ -682,7 +682,7 @@ focus_tree = {
 
 		completion_reward = {
 			set_country_flag = ROM_codreanu_will_live_slightly_longer
-			add_threat = 5
+			add_threat = 2.5
 			if = {
 				limit = {
 					is_ai = no
@@ -1729,6 +1729,8 @@ focus_tree = {
 
 		}
 		available = { has_government = fascism }
+		bypass = { has_idea = r56i_laws_gender_traditional }
+		bypass_effect = { add_political_power = 150 }
 		
 		completion_reward = {
 			add_political_power = 50

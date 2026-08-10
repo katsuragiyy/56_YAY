@@ -2110,7 +2110,7 @@ ideas = {
 
 		MON_rely_on_national_strength_idea = {
 
-			picture = PAK_ally_the_army
+			picture = generic_manpower_bonus
 
 			allowed = {
 				original_tag = MON

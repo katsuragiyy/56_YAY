@@ -1,10 +1,133 @@
 BLR_greater_belarus_decision_category_r56 = {
+	# Proclaim Union with Lithuania
+	BLR_proclaim_federation_with_lithuania_r56 = {
+		icon = GFX_decision_generic_form_nation
+		ai_will_do = { base = 100 }
+		fire_only_once = yes
+
+		available = {
+			custom_trigger_tooltip = {
+                tooltip = LIE_to_core_donrepublic
+                11 = { # Kaunas
+                    is_controlled_by = ROOT
+                    compliance > 35
+                    resistance < 5
+                }
+                784 = { # Vilna
+                    is_controlled_by = ROOT
+                    compliance > 35
+                    resistance < 5
+                }
+				814 = { # Suduva
+                    is_controlled_by = ROOT
+                    compliance > 35
+                    resistance < 5
+                }
+				815 = { # Aukstaitija
+                    is_controlled_by = ROOT
+                    compliance > 35
+                    resistance < 5
+                }
+				189 = { # Zemaitija
+                    is_controlled_by = ROOT
+                    compliance > 35
+                    resistance < 5
+                }
+            }
+		}
+
+		visible = {
+			NOT = {
+				188 = { is_core_of = ROOT } # Memel
+				189 = { is_core_of = ROOT } # Zemaitija
+				815 = { is_core_of = ROOT } # Aukstaitija
+				814 = { is_core_of = ROOT } # Suduva
+				11 = { is_core_of = ROOT } # Kaunas
+				784 = { is_core_of = ROOT } # Vilna
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 11 # Kaunas
+				state = 784 # Vilna
+				state = 814 # Suduva
+				state = 815 # Aukstaitija
+				state = 189 # Zemaitija
+			}
+		}
+
+		complete_effect = {
+			every_state = {
+				limit = {
+					NOT = { is_claimed_by = ROOT }
+					OR = {
+						state = 11 # Kaunas
+						state = 784 # Vilna
+						state = 814 # Suduva
+						state = 815 # Aukstaitija
+						state = 189 # Zemaitija
+					}
+				}
+				add_claim_by = ROOT
+			}
+		}
+
+		remove_effect = {
+			add_political_power = 100
+			add_stability = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_cosmetic_tag = LIT_belarus
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			set_country_flag = BLR_i_am_now_lithuania_destroyer_of_baltics
+			unlock_decision_tooltip = form_baltic_federation
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					NOT = { is_core_of = ROOT }
+					OR = {
+						state = 11 # Kaunas
+						state = 784 # Vilna
+						state = 814 # Suduva
+						state = 815 # Aukstaitija
+						state = 189 # Zemaitija
+					}
+				}
+				add_core_of = ROOT
+				transfer_state_to = ROOT
+			}
+
+			hidden_effect = {
+				188 = { add_core_of = ROOT }
+				every_state = {
+					limit = {
+						is_claimed_by = ROOT
+						OR = {
+							state = 11 # Kaunas
+							state = 784 # Vilna
+							state = 814 # Suduva
+							state = 815 # Aukstaitija
+							state = 189 # Zemaitija
+						}
+					}
+					remove_claim_by = ROOT
+				}
+			}
+		}
+	}
+	
 	# Assimilate the Western Territories
 	BLR_assimilate_bialystok_r56 = {
 		icon = GFX_decision_generic_operation
 		ai_will_do = { base = 100 }
 
-		days_remove = 85
+		days_remove = 50
 		fire_only_once = yes
 
 		available = {
@@ -79,7 +202,7 @@ BLR_greater_belarus_decision_category_r56 = {
 			hidden_effect = {
 				every_state = {
 					limit = {
-						NOT = { is_claimed_by = ROOT }
+						is_claimed_by = ROOT
 						OR = {
 							state = 97 # Bialystok
 							state = 934 # Suwalki
@@ -96,7 +219,7 @@ BLR_greater_belarus_decision_category_r56 = {
 		icon = GFX_decision_generic_protection
 		ai_will_do = { base = 100 }
 
-		days_remove = 85
+		days_remove = 50
 		fire_only_once = yes
 
 		available = {
@@ -168,7 +291,7 @@ BLR_greater_belarus_decision_category_r56 = {
 			hidden_effect = {
 				every_state = {
 					limit = {
-						NOT = { is_claimed_by = ROOT }
+						is_claimed_by = ROOT
 						OR = {
 							state = 243 # Roslavl
 							state = 242 # Smolensk

@@ -544,7 +544,15 @@ news_event = {
 	option = {
 		name = bftb_news.13.b
 		trigger = {
-			tag = SOV
+			OR = {
+				tag = SOV
+				AND = {
+					is_in_faction_with = SOV
+					BUL = { is_in_faction_with = SOV }
+					NOT = { tag = BUL }
+					NOT = { tag = SOV }
+				}
+			}
 		}
 	}
 
@@ -552,6 +560,7 @@ news_event = {
 		name = bftb_news.13.c
 		trigger = {
 			is_in_faction_with = SOV
+			NOT = { BUL = { is_in_faction_with = SOV } }
 			NOT = { tag = BUL }
 			NOT = { tag = SOV }
 		}
@@ -935,12 +944,8 @@ news_event = {
 			set_province_name = { id = 9833 name = "Konstantiniyye" }
 			797 = { set_state_name = "Konstantiniyye" } 
 		}
-		if = {
-			limit = {
-				HYD = {
-					has_government = neutrality
-				}				
-			}
+		if = { # 56
+			limit = { HYD = { has_government = neutrality } }
 			ROOT = {
 				add_opinion_modifier = {
 					target = HYD
@@ -1010,7 +1015,7 @@ news_event = {
 			}
 		}
 	}
-	option = {
+	option = { # 56
 		name = bftb_news.205.f
 		trigger = {
 			tag = HYD
@@ -1243,7 +1248,12 @@ news_event = {
 				tag = ENG
 				AND = {
 					tag = GER
-					has_completed_focus = GER_oppose_hitler
+					OR = {
+						has_completed_focus = GER_oppose_hitler
+						has_completed_focus = GER_oppose_hitler_ww
+						has_completed_focus = GER_kill_hitler # 56
+						has_completed_focus = GER_die_letzte_verschwoerung # 56
+					}
 				}
 			}
 		}
@@ -1266,7 +1276,12 @@ news_event = {
 					tag = GRE
 					AND = {
 						tag = GER
-						has_completed_focus = GER_oppose_hitler
+						OR = {
+							has_completed_focus = GER_oppose_hitler
+							has_completed_focus = GER_oppose_hitler_ww
+							has_completed_focus = GER_kill_hitler # 56
+							has_completed_focus = GER_die_letzte_verschwoerung # 56
+						}
 					}
 					tag = ITA
 					tag = BUL

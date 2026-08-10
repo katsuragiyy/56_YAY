@@ -4714,52 +4714,6 @@ spriteType = {
 		textureFile = "gfx/interface/ideas/rom/advisors/ROM_octavian_goga.dds"
 	}
 
-###------> SAU <><> <><> <><> <><> <><>
-	spriteType = {
-		name = "GFX_SAU_Abd_al_Qadir_al_Husayni"
-		texturefile = "gfx/interface/ideas/sau/advisors/r56_idea_SAU_advisor_Abd_al_Qadir_al_Husayni.dds"
-	}
-	spriteType = {
-		name = "GFX_SAU_Abd_al_Rahman_Shahbandar"
-		texturefile = "gfx/interface/ideas/sau/advisors/r56_idea_SAU_advisor_Abd_al_Rahman_Shahbandar.dds"
-	}
-	spriteType = {
-		name = "GFX_SAU_Abdullah_bin_Hussein"
-		texturefile = "gfx/interface/ideas/sau/advisors/r56_idea_SAU_advisor_Abdullah_bin_Hussein.dds"
-	}
-	spriteType = {
-		name = "GFX_SAU_Ali_Jawdat_al_Aiyubi"
-		texturefile = "gfx/interface/ideas/sau/advisors/r56_idea_SAU_advisor_Ali_Jawdat_al_Aiyubi.dds"
-	}
-	spriteType = {
-		name = "GFX_SAU_Aziz_Ali_al_Misri"
-		texturefile = "gfx/interface/ideas/sau/advisors/r56_idea_SAU_advisor_Aziz_Ali_al_Misri.dds"
-	}
-	spriteType = {
-		name = "GFX_SAU_Awni_Abd_al_Hadi"
-		texturefile = "gfx/interface/ideas/sau/advisors/r56_idea_SAU_advisor_Awni_Abd_al_Hadi.dds"
-	}
-	spriteType = {
-		name = "GFX_SAU_Bakr_Sidqi"
-		texturefile = "gfx/interface/ideas/sau/advisors/r56_idea_SAU_advisor_Bakr_Sidqi.dds"
-	}
-	spriteType = {
-		name = "GFX_SAU_Constantin_Zureiq"
-		texturefile = "gfx/interface/ideas/sau/advisors/r56_idea_SAU_advisor_Constantin_Zureiq.dds"
-	}
-	spriteType = {
-		name = "GFX_SAU_Emir_Faisal_bin_Hussein"
-		texturefile = "gfx/interface/ideas/sau/advisors/r56_idea_SAU_advisor_Emir_Faisal_bin_Hussein.dds"
-	}
-	spriteType = {
-		name = "GFX_SAU_Ghazi_bin_Faisal"
-		texturefile = "gfx/interface/ideas/sau/advisors/r56_idea_SAU_advisor_Ghazi_bin_Faisal.dds"
-	}
-	#spriteType = {
-	#	name = "GFX_SAU_Khalid_al_Saud"
-	#	texturefile = "gfx/interface/ideas/sau/advisors/r56_idea_SAU_advisor_Khalid_al_Saud.dds"
-	#}
-
 ###------> SIA <><> <><> <><> <><> <><>
 	spriteType = {
 		name = "GFX_idea_SIA_R56_advisor_Phraya_Phahon"

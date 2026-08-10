@@ -106,6 +106,14 @@ ideas = {
 			}	
 				
 		}
+
+		PAL_jihad_volunteers_idea = {
+			picture = MPL_arab_revolt
+			allowed = { tag = PAL }
+			cancel = { has_war = no }
+			modifier = { weekly_manpower = 2000 }
+		}
+
 		PAL_true_islamic_democracy = {
 			picture = PAL_true_islamic_democracy
 	

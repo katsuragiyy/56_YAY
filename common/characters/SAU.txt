@@ -1,6 +1,6 @@
 characters={
 	SAU_abdulaziz_ibn_saud={
-		name="Abdulaziz Ibn Saud"
+		name=SAU_abdulaziz_ibn_saud
 		portraits={
 			civilian={
 				large="gfx/leaders/SAU/r56_portrait_SAU_Abdulaziz_ibn_Saud.dds"

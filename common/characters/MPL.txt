@@ -15,7 +15,7 @@ characters = {
 		}
 	}
 	MPL_harold_macmichael = {
-		name = "Harold MacMichael"
+		name = PAL_harold_macmichael
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/MPL/r56_portrait_MPL_Harold_MacMichael.dds" 
@@ -109,7 +109,7 @@ characters = {
 				factor = 4
 			}			
 		}
-		name = "David Ben-Gurion"
+		name = ISR_david_ben_gurion
 		portraits={
 			civilian={
 				small = "GFX_idea_MPL_david_ben_gurion"
@@ -186,12 +186,9 @@ characters = {
 				large = "gfx/leaders/MPL/r56_portrait_MPL_Shmuel_Mikunis.dds"
 			}
 		}
-		name = "Shmuel Mikunis"
+		name = ISR_shmuel_mikunis
 		country_leader = {
 			ideology = leninism
-			traits = {
-
-			}
 		}
 	}
 	MPL_amin_al_husseini = {
@@ -301,7 +298,7 @@ characters = {
 				}
 			}		
 		}
-		name = "Chaim Azriel Weizmann"
+		name = ISR_chaim_azriel_weizmann
 		portraits={
 			army={
 				small="GFX_idea_ISR_chaim_weizmann"
@@ -405,9 +402,13 @@ characters = {
 				large = "gfx/leaders/ISR/r56_portrait_ISR_Zeev_Jabotinsky.dds"
 			}
 		}
-		name = "Ze'ev Jabotinsky"
+		name = ISR_zeev_jabotinsky
 		country_leader = {
 			ideology = revisionist_zionism
+			traits = {
+				ISR_liberal_nationalist
+				r56_trait_opposed_to_communism
+			}
 		}
 		
 	}
@@ -417,17 +418,20 @@ characters = {
 				large = "gfx/leaders/ISR/r56_portrait_ISR_Menachem_Begin.dds"
 			}
 		}
-		name = "Menachem Begin"
+		name = ISR_menachem_begin
 		country_leader = {
 			ideology = revisionist_zionism
+			traits = {
+				ISR_militia_veteran
+			}
 		}
 	}
 	
 	MPL_avraham_stern = { #I KNOW LEHI WAS CREATED IN 1940, HES JUST A FASCIST
-		name = "Avraham Stern"
+		name = ISR_avraham_stern
 		portraits = {
 			civilian = {
-				small = "GFX_idea_generic_political_advisor_europe_2"
+				small = GFX_idea_ISR_avraham_stern
 			}
 		}
 		advisor = { 
@@ -771,7 +775,7 @@ characters = {
 				}
 			}
 		}		
-		name= "Dov Hoz"
+		name= ISR_aharon_remez
 		portraits={
 			army ={
 				small="GFX_idea_ISR_dov_hoz"
@@ -910,7 +914,7 @@ characters = {
 	}
 
 	MPL_yosef_sprinzak = {
-		name= "Yosef Sprinzak"
+		name= ISR_yosef_sprinzak
 		portraits={
 			army={
 				small = "GFX_idea_generic_political_advisor_europe_4"
@@ -949,7 +953,7 @@ characters = {
 	}
 
 	MPL_pinchas_ben_porat = {
-		name= "Pinchas Ben-Porat"
+		name= ISR_pinchas_ben_porat
 		portraits={
 			army={
 				small ="gfx/interface/ideas/idea_generic_air_europe_3.dds"
@@ -1023,7 +1027,7 @@ characters = {
 		}
 	}
 	MPL_yigael_yadin= {	
-		name="Yigaël Yadin"
+		name=ISR_yigael_yadin
 		portraits={
 			army ={
 				large = "gfx/leaders/MPL/r56_portrait_MPL_Yigael_Yadin.dds"
@@ -1094,7 +1098,7 @@ characters = {
 		}
 	}
 	MPL_yitshak_sadeh = {
-		name = "Yitshak Sadeh"
+		name = ISR_yitzhak_sadeh
 		portraits = {
 			army ={
 				large = "gfx/leaders/MPL/r56_portrait_MPL_Yitshak_Sadeh.dds"
@@ -1184,12 +1188,11 @@ characters = {
 	}	
 
 	MPL_yigal_allon={
-		name="Yigal Allon"
+		name=ISR_yigal_allon
 		portraits={
 			army ={
 				large = "gfx/leaders/ISR/r56_portrait_ISR_yigal_alon.dds"
 				small = GFX_idea_ISR_yigal_alon
-				
 			}
 		}
 		advisor={

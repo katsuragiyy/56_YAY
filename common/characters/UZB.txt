@@ -1,5 +1,5 @@
 characters={
-	UZB_mustafa_shokay = { # wanted great turkestan also linked to Khiva khan family. Former Alash party member turned German collabrator & is grand child 16x of a Golden Horde guy
+	UZB_mustafa_shokay = { # wanted great turkestan also linked to Khiva khan family. Former Alash party member & is grand child 16x of a Golden Horde guy
 		name = UZB_mustafa_shokay
 		portraits = { civilian = { large = "gfx/leaders/KAZ/r56_portrait_KAZ_Mustafa_Shokai.dds" } }
 

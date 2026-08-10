@@ -2376,7 +2376,7 @@ ideas = {
 		
 		nsm_amsterdam = {
 			
-			picture = generic_naval_manufacturer_1
+			picture = nsm_amsterdam
 
 			
 			allowed = {
@@ -2388,7 +2388,7 @@ ideas = {
 			}
 			
 			equipment_bonus = {
-				# fast ships! go go go
+				# fast ships go go go
 			}
 			
 			traits = { convoy_escort_naval_manufacturer }
@@ -2399,7 +2399,7 @@ ideas = {
 
 		wilton_fijenoord = {
 			
-			picture = generic_naval_manufacturer_2
+			picture = wilton_fijenoord
 		
 			
 			allowed = {
@@ -2450,17 +2450,18 @@ ideas = {
 
 		HOL_DAF_trucks = {
 			
-			picture = generic_motorized_equipment_manufacturer_3
+			picture = HOL_daf
+
+			available = {
+				has_completed_focus = HOL_daf
+			}
 
 			allowed = {
 				tag = HOL
 			}
 			
-			available = {
-				has_completed_focus = HOL_daf
-			}
-			
-			cost = 150
+			cost = 75
+
 			removal_cost = 10
 			
 			research_bonus = {
@@ -2474,17 +2475,18 @@ ideas = {
 			
 			picture = artillerie_inrichtingen
 
+			available = {
+				has_completed_focus = HOL_expand_the_artillerieinrichtingen
+			}
 			
 			allowed = {
 				original_tag = HOL
 			}
+
+			cost = 75
 			
 			research_bonus = {
 				infantry_weapons = 0.15
-			}
-			
-			available = {
-				has_completed_focus = HOL_expand_the_artillerieinrichtingen
 			}
 			
 			equipment_bonus = {
@@ -2499,15 +2501,12 @@ ideas = {
 	
 		hih_siderius = {
 				
-			picture = hih_siderius # generic_artillery_manufacturer_2 seems to be identical or the old icon
+			picture = hih_siderius
 		
 			
 			allowed = {
 				original_tag = HOL
 			}
-			
-			available = {
-			}			
 			
 			research_bonus = {
 				artillery = 0.15
@@ -2525,6 +2524,62 @@ ideas = {
 	}
 
 	industrial_concern = {
+	
+		HOL_royal_dutch_shell = {
+
+			available = {
+				if = {
+					limit = {
+						has_dlc = "Thunder at Our Gates"
+					}
+					OR = {
+						has_completed_focus = HOL_expand_curacao_oil_refineries_taog
+						has_completed_focus = INSHOL_expand_shell
+					}
+				}
+				else = {
+					has_completed_focus = HOL_expand_curacao_oil_refineries
+				}
+			}
+			
+			allowed = {
+				original_tag = HOL
+			}
+
+			cost = 75
+
+			picture = HOL_royal_dutch_shell
+			
+			research_bonus = {
+				industry = 0.15
+				refining_tech = 0.25 # 56
+			}
+			
+			traits = { refinery_concern } # 56
+			modifier = { fuel_gain_factor = 0.1 } # 56
+			ai_will_do = { factor = 1 }		
+		}
+
+		HOL_philips = {
+
+			available = {
+				has_completed_focus = HOL_philips_focus
+			}
+			
+			allowed = {
+				original_tag = HOL
+			}
+
+			cost = 75
+
+			picture = HOL_philips
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
 	
 		HOL_Hoogovens = {
 			
@@ -2546,44 +2601,6 @@ ideas = {
 			traits = { industrial_concern }
 		}
 
-		HOL_philips = {
-			
-			allowed = {
-				original_tag = HOL
-			}
-			
-			available = {
-				has_completed_focus = HOL_philips_focus
-			}
-			
-			picture = generic_electronics_concern_1
-			
-			research_bonus = {
-				electronics = 0.15
-			}
-			
-			traits = { electronics_concern }
-		}
-		HOL_royal_dutch_shell = {
-			
-			allowed = { 
-				original_tag = HOL
-			}
-			
-			research_bonus = {
-				industry = 0.10
-				refining_tech = 0.25
-			}
-			modifier = {
-				fuel_gain_factor = 0.1
-			}
-			
-			traits = { refinery_concern }
-
-			ai_will_do = {
-				factor = 1
-			}			
-		}
 		HOL_hollandsche_beton_maastschappij = {
 			name = HOL_hollandsche_beton_maastschappij
 

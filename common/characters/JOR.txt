@@ -1,6 +1,6 @@
 characters = {
-	JOR_abdullah_bin_hussein = {
-		name="Abdullah bin Al-Hussein"
+	JOR_abdullah_bin_al_hussein = {
+		name=JOR_abdullah_bin_hussein
 		portraits={
 			army={
 				large ="gfx/leaders/JOR/r56_portrait_JOR_Abdullah_I.dds"

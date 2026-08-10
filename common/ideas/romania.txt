@@ -679,7 +679,7 @@ ideas = {
 		}
 		r56_ROM_christian_education_centers = {
 
-			picture = generic_soldiers_bad
+			picture = MEX_church_power_4
 
 			removal_cost = -1
 			

@@ -249,11 +249,6 @@
  AST_ALT_neutrality_ADJ:0 "Australian"
  AST_ALT_communism_ADJ:0 "Australian"
 
- # From vanilla, but because it uses an # loc string it causes problems
- AST_adela_imperial_fascism: "Commonwealth of Australia"
- AST_adela_imperial_fascism_DEF: "the Commonwealth of Australia"
- AST_adela_imperial_fascism_ADJ: "$AST_ADJ$"
-
  #AUSHUN
  AUSHUN_neutrality:0 "Austro-Hungarian Empire"
  AUSHUN_neutrality_ADJ:0 "Austro-Hungarian"

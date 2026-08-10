@@ -191,3 +191,39 @@ URG_does_the_SCW_fascism_LAR = {
 	}
 
 }
+
+URG_befriend_czechia_for_focus = {
+	allowed = { original_tag = URG }
+
+	enable = {
+		country_exists = CZE
+		URG = { has_completed_focus = URG_expand_the_escuela_militar }
+		NOT = { has_war_with = CZE }
+	}
+
+	abort = { URG = { has_completed_focus = URG_buy_czech_weapons } }
+	ai_strategy = {
+		type = befriend
+		id = CZE
+		value = 100
+	}
+}
+
+URG_befriend_sweden_for_focus = {
+	allowed = { original_tag = URG }
+
+	enable = {
+		country_exists = SWE
+		URG = { 
+			has_completed_focus = URG_expand_the_escuela_militar
+			NOT = { has_war_with = SWE }
+		}
+	}
+
+	abort = { URG = { has_completed_focus = URG_purchase_bofors_cannons } }
+	ai_strategy = {
+		type = befriend
+		id = SWE
+		value = 100
+	}
+}

@@ -135,7 +135,7 @@ focus_tree = {
 
 		focus = {
 		id = ALB_restore_the_republic
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_generic_internal_democracy
 		prerequisite = { focus = ALB_challenge_zogs_rule }
 		mutually_exclusive = { focus = ALB_the_peoples_republic focus = ALB_invite_egyptian_exiles }
 		x = 9
@@ -158,7 +158,7 @@ focus_tree = {
 
 	focus = {
 		id = ALB_exile_the_king
-		icon = GFX_goal_tfv_sever_ties_with_uk
+		icon = GFX_focus_CZE_our_royal_claims
 		prerequisite = { focus = ALB_restore_the_republic }
 		x = 10
 		y = 3
@@ -226,7 +226,7 @@ focus_tree = {
 		
 		focus = {
 			id = ALB_communist_diplomacy
-			icon = GFX_goal_tripartite_pact
+			icon = GFX_focus_generic_communist
 			prerequisite = { focus = ALB_assassinate_the_king}
 			x = 8
 			y = 4
@@ -319,7 +319,7 @@ focus_tree = {
 		
 		focus = {
 			id = ALB_the_second_republic
-			icon = GFX_focus_generic_treaty
+			icon = GFX_goal_generic_election
 			prerequisite = { focus = ALB_exile_the_king }
 			relative_position_id = ALB_exile_the_king
 			x = 0
@@ -336,7 +336,7 @@ focus_tree = {
 		
 		focus = {
 			id = ALB_the_italian_threat
-			icon = GFX_focus_generic_italy_first
+			icon = GFX_focus_generic_italy_propaganda
 			cost = 10
 			
 			available = {
@@ -553,7 +553,7 @@ focus_tree = {
 		
 		focus = {
 			id = ALB_a_constitutional_monarchy
-			icon = GFX_focus_generic_diplomatic_treaty
+			icon = GFX_goal_constitutional_monarchy
 			prerequisite = { focus = ALB_strengthen_zogs_rule }
 			mutually_exclusive = { focus = ALB_institute_absolute_monarchy }
 			x = 3
@@ -593,7 +593,7 @@ focus_tree = {
 		
 		focus = {
 			id = ALB_the_kings_army
-			icon = GFX_focus_rom_royal_dictatorship
+			icon = GFX_focus_generic_monarchist_sentiment
 			prerequisite = { 
 				focus = ALB_institute_absolute_monarchy 
 				focus = ALB_a_constitutional_monarchy
@@ -841,7 +841,7 @@ focus_tree = {
 		
 		focus = {
 			id = ALB_fascist_diplomacy
-			icon = GFX_goal_italy_albanian_protectorate
+			icon = GFX_focus_generic_spread_fascism
 			prerequisite = { focus = ALB_cancel_the_constitution_of_1928 }
 			x = 0
 			y = 4
@@ -999,6 +999,7 @@ focus_tree = {
 			search_filters = { FOCUS_FILTER_ANNEXATION }
 		}
 		
+		# add options for diplo instead
 		focus = {
 			id = ALB_take_care_of_the_kingdom_of_yugoslavia
 			icon = GFX_goal_generic_attack_yugoslavia
@@ -1048,7 +1049,7 @@ focus_tree = {
 		
 		focus = {
 			id = ALB_make_bulgaria_ours
-			icon = GFX_goal_generic_attack_bulgaria
+			icon = GFX_focus_BUL_consolidate_the_third_bulgarian_state
 			prerequisite = { focus = ALB_take_care_of_the_kingdom_of_yugoslavia }
 			x = 1
 			y = 1
@@ -1090,7 +1091,7 @@ focus_tree = {
 		}
 		focus = {
 			id = ALB_march_through_greece
-			icon = GFX_goal_generic_attack_greece
+			icon = GFX_focus_GRE_bedrock_of_balkan_stability
 			prerequisite = { focus = ALB_take_care_of_the_kingdom_of_yugoslavia }
 			x = -1
 			y = 1
@@ -1223,29 +1224,42 @@ focus_tree = {
 		focus = {
 			id = ALB_send_diplomats_to_italy
 			icon = GFX_goal_generic_befriend_italy
+			prerequisite = { focus = ALB_political_reforms }
 			x = 19
-			y = 0
+			y = 1
 			cost = 5
 
+			available = {
+				is_subject = no
+				country_exists = ITA
+				NOT = { has_war_with = ITA }
+			}
+
+			bypass = {
+				OR = {
+					is_in_faction_with = ITA
+					is_subject_of = ITA
+					ITA = { is_subject_of = ROOT }
+				}
+			}
+
 			available_if_capitulated = yes
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 
 			completion_reward = {
 				add_political_power = 75
-				ITA = {
-					add_opinion_modifier = { target = ALB modifier = medium_increase }
-				}
+				ITA = { add_opinion_modifier = { target = ALB modifier = medium_increase } }
 			}
-			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		}
 		
 		focus = {
 			id = ALB_the_italian_affair
-			icon = GFX_goal_demand_sudetenland
+			icon = GFX_focus_generic_italy_first
 			prerequisite = { 
 				focus = ALB_send_diplomats_to_italy
 			}
 			x = 19
-			y = 1
+			y = 2
 			cost = 10
 
 			available_if_capitulated = yes
@@ -1253,19 +1267,21 @@ focus_tree = {
 
 			completion_reward = {
 				country_event = albania.1
+				custom_effect_tooltip = report_reward
+				effect_tooltip = { add_ideas = italian_invasion_incoming_idea }
 			}
 		}
 		
 		
 		focus = {
 			id = ALB_prepare_for_war
-			icon = GFX_mobilisation
+			icon = GFX_goal_generic_phone_crisis
 			prerequisite = { 
 				focus = ALB_the_italian_affair
 			}
 			mutually_exclusive = { focus = ALB_negotiate_with_benito_mussolini }
 			x = 18
-			y = 2
+			y = 3
 			cost = 10
 
 			available_if_capitulated = yes
@@ -1279,9 +1295,7 @@ focus_tree = {
 						}
 					}
 					add_political_power = 150
-				}
-				else = {
-					add_ideas = war_economy
+					else = { add_ideas = war_economy }
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 				add_timed_idea = {
@@ -1300,7 +1314,7 @@ focus_tree = {
 		
 		focus = {
 			id = ALB_negotiate_with_benito_mussolini
-			icon = GFX_goal_generic_dangerous_deal
+			icon = GFX_focus_ger_assassinate_mussolini
 			available = {
 				is_subject = no
 	 			ITA = {
@@ -1313,20 +1327,39 @@ focus_tree = {
 			}
 			mutually_exclusive = { focus = ALB_prepare_for_war }
 			x = 20
-			y = 2
+			y = 3
 			cost = 10
-
 			
 			search_filters = {FOCUS_FILTER_POLITICAL}
 
 			completion_reward = {
 				country_event = albania.2
+				effect_tooltip = {
+					custom_effect_tooltip = report_reward
+					ITA = { 
+						puppet = ALB
+						remove_state_claim = 44
+						remove_state_claim = 805
+						remove_state_claim = 910
+					}
+					
+					custom_effect_tooltip = alternative_diplomatic_reward
+					add_ideas = alb_concessions_to_italy
+					custom_effect_tooltip = generic_skip_one_line_tt
+					ITA = { 
+						add_ideas = albanian_concessions  
+						remove_state_claim = 44
+						remove_state_claim = 805
+						remove_state_claim = 910
+					}
+
+				}
 			}
 		}
 		
 		focus = {
 			id = ALB_treaty_of_milan
-			icon = GFX_goal_generic_forceful_treaty
+			icon = GFX_goal_italy_albanian_protectorate
 			available = {
 	 			ITA = {
 	 				exists = yes
@@ -1341,9 +1374,8 @@ focus_tree = {
 				focus = ALB_negotiate_with_benito_mussolini
 			}
 			x = 20
-			y = 3
+			y = 4
 			cost = 10
-
 			
 			search_filters = {FOCUS_FILTER_POLITICAL}
 
@@ -1355,17 +1387,18 @@ focus_tree = {
 		
 		focus = {
 			id = ALB_the_will_to_fight
-			icon = GFX_goal_generic_army_elite
+			icon = GFX_goal_generic_war_of_words
 			prerequisite = { 
 				focus = ALB_prepare_for_war
 			}
 			x = 18
-			y = 3
+			y = 4
 			cost = 10
 
 			available_if_capitulated = yes
 
 			completion_reward = {
+				add_war_support = 0.1
 				add_timed_idea = {
 					idea = will_to_fight
 					days = 365
@@ -1376,12 +1409,12 @@ focus_tree = {
 		
 		focus = {
 			id = ALB_promote_brilliant_officers
-			icon = GFX_focus_generic_military_mission
+			icon = GFX_goal_generic_officers
 			prerequisite = { 
 				focus = ALB_the_will_to_fight
 			}
 			x = 17
-			y = 4
+			y = 5
 			cost = 5
 
 			available_if_capitulated = yes
@@ -1390,16 +1423,14 @@ focus_tree = {
 				army_experience = 25
 				add_ideas = ABC_establish_a_military_academy_idea
 				custom_effect_tooltip = generic_skip_one_line_tt
-				every_army_leader = {
-					add_planning = 1
-				}				
+				every_army_leader = { add_planning = 1 }				
 			}
 			search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_HISTORICAL }
 		}
 		
 		focus = {
 			id = ALB_strike_first
-			icon = GFX_focus_ger_assassinate_mussolini
+			icon = GFX_goal_generic_denazification
 			prerequisite = { 
 				focus = ALB_ridding_the_army_of_foreign_influence
 			}
@@ -1414,8 +1445,8 @@ focus_tree = {
 					country_exists = ITA
 				}
 			}
-			x = 19
-			y = 5
+			x = 20
+			y = 6
 			cost = 3
 
 			ai_will_do = { 
@@ -1444,7 +1475,7 @@ focus_tree = {
 		
 		focus = {
 			id = ALB_ridding_the_army_of_foreign_influence
-			icon = GFX_goal_generic_military_sphere
+			icon = GFX_goal_generic_stamp_extremists
 			prerequisite = { 
 				focus = ALB_the_will_to_fight
 			}
@@ -1452,7 +1483,7 @@ focus_tree = {
 				is_subject = no
 			}
 			x = 19
-			y = 4
+			y = 5
 			cost = 10
 	
 			available_if_capitulated = yes
@@ -1467,12 +1498,12 @@ focus_tree = {
 		
 		focus = {
 			id = ALB_fortify_the_coastline
-			icon = GFX_focus_generic_coastal_fort
+			icon = GFX_goal_generic_defense_of_the_shores
 			prerequisite = { 
 				focus = ALB_promote_brilliant_officers
 			}
-			x = 17
-			y = 5
+			x = 18
+			y = 6
 			cost = 5
 
 			available = {
@@ -1518,11 +1549,11 @@ focus_tree = {
 		
 	focus = {
 		id = ALB_fortify_the_kingdom_of_yugoslavia_border
-		icon = GFX_goal_generic_fortify_city
+		icon = GFX_goal_generic_mountain_fortification_2
 		prerequisite = { 
-			focus = ALB_fortify_the_coastline
+			focus = ALB_promote_brilliant_officers
 		}
-		x = 17
+		x = 16
 		y = 6
 		cost = 5
 

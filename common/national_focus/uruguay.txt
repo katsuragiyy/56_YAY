@@ -95,9 +95,7 @@ focus_tree = {
 		relative_position_id = URG_review_the_military_budget
 		available = {
 			CZE = {
-				NOT = {
-					has_war_with = ROOT
-				}
+				NOT = { has_war_with = ROOT }
 				has_capitulated = no
 				has_opinion = {
 					target = URG
@@ -439,7 +437,7 @@ focus_tree = {
 
 	focus = {
 		id = URG_an_oriental_rifle
-		icon = GFX_goal_machine_gun
+		icon = GFX_focus_ETH_freedom_at_gunpoint
 		cost = 10
 		x = 0
 		y = 4
@@ -620,7 +618,7 @@ focus_tree = {
 
 	focus = {
 		id = URG_expand_the_CIACA
-		icon = GFX_goal_generic_army_artillery
+		icon = GFX_focus_SWE_let_fly_all_guns
 		cost = 10
 		x = 3
 		y = 5

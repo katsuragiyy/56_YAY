@@ -178,7 +178,7 @@ characters = {
 		}
 	}
 	BRM_myat_phaya_lat={
-		name=BRM_myat_phaya_lat
+		name=BRM_myat_phaya_lat_56
 		portraits={
 			civilian={
 				large="gfx/leaders/BRM/r56_portrait_BRM_Myat_Paya_Lat.dds"

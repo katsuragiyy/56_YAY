@@ -102,7 +102,7 @@ weather_extreme_cold = { # on Province
 	local_org_regain = -0.05
 	supply_factor = -0.15
 	truck_attrition_factor = 1.0
-	winter_attrition = 0.5
+	winter_attrition = 0.4
 }
 weather_very_cold = { # on Province
 	army_attack_factor = -0.1

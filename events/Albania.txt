@@ -16,7 +16,7 @@ country_event = {
     option = {
         name = albania.1.a
 		add_ideas = italian_invasion_incoming_idea
-     }
+    }
 }
 
 country_event = {
@@ -36,7 +36,7 @@ country_event = {
 			remove_state_claim = 805
 			remove_state_claim = 910
 		}
-	 }
+	}
 	 
 	option = {
         name = albania.2.b
@@ -47,7 +47,7 @@ country_event = {
 			remove_state_claim = 805
 			remove_state_claim = 910
 		}
-	 }
+	}
 }
 
 country_event = {
@@ -274,8 +274,7 @@ country_event = {
 
     option = {
         name = albania.7.a
-     }
-	 
+    }
 }
 
 country_event = {

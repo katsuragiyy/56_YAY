@@ -1305,6 +1305,10 @@ defined_text = {
 		localization_key = GFX_news_event_AFG_capitulation
 	}
 	text = {
+		trigger = { ROOT = { original_tag = NOR } }
+		localization_key = GFX_news_event_NOR_capitulation_generic
+	}
+	text = {
 		trigger = { # WW1 French Indochinese soldiers in Albania
 			ROOT = {
 				OR = {
@@ -2892,7 +2896,25 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_japanese_parade
-	}	
+	}
+	text = {
+		trigger = {
+			OR = {
+				FROM = {
+					original_tag = SOV
+					has_government = communism
+					is_in_faction_with = ISR
+					has_country_leader_ideology = stalinism
+				}
+				FROM = {
+					original_tag = ISR
+					has_government = communism
+					is_in_faction_with = SOV
+				}
+			}
+		}
+		localization_key = GFX_news_event_isr_join_stalin_russia
+	}
 	text = {
 		trigger = {
 			FROM = {
@@ -5055,21 +5077,16 @@ defined_text = {
 				has_country_flag = alliance_applicant@ROOT
 				AND = {
 					original_tag = FIN
-					NOT = {
-						has_government = communism
-					}
+					NOT = { has_government = communism }
 					has_character = FIN_carl_mannerheim					
 				}
 			}
 			any_country = {
 				has_country_flag = alliance_inviter@ROOT
-				
 				original_tag = NEP
-				
 			}
 		}
 		localization_key = 	GFX_news_event_FIN_join_faction_nepal	
-
 	}
 	text = {
 		trigger = {
@@ -5081,17 +5098,57 @@ defined_text = {
 				has_country_flag = alliance_inviter@ROOT
 				AND = {
 					original_tag = FIN
-					NOT = {
-						has_government = communism
-					}
+					NOT = { has_government = communism }
 					has_character = FIN_carl_mannerheim					
 				}
 			}
 		}
 		localization_key = 	GFX_news_event_FIN_join_faction_nepal	
-
-	}	
-
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				AND = {
+					original_tag = FIN
+					NOT = { has_government = communism }					
+				}
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = NKR
+					AND = {
+						original_tag = KOR
+						has_government = communism
+					}
+				}
+			}
+		}
+		localization_key = 	GFX_news_event_FIN_join_faction_korea	
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = NKR
+					AND = {
+						original_tag = KOR
+						has_government = communism
+					}
+				}
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				AND = {
+					original_tag = FIN
+					NOT = { has_government = communism }					
+				}
+			}
+		}
+		localization_key = 	GFX_news_event_FIN_join_faction_korea	
+	}
 	text = {
 		trigger = {
 			any_country = {
@@ -6520,7 +6577,6 @@ defined_text = {
 					original_tag = DEN
 					original_tag = ICE
 				}
-				
 			}
 		}
 		localization_key = GFX_news_event_DEN_partisans
@@ -6534,7 +6590,6 @@ defined_text = {
 					original_tag = LIT
 					original_tag = LAT
 				}
-				
 			}
 		}
 		localization_key = GFX_news_event_LIT_partisans #Lithuanian forest brothers
@@ -6630,7 +6685,7 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_report_news_event_bruneian_flags
-	}	
+	}
 	text = {
 		trigger = {
 			any_country = {
@@ -6639,7 +6694,7 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_LUX_partisans
-	}			
+	}	
 	text = {
 		trigger = {
 			any_country = {
@@ -6674,18 +6729,18 @@ defined_text = {
 	}	
 
 
-	#text = {		#not defined
-	#	trigger = {
-	#		any_country = {
-	#			has_country_flag = partisan_rebellion
-	#			OR = {
-	#				original_tag = NEP	
-	#				original_tag = BHU
-	#			}
-	#		}
-	#	}
-	#	localization_key = GFX_news_event_NEP_partisans
-	#}		
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = partisan_rebellion
+				OR = {
+					original_tag = NEP	
+					original_tag = BHU
+				}
+			}
+		}
+		localization_key = GFX_news_event_NEP_partisans
+	}
 	text = {
 		trigger = {
 			any_country = {
@@ -6828,6 +6883,7 @@ defined_text = {
 					original_tag = SER
 					original_tag = MNT
 				}
+				NOT = { has_government = communism }
 			}
 		}
 		localization_key = GFX_news_event_YUG_partisans
@@ -6920,7 +6976,17 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_asian_partisans #chinese female unit
-	}	
+	}
+
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = partisan_rebellion
+				original_tag = ISR
+			}
+		}
+		localization_key = GFX_news_event_isr_partisan_uprising
+	}
 	
 	text = {
 		trigger = {

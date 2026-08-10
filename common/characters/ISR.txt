@@ -16,7 +16,7 @@ characters={
 		}
 	}
 	ISR_avraham_stern = {
-		name = "Avraham Stern"
+		name = ISR_avraham_stern
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/ISR/r56_portrait_ISR_avraham_stern.dds"
@@ -26,11 +26,12 @@ characters={
 			ideology = ultranationalism
 			traits = {
 				hawk
+				nationalistic_tendencies
 			}
 		}
 	}
 	ISR_lehi_triumvirate = {
-		name = "Lehi Triumvirate"
+		name = ISR_lehi_triumvirate
 		portraits={
 			civilian={
 				large= "gfx/leaders/ISR/r56_portrait_ISR_lehi.dds"
@@ -46,7 +47,7 @@ characters={
 		}
 	}
 	ISR_abba_ahimeir={
-		name="Abba Ahimeir"
+		name=ISR_abba_ahimeir
 		portraits={
 			civilian={
 				large= "gfx/leaders/ISR/r56_portrait_ISR_Abba_Ahimeir.dds"
@@ -62,7 +63,7 @@ characters={
 		}				
 	}
 	ISR_yaakov_hazan = {
-		name = "Ya'akov Hazan"
+		name = ISR_yaakov_hazan
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/ISR/r56_portrait_ISR_Yaakov_Hazan.dds"
@@ -77,18 +78,18 @@ characters={
 		}
 	}
 	ISR_shmuel_mikunis={
-		name="Shmuel Mikunis"
-		portraits={
-			civilian={
-				large="gfx/leaders/MPL/r56_portrait_MPL_Shmuel_Mikunis.dds"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MPL/r56_portrait_MPL_Shmuel_Mikunis.dds"
 			}
 		}
+		name = ISR_shmuel_mikunis
 		country_leader = {
 			ideology = leninism
 		}
 	}
 	ISR_yisrael_rokach = {
-		name="Yisrael Rokach"
+		name=ISR_yisrael_rokach
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/ISR/r56_portrait_ISR_yisrael_rokach.dds"
@@ -99,7 +100,7 @@ characters={
 		}
 	}
 	ISR_pinchas_rosen = {
-		name = "Pinchas Rosen"
+		name = ISR_pinchas_rosen
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/ISR/r56_portrait_ISR_pinchas_rosen.dds"
@@ -110,7 +111,7 @@ characters={
 		}
 	}
 	ISR_moshe_sharett = {
-		name = "Moshe Sharett"
+		name = ISR_moshe_sharett
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/ISR/r56_portrait_ISR_moshe_sharett.dds"
@@ -129,7 +130,7 @@ characters={
 				large = "gfx/leaders/ISR/r56_portrait_ISR_Zeev_Jabotinsky.dds"
 			}
 		}
-		name = "Ze'ev Jabotinsky"
+		name = ISR_zeev_jabotinsky
 		
 		country_leader = {
 			ideology = revisionist_zionism
@@ -147,7 +148,7 @@ characters={
 				small = "GFX_idea_ISR_menachem_begin"
 			}
 		}
-		name = "Menachem Begin"
+		name = ISR_menachem_begin
 		country_leader = {
 			ideology = revisionist_zionism
 			traits = {
@@ -176,7 +177,7 @@ characters={
 		}	
 	}
 	ISR_yigael_yadin={
-		name="Yigaël Yadin"
+		name=ISR_yigael_yadin
 		portraits={
 			army ={
 				large = "gfx/leaders/MPL/r56_portrait_MPL_Yigael_Yadin.dds"
@@ -261,7 +262,7 @@ characters={
 		}								
 	}	
 	ISR_yigal_allon={
-		name="Yigal Allon"
+		name=ISR_yigal_allon
 		portraits={
 			army ={
 				large = "gfx/leaders/ISR/r56_portrait_ISR_yigal_alon.dds"
@@ -278,7 +279,7 @@ characters={
 		}						
 	}
 	ISR_pinchas_ben_porat = {
-		name= "Pinchas Ben-Porat"
+		name= ISR_pinchas_ben_porat
 		portraits={
 			army={
 				small = GFX_idea_generic_air_air_combat_trainer_southamerican_2d
@@ -301,7 +302,7 @@ characters={
 		}
 	}
 	ISR_avraham_tehomi = {
-		name = "Avraham Tehomi"
+		name = ISR_avraham_tehomi
 		portraits={
 			army={
 				small = "GFX_idea_ISR_avraham_tehomi"
@@ -369,7 +370,7 @@ characters={
 				small="GFX_idea_generic_political_advisor_europe_6"
 			}
 		}		
-		name="Levi Eshkol"
+		name=ISR_levi_eshkol
 	}	
 	ISR_yosef_sprinzak={
 		advisor={
@@ -386,7 +387,7 @@ characters={
 				factor =1
 			}			
 		}
-		name="Yosef Sprinzak"
+		name=ISR_yosef_sprinzak
 		portraits={
 			civilian={
 				small="GFX_idea_generic_political_advisor_europe_4"
@@ -414,7 +415,7 @@ characters={
 				factor = 1.000
 			}
 		}		
-		name= "Dov Hoz"
+		name= ISR_aharon_remez
 		portraits={
 			army ={
 				small="GFX_idea_ISR_dov_hoz"
@@ -543,7 +544,7 @@ characters={
 				factor = 1
 			}			
 		}
-		name="Yossef Avidar"
+		name=ISR_yossef_avidar
 		portraits = {
 			civilian  ={
 				small="GFX_idea_generic_army_south_america_4"
@@ -551,7 +552,7 @@ characters={
 		}
 	}	
 	ISR_shlomo_shamir={
-		name="Shlomo Shamir"
+		name=ISR_shlomo_shamir
 
 		advisor={
 			slot = high_command
@@ -572,7 +573,7 @@ characters={
 		}				
 	}	
 	ISR_gershon_zak={
-		name="Gershon Zak"
+		name=ISR_gershon_zak
 		portraits={
 			army ={
 				large = GFX_Portrait_GRE_Generic_admiral_1
@@ -626,7 +627,7 @@ characters={
 				factor = 1.000
 			}
 		}		
-		name="Shaul Ben-Tzvi"
+		name=ISR_shaul_ben_tzvi
 		navy_leader={
 			traits={ navy_career_officer }
 			skill=1
@@ -638,6 +639,7 @@ characters={
 		}		
 	}	
 	ISR_shmuel_tankus={
+		name = ISR_shmuel_tankus
 		portraits={
 			army={
 				small="GFX_idea_generic_navy_south_america_2"

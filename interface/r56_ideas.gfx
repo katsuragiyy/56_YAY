@@ -2772,6 +2772,10 @@ spriteType = {
 		textureFile = "gfx/interface/ideas/isr/advisors/r56_idea_ISR_menachem_begin.dds"
 	}
 	spriteType = {
+		name = "GFX_idea_ISR_avraham_stern"
+		textureFile = "gfx/interface/ideas/isr/advisors/r56_idea_ISR_Avraham_Stern.dds"
+	}
+	spriteType = {
 		name = "GFX_idea_ISR_mada"
 		textureFile = "gfx/interface/ideas/isr/companies/r56_idea_ISR_company_mada.dds"
 	}

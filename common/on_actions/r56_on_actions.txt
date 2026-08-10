@@ -21086,9 +21086,9 @@ on_actions = {
 							FROM.FROM = {
 								OR = {
 									is_owned_by = CHI
-									owner = {
-										is_subject_of = CHI
-									}
+									is_owned_by = HBC
+									is_owned_by = PRC
+									owner = { is_subject_of = CHI }
 								}
 							}
 							NOT = {

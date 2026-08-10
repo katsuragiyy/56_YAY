@@ -234,7 +234,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_portrait_POL_tadeusz_kutrzeba"
-]		texturefile = "gfx/leaders/POL/r56_portrait_POL_Tadeusz_Kutrzeba.dds" # 56
+		texturefile = "gfx/leaders/POL/r56_portrait_POL_Tadeusz_Kutrzeba.dds" # 56
 	}
 	spriteType = {
 		name = "GFX_portrait_POL_karol_korytowski"
@@ -9261,15 +9261,19 @@ spriteType = {
 	# URG - TOA
 	spriteType = { name = "GFX_portrait_URG_luis_alberto_herrera" texturefile = "gfx/leaders/URG/r56_portrait_URG_Luis_Alberto_de_Herrera.dds" }
 
+	# RAJ - GOE
+	spriteType = {
+	    name = "GFX_portrait_RAJ_freeman_freeman_thomas"
+	    texturefile = "gfx/leaders/RAJ/r56_portrait_RAJ_Freeman_Freeman_Thomas.dds"
+	}
+
 	# KHM - NCNS
 	spriteType = { name = "GFX_Portrait_Ma_Hushan" texturefile = "gfx/leaders/KHM/r56_KHM_Ma_Hushan.dds" }
 
+	# PHI - NCNS
+	spriteType = { name = "GFX_portrait_PHI_cristanto_evangelista" texturefile = "gfx/leaders/PHI/r56_portrait_Philippines_Crisanto_Evangelista.dds" }
+
 	# CZE - MUN
-	spriteType = { name = "GFX_portrait_CZE_antonin_hasal" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Antonin_Hasal.dds" }
-	spriteType = { name = "GFX_portrait_CZE_emil_hacha" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Emil_Hacha.dds" }
-	spriteType = { name = "GFX_portrait_CZE_jan_syrovy" texturefile = "gfx/leaders/CZE/Portrait_Czech_Jan_Syrovy.dds" }
-	spriteType = { name = "GFX_portrait_CZE_milan_hodza" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Milan_Hodza.dds" }
-	spriteType = { name = "GFX_portrait_CZE_radola_gajda" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Radola_Gajda.dds" }
 	spriteType = { name = "GFX_portrait_CZE_josef_votruba" texturefile = "gfx/leaders/CZE/Portrait_Czech_Josef_Votruba.dds" }
 	spriteType = { name = "GFX_portrait_CZE_karel_schwarzenberg" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Karel_VI.dds" }
 	spriteType = { name = "GFX_portrait_CZE_lev_prchala" texturefile = "gfx/leaders/CZE/Portrait_Czech_Lev_Prchala.dds" }

@@ -4808,7 +4808,16 @@ focus_tree = {
 		y = 7
 		cost = 5
 		ai_will_do = {
-			base = 10	
+			base = 0
+			modifier = {
+				is_historical_focus_on = yes
+				USA = { has_war = yes }
+				factor = 10
+			}
+			modifier = {
+				is_historical_focus_on = no
+				factor = 5
+			}
 		}
 		completion_reward = {
 			if = {

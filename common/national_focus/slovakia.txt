@@ -767,7 +767,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = industrial_bonus
 				bonus = 1
-				uses = 1
+				uses = 2
 				category = industry
 			}
 			random_owned_controlled_state = {
@@ -786,12 +786,6 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			}
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 1
-				uses = 1
-				category = industry
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }

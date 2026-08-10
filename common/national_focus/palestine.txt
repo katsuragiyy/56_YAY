@@ -35,14 +35,15 @@ focus_tree = {
 			}
 			hidden_trigger = {
 				has_country_leader = {
-					name = "Ahmed Hilmi Pasha"
+					character = MPL_ahmed_hilmi_pasha
+					ruling_only = yes
 				}
 			}
 		}
 		cost = 3
 
 		completion_reward = {
-			add_political_power = 125
+			add_political_power = 100
 			add_stability = 0.2
 		}
 		
@@ -56,7 +57,8 @@ focus_tree = {
 		bypass = {
 			hidden_trigger = {
 				has_country_leader = {
-					name = "Ahmed Hilmi Pasha"
+					character = MPL_ahmed_hilmi_pasha
+					ruling_only = yes
 				}
 			}
 		}
@@ -68,7 +70,11 @@ focus_tree = {
 		relative_position_id = PAL_unified_high_command
 
 		completion_reward = {
-			add_manpower = 50000
+			add_manpower = 20000
+			add_timed_idea = {
+				idea = PAL_jihad_volunteers_idea
+				days = 105
+			}
 		}
 		
 	}
@@ -113,7 +119,8 @@ focus_tree = {
 		bypass = {
 			hidden_trigger = {
 				has_country_leader = {
-					name = "Ahmed Hilmi Pasha"
+					character = MPL_ahmed_hilmi_pasha
+					ruling_only = yes
 				}
 			}
 		}
@@ -124,12 +131,15 @@ focus_tree = {
 		completion_reward = {
 			mark_focus_tree_layout_dirty = yes
 			hidden_effect = {
-				remove_unit_leader_role = {
-					character = PAL_abdul_qadir_alhusseini
+				if = {
+					limit = { has_idea = MPL_collapse_no_focus }
+					remove_ideas = MPL_collapse_no_focus
 				}
+				remove_unit_leader_role = { character = PAL_abdul_qadir_alhusseini }
 			}
 			army_experience = 25
 			unlock_decision_category_tooltip = MPL_foreign_support_category
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_field_marshal_role = {
 				character = PAL_abdul_qadir_alhusseini
 				skill = 4
@@ -137,14 +147,6 @@ focus_tree = {
 				defense_skill = 3
 				planning_skill = 3
 				logistics_skill = 5
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						has_idea = MPL_collapse_no_focus
-					}
-					remove_ideas = MPL_collapse_no_focus
-				}
 			}
 		}
 		ai_will_do = {
@@ -195,7 +197,8 @@ focus_tree = {
 		bypass = {
 			hidden_trigger = {
 				has_country_leader = {
-					name = "Ahmed Hilmi Pasha"
+					character = MPL_ahmed_hilmi_pasha
+					ruling_only = yes
 				}
 			}
 		}
@@ -257,8 +260,9 @@ focus_tree = {
 			OR = {
 				hidden_trigger = {
 					has_country_leader = {
-						name = "Ahmed Hilmi Pasha"
-					}
+					character = MPL_ahmed_hilmi_pasha
+					ruling_only = yes
+				}
 				}
 				ISR = {
 					has_completed_focus = ISR_the_west_bank
@@ -271,11 +275,7 @@ focus_tree = {
 
 		completion_reward = {
 			if  = {
-				limit = {
-					NOT = {
-						controls_state = 1016
-					}
-				}
+				limit = { NOT = { controls_state = 1016 } }
 				1016 = {
 					add_dynamic_modifier = {	
 						modifier = r56_PAL_jerusalem_offensive
@@ -283,6 +283,7 @@ focus_tree = {
 						days = 45
 					}
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				set_country_flag = {
 					flag = PAL_attack_jerusalem
 					days = 45
@@ -290,9 +291,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = {
-					controls_state = 1016
-				}
+				limit = { controls_state = 1016 }
 				add_ideas = PAL_alf_idea
 			}
 		}
@@ -314,7 +313,8 @@ focus_tree = {
 		bypass = {
 			hidden_trigger = {
 				has_country_leader = {
-					name = "Ahmed Hilmi Pasha"
+					character = MPL_ahmed_hilmi_pasha
+					ruling_only = yes
 				}
 			}
 		}
@@ -393,12 +393,15 @@ focus_tree = {
 		completion_reward = {
 			mark_focus_tree_layout_dirty = yes
 			hidden_effect = {
-				remove_unit_leader_role = {
-					character = PAL_fawzi_al_qawuqji
+				remove_unit_leader_role = { character = PAL_fawzi_al_qawuqji }
+				if = {
+					limit = { has_idea = MPL_collapse_no_focus }
+					remove_ideas = MPL_collapse_no_focus
 				}
 			}
 			army_experience = 25
 			unlock_decision_category_tooltip = MPL_foreign_support_category
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_field_marshal_role = {
 				character = PAL_fawzi_al_qawuqji
 				skill = 4
@@ -406,14 +409,6 @@ focus_tree = {
 				defense_skill = 2
 				planning_skill = 3
 				logistics_skill = 4
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						has_idea = MPL_collapse_no_focus
-					}
-					remove_ideas = MPL_collapse_no_focus
-				}
 			}
 		}
 		ai_will_do = {
@@ -613,7 +608,8 @@ focus_tree = {
 		bypass = {
 			hidden_trigger = {
 				has_country_leader = {
-					name = "Ahmed Hilmi Pasha"
+					character = MPL_ahmed_hilmi_pasha
+					ruling_only = yes
 				}
 			}
 		}

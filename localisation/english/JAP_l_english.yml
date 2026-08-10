@@ -561,3 +561,5 @@ JAP_mio_trait_simplified_amphibious_vehicle:0 "Simplified Amphibious Vehicles"
 #Commmunist tree
  JAP_reddoborantias:0 "The Reddoborantias"
  JAP_reddoborantias_desc:0 "Our struggle does not end here. We must see to lift up other nations, as well. Our best and brightest shall be sent forth to champion our cause in those nations that have embraced the revolution!"
+
+ kingdoms_of_annam_and_cambodia_road_version_tt: "Establishes the §YKingdom of Annam§! in §Y[671.GetName]§!, §Y[928.GetName]§! and §Y[670.GetName]§!. \nEstablishes the §YKingdom of Cambodia§! in §Y[741.GetName]§! and §Y[286.GetName]§!."

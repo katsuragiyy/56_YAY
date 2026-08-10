@@ -193,23 +193,7 @@ characters={
 		country_leader = {
 		    ideology = marxism
 		    expire = "1965.1.1.1"
-		    traits = { PHI_radical_leader }
-		}
-	}
-	PHI_crisanto_evangelista={
-		name="Crisanto Evangelista"
-		portraits={
-			civilian={
-				large="gfx/leaders/PHI/r56_portrait_Philippines_Crisanto_Evangelista.dds"
-			}
-		}
-		country_leader={
-			ideology=leninism
-			expire="1965.1.1"
-			id=-1
-			traits = {
-				veteran_trade_unionist
-			}
+		    traits = { PHI_radical_leader veteran_trade_unionist } # 56
 		}
 	}
 	PHI_andres_roxas_soriano={
@@ -314,25 +298,91 @@ characters={
 		}
 	}
 	PHI_jose_v_andrada={
-		advisor={
-			slot = high_command
-			idea_token = PHI_jose_v_andrada
-			ledger = navy
+		instance = { ## DLC
+
 			allowed = {
-				original_tag = PHI
+				has_dlc = "No Compromise, No Surrender"
 			}
-			traits = {
-				navy_fleet_logistics_2
+
+			## Admiral
+			navy_leader = {
+				traits = {
+					superior_tactician
+				}
+				skill = 3
+				attack_skill = 3
+				defense_skill = 2
+				maneuvering_skill = 2
+				coordination_skill = 3
+				legacy_id = -1
 			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
+
+			## Theorist
+			advisor = {
+			    slot = theorist
+			    idea_token = PHI_jose_v_andrada_theorist
+			    ledger = navy
+			    allowed  = {
+			    	has_dlc = "No Compromise, No Surrender"
+			    }
+			    traits = { 
+			    	naval_theorist
+		    	}      
 			}
+
+			## Chief of navy
+			advisor = {
+				slot = navy_chief
+				idea_token = PHI_jose_v_andrada
+				ledger = navy
+				allowed  = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				traits = {
+					navy_chief_reform_2
+				}
+				cost = 100
+				ai_will_do = {
+					base = 1
+				}
+			}
+
+			name=PHI_jose_v_andrada
+				portraits={
+					army={
+						large = GFX_portrait_PHI_jose_andrada
+						small = GFX_portrait_PHI_jose_andrada_small
+					}
+				}
 		}
-		name="Jose V. Andrada"
-		portraits={
-			army={
-				small="GFX_idea_r56_generic_navy_south_america_4"
+
+		instance = { ## Vanilla
+			allowed = {
+				NOT = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+			}
+			advisor={
+				slot = high_command
+				idea_token = PHI_jose_v_andrada
+				ledger = navy
+				allowed  = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				traits = {
+					navy_fleet_logistics_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+			}
+	# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+			name=PHI_jose_v_andrada
+			portraits={
+				army={
+					small="GFX_idea_generic_navy_asia_1"
+				}
 			}
 		}
 	}

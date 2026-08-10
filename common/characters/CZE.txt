@@ -1036,7 +1036,7 @@ characters={
 			name=CZE_karel_schwarzenberg
 			portraits={
 				civilian={
-					large=GFX_portrait_CZE_karel_schwarzenberg
+					large="gfx/leaders/CZE/r56_portrait_CZE_Karel_VI.dds"
 				}
 			}
 			country_leader={
@@ -1488,7 +1488,7 @@ characters={
 			#desc = "CZE_milan_hodza_desc"
 			portraits={
 				civilian={
-					large = GFX_portrait_CZE_milan_hodza
+					large = "gfx/leaders/CZE/r56_portrait_CZE_Milan_Hodza.dds"
 					small="GFX_idea_CZE_milan_hodza"
 				}
 			}
@@ -1550,9 +1550,6 @@ characters={
 			name=CZE_radola_gajda
 			#desc = "CZE_radola_gajda_desc"
 			portraits={
-				civilian={
-					large= GFX_portrait_CZE_radola_gajda
-				}
 				army={
 					small="GFX_idea_CZE_radola_gajda"
 					large = "gfx/leaders/CZE/r56_portrait_CZE_Radola_Gajda.dds"
@@ -4220,7 +4217,7 @@ characters={
 			#desc = CZE_jan_syrovy_desc
 			portraits={
 				civilian={ 
-					large = GFX_portrait_CZE_jan_syrovy
+					large = "gfx/leaders/CZE/Portrait_Czech_Jan_Syrovy.dds"
 				}
 				army={
 					small="GFX_idea_CZE_jan_syrovy"
@@ -4763,7 +4760,7 @@ characters={
 			name=CZE_josef_votruba
 			portraits={
 				army={
-					large=GFX_portrait_CZE_josef_votruba
+					large="gfx/leaders/CZE/Portrait_Czech_Josef_Votruba.dds"
 				}
 			}
 			corps_commander={
@@ -4888,7 +4885,7 @@ characters={
 			name=CZE_antonin_hasal_new
 			portraits={
 				army={
-					large = GFX_portrait_CZE_antonin_hasal
+					large = "gfx/leaders/CZE/r56_portrait_CZE_Antonin_Hasal.dds"
 					small = GFX_idea_CZE_antonin_hasal
 				}
 			}

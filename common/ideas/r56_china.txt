@@ -8420,7 +8420,7 @@ ideas = {
 			}
 			
 			modifier = {
-				supply_factor = 0.1
+				supply_consumption_factor = 0.1
 				experience_gain_army_unit_factor = 0.15
 				initiative_factor = 0.1
 				max_planning_factor = 0.05
@@ -8443,7 +8443,7 @@ ideas = {
 			}
 			
 			modifier = {
-				supply_factor = 0.1
+				supply_consumption_factor = 0.1
 				experience_gain_army_unit_factor = 0.15
 				initiative_factor = 0.1
 				max_planning_factor = 0.05

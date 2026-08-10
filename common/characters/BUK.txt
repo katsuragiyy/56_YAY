@@ -7,7 +7,16 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology = moderate_islamism
+			ideology = absolute_monarchism
+			traits = {
+				sick
+				nationalistic_tendencies
+			}
+			expire = "1955.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = clerical_fascism
 			traits = {
 				sick
 				absolute_monarch

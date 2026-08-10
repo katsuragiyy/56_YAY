@@ -327,7 +327,7 @@ international_city = {
 	state_resources_factor = -1
 	recruitable_population_factor = -1
 	local_factories = -1
-	disable_strategic_redeployment = 1 # Katsuragiyy: idk if this is r56 but lets just say it is and get on with our lives
+	disable_strategic_redeployment = yes
 }
 
 international_city_2 = {
@@ -339,7 +339,7 @@ international_city_2 = {
 	recruitable_population_factor = -0.75
 	local_factories = -0.75
 	resistance_growth = 1.2
-	disable_strategic_redeployment = 1 # Katsuragiyy: idk if this is r56 but lets just say it is and get on with our lives
+	disable_strategic_redeployment = yes
 }
 
 international_city_3 = {
@@ -352,7 +352,7 @@ international_city_3 = {
 	local_factories = -0.5
 	resistance_growth = 0.6
 	compliance_gain = 0.1
-	disable_strategic_redeployment = 1 # Katsuragiyy: idk if this is r56 but lets just say it is and get on with our lives
+	disable_strategic_redeployment = yes
 }
 
 international_city_4 = {

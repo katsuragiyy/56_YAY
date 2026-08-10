@@ -876,7 +876,6 @@ focus_tree = {
 	focus = {
 		id = KMT_the_national_government_secured
 		icon = GFX_focus_CHI_a_new_middle_kingdom
-		prerequisite = { focus = KMT_the_true_enemy }
 		prerequisite = { focus = KMT_march_into_the_communist_basin focus = KMT_deal_with_the_traitor_in_nanning}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		available = {
@@ -1197,7 +1196,6 @@ focus_tree = {
 	focus = {
 		id = KMT_the_invaders_vanquished
 		icon = GFX_focus_CHI_weaponise_the_faithful
-		prerequisite = { focus = KMT_the_foreign_imminent_threat }
 		prerequisite = { focus = KMT_end_songs_flirtations focus = KMT_set_up_the_big_rear_plan}
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL}
 		available = {
@@ -1528,23 +1526,26 @@ focus_tree = {
 		}
 		relative_position_id = KMT_prepare_national_liberation
 		bypass = {
-			all_state = {
-				OR = {
-					NOT = { 
-						custom_trigger_tooltip = {
-							tooltip = state_is_manchuria_plus_mengukou_tt
-							OR = {
-								region = 155
-								state = 947
-								state = 610
-								state = 609
-								state = 745
-								state = 612
-								state = 611
+			OR = {
+				has_war_with = MAN
+				all_state = {
+					OR = {
+						NOT = { 
+							custom_trigger_tooltip = {
+								tooltip = state_is_manchuria_plus_mengukou_tt
+								OR = {
+									region = 155
+									state = 947
+									state = 610
+									state = 609
+									state = 745
+									state = 612
+									state = 611
+								}
 							}
 						}
+						is_controlled_by_ROOT_or_ally = yes
 					}
-					is_controlled_by_ROOT_or_ally = yes
 				}
 			}
 		}

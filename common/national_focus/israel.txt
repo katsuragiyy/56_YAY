@@ -5195,7 +5195,7 @@ focus_tree = {
 		icon = GFX_goal_ISR_jabotinsky
 		relative_position_id = ISR_consolidate_power
 		x = 0 
-		y = 3
+		y = 2
 		prerequisite = {
 			focus = ISR_consolidate_power
 		}

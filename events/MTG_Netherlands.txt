@@ -175,23 +175,24 @@ country_event = {
 					basic_ship_hull_heavy = 1
 					antiair2 = 1
 					improved_fire_control_system = 1
-					basic_dp_light_battery = 1
+					basic_dp_light_battery = 1 # 56
 				}
 				create_equipment_variant = {
 					name = "Design 1047 Battlecruiser"
 					type = ship_hull_heavy_2
 					parent_version = 0
+					allow_without_tech = yes #Makes no difference since event grants appropriate tech (above), but it improves tooltip
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_1
 						fixed_ship_anti_air_slot = ship_anti_air_2
 						fixed_ship_fire_control_system_slot = ship_fire_control_system_2
 						fixed_ship_radar_slot = empty
 						fixed_ship_engine_slot = heavy_ship_engine_2
-						fixed_ship_secondaries_slot = dp_ship_secondaries_1
+						fixed_ship_secondaries_slot = dp_ship_secondaries_1 # 56
 						fixed_ship_armor_slot = ship_armor_bb_1
 						front_1_custom_slot = ship_heavy_battery_1
 						mid_1_custom_slot = ship_anti_air_2
-						mid_2_custom_slot = dp_ship_secondaries_1
+						mid_2_custom_slot = dp_ship_secondaries_1 # 56
 						rear_1_custom_slot = ship_heavy_battery_1
 					}
 				}
@@ -225,23 +226,24 @@ country_event = {
 			basic_ship_hull_heavy = 1
 			antiair2 = 1
 			improved_fire_control_system = 1
-			basic_dp_light_battery = 1
+			basic_dp_light_battery = 1 # 56
 		}
 		create_equipment_variant = {
 			name = "Design 1047 Battlecruiser"
 			type = ship_hull_heavy_2
 			parent_version = 0
+			allow_without_tech = yes #Makes no difference since event grants appropriate tech (above), but it improves tooltip
 			modules = {
 				fixed_ship_battery_slot = ship_heavy_battery_1
 				fixed_ship_anti_air_slot = ship_anti_air_2
 				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
 				fixed_ship_radar_slot = empty
 				fixed_ship_engine_slot = heavy_ship_engine_2
-				fixed_ship_secondaries_slot = dp_ship_secondaries_1
+				fixed_ship_secondaries_slot = dp_ship_secondaries_1 # 56
 				fixed_ship_armor_slot = ship_armor_bb_1
 				front_1_custom_slot = ship_heavy_battery_1
 				mid_1_custom_slot = ship_anti_air_2
-				mid_2_custom_slot = dp_ship_secondaries_1
+				mid_2_custom_slot = dp_ship_secondaries_1 # 56
 				rear_1_custom_slot = ship_heavy_battery_1
 			}
 		}
@@ -389,19 +391,15 @@ country_event = {
 		}
 		JAP = { country_event = { id = mtg_netherlands.13 hours = 6 } }
 	}
-	option = { #What about an alliance
+	option = { #What about an alliance 56
 		trigger = {
 			NOT = { #Cant swap factions if both have non-puppet members
 				AND = {
-					any_allied_country = {
-						is_subject = no
-					}
+					any_allied_country = { is_subject = no }
 					JAP = {
 						any_allied_country = {
 							is_subject = no
-							NOT = {
-								tag = SIA #we dont care about them lol
-							}
+							NOT = { tag = SIA } #we dont care about them lol
 						}
 					}
 				}
@@ -843,6 +841,12 @@ country_event = {
 	# Oh, well then...
 	option = {
 		name = mtg_netherlands.21.a
+		effect_tooltip = {
+			add_timed_idea = {
+				idea = HOL_curtail_colonial_autonomy_subject
+				days = 545
+			}
+		}
 	}
 }
 
@@ -2960,7 +2964,7 @@ country_event = {
 		name = excellent
 		if = {
 			limit = {
-				any_state = {
+				any_controlled_state = {
 					is_fully_controlled_by = ROOT
 					is_on_continent = europe
 				}
@@ -3118,14 +3122,15 @@ country_event = {
 				}
 				GER_wilhelm_ii = {
 					add_country_leader_role = {
-					country_leader = {
-						expire = "1965.1.1"
-						ideology = constitutional_monarchy
-						traits = {
-							anti_democrat
-							imperial_connections				}
-					}
-					promote_leader = yes
+						country_leader = {
+							expire = "1965.1.1"
+							ideology = constitutional_monarchy # 56
+							traits = {
+								anti_democrat
+								imperial_connections
+							}
+						}
+						promote_leader = yes
 					}
 				}
 			}
@@ -3140,16 +3145,16 @@ country_event = {
 				}
 				GER_wilhelm_iii = {
 					add_country_leader_role = {
-					country_leader = {
-						expire = "1965.1.1"
-						ideology = constitutional_monarchy
-						traits = {
-							popular_figurehead2
+						country_leader = {
+							expire = "1965.1.1"
+							ideology = constitutional_monarchy # 56
+							traits = {
+								popular_figurehead2
+							}
 						}
+						promote_leader = yes
 					}
-					promote_leader = yes
-					}
-				}
+				}				
 			}
 		}
 	}
@@ -3189,7 +3194,12 @@ country_event = {
 				original_tag = GER
 				has_government = neutrality
 			}
-			ROOT = { set_autonomy = { target = PREV autonomy_state = autonomy_free } }
+			ROOT = { 
+				set_autonomy = { 
+					target = PREV 
+					autonomy_state = autonomy_free 
+				} 
+			}
 			create_faction_from_template = {
 				template = faction_template_GER_mitteleuropa_alliance
 				name = GER_central_powers_faction
@@ -3213,7 +3223,10 @@ country_event = {
 	option = {
 		name = mtg_netherlands.75.a
 		effect_tooltip = {
-			add_opinion_modifier = { target = HOL modifier = HOL_wilhelminism }
+			add_opinion_modifier = { 
+				target = HOL 
+				modifier = HOL_wilhelminism 
+			}
 		}
 	}
 }
@@ -3230,7 +3243,9 @@ country_event = {
 	# Very well
 	option = {
 		name = mtg_netherlands.76.a
+
 		remove_ideas = HOL_german_defectors_1
+
 		delete_unit_template_and_units = { division_template = "Hare Majesteits Duitse Legioen" }
 		hidden_effect = {
 			if = {
@@ -3388,6 +3403,32 @@ country_event = {
 					set_nationality = ROOT
 				}
 			}
+			every_country = {
+				limit = {
+					is_subject_of = BEL
+				}
+				ROOT = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_puppet
+						end_wars  = no
+						end_civil_wars = no
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					is_subject_of = LUX
+				}
+				ROOT = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_puppet
+						end_wars  = no
+						end_civil_wars = no
+					}
+				}
+			}
 			annex_country = {
 			    target = BEL
 			    transfer_troops = yes
@@ -3405,9 +3446,9 @@ country_event = {
 				}
 				add_core_of = ROOT
 			}
-			add_ideas = generic_recent_political_unification
-			add_ideas = generic_recent_army_unification
-			add_ideas = generic_recent_economic_unification	
+			add_ideas = generic_recent_political_unification # 56
+			add_ideas = generic_recent_army_unification # 56
+			add_ideas = generic_recent_economic_unification	# 56
 			hidden_effect = { news_event = { id = mtg_news.64 days = 1 } }
 		}
 	}

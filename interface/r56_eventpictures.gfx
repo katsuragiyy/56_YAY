@@ -1917,6 +1917,10 @@ spriteTypes = {
 		name = "GFX_news_event_FIN_join_faction_nepal"
 		texturefile = "gfx/event_pictures/FIN/news_event_FIN_join_faction_nepal.dds"
 	}	
+	spriteType = {
+		name = "GFX_news_event_FIN_join_faction_korea"
+		texturefile = "gfx/event_pictures/FIN/news_event_FIN_korean_alliance.dds"
+	}
 
 	spriteType = {
 		name = "GFX_news_event_FIN_join_faction_japan"
@@ -2944,10 +2948,10 @@ spriteTypes = {
 	}
 
 ###------> NEP <><> <><> <><> <><> <><>	
-	#spriteType = {
-	#	name = "GFX_news_event_NEP_partisans"
-	#	texturefile = "gfx/event_pictures/NEP/news_event_NEP_partisans.dds"	#not defined
-	#}	
+	spriteType = {
+		name = "GFX_news_event_NEP_partisans"
+		texturefile = "gfx/event_pictures/NEP/news_event_NEP_partisans.dds"
+	}	
 	spriteType = {
 		name = "GFX_news_event_NEP_juddha_rana_join_faction"
 		texturefile = "gfx/event_pictures/NEP/news_event_NEP_juddha_rana_join_faction.dds"
@@ -3034,6 +3038,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_event_NOR_capitulation_SOV"
 		texturefile = "gfx/event_pictures/NOR/news_event_NOR_capitulation_SOV.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_NOR_capitulation_generic"
+		texturefile = "gfx/event_pictures/NOR/news_event_NOR_capitulation.dds"
 	}
 
 ###------> PER <><> <><> <><> <><> <><>
@@ -4675,6 +4683,14 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_isr_alaqsa" 
 		texturefile = "gfx/event_pictures/ISR/report_event_ISR_alaqsa.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_isr_partisan_uprising" 
+		texturefile = "gfx/event_pictures/ISR/news_event_ISR_uprising.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_isr_join_stalin_russia" 
+		texturefile = "gfx/event_pictures/ISR/news_event_ISR_join_stalin.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_isr_alaqsa_news" 

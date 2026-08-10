@@ -105,6 +105,7 @@ news_event = {
 	title = mtg_news.3.t
 	desc = mtg_news.3.desc
 	picture = "[GetAmericanPresidentImage]"
+	
 	major = yes
 	
 	is_triggered_only = yes
@@ -112,6 +113,7 @@ news_event = {
 	option = {
 		name = mtg_news.3.a
 		trigger = {
+			NOT = { original_tag = BEL }
 			original_tag = USA
 		}
 	}
@@ -119,6 +121,7 @@ news_event = {
 		name = mtg_news.3.b
 		trigger = { 
 			NOT = { original_tag = USA }
+			NOT = { original_tag = BEL }
 			has_government = fascism
 		}
 	}
@@ -126,6 +129,7 @@ news_event = {
 		name = mtg_news.3.c
 		trigger = { 
 			NOT = { original_tag = USA }
+			NOT = { original_tag = BEL }
 			has_government = communism
 		}
 	}
@@ -139,12 +143,20 @@ news_event = {
 				has_government = democratic
 				has_government = neutrality
 			}
+			NOT = {
+				original_tag = AUS
+				is_guaranteed_by = USA
+			}
 		}
 	}
 	option = {
 		name = mtg_news.3.e
 		trigger = { 
 			has_idea = HOL_aloof_neutrality
+			NOT = {
+				has_government = communism
+			}
+			NOT = { original_tag = BEL }
 		}
 	}
 	option = {
@@ -152,6 +164,15 @@ news_event = {
 		trigger = { 
 			original_tag = BEL
 		}
+	}
+	option = {
+		name = mtg_news.3.g
+		trigger = { 
+			original_tag = AUS
+			is_guaranteed_by = USA
+			NOT = { original_tag = BEL }
+		}
+		custom_effect_tooltip = mtg_news.3.g_tt
 	}
 }
 # US goes Interventionist
@@ -579,7 +600,7 @@ news_event = {
 		}
 	}
 	option = {
-		name = mtg_news.14.d
+		name = mtg_news.14.c
 		trigger = {
 			NOT = { original_tag = ENG }
 			num_subjects > 1

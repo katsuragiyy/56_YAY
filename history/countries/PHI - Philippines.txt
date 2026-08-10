@@ -305,7 +305,6 @@ if = {
 
 	else = {
 		recruit_character = PHI_edwin_andrews			#DLC has PHI_jesus_villamor
-		recruit_character = PHI_crisanto_evangelista	#DLC has its own version, kept their misspelled version to simplify porting
 		recruit_character = PHI_enrique_l_jurado
 		recruit_character = PHI_gregorio_aglipay		#DLC monarchist path uses PHI_emilio_aguinaldo
 		recruit_character = PHI_franz_josef				#DLC monarchist path uses PHI_emilio_aguinaldo

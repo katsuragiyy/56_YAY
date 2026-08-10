@@ -1327,7 +1327,7 @@ ideas = {
 			picture = SPR_anti_fascist_crusade
 
 			modifier = {
-				supply_factor = 0.10
+				supply_consumption_factor = 0.10
 				war_support_weekly = 0.002
 				conscription = 0.02
 				resistance_growth_on_our_occupied_states = 0.15

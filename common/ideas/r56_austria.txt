@@ -805,7 +805,7 @@ ideas = {
 
 			}
 			modifier = {
-				supply_factor = -0.05
+				supply_consumption_factor = -0.05
 			}
 			cancel = {
 				OR = {

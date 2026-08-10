@@ -2054,6 +2054,11 @@ news_event = {
 				controls_state = 670
 				controls_state = 286
 				controls_state = 741
+				controls_state = 928
+				controls_state = 926
+				controls_state = 927
+				controls_state = 925
+				controls_state = 924
 			}
 		}
 	}
@@ -2066,6 +2071,11 @@ news_event = {
 				controls_state = 670
 				controls_state = 286
 				controls_state = 741
+				controls_state = 928
+				controls_state = 926
+				controls_state = 927
+				controls_state = 925
+				controls_state = 924
 			}
 			NOT = { tag = USA }
 		}

@@ -30,6 +30,7 @@ characters={
 	
 	KAZ_elizaveta_alikhanovna = { # Decendent of Gengish # First Kazakh's president's daughter
 		name = KAZ_elizaveta_alikhanovna
+		gender = female
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/KAZ/r56_portrait_KAZ_elizaveta_alikhanovna.dds"

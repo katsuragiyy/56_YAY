@@ -4,7 +4,7 @@ characters={
 # Ihsan Nuri was the generalissimo who led the Ararat Rebellion and was pivotal in forming the Xoybûn with his experience as one of the Young Turks
 
 	KUR_ihsab_nuri={
-		name = "Îhsan Nûrî"
+		name = KUR_ishan_nuri
 		portraits={
 			civilian={
 				large="GFX_portrait_Ihsan_Nuri_Pasa"
@@ -28,7 +28,7 @@ characters={
 		}		
 	}	
 	KUR_mahmud_barzanji={
-		name = "Mahmud Barzanji"
+		name = KUR_mahmud_barzanji
 		portraits={
 			civilian={
 				large="gfx/leaders/KUR/r56_portrait_KUR_Mahmud_Barzanji.dds"
@@ -48,7 +48,7 @@ characters={
 			allowed = {
 				has_dlc = "Graveyard of Empires"
 			}
-			name = "Qazi Muhammad"
+			name = KUR_qazi_muhamad
 			portraits={
 				civilian={
 					large="GFX_portrait_PER_qazi_muhammad"
@@ -69,7 +69,7 @@ characters={
 					has_dlc = "Graveyard of Empires"
 				}
 			}
-			name = "Qazi Muhammad"
+			name = KUR_qazi_muhamad
 			portraits={
 				civilian={
 					large="GFX_portrait_Qazi_Muhammad"

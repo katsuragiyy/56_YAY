@@ -4173,6 +4173,7 @@ form_baltic_federation_category = {
 			OR = {
 				original_tag = LAT
 				original_tag = LIT
+                original_tag = BLR
 			}
 		}
 		available = {

@@ -47,9 +47,9 @@ BLR_konstantin_sokolsky:0 "Konstantin Sokolsky"
 BLR_snitko_damianovich:0 "Snitko Damianovich"
 
 # Decisions
- BLR_greater_belarus_decision_category_r56:0 "One People, One Belarus"
- BLR_greater_belarus_decision_category_r56_desc:0 "For centuries, foreign powers have dictated the fate of the Belarusian people, attempted to erase their culture and language, all while dividing them through artificial borders. Times have changed. Now we are our own masters with our own state. Yet it remains incomplete, with hundreds of thousands of Belarusians living outside our borders. We must bring this diaspora back into the fold, protect them from the influence of foreign powers, and reverse decades of attempts to erase our culture and language."
+BLR_greater_belarus_decision_category_r56:0 "One People, One Belarus"
+BLR_greater_belarus_decision_category_r56_desc:0 "For centuries, foreign powers have dictated the fate of the Belarusian people, attempted to erase their culture and language, all while dividing them through artificial borders. Times have changed. Now we are our own masters with our own state. Yet it remains incomplete, with hundreds of thousands of Belarusians living outside our borders. We must bring this diaspora back into the fold, protect them from the influence of foreign powers, and reverse decades of attempts to erase our culture and language."
  
- BLR_assimilate_bialystok_r56:0 "Assimilate the Western Territories"
-
- BLR_assimilate_smolensk_r56:0 "Reintegrate the Eastern Territories"
+BLR_proclaim_federation_with_lithuania_r56: "Proclaim Union With [LIT.GetNonIdeologyName]"
+BLR_assimilate_bialystok_r56: "Assimilate the Western Territories"
+BLR_assimilate_smolensk_r56: "Reintegrate the Eastern Territories"

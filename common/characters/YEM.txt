@@ -16,7 +16,7 @@
 
 characters={
 	YEM_imam_yahya={
-		name="Yahya Hamid al-Din"
+		name=YEM_imam_yahya
 		portraits={
 			civilian={
 				large="GFX_portrait_yemen_imam_yahya"

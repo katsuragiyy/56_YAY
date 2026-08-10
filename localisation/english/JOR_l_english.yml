@@ -133,3 +133,6 @@
 
  JOR_army_won:0 "The military has triumphed in the post-war power struggle"
  JOR_utaybah_won:0 "The tribes have triumphed in the post-war power struggle"
+
+ # Characters
+ JOR_abdullah_bin_hussein: "Abdullah bin Al-Hussein"

@@ -1421,7 +1421,7 @@ country_event = {
 					state = 102
 					state = 956
 					state = 853
-					state = 736	
+					state = 736
 					state = 852
 					#state = 160	#partially theirs, but only the northern 1/3rd
 				}

@@ -628,3 +628,31 @@ nationalist_spain_allies_nobody_on_historical = {
 		value = -200
 	}
 }
+
+# R56
+# Dont justify for andorra on historical.. or in general
+dont_kill_andorra_spain_please = {
+	allowed = { original_tag = SPR }
+	enable = {
+		is_historical_focus_on = yes
+		973 = { is_claimed_by = ROOT }
+		OR = {
+			has_government = fascism
+			has_government = communism
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = antagonize
+		id = ADR
+		value = -150
+	}
+
+	ai_strategy = {
+		type = invade
+		id = ADR
+		value = -500
+	}
+}

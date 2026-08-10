@@ -1,6 +1,6 @@
 characters={
 	OMA_said_bin_taimur={
-		name="Said bin Taimur"
+		name=OMA_said_bin_taimur
 		portraits={
 			civilian={
 				large="GFX_portrait_oman_said_bin_taimur"

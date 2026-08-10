@@ -164,7 +164,7 @@ characters={
 		name = HUN_otto_von_habsburg
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_hungary_otto_von_hapsburg
+				large = "gfx/leaders/HUN/Portrait_otto_von_hapsburg.dds" # Just to make sure
 				small = GFX_Portrait_hungary_otto_von_hapsburg_small
 			}
 			army = { 
