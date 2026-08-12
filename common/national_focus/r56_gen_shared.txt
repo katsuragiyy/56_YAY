@@ -1997,6 +1997,11 @@
 			}
 		}
 		offset = {
+			x = -12
+			y = 0
+			trigger = { has_focus_tree = r56_samoa_focus }
+		}
+		offset = {
 			x = 8
 			y = 0
 			trigger = {
@@ -3686,6 +3691,11 @@
 					has_focus_tree = west_africa_focus
 				}
 			}
+		}
+		offset = {
+			x = -12
+			y = 0
+			trigger = { has_focus_tree = r56_samoa_focus }
 		}
 		offset = {
 			x = 8

@@ -2,41 +2,28 @@ ideas = {
 	country = {
 		TON_political_opposition_r56 = {
 			picture = generic_disjointed_gov
-			allowed = { always = no }
+			allowed = { original_tag = TON }
 			allowed_civil_war = { always = yes }
-			removal_cost = -1
-
 			modifier = {
-				political_power_factor = -0.15
-				political_advisor_cost_factor = 0.1
-				drift_defence_factor = -0.25
+				# political and stability
 			}
 		}
 
 		TON_failed_education_reforms_r56 = {
 			picture = indochina_illiteracy
-			allowed = { always = yes }
+			allowed = { original_tag = TON }
 			allowed_civil_war = { always = yes }
-			removal_cost = -1
-
 			modifier = {
-				research_speed_factor = -0.1
-				consumer_goods_factor = 0.05
-				experience_gain_army_factor = -0.15
-				experience_gain_navy_factor = -0.15
-				experience_gain_air_factor = -0.15
+				research_speed_factor = -0.15
 			}
 		}
 
 		TON_risk_of_famine_r56 = {
 			picture = RAJ_state_of_famine_country
-			allowed = { always = yes }
+			allowed = { original_tag = TON }
 			allowed_civil_war = { always = yes }
-			removal_cost = -1
-
 			modifier = {
 				stability_weekly = -0.0010
-				neutrality_drift = -0.03
 				consumer_goods_factor = 0.15
 				monthly_population = -0.15
 			}

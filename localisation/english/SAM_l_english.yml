@@ -1,6 +1,6 @@
 ﻿l_english:
  r56_samoa_focus: "Samoan Focus Tree"
- SAM_GATHERING_STORM_DESC:0 "What was viewed as an integral part of New Zealand by Wellington has become its biggest crisis yet. Samoa had been independent for thousands of years before a civil war led the island's partition in 1899, followed by indefinite European occupation. In 1929, tensions between the Mau and the colonial administration reached a boiling point in what became known as Black Saturday. Now, the Mau holds de facto control over the Western section of the Islands, but is facing its own problems, with the rise of factionalism and radicalism within its ranks risking the organisation's collapse."
+ SAM_GATHERING_STORM_DESC:0 "What was viewed as an integral part of New Zealand by Wellington has become its biggest crisis yet. Samoa had been independent for thousands of years before a civil war led the island's partition in 1899, followed by indefinite European occupation. In 1929, tensions between the Mau and the colonial administration reached a boiling point in what became known as Black Saturday, which resulted in the death of the Mau's leader, and New Zealand's colonial administration to collapse. Following this, the Mau grew, becoming a provisional government which now holds administrative control over Samoa. Only time will tell whether Samoa can reclaim its independence from the Papālagi scum."
  
  ## IDEAS
  r56_SAM_mau_factionalism:0 "Factionalism Within the Mau"
@@ -98,7 +98,7 @@
  
  ## Olaf Frederick Nelson Returns
  r56_samoa.2.t:0 "O.F Nelson Returns From Exile"
- r56_samoa.2.desc:0 "Olaf Frederick Nelson, the face of the Mau internationally, has recently stepped foot back onto Apia after his exile was revoked by the colonial authorities. Thousands arrived to the shore side to welcome him."
+ r56_samoa.2.desc:0 "Olaf Frederick Nelson, the face of the Mau internationally, has recently stepped foot back onto Āpia after his exile was revoked by the colonial authorities. Thousands arrived to the shore side to welcome him."
  r56_samoa.2.a:0 "Welcome back!"
  
  ## Question of New Zealand
@@ -427,7 +427,7 @@
  
  #GM Samoa Win - NZL
  r56_goodwill_outcome.4.t:0 "Goodwill Mission: Samoan Demands Met"
- r56_goodwill_outcome.4.d:0 "Recently, our diplomats have returned from Apia as a result of the negotiations concluding. The result was that Western Samoa would begin their gradual process to self governance, and eventually become an indepednent nation."
+ r56_goodwill_outcome.4.d:0 "Recently, our diplomats have returned from Āpia as a result of the negotiations concluding. The result was that Western Samoa would begin their gradual process to self governance, and eventually become an indepednent nation."
  r56_goodwill_outcome.4.a:0 "It was only a matter of time, really."
  
  #GM NZL Win - NZL
@@ -555,7 +555,7 @@
  r56_goodwill_war.8.a:0 "But at what cost?"
  
  r56_SAM_war_must_continue:0 "Has Rejected Truce"
- r56_SAM_raise_militia_during_war_tt:0 "If §Y[NZL.GetNameDef]§! declares §RWar§! on us, we will obtain an additional §OElite§! Mau Militia."
+ r56_SAM_raise_militia_during_war_tt:0 "If §Y[NZL.GetNameDef]§! declares §RWar§! on us upon completing the focus §Y$r56_SAM_declaration_of_independence$§!, we will obtain an §OElite§! Mau militia division."
  r56_SAM_this_will_collapse_your_country_do_at_your_own_risk_tt:0 "§RIf we do not have a sufficient amount of war support, our stability will drastically decline!§!"
 
  #######################################################################################
@@ -577,12 +577,11 @@
  
  #Illegal Smuggling
  r56_SAM_smuggle_operations:0 "Smuggling Operations"
- r56_SAM_smuggle_operations_desc:0 "Currently, Samoa lacks the industrial capacity to produce its own weapons. To compensate for this, we should attempt to acquire arms through smuggling operations from the east, where the American garrison may leave some of their equipment unguarded and vulnerable to retrieval. By securing these supplies, we can strengthen our forces in the short term." #\n\nHowever, once we have developed a domestic arms industry capable of producing our own equipment, we can cease these operations into §R[1088.GetName]§! and focus on self-sufficiency. <--- Cut this due to it making category look weird. thank you simpy for the description! (and other nerd grammer stuff...)
+ r56_SAM_smuggle_operations_desc:0 "Currently, Samoa lacks the industrial capacity to produce its own weapons. To compensate for this, we should attempt to acquire arms through smuggling operations from the east, where the American garrison may leave some of their equipment unguarded and vulnerable to retrieval. By securing these supplies, we can strengthen our forces in the short term. \n\nHowever, once we have developed a domestic arms industry capable of producing our own equipment, we can cease these operations into §R[1088.GetName]§! and focus on self-sufficiency." # thanks simpy
  r56_SAM_smuggle_operation_decision:0 "Launch a Smuggling Operation"
  
- r56_SAM_launch_operation_into_pago_pago:0 "We will launch a smuggling operation into [1088.GetName] and see if we can collect any equipment laying unguarded."
+ r56_SAM_launch_operation_into_pago_pago:0 "We will launch a §OSmuggling Operation§! into §Y[1088.GetName]§! and attempt to seize any undefended equipment laying around."
  r56_samoa_smuggle_stuffs.success:0 "Smuggle Operation: Success!"
- r56_samoa_smuggle_stuffs.failed:0 "Smuggle Operation: Failure!"
  
  r56_samoa_smuggle_stuffs.1.t:0 "Operational Success!"
  r56_samoa_smuggle_stuffs.1.desc:0 "Our recent operation to smuggle weapons from [1088.GetName] was a success! \nEven if we may not be able to conduct large scale smuggling operations, and not retrieve as much weapons as we would have hoped, operations conducted on a smaller scale will work just as fine and will give us the proper amount of equipment for the time being. even if it isn't a lot."
@@ -606,94 +605,10 @@
  ################################
  ################################
 
- #Navy
- r56_SAM_develop_apia_port:0 "Develop Apia Harbor"
- r56_SAM_develop_apia_port_desc:0 ""
-
- r56_SAM_study_american_submarines:0 "Study American Submarines"
- r56_SAM_study_american_submarines_desc:0 ""
-
- r56_SAM_cruise_under_the_radar:0 "Cruise Under the Radar"
- r56_SAM_cruise_under_the_radar_desc:0 ""
-
- r56_SAM_study_british_destroyers:0 "Study British Destroyers"
- r56_SAM_study_british_destroyers_desc:0 ""
-
- r56_SAM_protect_our_convoys:0 "Protect Our Convoys"
- r56_SAM_protect_our_convoys_desc:0 ""
-
- r56_SAM_expand_the_merchant_fleet:0 "Expand the Merchant Fleet"
- r56_SAM_expand_the_merchant_fleet_desc:0 ""
-
- r56_SAM_expand_dockyard_facilities:0 "Expand Dockyard Facilities"
- r56_SAM_expand_dockyard_facilities_desc:0 ""
-
- r56_SAM_train_the_next_admiralty:0 "Train the Next Admiralty"
- r56_SAM_train_the_next_admiralty_desc:0 ""
-
- r56_SAM_raise_the_war_fleet_of_manono:0 "Raise the War Fleet of Manono"
- r56_SAM_raise_the_war_fleet_of_manono_desc:0 "The district of Manono has a long history with naval combat, having been mostly undefeated all the way up to the partition of Samoa. If we are to utilize their experience in naval combat, Samoa may have it's own fair share of naval victories which it can pride itself with."
-
  #Army
- r56_SAM_no_army:0 "End the Fighting"
- r56_SAM_no_army_desc:0 "With the world being ever so closer to erupting into a second Great War, it may seem like a no-brainer to raise an army to defend our nation. But after what has transpired in the recent years in Samoa, our boys deserve a break form the horrors of war."
 
- r56_SAM_adopt_new_uniform:0 "Adopt New Uniforms"
- r56_SAM_adopt_new_uniform_desc:0 "Whilst traditional, our uniforms are becoming ever so outdated with the rapidly changing times. By making a combination of some sorts between a police uniform and our traditional clothing, we can maybe find a middle ground which will let us keep up with the times while also letting us keep our traditions alive."
-
- r56_SAM_promote_apia_defence_club:0 "Promote the Apia Defence Rifle Club"
- r56_SAM_promote_apia_defence_club_desc:0 "Initially established by Arthur Braisby to combat the Mau, the Apia Defence Rifle Club can be repurposed into a shooting club where our citizens can learn how to defend themselves against foreign threats. Although, Braisby might not be so keen on the idea."
-
- r56_SAM_bolster_the_police:0 "Bolster the Police Force"
- r56_SAM_bolster_the_police_desc:0 "Law and Order needs to be maintained by a police force which is able to enforce order in our country. Let us redirect the military funds to them in hopes of keeping the peace and stability of our nation."
-
- r56_SAM_no_army_no_nation:0 "No Army, No Nation"
- r56_SAM_no_army_no_nation_desc:0 "History has shown that nations without an army to protect themselves are bound to be swollen up by bigger nations. We have made that mistake once, and shall never do so again!"
-
- r56_SAM_establish_military_headquarters:0 "Establish Military Headquarters in [ROOT.Capital.GetCapitalVictoryPointName]"
- r56_SAM_establish_military_headquarters_desc:0 "By establishing a base of operations where we can coordinate with our fellow military strategists, we allow ourselves to prepare faster in case of any enemy attempts at landing on our shores."
-
- r56_SAM_found_a_military_academy:0 "Found a Military Academy"
- r56_SAM_found_a_military_academy_desc:0 ""
-
- r56_SAM_study_our_past_victories:0 "Study Our Past Victories"
- r56_SAM_study_our_past_victories_desc:0 "By examining what has led us to acheive so many victories in the past, we could gain insight on what we can adopt and improvise in the present to achieve victory in future confrontations."
-
- r56_SAM_improve_our_doctrine:0 "Improve Our Doctrine"
- r56_SAM_improve_our_doctrine_desc:0 ""
-
- r56_SAM_found_the_samoan_red_cross_society:0 "Found the Samoan Red Cross Society"
- r56_SAM_found_the_samoan_red_cross_society_desc:0 "Healthcare is an ongoing issue in our country. By inviting the Red Cross Society into our country, we can help improve the health of our citizens and give the necessary treatment to those who require it."
-
- r56_SAM_smuggle_weapons_from_as_focus:0 "Smuggle Weapons From [1088.GetName]"
- r56_SAM_smuggle_weapons_from_as_focus_desc:0 "Currently, Samoa lacks the industrial capacity to produce its own weapons. To compensate for this, we should attempt to acquire arms through smuggling operations from the east, where the American garrison may leave some of their equipment unguarded and vulnerable to retrieval. By securing these supplies, we can strengthen our forces in the short term."
-
- r56_SAM_mobilize_our_forces:0 "Mobilize Our Forces"
- r56_SAM_mobilize_our_forces_desc:0 "More and more conflicts around the world are arising, and we are a potential target of these conflicts. Let us mobilize our forces incase war reaches our shores."
-
- r56_SAM_fortify_the_shores:0 "Fortify the Shores"
- r56_SAM_fortify_the_shores_desc:0 "By building fortifications along our coastline, we decentivize the enemy from trying to invade us, while also giving us the upper hand in terms of defence."
-
- r56_SAM_establish_workshops:0 "Establish Workshops"
- r56_SAM_establish_workshops_desc:0 "Currently, we lack a permanent and stable income of weapons to supply our armed forces. If we encourage our population to establish workshops and produce a steady amount of weapons, then we could potentially solve this ongoing issue."
-
- r56_SAM_mass_produce_equipment:0 "Mass Produce Equipment"
- r56_SAM_mass_produce_equipment_desc:0 "History has shown that numbers are the main source of victory in battles. By producing a larger quantity of guns, we can arm more of our population and help reinforce our divisions better."
-
- r56_SAM_protect_the_skies:0 "Protect the Skies"
- r56_SAM_protect_the_skies_desc:0 "With the lack of an air force to protect us in the air, we are left vulnerable to attacks from above. If we can divert some of our funds to constructing anti-air systems, we may be able to minimalize the impact that the enemy can deal with their planes."
-
- r56_SAM_support_the_british_war_effort:0 "Support the British War Effort"
- r56_SAM_support_the_british_war_effort_desc:0 "Britain needs all of the help it can get. With most of our neighbours collecting funds to purchase a variety amount of equipment to arm the British army, we should do the same, and aid the Empire in it's war!"
-
- r56_SAM_enact_total_war:0 "Enact Total War"
- r56_SAM_enact_total_war_desc:0 ""
-
- r56_SAM_united_and_ready:0 "Samoa, United and Ready"
- r56_SAM_united_and_ready_desc:0 "We have prepared ourselves for this moment. We will come out victorious!"
-
- r56_SAM_form_the_self_defense_division:0 "Form the Self Defense Division"
- r56_SAM_form_the_self_defense_division_desc:0 "The English population in Samoa is willing to take up arms and defend the nation. We should let them form their own defence unit and protect our shores from any potential invasions."
+ r56_SAM_establish_workshops: "Establish Workshops"
+ r56_SAM_establish_workshops_desc: "Currently, we lack a permanent and stable income of weapons to supply our armed forces. If we encourage our population to establish workshops and produce a steady amount of weapons, then we could potentially solve this ongoing issue."
 
  #Economy
  r56_SAM_enact_the_aliesa_scheme:0 "Enact the Aliesa Scheme"
@@ -716,7 +631,7 @@
  r56_SAM_construct_crossisland_infrastructure:0 "Construct Crossisland Infrastructure"
  r56_SAM_construct_crossisland_infrastructure_desc:0 ""
 
- r56_SAM_urbanize_apia:0 "Industrialize Apia"
+ r56_SAM_urbanize_apia:0 "Industrialize Āpia"
  r56_SAM_urbanize_apia_desc:0 ""
 
  r56_SAM_construct_fuluasou_hydroelectric_plant:0 "Construct the Fuluasou Hydro-electric Plant"
@@ -906,7 +821,7 @@
  r56_SAM_operation_fs: "Operation FS"
 
  r56_SAM_prepare_for_another_1899: "Prepare for Another 1899"
- r56_SAM_prepare_for_another_1899_desc: ""
+ r56_SAM_prepare_for_another_1899_desc: "By building fortifications along our coastline, we deterr the enemy from attempting an assault on us, while also giving us the upper hand in terms of defense."
 
  r56_SAM_study_ancestral_skills_and_crafts: "Study Ancestral Skills and Crafts"
  r56_SAM_study_ancestral_skills_and_crafts_desc: ""
@@ -928,7 +843,7 @@
  r56_SAM_settle_the_aotearoa_question_desc: ""
  SAM_if_the_new_zealand_legion_is_in_charge: "If we are in a §YFaction§! and §Y[NZL.GetNameDef]§! either has §OJohn Ormond§! as their §YCountry Leader§! or is led by §8Fascist§! party:"
  SAM_if_the_new_zealand_legion_is_in_charge_guarantee: "If we are §RNot§! in a §YFaction§! and §Y[NZL.GetNameDef]§! either has §OJohn Ormond§! as their §YCountry Leader§! or is led by the §8Fascist§! party:"
- SAM_if_we_ally_with_kangaroo_people: "If we are §GAllied§! with §Y[AST.GetNameDef]§!"
+ SAM_if_we_ally_with_kangaroo_people: "If we are §GAllied§! with §Y[AST.GetNameDef]§!:"
 
  r56_SAM_demand_pacific_holdings: "Demand Pacific Holdings"
  r56_SAM_demand_pacific_holdings_desc: ""
@@ -1022,7 +937,7 @@
  r56_SAM_refrain_from_conflict: "Refrain From Interfering in Global Affairs"
  r56_SAM_refrain_from_conflict_desc: ""
 
- r56_SAM_in_apia: ""In Apia""
+ r56_SAM_in_apia: ""In Āpia""
  r56_SAM_in_apia_desc: ""
 
  r56_SAM_strengthen_the_army_prussia: "Strengthen the [ROOT.Capital.GetCapitalVictoryPointName] Garrison"
@@ -1047,8 +962,75 @@
  r56_SAM_trigger_pressure_council:0 "§YGoodwill Negotiations§! have §RBroken down§!."
  r56_NZL_no_goodwill_in_time_flag:0 "§ONew Zealand§! has §RFailed§! to send a §YMission of Goodwill§! in time."
 
- r56_SAM_mobilize_the_mau:0 "Mobilize the Mau"
- r56_SAM_mobilize_the_mau_desc:0 "The future is unwritten. To ensure our victory in all outcomes, we must mobilize our men in preparation for a potential future conflict."
+ r56_SAM_mobilize_the_mau: "Mobilize the Mau"
+ r56_SAM_mobilize_the_mau_desc: "The future is unwritten. To ensure our victory in all outcomes, we must mobilize our men in preparation for a potential future conflict."
+
+ r56_SAM_smuggle_weapons_from_as_focus: "Smuggle Weapons From [1088.GetName]"
+ r56_SAM_smuggle_weapons_from_as_focus_desc: "Currently, Samoa lacks the industrial capacity to produce its own weapons. To compensate for this, we should attempt to acquire arms through smuggling operations from the east, where the American garrison may leave some of their equipment unguarded and vulnerable to retrieval. By securing these supplies, we can strengthen our forces in the short term."
+ SAM_we_can_steal_guns_from_as_now: "These decisions will involve us sending an expedition into §YTutuila§! or the §YManu'a Islands§! and smuggling out any §YUndefended Equipment§!. However, we must be careful, as garrisons on the islands can §RInterrupt§! our operations and result in the §RCapture§! of our men."
+
+ r56_SAM_prepare_for_next_great_war: "Prepare for Another Great War"
+ r56_SAM_prepare_for_next_great_war_desc: ""
+
+ r56_SAM_establish_workshops: "Open Manufacturing Workshops"
+ r56_SAM_establish_workshops_desc: ""
+
+ r56_SAM_promote_apia_defence_club: "Promote the Āpia Defence Rifle Club"
+ r56_SAM_promote_apia_defence_club_desc: "Initially established by Arthur Braisby to combat the Mau, the Āpia Defence Rifle Club can be repurposed into a shooting club where our citizens can learn how to defend themselves against foreign threats. However, it must be noted that Braisby might not be so keen on the idea."
+
+ r56_SAM_found_the_samoan_red_cross_society: "Found the Samoan Red Cross Society"
+ r56_SAM_found_the_samoan_red_cross_society_desc: "Healthcare is an ongoing issue in our country. By inviting the Red Cross Society into our country, we can help improve the health of our citizens and give the necessary treatment to those who require it."
+
+ r56_SAM_prepare_elite_units: "Prepare an Elite Fighting Force"
+ r56_SAM_prepare_elite_units_desc: ""
+
+ r56_SAM_buildup_an_amphibious_force: "Prioritize Amphibious Warfare"
+ r56_SAM_buildup_an_amphibious_force_desc: ""
+
+ r56_SAM_home_defense: "Lessons from the Mau Men"
+ r56_SAM_home_defense_desc: ""
+
+ r56_SAM_expand_special_forces_capacity: "Expand Recruitment for Our Elite Battalions"
+ r56_SAM_expand_special_forces_capacity_desc: ""
+
+ r56_SAM_buildup_an_amphibious_tank_force: "Sample the Bob Tank"
+ r56_SAM_buildup_an_amphibious_tank_force_desc: ""
+
+ r56_SAM_conduct_supply_exercises: "Living Off the Land"
+ r56_SAM_conduct_supply_exercises_desc: ""
+
+ r56_SAM_invest_into_radios: "Adopt New Communication Devices"
+ r56_SAM_invest_into_radios_desc: ""
+
+ r56_SAM_increase_production_quotas: "Increase Production Quotas"
+ r56_SAM_increase_production_quotas_desc: ""
+
+ r56_SAM_prioritize_infantry_production: "Prioritize Production of Small Arms"
+ r56_SAM_prioritize_infantry_production_desc: ""
+
+ r56_SAM_prioritize_tank_production: "Prepare Mass Production of Armor"
+ r56_SAM_prioritize_tank_production_desc: ""
+
+ r56_SAM_self_sustainability_bonus: "Fuel the [ROOT.GetAdjective] War Machine"
+ r56_SAM_self_sustainability_bonus_desc: ""
+
+ r56_SAM_create_the_apia_arsenal: "Construct the Āpia Weapons Arsneal"
+ r56_SAM_create_the_apia_arsenal_desc: ""
+
+ r56_SAM_samoas_path_to_democracy: "[ROOT.GetNonIdeologyName]'s Path Towards Democracy"
+ r56_SAM_samoas_path_to_democracy_desc: ""
+
+ r56_SAM_the_pacific_war_reaches_samoa: "War Reaches the South Pacific"
+ r56_SAM_the_pacific_war_reaches_samoa_desc: ""
+
+ r56_SAM_continue_nzl_rule: "Support the Allied Effort"
+ r56_SAM_continue_nzl_rule_desc: ""
+
+ r56_SAM_usurp_the_fono: "Usurp the Fono"
+ r56_SAM_usurp_the_fono_desc: ""
+
+ r56_SAM_invite_the_kpg: "House the Korean Provisional Government"
+ r56_SAM_invite_the_kpg_desc: ""
 
 
  # Democratic Path
@@ -1099,7 +1081,7 @@
 
  #Army variables stuff
  r56_SAM_samoan_army_idea:0 "Army of Samoa"
- r56_SAM_samoan_army_idea_desc:0 "The Samoan nation can pride itself in the fact that it has been able to maintain its country's independence for over 3,000 years, and for being a particulary hard foe to defeat, having secured major victories over the lights of the United States and the United Kingdom. \n\nBut Samoa's army doesn't function like other nations do. Infact, the country's army is rather decentralised, with each village having its own armed forces, making Samoa's army more or less a collection of units spread out across the country serving their local chief and village. But recently, changes have been seen. \n\nWith the conflict with [NZL.GetNameDef] escalating to one of direct confrontation, the Mau has formed its own battalions which serve not a local village, but the organization. Something never seen before in the nation. These are known as the 'Mau Men' who often wage guerrilla warfare, and serve more as militias than actual divisions. \n\nBut times are changing. With technological advances in multiple sectors of warfare, and our lack of knowledge regarding these new advancements, our military risks becoming a fragile and ineffective force."
+ r56_SAM_samoan_army_idea_desc:0 "Samoa has a long military history, from the conquests of the Tuimanu'a to Mata'afa Iosefo's resistance against European imperialism during the Kingodm of Samoa's final days. Over the course of the last couple centuries, the Samoans have put up much resistance to those who tried to encroach on their land, and have always succeded in pushing their invaders back. \n\nThe Samoan military is a very decentralised force. Each district posses its own maritime and ground force, with Manono being the the center of Samoan military power. However, as a result of recent escalations between the Mau and [NZL.GetNameDef], the Mau has formed its own militia which serves not a local entity, but the movement and nation as a whole, and thus laying the foudnations for a national army. These have become known as the 'Mau Men' who often wage guerrilla warfare against [NZL.GetAdjective] military personnel stationed in Samoa. \n\nWith each passing year, new technological advancements are made within the military scene. It is Samoa's duty to not fall behind and to keep up with the times, in order to ensure that all who try and encroach on its home islands will play by the Samoan's rules."
 
  r56_SAM_title_holder:0 "[GetMalietoaTitleHolder]"
  
@@ -1127,9 +1109,6 @@
  SAM_marines_tt:0 "$SAM_samoa_army_intro$ \n$modifier_army_sub_unit_marine_attack_factor$: §G+10.0%§! \n$modifier_unit_marine_design_cost_factor$: §G-25.0%§! \n$MODIFIER_NAVAL_INVASION_PENALTY$: §G-5.0%§!"
 
  #Misc
- r56_SAM_infantry_bonus:0 "§YInfantry Weapons§!."
- r56_SAM_study_american_submarines_research:0 "Study American Submarines"
-
  r56_SAM_seized_american_assets_opinion:0 "Seized Our Plantations"
  r56_SAM_refused_to_support_opinion:0 "Refused to Aid us"
  r56_SAM_accepted_to_support_opinion:0 "Accepted to Aid us"
@@ -1150,8 +1129,8 @@
  SAM_communism_party_long:0 "Papālagi Socialists"
  SAM_neutrality_party:0 "Mau (M)"
  SAM_neutrality_party_long:0 "Mau (Moderate)"
- SAM_fascism_party:0 "Mau (R)"
- SAM_fascism_party_long:0 "Mau (Radical)"
+ SAM_fascism_party:0 "Mau (T)"
+ SAM_fascism_party_long:0 "Mau (Traditionalists)"
 
  SAM_malietoa_party_name:0 "Sā Malietoā"
  SAM_neutrality_party_colonial:0 "Colonial Administration"

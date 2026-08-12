@@ -1,0 +1,32 @@
+NZL_regionalism = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_sabotaged_resource
+
+	state_resources_factor = -0.15
+	state_production_speed_buildings_factor = -0.10
+}
+
+NZL_bolstered_local_defences = {
+	enable = { always = yes }
+	icon = GFX_modifiers_generic_military_plans
+	enemy_local_supplies = -0.10
+	army_defence_factor = 0.10
+	max_dig_in_factor = 0.25
+	local_supplies = 0.2
+	attrition_for_controller = -0.05
+}
+
+NZL_maori_affairs_r56 = { # Scripted loc should be implemented
+	enable = { always = yes }
+	icon = GFX_idea_CHL_the_mapuche_conflict
+
+	# STARTING
+	stability_factor = NZL_maori_stability_dm
+	conscription_factor = NZL_maori_conscription_dm
+	war_support_factor = NZL_maori_war_support_dm
+	production_speed_buildings_factor = NZL_maori_building_speed_dm
+	political_power_factor = NZL_maori_politcal_power_dm
+
+	# FUTURE
+}

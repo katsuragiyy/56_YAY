@@ -74,16 +74,24 @@ recruit_character = NZL_leslie_lefaux
 recruit_character = NZL_elizabeth_alexander
 recruit_character = NZL_bill_couldrey
 
+# Ideas
 add_ideas = {
 	NZL_memories_of_the_great_war
 	NZL_john_a_lee
 	NZL_sustenace_relief_work
 	NZL_commonwealth_economic_dependency
-	NZL_dishonoured_treaty_i
-	NZL_discontent_maori_i
 	NZL_head_tax_idea
 	NZL_ineffective_legasthe_legislative_council_idea
+	NZL_maori_dummy_idea_r56 # As the ID suggests, dummy for the bookmark. Removed in r56_on_actions
 }
+
+# Maori Discontent
+set_variable = { NZL_maori_stability_dm = -0.2 }
+set_variable = { NZL_maori_conscription_dm = -0.05 }
+set_variable = { NZL_maori_war_support_dm = -0.1 }
+set_variable = { NZL_maori_building_speed_dm = -0.1 }
+set_variable = { NZL_maori_politcal_power_dm = -0.3 }
+add_dynamic_modifier = { modifier = NZL_maori_affairs_r56 }
 
 # Economic Downturn Vars
 set_variable = { NZL_encouraged_savings_cost = 30 } 

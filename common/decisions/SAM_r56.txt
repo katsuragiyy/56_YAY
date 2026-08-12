@@ -787,54 +787,30 @@ r56_SAM_smuggle_operations = {
 	r56_SAM_smuggle_operation_decision = {
 		icon = GFX_decision_generic_industry
 		cost = 25
-		days_remove = 50
+		days_remove = 25
+		days_re_enable = 180
 
 		fire_only_once = no
 		fixed_random_seed = no
+		ai_will_do = { base = 100 }
 
-		ai_will_do = {
-			factor = 100
-		}
+		available = { has_equipment = { infantry_equipment > 49 } }
+		highlight_states = { highlight_state_targets = { state = 1088 } } # American Samoa
 
-		allowed = {
-			original_tag = SAM
-		}
-
-		available = {
-		}
-
-		highlight_states = { 
-			highlight_state_targets = {
-				state = 1088 # American Samoa
-			}
-		}
-		
 		remove_effect = {
 			custom_effect_tooltip = r56_SAM_launch_operation_into_pago_pago
 			hidden_effect = {
 				random_list = {
 					75 = {
 						random_list = {
-							30 = {
-								country_event = { id = r56_samoa_smuggle_stuffs.1 }
-							}
-							25 = {
-								country_event = { id = r56_samoa_smuggle_stuffs.4 }
-							}
-							20 = {
-								country_event = { id = r56_samoa_smuggle_stuffs.3 }
-							}
-							15 = {
-								country_event = { id = r56_samoa_smuggle_stuffs.1 }
-							}
-							10 = {
-								country_event = { id = r56_samoa_smuggle_stuffs.5 }
-							}
+							50 = { country_event = { id = r56_samoa_smuggle_stuffs.1 } }
+							25 = { country_event = { id = r56_samoa_smuggle_stuffs.4 } }
+							10 = { country_event = { id = r56_samoa_smuggle_stuffs.3 } }
+							10 = { country_event = { id = r56_samoa_smuggle_stuffs.1 } }
+							5 = { country_event = { id = r56_samoa_smuggle_stuffs.5 } }
 						}
 					}
-					25 = {
-						country_event = { id = r56_samoa_smuggle_stuffs.6 }
-					}
+					25 = { country_event = { id = r56_samoa_smuggle_stuffs.6 } }
 				}
 			}
 		}

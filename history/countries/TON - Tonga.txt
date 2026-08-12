@@ -3,7 +3,14 @@
 add_ideas = {
     TON_political_opposition_r56
 	TON_failed_education_reforms_r56
-	TON_risk_of_famine_r56
+	# give some national spirit about the british friendship treaty, which basically cucked tonga out of diplomatic relations
+}
+
+# add bunrs and philips as a company
+
+add_timed_idea = { # Tonga had some big famine in 1935, big impact
+	idea = TON_risk_of_famine_r56
+	days = 180
 }
 
 # Starting tech
@@ -11,7 +18,7 @@ set_technology = {
 	# Extended Technologies
 	etax_doctrine = 1
 	camo = 1
-	
+
 	infantry_weapons = 1
 	tech_trucks = 1
 

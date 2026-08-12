@@ -856,7 +856,7 @@
  NZL_arm_the_unions_desc: ""
  NZL_red_militias: "Form the Communist League"
  NZL_red_militias_desc: ""
- NZL_establish_our_own_politburo: "Establish our own Politburo"
+ NZL_establish_our_own_politburo: "Establish Our Own Politburo"
  NZL_establish_our_own_politburo_desc: ""
  NZL_solidify_the_new_state: "Solidify our Control"
  NZL_solidify_the_new_state_desc: "Many of our leaders were once jailed, it is time to return the favour to the previous leaders of our nation, They cannot go unpunished for the crimes they have commited against the people! A Crusade against their false ideas shall begin at once!"
@@ -1273,7 +1273,7 @@
  NZL_economic_regionalism_desc: ""
  NZL_the_new_zealand_new_deal: "The New Zealander New Deal"
  NZL_the_new_zealand_new_deal_desc: "Following the success of the American New Deal a policy change"
- NZL_attract_axis_investments: "Attract Axis Capitol"
+ NZL_attract_axis_investments: "Attract Axis Capital"
  NZL_attract_axis_investments_desc: ""
  NZL_request_fascist_economic_advisors: "Request Economic Advisors"
  NZL_request_fascist_economic_advisors_desc: ""
@@ -1661,6 +1661,10 @@
  # Focuses
  NZL_united_aotearoa: "A United Aotearoa"
  NZL_united_aotearoa_desc: "Aotearoa is finally united, with Māori and Pākehā working together to build a better future. Te Tiriti o Waitangi is now an honoured document, guiding Aotearoa New Zealand towards a bright future."
+
+ # Dynamic Modifiers
+ NZL_maori_affairs_r56: "State of Māori Discontent"
+ NZL_maori_affairs_r56_desc: "Historically, Māori have had worse outcomes than Pākehā (European New Zealanders) in terms of health, education, and employment. This is a result of colonization and the mistreatment of Te Tiriti o Waitangi (The Treaty of Waitangi). We must work to address these disparities and bridge the gap between Māori and Pākehā."
 
  # Ideas
  NZL_discontent_maori: "Discontent Māori"

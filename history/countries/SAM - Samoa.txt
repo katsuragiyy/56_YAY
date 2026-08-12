@@ -68,18 +68,13 @@ set_technology = {
 set_grand_doctrine = r56_guerilla_warfare
 
 # Army Variables
-
-add_dynamic_modifier = {
-	modifier = r56_SAM_samoan_army
-}
-
-set_variable = { SAM_army_conscription = 0.05 }
 set_variable = { SAM_supply_consumption = -0.1 }
 set_variable = { SAM_morale_factor = -0.1 }
 set_variable = { SAM_army_organization = -0.05 }
-set_variable = { SAM_experience_loss = 0.1 }
 set_variable = { SAM_enemy_air_superiority = -0.15 }
-set_variable = { SAM_army_planning_speed = -0.25 }
+set_variable = { SAM_army_planning_speed = -0.1 }
+
+add_dynamic_modifier = { modifier = r56_SAM_samoan_army }
 
 #Politics
 

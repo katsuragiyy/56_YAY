@@ -80,12 +80,9 @@ r56_SAM_smuggle_operations = {
 
 	visible = {
 		has_country_flag = r56_SAM_can_steal_weapons_flag
-		NOT = {
-			OR = {
-				num_of_military_factories > 5
-				has_idea = generic_recent_army_unification
-				owns_state = 1088
-			}
+		OR = {
+			num_of_military_factories < 6
+			NOT = { controls_state = 1088 }
 		}
 	}
 }

@@ -1,0 +1,52 @@
+# Tongan Focus Tree by Kinyarii1860
+#!gfx:interface\r56_goals.gfx
+#^^ For HOI4 Mod Utilities Support - DO NOT DELETE!
+
+focus_tree = {
+	id = r56_tonga_focus_tree
+	default = no
+	continuous_focus_position = { x = 50 y = 900 }
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = TON
+		}
+	}
+
+	shared_focus = ABC_establish_a_general_staff	
+    shared_focus = GEN_Aviation_Effort
+    shared_focus = GEN_Naval_Effort
+	shared_focus = PLY_UNIFIED_polynesian_unifacation
+
+	##############################################
+
+
+	# 
+	focus = {
+        id = r56_TOM_utilize_the_forests
+        icon = GFX_focus_CHL_expand_the_forestry
+
+        cost = 1
+        x = 38
+        y = 0
+
+		# building slot and some temporary national spirit bonus
+		# make this unlock a decision to build some radar stuff?
+	}
+
+	# 
+	focus = {
+        id = r56_TOM_attempt_second_education_reform
+        icon = GFX_goal_generic_education
+		prerequisite = { focus = r56_TOM_utilize_the_forests }
+		relative_position_id = r56_TOM_utilize_the_forests
+
+        cost = 1
+        x = 1
+        y = 1
+
+		# education reform, decisions and events?
+		# maybe if u do some other industry focuses beforehand, u get to remove it faster?
+	}
+}

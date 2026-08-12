@@ -1840,31 +1840,7 @@ country_event = { #Operational Failure
 	
 	option = { #Darn
 		name = r56_samoa_smuggle_stuffs.6.a
-		add_manpower = -5
-	}
-}
-
-country_event = { #Fautasi Race every year
-	id = r56_samoa_fautasi_race.1
-	title = r56_samoa_fautasi_race.1.t
-	desc = r56_samoa_fautasi_race.1.desc
-	picture = GFX_report_event_generic_sign_treaty1
-	
-	is_triggered_only = yes
-	
-	option = {  #Until Next Year!
-		name = r56_samoa_fautasi_race.1.a
-		add_stability = 0.05
-		add_equipment_to_stockpile = {
-			type = convoy
-			amount = 2
-		}
-		hidden_effect = {
-			country_event = { id = r56_samoa_fautasi_race.1 days = 365 }
-		}
-		ai_chance = {
-			base = 100
-		}
+		add_manpower = -25
 	}
 }
 
@@ -2549,20 +2525,6 @@ country_event = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		add_ideas = war_economy
 		set_country_flag = r56_SAM_mau_new_zealand_war_flag
-
-		hidden_effect = {
-			if = {
-				limit = { has_country_flag = r56_SAM_has_completed_focus_mobilize_mau }
-				random_owned_controlled_state = {
-					limit = { ROOT = { has_full_control_of_state = 726 } }
-					create_unit = {
-						division = "name = \"Mau Militia\" division_template = \"Mau Militia\" start_experience_factor = 0.8" 
-						owner = ROOT
-					}
-				}
-			}
-		}
-
 		ai_chance = { base = 100 }
 	}
 }

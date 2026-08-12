@@ -3,17 +3,18 @@ r56_SAM_samoan_army = {
 	icon = GFX_idea_SAM_army_of_samoa_idea
 	enable = { always = yes }
 
+	# Starting
+	supply_consumption_factor = SAM_supply_consumption
+	army_morale_factor = SAM_morale_factor
+	army_org_factor = SAM_army_organization
+	enemy_army_bonus_air_superiority_factor = SAM_enemy_air_superiority
+	planning_speed = SAM_army_planning_speed
+
 	# Against Majors
 	army_defence_against_major_factor = SAM_army_major_defence
 
-	# Core
-	army_core_attack_factor = SAM_core_attack
-	army_core_defence_factor = SAM_core_defense
-
 	#####
 	
-	planning_speed = SAM_army_planning_speed
-	army_org_factor = SAM_army_organization
 	consumer_goods_factor = SAM_army_consumer_goods
 	conscription_factor = SAM_army_conscription
 
@@ -23,9 +24,6 @@ r56_SAM_samoan_army = {
 	org_loss_when_moving = SAM_org_loss
 	land_reinforce_rate = SAM_reinforce_rate
 	no_supply_grace = SAM_supply_grace
-	supply_consumption_factor = SAM_supply_consumption
-	experience_loss_factor = SAM_experience_loss
-	army_morale_factor = SAM_morale_factor
 	acclimatization_hot_climate_gain_factor = SAM_hot_acclimatization
 	attrition = SAM_attrition
 	terrain_penalty_reduction = SAM_terrain_penalty
@@ -38,35 +36,27 @@ r56_SAM_samoan_army = {
 	trait_infantry_leader_xp_gain_factor = SAM_infantry_leader_xp_gain_factor
 	experience_gain_infantry_combat_factor = SAM_experience_gain_infantry_combat_factor
 
-	enemy_army_bonus_air_superiority_factor = SAM_enemy_air_superiority
-
 	army_artillery_attack_factor = SAM_artillery_attack
     army_artillery_defence_factor = SAM_artillery_defence
 
-	# Special Forces
+	# FUTURE
 	modifier_army_sub_unit_marine_attack_factor = SAM_marine_attack
 	unit_marine_design_cost_factor = SAM_marine_unit_design_cost
 	marines_special_forces_contribution_factor = SAM_marine_contributation_cost
-
-	# Naval Invasion
 	naval_invasion_penalty = SAM_naval_invasion_penalty
+
+	army_core_attack_factor = SAM_core_attack
+	army_core_defence_factor = SAM_core_defense
+
+	experience_loss_factor = SAM_experience_loss
+	special_forces_cap = SAM_special_forces_cap
 }
 
 mau_movement = {
 	enable = { always = yes }
-
-	remove_trigger = {
-		controller = { 
-			NOT = {
-				OR = {
-					tag = NZL 
-					tag = ENG
-				}
-			}
-		}
-	}
-
 	icon = GFX_looting_resistance_icon
+	remove_trigger = { controller = { NOT = { OR = { tag = NZL tag = ENG } } } }
+
 	local_building_slots_factor = -1
 	local_manpower = -1
 	resistance_target = 0.15
@@ -75,19 +65,9 @@ mau_movement = {
 
 calm_mau_movement = {
 	enable = { always = yes }
-
-	remove_trigger = {
-		controller = { 
-			OR = {
-				NOT = {
-					tag = NZL
-					tag = ENG
-				}
-			}
-		}
-	}
-
 	icon = GFX_modifiers_conscription_exemptions_granted
+	remove_trigger = { controller = { NOT = { OR = { tag = NZL tag = ENG } } } }
+
 	local_manpower = -1
 	local_building_slots_factor = -1
 }

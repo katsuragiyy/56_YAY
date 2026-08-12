@@ -116,7 +116,7 @@ characters = {
 			ledger = army
 
 			allowed = { original_tag = SAM }
-			available = { has_completed_focus = r56_SAM_mobilize_our_forces }
+			available = { has_completed_focus = r56_SAM_prepare_elite_units }
 			traits = { army_logistics_2 }
 		}
 
@@ -127,7 +127,7 @@ characters = {
 			defense_skill = 2
 			planning_skill = 2
 			logistics_skill = 1
-			visible = { has_completed_focus = r56_SAM_mobilize_our_forces }
+			visible = { has_completed_focus = r56_SAM_prepare_elite_units }
 		}
 	}
 

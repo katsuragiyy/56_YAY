@@ -904,7 +904,7 @@ bookmarks = {
 			ideas = {
 				NZL_memories_of_the_great_war
 				NZL_ineffective_legasthe_legislative_council_idea
-				NZL_discontent_maori_i
+				NZL_maori_dummy_idea_r56
 				NZL_commonwealth_economic_dependency
 			}
 			focuses = {

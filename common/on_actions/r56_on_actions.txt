@@ -11370,6 +11370,8 @@ on_actions = {
 				remove_ideas = TUR_disorganized_armed_forces_idea_dud
 				remove_ideas = TUR_kemalist_army_officers_limited_power_loyal_dud
 			}
+			# Remove NZL bookmark ideas - dynamic modifiers don't how here
+			NZL = { remove_ideas = NZL_maori_dummy_idea_r56 }
 
 			#if = {
 			#	limit = {

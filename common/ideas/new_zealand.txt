@@ -3849,6 +3849,20 @@ ideas = {
 		
 		# Māori treatment
 
+		NZL_maori_dummy_idea_r56 = {
+			name = NZL_maori_affairs_r56
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = CHL_the_mapuche_conflict
+			modifier = {
+				conscription_factor = -0.05
+				stability_factor = -0.2
+				war_support_factor = -0.1
+				production_speed_buildings_factor = -0.1
+				political_power_factor = -0.3
+			}
+		}
+
 		NZL_discontent_maori_i = {
 			name = NZL_discontent_maori
 

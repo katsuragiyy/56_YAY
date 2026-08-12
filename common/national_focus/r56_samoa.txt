@@ -1,6 +1,5 @@
-#### Samoa Focus Tree By Katsuragiyy & Eris/Sky ####
-### Special thanks to our most beloved: Tankerblade, Infrish, Simpy, Dutch for providing their ideas for the focus tree, doing gfx, and in general being COOL people.
-### And of course, thank you to the rest of the Road team for giving much needed feedback and suggestions.
+#### Samoa Focus Tree By Kinyarii1860 & Sky ####
+### Special thanks to our most beloved: Tankerblade, Infrish, Simpy, and Dutch for providing their ideas for the focus tree, doing gfx, and in general being COOL people.
 
 #!gfx:interface\r56_goals.gfx
 # ^^ For HOI4 Mod Utilities Support - Do not delete
@@ -19,6 +18,8 @@ focus_tree = {
     default = no
 	continuous_focus_position = { x = 50 y = 1460 }
 	shared_focus = PLY_UNIFIED_polynesian_unifacation
+	shared_focus = GEN_Aviation_Effort
+	shared_focus = GEN_Naval_Effort
 	
 	###########################################################################
 	
@@ -377,16 +378,48 @@ focus_tree = {
 		}
     }
 
+	# Commonwealth Commitments
+	focus = {
+        id = r56_SAM_crush_extremeism
+        icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		prerequisite = { focus = r56_SAM_commonwealth_commitments }
+		relative_position_id = r56_SAM_commonwealth_commitments
+
+        cost = 5
+        x = 0
+        y = 1
+
+		# bypass if nzl did the focus first
+		# get rid of nazi threat and palauli instability
+    }
+
+	# 
+	focus = {
+        id = r56_SAM_the_pacific_war_reaches_samoa
+        icon = GFX_focus_generic_army_attack
+		relative_position_id = r56_SAM_reach_out_to_wellington
+
+        cost = 5
+        x = 2
+        y = 6
+
+		# check if allies are losing as to not make this too easy. make ai take this if uk is on the brink of collapse
+
+		# New Zealand isn't home... you know what that means...
+		# Nelson on the kitchen counter
+    }
+
 	# 
 	focus = {
         id = r56_SAM_usurp_the_fono
         icon = GFX_focus_ARG_balancing_act
+		prerequisite = { focus = r56_SAM_the_pacific_war_reaches_samoa }
 		mutually_exclusive = { focus = r56_SAM_continue_nzl_rule }
 		relative_position_id = r56_SAM_reach_out_to_wellington
 
         cost = 5
         x = -1
-        y = 8
+        y = 7
 
 		# check if allies are losing as to not make this too easy. make ai take this if uk is on the brink of collapse
 
@@ -398,12 +431,13 @@ focus_tree = {
 	focus = {
         id = r56_SAM_continue_nzl_rule
         icon = GFX_goal_new_flag
+		prerequisite = { focus = r56_SAM_the_pacific_war_reaches_samoa }
 		mutually_exclusive = { focus = r56_SAM_usurp_the_fono }
 		relative_position_id = r56_SAM_reach_out_to_wellington
 
         cost = 5
-        x = 2
-        y = 8
+        x = 5
+        y = 7
 
 		# okay fine we'll contribute to ur shitty war effort
     }
@@ -423,6 +457,46 @@ focus_tree = {
 		# petition must have succceede
     }
 
+	# 
+	focus = {
+        id = r56_SAM_rally_around_tamasese
+        icon = GFX_focus_ARG_defense_and_democracy
+		prerequisite = { focus = r56_SAM_samoas_path_to_democracy }
+		relative_position_id = r56_SAM_samoas_path_to_democracy
+
+        cost = 5
+        x = -3
+        y = 1
+
+    }
+
+	# 
+	focus = {
+        id = r56_SAM_the_new_mau
+        icon = GFX_focus_generic_monarchy_2
+		prerequisite = { focus = r56_SAM_samoas_path_to_democracy }
+		relative_position_id = r56_SAM_samoas_path_to_democracy
+
+        cost = 5
+        x = 3
+        y = 1
+		# maybe make this a path for the dissolve fono branch
+    }
+
+	# Join the Allies
+	focus = {
+        id = r56_SAM_join_the_allies
+		text = URG_join_the_allies
+        icon = GFX_focus_CHL_a_joint_application_to_the_allies
+		relative_position_id = r56_SAM_reach_out_to_wellington
+
+        cost = 5
+        x = 9
+        y = 7
+
+		# request to join allies
+    }
+
 	# KOREA PATH - START
 
 	# House the Korean Provisional Government
@@ -432,13 +506,45 @@ focus_tree = {
 		relative_position_id = r56_SAM_reach_out_to_wellington
 
         cost = 5
-        x = 7
-        y = 8
+        x = 13
+        y = 5
 
 		# unlocked via event which requires low af stability and shit. also korea to not exist. unlocks decision category to reunite korea
     }
 
 	# KOREA PATH - END
+
+	# JOINT ALLIED BRANCH FOR TAMASESE AND HISTORICAL START!!
+
+	# 
+	focus = {
+        id = r56_SAM_let_american_marines_in
+        icon = GFX_focus_USA_uncle_sam
+		prerequisite = { focus = r56_SAM_join_the_allies focus = r56_SAM_continue_nzl_rule }
+		relative_position_id = r56_SAM_reach_out_to_wellington
+
+        cost = 5
+        x = 7
+        y = 8
+
+		# opinion boosts, unlocks decisions to exchange territories
+    }
+
+	# 
+	focus = {
+        id = r56_SAM_repair_relations_with_the_western_order
+        icon = GFX_goal_ROM_western_diplomacy
+		prerequisite = { focus = r56_SAM_join_the_allies }
+		relative_position_id = r56_SAM_reach_out_to_wellington
+
+        cost = 5
+        x = 11
+        y = 8
+
+		# opinion boosts, unlocks decisions to exchange territories
+    }
+
+	# JOINT ALLIED BRANCH END!
 
 	# Pressure Council - START
 
@@ -1680,7 +1786,7 @@ focus_tree = {
         id = r56_SAM_join_the_east_asian_hegemon
         icon = GFX_focus_jap_spiritual_mobilization
         prerequisite = { focus = r56_SAM_affirming_our_territorial_ambitions }
-		#mutually_exclusive = { focus = r56_SAM_entrance_into_the_nauru_pact focus = r56_SAM_disengage_from_global_affairs }
+		mutually_exclusive = { focus = r56_SAM_entrance_into_the_nauru_pact focus = r56_SAM_disengage_from_global_affairs }
 		relative_position_id = r56_SAM_affirming_our_territorial_ambitions
 
         cost = 2
@@ -1723,7 +1829,7 @@ focus_tree = {
         id = r56_SAM_entrance_into_the_nauru_pact
         icon = GFX_goal_AST_australia_first
         prerequisite = { focus = r56_SAM_affirming_our_territorial_ambitions }
-		#mutually_exclusive = { focus = r56_SAM_join_the_east_asian_hegemon focus = r56_SAM_disengage_from_global_affairs }
+		mutually_exclusive = { focus = r56_SAM_join_the_east_asian_hegemon focus = r56_SAM_disengage_from_global_affairs }
 		relative_position_id = r56_SAM_affirming_our_territorial_ambitions
 
         cost = 2
@@ -2266,6 +2372,7 @@ focus_tree = {
 	focus = {
         id = r56_SAM_settle_the_aotearoa_question
         icon = GFX_focus_generic_new_zealand
+		prerequisite = { focus = r56_SAM_disengage_from_global_affairs focus = r56_SAM_join_the_east_asian_hegemon focus = r56_SAM_entrance_into_the_nauru_pact }
 		relative_position_id = r56_SAM_entrance_into_the_nauru_pact
     
         cost = 5
@@ -3136,10 +3243,12 @@ focus_tree = {
 	focus = {
         id = r56_SAM_disengage_from_global_affairs
         icon = GFX_goal_generic_neutrality_focus
+		mutually_exclusive = { focus = r56_SAM_join_the_east_asian_hegemon focus = r56_SAM_entrance_into_the_nauru_pact }
+		prerequisite = { focus = r56_SAM_usurp_the_fono focus = r56_SAM_affirming_our_territorial_ambitions }
 
         cost = 5
-        x = 82
-        y = 17
+        x = 77
+        y = 13
 
 		offset = {
 			x = -8
@@ -3173,24 +3282,58 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
 
-	focus = { # use in army tree
+	focus = {
+		id = r56_SAM_deterrence_focus
+		text = AFG_deterrence_focus
+		icon = GFX_focus_CHL_protect_the_easter_island # probably needs a custom icon of samoa with shield
+		prerequisite = { focus = r56_SAM_disengage_from_global_affairs }
+
+        cost = 5
+        x = 76
+        y = 14
+
+		available = { has_war = no }
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_ideas = deterrence
+		}
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_HISTORICAL }
+	}
+
+	######################################
+	######################################
+	######################################
+
+	# ARMY TREE
+
+	# Mobilize the Mau
+	focus = {
         id = r56_SAM_mobilize_the_mau
         icon = GFX_focus_ETH_peacekeeping_forces
 		#prerequisite = { focus = r56_SAM_pressure_the_legislative_council }
 		#relative_position_id = r56_SAM_pressure_the_legislative_council
 
         cost = 10
-        x = 95
-        y = 5
-
-        available = { 
-			has_full_control_of_state = 726
-			hidden_trigger = {
-				NOT = { has_country_flag = r56_SAM_cant_do_focuses_anymore_flag }
+        x = -9
+        y = 0
+		
+        ai_will_do = { 
+			base = 1
+			modifier = { # Progressives were against an army
+				has_government = democratic
+				factor = 0
+			}
+			modifier = { # on the other hand..
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+				}
+				factor = 5
 			}
 		}
-		
-        ai_will_do = { factor = 1 }
 
         completion_reward = {
 			add_timed_idea = {
@@ -3199,2255 +3342,52 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = r56_SAM_raise_militia_during_war_tt
-			set_country_flag = r56_SAM_has_completed_focus_mobilize_mau
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			reduce_focus_completion_cost = {
-				focus = r56_SAM_declaration_of_independence
-				cost = 14
-			}
-        }
-    }
-
-	###########################################################################
-	###########################################################################
-	###########################################################################
-	###########################################################################
-	###########################################################################
-	##########################################################################
-
-	focus = {
-		id = SAM_organise_government
-		icon = GFX_goal_generic_peaceful_diplomacy
-		x = 120
-		y = 15
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
+			custom_effect_tooltip = r56_SAM_raise_militia_during_war_tt # only if going down the opposition
 			
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_dissolve_the_fono
-		icon = GFX_goal_emergency_powers
-		relative_position_id = SAM_organise_government
-		x = -2
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        mutually_exclusive = {
-			focus = SAM_keep_fono
-		}
-
-        prerequisite = {
-			focus = SAM_organise_government
-		}
-
-		available = {
-		}		 
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_respect_village_authorithy
-		icon = GFX_goal_generic_parliament
-		relative_position_id = SAM_dissolve_the_fono
-		x = 1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_dissolve_the_fono
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_keep_fono
-		icon = GFX_goal_generic_national_unity
-		relative_position_id = SAM_organise_government
-		x = 2
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        mutually_exclusive = {
-            focus = SAM_dissolve_the_fono
-		}
-		
-		prerequisite = {
-			focus = SAM_organise_government
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_westernise_fasamoa
-		icon = GFX_focus_SWE_approach_the_allies
-		relative_position_id = SAM_keep_fono
-		x = -1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_keep_fono
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_new_leadership
-		icon = GFX_goal_generic_election
-		relative_position_id = SAM_organise_government
-		x = 0
-		y = 3
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_respect_village_authorithy
-			focus = SAM_westernise_fasamoa
-		}
-
-		available = {
-			has_country_flag = SAM_guy_dead
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_tupua_tamasese_in_charge
-		icon = GFX_goal_generic_election
-		relative_position_id = SAM_new_leadership
-		x = 2
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_westernise_fasamoa
-		}
-
-		prerequisite = {
-			focus = SAM_new_leadership
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_constitution
-		icon = GFX_goal_constitution
-		relative_position_id = SAM_tupua_tamasese_in_charge
-		x = -1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_tupua_tamasese_in_charge
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_samoas_place_in_the_world
-		icon = GFX_goal_generic_foreign_diplomacy
-		relative_position_id = SAM_tupua_tamasese_in_charge
-		x = 0
-		y = 2
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_tupua_tamasese_in_charge
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_diplomacy_in_europe
-		icon = GFX_focus_usa_focus_on_europe
-		relative_position_id = SAM_samoas_place_in_the_world
-		x = 5
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_samoas_place_in_the_world
-		}
-
-		available = {
-		}		 
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_diplomacy_in_asia
-		icon = GFX_focus_usa_focus_on_asia
-		relative_position_id = SAM_samoas_place_in_the_world
-		x = -1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_samoas_place_in_the_world
-		}
-
-		available = {
-		}		 
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_chinese_cooperation
-		icon = GFX_focus_chi_cooperation_with_the_nationalists
-		relative_position_id = SAM_diplomacy_in_asia
-		x = 1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        mutually_exclusive = {
-			focus = SAM_japanese_cooperation
-		}
-
-        prerequisite = {
-			focus = SAM_diplomacy_in_asia
-		}
-
-		available = {
-		} 
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_japanese_cooperation
-		icon = GFX_goal_generic_befriend_japan_alt
-		relative_position_id = SAM_diplomacy_in_asia
-		x = -1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        mutually_exclusive = {
-			focus = SAM_chinese_cooperation
-		}
-
-        prerequisite = {
-			focus = SAM_diplomacy_in_asia
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_mataafa_faumina
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_new_leadership
-		x = -2
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_respect_village_authorithy
-		}
-
-		prerequisite = {
-			focus = SAM_new_leadership
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_state_based_on_traditions
-		icon = GFX_goal_SPR_establish_traditional_cortes
-		relative_position_id = SAM_mataafa_faumina
-		x = 0
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_mataafa_faumina
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_demand_american_samoa
-		icon = GFX_SOV_memories_of_1905_ccp_2d_sov_compatibility
-		relative_position_id = SAM_state_based_on_traditions
-		x = -1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_state_based_on_traditions
-		}
-
-		available = {
-		}
-
-		completion_reward = {  # gives deicsion to ask for american samoa and confiscate the plantations and what not which may give an event for the usa to intervene? usa can also say no and that will be a big cluster fuck of its own
-			
-		}
-	}
-
-	focus = {
-		id = SAM_fuletolu_gathers_once_more
-		icon = GFX_goal_generic_army_professionalism
-		relative_position_id = SAM_demand_american_samoa
-		x = 0
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_demand_american_samoa
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_tufele_revolt
-		icon = GFX_goal_generic_revolt
-		relative_position_id = SAM_fuletolu_gathers_once_more
-		x = 0
-		y = 2
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_fuletolu_gathers_once_more
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-    focus = {
-		id = SAM_tufele_punished
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_tufele_revolt
-		x = -3
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_tufele_revolt
-		}
-
-		available = {
-		}		 
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_pacifist
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_tufele_punished
-		x = -1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_tufele_punished
-		}
-
-		available = {
-		}		 
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_tuimanua_dead
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_tufele_revolt
-		x = 3
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_tufele_revolt
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_finish_off_the_revolt
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_tuimanua_dead
-		x = -1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_tuimanua_dead
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_capital_punishment
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_tuimanua_dead
-		x = 1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_tuimanua_dead
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_the_power_vacuum
-		icon = GFX_goal_centralize_power
-		relative_position_id = SAM_tuimanua_dead
-		x = 0
-		y = 2
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_capital_punishment
-			focus = SAM_finish_off_the_revolt
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_samoan_expansionism
-		icon = GFX_goal_generic_foreign_diplomacy
-		relative_position_id = SAM_the_power_vacuum
-		x = -4
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        mutually_exclusive = {
-			focus = SAM_complete_restoration
-		}
-
-        prerequisite = {
-			focus = SAM_the_power_vacuum
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-    focus = {
-		id = SAM_mission_to_washington
-		icon = GFX_focus_ARG_strengthening_the_concordancia
-		relative_position_id = SAM_samoan_expansionism
-		x = 3
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_samoan_expansionism
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_invite_american_investors
-		icon = GFX_focus_generic_american_investments
-		relative_position_id = SAM_mission_to_washington
-		x = -1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_mission_to_washington
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_build_up_tuvalu
-		icon = GFX_goal_generic_construct_naval_dockyard
-		relative_position_id = SAM_mission_to_washington
-		x = 1
-		y = 2		
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_mission_to_washington
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_limited_american_military_presence
-		icon = GFX_focus_GER_shatter_usas_hegemony
-		relative_position_id = SAM_invite_american_investors
-		x = -1
-		y = 1
-
-		cost = 5
-
-        mutually_exclusive = {
-			focus = SAM_join_allies_tuimanua
-		}
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_invite_american_investors
-		}
-
-		available = {
-		}		 
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_demand_american_concessions
-		icon = GFX_goal_generic_befriend_united_states
-		relative_position_id = SAM_limited_american_military_presence
-		x = 1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_join_allies_tuimanua
-			focus = SAM_limited_american_military_presence
-		}
-
-		prerequisite = {
-			focus = SAM_build_up_tuvalu
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_mission_to_london
-		icon = GFX_focus_chi_british_cooperation
-		relative_position_id = SAM_samoan_expansionism
-		x = -2
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_samoan_expansionism
-		}
-
-		available = {
-		}		 
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_negotiate_samoan_territories
-		icon = GFX_focus_generic_balkan_diplomacy
-		relative_position_id = SAM_mission_to_london
-		x = -1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_mission_to_london
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_request_apologies
-		icon = GFX_focus_ARG_crackdown_on_corruption
-		relative_position_id = SAM_mission_to_london
-		x = 1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_mission_to_london
-		}
-
-		prerequisite = {
-			focus = SAM_mission_to_washington
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_join_allies_tuimanua
-		icon = GFX_allies
-		relative_position_id = SAM_mission_to_london
-		x = 0
-		y = 2
-
-		cost = 5
-
-        mutually_exclusive = {
-			focus = SAM_limited_british_military_presence
-			focus = SAM_limited_american_military_presence
-		}
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_negotiate_samoan_territories
-		}
-
-		prerequisite = {
-			focus = SAM_request_apologies
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_limited_british_military_presence
-		icon = GFX_goal_BEL_british_ship_designs
-		relative_position_id = SAM_mission_to_london
-		x = -2
-		y = 2
-
-		cost = 5
-
-        mutually_exclusive = {
-			focus = SAM_join_allies_tuimanua
-		}
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_negotiate_samoan_territories
-		}
-
-		prerequisite = {
-			focus = SAM_request_apologies
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_demand_british_concessions
-		icon = GFX_goal_PAL_seize_british_assets
-		relative_position_id = SAM_limited_british_military_presence
-		x = 1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_join_allies_tuimanua
-			focus = SAM_limited_british_military_presence
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_continue_the_fight
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		relative_position_id = SAM_samoan_expansionism
-		x = 0
-		y = 5
-
-		cost = 5
-
-        mutually_exclusive = {
-			focus = SAM_samoan_neutrality
-		}
-		
-		available = {
-		}
-
-        prerequisite = {
-			focus = SAM_demand_british_concessions
-		}
-
-        prerequisite = {
-			focus = SAM_demand_american_concessions
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-    focus = {
-		id = SAM_total_war
-		icon = GFX_goal_generic_flames_of_rebellion
-		relative_position_id = SAM_continue_the_fight
-		x = 0
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_continue_the_fight
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_until_britian_is_free
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_continue_the_fight
-		x = 0
-		y = 2
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_total_war
-		}
-
-		available = {
-		}
-
-		completion_reward = {  #unlock that british exiles thing
-			
-		}
-	}
-
-	focus = {
-		id = SAM_samoan_neutrality
-		icon = GFX_SOV_return_democracy_to_the_party_ccp_2d_sov_compatibility
-		relative_position_id = SAM_demand_british_concessions
-		x = -2
-		y = 1
-
-		cost = 5
-
-        mutually_exclusive = {
-			focus = SAM_continue_the_fight
-		}
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_demand_british_concessions
-		}
-
-		prerequisite = {
-			focus = SAM_demand_american_concessions
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	focus = {
-		id = SAM_victory_in_the_war
-		icon = GFX_goal_italy_victory_in_the_civil_war
-		relative_position_id = SAM_demand_american_concessions
-		x = 2
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_demand_british_concessions
-		}
-
-		prerequisite = {
-			focus = SAM_demand_american_concessions
-		}
-
-		available = {
-		}		 
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_complete_restoration
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_the_power_vacuum
-		x = 4
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        mutually_exclusive = {
-			focus = SAM_samoan_expansionism
-		}
-
-        prerequisite = {
-			focus = SAM_the_power_vacuum
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_manua_one
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_complete_restoration
-		x = -1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_complete_restoration
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_manua_two
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_complete_restoration
-		x = 1
-		y = 1
-
-		cost = 5
-
-		bypass = {
-		}
-
-        prerequisite = {
-			focus = SAM_complete_restoration
-		}
-
-		available = {
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_manua_empire
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_complete_restoration
-		x = 0
-		y = 2
-
-		cost = 5
-		
-		available = {
-		}
-
-        prerequisite = {
-			focus = SAM_placeholder_manua_one
-		}
-		
-		prerequisite = {
-			focus = SAM_placeholder_manua_two
-		}
-		
-		mutually_exclusive = {
-			focus = SAM_placeholder_fijian_empire
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_fijian_empire
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_placeholder_manua_two
-		x = 4
-		y = 1
-
-		cost = 5
-		
-		available = {
-		}
-
-        prerequisite = {
-			focus = SAM_placeholder_manua_one
-		}
-		
-		prerequisite = {
-			focus = SAM_placeholder_manua_two
-		}
-		
-		mutually_exclusive = {
-			focus = SAM_placeholder_manua_empire
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_fijian_one
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_placeholder_fijian_empire
-		x = -1
-		y = 1
-
-		cost = 5
-		
-		available = {
-		}
-
-        prerequisite = {
-			focus = SAM_placeholder_fijian_empire
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_fijian_two
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_placeholder_fijian_empire
-		x = 1
-		y = 1
-
-		cost = 5
-		
-		available = {
-		}
-
-        prerequisite = {
-			focus = SAM_placeholder_fijian_empire
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_fijian_mutual
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_placeholder_fijian_two
-		x = -1
-		y = 1
-
-		cost = 5
-		
-		available = {
-		}
-		
-		prerequisite = {
-			focus = SAM_placeholder_fijian_one
-			focus = SAM_placeholder_fijian_two
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_fijian_third
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_placeholder_fijian_two
-		x = 1
-		y = 1
-
-		cost = 5
-		
-		available = {
-		}
-
-        prerequisite = {
-			focus = SAM_placeholder_fijian_two
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_fijian_fourth
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_placeholder_fijian_two
-		x = 0
-		y = 2
-
-		cost = 5
-		
-		available = {
-		}
-
-        prerequisite = {
-			focus = SAM_placeholder_fijian_two
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_fijian_fifth
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_placeholder_fijian_fourth
-		x = -1
-		y = 1
-
-		cost = 5
-		
-		available = {
-		}
-
-        prerequisite = {
-			focus = SAM_placeholder_fijian_fourth
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_fijian_six
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_placeholder_fijian_fourth
-		x = 1
-		y = 1
-
-		cost = 5
-		
-		available = {
-		}
-
-        prerequisite = {
-			focus = SAM_placeholder_fijian_fourth
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_fijian_empire_restore_imperial_titles
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_placeholder_fijian_fourth
-		x = 0
-		y = 2
-
-		cost = 5
-		
-		available = {
-		}
-
-        prerequisite = {
-			focus = SAM_placeholder_fijian_fifth
-		}
-		
-		prerequisite = {
-			focus = SAM_placeholder_fijian_six
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-	
-	focus = {
-		id = SAM_placeholder_mutual_manua_fiji
-		icon = GFX_goal_generic_army_elite
-		relative_position_id = SAM_placeholder_fijian_one
-		x = -2
-		y = 1
-
-		cost = 5
-		
-		available = {
-		}
-
-        prerequisite = {
-			focus = SAM_placeholder_fijian_one
-		}
-
-		completion_reward = {  
-			
-		}
-	}
-
-	######################################
-	######################################
-	######################################
-
-	focus = {
-        id = r56_SAM_develop_apia_port
-		icon = GFX_goal_generic_expand_the_naval_industry
-        
-        cost = 5
-        x = 22
-        y = 0
-
-        available = { has_full_control_of_state = 726 }
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			726 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = dockyard
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = naval_base
-					province = 7290
-					level = 2
-					instant_build = yes
-				}
-			}
-        }
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-    }
-
-	focus = {
-        id = r56_SAM_study_american_submarines
-        icon = GFX_SOV_submarine_warfare_ccp_2d_sov_compatibility
-        prerequisite = { focus = r56_SAM_develop_apia_port }
-		mutually_exclusive = { focus = r56_SAM_study_british_destroyers }
-        relative_position_id = r56_SAM_develop_apia_port
-        
-        cost = 8
-        x = 1
-        y = 1
-
-        available = {
-			USA = {
-				exists = yes
-				has_capitulated = no
-				NOT = {
-					has_war_with = ROOT
-				}
-			}
-        }
-        
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			navy_experience = 10
-			add_tech_bonus = {
-				name = r56_SAM_study_american_submarines_research
-				bonus = 1
-				uses = 1
-				category = ss_tech
-			}
-        }
-
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
-    }
-
-	focus = {
-        id = r56_SAM_cruise_under_the_radar
-        icon = GFX_goal_navy_schematics
-        prerequisite = { focus = r56_SAM_study_american_submarines }
-        relative_position_id = r56_SAM_study_american_submarines
-        
-        cost = 10
-        x = 1
-        y = 1
-
-        available = {
-        }
-        
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			navy_experience = 25
-			add_tech_bonus = {
-				name = ss_bonus
-				bonus = 1
-				uses = 1
-				technology = basic_submarine_snorkel
-				technology = improved_submarine_snorkel
-			}
-        }
-
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
-    }
-
-	focus = {
-        id = r56_SAM_study_british_destroyers
-        icon = GFX_focus_generic_destroyer
-        prerequisite = { focus = r56_SAM_develop_apia_port }
-		mutually_exclusive = { focus = r56_SAM_study_american_submarines }
-        relative_position_id = r56_SAM_develop_apia_port
-        
-        cost = 8
-        x = -1
-        y = 1
-
-        available = {
-			ENG = {
-				exists = yes
-				has_capitulated = no
-				NOT = {
-					has_war_with = ROOT
-				}
-			}
-        }
-        
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			navy_experience = 10
-			add_tech_bonus = {
-				name = ships_bonus
-				bonus = 1
-				uses = 1
-				category = dd_tech
-			}
-        }
-
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
-    }
-
-	focus = {
-        id = r56_SAM_protect_our_convoys
-        icon = GFX_goal_generic_navy_anti_submarine
-        prerequisite = { focus = r56_SAM_study_british_destroyers }
-        relative_position_id = r56_SAM_study_british_destroyers
-        
-        cost = 10
-        x = -1
-        y = 1
-
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			navy_experience = 25
-			add_tech_bonus = {
-				name = dd_bonus
-				bonus = 1
-				uses = 1
-				technology = basic_depth_charges
-				technology = improved_depth_charges
-				technology = advanced_depth_charges
-				technology = modern_depth_charges
-			}
-        }
-
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
-    }
-
-	focus = {
-        id = r56_SAM_expand_the_merchant_fleet
-        icon = GFX_focus_generic_merchant_fleet
-        prerequisite = { focus = r56_SAM_study_british_destroyers focus = r56_SAM_study_american_submarines }
-        relative_position_id = r56_SAM_study_british_destroyers
-        
-        cost = 5
-        x = 1
-        y = 1
-
-        available = {
-			any_state = {
-				is_coastal = yes
-				is_controlled_by = ROOT
-			}
-        }
-        
-        ai_will_do = {  factor = 1 }
-
-        completion_reward = {
-			add_equipment_to_stockpile = {
-				type = convoy
-				amount = 50
-			}
-        }
-    }
-
-	focus = {
-        id = r56_SAM_expand_dockyard_facilities
-        icon = GFX_goal_generic_construct_naval_dockyard
-        prerequisite = { focus = r56_SAM_expand_the_merchant_fleet }
-        relative_position_id = r56_SAM_expand_the_merchant_fleet
-        
-        cost = 10
-        x = 1
-        y = 1
-
-        available = { has_full_control_of_state = 726 }
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			726 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
 			if = {
 				limit = {
-					1088 = {
-						is_controlled_by = ROOT
-					}
+					has_completed_focus = r56_SAM_declaration_of_independence
+					has_war_with = NZL
+					has_country_flag = r56_SAM_mau_new_zealand_war_flag
 				}
-				1088 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = dockyard
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-        }
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-    }
-
-	focus = {
-        id = r56_SAM_train_the_next_admiralty
-        icon = GFX_goal_generic_admirality
-        prerequisite = { focus = r56_SAM_expand_the_merchant_fleet }
-        relative_position_id = r56_SAM_expand_the_merchant_fleet
-        
-        cost = 10
-        x = -1
-        y = 1
-        
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			navy_experience = 25
-			add_doctrine_cost_reduction = {
-				name = NZL_train_new_officers
-				cost_reduction = 0.75
-				uses = 2
-				category = naval_doctrine
-			}
-        }
-
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
-    }
-
-	focus = {
-        id = r56_SAM_raise_the_war_fleet_of_manono
-        icon = GFX_goal_SAM_navy_independent
-        prerequisite = { focus = r56_SAM_train_the_next_admiralty }
-		prerequisite = { focus = r56_SAM_expand_dockyard_facilities }
-        relative_position_id = r56_SAM_train_the_next_admiralty
-        
-        cost = 10
-        x = 1
-        y = 1
-
-        available = {
-			has_war = yes
-			has_capitulated = no
-			has_full_control_of_state = 726
-        }
-        
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			navy_experience = 50
-			add_tech_bonus = {
-                name = bb_bonus
-                bonus = 1
-                uses = 1
-                category = bb_tech
-				ahead_reduction = 1
-            }
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_ideas = r56_SAM_war_fleet_of_manono_idea
-        }
-
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_NAVY_XP }
-    }
-
-	focus = {
-        id = r56_SAM_no_army_no_nation
-        icon = GFX_goal_generic_army_professionalism
-		mutually_exclusive = { focus = r56_SAM_no_army }
-        
-        cost = 10
-        x = 0
-        y = 0
-
-        available = {
-			has_war_support > 0.15
-			has_capitulated = no
-			726 = {
-				is_demilitarized_zone = no
-				is_owned_and_controlled_by = ROOT
-			}
-        }
-        
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			add_stability = -0.05
-			add_war_support = 0.1
-
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.85
-				uses = 1
-				category = land_doctrine
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SAM_consumers_tt
-
-			add_to_variable = { var:SAM_army_consumer_goods = 0.05 }
-        }
-
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MILITARY_IMPROVEMENT }
-    }
-
-	focus = {
-        id = r56_SAM_establish_military_headquarters
-        icon = GFX_focus_generic_military_dictatorship
-        prerequisite = { focus = r56_SAM_no_army_no_nation }
-        relative_position_id = r56_SAM_no_army_no_nation
-        
-        cost = 5
-        x = 0
-        y = 1
-
-        available = { capital_scope = { is_fully_controlled_by = ROOT } }
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			capital_scope = { add_extra_state_shared_building_slots = 1}
-			unlock_decision_tooltip = r56_SAM_put_down_unrest_in_palauli
-			set_country_flag = SAM_can_into_palauli
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SAM_planning_tt
-
-			add_to_variable = { var:SAM_army_planning_speed = 0.1 }
-			add_to_variable = { var:SAM_experience_loss = 0.05 }
-        }
-
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MILITARY_IMPROVEMENT }
-    }
-
-	focus = {
-        id = r56_SAM_found_the_samoan_red_cross_society
-        icon = GFX_goal_medicine
-        prerequisite = { focus = r56_SAM_no_army_no_nation focus = r56_SAM_no_army }
-        relative_position_id = r56_SAM_no_army_no_nation
-        
-        cost = 10
-        x = 2
-        y = 1
-        
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			add_stability = 0.05
-			add_tech_bonus = {
-                name = motorized_bonus
-				bonus = 1
-				uses = 1
-				category = hospital_tech
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SAM_morale_tt
-
-			add_to_variable = { var:SAM_army_organization = 0.05 }
-			add_to_variable = { var:SAM_morale_factor = 0.1 }
-        }
-
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT }
-    }
-
-	focus = {
-        id = r56_SAM_study_our_past_victories
-        icon = {
-			trigger = { SAM_is_formally_independent = yes }
-			value = GFX_goal_SAM_armed_forces_independent
-		}
-
-		icon = {
-			trigger = { SAM_is_formal_subject_of_nzl = yes }
-			value = GFX_goal_SAM_armed_forces_colonial
-		}
-
-        prerequisite = { focus = r56_SAM_establish_military_headquarters }
-        relative_position_id = r56_SAM_establish_military_headquarters
-        
-        cost = 5
-        x = 1
-        y = 1
-
-        available = { has_capitulated = no }
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			add_war_support = 0.05
-			custom_effect_tooltip = SAM_doctrine_cost_tt
-			add_to_variable = { var:SAM_land_doctrine = 0.1 }
-        }
-
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_RESEARCH }
-    }
-
-	focus = {
-        id = r56_SAM_found_a_military_academy
-        icon = GFX_focus_generic_military_academy
-        prerequisite = { focus = r56_SAM_establish_military_headquarters }
-        relative_position_id = r56_SAM_establish_military_headquarters
-        
-        cost = 10
-        x = -1
-        y = 1
-
-        available = { has_full_control_of_state = 726 }
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			army_experience = 5
-			every_army_leader = { add_planning = 1 }
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SAM_organization_tt
-
-			add_to_variable = { var:SAM_army_organization = 0.1 }
-			add_to_variable = { var:SAM_army_planning_speed = 0.05 }
-        }
-
-		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_ARMY_XP }
-    }
-
-	focus = {
-        id = r56_SAM_improve_our_doctrine
-        icon = GFX_goal_generic_army_doctrines
-        prerequisite = { focus = r56_SAM_found_a_military_academy }
-		prerequisite = { focus = r56_SAM_study_our_past_victories }
-        relative_position_id = r56_SAM_found_a_military_academy
-        
-        cost = 10
-        x = 1
-        y = 1
-
-        available = { has_capitulated = no }
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			army_experience = 15
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.75
-				uses = 1
-				category = land_doctrine
-			}
-        }
-
-		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
-    }
-
-	focus = {
-        id = r56_SAM_no_army
-        icon = GFX_goal_generic_break_rifle
-		mutually_exclusive = { focus = r56_SAM_no_army_no_nation }
-        
-        cost = 5
-        x = 9
-        y = 0
-
-        available = {
-			has_war = no
-			has_capitulated = no
-			has_full_control_of_state = 726
-        }
-        
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			add_stability = 0.1
-			add_war_support = -0.05
-
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.85
-				uses = 1
-				category = land_doctrine
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SAM_training_tt
-
-			add_to_variable = { var:SAM_training_time_factor = 0.25 }
-        }
-
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT }
-    }
-
-	focus = {
-		id = r56_SAM_adopt_new_uniform
-		icon = GFX_focus_CHL_departemento_de_las_tropas_nacistas_de_asalto
-		prerequisite = { focus = r56_SAM_no_army }
-		relative_position_id = r56_SAM_no_army
-
-		cost = 10
-		x = -1
-		y = 1
-
-		completion_reward = {
-			custom_effect_tooltip = SAM_uniform_tt
-			add_to_variable = { var:SAM_supply_consumption = 0.1 }
-			add_to_variable = { var:SAM_training_time_factor = 0.05 }
-			add_to_variable = { var:SAM_army_organization = 0.05 }
-			add_to_variable = { var:SAM_experience_loss = -0.1 }
-		}
-
-		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT }
-	}
-
-	focus = {
-		id = r56_SAM_promote_apia_defence_club
-		icon = GFX_focus_ETH_freedom_at_gunpoint
-		prerequisite = { focus = r56_SAM_no_army }
-		relative_position_id = r56_SAM_no_army
-
-		cost = 5
-		x = 1
-		y = 1
-
-		available = { has_full_control_of_state = 726 }
-
-		completion_reward = {
-			add_tech_bonus = {
-                name = LIE_shooting_clubs
-                bonus = 1
-                uses = 1
-                category = support_tech
-            }
-			custom_effect_tooltip = SAM_division_recovery_tt
-			add_to_variable = { var:SAM_army_organization = 0.05 }
-			add_to_variable = { var:SAM_morale_factor = 0.05 }
-		}
-
-		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = r56_SAM_bolster_the_police
-		icon = GFX_goal_generic_army_elite
-		prerequisite = { focus = r56_SAM_adopt_new_uniform }
-		prerequisite = { focus = r56_SAM_promote_apia_defence_club }
-		relative_position_id = r56_SAM_adopt_new_uniform
-
-		cost = 10
-		x = 1
-		y = 1
-
-		available = {
-		}
-
-		completion_reward = {
-			add_stability = 0.05
-			add_popularity = {
-				ideology = ROOT
-				popularity = 0.1
-			}
-
-			add_tech_bonus = {
-                name = support_equipment
-				bonus = 1
-				uses = 1
-				category = military_police_tech
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				producer = NZL
-				amount = 1000
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			unlock_decision_tooltip = r56_SAM_put_down_unrest_in_palauli
-			set_country_flag = SAM_can_into_palauli
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SAM_planning_minor_tt
-			add_to_variable = { var:SAM_army_planning_speed = 0.05 }
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_MILITARY_IMPROVEMENT }
-	}
-
-	focus = {
-		id = r56_SAM_smuggle_weapons_from_as_focus
-		icon = GFX_focus_FIN_weapon_caches
-		prerequisite = { focus = r56_SAM_no_army focus = r56_SAM_no_army_no_nation }
-		relative_position_id = r56_SAM_no_army
-
-		cost = 10
-		x = -3
-		y = 1
-
-		bypass = { controls_state = 1088 }
-
-		bypass_effect = {
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				producer = USA
-				amount = 2500
-			}
-		}
-
-		completion_reward = {
-			set_country_flag = r56_SAM_can_steal_weapons_flag
-			unlock_decision_category_tooltip = r56_SAM_smuggle_operations
-		}
-
-		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT }
-	}
-
-	focus = {
-        id = r56_SAM_mobilize_our_forces
-        icon = GFX_focus_generic_commonwealth_build_infantry
-        prerequisite = { focus = r56_SAM_no_army focus = r56_SAM_no_army_no_nation }
-        relative_position_id = r56_SAM_no_army_no_nation
-        
-        cost = 10
-        x = 4
-        y = 1
-
-        available = {
-			has_capitulated = no
-			has_war_support > 0.1
-			726 = {
-				is_demilitarized_zone = no
-				is_owned_and_controlled_by = ROOT
-			}
-			OR = {
-				threat > 0.15
-				has_war = yes
-			}
-        }
-
-		bypass = {
-			OR = {
-				has_idea = limited_conscription
-				has_idea = extensive_conscription
-				has_idea = service_by_requirement
-				has_idea = all_adults_serve
-				has_idea = scraping_the_barrel
-			}
-		}
-        
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			add_war_support = 0.05
-			show_unit_leaders_tooltip = SAM_afoafouvale_misimoa
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			if = {
-				limit = { has_idea = disarmed_nation }
-				swap_ideas = {
-					remove_idea = disarmed_nation
-					add_idea = volunteer_only
-				}
-			}
-			if = {
-				limit = { has_idea = volunteer_only }
-				swap_ideas = {
-					remove_idea = volunteer_only
-					add_idea = limited_conscription
-				}
-			}
-
-			custom_effect_tooltip = SAM_conscription_tt
-			add_to_variable = { var:SAM_army_conscription = 0.05 }
-        }
-
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-    }
-
-	focus = {
-        id = r56_SAM_fortify_the_shores
-        icon = GFX_focus_generic_coastal_fort
-        prerequisite = { focus = r56_SAM_mobilize_our_forces }
-        relative_position_id = r56_SAM_mobilize_our_forces
-        
-        cost = 8
-        x = -1
-        y = 1
-
-        available = {
-			has_full_control_of_state = 726
-			has_capitulated = no
-			OR = {
-				threat > 0.15
-				has_war = yes
-			}
-        }
-        
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			add_timed_idea = {
-				idea = INS_coastal_entrenchment_idea
-				days = 365
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			726 = { #Western Samoa
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = 7290
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = 13462
-					instant_build = yes
-				}
-			}
-
-			1088 = { #Tutuila & Manu'a
-				if = {
-					limit = { is_controlled_by = ROOT }
-					add_building_construction = {
-						type = coastal_bunker
-						level = 2
-						province = 13080
-						instant_build = yes
-					}
-				}
-			}
-        }
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-    }
-
-	focus = {
-        id = r56_SAM_form_the_self_defense_division
-        icon = GFX_focus_GER_afrikakorps
-        prerequisite = { focus = r56_SAM_study_our_past_victories }
-		prerequisite = { focus = r56_SAM_fortify_the_shores }
-        relative_position_id = r56_SAM_study_our_past_victories
-        
-        cost = 10
-        x = 1
-        y = 1
-
-        available = {
-			has_full_control_of_state = 726
-			has_war_support > 0.25
-			has_capitulated = no
-			OR = {
-				threat > 0.15
-				has_war = yes
-			}
-        }
-        
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			ROOT = {
-				division_template = {
-					name = "Western Samoan Self Defence Unit"
-					priority = 1
-					division_names_group = USA_INF_01
-					regiments = {
-						infantry = { x = 0 y = 0 }
-						infantry = { x = 0 y = 1 }
-						
-						infantry = { x = 1 y = 0 }
-						infantry = { x = 1 y = 1 }
-						
-					}
-
-					support = {
-						engineer = { x = 0 y = 0 }
-					}
-				}
-				capital_scope = {
+				custom_effect_tooltip = generic_skip_one_line_tt
+				random_owned_controlled_state = {
 					create_unit = {
-						division = "name = \"First Volunteer Corp\" division_template = \"Western Samoan Self Defence Unit\" start_experience_factor = 0.2" 
-						owner = PREV
+						division = "name = \"Mau Militia\" division_template = \"Mau Militia\" start_experience_factor = 0.8" 
+						owner = ROOT
 					}
 				}
 			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SAM_supply_tt
-
-			add_to_variable = { var:SAM_army_consumer_goods = 0.05 }
-			add_to_variable = { var:SAM_supply_consumption = 0.05 }
-        }
-
-		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_INDUSTRY }
+		}
     }
 
+	# Establish Workshops
 	focus = {
         id = r56_SAM_establish_workshops
-        icon = GFX_goal_generic_small_arms
-        prerequisite = { focus = r56_SAM_mobilize_our_forces }
-        relative_position_id = r56_SAM_mobilize_our_forces
+        icon = GFX_goal_generic_military_factories
+        prerequisite = { focus = r56_SAM_mobilize_the_mau }
+        relative_position_id = r56_SAM_mobilize_the_mau
         
         cost = 5
-        x = 1
+        x = 2
         y = 1
 
         available = {
 			has_full_control_of_state = 726
-			has_capitulated = no
 			OR = {
-				threat > 0.15
+				threat > 0.05
 				has_war = yes
 			}
         }
-        
-        ai_will_do = { factor = 1 }
 
+        ai_will_do = { factor = 1 }
         completion_reward = {
+			add_tech_bonus = {
+				name = r56_SAM_establish_workshops
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
 			726 = { # Western Samoa
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -5470,209 +3410,408 @@ focus_tree = {
 			}
         }
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
     }
 
+	# Prepare for Another Great War
 	focus = {
-        id = r56_SAM_mass_produce_equipment
-        icon = GFX_goal_machine_gun
-        prerequisite = { focus = r56_SAM_establish_workshops }
-        relative_position_id = r56_SAM_establish_workshops
-        
-        cost = 10
-        x = 1
-        y = 1
+		id = r56_SAM_prepare_for_next_great_war
+		icon = GFX_goal_SAM_armed_forces_independent # make dynamic
+		prerequisite = { focus = r56_SAM_mobilize_the_mau }
+		relative_position_id = r56_SAM_mobilize_the_mau
 
-        available = {
-			has_full_control_of_state = 726
-			has_capitulated = no
-			OR = {
-				threat > 0.15
-				has_war = yes
-			}
-        }
-        
-        ai_will_do = { factor = 1 }
+		cost = 10
+		x = -2
+		y = 1
+		# doctrine bonuses
 
-        completion_reward = {
-			add_tech_bonus = {
-				name = r56_SAM_infantry_bonus
-				bonus = 1
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = r56_SAM_prepare_for_next_great_war
+				cost_reduction = 1 # So that if u dont want to stay on asymetrical warfare, u can easily get out of it
 				uses = 1
-				category = infantry_weapons
-			}
-
-			add_ideas = AFG_mass_production
-        }
-
-		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_RESEARCH }
-    }
-
-	focus = {
-        id = r56_SAM_protect_the_skies
-        icon = GFX_goal_airplane_hunt
-        prerequisite = { focus = r56_SAM_establish_workshops }
-		prerequisite = { focus = r56_SAM_fortify_the_shores }
-        relative_position_id = r56_SAM_establish_workshops
-        
-        cost = 5
-        x = -1
-        y = 1
-
-        available = {
-			has_tech = interwar_antiair
-			has_full_control_of_state = 726
-			has_capitulated = no
-			OR = {
-				threat > 0.15
-				has_war = yes
-			}
-        }
-        
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			air_experience = 15
-			add_tech_bonus = {
-				name = POR_adapting_to_the_modern_battlefield
-				bonus = 1
-				uses = 1
-				category = cat_anti_air
+				category = land_doctrine
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-			726 = { #Western Samoa
+			custom_effect_tooltip = SAM_samoa_army_intro
+			add_to_variable = {
+				SAM_core_attack = 0.05
+				tooltip = army_core_attack_factor_tt
+			}
+			add_to_variable = {
+				SAM_core_defense = 0.1
+				tooltip = army_core_defence_factor_tt
+			}
+		}
+	}
+
+	# Promote the Apia Defence Rifle Club
+	focus = {
+		id = r56_SAM_promote_apia_defence_club # might seem like a typo but isnt
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		prerequisite = { focus = r56_SAM_prepare_for_next_great_war }
+		relative_position_id = r56_SAM_prepare_for_next_great_war
+
+		cost = 6
+		x = 1
+		y = 1
+
+		available = { has_full_control_of_state = 726 }
+
+		completion_reward = {
+			add_tech_bonus = {
+                name = r56_SAM_promote_apia_defence_club
+                bonus = 0.5
+                uses = 2
+                category = support_tech
+            }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_samoa_army_intro
+			add_to_variable = {
+				SAM_army_organization = 0.05
+				tooltip = army_org_factor_tt
+			}
+			add_to_variable = {
+				SAM_morale_factor = 0.05
+				tooltip = army_morale_factor_tt
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_RESEARCH }
+	}
+
+	# Prepare an Elite Fighting Force
+	focus = {
+		id = r56_SAM_prepare_elite_units
+		icon = GFX_focus_AST_torres_strait_batallion
+		prerequisite = { focus = r56_SAM_prepare_for_next_great_war }
+		relative_position_id = r56_SAM_prepare_for_next_great_war
+
+		cost = 5
+		x = -1
+		y = 1
+
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SAM_afoafouvale_misimoa
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			custom_effect_tooltip = SAM_samoa_army_intro
+			add_to_variable = { 
+				SAM_experience_loss = -0.1 
+				tooltip = experience_loss_factor_tt 
+			}
+			add_to_variable = { 
+				SAM_special_forces_cap = 0.15
+				tooltip = special_forces_cap_tt 
+			}
+			#add_to_variable = { FIN_fascist_regime_special_forces_out_of_supply_factor = -0.15 tooltip = special_forces_out_of_supply_factor_tt }
+			#add_to_variable = { FIN_fascist_regime_special_forces_attack_factor = 0.10 tooltip = special_forces_attack_factor_tt }
+		}
+	}
+
+	# Prioritize Amphibious Warfare
+	focus = {
+		id = r56_SAM_buildup_an_amphibious_force
+		icon = GFX_focus_generic_naval_invasion
+		prerequisite = { focus = r56_SAM_prepare_elite_units }
+		mutually_exclusive = { focus = r56_SAM_home_defense }
+		relative_position_id = r56_SAM_prepare_elite_units
+
+		cost = 10
+		x = -1
+		y = 1
+
+		#marines
+	}
+
+	# Lessons from the Mau Men
+	focus = {
+		id = r56_SAM_home_defense
+		icon = GFX_goal_generic_mountain_warfare2
+		prerequisite = { focus = r56_SAM_prepare_elite_units }
+		mutually_exclusive = { focus = r56_SAM_buildup_an_amphibious_force }
+		relative_position_id = r56_SAM_prepare_elite_units
+
+		cost = 10
+		x = 1
+		y = 1
+
+		#mountaineers
+	}
+
+	# Living Off of the Land
+	focus = {
+		id = r56_SAM_conduct_supply_exercises
+		icon = GFX_focus_AST_department_of_aboriginal_affairs
+		prerequisite = { focus = r56_SAM_home_defense }
+		relative_position_id = r56_SAM_buildup_an_amphibious_force
+
+		cost = 8
+		x = 3
+		y = 1
+
+		# supply bonus and give spirit of the army if have nsb
+	}
+
+	# Expand Recruitment for Our Elite Battalions
+	focus = {
+		id = r56_SAM_expand_special_forces_capacity
+		icon = GFX_focus_SMB_special_forces_option_1
+		prerequisite = { focus = r56_SAM_buildup_an_amphibious_force focus = r56_SAM_home_defense }
+		relative_position_id = r56_SAM_buildup_an_amphibious_force
+
+		cost = 6
+		x = 1
+		y = 1
+
+		# expands capacity of special forces
+	}
+
+	# Sample the Bob Tank
+	focus = {
+		id = r56_SAM_buildup_an_amphibious_tank_force
+		icon = GFX_focus_generic_naval_invasion_tank
+		prerequisite = { focus = r56_SAM_buildup_an_amphibious_force }
+		relative_position_id = r56_SAM_buildup_an_amphibious_force
+
+		cost = 8
+		x = -1
+		y = 1
+
+		#tank marines bonus
+	}
+
+	# Increase Production Quotas
+	focus = {
+		id = r56_SAM_increase_production_quotas
+		icon = GFX_goal_ammunitions
+		prerequisite = { focus = r56_SAM_establish_workshops }
+		relative_position_id = r56_SAM_establish_workshops
+
+		cost = 8
+		x = 1
+		y = 1
+
+		available = { has_tech = basic_machine_tools }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = r56_SAM_increase_production_quotas
+				bonus = 0.25
+				uses = 2
+				category = industry
+			}
+			add_ideas = TON_increased_production_quotas_r56
+		}
+	}
+
+	# Prioritize Production of Small Arms
+	focus = {
+		id = r56_SAM_prioritize_infantry_production
+		icon = GFX_focus_generic_reorient_production
+		prerequisite = { focus = r56_SAM_increase_production_quotas }
+		mutually_exclusive = { focus = r56_SAM_prioritize_tank_production }
+		relative_position_id = r56_SAM_increase_production_quotas
+
+		cost = 6
+		x = -1
+		y = 1
+
+		# production bonus to guns
+	}
+
+	# Prepare Mass Production of Armor
+	focus = {
+		id = r56_SAM_prioritize_tank_production
+		icon = GFX_focus_generic_mass_production
+		prerequisite = { focus = r56_SAM_increase_production_quotas }
+		mutually_exclusive = { focus = r56_SAM_prioritize_infantry_production }
+		relative_position_id = r56_SAM_increase_production_quotas
+
+		cost = 6
+		x = 1
+		y = 1
+
+		# production bonus to bob
+	}
+
+	# Fuel the Samoan War Machine
+	focus = {
+		id = r56_SAM_self_sustainability_bonus
+		icon = GFX_focus_generic_military_industry
+		prerequisite = { focus = r56_SAM_prioritize_infantry_production focus = r56_SAM_prioritize_tank_production }
+		relative_position_id = r56_SAM_increase_production_quotas
+
+		cost = 10
+		x = 0
+		y = 2
+
+		# self sustainability bunuses
+	}
+
+	# Create the Apia Weapons Arsenal
+	focus = {
+		id = r56_SAM_create_the_apia_arsenal
+		icon = GFX_goal_generic_munitions_factories
+		prerequisite = { focus = r56_SAM_increase_production_quotas }
+		relative_position_id = r56_SAM_increase_production_quotas
+
+		cost = 10
+		x = 2
+		y = 2
+
+		available = { 
+			has_tech = construction3
+			has_tech = advanced_machine_tools 
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = r56_SAM_create_the_apia_arsenal
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			726 = { # Western Samoa
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = anti_air_building
+					type = arms_factory
 					level = 2
 					instant_build = yes
 				}
 			}
 
-			1088 = { #Tutuila & Manu'a
-				if = {
-					limit = { is_controlled_by = ROOT }
+			if = {
+				limit = { 1088 = { is_fully_controlled_by = ROOT } }
+				1088 = { #Eastern Samoa
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
-						type = anti_air_building
+						type = arms_factory
 						level = 2
 						instant_build = yes
 					}
 				}
 			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = r56_SAM_close_air_support_tt
-			add_to_variable = { var:SAM_enemy_air_superiority = 0.05 }
-        }
-
-		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
-    }
-
-	focus = {
-        id = r56_SAM_support_the_british_war_effort
-        icon = GFX_focus_SWI_issue_war_bonds
-        prerequisite = { focus = r56_SAM_protect_the_skies }
-		prerequisite = { focus = r56_SAM_mass_produce_equipment }
-        relative_position_id = r56_SAM_protect_the_skies
-        
-        cost = 4
-        x = 3
-        y = 1
-
-        available = {
-			has_full_control_of_state = 726
-			has_capitulated = no
-			has_war = yes
-			is_ally_with = ENG
-			ENG = {
-				has_war = yes
-				has_capitulated = no
-			}
-        }
-        
-        ai_will_do = { factor = 1 }
-
-		select_effect = {
-			add_timed_idea = {
-				idea = r56_SAM_donated_to_uk
-				days = 28
-			}
 		}
 
-        completion_reward = {
-			ENG = { country_event = r56_samoa.4 }
-			effect_tooltip = {
-				add_timed_idea = {
-					idea = r56_SAM_donated_to_uk
-					days = 28
-				}
-			}
-        }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+	}
 
-		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-    }
-
+	# Adopt New Communication Devices
 	focus = {
-        id = r56_SAM_united_and_ready
-        icon = GFX_goal_generic_national_unity
-        prerequisite = { focus = r56_SAM_improve_our_doctrine }
-		prerequisite = { focus = r56_SAM_form_the_self_defense_division }
-		prerequisite = { focus = r56_SAM_protect_the_skies }
-        relative_position_id = r56_SAM_improve_our_doctrine
+		id = r56_SAM_invest_into_radios
+		icon = GFX_goal_generic_radio_development_2
+		prerequisite = { focus = r56_SAM_establish_workshops }
+		relative_position_id = r56_SAM_establish_workshops
+
+		cost = 10
+		x = -1
+		y = 1
+
+		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_EQUIPMENT }
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = r56_SAM_invest_into_radios
+				bonus = 0.75
+				uses = 1
+				category = radar_tech
+				technology = radio
+				technology = improved_radio
+				technology = advanced_radio
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_equipment_to_stockpile = {
+			    type = support_equipment_1
+			    amount = 80
+				producer = ENG
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.25
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_samoa_army_intro
+			add_to_variable = {
+				SAM_army_planning_speed = 0.1
+				tooltip = planning_speed_factor_tt
+			}
+		}
+	}
+
+	# Found the Samoan Red Cross Society
+	focus = {
+        id = r56_SAM_found_the_samoan_red_cross_society
+        icon = GFX_goal_medicine
+        prerequisite = { focus = r56_SAM_promote_apia_defence_club focus = r56_SAM_invest_into_radios }
+        relative_position_id = r56_SAM_promote_apia_defence_club
         
-        cost = 10
+        cost = 8
         x = 1
         y = 1
-
-        available = {
-			has_full_control_of_state = 726
-			num_divisions > 1
-			has_war_support > 0.35
-			has_capitulated = no
-			has_war = yes
-        }
         
         ai_will_do = { factor = 1 }
 
         completion_reward = {
 			add_stability = 0.05
-			add_popularity = {
-				ideology = ROOT
-				popularity = 0.1
+			add_tech_bonus = {
+                name = r56_SAM_found_the_samoan_red_cross_society
+				bonus = 1
+				uses = 1
+				category = hospital_tech
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SAM_defence_major_tt
-
-			add_to_variable = { var:SAM_army_core_defence_factor = 0.1 }
-			add_to_variable = { var:SAM_experience_loss = 0.05 }
-			add_to_variable = { var:SAM_army_organization = 0.05 }
+			custom_effect_tooltip = SAM_samoa_army_intro
+			add_to_variable = {
+				SAM_army_organization = 0.05
+				tooltip = army_org_factor_tt
+			}
+			add_to_variable = {
+				SAM_morale_factor = 0.1
+				tooltip = army_morale_factor_tt
+			}
         }
 
-		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT }
     }
 
+	# Smuggle Weapons From American Samoa
 	focus = {
-        id = r56_SAM_enact_total_war
-        icon = GFX_goal_generic_army_mobilization
-        prerequisite = { focus = r56_SAM_mass_produce_equipment }
-		prerequisite = { focus = r56_SAM_protect_the_skies }
-        relative_position_id = r56_SAM_protect_the_skies
-        
-        cost = 10
-        x = 0
-        y = 1
+		id = r56_SAM_smuggle_weapons_from_as_focus
+		icon = GFX_focus_FIN_weapon_caches
+		prerequisite = { focus = r56_SAM_mobilize_the_mau }
+		relative_position_id = r56_SAM_mobilize_the_mau
 
-        available = {
-			has_war_support > 0.5
-			has_capitulated = no
-			has_war = yes
-        }
-        
-        ai_will_do = { factor = 1 }
-        completion_reward = { add_ideas = war_economy }
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-    }
+		cost = 4
+		x = 0
+		y = 1
+
+		bypass = { controls_state = 1088 }
+		bypass_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				producer = USA
+				amount = 2500
+			}
+		}
+
+		completion_reward = {
+			set_country_flag = r56_SAM_can_steal_weapons_flag
+			unlock_decision_category_tooltip = r56_SAM_smuggle_operations
+			custom_effect_tooltip = SAM_we_can_steal_guns_from_as_now
+		}
+
+		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT }
+	}
+
+	# ECONOMY
 
 	focus = {
         id = r56_SAM_enact_the_aliesa_scheme
