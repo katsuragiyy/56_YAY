@@ -3098,7 +3098,10 @@ spriteType = {
 		name = "GFX_idea_IRE_daniel_mckenna"
 		texturefile = "gfx/interface/ideas/ire/advisors/r56_idea_IRE_advisor_Daniel_McKenna.dds"
 	}
-
+	spriteType = {
+		name = "GFX_idea_IRE_michael_brennan"
+		texturefile = "gfx/interface/ideas/ire/advisors/r56_idea_IRE_Michael_Brennan.dds"
+	}
 
 
 ###------> ITA <><> <><> <><> <><> <><>

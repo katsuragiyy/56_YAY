@@ -2091,21 +2091,19 @@ characters={
 			idea_token = clement_attlee
 			available  = {
 				NOT = {
-					has_completed_focus  = ENG_a_change_in_course 
-				}
-				NOT = {
+					has_completed_focus  = ENG_a_change_in_course
 					has_autonomy_state  = autonomy_supervised_state
 				}
 			}
 			allowed  = {
-				original_tag  = ENG
+				original_tag = ENG
 			}
 			traits  = {
 				democratic_reformer 
 			}
 			do_effect  = {
 				NOT = {
-					has_government  = democratic 
+					has_government = democratic 
 				}
 			}
 			ai_will_do  = {

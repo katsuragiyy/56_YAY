@@ -11,7 +11,7 @@ characters={
 			expire="1965.1.1"
 			id=-1
 			traits = {
-				fierce_patriot #Oh Michael, It was all my fault :'(
+				undermined_patriot protectionist_proponent whose_sins_weigh_heavy #Oh Michael, It was all my fault :'(
 			}			
 		}
 	}
@@ -106,7 +106,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { old_guard homeland_connoisseur }
+			traits = { career_officer caring_leader IRE_spirit_of_1916 }
 			skill = 3
 			attack_skill = 2
 			defense_skill = 4
@@ -114,12 +114,12 @@ characters={
 			logistics_skill = 2
 			legacy_id=-1
 		}		
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+
 		name="Michael Costello"
 		portraits={
 			army={
-				large="gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
-				small="gfx/interface/ideas/idea_ENG_generic_land_4.dds"
+				large="gfx/leaders/IRE/r56_portrait_IRE_Michael_Joe_Costello.dds"
+				small="gfx/interface/ideas/idea_ENG_generic_land_4.dds" # Should do this
 			}
 		}
 	}	
@@ -176,7 +176,7 @@ characters={
 		name=IRE_michael_brennan
 		portraits={
 			army={
-				small=GFX_idea_generic_army_europe_2
+				small=GFX_idea_IRE_michael_brennan
 			}
 		}
 		advisor={
@@ -339,8 +339,6 @@ characters={
 	}
 	IRE_daniel_mckenna={
 		advisor={
-			
-			
 			slot = army_chief
 			idea_token = IRE_daniel_mckenna
 			ledger = army
@@ -363,7 +361,7 @@ characters={
 			}
 		}
 		field_marshal = {
-			traits = { infantry_officer trait_cautious }
+			traits = { infantry_officer trait_cautious IRE_spirit_of_1916 }
 			skill = 3
 			attack_skill = 2
 			defense_skill = 3
@@ -374,8 +372,6 @@ characters={
 	#change name
 	IRE_hugo_macneill={
 		advisor={
-			
-			
 			slot = high_command
 			idea_token = IRE_hugo_macneill
 			ledger = army
@@ -391,7 +387,7 @@ characters={
 				}
 		}
 		corps_commander = {
-			traits = { promising }
+			traits = { promising IRE_spirit_of_1916 }
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
@@ -401,8 +397,8 @@ characters={
 		name="Hugo MacNeill"
 		portraits={
 			army={
-				large="gfx/leaders/ENG/Portrait_Britain_Generic_land_2.dds"
-				small="GFX_idea_generic_army_europe_1"
+				large="gfx/leaders/IRE/r56_portrait_IRE_Hugo_MacNeill.dds"
+				small="GFX_idea_generic_army_europe_1" # Should do this
 			}
 		}
 	}

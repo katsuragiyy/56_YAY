@@ -1,14 +1,14 @@
 form_scandinavia_category = {
-
+	
 	form_scandinavia = {
 
 		icon = generic_form_nation
 
 		allowed = {
 			OR = {
-				#original_tag = SWE
-				#original_tag = DEN
 				original_tag = NOR
+				#original_tag = SWE # 56
+				#original_tag = DEN # 56
 				original_tag = SMI
 				original_tag = KAR
 			}
@@ -67,6 +67,7 @@ form_scandinavia_category = {
 				#original_tag = DEN
 				#original_tag = SWE
 			#}
+			NOT = { has_global_flag = form_nordic_league_flag }
 			NOT = { has_global_flag = form_scandinavia_flag }
 		}
 
@@ -170,11 +171,13 @@ form_nordic_league_category = {
 
 		allowed = {
 			OR = {
-				#original_tag = SWE
-				#original_tag = DEN
 				original_tag = NOR
+				#original_tag = DEN
+				#original_tag = SWE
 				original_tag = FIN
 				original_tag = ICE
+				original_tag = EST
+				original_tag = GRN
 				original_tag = SMI
 				original_tag = KAR
 				
@@ -186,80 +189,107 @@ form_nordic_league_category = {
 		}
 
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = form_nordic_nation_flag
+				hidden_trigger = {
+					NOT = { has_country_flag = form_nordic_nation_flag }
+				}
+			}
 			is_subject = no
-			# Norway
-			custom_trigger_tooltip = {
-				tooltip = form_country_norway_required_states_tt
-				controls_state = 110
-				controls_state = 142
-				controls_state = 143
-				controls_state = 144
-				controls_state = 967
-				controls_state = 1027
-				controls_state = 1031
-				controls_state = 1032
-				controls_state = 1033
-				controls_state = 1034
-				controls_state = 1035
+			if = {
+				limit = {
+					NOT = { original_tag = EST }
+				}
+				# Norway
+				custom_trigger_tooltip = {
+					tooltip = form_country_norway_required_states_tt
+					controls_state = 110
+					controls_state = 142
+					controls_state = 143
+					controls_state = 144
+					controls_state = 967
+					controls_state = 1027
+					controls_state = 1031
+					controls_state = 1032
+					controls_state = 1033
+					controls_state = 1034
+					controls_state = 1035
+				}
+				# Sweden
+				custom_trigger_tooltip = {
+					tooltip = form_country_sweden_required_states_tt
+					controls_state = 38
+					controls_state = 124
+					controls_state = 138
+					controls_state = 139
+					controls_state = 140
+					controls_state = 141
+					controls_state = 666
+					controls_state = 968
+					controls_state = 969
+					controls_state = 1026
+					controls_state = 1028
+					controls_state = 1029
+					controls_state = 1030
+				}
+				# Denmark
+				custom_trigger_tooltip = {
+					tooltip = form_country_denmark_required_states_tt
+					controls_state = 37
+					controls_state = 99
+					controls_state = 101
+					controls_state = 337
+					controls_state = 1024
+					controls_state = 964
+					controls_state = 1025
+				}
+				# Finland
+				custom_trigger_tooltip = {
+					tooltip = form_country_finland_required_states_tt
+					controls_state = 111
+					controls_state = 145
+					controls_state = 148
+					controls_state = 149
+					controls_state = 150
+					controls_state = 1036
+					controls_state = 1037
+					controls_state = 1038
+					controls_state = 1039
+					controls_state = 1040
+					# PETSAMO, SALLA and KARJALA left out intentionally
+				}
+				#Iceland
+				custom_trigger_tooltip = {
+					tooltip = form_country_iceland_required_states_tt
+					controls_state = 100
+					controls_state = 1043
+				}
 			}
-			# Sweden
-			custom_trigger_tooltip = {
-				tooltip = form_country_sweden_required_states_tt
-				controls_state = 38
-				controls_state = 124
-				controls_state = 138
-				controls_state = 139
-				controls_state = 140
-				controls_state = 141
-				controls_state = 666
-				controls_state = 968
-				controls_state = 969
-				controls_state = 1026
-				controls_state = 1028
-				controls_state = 1029
-				controls_state = 1030
-			}
-			# Denmark
-			custom_trigger_tooltip = {
-				tooltip = form_country_denmark_required_states_tt
-				controls_state = 101
-				controls_state = 337
-				controls_state = 1024
-				controls_state = 964
-				controls_state = 99
-				controls_state = 1025
-				controls_state = 37
-			}
-			# Iceland 
-			custom_trigger_tooltip = {
-				tooltip = form_country_iceland_recuired_states_tt
-				controls_state = 1043
-				controls_state = 100
-			}
-			# Finland
-			custom_trigger_tooltip = {
-				tooltip = form_country_finland_required_states_tt
-				controls_state = 111
-				controls_state = 145
-				controls_state = 146
-				controls_state = 147
-				controls_state = 148
-				controls_state = 149
-				controls_state = 150
-				controls_state = 722
-				controls_state = 1036
-				controls_state = 1037
-				controls_state = 1038
-				controls_state = 1039
-				controls_state = 1040
+			else = {
+				custom_override_tooltip = {
+					tooltip = control_all_nordic_states_tt
+					all_country_of = {
+						target = { NOR DEN SWE }
+						all_core_state = {
+							or = {
+								controls_or_subject_of = yes
+								controller = {
+									original_tag = FIN
+									is_in_faction_with = ROOT
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 
 		visible = {
-			if = {	#56 
+			if = {	#56
 				limit = { original_tag = EST }
 				has_completed_focus = EST_form_scandinavia
 			}
+			NOT = { has_country_flag = form_nordic_nation_flag }
 			NOT = { has_global_flag = form_nordic_league_flag }
 		}
 
@@ -343,7 +373,7 @@ form_nordic_league_category = {
 						}
 						NOT = {
 							state = 998
-						}	
+						}
 					}
 					add_core_of = ROOT
 				}
@@ -407,18 +437,17 @@ form_gran_colombia_category = {
 				original_tag = COL
 				original_tag = VEN
 				original_tag = CRC
+				original_tag = GYA
 			}
 		}
 
 		available = {
 			OR = {
 				is_subject = no
-				is_subject_of = HON
+				is_subject_of = HON # 56
 			}
 			if = {
-				limit = {
-					is_subject = no
-				}
+				limit = { is_subject = no }
 				controls_state = 491
 				controls_state = 304
 				controls_state = 937
@@ -447,11 +476,9 @@ form_gran_colombia_category = {
 				controls_state = 1073
 				controls_state = 948
 			}
-			if = {
+			if = { # 56
 				limit = { original_tag = VEN }
-				NOT = {
-					has_completed_focus = VEN_push_north
-				}
+				NOT = { has_completed_focus = VEN_push_north }
 			}
 		}
 
@@ -469,14 +496,10 @@ form_gran_colombia_category = {
 
 		complete_effect = {
 			set_cosmetic_tag = GCO_UNIFIED
+			490 = { add_core_of = ROOT }
 			491 = { add_core_of = ROOT }
 			695 = { add_core_of = ROOT }
-			if = {
-				limit = {
-					NOT = { original_tag = GYA }
-				}
-				687 = { add_core_of = ROOT }
-			}
+			687 = { add_core_of = ROOT }
 			# Ecuador
 			custom_effect_tooltip = form_country_ecuador_coring_states_tt
 			hidden_effect = {
@@ -508,8 +531,7 @@ form_gran_colombia_category = {
 
 				305 = { add_core_of = ROOT }
 				649 = { add_core_of = ROOT }
-				490 = { add_core_of = ROOT }
-			}
+			}	
 			# Colombia
 			custom_effect_tooltip = form_country_colombia_coring_states_tt
 			hidden_effect = {
@@ -576,10 +598,11 @@ form_austria_hungary_category = {
 			}
 		}
 
+
 		available = {
 			is_subject = no
 
-			# Austria
+			# Austria # keep it as is - 56
 			custom_trigger_tooltip = {
 				tooltip = form_country_austria_required_states_tt
 				controls_state = 153
@@ -682,18 +705,26 @@ form_austria_hungary_category = {
 
 		complete_effect = {
 			if = {
-				limit = { NOT = { original_tag = CZE } }
+				limit = {
+					NOT = {
+						original_tag = CZE
+					}
+				}
 				set_cosmetic_tag = HUN_EMPIRE
-				else = { set_cosmetic_tag = CZE_great_moravia }
+				else = {
+					set_cosmetic_tag = CZE_great_moravia
+				}
 			}
 			# Austria
 			custom_effect_tooltip = form_country_austria_coring_states_tt
 			hidden_effect = {
-				if = {
+				IF = {
 					limit = {
 						NOT = {
 							tag = AUS 
-							CZE = { has_cosmetic_tag = CZE_great_moravia }
+							CZE = {
+								has_cosmetic_tag = CZE_great_moravia
+							}
 						}
 					}
 					AUS = { set_cosmetic_tag = AUS_NOT_WHITE }
@@ -798,11 +829,11 @@ form_austria_hungary_category = {
 			}
 			add_ideas = generic_recent_political_unification
 			add_ideas = generic_recent_army_unification
-			add_ideas = generic_recent_economic_unification				
+			add_ideas = generic_recent_economic_unification
 		}
 
 		ai_will_do = {
-			factor = 200
+			factor = 202
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
@@ -868,7 +899,10 @@ form_austria_hungary_category = {
 
 		visible = {
 			tag = HUN
-			has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary
+			OR = {
+				has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary
+				has_completed_focus = wuw_HUN_renovato_imperii
+			}
 			NOT = { has_global_flag = reintegrate_the_empire_flag }
 		}
 
@@ -928,7 +962,7 @@ form_austria_hungary_category = {
 		}
 
 		ai_will_do = {
-			factor = 200
+			factor = 202
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
@@ -983,14 +1017,6 @@ form_commonwealth_category = {
 			NOT = { has_global_flag = form_commonwealth_flag }
 		}
 
-		ai_will_do = {
-			factor = 200
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		
 		complete_effect = {
 			hidden_effect = {
                 if = {
@@ -1026,6 +1052,14 @@ form_commonwealth_category = {
 			add_ideas = generic_recent_army_unification
 			add_ideas = generic_recent_economic_unification	
 		}
+
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
 	}
 }
 
@@ -1046,6 +1080,7 @@ form_united_netherlands_category = {
 
 		available = {
 			is_subject = no
+			controls_state = 8
 			# Netherlands
 			custom_trigger_tooltip = {
 				tooltip = form_eu_netherlands_required_states_tt
@@ -1062,16 +1097,13 @@ form_united_netherlands_category = {
 				controls_state = 1094
 				controls_state = 1095
 			}
-			# Luxembourg
-			controls_state = 8
 		}
 
 		visible = {
 			#OR = {		#56 - Does not need to be checked for while game is running, these checks only need to be in 'allowed = {}' sections of code
+				#original_tag = HOL
 				#original_tag = BEL
 				#original_tag = LUX
-				#original_tag = WLL
-				#original_tag = FLA
 			#}
 			NOT = { has_global_flag = form_united_netherlands_flag }
 			NOT = { has_global_flag = HOL_benelux_formed }
@@ -1156,8 +1188,12 @@ form_united_central_america_category = {
 			}
 		}
 
+		visible = {
+			NOT = { has_global_flag = form_united_central_america_flag }
+		}
+
 		available = {
-			is_subject = no
+			#is_subject = no
 			controls_state = 313
 			controls_state = 314
 			controls_state = 312
@@ -1165,20 +1201,8 @@ form_united_central_america_category = {
 			controls_state = 316
 		}
 
-		visible = {
-			#OR = {		#56 - Does not need to be checked for while game is running, these checks only need to be in 'allowed = {}' sections of code
-				#original_tag = GUA
-				#original_tag = ELS
-				#original_tag = HON
-				#original_tag = NIC
-				#original_tag = COS
-				#original_tag = BLZ
-			#}
-			NOT = { has_global_flag = form_united_central_america_flag }
-		}
-
 		complete_effect = {
-			if = {
+			if = { # 56
 				limit = {
 					ROOT = {
 						NOT = {
@@ -1191,23 +1215,12 @@ form_united_central_america_category = {
 				set_cosmetic_tag = USC_UNIFIED
 				set_country_flag = USC_UNIFIED_FLAG
 			}
-			every_state = {
-				limit = {
-					NOT = {
-						is_core_of = ROOT
-					}
-					OR = {
-						state = 313
-						state = 314
-						state = 312
-						state = 317
-						state = 316
-						state = 311
-					}
-				}
-				add_core_of = ROOT
-			}
-			custom_effect_tooltip = r56_newline
+			313 = { add_core_of = ROOT }
+			314 = { add_core_of = ROOT }
+			312 = { add_core_of = ROOT }
+			317 = { add_core_of = ROOT }
+			316 = { add_core_of = ROOT }
+			311 = { add_core_of = ROOT }
 			hidden_effect = {
                 if = {
                     limit = {
@@ -1234,6 +1247,7 @@ form_united_central_america_category = {
 				news_event = { id = wtt_news.59 hours = 6 }
 				set_global_flag = form_united_central_america_flag
 			}
+			custom_effect_tooltip = r56_newline
 			add_ideas = generic_recent_political_unification
 			add_ideas = generic_recent_army_unification
 			add_ideas = generic_recent_economic_unification				
@@ -1241,10 +1255,86 @@ form_united_central_america_category = {
 
 		ai_will_do = {
 			factor = 200
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
+			#modifier = {
+			#	factor = 0
+			#	is_historical_focus_on = yes
+			#}
+		}
+	}
+
+	integrate_northern_gran_colombia = {
+
+		icon = GFX_decision_eng_trade_unions_support
+
+		allowed = {
+			OR = {
+				original_tag = GUA
+				original_tag = ELS
+				original_tag = HON
+				original_tag = NIC
+				original_tag = COS
+				original_tag = BLZ
 			}
+			has_dlc = "Waking the Tiger"
+		}
+
+		visible = {
+			has_global_flag = form_united_central_america_flag
+			NOT = { has_global_flag = integrated_panama_flag }
+		}
+
+		available = {
+			controls_state = 304
+		}
+
+		complete_effect = {
+			304 = { add_core_of = ROOT }
+			685 = { add_core_of = ROOT }
+			hidden_effect = {
+				set_global_flag = integrated_panama_flag
+			}
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	integrate_yucatan = {
+
+		icon = GFX_decision_eng_trade_unions_support
+
+		allowed = {
+			OR = {
+				original_tag = GUA
+				original_tag = ELS
+				original_tag = HON
+				original_tag = NIC
+				original_tag = COS
+				original_tag = BLZ
+			}
+			has_dlc = "Waking the Tiger"
+		}
+
+		visible = {
+			has_global_flag = form_united_central_america_flag
+			NOT = { has_global_flag = integrated_yucatan_flag }
+		}
+
+		available = {
+			controls_state = 474
+		}
+
+		complete_effect = {
+			474 = { add_core_of = ROOT }
+			475 = { add_claim_by = ROOT }
+			hidden_effect = {
+				set_global_flag = integrated_yucatan_flag
+			}
+		}
+
+		ai_will_do = {
+			factor = 500
 		}
 	}
 }
@@ -1260,7 +1350,7 @@ form_baltic_federation_category = {
 				original_tag = EST
 				original_tag = LAT
 				original_tag = LIT
-				original_tag = BLR
+				original_tag = BLR # 56
 			}
 		}
 
@@ -1270,18 +1360,18 @@ form_baltic_federation_category = {
 			custom_trigger_tooltip = {
 				tooltip = form_country_latvia_required_states_tt
 				controls_state = 12
-				controls_state = 810
+				controls_state = 190
 				controls_state = 808
 				controls_state = 809
-				controls_state = 190
+				controls_state = 810
 			}
 			# Lithuania
 			custom_trigger_tooltip = {
 				tooltip = form_country_lithuania_required_states_tt
-				controls_state = 815
 				controls_state = 11
-				controls_state = 814
 				controls_state = 189
+				controls_state = 814
+				controls_state = 815
 			}
 		}
 
@@ -1291,11 +1381,14 @@ form_baltic_federation_category = {
 				#original_tag = LAT
 				#original_tag = LIT
 			#}
-			if = {
+			if = { # 56
 				limit = { original_tag = BLR }
 				has_country_flag = BLR_i_am_now_lithuania_destroyer_of_baltics
 			}
 			NOT = { has_global_flag = form_baltic_federation_flag }
+			NOT = { has_cosmetic_tag = LIVONIA }
+			NOT = { has_completed_focus = LIT_claim_livonia_monarchy }
+			NOT = { has_completed_focus = LIT_POL_union }
 		}
 
 		complete_effect = {
@@ -1327,35 +1420,21 @@ form_baltic_federation_category = {
 			# Latvia
 			custom_effect_tooltip = form_country_latvia_coring_states_tt
 			hidden_effect = {
-				every_state = {
-					limit = {
-						OR = {
-							state = 12 # Vidzeme
-							state = 190 # Kurzeme
-							state = 808 # Riga
-							state = 809 # Zemgale
-							state = 810 # Latgale
-						}
-					}
-					add_core_of = ROOT
-				}
+				12 = { add_core_of = ROOT }
+				190 = { add_core_of = ROOT }
+				808 = { add_core_of = ROOT }
+				809 = { add_core_of = ROOT }
+				810 = { add_core_of = ROOT }
 			}
 			# Lithuania
 			custom_effect_tooltip = form_country_lithuania_coring_states_tt
 			hidden_effect = {
-				every_state = {
-					limit = {
-						OR = {
-							state = 11 # Kaunas
-							state = 188 # Memel
-							state = 189 # Siauliai
-							state = 784 # Wilno
-							state = 814 # Suduva
-							state = 815 # Aukstaitija
-						}
-					}
-					add_core_of = ROOT
-				}
+				11 = { add_core_of = ROOT }
+				189 = { add_core_of = ROOT }
+				188 = { add_core_of = ROOT }
+				784 = { add_core_of = ROOT }
+				814 = { add_core_of = ROOT }
+				815 = { add_core_of = ROOT }
 			}
 			hidden_effect = {
 				news_event = { id = wtt_news.60 hours = 6 }
@@ -1405,18 +1484,18 @@ form_ottoman_empire_category = {
 			# Turkey
 			custom_trigger_tooltip = {
 				tooltip = form_country_turkey_required_states_tt
+				controls_state = 797
 				controls_state = 341
 				controls_state = 340
-				controls_state = 797	
 				controls_state = 339
 				controls_state = 342
 				controls_state = 343
 				controls_state = 347
 				controls_state = 49
+				controls_state = 798
 				controls_state = 346
 				controls_state = 345
 				controls_state = 356
-				controls_state = 798
 				controls_state = 348
 				controls_state = 344
 				controls_state = 355
@@ -1426,6 +1505,7 @@ form_ottoman_empire_category = {
 				controls_state = 353
 				controls_state = 352
 				controls_state = 800
+				#controls_state = 799 # 56
 			}
 			# Iraq
 			custom_trigger_tooltip = {
@@ -1561,6 +1641,7 @@ form_ottoman_empire_category = {
 			}
 		}
 	}
+
 	ott_reform_the_eyalet_of_rumelia = { #Greece + Albania + Bulgaria + South Yugoslavia
 
 		icon = generic_form_nation
@@ -1572,7 +1653,7 @@ form_ottoman_empire_category = {
 
 		available = {
 			is_subject = no
-			OR = {
+			OR = { 
 				has_country_leader = {
 					character = TUR_abdulmejid_ii
 					ruling_only = yes
@@ -1611,7 +1692,7 @@ form_ottoman_empire_category = {
 				controls_state = 963
 				controls_state = 953
 			}
-			#Albania
+			#Albania			
 			custom_trigger_tooltip = {
 				tooltip = form_rumelia_albania_required_states_tt
 				controls_state = 44
@@ -1619,7 +1700,6 @@ form_ottoman_empire_category = {
 				controls_state = 910
 			}
 		}
-
 		visible = {
 			#original_tag = TUR		#56 - Does not need to be checked for while game is running, these checks only need to be in 'allowed = {}' sections of code
 			NOT = { has_global_flag = ottoman_balkans_flag }
@@ -1687,11 +1767,12 @@ form_ottoman_empire_category = {
 				107 = { add_core_of = ROOT }
 				963 = { add_core_of = ROOT }
 			}
-			# Albania 
-			44 = { add_core_of = ROOT }
-			805 = { add_core_of = ROOT }
-			910 = { add_core_of = ROOT }
-
+			custom_effect_tooltip = form_rumelia_albania_coring_states_tt
+			hidden_effect = {
+				44 = { add_core_of = ROOT }
+				805 = { add_core_of = ROOT }
+				910 = { add_core_of = ROOT }
+			}
 			hidden_effect = {
 				set_global_flag = ottoman_balkans_flag
 			}
@@ -1717,7 +1798,7 @@ form_ottoman_empire_category = {
 
 		available = {
 			is_subject = no
-			OR = {
+			OR = { 
 				has_country_leader = {
 					character = TUR_abdulmejid_ii
 					ruling_only = yes
@@ -1772,7 +1853,7 @@ form_ottoman_empire_category = {
 
 		available = {
 			is_subject = no
-			OR = {
+			OR = { 
 				has_country_leader = {
 					character = TUR_abdulmejid_ii
 					ruling_only = yes
@@ -1847,7 +1928,7 @@ form_ottoman_empire_category = {
 
 		available = {
 			is_subject = no
-			OR = {
+			OR = { 
 				has_country_leader = {
 					character = TUR_abdulmejid_ii
 					ruling_only = yes
@@ -1876,6 +1957,7 @@ form_ottoman_empire_category = {
 
 		complete_effect = {
 			46 = { add_core_of = ROOT }
+			955 = { add_core_of = ROOT }
 			79 = { add_core_of = ROOT }
 			81 = { add_core_of = ROOT }
 			77 = { add_core_of = ROOT }
@@ -1929,7 +2011,7 @@ form_ottoman_empire_category = {
 
 		available = {
 			is_subject = no
-			OR = {
+			OR = { 
 				has_country_leader = {
 					character = TUR_abdulmejid_ii
 					ruling_only = yes
@@ -1960,7 +2042,7 @@ form_ottoman_empire_category = {
 
 		complete_effect = {
 			# French Syria
-			custom_effect_tooltip = form_persia_france_coring_states_tt 
+			custom_effect_tooltip = form_ottoman_syria_coring_states_tt		#only Syria formable decision that doesn't and shouldn't core Lebanon, that's its own decision
 			hidden_effect = {
 
                 if = {
@@ -2012,7 +2094,7 @@ form_ottoman_empire_category = {
 
 		available = {
 			is_subject = no
-			OR = {
+			OR = { 
 				has_country_leader = {
 					character = TUR_abdulmejid_ii
 					ruling_only = yes
@@ -2095,7 +2177,7 @@ form_ottoman_empire_category = {
 
 		available = {
 			is_subject = no
-			OR = {
+			OR = { 
 				has_country_leader = {
 					character = TUR_abdulmejid_ii
 					ruling_only = yes
@@ -2183,7 +2265,7 @@ form_ottoman_empire_category = {
 
 		available = {
 			is_subject = no
-			OR = {
+			OR = { 
 				has_country_leader = {
 					character = TUR_abdulmejid_ii
 					ruling_only = yes
@@ -2268,7 +2350,7 @@ form_ottoman_empire_category = {
 
 		available = {
 			is_subject = no
-			OR = {
+			OR = { 
 				has_country_leader = {
 					character = TUR_abdulmejid_ii
 					ruling_only = yes
@@ -2318,7 +2400,7 @@ form_ottoman_empire_category = {
 
 		available = {
 			is_subject = no
-			OR = {
+			OR = { 
 				has_country_leader = {
 					character = TUR_abdulmejid_ii
 					ruling_only = yes
@@ -2399,7 +2481,7 @@ form_ottoman_empire_category = {
 
 		available = {
 			is_subject = no
-			OR = {
+			OR = { 
 				has_country_leader = {
 					character = TUR_abdulmejid_ii
 					ruling_only = yes
@@ -2480,7 +2562,7 @@ form_ottoman_empire_category = {
 
 		available = {
 			is_subject = no
-			OR = {
+			OR = { 
 				has_country_leader = {
 					character = TUR_abdulmejid_ii
 					ruling_only = yes
@@ -2560,6 +2642,7 @@ form_european_union_category = {
 				original_tag = FRA
 				original_tag = ITA
 				original_tag = GER
+				original_tag = ENG
 				original_tag = AUS
 				original_tag = CZE
 				original_tag = HUN
@@ -2606,115 +2689,11 @@ form_european_union_category = {
 				original_tag = SAN #San Marino
 				original_tag = MNC #Monaco
 				original_tag = LIE #Liechtenstein
-				original_tag = ENG #United Kingdom
-			}
-		}
-
-		available = {
-			is_subject = no
-			controls_state = 8
-			# Netherlands
-			custom_trigger_tooltip = {
-				tooltip = form_eu_netherlands_required_states_tt
-				controls_state = 7
-				controls_state = 35
-				controls_state = 36
-			}
-			# Belgium
-			custom_trigger_tooltip = {
-				tooltip = form_eu_belgium_required_states_tt
-				controls_state = 6
-				controls_state = 34
-				controls_state = 965
-				controls_state = 1094
-				controls_state = 1095
-			}
-			# France
-			custom_trigger_tooltip = {
-				tooltip = form_eu_france_required_states_tt
-				controls_state = 29
-				controls_state = 18
-				controls_state = 17
-				controls_state = 28
-				controls_state = 15
-				controls_state = 16
-				controls_state = 27
-				controls_state = 14
-				controls_state = 30
-				controls_state = 24
-				controls_state = 23
-				controls_state = 33
-				controls_state = 26
-				controls_state = 20
-				controls_state = 32
-				controls_state = 735
-				controls_state = 25
-				controls_state = 22
-				controls_state = 21
-				controls_state = 19
-				controls_state = 20
-				controls_state = 1
-				controls_state = 785
-				controls_state = 31
-				controls_state = 806
-			}
-			# Italy
-			custom_trigger_tooltip = {
-				tooltip = form_eu_italy_required_states_tt
-				controls_state = 158
-				controls_state = 159
-				controls_state = 39
-				controls_state = 160
-				controls_state = 161
-				controls_state = 162
-				controls_state = 957 #marche
-				controls_state = 157
-				controls_state = 2
-				controls_state = 117
-				controls_state = 156
-				controls_state = 115
-				controls_state = 114
-				controls_state = 850  #trentino
-				#controls_state = 736 #istria
-				#controls_state = 911 #litorale
-				controls_state = 912 #friuli
-				#controls_state = 163 #Zara
-				
-			}
-			# Germany
-			custom_trigger_tooltip = {
-				tooltip = form_country_germany_required_states_tt
-				controls_state = 51
-				controls_state = 42
-				controls_state = 1053
-				controls_state = 56
-				controls_state = 57
-				controls_state = 55
-				controls_state = 50
-				controls_state = 59
-				controls_state = 58
-				#controls_state = 60	#thuringen, DDR
-				controls_state = 54
-				controls_state = 52
-				controls_state = 53
-				#controls_state = 61	#mecklenburg, DDR
-				#controls_state = 64	#berlin, DDR
-				#controls_state = 65	#sachsen, DDR
-				#controls_state = 62	#vorpommern, DDR
-				#controls_state = 68	#neumark, Poland
-				#controls_state = 66	#niederschlesien, Poland
-				#controls_state = 67	#oberschlesien, Poland
-				#controls_state = 63	#hinterpommern, Poland
-				#controls_state = 5		#ermland-masuren, Poland
-				#controls_state = 763	#königsberg, Soviet Union
-				controls_state = 989
-				controls_state = 922
-				controls_state = 923
-				controls_state = 998
 			}
 		}
 
 		visible = {
+
 			OR = { 
 				AND = {
 					OR = {
@@ -2811,12 +2790,126 @@ form_european_union_category = {
 					original_tag = GER
 					has_completed_focus = GER_european_confederation
 				}
-			}  
+				AND = {
+					original_tag = CZE
+					has_completed_focus = CZE_bend_the_bars
+				}
+			}
+
 			NOT = { has_global_flag = form_european_union_flag }
+
 			is_major = yes
-			NOT = {
-				has_country_flag = formed_austria_hungary
-			}			
+			NOT = { has_country_flag = formed_austria_hungary } # 56			
+		}
+
+		available = {
+			is_subject = no
+
+			controls_state = 8
+
+			# Netherlands
+			custom_trigger_tooltip = {
+				tooltip = form_eu_netherlands_required_states_tt
+				controls_state = 7
+				controls_state = 35
+				controls_state = 36
+			}
+
+			# Belgium
+			custom_trigger_tooltip = {
+				tooltip = form_eu_belgium_required_states_tt
+				controls_state = 6
+				controls_state = 34
+				controls_state = 965
+				controls_state = 1094
+				controls_state = 1095
+			}
+
+			# France
+			custom_trigger_tooltip = {
+				tooltip = form_eu_france_required_states_tt
+				controls_state = 29
+				controls_state = 18
+				controls_state = 17
+				controls_state = 28
+				controls_state = 15
+				controls_state = 16
+				controls_state = 27
+				controls_state = 14
+				controls_state = 30
+				controls_state = 24
+				controls_state = 23
+				controls_state = 33
+				controls_state = 26
+				controls_state = 20
+				controls_state = 32
+				controls_state = 735
+				controls_state = 25
+				controls_state = 22
+				controls_state = 21
+				controls_state = 19
+				controls_state = 20
+				controls_state = 1
+				controls_state = 785
+				controls_state = 31
+				controls_state = 806
+			}
+
+			# Italy
+			custom_trigger_tooltip = {
+				tooltip = form_eu_italy_required_states_tt
+				controls_state = 158
+				controls_state = 159
+				controls_state = 39
+				controls_state = 160
+				controls_state = 161
+				controls_state = 162
+				controls_state = 957 #marche
+				controls_state = 157
+				controls_state = 2
+				controls_state = 117
+				controls_state = 156
+				controls_state = 115
+				controls_state = 114
+				controls_state = 850  #trentino
+				#controls_state = 736 #istria
+				#controls_state = 911 #litorale
+				controls_state = 912 #friuli
+				#controls_state = 163 #Zara
+				
+			}
+
+			# Germany
+			custom_trigger_tooltip = {
+				tooltip = form_country_germany_required_states_tt
+				controls_state = 51
+				controls_state = 42
+				controls_state = 1053
+				controls_state = 56
+				controls_state = 57
+				controls_state = 55
+				controls_state = 50
+				controls_state = 59
+				controls_state = 58
+				#controls_state = 60	#thuringen, DDR
+				controls_state = 54
+				controls_state = 52
+				controls_state = 53
+				#controls_state = 61	#mecklenburg, DDR
+				#controls_state = 64	#berlin, DDR
+				#controls_state = 65	#sachsen, DDR
+				#controls_state = 62	#vorpommern, DDR
+				#controls_state = 68	#neumark, Poland
+				#controls_state = 66	#niederschlesien, Poland
+				#controls_state = 67	#oberschlesien, Poland
+				#controls_state = 63	#hinterpommern, Poland
+				#controls_state = 5		#ermland-masuren, Poland
+				#controls_state = 763	#königsberg, Soviet Union
+				controls_state = 989
+				controls_state = 922
+				controls_state = 923
+				controls_state = 998
+			}
 		}
 
 		complete_effect = {
@@ -2865,87 +2958,91 @@ form_european_union_category = {
                 }
 			}
 
-			if = {
+			IF = {
 				limit = {
 					NOT = { original_tag = ENG }
 				}
 				set_cosmetic_tag = EUR_UNIFIED
 			}
-			else = {
+			ELSE = {
 				set_cosmetic_tag = ENG_imperial_federation_unified #Europe-a-Nation
 			}
-			8 = { add_core_of = ROOT }
+
+			8 = { add_core_of = ROOT } # Luxembourg
+
 			# Netherlands
 			custom_effect_tooltip = form_eu_netherlands_coring_states_tt 
 			hidden_effect = {
-				7 = { add_core_of = ROOT }
-				35 = { add_core_of = ROOT }
-				36 = { add_core_of = ROOT }
+				7 = { add_core_of = ROOT } # Holland
+				35 = { add_core_of = ROOT } # Brabant
+				36 = { add_core_of = ROOT } # Friesland
 			}
+
 			# Belgium
 			custom_effect_tooltip = form_eu_belgium_coring_states_tt
 			hidden_effect = {
-				6 = { add_core_of = ROOT }
-				34 = { add_core_of = ROOT }
-				965 = { add_core_of = ROOT }
-				1094 = { add_core_of = ROOT }
-				1095 = { add_core_of = ROOT }	
+				6 = { add_core_of = ROOT } # Vlaanderen
+				34 = { add_core_of = ROOT } # Wallonie
+				965 = { add_core_of = ROOT } # Antwerp
+				1094 = { add_core_of = ROOT } # Ardennes
+				1095 = { add_core_of = ROOT }
 			}
+
 			# France
 			custom_effect_tooltip = form_eu_france_coring_states_tt
 			hidden_effect = {
-				29 = { add_core_of = ROOT }
-				18 = { add_core_of = ROOT }
-				17 = { add_core_of = ROOT }
-				28 = { add_core_of = ROOT }
-				15 = { add_core_of = ROOT }
-				16 = { add_core_of = ROOT }
-				27 = { add_core_of = ROOT }
-				14 = { add_core_of = ROOT }
-				30 = { add_core_of = ROOT }
-				24 = { add_core_of = ROOT }
-				23 = { add_core_of = ROOT }
-				33 = { add_core_of = ROOT }
-				26 = { add_core_of = ROOT }
-				20 = { add_core_of = ROOT }
-				32 = { add_core_of = ROOT }
-				735 = { add_core_of = ROOT }
-				25 = { add_core_of = ROOT }
-				22 = { add_core_of = ROOT }
-				21 = { add_core_of = ROOT }
-				19 = { add_core_of = ROOT }
-				20 = { add_core_of = ROOT }
-				1 = { add_core_of = ROOT }
-				785 = { add_core_of = ROOT }
-				31 = { add_core_of = ROOT }
-				806 = { add_core_of = ROOT } # pyrenees-atlantiques
-				1012 = { add_core_of = ROOT } #monaco
-				851 = { add_core_of = ROOT } #var
+				29 = { add_core_of = ROOT } # Nord-pas-de-calais
+				18 = { add_core_of = ROOT } # Champagne
+				17 = { add_core_of = ROOT } # Franche-Comte
+				28 = { add_core_of = ROOT } # Alsace-Lorraine
+				15 = { add_core_of = ROOT } # Normandy
+				16 = { add_core_of = ROOT } # Ile de France
+				27 = { add_core_of = ROOT } # Bourgogne
+				14 = { add_core_of = ROOT } # Brittany
+				30 = { add_core_of = ROOT } # Loire
+				24 = { add_core_of = ROOT } # Centre
+				23 = { add_core_of = ROOT } # Poitou
+				33 = { add_core_of = ROOT } # Centre-sud
+				26 = { add_core_of = ROOT } # Auveragne
+				20 = { add_core_of = ROOT } # Rhone
+				32 = { add_core_of = ROOT } # Alpes
+				735 = { add_core_of = ROOT } # Savoy
+				25 = { add_core_of = ROOT } # Limousin
+				22 = { add_core_of = ROOT } # Languedoc
+				21 = { add_core_of = ROOT } # Bouches-du-Rhone
+				851 = { add_core_of = ROOT } # Var
+				19 = { add_core_of = ROOT } # Aquitaine
+				1 = { add_core_of = ROOT } # Corsica
+				785 = { add_core_of = ROOT } # Picardy
+				31 = { add_core_of = ROOT } # Midi Pyrinees
+				806 = { add_core_of = ROOT } # Pyrinees-Atlantique
+				1012 = { add_core_of = ROOT } # Monaco
 			}
+
 			# Italy
 			custom_effect_tooltip = form_eu_italy_coring_states_tt
 			hidden_effect = {
-				158 = { add_core_of = ROOT }
-				159 = { add_core_of = ROOT }
-				39 = { add_core_of = ROOT }
-				160 = { add_core_of = ROOT }
-				161 = { add_core_of = ROOT }
-				162 = { add_core_of = ROOT }
-				957 = { add_core_of = ROOT } #marche
-				157 = { add_core_of = ROOT }
-				2 = { add_core_of = ROOT }
-				117 = { add_core_of = ROOT }
-				156 = { add_core_of = ROOT }
-				115 = { add_core_of = ROOT }
-				114 = { add_core_of = ROOT }
-				736 = { add_core_of = ROOT }
-				736 = { add_core_of = ROOT } #litorale
+				158 = { add_core_of = ROOT } # Piemonte
+				159 = { add_core_of = ROOT } # Lombardy
+				39 = { add_core_of = ROOT } # Alto Adige
+				160 = { add_core_of = ROOT } # Venice
+				161 = { add_core_of = ROOT } # Emilia Romagna
+				162 = { add_core_of = ROOT } # Tuscany
+				957 = { add_core_of = ROOT }
+				157 = { add_core_of = ROOT } # Abruzzo
+				2 = { add_core_of = ROOT } # Lazio
+				117 = { add_core_of = ROOT } # Campania
+				156 = { add_core_of = ROOT } # Calbria
+				115 = { add_core_of = ROOT } # Sicily
+				114 = { add_core_of = ROOT } # Sardinia
+				736 = { add_core_of = ROOT } # Litorale
+				#163 = { add_core_of = ROOT } # Zara - 56
+				849 = { add_core_of = ROOT } # Puglia
+				850 = { add_core_of = ROOT } # Trentino
 				912 = { add_core_of = ROOT } #friuli
-				#163 = { add_core_of = ROOT } #zara
-				850 = { add_core_of = ROOT } #trentino
-				849 = { add_core_of = ROOT } #puglia
 				1015 = { add_core_of = ROOT } #Sanmarino
 			}
+
 			# Germany
 			custom_effect_tooltip = form_country_germany_coring_states_tt
 			hidden_effect = {

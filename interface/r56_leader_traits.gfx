@@ -217,6 +217,12 @@ spriteTypes = {
 		texturefile = "gfx/interface/traits/personal/trait_fascist_sympathizer.dds"
 	}
 
+###--->  IRE <><> <><> <><>
+	spriteType = {
+		name = "GFX_trait_IRE_spirit_of_1916"
+		texturefile = "gfx/interface/traits/personal/r56_trait_IRE_spirit_of_1916.dds"
+	}
+
 ###--->  MEN <><> <><> <><>
 	spriteType = {
 		name = "GFX_trait_MEN_fascist_sympathies"

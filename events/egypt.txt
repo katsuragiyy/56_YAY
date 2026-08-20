@@ -1419,17 +1419,19 @@ country_event = { # Free officers coup
 		}
 		set_party_name = { 
 			ideology = neutrality 
-			long_name = "Al-Ittihâd al-Kawmi"
-			name = "Al-Ittihâd al-Kawmi"
+			long_name = "Al-Hokm Al-'askary"
+			name = "Al-Hokm Al-'askary"
 		}
 		add_country_leader_role = {
-			character = EGY_gamal_abdel_nasser
+			character = EGY_mohamed_naguib
 			promote_leader = yes
 			country_leader = {
-				ideology = arab_socialism
+				ideology = military_junta
 				expire = "1965.1.1.1"
 				traits = {
 					r56_trait_opposed_to_fascism
+					r56_trait_opposed_to_communism
+					r56_promised_democracy
 				}
 			}
 		}

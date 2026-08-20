@@ -172,3 +172,16 @@ IRE_generic_artillery_organization:0 "Philip Pierce & Co"
 nationalist_catholic_cardinal:0 "Nationalist Catholic Cardinal"
 r56_locomotive_superintendent:0 "Locomotive Superintendent"
 autocratic_journalist:0 "Autocratic Journalist"
+
+#Unit Leader Traits
+ IRE_spirit_of_1916:0 "Spirit of 1916"
+ IRE_spirit_of_1916_desc:0 "§LA veteran of Ireland's struggle for Independence. The experience gained in the conflict has influenced their strategy, and a unwillingness to hand command to others.§!"
+ intelligence_officer:0 "Intelligence Officer"
+ intelligence_officer_desc:0 "§LTrained as an battlefield Intelligence Officer.§!"
+
+ #Traits
+ whose_sins_weigh_heavy:0 "Whose Sins Weigh Heavy"
+ protectionist_proponent:0 "Protectionist Proponent"
+ r56_agrarian:0 "Agrarian"
+ free_trade_proponent:0 "Free Trade Proponent"
+ undermined_patriot:0 "Undermined Patriot"

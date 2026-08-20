@@ -10,6 +10,10 @@ state= {
 		owner = IRE
 		buildings = {
 			infrastructure = 3 #was: 6
+			arms_factory = 1 #had a decent arms industry despite the small army
+			9303 = {
+				naval_base = 1
+			}
 			industrial_complex = 1
 		}
 		victory_points = { 9303 3 }
