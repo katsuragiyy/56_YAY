@@ -85,6 +85,22 @@ ideas = {
 				armor = 0.1
 			}
 		}
+		CZE_mobilization_warning_for_event_r56 = { # this is here bcuz some czech event had some stupid trigger conditions so im using THIS to trigger it without causing any slowdown in the game
+			removal_cost = -1
+			picture = CZE_army_idea
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+
+			on_remove = { country_event = CZE.5 }
+		}
+		CZE_mobilization_warning_for_event2_r56 = { # this is here bcuz some czech event had some stupid trigger conditions so im using THIS to trigger it without causing any slowdown in the game
+			removal_cost = -1
+			picture = CZE_army_idea
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+
+			on_remove = { country_event = CZE.6 }
+		}
 	}
 
 	trade_laws = {

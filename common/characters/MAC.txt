@@ -138,7 +138,7 @@ characters={
 		name=MAC_metodi_shatorov
 		portraits={
 			civilian={
-				large="GFX_idea_generic_army_europe_5"
+				small="GFX_idea_generic_army_europe_5"
 			}
 		}
 		advisor={

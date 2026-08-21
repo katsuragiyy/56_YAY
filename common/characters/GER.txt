@@ -1233,7 +1233,7 @@ characters = {
 		portraits = {
 			army = {
 				large="gfx/leaders/GER/r56_portrait_GER_Heinz_Guderian.dds"
-				small="GFX_idea_heinz_guderian"
+				small=GFX_idea_r56_heinz_guderians
 			}
 		}
 		advisor = {

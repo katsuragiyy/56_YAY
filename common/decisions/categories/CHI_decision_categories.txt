@@ -53,10 +53,12 @@ r56_chinese_gui_category = {
 	visible_when_empty = yes
 	visible = {
 		r56_chinese_gui_enabled = yes
-		NOT = {
-			has_country_flag = r56_chinese_gui_flag
-		}
+		NOT = { has_country_flag = r56_chinese_gui_flag }
 		is_ai = no
+		if = {
+			limit = { original_tag = CHI }
+			NOT = { has_global_flag = chi_dlc_focus_tree }
+		}
 	}
 }
 
@@ -91,6 +93,10 @@ r56_chinese_gui_mock_category = {
 		r56_chinese_gui_enabled = yes
 		has_country_flag = r56_chinese_gui_flag
 		is_ai = no
+		if = {
+			limit = { original_tag = CHI }
+			NOT = { has_global_flag = chi_dlc_focus_tree }
+		}
 	}
 }
 CHI_anti_imperialism = {

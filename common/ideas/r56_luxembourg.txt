@@ -1100,7 +1100,7 @@ ideas = {
 		}
 
 		r56_LUX_fascist_army = {
-			picture = FIN_a_fascist_regime		# request new gfx
+			picture = MEX_politicised_army_2
 
 			modifier = {
 				mobilization_speed = 0.10
@@ -1231,7 +1231,7 @@ ideas = {
 				LUX = {
 					OR = {
 						exists = no
-						is_puppet = yes
+						is_subject = yes
 					}
 				}
 			}

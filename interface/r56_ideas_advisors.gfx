@@ -2349,6 +2349,10 @@ spriteType = {
 		texturefile = "gfx/interface/ideas/ger/advisors/r56_advisor_GER_ferdinand_schorner.dds"
 	}
 	spriteType = {
+		name = "GFX_idea_r56_heinz_guderian"
+		texturefile = "gfx/interface/ideas/ger/advisors/r56_advisor_GER_heinz_guderian.dds"
+	}
+	spriteType = {
 		name = "GFX_idea_GER_eduard_dietl"
 		texturefile = "gfx/interface/ideas/ger/advisors/r56_advisor_GER_eduard_dietl.dds"
 	}

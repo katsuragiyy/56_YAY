@@ -8,14 +8,7 @@ KMT_kuomintang_national_revolution_category = {
 		original_tag = CHI
 	}
 
-	visible = {
-		NOT = {
-			AND = {
-				has_global_flag = chi_dlc_focus_tree
-				has_dlc = "No Compromise, No Surrender"
-			}
-		}
-	}
+	visible = { NOT = { has_global_flag = chi_dlc_focus_tree } }
 }
 KMT_chinese_eco_cat = { 
 	priority = 99
@@ -27,14 +20,7 @@ KMT_chinese_eco_cat = {
 		original_tag = CHI
 	}
 
-	visible = {
-		NOT = {
-			AND = {
-				has_global_flag = chi_dlc_focus_tree
-				has_dlc = "No Compromise, No Surrender"
-			}
-		}
-	}
+	visible = { NOT = { has_global_flag = chi_dlc_focus_tree } }
 }
 KMT_national_elections = { 
 	priority = 9999

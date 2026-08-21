@@ -465,7 +465,7 @@ characters={
 				factor = 1.000
 			}
 		}
-		name=SLV_fran_kulovec
+		name=SLV_franc_krenner
 		portraits={
 			army={
 				small="GFX_idea_SLV_franc_krenner"
@@ -493,7 +493,7 @@ characters={
 				factor = 1.000
 			}
 		}
-		name=SLV_fran_kulovec
+		name=SLV_karl_novak
 		portraits={
 			army={
 				small="GFX_idea_generic_army_europe_3"
