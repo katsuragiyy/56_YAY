@@ -89,7 +89,7 @@ country = {
 
 	POL_four_year_plan_complete_bad = {
 		name = POL_four_year_plan_idea
-
+		
 		allowed = {
 			original_tag = POL
 			always = no
@@ -1793,6 +1793,7 @@ country = {
 			fascism_acceptance = 80
 		}
 	}
+
 	POL_falangist_propaganda = {
 
 		allowed = {

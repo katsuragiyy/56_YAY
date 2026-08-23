@@ -63,7 +63,7 @@ ideas = {
 				always = yes
 			}
 					
-			modifier = {
+			modifier = { # 56
 				modifier_army_sub_unit_light_tank_recon_defence_factor = -0.05
 				modifier_army_sub_unit_light_tank_recon_speed_factor = 0.05
 				modifier_army_sub_unit_light_tank_recon_max_org_factor = 0.05
@@ -73,6 +73,7 @@ ideas = {
 				light_tank_chassis = {
 					instant = yes
 					build_cost_ic = -0.05
+					reliability = 0.05
 				}
 			}
 		}
@@ -692,8 +693,7 @@ ideas = {
 				original_tag = ITA
 			}
 
-			picture = ITA_victor_emmanuel_iii_spirit
-
+			picture = ITA_victor_emmanuel_iii_spirit # 56
 			available = {
 				NOT = {
 					has_government = neutrality #remove if King in power
@@ -708,7 +708,7 @@ ideas = {
 			
 			modifier = {
 				stability_factor = 0.05
-				army_core_attack_factor = 0.1
+				army_core_attack_factor = 0.1 # 56
 			}
 		}
 
@@ -735,7 +735,7 @@ ideas = {
 			
 			modifier = {
 				stability_factor = 0.06
-				army_core_attack_factor = 0.1
+				army_core_attack_factor = 0.1 # 56
 				party_popularity_stability_factor = 0.1
 				compliance_growth = 0.1
 			}
@@ -764,7 +764,7 @@ ideas = {
 			
 			modifier = {
 				stability_factor = 0.06
-				army_core_attack_factor = 0.1
+				army_core_attack_factor = 0.1 # 56
 				party_popularity_stability_factor = 0.1
 				compliance_growth = 0.1
 			}
@@ -793,7 +793,7 @@ ideas = {
 			
 			modifier = {
 				stability_factor = 0.07
-				army_core_attack_factor = 0.1
+				army_core_attack_factor = 0.1 # 56
 				party_popularity_stability_factor = 0.2
 				compliance_growth = 0.2
 			}
@@ -825,6 +825,7 @@ ideas = {
 				party_popularity_stability_factor = 0.15 
 			}
 		}
+                        
 
 		ITA_offensive_in_ethiopia = {
 			removal_cost = -1
@@ -1038,7 +1039,7 @@ ideas = {
 			}
 					
 			modifier = {
-				consumer_goods_factor = -0.12
+				consumer_goods_factor = -0.10
 			}
 		}
 
@@ -1076,7 +1077,7 @@ ideas = {
 			}
 					
 			modifier = {
-				consumer_goods_factor = -0.08
+				consumer_goods_factor = -0.05
 				political_power_factor = 0.1
 			}
 		}
@@ -1280,7 +1281,7 @@ ideas = {
 
 			modifier = {
 				modifier_army_sub_unit_armored_car_max_org_factor = 0.1
-				modifier_army_sub_unit_armored_car_recon_max_org_factor = 0.1
+				modifier_army_sub_unit_armored_car_recon_max_org_factor = 0.1 # 56
 			}
 		}
 
@@ -1393,7 +1394,7 @@ ideas = {
 			}
 
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_factor = -0.03
 			}
 		}
 
@@ -1581,7 +1582,7 @@ ideas = {
 			}
 
 			modifier = {
-				air_superiority_bonus_in_combat = 0.05
+				army_bonus_air_superiority_factor = 0.05
 				air_cas_present_factor = 0.05
 				experience_gain_air_factor = 0.1
 			}
@@ -1606,7 +1607,7 @@ ideas = {
 			}
 
 			modifier = {
-				air_superiority_bonus_in_combat = 0.1
+				army_bonus_air_superiority_factor = 0.1
 				air_cas_present_factor = 0.1
 				experience_gain_air_factor = 0.15
 			}
@@ -1650,7 +1651,8 @@ ideas = {
 			}
 
 			modifier = {
-				local_intel_to_enemies = -0.1
+				civilian_intel_to_others = -0.1
+				army_intel_to_others = -0.1
 			}
 		}
 
@@ -1672,7 +1674,8 @@ ideas = {
 			}
 
 			modifier = {
-				local_intel_to_enemies = -0.15
+				civilian_intel_to_others = -0.15
+				army_intel_to_others = -0.15
 			}
 		}
 
@@ -2023,7 +2026,7 @@ ideas = {
 			modifier = {
 				weekly_manpower = 1000
 				communism_drift = 0.1
-				consumer_goods_factor = -0.08
+				consumer_goods_factor = -0.05
 				custom_modifier_tooltip = ITA_grande_rivolta_rurale_terrain_bonus_tt
 			}
 		}
@@ -2446,7 +2449,7 @@ ideas = {
 				army_attack_factor = 0.05
 				offensive_war_stability_factor = 0.5
 				weekly_manpower = 500
-				consumer_goods_factor = -0.12
+				consumer_goods_factor = -0.05
 				guarantee_cost = -0.35
 				guarantee_tension = -0.35
 				custom_modifier_tooltip = ITA_papal_state_catholic_dominion_puppet_discount_tt
@@ -2480,7 +2483,7 @@ ideas = {
 				army_attack_factor = 0.05
 				offensive_war_stability_factor = 0.5
 				weekly_manpower = 500
-				consumer_goods_factor = -0.12
+				consumer_goods_factor = -0.10
 				guarantee_cost = -0.35
 				guarantee_tension = -0.35
 				custom_modifier_tooltip = ITA_papal_state_catholic_dominion_puppet_discount_tt
@@ -2548,7 +2551,7 @@ ideas = {
 			modifier = {
 				send_volunteer_size = 3
 				air_volunteer_cap = 1
-				terrain_penalty_reduction = 0.1
+				terrain_trait_xp_gain_factor = 0.15
 			}
 		}
 
@@ -2566,16 +2569,12 @@ ideas = {
 				has_government = communism
 			}
 
-			cancel = {
-				has_global_flag = scw_over
-			}
-
+			cancel = { has_global_flag = scw_over } # 56
 			modifier = {
 				weekly_manpower = 400
 				communism_drift = 0.01
 				resistance_damage_to_garrison_on_our_occupied_states = 0.1
 				operative_slot = 1
-				#TODO_Manu: Allows generation of female generals, aces and admirals
 			}
 		}
 
@@ -2593,15 +2592,11 @@ ideas = {
 				has_government = communism
 			}
 
-			cancel = {
-				has_global_flag = scw_over
-			}
-
+			cancel = { has_global_flag = scw_over } # 56
 			modifier = {
 				weekly_manpower = 400
 				communism_drift = 0.01
 				resistance_damage_to_garrison_on_our_occupied_states = 0.1
-				#TODO_Manu: Allows generation of female generals, aces and admirals
 			}
 		}
 
@@ -2870,7 +2865,7 @@ ideas = {
 			}
 			
 			modifier = {
-				consumer_goods_factor = -0.12
+				consumer_goods_factor = -0.10
 				subjects_autonomy_gain = -0.2
 			}
 		}
@@ -3111,7 +3106,7 @@ ideas = {
 				original_tag = ITA
 			}
 
-			cancel = {
+			cancel = { # 56
 				has_country_leader = {
 					character = ITA_benito_mussolini
 					ruling_only = yes
@@ -3198,7 +3193,7 @@ ideas = {
 
 		ITA_italian_hegemony_master_2 = {
 			name = ITA_italian_hegemony_master_1
-			picture = idea_generic_fascism_rising
+			picture = generic_fascism_rising
 			removal_cost = -1	
 	
 			allowed = {
@@ -3223,7 +3218,7 @@ ideas = {
 
 		ITA_italian_hegemony_master_3 = {
 			name = ITA_italian_hegemony_master_1
-			picture = idea_generic_fascism_rising
+			picture = generic_fascism_rising
 
 			removal_cost = -1
 
@@ -3285,7 +3280,7 @@ ideas = {
 			}
 					
 			modifier = {
-				consumer_goods_factor = 0.1
+				consumer_goods_factor = 0.10
 				industrial_capacity_factory = -0.025
 				production_speed_industrial_complex_factor = -0.05
 				production_speed_arms_factory_factor = -0.05
@@ -3404,7 +3399,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				political_power_factor = -0.3
-				war_support_factor = -0.01
+				war_support_weekly = -0.01
 				fascism_drift = -0.01
 			}
 		}
@@ -3515,7 +3510,7 @@ ideas = {
 				armor = 0.15
 			}
 			
-			traits = { small_tank_producer_mass_2 }
+			traits = { small_tank_producer_mass_2 } # 56
 		}
 
 		ITA_fiat_improved = { #NORTH
@@ -3607,10 +3602,10 @@ ideas = {
 				naval_equipment = 0.15
 			}
 			
-			traits = { raiding_fleet_naval_manufacturer }
+			traits = { raiding_fleet_naval_manufacturer } # 56
 
 			equipment_bonus = {
-				submarine = {
+				submarine = { # 56
 					instant = yes
 					build_cost_ic = -0.1
 				}
@@ -3938,7 +3933,7 @@ ideas = {
 				air_equipment = 0.15
 			}
 			
-			traits = { medium_aircraft_manufacturer_2 }
+			traits = { medium_aircraft_manufacturer_2 } # 56
 		}
 
 		ITA_savoia_marchetti_improved = { #NORTH
@@ -3995,7 +3990,7 @@ ideas = {
 				air_equipment = 0.15
 			}
 			
-			traits = { naval_aircraft_manufacturer }
+			traits = { naval_aircraft_manufacturer } # 56
 		}
 
 		ITA_caproni_improved = { #NORTH
@@ -4195,7 +4190,13 @@ ideas = {
 			}
 
 			available = {
-				has_idea = ITA_cantiere_oto
+				custom_trigger_tooltip = {
+					tooltip = ITA_has_crda_tt
+					OR = {
+						has_idea = crda
+						has_idea = ITA_crda_improved
+					}
+				}
 				controls_State = 736 #LITORALE (Trieste)
 				ITA_is_northern_designer_improved = yes
 			}
@@ -4534,7 +4535,7 @@ ideas = {
 		}
 
 		ITA_officine_meccaniche = { #Could be North (Milano) -> Considered anywhere
-			picture = ITA_officine_meccaniche	#replaced vanilla designer
+			picture = ITA_officine_meccaniche
 			
 			allowed = {
 				original_tag = ITA
@@ -4542,7 +4543,7 @@ ideas = {
 			research_bonus = {
 				armor = 0.05
 			}
-			
+
 			traits = { small_tank_producer_offense_1 }
 		}
 	}
@@ -4772,7 +4773,7 @@ ideas = {
 				controls_state = 2 #LATIUM
 				ITA_is_southern_designer = yes
 			}
-			research_bonus = { industry = 0.05 }
+			research_bonus = { industry = 0.05 } # 56
 
 			traits = { construction_company }
 		}

@@ -243,6 +243,10 @@ MON_raids_operations_category = {
 
 	visible = {
 		is_subject = no		#As of 1.17.3, subjects cannot do border wars with their own units, please remove this if it changes
+		is_ai = no # fuck you legit fuck you i hate you i wish you would just BURN ALREADY!!!!!
+		# sorry
+		# i dint mean it
+		# actually no i did FUCK YOU MONGOLIA
 	}
 }
 

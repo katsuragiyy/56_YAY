@@ -1078,7 +1078,6 @@ ideas = {
 			}
 		}
 
-		#NSB ideas
 		LAT_paramilitary_idea = {
 
 			picture = generic_manpower_bonus
@@ -1426,144 +1425,28 @@ ideas = {
 		}
 	}
 
-	political_advisor = {
-
-		LAT_vilis_lacis = {
-
-			picture = generic_political_advisor_europe_1
-
-			allowed = {
-				original_tag = LAT
-			}
-
-			traits = { backroom_backstabber }
-		}
-
-		LAT_janis_balodis = { #right arm of the dictatorship
-
-			picture = generic_political_advisor_europe_4
-
-			allowed = {
-				original_tag = LAT
-			}
-			available = {
-				has_government = neutrality
-
-			}
-
-			traits = { silent_workhorse }
-		}
-
-
-		LAT_janis_kaminskis = {
-
-			picture = generic_political_advisor_europe_2
-
-			allowed = {
-				original_tag = LAT
-			}
-
-			traits = { war_industrialist }
-		}
-
-		LAT_vilhelms_munters = {
-
-			picture = generic_political_advisor_europe_3
-
-			allowed = {
-				original_tag = LAT
-			}
-
-			traits = { smooth_talking_charmer }
-		}
-		LAT_leonids_breiks = {
-
-			picture = generic_political_advisor_europe_5
-
-			available = {
-				has_government = fascism
-			}
-
-			allowed = {
-				original_tag = LAT
-			}
-
-			traits = { editor }
-		}
-
-	}
-
-	theorist = {
-
-		LAT_martins_penikis = {
-			ledger = army
-
-			picture = generic_army_europe_4
-
-			allowed = {
-				original_tag = LAT
-			}
-
-			research_bonus = {
-				land_doctrine = 0.10
-			}
-
-			traits = { military_theorist }
-		}
-
-		#tamoku_takatsuki japanese attaché
-		#jacques_hoppenot French attaché
-		#Gustav B. Guenther American attaché to the baltic states -38
-		#George E. Huthsteiner American attaché to the baltic states 38-40--> Frank B Hayne instead (finland?)
-		#Sir Edmund Monson, 3rd Baronet british ambassador baltic countries, the attaché was colonel Croxton S. Vale
-		#Reimar von Bonin, the German navy attache in latvia estonia and finland
-		#Major Horst Rössing, German attaché Latvia Estonia and Finland
-		#Major General Ernst Koestring, the German military attache in Lithuania and the Soviet Union
-		#Frigate captain Arzur, french navy attaché
-	}
-
-	high_command = {
-
-		LAT_janis_kurelis = { #commander of the technical division
-			ledger = army
-
-			picture = generic_army_europe_1
-
-			allowed = {
-				original_tag = LAT
-			}
-
-			traits = { army_entrenchment_2 }
-
-			ai_will_do = {
-				factor = 1
-			}
-
-		}
-	}
-
 	aircraft_manufacturer = {
-
+			
 		designer = yes
-
+		
 		vef = {
 			picture = generic_air_manufacturer_1
 
-
+			
 			allowed = {
 				original_tag = LAT
 			}
-
+			
 			research_bonus = {
 				air_equipment = 0.15
 			}
-
+			
 			traits = { light_aircraft_manufacturer }
-
+			
 			equipment_bonus = {
 				# made light bombers, fighters and trainers
 			}
-
+			
 			ai_will_do = {
 				factor = 1
 			}
@@ -1571,25 +1454,25 @@ ideas = {
 	}
 
 	naval_manufacturer = {
-
+		
 		designer = yes
-
+		
 		lkod = {
 			picture = generic_naval_manufacturer_2
 
-
+			
 			allowed = {
 				original_tag = LAT
 			}
-
+			
 			research_bonus = {
 				naval_equipment = 0.15
 			}
-
+			
 			equipment_bonus = {
 				# mer research
 			}
-
+			
 			traits = { naval_manufacturer }
 
 			modifier = {
@@ -1782,6 +1665,122 @@ ideas = {
 		}			
 	}
 	# MILITARY
+	
+	political_advisor = {
+
+		LAT_vilis_lacis = {
+
+			picture = generic_political_advisor_europe_1
+
+			allowed = {
+				original_tag = LAT
+			}
+
+			traits = { backroom_backstabber }
+		}
+
+		LAT_janis_balodis = { #right arm of the dictatorship
+
+			picture = generic_political_advisor_europe_4
+
+			allowed = {
+				original_tag = LAT
+			}
+			available = {
+				has_government = neutrality
+
+			}
+
+			traits = { silent_workhorse }
+		}
+
+
+		LAT_janis_kaminskis = {
+
+			picture = generic_political_advisor_europe_2
+
+			allowed = {
+				original_tag = LAT
+			}
+
+			traits = { war_industrialist }
+		}
+
+		LAT_vilhelms_munters = {
+
+			picture = generic_political_advisor_europe_3
+
+			allowed = {
+				original_tag = LAT
+			}
+
+			traits = { smooth_talking_charmer }
+		}
+		LAT_leonids_breiks = {
+
+			picture = generic_political_advisor_europe_5
+
+			available = {
+				has_government = fascism
+			}
+
+			allowed = {
+				original_tag = LAT
+			}
+
+			traits = { editor }
+		}
+
+	}
+
+	theorist = {
+
+		LAT_martins_penikis = {
+			ledger = army
+
+			picture = generic_army_europe_4
+
+			allowed = {
+				original_tag = LAT
+			}
+
+			research_bonus = {
+				land_doctrine = 0.10
+			}
+
+			traits = { military_theorist }
+		}
+
+		#tamoku_takatsuki japanese attaché
+		#jacques_hoppenot French attaché
+		#Gustav B. Guenther American attaché to the baltic states -38
+		#George E. Huthsteiner American attaché to the baltic states 38-40--> Frank B Hayne instead (finland?)
+		#Sir Edmund Monson, 3rd Baronet british ambassador baltic countries, the attaché was colonel Croxton S. Vale
+		#Reimar von Bonin, the German navy attache in latvia estonia and finland
+		#Major Horst Rössing, German attaché Latvia Estonia and Finland
+		#Major General Ernst Koestring, the German military attache in Lithuania and the Soviet Union
+		#Frigate captain Arzur, french navy attaché
+	}
+
+	high_command = {
+
+		LAT_janis_kurelis = { #commander of the technical division
+			ledger = army
+
+			picture = generic_army_europe_1
+
+			allowed = {
+				original_tag = LAT
+			}
+
+			traits = { army_entrenchment_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+
+		}
+	}
 
 	army_chief = {
 

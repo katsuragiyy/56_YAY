@@ -2,58 +2,37 @@ ideas = {
 
 	country = {
 
-		ROM_agrarian_reform = {	#we dont use the vanilla ROM tree, but the Hungary tree asks for this
+		### TREATY OF TRIANON SPIRITS ###
 
-			picture = generic_agrarian_society
-
-			removal_cost = -1
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-
-			}
-			
-			modifier = {
-				consumer_goods_factor = -0.15
-			}
-		}
-		
-		HUN_treaty_of_triannon_aat = {
-			name = HUN_treaty_of_triannon
-			picture = HUN_treaty_of_triannon
+		HUN_treaty_of_triannon = {
 			allowed = {
 				original_tag = HUN
-				always = no
 			}
 			available = {
 				has_war = no
 			}
 
-			cancel = {
-				is_subject = yes
-			}
-
-			rule = {
-  				can_access_market = no
-  			}
+			cancel = { is_subject = yes } # 56
 
 			modifier = {
 				conscription = -0.005
 				production_speed_arms_factory_factor = -0.5
 			}
 		}
-		HUN_treaty_of_triannon = {
-
+		HUN_treaty_of_triannon_aat = {
+			name = HUN_treaty_of_triannon
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				original_tag = HUN
+			}
 			available = {
 				has_war = no
 			}
 
-			cancel = {
-				is_subject = yes
-			}
+			cancel = { is_subject = yes } # 56
+			rule = {
+  				can_access_market = no
+  			}
 
 			modifier = {
 				conscription = -0.005
@@ -103,34 +82,32 @@ ideas = {
 			}
 		}
 		HUN_treaty_of_triannon_2 = {
-
+			allowed = {
+				original_tag = HUN
+			}
 			picture = HUN_treaty_of_triannon
 
 			available = {
 				has_war = no
 			}
 
-			cancel = {
-				is_subject = yes
-			}
-
+			cancel = { is_subject = yes } # 56
 			modifier = {
 				production_speed_arms_factory_factor = -0.15	
 			}
 		}
 
 		HUN_treaty_of_triannon_3 = {
-
+			allowed = {
+				original_tag = HUN
+			}
 			picture = HUN_treaty_of_triannon
 
 			available = {
 				has_war = no
 			}
 
-			cancel = {
-				is_subject = yes
-			}
-
+			cancel = { is_subject = yes } # 56
 			modifier = {
 				
 			}
@@ -256,6 +233,25 @@ ideas = {
 				military_industrial_organization_research_bonus = -0.1
 			}
 		}
+
+		HUN_bled_agreement_wuw = {
+			name = HUN_treaty_of_triannon_3
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				original_tag = HUN
+			}
+			available = {
+				has_war = no
+			}
+
+			modifier = {
+				justify_war_goal_time = 0.15
+				war_support_factor = 0.05
+			}
+		}
+
+		
+		
 
 		### WUW STARTING NATIONAL SPIRITS ###
 
@@ -1604,6 +1600,18 @@ ideas = {
 			}
 		}
 
+
+
+
+
+
+
+
+
+
+
+
+
 		### OLD NATIONAL SPIRITS ###
 
 		HUN_war_preparation = {
@@ -1791,7 +1799,9 @@ ideas = {
 		}
 
 		HUN_hungarian_monarchy_fascism = {			
-
+			allowed = {
+				original_tag = HUN
+			}
 			allowed_civil_war = {
 				has_government = fascism
 			}
@@ -1807,25 +1817,28 @@ ideas = {
 			}
 			
 			modifier = {
-				fascism_drift = 0.05
+				fascism_drift = 0.034
 				stability_factor = 0.1
 			}
 		}
 
 		HUN_his_majestys_government = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			picture = HUN_hungarian_monarchy_democratic
 
 			allowed_civil_war = {
 				has_government = democratic
 			}
 
-			available = {
+			available = { 
 				has_government = democratic
 			}
 			
 			modifier = {
-				democratic_drift = 0.03
+				democratic_drift = 0.02
 				fascism_drift = -0.01
 				communism_drift = -0.01
 				stability_factor = 0.1
@@ -1866,7 +1879,10 @@ ideas = {
 		}
 
 		HUN_habsburg_restored = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			picture = HUN_hungarian_monarchy_habsburg
 
 			allowed_civil_war = {
@@ -1880,13 +1896,16 @@ ideas = {
 			modifier = {
 				neutrality_drift = 0.02
 				stability_factor = 0.1
-				political_power_factor = 0.1
-				generate_wargoal_tension = -0.25
+				political_power_factor = 0.2
+				generate_wargoal_tension = -0.4
 			}
 		}
 
 		HUN_charles_v = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			allowed_civil_war = {
 				has_government = democratic
 			}
@@ -1897,7 +1916,10 @@ ideas = {
 		}
 
 		HUN_dynastic_ties = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			allowed_civil_war = {
 				has_government = democratic
 			}
@@ -1908,7 +1930,10 @@ ideas = {
 		}
 
 		HUN_strengthen_fascists = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			picture = generic_fascism_drift_2
 			
 			modifier = {
@@ -1917,7 +1942,10 @@ ideas = {
 		}
 
 		HUN_interventionism = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			picture = FRA_scw_intervention_republicans_focus
 
 			modifier = {
@@ -1927,7 +1955,10 @@ ideas = {
 		}
 
 		HUN_interventionism_2 = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			picture = FRA_scw_intervention_republicans_focus
 
 			modifier = {
@@ -1936,28 +1967,36 @@ ideas = {
 		}
 
 		HUN_interventionism_communism = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			picture = FRA_scw_intervention_nationalists_focus
 
 			modifier = {
 				consumer_goods_factor = -0.15
-				communism_drift = 0.06
+				communism_drift = 0.06 # 56
 			}
 		}
 
 		HUN_the_hungarian_red_army = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			picture = generic_communist_army
 
 			modifier = {
 				conscription = 0.05
-				max_command_power = 20 
+				max_command_power = 20 # 56
 			}
-			
 		}
 
 		HUN_secret_rearmament = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			available = {
 				OR = {
 					has_idea = disarmed_nation 
@@ -1972,11 +2011,15 @@ ideas = {
 			modifier = {
 				conscription = 0.0025
 				industrial_capacity_factory = 0.05
+				custom_modifier_tooltip = HUN_secret_rearmament_tt_2
 			}
 		}
 
 		HUN_invite_foreign_investors = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			picture = generic_foreign_capital
 
 			allowed_civil_war = {
@@ -1986,11 +2029,19 @@ ideas = {
 			modifier = {
 				production_speed_infrastructure_factor = 0.1
 				production_speed_industrial_complex_factor = 0.1
+				production_speed_supply_node_factor = 0.15
+				production_speed_rail_way_factor = 0.1
+				research_speed_factor = 0.1 # 56
 			}
 		}
 
 		HUN_indigenous_designs = {
-
+			allowed = {
+				OR = {
+					original_tag = HUN
+					original_tag = COG
+				}
+			}
 			picture = generic_air_research
 
 			allowed_civil_war = {
@@ -2003,7 +2054,10 @@ ideas = {
 		}
 
 		HUN_license_foreign = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			picture = generic_license_production
 
 			allowed_civil_war = {
@@ -2011,12 +2065,16 @@ ideas = {
 			}
 			
 			modifier = {
-				license_air_purchase_cost = -0.5
+				license_air_purchase_cost = -0.3
+				license_production_speed = 0.5 
 			}
 		}
 
 		HUN_naval_warfare = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			picture = generic_navy_bonus
 
 			allowed_civil_war = {
@@ -2029,7 +2087,10 @@ ideas = {
 		}
 
 		HUN_assault_gun_focus = {
-
+			allowed = {
+				original_tag = HUN
+				always = no
+			}
 			picture = generic_armor
 
 			allowed_civil_war = {
@@ -2216,21 +2277,6 @@ ideas = {
 				conscription_factor = -0.1
 				war_support_factor = -0.1
 				justify_war_goal_time = 0.5
-			}
-		}
-		HUN_bled_agreement_wuw = {
-			name = HUN_treaty_of_triannon_3
-			picture = HUN_treaty_of_triannon
-			allowed = {
-				original_tag = HUN
-			}
-			available = {
-				has_war = no
-			}
-
-			modifier = {
-				justify_war_goal_time = 0.15
-				war_support_factor = 0.05
 			}
 		}
 	}

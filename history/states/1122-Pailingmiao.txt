@@ -23,7 +23,8 @@ state = {
 		}
 
 		victory_points = {
-			12331 1 # Pailingmiao
+			12331 3 # Pailingmiao
+			# Will decrease through decisions
 		}
 
 	}

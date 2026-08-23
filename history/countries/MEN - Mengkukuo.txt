@@ -1,6 +1,7 @@
-﻿capital = 611
-
-oob = "MEN_1936"	
+﻿capital = 1122
+oob = "MEN_1936"
+set_cosmetic_tag = MEN_CHI_AUT
+612 = { add_dynamic_modifier = { modifier = r56_MEN_demilitarized_state } }
 
 recruit_character = MEN_prince_demchugdongrub
 recruit_character = MEN_jodbajab
@@ -17,7 +18,6 @@ recruit_character = MEN_kuibi
 recruit_character = MEN_zhu_shifu
 recruit_character = MEN_unenbayal
 recruit_character = MEN_lu_jingru
-recruit_character = MEN_altan_ochir
 recruit_character = MEN_nuoligarzabu
 recruit_character = MEN_hesehn_tiemei
 recruit_character = MEN_guan_xingde
@@ -36,12 +36,24 @@ activate_advisor = MEN_serengdongrub
 
 set_war_support = 0.25
 set_stability = 0.6
-set_research_slots = 2
+set_research_slots = 3 # So that it isnt a bum country to play
 
+# National Spirits
 add_ideas = {
 	limited_exports
-	MEN_mongol_raids
+	#MEN_mongol_raids # Added if Mongolia is AI bcuz i disabled their raids if they are ai.
 	MEN_kwantungs_invisible_hand
+	MEN_disorganized_military
+	MEN_mongol_banners_idea
+	MEN_pailingmiao_council_idea
+	MEN_stretched_administration_idea
+	#MEN_communist_revolutionaries_idea # Represented through advisor
+	#MEN_disorganized_army_idea # DonLook 20 lines below
+}
+
+add_timed_idea = {
+	idea = MEN_the_long_winter
+	days = 91
 }
 
 #Variables#
@@ -50,24 +62,32 @@ set_variable = { r56_MEN_industry_ns_consumer_goods_factor = 0.05 }
 set_variable = { r56_MEN_industry_ns_production_factory_efficiency_gain_factor = -0.05 }
 add_dynamic_modifier = { modifier = r56_MEN_industry_ns }
 
-add_timed_idea = {
-	idea = MEN_the_long_winter
-	days = 91
+set_variable = { MEN_levy_cap_max = 24 }
+set_variable = { MEN_levy_cap_min = 0 }
+set_variable = { MEN_levy_cap = 2 }
+set_variable = { MEN_levy_deployed = 0 }
+clamp_variable = {
+	var = MEN_levy_cap
+	min = MEN_levy_cap_min
+	max = MEN_levy_cap_max
 }
 
-add_ideas = MEN_disorganized_military
-
-add_opinion_modifier = {
-	target = MON
-	modifier = political_rivalry
-}
-
-MON = {
-	add_opinion_modifier = {
-		target = MEN
-		modifier = political_rivalry
+division_template = {
+	name = "Mongol Levy"		
+	#division_names_group = 
+	is_locked = yes
+	force_allow_recruiting = no
+	regiments = {
+		irregular_infantry = { x = 0 y = 0 }
+		irregular_infantry = { x = 0 y = 1 }
+		irregular_infantry = { x = 1 y = 0 }
+		irregular_infantry = { x = 1 y = 1 }
+		irregular_infantry = { x = 2 y = 0 }
+		irregular_infantry = { x = 2 y = 1 }
 	}
 }
+
+set_country_flag = MEN_banner_system_is_active
 
 set_technology = {
 
@@ -98,19 +118,22 @@ if = {
 
 set_country_flag = started_out_as_landlocked
 
-set_cosmetic_tag = MEN_CHI_AUT
-
-give_military_access = JAP
-
-JAP = {
-	country_event = { id = men.14 days = 6 hours = 12 }
+# Diplo
+# we iz real mongolia
+add_opinion_modifier = {
+	target = MON
+	modifier = political_rivalry
 }
 
-612 = {
-	add_dynamic_modifier = {
-		modifier = r56_MEN_demilitarized_state
+MON = {
+	add_opinion_modifier = {
+		target = MEN
+		modifier = political_rivalry
 	}
 }
+
+give_military_access = JAP
+JAP = { country_event = { id = men.14 days = 6 hours = 12 } }
 
 set_politics = {
 	ruling_party = neutrality

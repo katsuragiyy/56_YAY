@@ -8,14 +8,14 @@ characters={
 		}
 		country_leader={
 			ideology = fascism_ideology
-			traits={ subservient_ultranationalist r56_trait_opposed_to_communism polyglot }
+			traits={ MEN_borjigin_descendant subservient_ultranationalist r56_trait_opposed_to_communism polyglot }
             desc=MEN_demchugdongrub_leader_desc
 			expire="1965.1.1"
 			id=-1
 		}
 		country_leader={
 			ideology = oligarchism
-			traits={ subservient_ultranationalist r56_trait_opposed_to_communism polyglot }
+			traits={ MEN_borjigin_descendant subservient_ultranationalist r56_trait_opposed_to_communism polyglot }
             desc=MEN_demchugdongrub_leader_desc
 			expire="1965.1.1"
 			id=-1
@@ -225,7 +225,7 @@ characters={
 		}
 	}
 	MEN_serengdongrub={
-		name="Serengdongrub"
+		name=MEN_serendongrub
 		portraits={
 			civilian={
 				large="gfx/leaders/MEN/r56_portrait_MEN_serengdongrub.dds"
@@ -255,7 +255,6 @@ characters={
 			}
 			can_be_fired = no
 			slot = political_advisor
-			ledger = civilian
 			idea_token = MEN_serengdongrub
 			allowed = {
 				original_tag = MEN
@@ -304,15 +303,15 @@ characters={
 		}
 	}
 	MEN_jodbajab={
-		name="Jodbajab"
+		name=MEN_jodbajab
 		portraits={
 			civilian={
 				large="gfx/leaders/MEN/r56_portrait_MEN_Jodbajab.dds"
-				small="gfx/interface/ideas/men/advisors/r56_idea_MEN_advisor_jodbajab.dds"
+				small=GFX_portrait_MEN_jodbajab_small
 			}
 			army = {
 				large="gfx/leaders/MEN/r56_portrait_MEN_Jodbajab.dds"
-				small="gfx/interface/ideas/men/advisors/r56_idea_MEN_advisor_jodbajab_army.dds" 
+				small=GFX_portrait_MEN_jodbajab_small
 			}
 		}
 		country_leader={
@@ -345,7 +344,6 @@ characters={
 			}
 			can_be_fired = no
 			slot = political_advisor
-			ledger = civilian
 			idea_token = MEN_jodbajab
 			allowed = {
 				original_tag = MEN
@@ -501,11 +499,11 @@ characters={
 		}
 	}
 	MEN_li_shouxin={
-		name="Li Shouxin"
+		name=MEN_li_shouxin
 		portraits={
 			army={
 				small = GFX_portrait_MEN_li_shouxin_small
-				large="gfx/leaders/MEN/r56_portrait_MEN_Li_Shouxin.dds"
+				large=GFX_portrait_MEN_li_shouxin
 			}
 		}
 		field_marshal = {
@@ -648,35 +646,36 @@ characters={
 		name=MEN_altanochir
 		portraits={
 			army={
-				small="gfx/interface/ideas/men/advisors/r56_idea_MEN_advisor_altanochir_army.dds" 
-				large="gfx/leaders/MEN/r56_portrait_MEN_Altanochir.dds"
+				small=GFX_portrait_MEN_altanochir_small
+				large=GFX_portrait_MEN_altanochir
 			}
 		}
 		corps_commander = {
-			traits = { politically_connected old_guard }
+			traits = { politically_connected old_guard hill_fighter }
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 1
-			visible = {
-				NOT = {
-					has_government = communism
-				}
+			visible = { NOT = { has_government = communism } }
+		}
+		advisor={			
+			slot = political_advisor
+			idea_token = MEN_altan_ochir
+			allowed = { original_tag = MEN }
+			available = { NOT = { has_government = communism } }
+			traits = { GER_minister_of_agriculture }
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 		advisor={
 			slot = high_command
 			idea_token = MEN_altanochir
 			ledger = army
-			available = {
-				NOT = {
-					has_government = communism
-				}
-			}
-			traits = {
-				army_logistics_2
-			}
+			available = { NOT = { has_government = communism } }
+			traits = { army_logistics_2 }
 			cost = 100
 			ai_will_do = {
 				factor = 1.000
@@ -743,32 +742,6 @@ characters={
 			}
 			traits = {
 				fascist_workhorse
-			}
-			cost = 150
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-	MEN_altan_ochir={
-		name=MEN_altan_ochir
-		portraits = {
-			civilian = {
-				large = GFX_kr_portrait_asia_generic_3
-				small = GFX_kr_portrait_asia_generic_3_small
-			}
-		}
-		advisor={			
-			slot = political_advisor
-			idea_token = MEN_altan_ochir
-			allowed = {
-				original_tag = MEN
-			}
-			available = {
-				#
-			}
-			traits = {
-				GER_minister_of_agriculture
 			}
 			cost = 150
 			ai_will_do = {

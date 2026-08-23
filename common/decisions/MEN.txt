@@ -1,0 +1,1101 @@
+# FOREIGN POLICY
+foreign_politics = {
+	
+	MEN_core_state = { # 56 - No need for this, as MEN can gain cores on stuff through its focus tree.
+		icon = GFX_decision_infiltrate_state
+	
+		allowed = {
+			original_tag = MEN
+			always = no
+		}
+		
+		visible = {
+			JAP = {
+				has_completed_focus = JAP_mongol_autonomous_state
+			}
+			is_ally_with = JAP
+		}
+		available = {
+			NOT = { has_country_flag = MEN_coring_state_in_progress }
+		}
+
+		target_root_trigger = { original_tag = MEN }
+
+		state_target = any_controlled_state
+	    
+	    target_trigger = {
+	        FROM = {
+	        	NOT = { is_core_of = ROOT }
+	        	is_fully_controlled_by = ROOT
+	        	OR = {
+	        		state = 818
+	        		state = 817
+	        		state = 330
+	        		state = 820
+	        		state = 819
+	        		state = 564
+	        		state = 329
+	        		state = 654
+	        		state = 760
+	        		state = 756
+	        		state = 621
+	        		state = 746
+	        		state = 612
+	        		state = 611
+	        		state = 761
+	        		state = 563
+	        		state = 566
+	        		state = 616
+	        	}
+	        }
+	    }
+
+	    on_map_mode = map_and_decisions_view 
+
+	    cost = 25		
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		ai_will_do = {
+			base = 250
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = { flag = MEN_coring_state_in_progress value = 1 days = 31 }
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = MEN_coring_state_in_progress
+			}
+			FROM = {
+				add_core_of = ROOT
+			}
+		}
+
+		cancel_trigger = {
+			FROM = {
+				NOT = { is_fully_controlled_by = ROOT }
+			}
+		}
+
+		cancel_effect = {
+			hidden_effect = {
+				clr_country_flag = MEN_coring_state_in_progress
+			}
+		}
+	}
+
+
+}
+
+# The Mongol Banners
+MEN_mongol_banner_category = {
+	
+	MEN_expand_banner_recruitment = {
+		icon = GFX_decision_generic_reorganize_irregulars
+	
+		allowed = {
+			original_tag = MEN
+			#has_dlc = "No Compromise, No Surrender" # 56 - This content exists for free. Why lock it?
+		}
+	
+		available = {
+			check_variable = { MEN_levy_cap < MEN_levy_cap_max }
+			custom_trigger_tooltip = {
+				tooltip = MEN_expand_banners_tt
+				check_variable = { MEN_levy_cap < MEN_levy_cap_max }
+			}
+			has_war = no
+			NOT = {
+				has_country_flag = MEN_raise_banners_active
+			}
+			has_capitulated = no
+		}
+		
+		visible = {
+		}
+	
+	    custom_cost_trigger = {
+	    	command_power > 14.9
+	    }
+	    custom_cost_text = AFG_decision_cost_quami
+
+	    ai_will_do = {
+	    	base = 10
+	    }
+		
+		fire_only_once = no
+
+		days_remove = 56  
+
+		complete_effect = {
+			add_command_power = -15
+		}
+		remove_effect = {
+
+			custom_effect_tooltip = MEN_expand_banners_tt_2
+
+			hidden_effect = {
+				add_to_variable = { MEN_levy_cap = 1 }
+				clamp_variable = {
+					var = MEN_levy_cap
+					min = MEN_levy_cap_min
+					max = MEN_levy_cap_max
+				}
+				set_division_template_cap = { 
+					division_template = "Mongol Levy" 
+					division_cap = MEN_levy_cap   
+				}
+			}
+		}
+	}
+
+	MEN_raise_the_banners = {
+		icon = GFX_decision_generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = MEN
+			#has_dlc = "No Compromise, No Surrender" # 56 - This content exists for free. Why lock it?
+		}
+	
+		available = {
+			OR = {
+				has_defensive_war = yes
+				AND = {
+					has_war_support > 0.45
+					has_offensive_war = yes
+				}
+			}
+			NOT = { has_country_flag = MEN_raise_banners_active }
+			has_civil_war = no
+			has_capitulated = no
+		}
+		
+		visible = {
+		}
+	
+		cost = 75 
+
+		ai_will_do = {
+			base = 250
+		}
+		
+		fire_only_once = no
+		days_remove = 14
+		remove_effect = {
+			
+			set_country_flag = MEN_raise_banners_active
+			custom_effect_tooltip = MEN_raise_banners_tt
+			add_stability = -0.1
+			set_variable = { deployed_divs = 0 }
+			while_loop_effect = {
+				limit = {
+					check_variable = { deployed_divs < MEN_levy_cap }
+				}
+				add_to_variable = { deployed_divs = 1 }
+				capital_scope = {
+					create_unit = {
+						division = "division_template =\"Mongol Levy\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+						owner = MEN
+						count = 1			
+						prioritize_location = 10397
+					}
+				}
+			}
+		}
+	}
+
+	MEN_demobilize_the_banners = {
+		icon = GFX_decision_SWI_dismiss_council
+	
+		allowed = {
+			original_tag = MEN
+			#has_dlc = "No Compromise, No Surrender" # 56 - This content exists for free. Why lock it?
+		}
+	
+		available = {
+			has_country_flag = MEN_raise_banners_active
+		}
+		
+		visible = {
+		}
+	
+		cost = 5
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 100
+				has_war = no
+			}
+		}
+		
+		fire_only_once = no
+		days_remove = 7
+		complete_effect = {
+		}
+		remove_effect = {
+			custom_effect_tooltip = MEN_send_home_banners_tt
+			add_stability = 0.1
+			clr_country_flag = MEN_raise_banners_active
+			set_variable = { deployed_divs = 0 }
+			delete_units = {
+				division_template = "Mongol Levy"
+				disband = no
+			}
+			
+		}
+	}
+
+}
+
+# Political Actions 
+political_actions = { 
+
+	# Move the Capital to Zhangbei 
+	MEN_move_the_capital_to_zhangbei_decision  = {
+
+		priority = 10
+
+		icon = GFX_decision_eng_trade_unions_support
+
+		ai_will_do = {
+			base = 25
+			modifier = {
+				add = 100
+				is_ally_with = JAP
+			}
+			modifier = {
+				add = 50
+				is_ally_with = MAN
+			}
+		}
+	
+		allowed = {
+			original_tag = MEN  
+		}
+
+		visible = { 
+			owns_state = 611
+			NOT = {
+				is_ally_with = CHI
+			}
+			capital_scope = {
+				NOT = {
+					state = 611 # Chahar/Zhangbei 
+				}
+			}
+			NOT = {
+				has_country_flag = MEN_moved_capital_to_zhangbei
+			}
+		}
+	
+		available = {
+			611 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			NOT = {
+				is_ally_with = CHI
+			}
+			capital_scope = {
+				NOT = {
+					state = 611 # Chahar/Zhangbei 
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 611
+			}
+		}
+
+		#days_remove = 70
+
+		#days_re_enable = 180
+
+		cost = 75
+
+		cancel_trigger = {
+		}
+
+        cancel_effect = {
+        }
+
+		modifier = {
+		}
+
+		complete_effect = { 
+
+			add_war_support = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = MEN_stretched_administration_idea
+				add_idea = MEN_stretched_administration_idea_2
+			}	
+
+			IF = {
+				limit = {
+					has_idea = MEN_pailingmiao_council_idea
+				}
+				remove_ideas = MEN_pailingmiao_council_idea
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_capital = {
+				state = 611
+				remember_old_capital = yes
+			}
+
+			# 56
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_victory_points = {
+				province = 12331
+				value = -2
+			}
+
+			add_victory_points = {
+				province = 10397
+				value = 2
+			}
+
+			hidden_effect = {
+				set_country_flag = MEN_moved_capital_to_zhangbei
+			}
+
+		}
+
+		fire_only_once = yes
+
+		remove_effect = {
+
+		}
+
+	}
+
+	# Move the Capital to Kalgan 
+	MEN_move_the_capital_to_kalgan_decision  = {
+
+		priority = 10
+
+		icon = GFX_decision_eng_trade_unions_support
+
+		ai_will_do = {
+			base = 100
+		}
+	
+		allowed = { 
+			original_tag = MEN   
+		}
+
+		visible = { 
+			has_country_flag = MEN_moved_capital_to_zhangbei
+			capital_scope = {
+				NOT = {
+					state = 1118 # Kalgan 
+				}
+			}
+		}
+	
+		available = {
+			1118 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			capital_scope = {
+				NOT = {
+					state = 1118 # Kalgan 
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1118
+			}
+		}
+
+		#days_remove = 70
+
+		#days_re_enable = 180
+
+		cost = 75
+
+		cancel_trigger = {
+		}
+
+        cancel_effect = {
+        }
+
+		modifier = {
+		}
+
+		complete_effect = { 
+
+			swap_ideas = {
+				remove_idea = MEN_stretched_administration_idea_2
+				add_idea = MEN_stretched_administration_idea_3
+			}	
+
+			set_capital = {
+				state = 1118
+				remember_old_capital = yes
+			}
+			add_victory_points = {
+				province = 6904
+				value = 2
+			}
+
+			hidden_effect = {
+				set_country_flag = MEN_moved_capital_to_kalgan
+			}
+
+		}
+
+		fire_only_once = yes
+
+		remove_effect = {
+
+		}
+
+	}
+
+
+	# Request Initiation of the Suiyuan Campaign  
+	MEN_request_initiation_of_the_suiyuan_campaign_decision  = {
+
+		priority = 5
+
+		icon = GFX_decision_border_war
+
+		on_map_mode = decision_view_only 	
+
+		ai_will_do = {
+			base = 0 # Ai prob shouldn't take this, meant for a player 
+		}
+	
+		allowed = {
+			original_tag = MEN  
+			always = no # 56 - Suiyan is conducted through the focus tree. No need for decision. Ignore this!
+		}
+
+		visible = { 
+			owns_state = 1043 # Pailingmiao 
+			OR = {
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+			JAP = {
+				NOT = {
+					has_country_flag = JAP_suiyuan_campaign_has_started_flag
+					has_country_flag = JAP_suiyuan_campaign_has_ended_flag
+				}
+			}
+		}
+	
+		available = {
+			owns_state = 1043 # Pailingmiao 
+			SHX = {
+				exists = yes
+				is_in_faction = no
+				is_subject = no
+				has_war = no
+				AND = {
+					owns_state = 621
+					owns_state = 746
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 621
+				state = 746 
+			}
+		}
+
+		#days_remove = 70
+
+		#days_re_enable = 180
+
+		cost = 50 
+
+		cancel_trigger = {
+		}
+
+        cancel_effect = {
+        }
+
+		modifier = {
+		}
+
+		complete_effect = { 
+
+			add_war_support = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			JAP = {
+				country_event = {
+					id = SEA_warlords.75
+					hours = 2
+				}	
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				JAP = {
+					custom_effect_tooltip = JAP_launch_the_suiyuan_campaign_tt
+					declare_war_on = {
+						target = SHX
+						type = take_state_focus
+					}
+					add_named_threat = { threat = 1 name = JAP_began_the_suiyuan_campaign }
+				}
+					
+				ROOT = {
+					add_to_war = {
+					    targeted_alliance = JAP
+					    enemy = SHX
+					    hostility_reason = asked_to_join
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				SHX = {
+					country_event = {
+						id = SEA_japan_foreign_policy.31
+						hours = 1
+					}	
+				}
+			}
+
+		}
+
+		fire_only_once = yes
+
+		remove_effect = {
+
+		}
+
+	}
+
+
+}
+
+
+# Army Reforms
+MEN_army_reform = { # 56 - This isnt enabled bcuz we use OUR disorganized army idea. IGNORE!
+	
+	MEN_army_reform_decision = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			has_dlc = "No Compromise, No Surrender"
+		}
+
+		visible = {
+			OR = {
+				has_idea = MEN_disorganized_army_idea
+				has_idea = MEN_disorganized_army_idea_2
+				has_idea = MEN_disorganized_army_idea_3
+			}
+		}
+
+		available = {
+			hidden_trigger = {
+				has_army_experience > 49
+			}
+		}
+
+		cost = 0
+
+		custom_cost_trigger = {
+			has_army_experience > 49
+		}
+		custom_cost_text = decision_cost_ArmXP_50
+
+		ai_will_do = {
+			base = 500
+		}
+
+		days_remove = 90
+
+		remove_effect = {
+			IF = {
+				limit = { has_idea = MEN_disorganized_army_idea }
+				swap_ideas = {
+					remove_idea = MEN_disorganized_army_idea
+					add_idea = MEN_disorganized_army_idea_2
+				}
+			}
+			ELSE_IF = {
+				limit = { has_idea = MEN_disorganized_army_idea_2 }
+				swap_ideas = {
+					remove_idea = MEN_disorganized_army_idea_2
+					add_idea = MEN_disorganized_army_idea_3
+				}
+			}
+			ELSE_IF = {
+				limit = { has_idea = MEN_disorganized_army_idea_3 }
+				swap_ideas = {
+					remove_idea = MEN_disorganized_army_idea_3
+					add_idea = MEN_disorganized_army_idea_4
+				}
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -50		
+			}		
+		}	
+
+	}
+
+
+}
+
+# 56 Additions for MEN tree
+MEN_inner_mongolian_gambit = {
+
+	MEN_the_zhangbei_meeting = {
+
+		icon = GFX_decision_generic_political_discourse
+
+		allowed = {
+			original_tag = MEN
+		}
+
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+
+		activation = { 
+			date < 1936.1.2
+		}
+
+		is_good = no
+
+		days_mission_timeout = 22
+
+		fire_only_once = yes
+
+		priority = 20
+
+		timeout_effect = {
+			country_event = {
+				id = men.10 hours = 12
+			}
+			custom_effect_tooltip = r56_possible_event_effects
+			effect_tooltip = {
+				if = {
+					limit = {
+						OR = {
+							has_country_flag = MEN_japanese_gambit
+							date < 1936.1.10
+						}
+					}
+					add_political_power = 15
+					add_stability = 0.03
+					custom_effect_tooltip = MEN_unforseen_consequences
+					hidden_effect = {
+						country_event = { id = men.12 hours = 12 }
+					}
+					custom_effect_tooltip = r56_alternative_event_effects
+					effect_tooltip = {
+						add_political_power = -35
+						add_popularity = {
+							ideology = neutrality
+							popularity = -0.05
+						}
+						add_stability = -0.10
+						custom_effect_tooltip = MEN_prevent_destabilization
+						hidden_effect = {
+							country_event = { id = men.11 hours = 12 }
+						}
+					}
+				}
+				else = {
+					effect_tooltip = {
+						add_popularity = {
+							ideology = neutrality
+							popularity = 0.05
+						}
+						add_stability = 0.10
+						unlock_national_focus = MEN_petition_nima-odsor_to_stay_in_shangbei
+					}
+				}
+			}
+		}
+	}
+
+	MEN_imminent_japanese_invasion = {
+
+		icon = GFX_decision_oppression
+
+		activation = {
+			always = no
+		}
+
+		priority = 50
+
+		days_mission_timeout = 420
+
+		available = {  
+      		OR = {
+				has_completed_focus = MEN_compromise_with_nanjing
+				has_completed_focus = MEN_the_state_founding_conference
+				has_completed_focus = MEN_the_second_bailingmiao_uprising
+			}
+  		}	
+
+		allowed = {
+			always = no
+		}
+
+		visible = {
+			tag = MEN
+		}
+
+		cancel_trigger = {
+			JAP = {
+				OR = {
+					has_completed_focus = JAP_pre_emptive_coup
+					has_capitulated = yes
+					has_civil_war = yes
+					exists = no
+					is_subject = yes
+					AND = {
+						NOT = {
+							is_neighbor_of = ROOT
+						}
+						any_allied_country = {
+							NOT = {
+								is_neighbor_of = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+
+		is_good = no
+
+		timeout_effect = {
+			add_war_support = 0.05
+			delete_unit = {} ### DELETE ALL UNITS FOR BALANCE
+			start_civil_war = {
+				ideology = fascism
+				ruling_party = neutrality
+				size = 0.65
+				keep_all_characters = yes
+				keep_political_party_members = yes
+				states = {
+					611
+				}
+				PREV = {
+					every_character = {
+						limit = {
+							OR = {
+								is_character = MEN_li_shouxin
+								is_character = MEN_wang_ying
+								is_character = MEN_ryukichi_tanaka
+							}
+						}
+						set_nationality = PREV.PREV
+					}
+				}
+			}
+			hidden_effect = {
+				612 = {
+					remove_dynamic_modifier = {
+						modifier = r56_MEN_demilitarized_state
+					}
+				}
+				every_country = { ### BREAKAWAY - NOT MEN
+					limit = {
+						original_tag = MEN
+						has_civil_war = yes
+						has_war_with = MEN
+						NOT = {
+							has_government = neutrality
+						}
+					}
+					set_party_name = {
+						ideology = fascism
+						long_name = "Kwantung"
+						name = "Kwantung"
+					}
+					JAP = {
+						diplomatic_relation = {
+							country = PREV
+							relation = guarantee
+							active = yes
+						}
+					}
+					set_capital = {
+						state = 611
+					}
+					add_manpower = 5000
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 250
+						producer = JAP
+					}
+					add_country_leader_role = {
+						character = MEN_li_shouxin
+						promote_leader = yes
+						country_leader = {
+							ideology = fascism_ideology
+							expire = "1965.1.1.1"
+							traits = { eager_collaborator army_connections }
+						}
+					}
+					promote_character = {
+						character = MEN_li_shouxin
+						ideology = fascism_ideology
+					}
+					division_template = {
+						name = "Yavgan Tsergiin Diviz"			# Infantry Division
+						division_names_group = MEN_INF_01
+					
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							cavalry = { x = 0 y = 2 }
+						}
+						support = {
+							artillery = { x = 0 y = 0 }
+						}
+					}
+					division_template = {
+						name = "Morin Tsergiin Diviz"			# Cavalry Division
+						division_names_group = MEN_CAV_01
+					
+						regiments = {
+							cavalry = { x = 0 y = 0 }
+							cavalry = { x = 0 y = 1 }
+						}
+						support = {
+							artillery = { x = 0 y = 0 }
+						}
+					}
+					division_template = {
+						name = "Kantō Bunkeitai"			# Kwantung Detachment
+						division_names_group = JAP_INF_01
+					
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+							artillery = { x = 0 y = 1 }
+						}
+					}
+					random_owned_controlled_state = {
+						prioritize = { 612 }
+						limit = {
+							is_core_of = ROOT
+						}
+						create_unit = {
+							division = "name = \"1. Yavgan Tsergiin Diviz 'Bowangfu'\" division_template = \"Yavgan Tsergiin Diviz\" start_experience_factor = 0.10 start_equipment_factor = 0.60 start_manpower_factor = 0.85"
+							owner = PREV
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 12448
+						}
+					}
+					random_owned_controlled_state = {
+						prioritize = { 611 }
+						limit = {
+							is_core_of = ROOT
+						}
+						create_unit = {
+							division = "name = \"1. Morin Tsergiin Diviz 'Rehe'\" division_template = \"Morin Tsergiin Diviz\" start_experience_factor = 0.10 start_equipment_factor = 0.60 start_manpower_factor = 0.85"
+							owner = PREV
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 4495
+						}
+						create_unit = {
+							division = "name = \"2. Morin Tsergiin Diviz 'Chahar'\" division_template = \"Morin Tsergiin Diviz\" start_experience_factor = 0.10 start_equipment_factor = 0.60 start_manpower_factor = 0.85"
+							owner = PREV
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 10397
+						}
+						create_unit = {
+							division = "name = \"1. Kantō Bunkeitai 'Hebei'\" division_template = \"Kantō Bunkeitai\" start_experience_factor = 0.15 start_equipment_factor = 0.75 start_manpower_factor = 0.95"
+							owner = PREV
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 3955
+						}
+						create_unit = {
+							division = "name = \"2. Kantō Bunkeitai 'Rehe'\" division_template = \"Kantō Bunkeitai\" start_experience_factor = 0.15 start_equipment_factor = 0.75 start_manpower_factor = 0.95"
+							owner = PREV
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 7545
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_template = "Yavgan Tsergiin Diviz"
+						}
+					}
+					division_template = {
+						name = "Yavgan Tsergiin Diviz"			# Infantry Division
+						division_names_group = MEN_INF_01
+					
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							cavalry = { x = 0 y = 2 }
+						}
+						support = {
+							artillery = { x = 0 y = 0 }
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_template = "Morin Tsergiin Diviz"
+						}
+					}
+					division_template = {
+						name = "Morin Tsergiin Diviz"			# Cavalry Division
+						division_names_group = MEN_CAV_01
+					
+						regiments = {
+							cavalry = { x = 0 y = 0 }
+							cavalry = { x = 0 y = 1 }
+						}
+						support = {
+							artillery = { x = 0 y = 0 }
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					prioritize = { 612 }
+					limit = {
+						is_core_of = ROOT
+					}
+					create_unit = {
+						division = "name = \"2. Yavgan Tsergiin Diviz 'Bowangfu'\" division_template = \"Yavgan Tsergiin Diviz\" start_experience_factor = 0.05 start_equipment_factor = 0.45 start_manpower_factor = 0.85"
+						owner = PREV
+						count = 1
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 12348
+					}
+					create_unit = {
+						division = "name = \"1. Morin Tsergiin Diviz 'Shiliin Gol'\" division_template = \"Morin Tsergiin Diviz\" start_experience_factor = 0.05 start_equipment_factor = 0.45 start_manpower_factor = 0.85"
+						owner = PREV
+						count = 1
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 1551
+					}
+				}
+				drop_cosmetic_tag = yes
+			}
+		}
+	}
+}
+MEN_suiyuan_campaign_category = {
+	MEN_suiyuan_campaign = {
+
+		icon = GFX_decision_oppression
+
+		allowed = {
+			always = no
+		}
+
+		activation = {
+			always = no
+		}
+
+		available = {
+			if = {
+				limit = {
+					original_tag = MEN
+				}
+				controls_state = 621
+			}
+			else = {
+				NOT = {
+					controls_state = 621
+				}
+			}
+		}
+
+		days_mission_timeout = 60
+
+		complete_effect = {
+			if = {
+				limit = {
+					original_tag = MEN
+				}
+				white_peace = 621.owner
+				country_event = men.26
+				effect_tooltip = {
+					transfer_state = 621
+					add_state_core = 621
+					complete_national_focus = MEN_rebuilding_the_disaster_of_suiyan
+					army_experience = 25
+					add_doctrine_cost_reduction = {
+						cost_reduction = 0.5
+						uses = 2
+						category = land_doctrine
+						name = MEN_put_an_end_to_the_raids
+					}
+					swap_ideas = {
+						remove_idea = MEN_disorganized_military
+						add_idea = MEN_disorganized_military_2
+					}
+				}
+			}
+			else = {
+				white_peace = MEN
+				country_event =  men.30
+				MEN = {
+					transfer_state = 621
+					add_state_core = 621
+				}
+			}
+		}
+
+		timeout_effect = {
+			if = {
+				limit = {
+					original_tag = MEN
+				}
+				white_peace = 621.owner
+				country_event = men.27
+				effect_tooltip = {
+					army_experience = 15
+				}
+				unlock_national_focus = MEN_rebuilding_the_disaster_of_suiyan
+			}
+			else = {
+				white_peace = MEN
+				country_event = men.29
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+		}
+	}
+}

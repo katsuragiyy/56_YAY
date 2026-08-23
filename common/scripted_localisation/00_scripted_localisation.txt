@@ -62,7 +62,7 @@ defined_text = { # Country
 	}
 }
 
-# R56?
+# 56
 defined_text = { # Country
 	name = GetPolStrengthenDevalue
 	text = {
@@ -254,7 +254,7 @@ defined_text = { #
 		localization_key = SS_rebellious
 	}
 }
-# R56?
+# 56
 defined_text = { 
 	name = GetIwLoyalty
 	text = {
@@ -488,6 +488,7 @@ defined_text = {
         localization_key = LIT_sd_values
     }
 }
+##
 defined_text = {
 	name = GetSenateElectionOutcome
 	text = {
@@ -1608,11 +1609,7 @@ defined_text = {
 			SOV = {
 				has_government = fascism
 			}
-			NOT = { # R56
-				SOS = {
-					exists = yes
-				}
-			}
+			NOT = { SOS = { exists = yes } } # R56
 		}
 		localization_key = SOV_BULWARK_NAME_FASCISM
 	}
@@ -1624,11 +1621,7 @@ defined_text = {
 					has_government = democratic
 				}
 			}
-			NOT = { # R56
-				SOS = {
-					exists = yes
-				}
-			}
+			NOT = { SOS = { exists = yes } } # R56
 		}
 		localization_key = SOV_BULWARK_NAME_NEUTRALITY
 	}
@@ -1952,17 +1945,11 @@ defined_text = {
 	text = {
 		trigger = {
 			is_subject = yes
-			overlord = {
-				NOT = {
-					has_country_leader_ideology = stalinism
-				}
-			}
+			overlord = { NOT = { has_country_leader_ideology = stalinism } }
 		}
 		localization_key = ARM_purge_the_trotskyist_dashnaks_alt
 	}
-	text = {
-		localization_key = ARM_purge_the_trotskyist_dashnaks_stalinist
-	}
+	text = { localization_key = ARM_purge_the_trotskyist_dashnaks_stalinist }
 }
 
 # Governments in Exile

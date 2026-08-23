@@ -20,7 +20,7 @@ characters={
 		}
 	}
 	VIN_ho_chi_minh={ #Also used for French Indochina.
-		name="Ho Chi Minh"
+		name=VIN_ho_chi_minh
 		portraits={
 			civilian={
 				large="GFX_Portrait_Indochina_Ho_Chi_Minh"
@@ -31,7 +31,7 @@ characters={
 		}
 		country_leader={
 			ideology=marxism
-			traits={ fierce_patriot }
+			traits={ renowned_revolutionary_poet  fierce_patriot }
 			expire="1953.3.1"
 			id=-1
 		}
@@ -258,7 +258,7 @@ characters={
 		}
 	}
 	VIN_ngo_dinh_diem={ #Also used in French Indochina.
-		name="Ngo Dinh Diem"
+		name=VIN_ngo_dinh_diem
 		portraits={
 			army={
 				large="gfx/leaders/FRI/Portrait_Indochina_Ngo_Dinh_Diem.dds"

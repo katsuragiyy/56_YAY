@@ -39,10 +39,6 @@ focus_tree = {
 		id = MEN_an_independent_army
 
 		icon = GFX_goal_MON_inner_mongolian_army2
-
-		available = {
-			exists = yes
-		}
 		
 		x = 6
 		y = 0
@@ -54,6 +50,9 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_war_support = 0.05
+			army_experience = 15
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				prioritize = { 267 }
 				limit = {
@@ -70,8 +69,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_war_support = 0.05
-			army_experience = 15
 		}
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
 	}
@@ -101,10 +98,10 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = MEN_continue_the_ways_of_old
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_tech_bonus = {
 				bonus = 0.5
-				uses = 1
-				ahead_reduction = 0.5
+				uses = 2
 				category = infantry_weapons
 				category = support_tech
 				category = artillery
@@ -142,6 +139,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = MEN_horses_of_steel
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_tech_bonus = {
 				name = MEN_horses_of_steel
 				bonus = 0.5
@@ -175,7 +173,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 100
@@ -183,59 +181,53 @@ focus_tree = {
 
 		completion_reward = {
 			if = {
-				limit = {
-					is_subject_of = JAP
-				}
-				add_autonomy_score = {
-					value = -50
-				}
+				limit = { is_subject_of = JAP }
+				add_autonomy_score = { value = -50 }
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
+			add_doctrine_cost_reduction = {
+				name = MEN_forces_for_the_south
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_grand_battle_plan
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
-				amount = 500
+				amount = 2000
 				producer = JAP
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_equipment_to_stockpile = {
 				type = artillery_equipment
-				amount = 50
+				amount = 250
 				producer = JAP
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
-				amount = 50
+				amount = 100
 				producer = JAP
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			JAP = {
 				create_production_license = {
 					target = ROOT
-					equipment = {
-						type = infantry_equipment_1
-					}
+					equipment = { type = infantry_equipment_1 }
 					cost_factor = 0
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				create_production_license = {
 					target = ROOT
-					equipment = {
-						type = motorized_equipment_1
-					}
+					equipment = { type = motorized_equipment_1 }
 					cost_factor = 0
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				create_production_license = {
 					target = ROOT
-					equipment = {
-						type = train_equipment_1
-					}
+					equipment = { type = train_equipment_1 }
 					cost_factor = 0
 				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_doctrine_cost_reduction = {
-				name = MEN_forces_for_the_south
-				cost_reduction = 0.5
-				uses = 1
-				category = cat_grand_battle_plan
 			}
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_RESEARCH }
@@ -269,12 +261,8 @@ focus_tree = {
 
 		completion_reward = {
 			if = {
-				limit = {
-					is_subject_of = JAP
-				}
-				add_autonomy_score = {
-					value = -50
-				}
+				limit = { is_subject_of = JAP }
+				add_autonomy_score = { value = -50 }
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 			add_stability = 0.05
@@ -328,7 +316,7 @@ focus_tree = {
 
 	focus = {
 		id = MEN_every_man_a_rifle
-		icon = GFX_goal_machine_gun
+		icon = GFX_focus_ETH_freedom_at_gunpoint
 
 		available = {
 
@@ -343,7 +331,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		
-		cost = 10
+		cost = 8
 
 		ai_will_do = {
 			factor = 100
@@ -351,6 +339,14 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 25
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				ahead_reduction = 1
+				category = infantry_weapons
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -365,13 +361,6 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			}
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 0.5
-				uses = 1
-				ahead_reduction = 1
-				category = infantry_weapons
 			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
@@ -404,6 +393,7 @@ focus_tree = {
 				uses = 2
 				category = land_doctrine
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = ABC_establish_a_military_academy_idea
 		}
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
@@ -429,7 +419,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = MEN_modernized_equipment_production
 			add_tech_bonus = {
 				name = artillery_bonus
 				bonus = 0.5
@@ -437,6 +426,8 @@ focus_tree = {
 				ahead_reduction = 1
 				category = artillery
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = MEN_modernized_equipment_production
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_RESEARCH }
 	}
@@ -474,13 +465,14 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_war_support = 0.05
 			add_doctrine_cost_reduction = {
 				name = MEN_masters_of_the_steppe
 				cost_reduction = 1
 				uses = 1
 				category = land_doctrine
 			}
-			add_war_support = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = MEN_masters_of_the_steppe_idea
 			custom_effect_tooltip = MEN_masters_of_the_steppe_tt
 		}
@@ -489,7 +481,7 @@ focus_tree = {
 
 	focus = {
 		id = MEN_motorization_of_the_army
-		icon = GFX_goal_generic_army_motorized
+		icon = GFX_focus_generic_motor_cycle
 
 		prerequisite = { 
 			focus = MEN_embrace_horses_of_steel 
@@ -508,16 +500,17 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 15
-			add_equipment_to_stockpile = {
-				type = motorized_equipment
-				amount = 150
-			}
 			add_tech_bonus = {
 				name = MEN_motorization_of_the_army
 				bonus = 0.5
 				uses = 1
 				ahead_reduction = 0.5
 				category = motorized_equipment
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 150
 			}
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
@@ -551,19 +544,17 @@ focus_tree = {
 				category = cat_mobile_warfare
 			}
 			if = {
-				limit = {
-					is_subject_of = JAP
-				}
+				limit = { is_subject_of = JAP }
 				if = {
-					limit = {
-						has_dlc = "No Step Back"
-					}
+					limit = { has_dlc = "No Step Back" }
+					custom_effect_tooltip = generic_skip_one_line_tt
 					add_equipment_to_stockpile = {
 						type = light_tank_chassis
 						amount = 30
 						producer = JAP
 					}
 					else = {
+						custom_effect_tooltip = generic_skip_one_line_tt
 						add_equipment_to_stockpile = {
 							type = light_tank_equipment_1
 							amount = 30
@@ -574,15 +565,15 @@ focus_tree = {
 			}
 			else = {
 				if = {
-					limit = {
-						has_dlc = "No Step Back"
-					}
+					limit = { has_dlc = "No Step Back" }
+					custom_effect_tooltip = generic_skip_one_line_tt
 					add_equipment_to_stockpile = {
 						type = light_tank_chassis
 						amount = 30
 						producer = GER
 					}
 					else = {
+						custom_effect_tooltip = generic_skip_one_line_tt
 						add_equipment_to_stockpile = {
 							type = light_tank_equipment_1
 							amount = 30
@@ -615,7 +606,8 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 15
-			add_ideas = MEN_every_man_a_truck 
+			add_ideas = MEN_every_man_a_truck
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_tech_bonus = {
 				name = MEN_every_man_a_truck
 				bonus = 0.5
@@ -630,7 +622,7 @@ focus_tree = {
 
 	focus = {
 		id = MEN_establish_tank_workshops
-		icon = GFX_focus_generic_tank_production
+		icon = GFX_goal_generic_munitions_factories
 
 		available = {
 			controls_state = 611
@@ -642,7 +634,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		
-		cost = 10
+		cost = 8
 
 		ai_will_do = {
 			factor = 100
@@ -654,37 +646,20 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
-						size > 0
+						size > 1
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_controlled_state = {
-				prioritize = { 611 }
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
 			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
+				limit = { has_dlc = "Arms Against Tyranny" }
+				custom_effect_tooltip = generic_skip_one_line_tt
 				mio:generic_tank_organization = {
 					add_mio_size = 1
 					add_mio_funds = 500
@@ -696,7 +671,7 @@ focus_tree = {
 
 	focus = {
 		id = MEN_acquire_japanese_designs
-		icon = GFX_focus_NOR_rikstanken
+		icon = GFX_focus_JAP_the_ultimate_tank
 
 		available = {
 			OR = {
@@ -724,9 +699,8 @@ focus_tree = {
 				days = 365
 			}
 			if = {
-				limit = {
-					has_dlc = "No Step Back"
-				}
+				limit = { has_dlc = "No Step Back" }
+				custom_effect_tooltip = generic_skip_one_line_tt
 				create_equipment_variant = {
 					name = "Type 94 Tankette"
 					type = light_tank_chassis_0
@@ -745,6 +719,7 @@ focus_tree = {
 					obsolete = yes
 					icon = "gfx/interface/technologies/JAP_basic_light_tank.dds"
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				create_equipment_variant = {
 					name = "Type 95 Ha-Go"
 					type = light_tank_chassis_1
@@ -763,6 +738,7 @@ focus_tree = {
 					icon = "gfx/interface/technologies/JAP_imp_light_tank.dds"
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_tech_bonus = {
 				name = MEN_japanese_tank_designs
 				bonus = 0.25
@@ -777,13 +753,14 @@ focus_tree = {
 
 	focus = {
 		id = MEN_rebuilding_the_disaster_of_suiyan
-		icon = GFX_goal_generic_army_doctrines
+		icon = GFX_goal_generic_attack_mengjiang
 
 		available = {
 			OR = {
 				date > 1938.1.1
-				NOT = {
-					has_idea = MEN_mongol_raids
+				if = { 
+					limit = { MON = { is_ai = yes } }
+					NOT = { has_idea = MEN_mongol_raids }
 				}
 				has_country_flag = MEN_suiyuan_ended
 			}
@@ -812,6 +789,7 @@ focus_tree = {
 				uses = 2
 				category = land_doctrine
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			swap_ideas = {
 				remove_idea = MEN_disorganized_military
 				add_idea = MEN_disorganized_military_2
@@ -827,8 +805,9 @@ focus_tree = {
 		available = {
 			OR = {
 				date > 1938.1.1
-				NOT = {
-					has_idea = MEN_mongol_raids
+				if = { 
+					limit = { MON = { is_ai = yes } }
+					NOT = { has_idea = MEN_mongol_raids }
 				}
 				has_country_flag = MEN_suiyuan_ended
 			}
@@ -852,28 +831,23 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.05
 			army_experience = 15
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
-				limit = {
-					has_idea = MEN_disorganized_military_2
-				}
+				limit = { has_idea = MEN_disorganized_military_2 }
 				swap_ideas = {
 					remove_idea = MEN_disorganized_military_2
 					add_idea = MEN_disorganized_military_3
 				}
 			}
 			else_if = {
-				limit = {
-					has_idea = MEN_disorganized_military_3
-				}
+				limit = { has_idea = MEN_disorganized_military_3 }
 				swap_ideas = {
 					remove_idea = MEN_disorganized_military_3
 					add_idea = MEN_disorganized_military_4
 				}
 			}
 			else_if = {
-				limit = {
-					has_idea = MEN_disorganized_military_4
-				}
+				limit = { has_idea = MEN_disorganized_military_4 }
 				remove_ideas = MEN_disorganized_military_4
 			}
 			else = { # Tooltip only
@@ -893,8 +867,9 @@ focus_tree = {
 		available = {
 			OR = {
 				date > 1938.1.1
-				NOT = {
-					has_idea = MEN_mongol_raids
+				if = { 
+					limit = { MON = { is_ai = yes } }
+					NOT = { has_idea = MEN_mongol_raids }
 				}
 				has_country_flag = MEN_suiyuan_ended
 			}
@@ -926,6 +901,31 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			army_experience = 15
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { has_idea = MEN_disorganized_military_2 }
+				swap_ideas = {
+					remove_idea = MEN_disorganized_military_2
+					add_idea = MEN_disorganized_military_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = MEN_disorganized_military_3 }
+				swap_ideas = {
+					remove_idea = MEN_disorganized_military_3
+					add_idea = MEN_disorganized_military_4
+				}
+			}
+			else_if = {
+				limit = { has_idea = MEN_disorganized_military_4 }
+				remove_ideas = MEN_disorganized_military_4
+			}
+			else = { # Tooltip only
+				swap_ideas = {
+					remove_idea = MEN_disorganized_military_2
+					add_idea = MEN_disorganized_military_3
+				}
+			}
 			division_template = {
 				name = "Dà Hàn Zhìyuàn Lü"
 				regiments = {
@@ -938,9 +938,7 @@ focus_tree = {
 				}
 			}	
 			random_owned_controlled_state = {
-				limit = {
-					is_core_of = ROOT
-				}
+				limit = { is_core_of = ROOT }
 				custom_effect_tooltip = MEN_create_han_army 
 				hidden_effect = {
 					create_unit = {
@@ -957,49 +955,20 @@ focus_tree = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					has_idea = MEN_disorganized_military_2
-				}
-				swap_ideas = {
-					remove_idea = MEN_disorganized_military_2
-					add_idea = MEN_disorganized_military_3
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = MEN_disorganized_military_3
-				}
-				swap_ideas = {
-					remove_idea = MEN_disorganized_military_3
-					add_idea = MEN_disorganized_military_4
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = MEN_disorganized_military_4
-				}
-				remove_ideas = MEN_disorganized_military_4
-			}
-			else = { # Tooltip only
-				swap_ideas = {
-					remove_idea = MEN_disorganized_military_2
-					add_idea = MEN_disorganized_military_3
-				}
-			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MILITARY_IMPROVEMENT }
 	}
 
 	focus = {
 		id = MEN_open_the_kalgan_military_academy
-		icon = GFX_focus_generic_military_academy
+		icon = GFX_focus_generic_advanced_military_studies
 
 		available = {
 			OR = {
 				date > 1938.1.1
-				NOT = {
-					has_idea = MEN_mongol_raids
+				if = { 
+					limit = { MON = { is_ai = yes } }
+					NOT = { has_idea = MEN_mongol_raids }
 				}
 				has_country_flag = MEN_suiyuan_ended
 			}
@@ -1022,36 +991,30 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 25
-			every_army_leader = {
-				add_planning = 1
-			}
 			if = {
-				limit = {
-					has_idea = MEN_disorganized_military_2
-				}
+				limit = { has_idea = MEN_disorganized_military_2 }
 				swap_ideas = {
 					remove_idea = MEN_disorganized_military_2
 					add_idea = MEN_disorganized_military_3
 				}
 			}
 			else_if = {
-				limit = {
-					has_idea = MEN_disorganized_military_3
-				}
+				limit = { has_idea = MEN_disorganized_military_3 }
 				swap_ideas = {
 					remove_idea = MEN_disorganized_military_3
 					add_idea = MEN_disorganized_military_4
 				}
 			}
 			else_if = {
-				limit = {
-					has_idea = MEN_disorganized_military_4
-				}
+				limit = { has_idea = MEN_disorganized_military_4 }
 				remove_ideas = MEN_disorganized_military_4
+				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 			else = { # Tooltip only
 				remove_ideas = MEN_disorganized_military_4
+				custom_effect_tooltip = generic_skip_one_line_tt
 			}
+			every_army_leader = { add_planning = 1 }
 		}
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MILITARY_IMPROVEMENT }
 	}
@@ -1080,6 +1043,13 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_political_power = 25
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = MEN_the_bank_of_mengjiang
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = r56_MEN_industry_modify_tt
+			add_to_variable = { r56_MEN_industry_ns_consumer_goods_factor = -0.05 tooltip = consumer_goods_factor_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				prioritize = { 611 }
 				limit = {
@@ -1096,14 +1066,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_political_power = 25
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = r56_MEN_industry_modify_tt
-			add_to_variable = { r56_MEN_industry_ns_consumer_goods_factor = -0.05 tooltip = consumer_goods_factor_tt }
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_industrial_concern
-			show_ideas_tooltip = MEN_the_bank_of_mengjiang
-			custom_effect_tooltip = generic_skip_one_line_tt
 			hidden_effect = { #Swaps out modifiers GFX, same thing
 				remove_dynamic_modifier = { modifier = r56_MEN_industry_ns }
 				add_dynamic_modifier = { modifier = r56_MEN_industry_ns_1 }
@@ -1179,7 +1141,7 @@ focus_tree = {
 
 	focus = {
 		id = MEN_japanese_backed_coal_plants
-		icon = GFX_goal_generic_coal_mining
+		icon = GFX_focus_generic_coal_mining
 
 		prerequisite = {
 			focus = MEN_fuel_for_the_war_machine
@@ -1209,26 +1171,6 @@ focus_tree = {
 				value = -50
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = r56_MEN_industry_modify_tt
-			add_to_variable = { r56_MEN_industry_ns_production_lack_of_resource_penalty_factor = -0.05 tooltip = production_lack_of_resource_penalty_factor_tt }
-			custom_effect_tooltip = generic_skip_one_line_tt
-			random_owned_controlled_state = {
-				prioritize = { 611 }
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					has_idea = MEN_fuel_for_the_war_machine_idea_2
@@ -1251,6 +1193,26 @@ focus_tree = {
 				uses = 1
 				category = synth_resources
 				category = excavation_tech
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = r56_MEN_industry_modify_tt
+			add_to_variable = { r56_MEN_industry_ns_production_lack_of_resource_penalty_factor = -0.05 tooltip = production_lack_of_resource_penalty_factor_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				prioritize = { 611 }
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_TFV_AUTONOMY }
@@ -1286,6 +1248,30 @@ focus_tree = {
 		completion_reward = {
 			add_autonomy_score = {
 				value = -50
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					has_idea = MEN_fuel_for_the_war_machine_idea
+				}
+				swap_ideas = {
+					remove_idea = MEN_fuel_for_the_war_machine_idea
+					add_idea = MEN_fuel_for_the_war_machine_idea_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = MEN_fuel_for_the_war_machine_idea_2
+					add_idea = MEN_fuel_for_the_war_machine_idea_3
+				}
+			}
+			add_tech_bonus = {
+				name = steel_production_1
+				bonus = 0.5
+				ahead_reduction = 0.5
+				uses = 1
+				category = steel_tech
+				category = excavation_tech
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = r56_MEN_industry_modify_tt
@@ -1325,30 +1311,6 @@ focus_tree = {
 					type = steel
 					amount = 2
 				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			if = {
-				limit = {
-					has_idea = MEN_fuel_for_the_war_machine_idea
-				}
-				swap_ideas = {
-					remove_idea = MEN_fuel_for_the_war_machine_idea
-					add_idea = MEN_fuel_for_the_war_machine_idea_2
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = MEN_fuel_for_the_war_machine_idea_2
-					add_idea = MEN_fuel_for_the_war_machine_idea_3
-				}
-			}
-			add_tech_bonus = {
-				name = steel_production_1
-				bonus = 0.5
-				ahead_reduction = 0.5
-				uses = 1
-				category = steel_tech
-				category = excavation_tech
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_STEEL }
@@ -1390,6 +1352,19 @@ focus_tree = {
 				value = -50
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = MEN_fuel_for_the_war_machine_idea_3
+				add_idea = MEN_fuel_for_the_war_machine_idea_4
+			}
+			if = {
+				limit = { has_idea = export_focus }
+				add_ideas = free_trade
+			}
+			if = {
+				limit = { has_idea = limited_exports }
+				add_ideas = export_focus
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = r56_MEN_industry_modify_tt
 			add_to_variable = { r56_MEN_industry_ns_production_factory_efficiency_gain_factor = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -1408,23 +1383,6 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			swap_ideas = {
-				remove_idea = MEN_fuel_for_the_war_machine_idea_3
-				add_idea = MEN_fuel_for_the_war_machine_idea_4
-			}
-			if = {
-				limit = {
-					has_idea = export_focus
-				}
-				add_ideas = free_trade
-			}
-			if = {
-				limit = {
-					has_idea = limited_exports
-				}
-				add_ideas = export_focus
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_INTERNATIONAL_TRADE }
@@ -1460,6 +1418,12 @@ focus_tree = {
 		completion_reward = {
 			add_autonomy_score = {
 				value = -50
+			}
+			add_tech_bonus = {
+				name = MEN_improve_regional_infastructure
+				bonus = 0.25
+				uses = 1
+				category = construction_tech
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = r56_MEN_industry_modify_tt
@@ -1510,13 +1474,6 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_tech_bonus = {
-				name = MEN_improve_regional_infastructure
-				bonus = 0.25
-				uses = 1
-				category = construction_tech
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_RESEARCH }
@@ -1575,6 +1532,12 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_timed_idea = {
+				idea = MEN_rapid_industrialization
+				days = 120
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				prioritize = { 611 }
 				limit = {
@@ -1596,14 +1559,10 @@ focus_tree = {
 					amount = 2
 				}
 			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = r56_MEN_industry_modify_tt
 			add_to_variable = { r56_MEN_industry_ns_production_factory_efficiency_gain_factor = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_timed_idea = {
-				idea = MEN_rapid_industrialization
-				days = 120
-			}
 
 			set_country_flag = { flag = MEN_rapid_industrialization_timer days = 120 value = 1 }
 		}
@@ -1612,7 +1571,7 @@ focus_tree = {
 
 	focus = {
 		id = MEN_trade_focus
-		icon = GFX_goal_generic_positive_trade_relations
+		icon = GFX_goal_free_trade
 
 		prerequisite = {
 			focus = MEN_prioritize_industrialization
@@ -1747,7 +1706,7 @@ focus_tree = {
 
 	focus = {
 		id = MEN_mongol_industral_investment
-		icon = GFX_goal_generic_production2
+		icon = GFX_goal_generic_industrial_plan
 
 		prerequisite = {
 			focus = MEN_prioritize_industrialization
@@ -1879,7 +1838,7 @@ focus_tree = {
 
 	focus = {
 		id = MEN_from_steppes_into_factories
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_goal_generic_industrial_planning
 
 		prerequisite = {
 			focus = MEN_trade_focus focus = MEN_mongol_industral_investment
@@ -2032,7 +1991,7 @@ focus_tree = {
 
 	focus = {
 		id = MEN_expand_chahar_arms_workshops
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_goal_generic_military_factories
 
 		prerequisite = {
 			focus = MEN_from_steppes_into_factories
@@ -2259,19 +2218,17 @@ focus_tree = {
 				days = 365
 			}
 			if = {
-				limit = {
-					has_idea = MEN_rapid_industrialization
-				}
+				limit = { has_idea = MEN_rapid_industrialization }
 				custom_effect_tooltip = generic_skip_one_line_tt
 				custom_effect_tooltip = MEN_prioritize_industrialization_bonus_effect_tt
-				custom_effect_tooltip = r56_MEN_industry_modify_tt
-				add_to_variable = { r56_MEN_industry_ns_production_speed_buildings_factor = 0.025 tooltip = production_speed_buildings_factor_tt }
 				add_tech_bonus = {
 					name = industrial_bonus
 					bonus = 0.25
 					uses = 1
 					category = industry
 				}
+				custom_effect_tooltip = r56_MEN_industry_modify_tt
+				add_to_variable = { r56_MEN_industry_ns_production_speed_buildings_factor = 0.025 tooltip = production_speed_buildings_factor_tt }
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
@@ -2363,7 +2320,7 @@ focus_tree = {
 
 	focus = {
 		id = MEN_exploit_suiyuan
-		icon = GFX_goal_generic_construction2
+		icon = GFX_focus_GER_factories_for_resources
 
 		prerequisite = {
 			focus = MEN_fuel_for_the_war_machine focus = MEN_prioritize_industrialization
@@ -2390,23 +2347,11 @@ focus_tree = {
 
 		completion_reward = {
 			if = {
-				limit = {
-					is_subject = yes
-				}
-				add_autonomy_score = {
-					value = 25
-				}
+				limit = { is_subject = yes }
+				add_autonomy_score = { value = 25 }
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
-			random_controlled_state = {
-				prioritize = { 621 }
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
+			621 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -2428,9 +2373,7 @@ focus_tree = {
 				if = {
 					limit = {
 						is_controlled_by = ROOT
-						NOT = {
-							is_core_of = ROOT
-						}
+						NOT = { is_core_of = ROOT }
 					}
 					add_compliance = 5
 					add_resistance = -10
@@ -2439,9 +2382,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			
 			if = {
-				limit = {
-					has_idea = MEN_rapid_industrialization
-				}
+				limit = { has_idea = MEN_rapid_industrialization }
 				custom_effect_tooltip = generic_skip_one_line_tt
 				custom_effect_tooltip = MEN_prioritize_industrialization_bonus_effect_tt
 				custom_effect_tooltip = r56_MEN_industry_modify_tt
@@ -2593,13 +2534,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 25
+			add_stability = 0.05
 			add_popularity = {
 				ideology = fascism
 				popularity = 0.10
 			}
-			add_stability = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
 			every_state = {
 				limit = {
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
 					OR = {
 						state = 621
 						state = 746
@@ -2617,17 +2563,20 @@ focus_tree = {
 						}
 					}
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				MON = {
 					add_opinion_modifier = {
 						target = ROOT
 						modifier = medium_decrease
 					}
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				add_opinion_modifier = {
 					target = MON
 					modifier = medium_decrease
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = MEN_unenbayal
 		}
@@ -2661,12 +2610,13 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			add_stability = 0.05
 			add_war_support = 0.10
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.05
 			}
-			add_stability = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					JAP = {
@@ -2752,21 +2702,12 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 6
 
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
-			set_politics = {
-				ruling_party = fascism
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.15
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					has_intelligence_agency = no
@@ -2810,6 +2751,15 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = r56_newline
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
+			custom_effect_tooltip = r56_newline
 			if = {
 				limit = {
 					has_idea = MEN_kwantungs_invisible_hand
@@ -2823,6 +2773,14 @@ focus_tree = {
 				drop_cosmetic_tag = yes
 			}
 			set_cosmetic_tag = MEN_MIL_GOV
+
+			hidden_effect = {
+				if = {
+					limit = { MAN = { is_subject_of = JAP } }
+					give_military_access = MAN
+					MAN = { give_military_access = ROOT }
+				}
+			}
 		}
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_TFV_AUTONOMY }
 	}
@@ -2891,7 +2849,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 100
@@ -2922,8 +2880,16 @@ focus_tree = {
 		icon = GFX_goal_MAN_economic_coherence
 
 		available = {
-			is_ally_with = JAP
-			is_ally_with = MAN
+			OR = {
+				OR = {
+					is_subject_of = JAP
+					is_ally_with = JAP
+				}
+				OR = {
+					is_subject_of = MAN
+					is_ally_with = MAN
+				}
+			}
 		}
 		
 		prerequisite = { 
@@ -2939,6 +2905,33 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			add_tech_bonus = {
+				name = BRA_industry_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+				category = electronics
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_country = {
+				limit = {
+					OR = {
+						tag = MAN
+						tag = JAP
+					}
+				}
+				ROOT = {
+					add_opinion_modifier = {
+						target = PREV
+						modifier = large_increase
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = large_increase
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -2967,31 +2960,6 @@ focus_tree = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
-				}
-			}
-			add_tech_bonus = {
-				name = BRA_industry_bonus
-				bonus = 0.5
-				uses = 1
-				category = industry
-				category = electronics
-			}
-			every_country = {
-				limit = {
-					OR = {
-						tag = MAN
-						tag = JAP
-					}
-				}
-				ROOT = {
-					add_opinion_modifier = {
-						target = PREV
-						modifier = large_increase
-					}
-				}
-				add_opinion_modifier = {
-					target = ROOT
-					modifier = large_increase
 				}
 			}
 		}
@@ -3052,7 +3020,7 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				prioritize = { 612 }
+				prioritize = { 1122 }
 				limit = {
 					free_building_slots = {
 						building = air_base
@@ -3115,12 +3083,12 @@ focus_tree = {
 			set_country_flag = MEN_suiyuan_ended
 			add_war_support = 0.05
 			custom_effect_tooltip = generic_skip_one_line_tt
-            declare_war_on = {
+            activate_mission = MEN_suiyuan_campaign
+			declare_war_on = {
                 target = 621.owner
                 type = take_claimed_state
 				generator = { 621 }
             }
-			activate_mission = MEN_suiyuan_campaign
 			hidden_effect = {
 				621 = {
 					owner = {
@@ -3130,9 +3098,6 @@ focus_tree = {
 			}
 			custom_effect_tooltip = MEN_effects_if_border_conflict_is_won
 			effect_tooltip = {
-				transfer_state = 621
-				add_state_core = 621
-				complete_national_focus = MEN_rebuilding_the_disaster_of_suiyan
 				army_experience = 25
 				add_doctrine_cost_reduction = {
 					cost_reduction = 0.5
@@ -3140,6 +3105,12 @@ focus_tree = {
 					category = land_doctrine
 					name = MEN_put_an_end_to_the_raids
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				transfer_state = 621
+				add_state_core = 621
+				custom_effect_tooltip = generic_skip_one_line_tt
+				complete_national_focus = MEN_rebuilding_the_disaster_of_suiyan
+				custom_effect_tooltip = generic_skip_one_line_tt
 				swap_ideas = {
 					remove_idea = MEN_disorganized_military
 					add_idea = MEN_disorganized_military_2
@@ -3189,11 +3160,19 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			set_rule = {
-				can_use_kamikaze_pilots = yes
-			}
+			set_rule = { can_use_kamikaze_pilots = yes }
 			add_war_support = 0.05
-			add_country_leader_trait = MEN_spirit_of_genghis
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					has_country_leader = {
+						character = MEN_prince_demchugdongrub
+						ruling_only = yes
+					}
+				}
+				swap_ruler_traits = { remove = MEN_borjigin_descendant add = MEN_spirit_of_genghis_improved }
+				else = { add_country_leader_trait = MEN_spirit_of_genghis }
+			}
 		}
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 	}
@@ -3316,6 +3295,12 @@ focus_tree = {
 				popularity = 0.10
 			}
 			add_stability = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_cosmetic_tag = MEN_MGA
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_state_claim = 616
+			add_state_claim = 1119
+			custom_effect_tooltip = generic_skip_one_line_tt
 			every_state = {
 				limit = {
 					NOT = {
@@ -3331,10 +3316,6 @@ focus_tree = {
 				}
 				add_core_of = ROOT
 			}
-			add_state_claim = 616
-			add_state_claim = 1119
-			custom_effect_tooltip = r56_newline
-			set_cosmetic_tag = MEN_MGA
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_STABILITY FOCUS_FILTER_ANNEXATION FOCUS_FILTER_HISTORICAL }
 	}
@@ -3399,8 +3380,9 @@ focus_tree = {
 			add_political_power = -35
 			add_popularity = {
 				ideology = fascism
-				popularity = 0.10
+				popularity = 0.1
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = MEN_harmony_of_the_five_races
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
@@ -3475,10 +3457,6 @@ focus_tree = {
 				has_war_with = CUG
 			}
 		}
-
-		bypass = {
-
-		}
 		
 		prerequisite = { focus = MEN_deal_with_the_bayannur_princes }
 		relative_position_id = MEN_deal_with_the_bayannur_princes
@@ -3496,6 +3474,7 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.05
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = 1000
@@ -3506,7 +3485,7 @@ focus_tree = {
 				amount = 50
 				producer = CUG
 			}
-			custom_effect_tooltip = r56_newline
+			custom_effect_tooltip = generic_skip_one_line_tt
 			swap_ideas = {
 				remove_idea = MEN_kwantungs_invisible_hand_genghis
 				add_idea = MEN_kwantungs_invisible_hand_genghis_2
@@ -3725,48 +3704,27 @@ focus_tree = {
 				elections_allowed = no
 			}
 			if = {
-				limit = {
-					is_in_faction = yes
-				}
+				limit = { is_in_faction = yes }
+				custom_effect_tooltip = generic_skip_one_line_tt
 				leave_faction = yes
 			}
 			if = {
-				limit = {
-					is_subject_of = JAP
-				}
-				JAP = {
-					end_puppet = ROOT
-				}
+				limit = { is_subject_of = JAP }
+				custom_effect_tooltip = generic_skip_one_line_tt
+				JAP = { end_puppet = ROOT }
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			white_peace = CHI
 			if = {
-				limit = {
-					CUG = {
-						is_faction_leader = yes
-					}
-				}
-				CUG = {
-					add_to_faction = ROOT
-				}
+				limit = { CUG = { is_faction_leader = yes } }
+				CUG = { add_to_faction = ROOT }
 			}
 			else_if = {
-				limit = { 
-					CUG = {
-						is_in_faction = yes
-					}
-				}
-				CUG = {
-					faction_leader = {
-						add_to_faction = ROOT
-					}
-				}
+				limit = { CUG = { is_in_faction = yes } }
+				CUG = { faction_leader = { add_to_faction = ROOT } }
 			}
 			if = {
-				limit = {
-					CUG = {
-						has_war_with = JAP
-					}
-				}
+				limit = { CUG = { has_war_with = JAP } }
 				add_to_war = {
 					targeted_alliance = CUG
 					enemy = JAP
@@ -3995,22 +3953,18 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			if = {
+				limit = { NOT = { has_global_flag = form_greater_mongolia_flag } }
+				effect_tooltip = { unlock_decision_tooltip = MON_unify_greater_mongolia }
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
 			add_popularity = {
 				ideology = fascism
 				popularity = 0.05
 			}
 			add_war_support = 0.10
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = MEN_our_place_under_the_red_sun_idea
-			if = {
-				limit = {
-					NOT = {
-						has_global_flag = form_greater_mongolia_flag
-					}
-				}
-				effect_tooltip = {
-					unlock_decision_tooltip = MON_unify_greater_mongolia
-				}
-			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_ANNEXATION }
 	}
@@ -4043,7 +3997,18 @@ focus_tree = {
 				popularity = -0.05
 			}
 			add_stability = -0.05
-			custom_effect_tooltip = r56_newline
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_manpower = -5000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			effect_tooltip = {
+				retire_character = MEN_li_shouxin
+				retire_character = MEN_wang_ying
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					has_idea = MEN_kwantungs_invisible_hand
@@ -4058,15 +4023,6 @@ focus_tree = {
 					remove_idea = MEN_kwantungs_invisible_hand_democratic
 					add_idea = MEN_kwantungs_invisible_hand_democratic_2
 				}
-			}
-			add_manpower = -5000
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = -500
-			}
-			effect_tooltip = {
-				retire_character = MEN_li_shouxin
-				retire_character = MEN_wang_ying
 			}
 		}
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_MANPOWER FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_MILITARY_CHARACTER }
@@ -4109,22 +4065,7 @@ focus_tree = {
 					artillery = { x = 0 y = 1 }
 				}
 			}	
-			custom_effect_tooltip = r56_newline
-			if = {
-				limit = {
-					has_idea = MEN_kwantungs_invisible_hand_democratic
-				}
-				swap_ideas = {
-					remove_idea = MEN_kwantungs_invisible_hand_democratic
-					add_idea = MEN_kwantungs_invisible_hand_democratic_2
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = MEN_kwantungs_invisible_hand
-					add_idea = MEN_kwantungs_invisible_hand_democratic
-				}
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					SHX = {
@@ -4141,6 +4082,7 @@ focus_tree = {
 						set_nationality = MEN
 					}
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 			effect_tooltip = { # Tooltip
 				create_corps_commander = {
@@ -4153,8 +4095,10 @@ focus_tree = {
 					traits = {}
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_military_high_command
 			show_ideas_tooltip = MEN_zhu_shifu
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				prioritize = { 611 }
 				limit = {
@@ -4168,6 +4112,22 @@ focus_tree = {
 						count = 1
 						prioritize_location = 4612
 					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					has_idea = MEN_kwantungs_invisible_hand_democratic
+				}
+				swap_ideas = {
+					remove_idea = MEN_kwantungs_invisible_hand_democratic
+					add_idea = MEN_kwantungs_invisible_hand_democratic_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = MEN_kwantungs_invisible_hand
+					add_idea = MEN_kwantungs_invisible_hand_democratic
 				}
 			}
 		}
@@ -4212,26 +4172,14 @@ focus_tree = {
 				active = no
 			}
 			if = {
-				limit = {
-					CUG = {
-						is_faction_leader = yes
-					}
-				}
-				CUG = {
-					add_to_faction = ROOT
-				}
+				limit = { CUG = { is_faction_leader = yes } }
+				custom_effect_tooltip = generic_skip_one_line_tt
+				CUG = { add_to_faction = ROOT }
 			}
 			else_if = {
-				limit = { 
-					CUG = {
-						is_in_faction = yes
-					}
-				}
-				CUG = {
-					faction_leader = {
-						add_to_faction = ROOT
-					}
-				}
+				limit = { CUG = { is_in_faction = yes } }
+				custom_effect_tooltip = generic_skip_one_line_tt
+				CUG = { faction_leader = { add_to_faction = ROOT } }
 			}
 			custom_effect_tooltip = r56_newline
 			remove_ideas = MEN_kwantungs_invisible_hand_democratic_2
@@ -4264,12 +4212,14 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			kill_country_leader = yes 
 			add_stability = -0.05
 			add_popularity = {
     			ideology = fascism
     			popularity = -0.10
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			kill_country_leader = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
 			promote_character = {
 				character = MEN_nima_odsor
 				ideology = the_peoples_tutelage
@@ -4304,12 +4254,13 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			add_stability = 0.05
 			add_political_power = 15
+			add_stability = 0.05
 			add_popularity = {
     			ideology = fascism
     			popularity = -0.05
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			remove_country_leader_trait = subservient_ultranationalist
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INTERNAL_AFFAIRS }
@@ -4381,6 +4332,7 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.05
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
 				uses = 1
@@ -4569,6 +4521,7 @@ focus_tree = {
 				ideology = communism
 				popularity = 0.05
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			effect_tooltip = { # Tooltip
 				create_corps_commander = {
 					name = "Ulaankhüü"
@@ -4589,10 +4542,12 @@ focus_tree = {
 					traits = {}
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_military_high_command
 			show_ideas_tooltip = MEN_ulanhu
+			custom_effect_tooltip = generic_skip_one_line_tt
 			show_ideas_tooltip = MEN_serengdongrub_army
-			custom_effect_tooltip = r56_newline
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = MEN_cooperation_with_the_communists
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_INTERNAL_AFFAIRS }
@@ -4631,6 +4586,7 @@ focus_tree = {
 				popularity = -0.10
 			}
 			add_stability = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
 			deactivate_advisor = MEN_serengdongrub
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_MILITARY_CHARACTER }
@@ -4806,6 +4762,17 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			add_political_power = -15
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_opinion_modifier = {
+				target = CHI
+				modifier = medium_increase
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -4820,15 +4787,6 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			}
-			add_political_power = -15
-			add_popularity = {
-				ideology = democratic
-				popularity = 0.05
-			}
-			add_opinion_modifier = {
-				target = CHI
-				modifier = medium_increase
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_INDUSTRY }
@@ -4856,6 +4814,7 @@ focus_tree = {
 				popularity = 0.15
 			}
 			add_political_power = 75
+			custom_effect_tooltip = generic_skip_one_line_tt
 			set_politics = {
 				ruling_party = democratic
 				elections_allowed = yes
@@ -4913,37 +4872,38 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
 			add_ideas = SIA_state_invervention
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -5079,6 +5039,14 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_political_power = -35
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = LAT_liberal_welfare
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -5094,12 +5062,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_political_power = -35
-			add_popularity = {
-				ideology = democratic
-				popularity = 0.05
-			}
-			add_ideas = LAT_liberal_welfare
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_INDUSTRY }
 	}
@@ -5153,6 +5115,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_stability = 0.05
+			add_timed_idea = {
+				idea = GEN_Anti_Invasion_I
+				days = 180
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			611 = {
 				add_building_construction = {
 					type = bunker
@@ -5176,10 +5143,6 @@ focus_tree = {
 					instant_build = yes
 					province = 6904
 				}
-			}
-			add_timed_idea = {
-				idea = GEN_Anti_Invasion_I
-				days = 60
 			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY }
@@ -5591,6 +5554,7 @@ focus_tree = {
 				ideology = communism
 				popularity = 0.05
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_opinion_modifier = {
 				target = SOV
 				modifier = medium_increase
@@ -5650,6 +5614,7 @@ focus_tree = {
 				ideology = communism
 				popularity = 0.05
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_opinion_modifier = {
 				target = PRC
 				modifier = medium_increase
@@ -5694,6 +5659,7 @@ focus_tree = {
 				category = land_doctrine
 				name = MEN_establish_peasant_militias
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_timed_idea = {
 				idea = MEN_communist_peasant_millitas
 				days = 180
@@ -5765,6 +5731,7 @@ focus_tree = {
 				ideology = communism
 				popularity = 0.05
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			delete_unit = {} ### DELETE ALL UNITS FOR BALANCE
 			start_civil_war = {
 				ideology = neutrality
@@ -5790,6 +5757,7 @@ focus_tree = {
 				}
 			}
 			effect_tooltip = { # Tooltip
+				custom_effect_tooltip = generic_skip_one_line_tt
 				create_corps_commander = {
 					name = "Ulaankhüü"
 					skill = 1
@@ -5836,12 +5804,14 @@ focus_tree = {
 								}
 							}
 						}
+						custom_effect_tooltip = generic_skip_one_line_tt
 						MON = {
 							add_opinion_modifier = {
 								target = MEN
 								modifier = MEN_shared_struggle
 							}
 						}
+						custom_effect_tooltip = generic_skip_one_line_tt
 						add_opinion_modifier = {
 							target = MON
 							modifier = MEN_shared_struggle
@@ -6156,6 +6126,7 @@ focus_tree = {
 					modifier = large_increase
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_opinion_modifier = {
 				target = SOV
 				modifier = large_increase
@@ -6203,20 +6174,6 @@ focus_tree = {
 				ideology = democratic
 				popularity = 0.05
 			}
-			add_country_leader_role = {
-				character = MEN_serengdongrub
-				promote_leader = yes
-				country_leader = {
-					ideology=marxism
-					expire = "1965.1.1.12"
-					traits={ 
-						MEN_militant_communist MEN_chinese_cooperation_proponent
-					}
-				}
-			}
-			hidden_effect = {
-				deactivate_advisor = MEN_serengdongrub
-			}
 			every_other_country = {
 				limit = {
 					OR = {
@@ -6234,6 +6191,21 @@ focus_tree = {
 						modifier = large_increase
 					}
 				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_country_leader_role = {
+				character = MEN_serengdongrub
+				promote_leader = yes
+				country_leader = {
+					ideology=marxism
+					expire = "1965.1.1.12"
+					traits={ 
+						MEN_militant_communist MEN_chinese_cooperation_proponent
+					}
+				}
+			}
+			hidden_effect = {
+				deactivate_advisor = MEN_serengdongrub
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_POLITICAL_CHARACTER }
@@ -6281,6 +6253,22 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			# kinyarii - should send event instead. if soviets reject, could seek aid from another communist power if one exists
+			add_political_power = -15
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = MEN_request_soviet_industrial_aid
+				bonus = 0.5
+				uses = 1
+				ahead_reduction = 0.5
+				category = industry
+				category = electronics
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -6295,19 +6283,6 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			}
-			add_political_power = -15
-			add_popularity = {
-				ideology = communism
-				popularity = 0.05
-			}
-			add_tech_bonus = {
-				name = MEN_request_soviet_industrial_aid
-				bonus = 0.5
-				uses = 1
-				ahead_reduction = 0.5
-				category = industry
-				category = electronics
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
@@ -6359,16 +6334,6 @@ focus_tree = {
 				ideology = communism
 				popularity = 0.05
 			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 1000
-				producer = SOV
-			}
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = 100
-				producer = SOV
-			}
 			add_tech_bonus = {
 				name = MEN_soviet_mongol_military_cooperation
 				bonus = 0.5
@@ -6376,6 +6341,18 @@ focus_tree = {
 				ahead_reduction = 0.5
 				category = infantry_weapons
 				category = artillery
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = SOV
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 100
+				producer = SOV
 			}
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_RESEARCH FOCUS_FILTER_INTERNAL_AFFAIRS }
@@ -6412,6 +6389,7 @@ focus_tree = {
 				ideology = fascism
 				popularity = -0.10
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_timed_idea = {
 				idea = SIA_anti_fascism
 				days = 180
@@ -6619,15 +6597,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_war_support = 0.05
-			every_state = {
-				limit = {
-					OR = {
-						state = 621
-						state = 746
-					}
-				}
-				add_core_of = ROOT
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			every_other_country = {
 				limit = {
 					OR = {
@@ -6643,6 +6613,16 @@ focus_tree = {
 						generator = { 621 746 }
 					}
 				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_state = {
+				limit = {
+					OR = {
+						state = 621
+						state = 746
+					}
+				}
+				add_core_of = ROOT
 			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
@@ -6764,6 +6744,7 @@ focus_tree = {
 				target = PRC
 				expire = 0
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			PRC = {
 				add_opinion_modifier = {
 					target = MEN
@@ -7012,12 +6993,14 @@ focus_tree = {
 				target = JAP
 				expire = 0
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			JAP = {
 				add_opinion_modifier = {
 					target = MEN
 					modifier = hostile_status
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_timed_idea = {
 				idea = MEN_anti_japanese_stratagems_idea
 				days = 180
@@ -7111,6 +7094,7 @@ focus_tree = {
 				idea = MEN_funding_chinese_communists
 				days = 730
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			CHI = {
 				add_timed_idea = {
 					idea = MEN_mongolian_funds_for_chinese_communists
@@ -7169,6 +7153,7 @@ focus_tree = {
 				target = CHI
 				expire = 0
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			CHI = {
 				add_opinion_modifier = {
 					target = MEN
@@ -7246,8 +7231,16 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			if = {
+				limit = { NOT = { has_global_flag = form_greater_mongolia_flag } }
+				effect_tooltip = {
+					unlock_decision_tooltip = MON_unify_greater_mongolia
+					custom_effect_tooltip = generic_skip_one_line_tt
+				}
+			}
 			add_political_power = 75
-			add_stability = 0.10
+			add_stability = 0.1
+			custom_effect_tooltip = generic_skip_one_line_tt
 			every_state = {
 				limit = {
 					NOT = {
@@ -7263,16 +7256,6 @@ focus_tree = {
 					}
 				}
 				add_core_of = ROOT
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_global_flag = form_greater_mongolia_flag
-					}
-				}
-				effect_tooltip = {
-					unlock_decision_tooltip = MON_unify_greater_mongolia
-				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_ANNEXATION }
@@ -7322,27 +7305,22 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			MON = {
-				country_event = { id = men.20 hours = 12 }
-			}
+			MON = { country_event = { id = men.20 hours = 12 } }
 			custom_effect_tooltip = r56_possible_event_effects
 			effect_tooltip = {
 				annex_country = {
 					target = MON 
 					transfer_troops = yes
 				}
-				MON = {
-					every_unit_leader = {
-						set_nationality = MEN
-					}
-				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				set_cosmetic_tag = MON
+				custom_effect_tooltip = generic_skip_one_line_tt
+				MON = { every_unit_leader = { set_nationality = MEN } }
+				custom_effect_tooltip = generic_skip_one_line_tt
 				every_state = {
-					limit = {
-						is_core_of = MON 
-					}
+					limit = { is_core_of = MON }
 					add_core_of = FROM
 				}
-				set_cosmetic_tag = MON
 			}
 			custom_effect_tooltip = r56_alternative_event_effects
 			effect_tooltip = {
@@ -7413,16 +7391,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_war_support = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			create_wargoal = {
+				target = MON
+				type = annex_everything
+				expire = 0
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			every_state = {
 				limit = {
 					is_core_of = MON
 				}
 				add_core_of = ROOT
-			}
-			create_wargoal = {
-				target = MON
-				type = annex_everything
-				expire = 0
 			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
@@ -7472,12 +7452,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_war_support = 0.05
-			every_state = {
-				limit = {
-					is_core_of = TAN
-				}
-				add_core_of = ROOT
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			every_other_country = {
 				limit = {
 					any_owned_state = {
@@ -7495,6 +7470,13 @@ focus_tree = {
 						expire = 0
 					}
 				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_state = {
+				limit = {
+					is_core_of = TAN
+				}
+				add_core_of = ROOT
 			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
@@ -7534,19 +7516,21 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_stability = 0.05
+			add_ideas = CHI_chinese_unity_2
+			custom_effect_tooltip = generic_skip_one_line_tt
 			PRC = {
 				add_opinion_modifier = {
 					target = CHI
 					modifier = medium_increase
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			CHI = {
 				add_opinion_modifier = {
 					target = PRC
 					modifier = medium_increase
 				}
 			}
-			add_ideas = CHI_chinese_unity_2
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
@@ -7577,40 +7561,41 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
 			add_stability = -0.05
 			add_popularity = {
 				ideology = communism
 				popularity = 0.1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_INDUSTRY }
@@ -7650,6 +7635,13 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 35
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -7664,12 +7656,6 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			}
-			add_stability = 0.05
-			add_political_power = 35
-			add_popularity = {
-				ideology = democratic
-				popularity = 0.05
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_INDUSTRY }
@@ -7707,6 +7693,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 15
 			add_manpower = 10000
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = MEN_chinese_mongolian_military
 		}
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER FOCUS_FILTER_MILITARY_IMPROVEMENT }
@@ -7851,6 +7838,7 @@ focus_tree = {
 				ideology = communism
 				popularity = 0.10
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			swap_ideas = {
 				remove_idea = MEN_beacon_of_resistance_idea
 				add_idea = MEN_the_honour_of_death_idea

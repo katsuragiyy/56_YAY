@@ -11,7 +11,6 @@
  MEN_zhu_shifu:0 "Zhu Shifu"
  MEN_unenbayal:0 "Ünenbayal"
  MEN_lu_jingru:0 "Lu Jingru"
- MEN_altan_ochir:0 "Altan-Ochir"
  MEN_nuoligarzabu:0 "Nuoligarzabu"
  MEN_basar_gadan:0 "Basar Gadan"
  MEN_generic_head_of_intelligence:0 "Bai Guangying"
@@ -113,6 +112,7 @@
 
  MEN_the_spirit_of_genghis:0 "The Spirit of Genghis"
  MEN_the_spirit_of_genghis_desc:0 ""
+ MEN_spirit_of_genghis_improved: "Spirit of Genghis"
 
  MEN_realize_the_zenrin_kyokai:0 "Utilize the Zenrin Kyokai"
  MEN_realize_the_zenrin_kyokai_desc:0 ""
@@ -622,8 +622,8 @@
  MEN_prevent_destabilization:0 "Will §Yprevent§! the §YJapanese§! from further §Rdestabillizing§! our §Ygovernment§!."
  MEN_nima_odsor_assassinated:0 "§YNima-odsor§! has been §Yassassinated§!."
  MEN_nima_odsor_not_assassinated:0 "§YNima-odsor's§! assassination has been §Yfoiled§!."
- MEN_remove_mongol_raids:0 "Will be §GRemoved§! once we §YAchieve 3 Victories or Stalemates§! against §YMongolian Raiders§! or §YMongolia§! has §YOpinion§! of us over or equal to §Y60§!."
- MEN_masters_of_the_steppe_tt:0 "Enables §HSteppe Warfare§!:\n    §HCavalry§!:\n        §HPlains§!:\n            Attack: §G+10%§!\n            Movement: §G+10%§!\n        §HHills§!:\n            Attack: §G+5%§!\n            Movement: §G+5%§!"
+ MEN_remove_mongol_raids:0 "Will be §GRemoved§! once §YMongolia§! has an §YOpinion§! of us that's over or equal to §Y60§!."
+ MEN_masters_of_the_steppe_tt:0 "\nEnables §HSteppe Warfare§!:\n    §HCavalry§!:\n        §HPlains§!:\n            Attack: §G+10%§!\n            Movement: §G+10%§!\n        §HHills§!:\n            Attack: §G+5%§!\n            Movement: §G+5%§!"
  MEN_create_han_army:0 "Create §Y2 Dà Hàn Zhìyuàn Lü§! divisions in §Y[THIS.GetName]§!."
  MEN_suiyuan_ended:0 "The §YSuiyuan Campaign§! has ended."
  MEN_effects_if_border_conflict_is_won:0 "\n§YEffects if border war is won:§!"
@@ -645,3 +645,10 @@
  r56_MEN_prioritize_industrialization_event_tt:0 "§YCompleting§! Industrial §YNational Focuses§! while we have the '§Y$MEN_rapid_industrialization$§!§W'§! §YNational Spirit§! will grant additional §YEffects.§!"
  MEN_rapid_industrialization_refresh_190_days_tt:0 "'§Y$MEN_rapid_industrialization$§!§W'§! will be §YRenewed§! for another §Y190§! Day(s)"
  MEN_prioritize_industrialization_bonus_effect_tt:0 "§YAdditional '$MEN_rapid_industrialization$' Effect:§!"
+
+ # vanilla improvements/additions
+ MEN_pailingmiao_council_idea_desc: "The Mongol Local Autonomy Political Affairs Committee, otherwise known as the Pailingmiao Council, was formed after a visit by Huang Shaohong in 1934 to the Pailingmiao province following the Japanese annexation of Rehe in Manchuria. In an attempt to secure the Mongol's loyalty to the central government in Nanjing, and to prevent the Japanese from encroaching further onto Chinese soil, the local Mongol political leaders were promised limited autonomy, in what would become the Pailingmiao Council. However, with further Chinese losses to Japan and Japan's growing influence in the Mongol lands despite repeated Chinese attempts at halting their advances, the council's fate remains uncertain."
+
+ MEN_mongol_banners_idea_desc: "Many traditional Mongol banners have pledged their allegiance to our regime. In doing so, they allow us to utilise their regional armies to our advantage."
+
+ MEN_stretched_administration_idea_desc: "Tho small, our nation is stretched to its limits in administration. Large swats of our land are controlled by the local Mongol banners, with some who oppose our regime, while the northern section of our nation remains under the sphere of the Japanese. These administrative burdens are stretching our nation thin."

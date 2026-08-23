@@ -57,7 +57,7 @@ ideologies = {
 		rules = {
 			can_create_collaboration_government = no
 			can_declare_war_on_same_ideology = no
-			can_force_government = no
+			can_force_government = yes
 			can_send_volunteers = no
 			can_puppet = no
 			can_lower_tension = yes
@@ -86,11 +86,14 @@ ideologies = {
 		}
 
 		faction_modifiers = {
-			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion.
+			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
 		}
-
-		ai_democratic = yes #Uses the Democratic AI behaviour.
+		ai_democratic = yes # uses the democratic AI behaviour
+		ai_ideology_wanted_units_factor = 1.10 # multiplies threat impact on number of desired units by this value, defaults to 1.0. If at war, the larger of this value and NDefines::NAI::WANTED_UNITS_WAR_THREAT_FACTOR will be used instead
+		
+		ai_give_core_state_control_threshold = 0 # Extra threshold value added to DIPLOMATIC_ACTION_PROPOSE_SCORE for this ideology to give back core state control to other country
 	}
+
 
 	communism = {
 
@@ -166,8 +169,9 @@ ideologies = {
 		faction_impact_on_world_tension = 0.5
 
 		ai_communist = yes # uses the commie AI behaviour
+		ai_ideology_wanted_units_factor = 1.20
 		rules = {
-			can_force_government = no
+			can_force_government = yes
 			can_send_volunteers = yes
 			can_puppet = yes
 		}
@@ -188,6 +192,8 @@ ideologies = {
 		faction_modifiers = {
 
 		}
+
+		ai_give_core_state_control_threshold = 10
 	}
 
 	fascism = {
@@ -252,7 +258,7 @@ ideologies = {
 		faction_impact_on_world_tension = 1.0
 
 		rules = {
-			can_force_government = no
+			can_force_government = yes
 			can_send_volunteers = yes
 			can_puppet = yes
 		}
@@ -270,14 +276,17 @@ ideologies = {
 			lend_lease_tension = 0.50
 		}
 
-		ai_fascist = yes #Uses the Fascist AI behaviour.
+		ai_fascist = yes # uses the fascist AI behaviour
+		ai_ideology_wanted_units_factor = 1.65
+		
+		ai_give_core_state_control_threshold = 10000
 	}
 
 	neutrality = {
 
 		types = {
 
-			despotism = {
+			despotism  = {
 			}
 
 			conservatism_n = {
@@ -379,21 +388,23 @@ ideologies = {
 		faction_impact_on_world_tension = 0.1
 
 		rules = {
-			can_force_government = no
+			can_force_government = yes
 			can_puppet = yes
 			can_send_volunteers = no
 		}
 
+		# 56
 		can_host_government_in_exile = yes
-
+		can_collaborate = yes
+		##
 		modifiers = {
-			#increased_influence_factor = 0.3 #30% easier to influence.
-			generate_wargoal_tension = 0.40 #Was 50
+			#increased_influence_factor = 0.3 #30% easier to influence
+			generate_wargoal_tension = 0.5
 			join_faction_tension = 0.4
-			lend_lease_tension = 0.2 #Was 25
-			guarantee_tension = 0.35 #Was 40
-			drift_defence_factor = -0.45 #Was 40
-			#party_popularity_stability_factor = 0.05 #upside
+			lend_lease_tension = 0.6
+			send_volunteers_tension = 0.4
+			guarantee_tension = 0.35 #56 - Was 40
+			drift_defence_factor = -0.3
 			civilian_intel_to_others = 20.0
 			army_intel_to_others = 10.0
 			navy_intel_to_others = 20.0
@@ -402,9 +413,10 @@ ideologies = {
 
 		faction_modifiers = {
 		}
-		#can_be_boosted = no
-		can_collaborate = yes
 
-		ai_neutral = yes #Uses the Non-Aligned AI behaviour.
+		ai_neutral = yes #
+		ai_ideology_wanted_units_factor = 1.15
+		
+		ai_give_core_state_control_threshold = 10000
 	}
 }

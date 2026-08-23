@@ -28,7 +28,8 @@ state = {
 		}
 
 		victory_points = {
-			10397 3 # Zhangbei
+			10397 1 # Zhangbei
+			# Can be increased in decisions if u decide to move the capital
 		}
 
 		#victory_points = {

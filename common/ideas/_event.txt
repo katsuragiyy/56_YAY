@@ -4,12 +4,21 @@ ideas = {
 			allowed = {
 				always = no # Triggered via tech
 			}
+			cancel = {
+				NOT = {
+					has_mastery_level = {
+						amount = 5
+						sub_doctrine = marines_1
+					}
+				}
+			}
 			picture = generic_fascism_drift_bonus
 			equipment_bonus = {
 				amphibious_mechanized_equipment = {
 					build_cost_ic = -0.15 instant = yes
 				}
 			}
+
 			ai_will_do = {
 				factor = 0
 			}
@@ -29,17 +38,14 @@ ideas = {
 				conscription = 0.002
 				fascism_drift = 0.05
 			}
-			cancel = {
-				has_government = fascism
-			}
 	
-			allowed_civil_war = {
-				has_government = fascism
-			}
-
 			ai_will_do = {
 				factor = 0
 			}
+			# 56
+			cancel = { has_government = fascism }
+			allowed_civil_war = { has_government = fascism }
+			##
 		}
 	
 		communist_partisans_recruiting = {
@@ -54,17 +60,14 @@ ideas = {
 				conscription = -0.002
 				communism_drift = 0.05
 			}
-			cancel = {
-				has_government = communism
-			}
 	
-			allowed_civil_war = {
-				has_government = communism
-			}
-
 			ai_will_do = {
 				factor = 0
 			}
+			# 56
+			cancel = { has_government = fascism }
+			allowed_civil_war = { has_government = fascism }
+			##
 		}
 	
 		democratic_opposition_voicing_protests = {
@@ -76,20 +79,17 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 			
 			modifier = {
-				political_power_factor = -0.5
+				political_power_factor = -0.2
 				democratic_drift = 0.05
 			}
-			cancel = {
-				has_government = democratic
-			}
 	
-			allowed_civil_war = {
-				has_government = democratic
-			}
-
 			ai_will_do = {
 				factor = 0
 			}
+			# 56
+			cancel = { has_government = democratic }
+			allowed_civil_war = { has_government = democratic }
+			##
 		}
 
 		fascist_revolutionaries = {
@@ -137,17 +137,16 @@ ideas = {
 			}
 		}
 
+
 		fascism_defeated = {
 			removal_cost = -1
 			
 			allowed = {
 				always = no # Triggered via event
 			}
-			cancel = {
-				has_government = fascism
-			}
 
 			picture = generic_democratic_drift_bonus
+			cancel = { has_government = fascism } # 56
 			
 			modifier = {
 				stability_factor = 0.1
@@ -160,14 +159,27 @@ ideas = {
 			allowed = {
 				always = no # Triggered via event
 			}
-			cancel = {
-				has_government = communism
-			}
 
 			picture = generic_democratic_drift_bonus
+			cancel = { has_government = communism } # 56
 			
 			modifier = {
 				stability_factor = 0.1
+			}
+		}
+		
+		reign_of_terror = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = generic_intel_bonus
+			
+			modifier = {
+				political_power_factor = 0.2
+				stability_weekly = 0.005
 			}
 		}
 
@@ -182,11 +194,13 @@ ideas = {
 			allowed = {
 				always = no # Triggered via event
 			}
-			cancel = {
-				has_government = communism
+	
+			ai_will_do = {
+				factor = 0
 			}
 
 			picture = anti_soviet_pact
+			cancel = { has_government = communism } # 56
 		}
 
 		anti_soviet_pact_refused_call = {
@@ -214,16 +228,27 @@ ideas = {
 			allowed = {
 				always = no
 			}
-			cancel = {
-				has_government = fascism
-			}
-
 			removal_cost = -1
 
 			picture = generic_democratic_drift_bonus
+			cancel = { has_government = fascism } # 56
 			
 			modifier = {
 				fascism_acceptance = -50
+			}
+		}
+		
+		shattered_government = {
+			
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				stability_factor = -0.1
 			}
 		}
 		
@@ -241,7 +266,7 @@ ideas = {
 				war_support_factor = -0.1
 			}
 		}
-
+		
 		cruiser_submarine_specialization = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -448,5 +473,6 @@ ideas = {
 				political_power_cost = 0.15
 			}
 		}
+		
 	}
 }

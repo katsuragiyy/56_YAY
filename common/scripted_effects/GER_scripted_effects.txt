@@ -356,10 +356,13 @@ MR_pact_transfer_state_effect = {
 			limit = {
 				OR = {
 					has_global_flag = LIT_gets_vilnius
-					LIT = { controls_state = 784 }
 					LIT = { is_in_faction_with = SOU }
+					LIT = { controls_state = 784 }
 				}
-				LIT = { exists = yes }
+				LIT = {
+					exists = yes
+					has_capitulated = no
+				}
 			}
 			LIT = { transfer_state = 784 }
 		}
@@ -508,7 +511,10 @@ MR_pact_transfer_faction_state_effect = {
 					has_global_flag = LIT_gets_vilnius
 					LIT = { controls_state = 784 }
 				}
-				LIT = { exists = yes }
+				LIT = {
+					exists = yes
+					has_capitulated = no
+				}
 			}
 			LIT = { transfer_state = 784 }
 		}
@@ -1367,7 +1373,7 @@ GER_stop_rearmament = {
 		effect_tooltip = { #Show the consequences once the MEFO Bills have been paid
 			custom_effect_tooltip = GER_after_mefo_bills_payment_tt
 			add_to_variable = { #These numbers must match the once set in GER_mefo_bills_ended idea 
-				GER_industrial_consumer_goods_factor = 0.75
+				GER_industrial_consumer_goods_factor = GER_economic_crash_consumer_goods
 				tooltip = consumer_goods_factor_tt
 			}
 		}
@@ -1439,6 +1445,15 @@ GER_autarky_achieved_effects = {
 			remove_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier }
 			add_dynamic_modifier = { modifier = GER_wirtschaftswunder_modifier }
 		}
+		if = {
+			limit = { 
+				check_variable = { var = GER_industrial_consumer_goods_factor value = 1 compare = greater_than_or_equals }
+			}
+			clr_country_flag = GER_mefo_bills_penalty_flag #This flag is always set when reaching 100% CGFF
+			subtract_from_variable = { GER_industrial_consumer_goods_expected_value = GER_expected_consumer_goods_penalty }
+			add_to_variable = { GER_industrial_industrial_capacity_factory = GER_factory_output_penalty }
+			add_to_variable = { GER_industrial_industrial_capacity_dockyard = GER_dockyard_output_penalty }
+		}
 		custom_effect_tooltip = GER_replace_economy_of_conquest_with_wirtschaftswunder_tt
 	}
 	else_if = {
@@ -1458,7 +1473,7 @@ GER_autarky_achieved_effects = {
 	}
 	add_to_variable = {
 		GER_industrial_production_speed_dockyard_factor = 0.05
-		tooltip = industrial_capacity_factory_tt
+		tooltip = production_speed_dockyard_factor_tt
 	}
 	add_to_variable = {
 		GER_industrial_industrial_capacity_factory = 0.05
@@ -1499,7 +1514,7 @@ GER_modify_industrial_modifier = {
 		}
 		custom_effect_tooltip = GER_modify_wirtschaftswunder_modifier_tt
 	}
-	else_if = {
+	else_if = { # 56?
 		limit = { has_dynamic_modifier = { modifier = GER_eco_scripted }}
 		custom_effect_tooltip = GER_modify_eco_scripted_tt
 	}
@@ -1735,7 +1750,7 @@ GER_pay_back_mefo_bills = { #TODO_Danne see if this can be simplified!
 }
 
 #Should only be used with Anschluss and similar situations!!
-GER_seize_gold_reserves_in_europe_peacefully = { #This will only work when ROOT is Germany, like in Events and targeted Decisions #TODO_Danne Add this to relevent events in alt-historical branches!
+GER_seize_gold_reserves_in_europe_peacefully = { #This will only work when ROOT is Germany, like in Events and targeted Decisions 
 	if = {
 		limit = { 
 			OR = {
@@ -1793,6 +1808,25 @@ GER_seize_gold_reserves_in_europe_peacefully = { #This will only work when ROOT 
 				GER_reduce_mefo_bills_penalty = yes
 			}
 		}
+	}
+}
+
+GER_add_to_seize_gold_target_states_array = {
+	if = {
+		limit = {
+			GER = {
+				OR = {
+					has_dynamic_modifier = { modifier = GER_mefo_bills_modifier }
+					has_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier }	
+				}
+			}
+		}
+		add_to_array = {
+			array = GER.GER_seize_gold_target_states_array
+			value = THIS
+		}
+		log = "[THIS.GetName] was added to Array"
+		set_state_flag = GER_seize_gold_reserves_state_flag
 	}
 }
 
@@ -2178,6 +2212,15 @@ GER_setup_GER_asia_sphere_of_influence_array = {
 			IF = {
 				limit = {
 					OR = {
+						#Islands
+						state = 712 # Cocos
+						state = 711 # Christmas
+						state = 710 # Diego Garcia
+						state = 709 # Seychelles
+						state = 707 # Mauritius
+						state = 713 # Kerguelen
+						state = 706 # Reunion
+
 						is_core_of = AST
 						is_core_of = NZL
 						is_core_of = MAL
@@ -2194,15 +2237,6 @@ GER_setup_GER_asia_sphere_of_influence_array = {
 						is_core_of = RAP
 						is_core_of = SRL
 						is_core_of = MLD
-
-						#Islands
-						state = 712 # Cocos
-						state = 711 # Christmas
-						state = 710 # Diego Garcia
-						state = 709 # Seychelles
-						state = 707 # Mauritius
-						state = 713 # Kerguelen
-						state = 706 # Reunion
 					}
 				}
 
@@ -2363,33 +2397,45 @@ GER_setup_faction_wide_aoe_effects_root = {
 }
 
 GER_one_more_member_increase_rnd_program_strength = {
-		
+	add_to_variable = { #always add a faction member
+		GER_rnd_programs_modifier_allies_count = 1
+	}
 	IF = {
 		limit = {
-			check_variable = {
+			check_variable = { #only add RnD bonus if you haven't reached 10 faction member yet
 				var = GER_rnd_programs_modifier_allies_count
 				value = 10
 				compare = less_than
 			}	
 		}
-
 		add_to_variable = { 
 			GER_rnd_programs_modifier_research_speed_factor = 0.01
 		}
-
-		add_to_variable = { 
-			GER_rnd_programs_modifier_allies_count = 1
-		}
 	}
-
 }
 
 GER_one_less_member_decrease_rnd_program_strength = {
-		
-	add_to_variable = { 
-		GER_rnd_programs_modifier_research_speed_factor = -0.01
+	subtract_from_variable = { #always remove faction members
+		GER_rnd_programs_modifier_allies_count = 1
 	}
+	if = {
+		limit = {
+			check_variable = { #Gotta have at least one ally
+				var = GER_rnd_programs_modifier_allies_count
+				value = 1
+				compare = greater_than
+			}	
+			check_variable = { #Only start reducing RnD bonus if you go below 10 allies
+				var = GER_rnd_programs_modifier_allies_count
+				value = 10
+				compare = less_than
+			}	
+		}
+		add_to_variable = { 
+			GER_rnd_programs_modifier_research_speed_factor = -0.01
+		}
 
+	}
 }
 
 

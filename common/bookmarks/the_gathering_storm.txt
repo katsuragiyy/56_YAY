@@ -628,6 +628,7 @@ bookmarks = {
                 MEN_kwantungs_invisible_hand
                 MEN_the_long_winter
 				MEN_disorganized_military
+				MEN_pailingmiao_council_idea
             }
             focuses = {
                 MEN_strengthen_ties_with_japan

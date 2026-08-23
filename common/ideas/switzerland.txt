@@ -101,10 +101,8 @@ ideas = {
 		SWI_banned_foreign_nazi_propaganda_idea = {
 			allowed = { 
 				original_tag = SWI 
+				NOT = { has_government = fascism }
 			} 
-			cancel = { # 56
-			   has_government = fascism
-			}
 			removal_cost = -1
 			picture = generic_fascism_banned
 
@@ -182,7 +180,7 @@ ideas = {
 			modifier = {
 				production_speed_bunker_factor = 0.15
 				training_time_factor = -0.1
-				army_core_defence_factor = 0.1
+				army_core_defence_factor = 0.1 
 				army_org_factor = 0.15
 				army_org_regain = 0.1
 			}
@@ -270,9 +268,8 @@ ideas = {
 				operative_slot = 1
 				intel_network_gain_factor = 0.1
 			}			
-		}
-		
-		SWI_expanded_spy_network_idea_2 = {
+		}		
+		SWI_expanded_spy_network_idea_2 = { # 56
 			name = SWI_expanded_spy_network_idea
 			picture = generic_spy_coup
 			allowed = { original_tag = SWI }
@@ -766,7 +763,7 @@ ideas = {
 ##########################################################################
 ##################     Militia/Military Readiness     ####################
 ##########################################################################
-		SWI_inactive_citizen_militias = {
+		SWI_inactive_citizen_militias = { # 56
 			allowed = {
 				tag = SWI 
 			}
@@ -809,7 +806,7 @@ ideas = {
 			removal_cost = -1 
 			picture = SOV_third_five_year_plan_civilian
 			modifier = {
-				consumer_goods_factor = -0.15
+				consumer_goods_factor = -0.15 
 				production_speed_buildings_factor = 0.1
 			}
 		}

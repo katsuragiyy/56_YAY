@@ -84,12 +84,10 @@ ideas = {
 			picture = MEN_kwantungs_invisible_hand
 			
 			modifier = {
-				offensive_war_stability_factor = 0.05
 				conscription = 0.01
 				stability_factor = -0.15
 				political_power_factor = -0.10
 				fascism_drift = 0.03
-				grand_battleplan_mastery_gain_factor = 0.05
 				experience_gain_army_factor = 0.10
 			}
 
@@ -263,12 +261,10 @@ ideas = {
 			picture = MEN_kwantungs_invisible_hand
 			
 			modifier = {
-				offensive_war_stability_factor = 0.05
 				conscription = 0.01
 				stability_factor = -0.10
 				political_power_factor = -0.10
 				fascism_drift = 0.05
-				grand_battleplan_mastery_gain_factor = 0.05
 				experience_gain_army_factor = 0.10
 				drift_defence_factor = 0.10
 			}
@@ -327,12 +323,10 @@ ideas = {
 			picture = MEN_kwantungs_invisible_hand
 			
 			modifier = {
-				offensive_war_stability_factor = 0.10
 				conscription = 0.02
 				stability_factor = -0.05
 				political_power_factor = -0.15
 				fascism_drift = 0.05
-				grand_battleplan_mastery_gain_factor = 0.05
 				experience_gain_army_factor = 0.10
 				drift_defence_factor = 0.15
 				license_subject_master_purchase_cost = -1
@@ -392,12 +386,10 @@ ideas = {
 			
 			modifier = {
 				autonomy_gain_global_factor = -0.50
-				offensive_war_stability_factor = 0.15
 				conscription_factor = 0.05
 				conscription = 0.02
 				political_power_factor = -0.25
 				fascism_drift = 0.10
-				grand_battleplan_mastery_gain_factor = 0.05
 				experience_gain_army_factor = 0.10
 				drift_defence_factor = 0.15
 				army_attack_factor = 0.05
@@ -462,7 +454,6 @@ ideas = {
 				conscription = 0.01
 				stability_factor = -0.05
 				fascism_drift = 0.03
-				grand_battleplan_mastery_gain_factor = 0.05
 				experience_gain_army_factor = 0.10
 				drift_defence_factor = 0.10
 			}
@@ -525,7 +516,6 @@ ideas = {
 				fascism_drift = 0.01
 				drift_defence_factor = 0.05
 				war_support_factor = 0.05
-				defensive_war_stability_factor = 0.05
 			}
 
 			targeted_modifier = {
@@ -585,7 +575,6 @@ ideas = {
 				neutrality_drift = 0.01
 				drift_defence_factor = 0.15
 				war_support_factor = 0.10
-				defensive_war_stability_factor = 0.10
 			}
 
 			targeted_modifier = {
@@ -647,7 +636,6 @@ ideas = {
 				neutrality_drift = 0.03
 				drift_defence_factor = 0.15
 				war_support_factor = 0.15
-				defensive_war_stability_factor = 0.10
 			}
         }
 
@@ -666,14 +654,12 @@ ideas = {
 			picture = MEN_the_long_winter
 			
 			modifier = {
-				production_speed_buildings_factor = -0.25
-				industrial_capacity_factory = -0.25
-				stability_factor = -0.1
+				production_speed_buildings_factor = -0.15
+				industrial_capacity_factory = -0.1
 				stability_weekly = -0.005
-				war_support_factor = -0.05
-				monthly_population = -0.80
-				conscription_factor = -0.25
-				supply_consumption_factor = 0.5
+				monthly_population = -0.5
+				conscription_factor = -0.2
+				supply_consumption_factor = 0.25
 			}
 
 			on_remove = {
@@ -702,14 +688,10 @@ ideas = {
 			picture = AFG_economy_in_ruins
 			
 			modifier = {
-				production_speed_buildings_factor = -0.10
-				industrial_capacity_factory = -0.10
+				production_speed_buildings_factor = -0.05
 				stability_factor = -0.05
-				stability_weekly = -0.001
-				war_support_factor = -0.05
-				monthly_population = -0.25
-				conscription_factor = -0.15
-				political_power_factor = -0.05
+				monthly_population = -0.1
+				conscription_factor = -0.1
 				consumer_goods_factor = 0.15
 				production_factory_efficiency_gain_factor = -0.10
 			}
@@ -733,13 +715,11 @@ ideas = {
 			
 			modifier = {
 				production_speed_buildings_factor = -0.05
-				industrial_capacity_factory = -0.10
-				war_support_factor = -0.10
-				monthly_population = -0.20
-				conscription_factor = -0.15
-				political_power_factor = -0.15
+				stability_factor = -0.05
+				monthly_population = -0.1
+				conscription_factor = -0.1
 				consumer_goods_factor = 0.15
-				production_factory_efficiency_gain_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.10
 			}
         }
 
@@ -757,7 +737,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = POL_the_peasants_strike
+			picture = MEN_communist_revolutionaries
 			
 			modifier = {
 				communism_drift = 0.10

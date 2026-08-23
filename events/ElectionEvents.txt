@@ -33,12 +33,13 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
-			AND = {
+			AND = { # 56
 				tag = GER
 				has_completed_focus = GER_hold_new_elections
 			}
 		}
 		DEN_aat = no #Denmark has custom election events
+		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = democratic
 		NOT = {
@@ -93,12 +94,22 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
-			AND = {
+			AND = { # 56
 				tag = GER
 				has_completed_focus = GER_hold_new_elections
 			}
 		}
+		NOT = { #AUS cannot rearm no matter what the public wants under these treaties
+			AND = {
+				tag = AUS
+				OR = {
+					has_idea = AUS_treaty_of_saint_germain_en_laye
+					has_idea = AUS_revised_treaty_of_saint_germain_en_laye
+				}
+			}
+		}
 		DEN_aat = no #Denmark has custom election events
+		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = democratic
 		has_war = no
@@ -181,14 +192,15 @@ country_event = {
 				has_dlc = "Trial of Allegiance"
 				tag = BRA
 			}
-			AND = {
+			AND = { # 56
 				tag = GER
 				has_completed_focus = GER_hold_new_elections
 			}
 		}
-		NOT = { has_focus_tree = r56_portuguese_focus }
+		NOT = { has_focus_tree = r56_portuguese_focus } # 56
 		DEN_aat = no #Denmark has custom election events
 		NOR_AAT = no
+		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = democratic
 		NOT = { has_idea = fascism_defeated }
@@ -261,6 +273,11 @@ country_event = {
 				tag = BRA
 			}
 			AND = {
+				has_global_flag = ins_dlc_focus_tree # 56
+				tag = INS
+			}
+			# 56
+			AND = {
 				original_tag = LUX
 				has_country_flag = LUX_elections_starting
 			}
@@ -271,12 +288,13 @@ country_event = {
 		}
 		DEN_aat = no #Denmark has custom election events
 		NOR_AAT = no
+		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = democratic
 		NOT = { has_idea = communism_defeated }
 		communism > 0.15
 	}
-
+	
 	option = {
 		name = election.5.a
 		ai_chance = {
@@ -365,12 +383,18 @@ country_event = {
 				tag = BRA
 			}
 			AND = {
+				has_global_flag = ins_dlc_focus_tree # 56
+				tag = INS
+			}
+			# 56
+			AND = {
 				tag = GER
 				has_completed_focus = GER_hold_new_elections
 			}
 		}
 		DEN_aat = no #Denmark has custom election events
 		NOR_aat = no
+		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = democratic
 		democratic < 0.5
@@ -473,9 +497,10 @@ country_event = {
 				tag = BRA
 			}
 		}
-		NOT = { has_focus_tree = r56_portuguese_focus }
+		NOT = { has_focus_tree = r56_portuguese_focus } # 56
 		DEN_aat = no #Denmark has custom election events
 		NOR_aat = no 
+		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = democratic
 		has_country_flag = coalition_with_fascists
@@ -559,6 +584,7 @@ country_event = {
 		}
 		DEN_aat = no #Denmark has custom election events
 		NOR_aat = no 
+		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = democratic
 		has_country_flag = coalition_with_communists
@@ -630,6 +656,7 @@ country_event = {
 		is_puppet = no
 		DEN_aat = no #Denmark has custom election events
 		NOR_AAT = no 
+		AST_taog = no #Australia has custom election events
 		NOT = {
 			AND = {
 				original_tag = SPR
@@ -651,6 +678,7 @@ country_event = {
 				has_dlc = "Trial of Allegiance"
 				tag = BRA
 			}
+			# 56
 			AND = {
 				tag = GER
 				has_completed_focus = GER_hold_new_elections
@@ -697,6 +725,7 @@ country_event = {
 		is_puppet = no
 		DEN_aat = no #Denmark has custom election events
 		NOR_AAT = no 
+		AST_taog = no #Australia has custom election events
 		NOT = {
 			AND = {
 				original_tag = GRE
@@ -710,6 +739,7 @@ country_event = {
 				has_dlc = "Trial of Allegiance"
 				tag = BRA
 			}
+			# 56
 			AND = {
 				original_tag = LUX
 				has_country_flag = LUX_elections_starting
@@ -718,6 +748,7 @@ country_event = {
 				tag = GER
 				has_completed_focus = GER_hold_new_elections
 			}
+			##
 		}
 	}
 	
@@ -759,11 +790,14 @@ country_event = {
 				Tag = USA
 				date < 1949.1.1
 			}
+			# 56
 			AND = {
 				tag = GER
 				has_completed_focus = GER_hold_new_elections
 			}
 		}
+		DEN_aat = no #Denmark has custom election events
+		AST_taog = no #Australia has custom election events
 		has_government = democratic
 		has_idea_with_trait = motorized_equipment_manufacturer
 	}
@@ -815,12 +849,14 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
+			# 56
 			AND = {
 				tag = GER
 				has_completed_focus = GER_hold_new_elections
 			}
 		}
-		tag = ENG
+		tag = ENG # 56
+		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = democratic
 		has_war = yes
@@ -836,6 +872,14 @@ country_event = {
 			}
 		}
 		add_stability = -0.05
+		if =  {
+			limit = {
+				original_tag = DEN
+				has_global_flag = DEN_use_DLC_tree # 56
+			}
+			clr_country_flag = DEN_at_war_flag #This is done to be able to trigger the following event:
+			country_event = { id = denmark_political_events.3 }
+		}
 	}
 
 	option = {
@@ -879,11 +923,13 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
+			# 56
 			AND = {
 				tag = GER
 				has_completed_focus = GER_hold_new_elections
 			}
 		}
+		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = democratic
 		has_war = yes
@@ -945,6 +991,7 @@ country_event = {
 				date < 1949.1.1
 			} 
 		}
+		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = fascism
 		fascism > 0.5
@@ -972,6 +1019,7 @@ country_event = {
 				date < 1949.1.1
 			}
 		}
+		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = fascism
 		NOT = { fascism > 0.5 }

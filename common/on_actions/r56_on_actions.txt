@@ -10557,6 +10557,11 @@ on_actions = {
 				EGY = {  add_ideas = EGY_ai_resistance_boost }
 			}
 
+			if = {
+				limit = { MON = { is_ai = yes } }
+				MEN = { add_ideas = MEN_mongol_raids }
+			}
+
 			#Insane AI Option
 			if = {
 				limit = {
