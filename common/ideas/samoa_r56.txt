@@ -14,6 +14,34 @@ ideas = {
 			}
 		}
 
+		r56_SAM_mau_factionalism_2 = {
+			name = r56_SAM_mau_factionalism
+		    picture = SPR_political_violence
+			allowed_civil_war = { always = yes }
+			allowed = { always = yes }
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.1
+				stability_factor = -0.05
+				war_support_factor = -0.05
+			}
+		}
+
+		r56_SAM_church_government_cooperation = {
+		    picture = MEX_church_power_4
+			allowed_civil_war = { always = yes }
+			allowed = { always = yes }
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.1
+				political_advisor_cost_factor = 0.25
+				conscription = 0.02
+				research_speed_factor = 0.05
+			}
+		}
+
 		r56_SAM_palauli_rebelion = {
 		    picture = AUS_growing_movement
 			allowed_civil_war = { always = yes }

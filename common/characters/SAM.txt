@@ -31,6 +31,25 @@ characters = {
 			allowed = { original_tag = SAM }
 			cost = 100
 
+			available = { 
+				#NOT = {
+				#	has_country_leader = {
+				#		character = SAM_mataafa_faumuina_fiame
+				#		ruling_only = yes
+				#	}
+				#}
+
+				if = {
+					limit = {
+						OR = {
+							has_government = fascism
+							has_completed_focus = r56_SAM_the_traditionalists
+						}
+					}
+					has_completed_focus = r56_SAM_compromise_with_moderate_opposition
+				}
+			}
+
 			traits = { army_chief_maneuver_2 }
 			ai_will_do = { factor = 1 }
 		}
@@ -74,9 +93,9 @@ characters = {
 
 		country_leader = {
 			ideology = constitutional_monarchy
+			traits = { r56_SAM_western_puppet likes_allies }
 			expire = "1955.1.1"
 			id = -1
-			traits = { r56_SAM_western_puppet likes_allies }
 		}
 	}
 	
@@ -140,10 +159,9 @@ characters = {
 			}
 		}
 
-
 		country_leader = {
 			ideology = clerical_fascism
-			traits = { r56_trait_opposed_to_democracy r56_trait_opposed_to_communism }
+			traits = { r56_SAM_leader_of_the_radical_mau r56_trait_opposed_to_communism }
 			expire = "1955.1.1"
 			id = -1
 		}
@@ -155,16 +173,12 @@ characters = {
 			
 			available = { 
 				OR = {
-					AND = {
-						has_government = fascism
-						NOT = {
-							has_country_leader = {
-								character = SAM_autagavaia
-								ruling_only = yes
-							}
-						}
+					if = {
+						limit = { has_completed_focus = r56_SAM_the_moderate_mau }
+						has_completed_focus = r56_SAM_incorporate_traditionalists_into_government
+
+						else = { has_completed_focus = r56_SAM_the_traditionalists }
 					}
-					has_completed_focus = r56_SAM_state_based_on_traditions
 				}
 			}
 
@@ -221,7 +235,7 @@ characters = {
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/SAM/r56_portrait_SAM_Olaf_Frederick_Nelson.dds"
-				small = "GFX_idea_SAM_olaf_frederick_nelson"
+				small = GFX_idea_SAM_olaf_frederick_nelson
 			}
 		}
 
@@ -229,11 +243,23 @@ characters = {
 			slot = political_advisor
 			allowed = { original_tag = SAM }
 			idea_token = SAM_olaf_nelson
-			available = { has_country_flag = r56_SAM_nelson_returns_flag }
 			cost = 150
+
+			available = { 
+				has_country_flag = r56_SAM_nelson_returns_flag
+				if = {
+					limit = {
+						OR = {
+							has_government = fascism
+							has_completed_focus = r56_SAM_the_traditionalists
+						}
+					}
+					has_completed_focus = r56_SAM_compromise_with_moderate_opposition
+				}
+			}
 			
-			traits = { financial_expert }
-			ai_will_do = { factor = 1 }
+			traits = { r56_SAM_the_maus_international_representative }
+			ai_will_do = { base = 1 }
 		}
 	}
 

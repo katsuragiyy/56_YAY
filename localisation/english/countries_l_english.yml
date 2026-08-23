@@ -3225,8 +3225,8 @@
  SOL_ADJ:0 "Solomon Island"
 
  #SAM
- SAM_neutrality:0 "Kingdom of Samoa"
- SAM_neutrality_DEF:0 "the Kingdom of Samoa"
+ SAM_neutrality:0 "State of Samoa"
+ SAM_neutrality_DEF:0 "the State of Samoa"
  SAM_neutrality_ADJ:0 "Samoan"
  SAM_democratic:0 "Independent State of Samoa"
  SAM_democratic_DEF:0 "the Independent State of Samoa"

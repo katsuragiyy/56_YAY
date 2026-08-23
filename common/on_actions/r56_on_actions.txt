@@ -12652,24 +12652,25 @@ on_actions = {
 						freedom_level = 0.9
 					}
 
-					add_ideas = r56_NZL_mau_movement_idea
+					add_ideas = r56_NZL_mau_movement_idea # we cant maintain our colonies.. :sob:
 
 					# Goodwill Mission
 					set_variable = { SAM_new_zealand_negotiations_influence = 0 }
 				}
 
 				726 = {
-					add_building_construction = {
+					add_building_construction = { # Coffee Factory
 						type = industrial_complex
 						level = 1
 						instant_build = yes
 					}
-					remove_dynamic_modifier = { modifier = mau_movement }
-					set_demilitarized_zone = no
+					remove_dynamic_modifier = { modifier = mau_movement } # o le mau is now a starting tag
+					set_demilitarized_zone = no # So that samoa can use its oob
 				}
 
 				SAM = {
 					set_cosmetic_tag = SAM_MAU
+					country_event = r56.startup.event.01 # here really just because im so used to seeing the event
 					load_oob = "SAM_1936"
 
 					set_politics = {
@@ -12724,6 +12725,7 @@ on_actions = {
 					province = 7290 # Lepea
 					value = 2
 				}
+
 				add_victory_points = {
 					province = 13462 # Safotulafai
 					value = 1
@@ -12733,6 +12735,7 @@ on_actions = {
 					province = 13419 # Nuku'alofa
 					value = 2
 				}
+
 				add_victory_points = {
 					province = 13420 # Neiafu
 					value = 1
@@ -12755,6 +12758,8 @@ on_actions = {
 				TON = {
 					set_stability = 0.75
 					set_war_support = 0.25
+					
+					country_event = r56.startup.event.01 # here really just because im so used to seeing the event
 
 					set_politics = {
 						ruling_party = neutrality

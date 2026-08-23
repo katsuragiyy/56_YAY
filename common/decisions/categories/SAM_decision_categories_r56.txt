@@ -71,6 +71,20 @@ r56_SAM_tufele_revolt_category = {
 	priority = 50
 }
 
+r56_SAM_churches_intervention = {
+	icon = GFX_decision_category_gre_investment_decisions
+	allowed = { original_tag = SAM }
+	visible = { has_country_flag = SAM_church_is_doing_things_now_whoops }
+	priority = 50
+}
+
+r56_SAM_faleniu_17_plot = {
+	icon = GFX_decision_category_generic_crisis
+	allowed = { original_tag = SAM }
+	visible = { has_country_flag = SAM_revived_plot_17_boohoo NOT = { controls_state = 1088 } }
+	priority = 50
+}
+
 r56_SAM_smuggle_operations = {
 	icon = GFX_decision_category_NOR_fascist_deploy_prep
 	picture = GFX_decision_cat_picture_chi_infiltration

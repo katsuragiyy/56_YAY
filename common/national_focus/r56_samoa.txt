@@ -248,7 +248,7 @@ focus_tree = {
 
     }
 
-	# Expand Rights of the Aristocracy
+	# Expand Rights of the Village Councils
 	focus = {
         id = r56_SAM_expand_rights_of_aristocracy
         icon = GFX_goal_generic_aristocratic_cooperation
@@ -533,7 +533,7 @@ focus_tree = {
 	# 
 	focus = {
         id = r56_SAM_repair_relations_with_the_western_order
-        icon = GFX_goal_ROM_western_diplomacy
+        icon = GFX_ENG_alliance
 		prerequisite = { focus = r56_SAM_join_the_allies }
 		relative_position_id = r56_SAM_reach_out_to_wellington
 
@@ -629,7 +629,6 @@ focus_tree = {
 
         completion_reward = {
 			custom_effect_tooltip = r56_possible_event_effects
-			set_country_flag = r56_SAM_cant_do_focuses_anymore_flag
 			add_named_threat = {
 				threat = 1
 				name = r56_SAM_mau_new_zealand_war_threat
@@ -700,41 +699,18 @@ focus_tree = {
 		relative_position_id = r56_SAM_declaration_of_independence
 
         cost = 5
-        x = -14
-        y = 1
-	}
-
-	# Restore Authority of Tumua and Pule
-	focus = {
-        id = r56_SAM_restore_tumua_ma_pule
-        icon = GFX_focus_AUS_lawmaking_leniency
-		prerequisite = { focus = r56_SAM_dissolve_the_fono }
-		mutually_exclusive = { focus = r56_SAM_reach_out_to_berlin }
-		relative_position_id = r56_SAM_dissolve_the_fono
-
-        cost = 5
-        x = 8
+        x = -6
         y = 1
 
-        available = {
-			OR = {
-				is_subject = no
-				has_country_flag = r56_SAM_pacific_war_flag
-			}
-		}
-		
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			mark_focus_tree_layout_dirty = yes
-			add_political_power = -100
+		completion_reward = {
+			add_political_power = -75
 			add_popularity = {
-				ideology = ROOT
+				ideology = democratic
 				popularity = -0.1
 			}
 			add_popularity = {
-				ideology = fascism
-				popularity = 0.1
+				ideology = communism
+				popularity = -0.1
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -784,175 +760,84 @@ focus_tree = {
 					}
 				}
 			}
-        }
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		}
 	}
 
-	# Confiscate Foreign Plantations
+	# Support the Moderate Faction
 	focus = {
-        id = r56_SAM_confiscate_foreign_plantations
-        icon = GFX_goal_generic_state_economy
-        prerequisite = { focus = r56_SAM_restore_tumua_ma_pule }
-		relative_position_id = r56_SAM_restore_tumua_ma_pule
-
-        cost = 8
-        x = 2
-        y = 1
-
-        available = { has_full_control_of_state = 726 }
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			add_timed_idea = {
-				idea = r56_SAM_foreign_plantations_idea
-				days = 720
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			every_other_country = {
-				limit = {
-					OR = {
-						original_tag = ENG
-						original_tag = USA
-						original_tag = NZL
-						original_tag = GER
-					}
-					exists = yes
-				}
-				add_opinion_modifier = {
-					target = ROOT
-					modifier = r56_SAM_seized_american_assets_opinion
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			726 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-        }
-
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
-    }
-
-	# Fate of the Malietoa Dynasty
-	focus = {
-        id = r56_SAM_fate_of_malietoa
-        icon = GFX_goal_siam_monarchy_question
-        prerequisite = { focus = r56_SAM_restore_tumua_ma_pule }
-		relative_position_id = r56_SAM_restore_tumua_ma_pule
+        id = r56_SAM_the_moderate_mau
+        icon = GFX_goal_generic_election_rigged
+		prerequisite = { focus = r56_SAM_dissolve_the_fono }
+		mutually_exclusive = { focus = r56_SAM_the_traditionalists }
+		relative_position_id = r56_SAM_dissolve_the_fono
 
         cost = 5
-        x = -2
+        x = 5
         y = 1
 
-		bypass = { NOT = { has_idea = r56_SAM_malietoa_opposition } }
+		# WE LOVE FAUMUINA
+	}
 
-        available = {
-			has_idea = r56_SAM_malietoa_opposition
-			has_country_leader = {
-				character = SAM_mataafa_faumuina_fiame
-				ruling_only = yes
-			}
-		}
-
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			country_event = r56_samoa.9
-        }
-    }
-
-	# Glorify Iosefo Mata'afa
+	# Find a Middle Ground With the Traditionalists
 	focus = {
-        id = r56_SAM_glorify_iosefo_mataafa
-        icon = GFX_goal_AFG_legacy_of_ataturk #PLACEHOLDER
-        prerequisite = { focus = r56_SAM_fate_of_malietoa }
-		relative_position_id = r56_SAM_fate_of_malietoa
+        id = r56_SAM_incorporate_traditionalists_into_government
+        icon = GFX_focus_SWI_embrace_panoramaheim
+		prerequisite = { focus = r56_SAM_the_moderate_mau }
+		mutually_exclusive = { focus = r56_SAM_approach_the_progressives }
+		relative_position_id = r56_SAM_the_moderate_mau
 
-        cost = 10
-        x = -1
-        y = 1
-
-		available = {
-			is_subject = no #because iosefo fought to PRESERVE samoan independence
-		}
-
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			custom_effect_tooltip = SAM_core_defense_attack_tt
-			add_to_variable = { var:SAM_core_attack = 0.05 }
-			add_to_variable = { var:SAM_core_defense = 0.1 }
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_country_leader_trait = r56_SAM_successor_to_iosefo
-        }
-
-		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT }
-    }
-
-	# State Based on Traditions
-	focus = {
-        id = r56_SAM_state_based_on_traditions
-        icon = GFX_goal_SAM_independence_fight
-        prerequisite = { focus = r56_SAM_fate_of_malietoa }
-		relative_position_id = r56_SAM_fate_of_malietoa
-
-        cost = 10
+        cost = 5
         x = 1
         y = 1
 
-        ai_will_do = { factor = 1 }
+		# WE LOVE FAUMUINA
 
-        completion_reward = {
-			hidden_effect = {
-				set_temp_variable = {
-					var = SAM_r56_left_support
-					value = party_popularity@democratic
-				}
-				multiply_temp_variable = {
-					var = SAM_r56_left_support
-					value = -1
+		completion_reward = {
+			if = {
+				limit = { has_idea = r56_SAM_mau_factionalism }
+				swap_ideas = {
+					remove_idea = r56_SAM_mau_factionalism
+					add_idea = r56_SAM_mau_factionalism_2
 				}
 			}
-			add_political_power = 50
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.05
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SAM_r56_half_of_current_democratic_support_is_applied_as_a_stability_penalty_tt
-			add_stability = SAM_r56_left_support
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_ideas = r56i_laws_social_normal
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_ideas = r56i_laws_gender_traditional
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = SAM_autagavaia_advisor
-        }
+		}
+	}
 
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
-    }
+	# Grant Concessions to the Progressive Wing
+	focus = {
+        id = r56_SAM_approach_the_progressives
+        icon = GFX_goal_generic_internal_democracy
+		prerequisite = { focus = r56_SAM_the_moderate_mau }
+		mutually_exclusive = { focus = r56_SAM_incorporate_traditionalists_into_government }
+		relative_position_id = r56_SAM_the_moderate_mau
+
+        cost = 5
+        x = -1
+        y = 1
+
+		# WE LOVE FAUMUINA
+
+		completion_reward = {
+			if = {
+				limit = { has_idea = r56_SAM_mau_factionalism }
+				swap_ideas = {
+					remove_idea = r56_SAM_mau_factionalism
+					add_idea = r56_SAM_mau_factionalism_2
+				}
+			}
+		}
+	}
 
 	# Aftermath of the Karlsruhe Visit
 	focus = {
         id = r56_SAM_aftermath_of_the_karlsruhe_visit
         icon = GFX_focus_BRA_german_submarine_development
-        prerequisite = { focus = r56_SAM_glorify_iosefo_mataafa }
+        prerequisite = { focus = r56_SAM_the_moderate_mau }
 		mutually_exclusive = { focus = r56_SAM_tear_down_the_mulinuu_monument }
-		relative_position_id = r56_SAM_glorify_iosefo_mataafa
+		relative_position_id = r56_SAM_the_moderate_mau
 
         cost = 6
-        x = -1
+        x = 5
         y = 1
 
         ai_will_do = { factor = 1 }
@@ -987,17 +872,89 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES }
     }
 
+	# Sign the Anti-Comintern Pact
+	focus = {
+        id = r56_SAM_sign_the_anti_comintern_pact
+        icon = GFX_goal_generic_comm_purge
+        prerequisite = { focus = r56_SAM_aftermath_of_the_karlsruhe_visit }
+		relative_position_id = r56_SAM_aftermath_of_the_karlsruhe_visit
+
+        cost = 4
+        x = -1
+        y = 1
+
+        ai_will_do = { factor = 1 }
+
+		available = {
+			is_subject = no
+			NOT = { is_in_faction_with = SOU }
+			GER = {
+				exists = yes
+				NOT = { has_war_with = ROOT }
+				has_completed_focus = GER_anti_comintern_pact
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = SOV
+					value < -10
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_opinion = {
+					target = GER
+					value < -10
+				}
+			}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+        completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
+
+			set_country_flag = anti_comintern_member
+			GER = { add_opinion_modifier = { target = ROOT modifier = anti_comintern_pact_opinion } }
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_opinion_modifier = { target = GER modifier = anti_comintern_pact_opinion }
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					has_country_flag = anti_comintern_member
+					NOT = { has_war_with = ROOT }
+					NOT = { original_tag = GER }
+				}
+				add_opinion_modifier = { target = ROOT modifier = anti_comintern_pact_opinion }
+			}
+
+			SOV = { add_opinion_modifier = { target = ROOT modifier = pact_against_us } }
+        }
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
 	# Tear Down the Mulinu'u Monument
 	focus = {
         id = r56_SAM_tear_down_the_mulinuu_monument
         icon = GFX_focus_CHL_counter_operation_bolivar
-        prerequisite = { focus = r56_SAM_glorify_iosefo_mataafa }
-		prerequisite = { focus = r56_SAM_state_based_on_traditions }
+        prerequisite = { focus = r56_SAM_the_moderate_mau }
 		mutually_exclusive = { focus = r56_SAM_aftermath_of_the_karlsruhe_visit }
-		relative_position_id = r56_SAM_state_based_on_traditions
+		relative_position_id = r56_SAM_the_moderate_mau
 
         cost = 5
-        x = -1
+        x = 3
         y = 1
 
         ai_will_do = { factor = 1 }
@@ -1007,7 +964,7 @@ focus_tree = {
 			add_stability = -0.05
 			add_popularity = {
 				ideology = fascism
-				popularity = -0.1
+				popularity = -0.05
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -1027,6 +984,618 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
     }
 
+	
+	# Glorify Iosefo Mata'afa
+	focus = {
+        id = r56_SAM_glorify_iosefo_mataafa
+        icon = GFX_goal_AFG_legacy_of_ataturk #PLACEHOLDER
+        prerequisite = { focus = r56_SAM_incorporate_traditionalists_into_government }
+		prerequisite = { focus = r56_SAM_tear_down_the_mulinuu_monument }
+		relative_position_id = r56_SAM_incorporate_traditionalists_into_government
+
+        cost = 10
+        x = 2
+        y = 2
+
+		available = {
+			is_subject = no #because iosefo fought to PRESERVE samoan independence
+		}
+
+        ai_will_do = { factor = 1 }
+
+        completion_reward = {
+			custom_effect_tooltip = SAM_core_defense_attack_tt
+			add_to_variable = { var:SAM_core_attack = 0.05 }
+			add_to_variable = { var:SAM_core_defense = 0.1 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_country_leader_trait = r56_SAM_successor_to_iosefo
+        }
+
+		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT }
+    }
+
+	# 
+	focus = {
+        id = r56_SAM_for_the_southern_cross
+        icon = GFX_focus_PHI_philippine_independent_church
+        prerequisite = { focus = r56_SAM_incorporate_traditionalists_into_government }
+		relative_position_id = r56_SAM_incorporate_traditionalists_into_government
+
+        cost = 10
+        x = 0
+        y = 2
+    }
+
+	#
+	focus = {
+        id = r56_SAM_otherdemoholder
+        icon = GFX_goal_generic_banking_legislation
+        prerequisite = { focus = r56_SAM_approach_the_progressives }
+		relative_position_id = r56_SAM_incorporate_traditionalists_into_government
+
+        cost = 10
+        x = -3
+        y = 1
+    }
+
+	#
+	focus = {
+        id = r56_SAM_utilize_the_fetu
+        icon = GFX_focus_generic_worker_administration
+        prerequisite = { focus = r56_SAM_incorporate_traditionalists_into_government }
+		relative_position_id = r56_SAM_incorporate_traditionalists_into_government
+
+        cost = 10
+        x = 1
+        y = 1
+    }
+
+	#
+	focus = {
+        id = r56_SAM_iguessbro
+        icon = GFX_focus_CHI_ally_taiwanese_peoples_party #PLACEHOLDER
+        prerequisite = { focus = r56_SAM_approach_the_progressives }
+		relative_position_id = r56_SAM_incorporate_traditionalists_into_government
+
+        cost = 10
+        x = -2
+        y = 2
+    }
+
+	# Disregard the Deed of Concession
+	focus = {
+        id = r56_SAM_disregard_the_deed_of_concession
+        icon = GFX_focus_AUS_disregard_the_treaties
+		prerequisite = { focus = r56_SAM_approach_the_progressives focus = r56_SAM_incorporate_traditionalists_into_government }
+		relative_position_id = r56_SAM_the_moderate_mau
+
+        cost = 4
+        x = 0
+        y = 2
+
+        available = {
+			is_subject = no
+			1088 = {
+				controller = {
+					NOT = { has_war_with = ROOT }
+					is_subject = no
+				}
+			}
+		}
+
+		bypass = { controls_state = 1088 }
+		bypass_effect = {
+			set_country_flag = SAM_tuimanua_we_have
+			mark_focus_tree_layout_dirty = yes
+			country_event = {
+				id = r56_samoa_manua.6
+				days = 2
+			}
+		}
+
+        ai_will_do = { factor = 1 }
+		will_lead_to_war_with = USA
+		select_effect = { JAP = { country_event = r56_samoa_manua.3 } }
+
+        completion_reward = {
+			custom_effect_tooltip = SOV_focus_select_effect_tt
+			effect_tooltip = { JAP = { country_event = r56_samoa_manua.3 } }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = r56_SAM_better_with_japan_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = r56_SAM_effects_upon_focus_completion
+			1088 = {
+				controller = {
+					country_event = {
+						id = r56_samoa.10
+						days = 5
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = r56_SAM_usa_manua_tt
+
+			custom_effect_tooltip = r56_possible_event_effects
+			effect_tooltip = {
+				add_popularity = {
+					ideology = ROOT
+					popularity = 0.1
+				}
+				country_event = r56_samoa_manua.6
+				custom_effect_tooltip = generic_skip_one_line_tt
+				1088 = { transfer_state_to = ROOT }
+			}
+
+			custom_effect_tooltip = r56_alternative_event_effects
+			effect_tooltip = {
+				add_war_support = 0.1
+				start_border_war = {
+					change_state_after_war = yes
+					attacker = {
+						state = 726
+						num_provinces = 2
+						#on_win = japan_border_conflict.2
+						#on_lose = japan_border_conflict.3
+						#on_cancel = japan_border_conflict.4
+						#modifier = 0.1
+						#dig_in_factor = 0
+						#terrain_factor = 0
+					}	
+					defender = {
+						state = 1088
+						num_provinces = 1
+						#on_win = japan_border_conflict.3
+						#on_lose = japan_border_conflict.2
+						#on_cancel = japan_border_conflict.4
+					}
+				}
+			}
+
+			custom_effect_tooltip = r56_alternative_event_effects
+			effect_tooltip = {
+				add_political_power = -100
+				add_stability = -0.1
+			}
+        }
+		#just reminder for later but make event for electing tuimanua and have cook islands canadate
+		#if america gives in, grant decision to restore tuimanua as const. monarch after which u will unlock a timed decision to deal with tufele (events and decisions will play into it)
+		# make fiji canidate
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
+    }
+
+	# The Coronation of Faumuina Fiame Mulinuu
+	focus = {
+        id = r56_SAM_proclaim_faumuina_as_king
+        icon = GFX_focus_generic_monarchy_1
+		prerequisite = { focus = r56_SAM_disregard_the_deed_of_concession }
+		prerequisite = { focus = r56_SAM_for_the_southern_cross focus = r56_SAM_iguessbro }
+		relative_position_id = r56_SAM_the_moderate_mau
+
+        cost = 5
+        x = 0
+        y = 4
+
+		available = {
+			controls_state = 726
+			controls_state = 1088
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_idea = r56_SAM_mau_factionalism_2 }
+				remove_ideas = r56_SAM_mau_factionalism_2
+				else = { remove_ideas = r56_SAM_mau_factionalism }
+			}
+		}
+
+		# change name to kingdom of samoa
+	}
+
+	# Rally Around the Traditionalists
+	focus = {
+        id = r56_SAM_the_traditionalists
+        icon = GFX_focus_generic_fascist_troops
+		prerequisite = { focus = r56_SAM_dissolve_the_fono }
+		mutually_exclusive = { focus = r56_SAM_the_moderate_mau }
+		relative_position_id = r56_SAM_dissolve_the_fono
+
+        cost = 6
+        x = -5
+        y = 1
+
+		ai_will_do = { base = 1 }
+
+		completion_reward = {
+			add_political_power = 75
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_timed_idea = {
+				idea = fascist_influence
+				days = 720
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SAM_autagavaia_advisor	
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	# State Based on Traditions
+	focus = {
+        id = r56_SAM_state_based_on_traditions
+        icon = GFX_goal_SAM_independence_fight
+        prerequisite = { focus = r56_SAM_the_traditionalists }
+		relative_position_id = r56_SAM_the_traditionalists
+
+        cost = 8
+        x = 1
+        y = 1
+
+        ai_will_do = { base = 1 }
+
+        completion_reward = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = SAM_r56_left_support
+					value = party_popularity@democratic
+				}
+				multiply_temp_variable = {
+					var = SAM_r56_left_support
+					value = -1
+				}
+			}
+			add_political_power = 50
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_r56_half_of_current_democratic_support_is_applied_as_a_stability_penalty_tt
+			add_stability = SAM_r56_left_support
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = r56i_laws_social_normal
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = r56i_laws_gender_traditional
+
+			hidden_effect = { clear_variable = SAM_r56_left_support } # so that it doesnt lag the game down.. i think thats how it works
+        }
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES FOCUS_FILTER_POLITICAL }
+    }
+
+	# Compromise With the Moderate Faction
+	focus = {
+        id = r56_SAM_compromise_with_moderate_opposition
+        icon = GFX_focus_POL_beck_ribbentrop
+        prerequisite = { focus = r56_SAM_the_traditionalists }
+		relative_position_id = r56_SAM_the_traditionalists
+
+        cost = 10
+        x = -2
+        y = 2
+
+        ai_will_do = { factor = 1 }
+
+		available = {
+			has_government = fascism
+			NOT = {
+				has_country_leader = {
+					character = SAM_mataafa_faumuina_fiame
+					ruling_only = yes
+				}
+			}
+		}
+
+        completion_reward = {
+			add_political_power = 45
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = { has_idea = r56_SAM_mau_factionalism }
+				swap_ideas = {
+					remove_idea = r56_SAM_mau_factionalism
+					add_idea = r56_SAM_mau_factionalism_2
+				}
+			}
+
+			custom_effect_tooltip = available_chief_of_army
+			show_ideas_tooltip = SAM_mataafa_faumuina_fiame_army_chief
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SAM_olaf_nelson
+        }
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
+    }
+
+	# Form a Pacific Volunteer Legion
+	focus = {
+        id = r56_SAM_form_a_pacific_volunteer_legion
+        icon = GFX_goal_spr_recruitment_drive
+        prerequisite = { focus = r56_SAM_the_traditionalists }
+		relative_position_id = r56_SAM_the_traditionalists
+
+        cost = 10
+        x = -1
+        y = 1
+
+		# volunteers
+    }
+
+	#
+	focus = {
+        id = r56_SAM_fascistplaceholder
+        icon = GFX_goal_infantry_offensive
+        prerequisite = { focus = r56_SAM_the_traditionalists }
+		relative_position_id = r56_SAM_the_traditionalists
+
+        cost = 10
+        x = 2
+        y = 2
+    }
+
+	# Assemble the Village Councils
+	focus = {
+        id = r56_SAM_convene_the_chiefs
+        icon = GFX_focus_ETH_re-convene_the_parliament
+		prerequisite = { focus = r56_SAM_the_traditionalists }
+		relative_position_id = r56_SAM_the_traditionalists
+
+        cost = 7.2
+        x = 0
+        y = 2
+
+		available = {
+			if = { 
+				limit = { is_subject = yes }
+				OVERLORD = { has_government = fascism }
+				fascism > 0.25
+
+				else = { fascism > 0.4 }
+			}
+		}
+
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			promote_character = {
+				character = SAM_autagavaia
+				ideology = clerical_fascism
+			}
+		}
+		
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MILITARY_IMPROVEMENT }
+	}
+
+	# Combine the Elements of Religion and Governance
+	focus = {
+        id = r56_SAM_entrench_the_christian_faith
+        icon = GFX_goal_QUE_clerical_fascism
+		prerequisite = { focus = r56_SAM_convene_the_chiefs }
+		relative_position_id = r56_SAM_convene_the_chiefs
+
+        cost = 6
+        x = -1
+        y = 1
+
+		completion_reward = {
+			add_stability = 0.1
+			unlock_decision_category_tooltip = r56_SAM_churches_intervention
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = r56_SAM_church_government_cooperation
+			set_country_flag = SAM_church_is_doing_things_now_whoops
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+	}
+
+	# Revive the Eastern Mau Movement
+	focus = {
+        id = r56_SAM_forge_the_pacific_legion
+        icon = GFX_focus_GER_support_the_proletarian_uprising
+		prerequisite = { focus = r56_SAM_convene_the_chiefs }
+		relative_position_id = r56_SAM_convene_the_chiefs
+
+        cost = 4
+        x = 1
+        y = 1
+
+		available = {
+			is_subject = no
+			1088 = {
+				controller = {
+					NOT = { has_war_with = ROOT }
+					is_subject = no
+				}
+			}
+		}
+
+		bypass = { controls_state = 1088 }
+		bypass_effect = {
+			set_country_flag = SAM_tuimanua_we_have
+			mark_focus_tree_layout_dirty = yes
+			country_event = {
+				id = r56_samoa_manua.6
+				days = 2
+			}
+		}
+
+		completion_reward = {
+			set_country_flag = SAM_revived_plot_17_boohoo
+			add_manpower = 500
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+			}
+
+			add_to_variable = {
+				r56_SAM_american_samoan_resistance = 5 # as a start
+				#tooltip = r56_SAM_increase_1088_resistance_10
+			}
+
+			clamp_variable = {
+				var = r56_SAM_american_samoan_resistance 
+				min = 0
+				max = 100
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_category_tooltip = r56_SAM_faleniu_17_plot
+			activate_mission_tooltip = r56_SAM_samoan_demands_sent_to_america
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = r56_SAM_infiltrate_eastern_samoa_resistance
+			unlock_decision_tooltip = r56_SAM_send_arms_to_galeai_family
+			unlock_decision_tooltip = r56_SAM_sponsor_the_eastern_mau
+			unlock_decision_tooltip = r56_SAM_speak_out_against_american_naval_administration
+		}
+
+		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_ANNEXATION }
+	}
+
+	# End the Need for Internal Bickering
+	focus = {
+        id = r56_SAM_samoa_united_under_one_cause
+        icon = GFX_focus_SWE_refuge_from_war
+		prerequisite = { focus = r56_SAM_entrench_the_christian_faith focus = r56_SAM_forge_the_pacific_legion }
+		relative_position_id = r56_SAM_convene_the_chiefs
+
+        cost = 8
+        x = 0
+        y = 2
+
+		available = {
+			controls_state = 726
+			controls_state = 1088
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_idea = r56_SAM_mau_factionalism_2 }
+				remove_ideas = r56_SAM_mau_factionalism_2
+				else = { remove_ideas = r56_SAM_mau_factionalism }
+			}
+		}
+	}
+
+	# Fate of the Malietoa Dynasty
+	focus = {
+        id = r56_SAM_fate_of_malietoa
+        icon = GFX_goal_siam_monarchy_question
+        prerequisite = { focus = r56_SAM_the_moderate_mau focus = r56_SAM_the_traditionalists }
+		relative_position_id = r56_SAM_dissolve_the_fono
+
+        cost = 5
+        x = -2
+        y = 2
+
+		bypass = { NOT = { has_idea = r56_SAM_malietoa_opposition } }
+
+        available = {
+			has_idea = r56_SAM_malietoa_opposition
+			has_country_leader = {
+				character = SAM_mataafa_faumuina_fiame
+				ruling_only = yes
+			}
+		}
+
+        ai_will_do = { factor = 1 }
+
+        completion_reward = {
+			country_event = r56_samoa.9
+        }
+    }
+
+	# Restore Authority of Tumua and Pule
+	focus = {
+        id = r56_SAM_restore_tumua_ma_pule
+        icon = GFX_focus_AUS_lawmaking_leniency
+		prerequisite = { focus = r56_SAM_samoa_united_under_one_cause focus = r56_SAM_proclaim_faumuina_as_king }
+		relative_position_id = r56_SAM_dissolve_the_fono
+
+        cost = 5
+        x = 0
+        y = 6
+
+        available = { is_subject = no } # need either fascist or nonaligned check
+        ai_will_do = { factor = 1 }
+
+        completion_reward = {
+        }
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	# Confiscate Foreign Plantations
+	focus = {
+        id = r56_SAM_confiscate_foreign_plantations
+        icon = GFX_goal_generic_state_economy
+        prerequisite = { focus = r56_SAM_the_moderate_mau focus = r56_SAM_the_traditionalists }
+		relative_position_id = r56_SAM_the_moderate_mau
+
+        cost = 8
+        x = -5
+        y = 1
+
+        available = { has_full_control_of_state = 726 }
+        ai_will_do = { factor = 1 }
+
+        completion_reward = {
+			add_timed_idea = {
+				idea = r56_SAM_foreign_plantations_idea
+				days = 720
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = ENG
+						original_tag = USA
+						original_tag = NZL
+						original_tag = SWE
+						if = {
+							limit = { NOT = { has_completed_focus = r56_SAM_aftermath_of_the_karlsruhe_visit } }
+							original_tag = GER
+						}
+					}
+					exists = yes
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = r56_SAM_seized_american_assets_opinion
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			726 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+        }
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+    }
+
 	# Establish the University of Apia
 	focus = {
         id = r56_SAM_establish_univeristy_at_capital
@@ -1035,7 +1604,7 @@ focus_tree = {
 		relative_position_id = r56_SAM_confiscate_foreign_plantations
 
         cost = 10
-        x = -1
+        x = 0
         y = 1
 
         available = { has_full_control_of_state = 726 num_of_factories > 4 }
@@ -1062,8 +1631,8 @@ focus_tree = {
 		relative_position_id = r56_SAM_confiscate_foreign_plantations
 
         cost = 7.2
-        x = 1
-        y = 1
+        x = -1
+        y = 2
 
         available = { 
 			JAP = {
@@ -1137,8 +1706,8 @@ focus_tree = {
 		relative_position_id = r56_SAM_confiscate_foreign_plantations
 
         cost = 7.2
-        x = 3
-        y = 1
+        x = 1
+        y = 2
 
 		available = { 
 			AST = {
@@ -1341,13 +1910,12 @@ focus_tree = {
 	focus = {
         id = r56_SAM_affirming_our_territorial_ambitions
         icon = GFX_focus_SWE_counter_revolution
-        prerequisite = { focus = r56_SAM_fate_of_malietoa }
-		prerequisite = { focus = r56_SAM_confiscate_foreign_plantations }
+        prerequisite = { focus = r56_SAM_restore_tumua_ma_pule }
 		relative_position_id = r56_SAM_restore_tumua_ma_pule
 
         cost = 6
         x = 0
-        y = 5
+        y = 1
 
         ai_will_do = { factor = 1 }
 
@@ -1404,118 +1972,16 @@ focus_tree = {
         }
     }
 
-	# Disregard the Deed of Concession
-	focus = {
-        id = r56_SAM_disregard_the_deed_of_concession
-        icon = GFX_focus_AUS_disregard_the_treaties
-        prerequisite = { focus = r56_SAM_fate_of_malietoa }
-		relative_position_id = r56_SAM_fate_of_malietoa
-
-        cost = 4
-        x = -3
-        y = 1
-
-        available = {
-			is_subject = no
-			1088 = {
-				controller = {
-					NOT = { has_war_with = ROOT }
-					is_subject = no
-				}
-			}
-		}
-
-		bypass = { controls_state = 1088 }
-		bypass_effect = {
-			set_country_flag = SAM_tuimanua_we_have
-			mark_focus_tree_layout_dirty = yes
-			country_event = {
-				id = r56_samoa_manua.6
-				days = 2
-			}
-		}
-
-        ai_will_do = { factor = 1 }
-		will_lead_to_war_with = USA
-		select_effect = { JAP = { country_event = r56_samoa_manua.3 } }
-
-        completion_reward = {
-			custom_effect_tooltip = SOV_focus_select_effect_tt
-			effect_tooltip = { JAP = { country_event = r56_samoa_manua.3 } }
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = r56_SAM_better_with_japan_tt
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			custom_effect_tooltip = r56_SAM_effects_upon_focus_completion
-			1088 = {
-				controller = {
-					country_event = {
-						id = r56_samoa.10
-						days = 5
-					}
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = r56_SAM_usa_manua_tt
-
-			custom_effect_tooltip = r56_possible_event_effects
-			effect_tooltip = {
-				add_popularity = {
-					ideology = ROOT
-					popularity = 0.1
-				}
-				country_event = r56_samoa_manua.6
-				custom_effect_tooltip = generic_skip_one_line_tt
-				1088 = { transfer_state_to = ROOT }
-			}
-
-			custom_effect_tooltip = r56_alternative_event_effects
-			effect_tooltip = {
-				add_war_support = 0.1
-				start_border_war = {
-					change_state_after_war = yes
-					attacker = {
-						state = 726
-						num_provinces = 2
-						#on_win = japan_border_conflict.2
-						#on_lose = japan_border_conflict.3
-						#on_cancel = japan_border_conflict.4
-						#modifier = 0.1
-						#dig_in_factor = 0
-						#terrain_factor = 0
-					}	
-					defender = {
-						state = 1088
-						num_provinces = 1
-						#on_win = japan_border_conflict.3
-						#on_lose = japan_border_conflict.2
-						#on_cancel = japan_border_conflict.4
-					}
-				}
-			}
-
-			custom_effect_tooltip = r56_alternative_event_effects
-			effect_tooltip = {
-				add_political_power = -100
-				add_stability = -0.1
-			}
-        }
-		#just reminder for later but make event for electing tuimanua and have cook islands canadate
-		#if america gives in, grant decision to restore tuimanua as const. monarch after which u will unlock a timed decision to deal with tufele (events and decisions will play into it)
-		# make fiji canidate
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-    }
-
 	# United Under the Tui Manuʻa
 	focus = {
         id = r56_SAM_united_under_tuimanua
         icon = GFX_goal_generic_friendship_with_church
-        prerequisite = { focus = r56_SAM_disregard_the_deed_of_concession }
-		relative_position_id = r56_SAM_disregard_the_deed_of_concession
+        #prerequisite = { focus = r56_SAM_disregard_the_deed_of_concession }
+		relative_position_id = r56_SAM_samoa_united_under_one_cause
 
         cost = 4
-        x = -1
-        y = 1
+        x = 0
+        y = 2
 
 		#allow_branch = { has_country_flag = SAM_tuimanua_we_have }
 
@@ -1786,7 +2252,7 @@ focus_tree = {
         id = r56_SAM_join_the_east_asian_hegemon
         icon = GFX_focus_jap_spiritual_mobilization
         prerequisite = { focus = r56_SAM_affirming_our_territorial_ambitions }
-		mutually_exclusive = { focus = r56_SAM_entrance_into_the_nauru_pact focus = r56_SAM_disengage_from_global_affairs }
+		mutually_exclusive = { focus = r56_SAM_entrance_into_the_nauru_pact }
 		relative_position_id = r56_SAM_affirming_our_territorial_ambitions
 
         cost = 2
@@ -1829,7 +2295,7 @@ focus_tree = {
         id = r56_SAM_entrance_into_the_nauru_pact
         icon = GFX_goal_AST_australia_first
         prerequisite = { focus = r56_SAM_affirming_our_territorial_ambitions }
-		mutually_exclusive = { focus = r56_SAM_join_the_east_asian_hegemon focus = r56_SAM_disengage_from_global_affairs }
+		mutually_exclusive = { focus = r56_SAM_join_the_east_asian_hegemon }
 		relative_position_id = r56_SAM_affirming_our_territorial_ambitions
 
         cost = 2
@@ -2651,7 +3117,7 @@ focus_tree = {
 	# Tagaloa's Chosen
 	focus = {
         id = r56_SAM_tagaloa_chosen
-        icon = GFX_focus_mex_restore_the_army_of_christ
+        icon = GFX_goal_generic_crusade
         prerequisite = { focus = r56_SAM_demand_pacific_holdings }
 		relative_position_id = r56_SAM_demand_pacific_holdings
 	
@@ -2671,11 +3137,12 @@ focus_tree = {
         id = r56_SAM_reach_out_to_berlin
         icon = GFX_goal_GER_restore_weimar
 		prerequisite = { focus = r56_SAM_dissolve_the_fono }
-		mutually_exclusive = { focus = r56_SAM_restore_tumua_ma_pule }
+		#mutually_exclusive = { focus = r56_SAM_restore_tumua_ma_pule }
 		relative_position_id = r56_SAM_dissolve_the_fono
+		allow_branch = { always = no }
 
         cost = 5
-        x = -8
+        x = -14
         y = 1
 
 		available = {
@@ -3243,12 +3710,12 @@ focus_tree = {
 	focus = {
         id = r56_SAM_disengage_from_global_affairs
         icon = GFX_goal_generic_neutrality_focus
-		mutually_exclusive = { focus = r56_SAM_join_the_east_asian_hegemon focus = r56_SAM_entrance_into_the_nauru_pact }
+		#mutually_exclusive = { focus = r56_SAM_join_the_east_asian_hegemon focus = r56_SAM_entrance_into_the_nauru_pact }
 		prerequisite = { focus = r56_SAM_usurp_the_fono focus = r56_SAM_affirming_our_territorial_ambitions }
 
         cost = 5
         x = 77
-        y = 13
+        y = 14
 
 		offset = {
 			x = -8
@@ -3290,7 +3757,7 @@ focus_tree = {
 
         cost = 5
         x = 76
-        y = 14
+        y = 15
 
 		available = { has_war = no }
 		ai_will_do = { factor = 1 }
@@ -3300,7 +3767,8 @@ focus_tree = {
 			add_war_support = 0.05
 			add_ideas = deterrence
 		}
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_HISTORICAL }
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 	}
 
 	######################################
