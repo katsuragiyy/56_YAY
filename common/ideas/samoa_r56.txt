@@ -28,6 +28,20 @@ ideas = {
 			}
 		}
 
+		r56_SAM_pacific_volunteer_legion = {
+		    picture = MEX_politicised_army_2
+			allowed_civil_war = { always = yes }
+			allowed = { always = yes }
+			removal_cost = -1
+			
+			modifier = {
+				weekly_manpower = 50
+				send_volunteer_divisions_required = -1
+				send_volunteers_tension = -0.9
+				send_volunteer_size = 1
+			}
+		}
+
 		r56_SAM_church_government_cooperation = {
 		    picture = MEX_church_power_4
 			allowed_civil_war = { always = yes }

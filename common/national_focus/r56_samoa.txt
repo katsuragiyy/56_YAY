@@ -108,7 +108,7 @@ focus_tree = {
 
         completion_reward = {
 			if = {
-				limit = { has_completed_focus = r56_SAM_restore_tumua_ma_pule }
+				limit = { has_completed_focus = r56_SAM_dissolve_the_fono }
 				every_other_country = {
 					limit = {
 						OR = {
@@ -134,7 +134,7 @@ focus_tree = {
 			}
 
 			else_if = {
-				limit = { has_completed_focus = r56_SAM_westernize_faasamoa }
+				limit = { has_completed_focus = r56_SAM_samoas_path_to_democracy }
 				every_other_country = {
 					limit = {
 						OR = {
@@ -1017,8 +1017,8 @@ focus_tree = {
 
 	# 
 	focus = {
-        id = r56_SAM_for_the_southern_cross
-        icon = GFX_focus_PHI_philippine_independent_church
+        id = r56_SAM_push_for_more_traditionalist_policies
+        icon = GFX_focus_generic_court # request new gfx
         prerequisite = { focus = r56_SAM_incorporate_traditionalists_into_government }
 		relative_position_id = r56_SAM_incorporate_traditionalists_into_government
 
@@ -1029,20 +1029,29 @@ focus_tree = {
 
 	#
 	focus = {
-        id = r56_SAM_otherdemoholder
-        icon = GFX_goal_generic_banking_legislation
+        id = r56_SAM_allow_limited_liberalization_of_constitution
+        icon = GFX_goal_FRA_reynaud_economic_reforms
         prerequisite = { focus = r56_SAM_approach_the_progressives }
 		relative_position_id = r56_SAM_incorporate_traditionalists_into_government
 
         cost = 10
-        x = -3
-        y = 1
+        x = -2
+        y = 2
+
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = SIA_siamese_national_banking_bureau_r56
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
     }
 
 	#
 	focus = {
-        id = r56_SAM_utilize_the_fetu
-        icon = GFX_focus_generic_worker_administration
+        id = r56_SAM_combat_western_influences
+        icon = GFX_goal_FRA_front_de_la_liberte
         prerequisite = { focus = r56_SAM_incorporate_traditionalists_into_government }
 		relative_position_id = r56_SAM_incorporate_traditionalists_into_government
 
@@ -1051,16 +1060,36 @@ focus_tree = {
         y = 1
     }
 
-	#
+	# Amend Ties With the Western World Order
 	focus = {
-        id = r56_SAM_iguessbro
-        icon = GFX_focus_CHI_ally_taiwanese_peoples_party #PLACEHOLDER
+        id = r56_SAM_mend_ties_with_the_west
+        icon = GFX_ENG_alliance
         prerequisite = { focus = r56_SAM_approach_the_progressives }
 		relative_position_id = r56_SAM_incorporate_traditionalists_into_government
 
         cost = 10
-        x = -2
-        y = 2
+        x = -3
+        y = 1
+
+		completion_reward = {
+			add_political_power = 25
+			every_other_country = {
+				limit = {
+					exists = yes
+					has_government = democratic
+					OR = {
+						original_tag = ENG
+						original_tag = FRA
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = medium_increase
+				}
+			}
+		}
+
+		# make peaceful options less expenwsive and stuff
     }
 
 	# Disregard the Deed of Concession
@@ -1168,21 +1197,24 @@ focus_tree = {
 	# The Coronation of Faumuina Fiame Mulinuu
 	focus = {
         id = r56_SAM_proclaim_faumuina_as_king
-        icon = GFX_focus_generic_monarchy_1
-		prerequisite = { focus = r56_SAM_disregard_the_deed_of_concession }
-		prerequisite = { focus = r56_SAM_for_the_southern_cross focus = r56_SAM_iguessbro }
+        icon = GFX_focus_generic_monarchy_2
+		prerequisite = { focus = r56_SAM_push_for_more_traditionalist_policies focus = r56_SAM_allow_limited_liberalization_of_constitution }
 		relative_position_id = r56_SAM_the_moderate_mau
 
-        cost = 5
+        cost = 10
         x = 0
         y = 4
 
-		available = {
-			controls_state = 726
-			controls_state = 1088
+		available = { 
+			controls_state = 726 
+			# must have faumuina as leader
+			# non aligned
 		}
 
+		# bypass if u have manua bcuz HOW CAN U BE KING WHEN TUIMANUA IS RIGHT THERE
+
 		completion_reward = {
+			# BTW make this focus and the other restore tumua ma pule bop
 			if = {
 				limit = { has_idea = r56_SAM_mau_factionalism_2 }
 				remove_ideas = r56_SAM_mau_factionalism_2
@@ -1277,10 +1309,10 @@ focus_tree = {
 		relative_position_id = r56_SAM_the_traditionalists
 
         cost = 10
-        x = -2
+        x = 2
         y = 2
 
-        ai_will_do = { factor = 1 }
+        ai_will_do = { base = 1 }
 
 		available = {
 			has_government = fascism
@@ -1326,24 +1358,34 @@ focus_tree = {
         prerequisite = { focus = r56_SAM_the_traditionalists }
 		relative_position_id = r56_SAM_the_traditionalists
 
-        cost = 10
+        cost = 8
         x = -1
         y = 1
 
-		# volunteers
+		completion_reward = {
+			add_ideas = r56_SAM_pacific_volunteer_legion
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_if_completed_entrench_christian_faith_focus
+			unlock_decision_tooltip = r56_SAM_intervene_on_the_side_of_the_spanish_catholics
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
     }
 
-	#
+	# Beacon of Resistance Against European Colonialism
 	focus = {
-        id = r56_SAM_fascistplaceholder
-        icon = GFX_goal_infantry_offensive
+        id = r56_SAM_bacon_of_resistance # i give up trying to learn how to spell it
+        icon = GFX_goal_generic_defense_of_the_lands
         prerequisite = { focus = r56_SAM_the_traditionalists }
 		relative_position_id = r56_SAM_the_traditionalists
 
         cost = 10
-        x = 2
+        x = -2
         y = 2
-    }
+
+		# grant national spirit and adjustment for army spirit
+		# cannot and i mean CANNOT go down the imperialist branch if u do this. u will NOT be allowed to be a hypocrite
+	}
 
 	# Assemble the Village Councils
 	focus = {
@@ -1362,7 +1404,7 @@ focus_tree = {
 				OVERLORD = { has_government = fascism }
 				fascism > 0.25
 
-				else = { fascism > 0.4 }
+				else = { fascism > 0.3 }
 			}
 		}
 
@@ -1376,6 +1418,39 @@ focus_tree = {
 				character = SAM_autagavaia
 				ideology = clerical_fascism
 			}
+			every_other_country = {
+				limit = {
+					exists = yes
+					OR = {
+						original_tag = NZL
+						original_tag = AST
+						original_tag = TON
+						original_tag = NIU
+						original_tag = TAH
+						original_tag = RAP
+						original_tag = KIR
+						original_tag = NRU
+						original_tag = MRS
+						original_tag = FSM
+						original_tag = PLU
+						original_tag = GUM
+						original_tag = PNG
+						original_tag = WPG
+						original_tag = MLK
+						original_tag = FIJ
+						original_tag = SOL
+						original_tag = VAN
+						original_tag = BOU
+						original_tag = INS
+						original_tag = TMS
+						original_tag = CHT
+						original_tag = HAW
+					}
+				}
+				news_event = { id = r56_samoa_news.2 hours = 6 }
+			}
+
+			hidden_effect = { news_event = { id = r56_samoa_news.2 hours = 6 } }
 		}
 		
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MILITARY_IMPROVEMENT }
@@ -1388,7 +1463,7 @@ focus_tree = {
 		prerequisite = { focus = r56_SAM_convene_the_chiefs }
 		relative_position_id = r56_SAM_convene_the_chiefs
 
-        cost = 6
+        cost = 8
         x = -1
         y = 1
 
@@ -1398,9 +1473,12 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = r56_SAM_church_government_cooperation
 			set_country_flag = SAM_church_is_doing_things_now_whoops
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_if_completed_form_pacific_legion_focus
+			unlock_decision_tooltip = r56_SAM_intervene_on_the_side_of_the_spanish_catholics
 		}
 
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 	}
 
 	# Revive the Eastern Mau Movement
@@ -1410,7 +1488,7 @@ focus_tree = {
 		prerequisite = { focus = r56_SAM_convene_the_chiefs }
 		relative_position_id = r56_SAM_convene_the_chiefs
 
-        cost = 4
+        cost = 6
         x = 1
         y = 1
 
@@ -1436,7 +1514,10 @@ focus_tree = {
 
 		completion_reward = {
 			set_country_flag = SAM_revived_plot_17_boohoo
-			add_manpower = 500
+			add_political_power = 25
+			add_manpower = 1000
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = 500
@@ -1461,9 +1542,17 @@ focus_tree = {
 			unlock_decision_tooltip = r56_SAM_send_arms_to_galeai_family
 			unlock_decision_tooltip = r56_SAM_sponsor_the_eastern_mau
 			unlock_decision_tooltip = r56_SAM_speak_out_against_american_naval_administration
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_military_high_command
+			show_ideas_tooltip = SAM_tamotu_mulitauaopele
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SAM_mariota_tuiasosopo
 		}
 
-		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_ANNEXATION }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_MANPOWER FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_ANNEXATION }
 	}
 
 	# End the Need for Internal Bickering
@@ -1473,11 +1562,12 @@ focus_tree = {
 		prerequisite = { focus = r56_SAM_entrench_the_christian_faith focus = r56_SAM_forge_the_pacific_legion }
 		relative_position_id = r56_SAM_convene_the_chiefs
 
-        cost = 8
+        cost = 10
         x = 0
         y = 2
 
 		available = {
+			has_government = fascism
 			controls_state = 726
 			controls_state = 1088
 		}
@@ -1519,25 +1609,19 @@ focus_tree = {
         }
     }
 
-	# Restore Authority of Tumua and Pule
+	# 
 	focus = {
-        id = r56_SAM_restore_tumua_ma_pule
-        icon = GFX_focus_AUS_lawmaking_leniency
-		prerequisite = { focus = r56_SAM_samoa_united_under_one_cause focus = r56_SAM_proclaim_faumuina_as_king }
+        id = r56_SAM_establish_agency
+        icon = GFX_focus_generic_secret_service_agency
+        prerequisite = { focus = r56_SAM_the_moderate_mau focus = r56_SAM_the_traditionalists }
 		relative_position_id = r56_SAM_dissolve_the_fono
 
         cost = 5
-        x = 0
-        y = 6
+        x = 2
+        y = 2
 
-        available = { is_subject = no } # need either fascist or nonaligned check
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-        }
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
+		allow_branch = { has_dlc = "La Resistance" }
+    }
 
 	# Confiscate Foreign Plantations
 	focus = {
@@ -1625,7 +1709,7 @@ focus_tree = {
 	# Purchase Obsolete Japanese Naval Vessels
 	focus = {
         id = r56_SAM_acquire_obsolete_japanese_naval_vessels
-        icon = GFX_focus_generic_refit_civilian_ships
+        icon = GFX_focus_POL_develop_polish_shipbuilding
         prerequisite = { focus = r56_SAM_confiscate_foreign_plantations }
 		mutually_exclusive = { focus = r56_SAM_purchase_australian_guns }
 		relative_position_id = r56_SAM_confiscate_foreign_plantations
@@ -1910,16 +1994,17 @@ focus_tree = {
 	focus = {
         id = r56_SAM_affirming_our_territorial_ambitions
         icon = GFX_focus_SWE_counter_revolution
-        prerequisite = { focus = r56_SAM_restore_tumua_ma_pule }
-		relative_position_id = r56_SAM_restore_tumua_ma_pule
+        prerequisite = { focus = r56_SAM_proclaim_faumuina_as_king focus = r56_SAM_samoa_united_under_one_cause }
+		relative_position_id = r56_SAM_proclaim_faumuina_as_king
 
         cost = 6
-        x = 0
+        x = -5
         y = 1
 
         ai_will_do = { factor = 1 }
 
         completion_reward = {
+			# skizo thought but consider giving ariki of rarotonga an advisor role that boosts compliance? or just give that to the tuimanua
 			1089 = { add_core_of = ROOT }
 			custom_effect_tooltip = generic_skip_one_line_tt
 			country_event = r56_samoa.13
@@ -3137,7 +3222,6 @@ focus_tree = {
         id = r56_SAM_reach_out_to_berlin
         icon = GFX_goal_GER_restore_weimar
 		prerequisite = { focus = r56_SAM_dissolve_the_fono }
-		#mutually_exclusive = { focus = r56_SAM_restore_tumua_ma_pule }
 		relative_position_id = r56_SAM_dissolve_the_fono
 		allow_branch = { always = no }
 
@@ -3715,9 +3799,9 @@ focus_tree = {
 
         cost = 5
         x = 77
-        y = 14
+        y = 13
 
-		offset = {
+		offset = { # we really need to do this sometime
 			x = -8
 			y = 0
 
@@ -3735,7 +3819,7 @@ focus_tree = {
 			is_subject = no
 			is_in_faction = no
 			if = {
-				limit = { has_completed_focus = r56_SAM_restore_tumua_ma_pule }
+				limit = { has_completed_focus = r56_SAM_affirming_our_territorial_ambitions }
 				has_country_flag = SAM_we_are_peaceful_peoples
 			}
 		}

@@ -363,6 +363,54 @@ characters = {
 		}
 	}
 
+	SAM_mariota_tuiasosopo = {
+		name = SAM_mariota_tuiasosopo
+		portraits = {
+			civilian = { small = "GFX_kr_portrait_south_america_generic_4_small" }
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = SAM_mariota_tuiasosopo
+			allowed = { original_tag = SAM }
+			cost = 150
+
+			available = {
+				OR = {
+					has_full_control_of_state = 1088
+					has_completed_focus = r56_SAM_forge_the_pacific_legion
+				}
+			}
+
+			traits = { r56_SAM_anti_american_intellectual }
+			ai_will_do = { base = 1 }
+		}
+	}
+
+	SAM_tamotu_mulitauaopele = {
+		name = SAM_tamotu_mulitauaopele
+		portraits = {
+			civilian = { small = "GFX_kr_portrait_south_america_generic_4_small" }
+		}
+		
+		advisor = {
+			slot = high_command
+			idea_token = SAM_tamotu_mulitauaopele
+			allowed = { original_tag = SAM }
+			cost = 100
+
+			available = {
+				OR = {
+					has_full_control_of_state = 1088
+					has_completed_focus = r56_SAM_forge_the_pacific_legion
+				}
+			}
+
+			traits = { army_regrouping_2 }
+			ai_will_do = { base = 1 }
+		}
+	}
+
 	# Alfred Matthes
 	SAM_alfred_matthes = { # Head of the Nazi Party in (Western) Samoa
 		name = SAM_alfred_matthes

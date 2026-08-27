@@ -3830,6 +3830,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_news_event_SAM_mau_peoples"
+		texturefile = "gfx/event_pictures/SAM/r56_news_event_SAM_radicals.dds"
+	}
+
+	spriteType = {
 		name = "GFX_report_event_SAM_fono"
 		texturefile = "gfx/event_pictures/SAM/r56_report_event_sam_fono.dds"
 	}

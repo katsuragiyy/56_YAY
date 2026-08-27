@@ -1,6 +1,6 @@
 opinion_modifiers = {
 
-	r56_SAM_seized_american_assets_opinion = { value = -40 }
+	r56_SAM_seized_american_assets_opinion = { value = -25 }
 
 	r56_SAM_refused_to_support_opinion = { value = -35 }
 

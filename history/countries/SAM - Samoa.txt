@@ -37,6 +37,9 @@ recruit_character = SAM_autagavaia
 recruit_character = SAM_afoafouvale_misimoa
 recruit_character = SAM_leiataua
 
+recruit_character = SAM_tamotu_mulitauaopele
+recruit_character = SAM_mariota_tuiasosopo
+
 recruit_character = SAM_alfred_matthes # POLYNESIANS R ARYAN!!! - alfred matthes, maybe
 
 # Starting tech

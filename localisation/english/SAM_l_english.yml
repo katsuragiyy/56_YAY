@@ -71,20 +71,31 @@
  SAM_alfred_matthes:0 "Alfred Matthes"
  SAM_alfred_matthes_advisor_desc:0 "§LArriving to Western Samoa in 1906 at the age of 32 when the islands were under the sovereignty of the German Empire, Alfred Matthes quickly utilized his experience in planting cash crops and became a planter in the region. Following the New Zealander annexation of the western portion of Samoa, Alfred Matthes, alongside like-minded Germans and Samoans, yearned for the return of German rule to the islands. An opportunity presented itself in 1933 when the National Socialist party rose to power in Germany. \n\nThe rise of the ultranationalist party in Germany provided an opportunity to make Alfred's wishes come true. He would soon establish a branch of the National Socialist Party in Western Samoa in 1934, and has been the head of it ever since its establishment. Although many, including the regime back in Germany and Wellington view this as a silly and utterly idiotic idea, the party has attempted exploiting the pro-independence sentiment amongst Samoans in order to garner support for a return of the German regime in Samoa. And with many Germans within the islands having favorable views towards the German regime back in Berlin, the party may rise to prominence rapidly if not dealt with.§!"
 
+ # Military / Others of the Mau
  SAM_faaoloii_siuaana_i:0 "Tuimaleali'ifano"
+ SAM_autagavaia:0 "Autagavai'a Siapiu"
+ SAM_afoafouvale_misimoa:0 "Afoafouvale Misimoa"
+ SAM_leiataua:0 "Leiataua"
+
+ # Potential Tuimanuas
 
  SAM_taliutafa_kilisi_young:0 "Taliutafa Kilisi Young"
  SAM_galeai_makapi:0 "Galea'i Makapi"
  SAM_tuiviti:0 "Tuifiti"
  SAM_tufele:0 "Tufele"
 
- SAM_autagavaia:0 "Autagavai'a Siapiu"
- SAM_afoafouvale_misimoa:0 "Afoafouvale Misimoa"
- SAM_leiataua:0 "Leiataua"
+ # Minor Mau Political Advisors
 
- SAM_iiga_pisa:0 "I'iga Pisa"
- SAM_tuisila:0 "Tuisila"
- SAM_alipia_siaosi:0 "Alipia Siaosi"
+ SAM_iiga_pisa: "I'iga Pisa"
+ SAM_tuisila: "Tuisila"
+ SAM_alipia_siaosi: "Alipia Siaosi"
+
+ # American Samoan Advisors
+
+ SAM_tamotu_mulitauaopele: "Tamotu Mulitauaopele"
+ SAM_mariota_tuiasosopo: "Mariota Tuiasosopo"
+
+ # Western Samoan Administration
 
  SAM_alfred_turnbull:0 "Alfred Turnbull"
  SAM_arthur_braisby:0 "Arthur Braisby"
@@ -308,6 +319,10 @@
  r56_samoa_news.1.a:0 "You reap what you sow."
  r56_samoa_news.1.b:0 "Sāmoa mō Sāmoa!"
  r56_samoa_news.1.c:0 "Together for Victory!"
+
+ r56_samoa_news.2.t: "Radicals Rise to Power in Western Samoa"
+ r56_samoa_news.2.desc: "Today marks a turning point in South Pacific politics. Under the leadership of [SAM.GetLeader], Samoa has transitioned into a what many in Europe describe as a barbaric government. This new state lacks any central authority, operating within the framework of traditional Samoan politics, with a strong emphasis on traditionalism. The transition has drawn much criticism from both the League of Nations and the Mau's progressive faction. \n\nYet [SAM.GetLeader] has shown no signs of stepping down, preferring to function as a ceremonial figurehead for the fragmented Samoan state. Only time will tell what the future awaits for Samoa."
+ r56_samoa_news.2.a: "Concerning."
 
  ########################################################################
 
@@ -576,6 +591,7 @@
  r56_SAM_successor_to_iosefo: "Successor to Mata'afa Iosefo"
  r56_SAM_leader_of_the_radical_mau: "Head of the Radical Mau"
  r56_SAM_the_maus_international_representative: "The Mau's Diplomat"
+ r56_SAM_anti_american_intellectual: "Anti-American Intellectual"
  
  #Illegal Smuggling
  r56_SAM_smuggle_operations:0 "Smuggling Operations"
@@ -747,8 +763,20 @@
  r56_SAM_approach_the_progressives: "Grant Concessions to the Progressive Wing"
  r56_SAM_approach_the_progressives_desc: ""
 
+ r56_SAM_allow_limited_liberalization_of_constitution: "Allow Limited Liberalization Policies"
+ r56_SAM_allow_limited_liberalization_of_constitution_desc: ""
+
+ r56_SAM_mend_ties_with_the_west: "Amend Ties With the Western World Order"
+ r56_SAM_mend_ties_with_the_west_desc: ""
+
  r56_SAM_incorporate_traditionalists_into_government: "Find a Middle Ground With the Traditionalists"
  r56_SAM_incorporate_traditionalists_into_government_desc: ""
+
+ r56_SAM_combat_western_influences: "Combat the West's Political Influence"
+ r56_SAM_combat_western_influences_desc: ""
+
+ r56_SAM_push_for_more_traditionalist_policies: "Push for Further Decentralization"
+ r56_SAM_push_for_more_traditionalist_policies_desc: ""
 
  r56_SAM_glorify_iosefo_mataafa: "Glorify Mata'afa Iosefo"
  r56_SAM_glorify_iosefo_mataafa_desc: "Mata'afa Iosefo was the main proponent of Samoan independence, and fought to upkeep it during Samoa's internal woes in the late 19th century. His legacy shall not be in forgrotten!"
@@ -768,13 +796,20 @@
 
  r56_SAM_form_a_pacific_volunteer_legion: "Form a Pacific Volunteer Legion"
  r56_SAM_form_a_pacific_volunteer_legion_desc: ""
+ r56_SAM_pacific_volunteer_legion: "Pacific Volunteer Legion"
+ SAM_if_completed_entrench_christian_faith_focus: "If we have §GCompleted§! the §O$r56_SAM_entrench_the_christian_faith$§! focus, we will gain:"
+ r56_SAM_intervene_on_the_side_of_the_spanish_catholics: "Intervene in the Spanish Civil War"
 
  r56_SAM_convene_the_chiefs: "Assemble the Village Councils"
  r56_SAM_convene_the_chiefs_desc: ""
 
+ r56_SAM_bacon_of_resistance: "Beacon of Resistance Against Imperialism"
+ r56_SAM_bacon_of_resistance_desc: ""
+
  r56_SAM_entrench_the_christian_faith: "Fuse Elements of Religion and Governance"
  r56_SAM_entrench_the_christian_faith_desc: ""
  r56_SAM_church_government_cooperation: "Government-Church Cooperation"
+ SAM_if_completed_form_pacific_legion_focus: "If we have §GCompleted§! the §O$r56_SAM_form_a_pacific_volunteer_legion$§! focus, we will gain:"
 
  r56_SAM_churches_intervention: "Church Influence"
  r56_SAM_churches_intervention_desc: "After [ROOT.GetLeader]'s recent policies that have granted considerable influence to the churches present in Samoa, the churches have begun exercising their power. While they are currently loyal to the government, if we happen to become too dependent on the churches and missionaries, they may begin to undermine the authority of our government."
@@ -803,9 +838,6 @@
  r56_SAM_samoa_united_under_one_cause_desc: ""
  
  ####################################
-
- r56_SAM_restore_tumua_ma_pule: "Restore Authority of Tumua and Pule"
- r56_SAM_restore_tumua_ma_pule_desc: ""
 
  r56_SAM_confiscate_foreign_plantations: "Confiscate Western Plantations"
  r56_SAM_confiscate_foreign_plantations_desc: "Many plantations are currently within the hands of wealthy Westerners. If we are to confiscate them from their owners, we can achieve greater profit from said plantations and reduce our reliance on foreign planters."
@@ -837,6 +869,9 @@
 
  r56_SAM_fate_of_malietoa: "Fate of the Malietoa Dynasty"
  r56_SAM_fate_of_malietoa_desc: "No longer will [ROOT.GetNonIdeologyName] be divided amongst itself. Today marks the beginning of the end for the provisional government of [GetMalietoaTitleHolder], and the unification of [ROOT.GetNonIdeologyName]!"
+
+ r56_SAM_establish_agency: "Establish a Central Intelligence Agency"
+ r56_SAM_establish_agency_desc: ""
 
  r56_SAM_united_under_tuimanua: "United Under the Tuimanu'a"
  r56_SAM_united_under_tuimanua_desc: ""
@@ -874,7 +909,7 @@
  r56_SAM_disengage_from_global_affairs_desc: ""
  SAM_we_are_peaceful_peoples: "Has §RNot§! pursued any §YTerritorial Ambitions§!"
  SAM_we_want_to_expand_NOW: "Has pursued either §YManu'an§! or §YPacific§! territorial ambitions"
- SAM_unlocks_faction_joining_focuses: "§Y[ROOT.GetNameDefCap]§! unlocks focuses §YEntrance Into the Nauru Pact§! and §YJoin the East Asian Hegemon§!"
+ SAM_unlocks_faction_joining_focuses: "§Y[ROOT.GetNameDefCap]§! unlocks focuses §Y$r56_SAM_entrance_into_the_nauru_pact$§! and §Y$r56_SAM_join_the_east_asian_hegemon$§!"
 
  r56_SAM_request_foreign_industrial_aid: "Request Foreign Industrial Aid"
  r56_SAM_request_foreign_industrial_aid_desc: "Our current industrial capabilities are inadequate. Before we can assist our allies, we must first be able to equip our soldiers with the necessary equipment to fight in the battlefied. To achieve this, we must seek foreign industrial finance, which will help us in constructing military infrastructure and fill in the gaps for our men."
