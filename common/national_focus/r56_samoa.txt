@@ -1025,6 +1025,8 @@ focus_tree = {
         cost = 10
         x = 0
         y = 2
+
+		# pp, unlock some traditionalist decisions? and those will unlock BOP decisions as well?
     }
 
 	#
@@ -1039,12 +1041,7 @@ focus_tree = {
         y = 2
 
 		complete_tooltip = {
-			add_tech_bonus = {
-				name = SIA_siamese_national_banking_bureau_r56
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
+			# pp, unlock some liberal decisions? and those will unlock BOP decisions as well?
 		}
     }
 
@@ -1206,23 +1203,38 @@ focus_tree = {
         y = 4
 
 		available = { 
-			controls_state = 726 
-			# must have faumuina as leader
-			# non aligned
+			has_government = neutrality
+			has_country_leader = {
+				character = SAM_mataafa_faumuina_fiame
+				ruling_only = yes
+			}
 		}
 
 		# bypass if u have manua bcuz HOW CAN U BE KING WHEN TUIMANUA IS RIGHT THERE
 
 		completion_reward = {
-			# BTW make this focus and the other restore tumua ma pule bop
+			# if gone liberal become const. monarchy but if gone right become absolute
+			set_cosmetic_tag = SAM_KINGDOM
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_power_balance = {
+				id = r56_SAM_decentralization_balance
+				left_side = r56_SAM_government_side
+				right_side = r56_SAM_district_side
+			}
 			if = {
 				limit = { has_idea = r56_SAM_mau_factionalism_2 }
+				custom_effect_tooltip = generic_skip_one_line_tt
 				remove_ideas = r56_SAM_mau_factionalism_2
-				else = { remove_ideas = r56_SAM_mau_factionalism }
+				else = { custom_effect_tooltip = generic_skip_one_line_tt remove_ideas = r56_SAM_mau_factionalism }
+			}
+
+			hidden_effect = { # Flavour event
+				country_event = {
+					id = r56_samoa.37
+					days = 1
+				}
 			}
 		}
-
-		# change name to kingdom of samoa
 	}
 
 	# Rally Around the Traditionalists
@@ -1385,6 +1397,7 @@ focus_tree = {
 
 		# grant national spirit and adjustment for army spirit
 		# cannot and i mean CANNOT go down the imperialist branch if u do this. u will NOT be allowed to be a hypocrite
+		# unlock decisions to influence tonga?
 	}
 
 	# Assemble the Village Councils
@@ -1573,10 +1586,17 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			# if has completed moderate compromise give all neutrality support to fascism
+			set_power_balance = {
+				id = r56_SAM_decentralization_balance
+				left_side = r56_SAM_government_side
+				right_side = r56_SAM_district_side
+			}
 			if = {
 				limit = { has_idea = r56_SAM_mau_factionalism_2 }
+				custom_effect_tooltip = generic_skip_one_line_tt
 				remove_ideas = r56_SAM_mau_factionalism_2
-				else = { remove_ideas = r56_SAM_mau_factionalism }
+				else = { custom_effect_tooltip = generic_skip_one_line_tt remove_ideas = r56_SAM_mau_factionalism }
 			}
 		}
 	}
@@ -3801,18 +3821,18 @@ focus_tree = {
         x = 77
         y = 13
 
-		offset = { # we really need to do this sometime
-			x = -8
-			y = 0
-
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = r56_SAM_restore_tumua_ma_pule
-			}
-		}
+		#offset = { # we really need to do this sometime
+		#	x = -8
+		#	y = 0
+#
+		#	trigger = {
+		#		has_game_rule = {
+		#			rule = obsolete_focus_branches_visibility
+		#			option = HIDE
+		#		}
+		#		has_completed_focus = r56_SAM_restore_tumua_ma_pule
+		#	}
+		#}
 
 		available = {
 			has_war = no
@@ -3831,28 +3851,6 @@ focus_tree = {
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = r56_SAM_deterrence_focus
-		text = AFG_deterrence_focus
-		icon = GFX_focus_CHL_protect_the_easter_island # probably needs a custom icon of samoa with shield
-		prerequisite = { focus = r56_SAM_disengage_from_global_affairs }
-
-        cost = 5
-        x = 76
-        y = 15
-
-		available = { has_war = no }
-		ai_will_do = { factor = 1 }
-
-		completion_reward = {
-			add_stability = 0.05
-			add_war_support = 0.05
-			add_ideas = deterrence
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 	}
 
 	######################################

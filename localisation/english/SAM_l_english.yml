@@ -783,6 +783,9 @@
 
  r56_SAM_proclaim_faumuina_as_king: "The Coronation of Faumuinā"
  r56_SAM_proclaim_faumuina_as_king_desc: ""
+ r56_samoa.37.t: "Faumuina Crowned King of Samoa"
+ r56_samoa.37.desc: ""
+ r56_samoa.37.a: "Hurary!"
 
  # TRADITIONALISTS/RADICAL MAU
  r56_SAM_the_traditionalists: "Rally Around the Traditionalists"
@@ -1219,6 +1222,11 @@
  RULE_ALLOW_REVOKE_GUARANTEES_BLOCKED_TOOLTIP_SAMANDNZL:0 "Due to a pact being signed between our two nations, we cannot revoke our guarantee of their independence."
 
  SAM_r56_half_of_current_democratic_support_is_applied_as_a_stability_penalty_tt:0 "All current §YDemocratic§! support is applied as a §RStability§! penalty:\n"
+
+ # BOP
+ r56_SAM_decentralization_balance: "Decentralization of Samoa"
+ r56_SAM_government_side: "Government Authority"
+ r56_SAM_district_side: "District Independence"
 
  #Parties
  SAM_democratic_party:0 "Mau (P)"

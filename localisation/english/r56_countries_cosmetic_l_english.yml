@@ -3347,6 +3347,11 @@
  SAM_MAU_neutrality_DEF:0 "O Le Mau"
  SAM_MAU_neutrality_DEF_ADJ:0 "Samoan"
 
+ #SAM_KINGDOM
+ SAM_KINGDOM_neutrality:0 "Kingdom of Samoa"
+ SAM_KINGDOM_neutrality_DEF:0 "the Kingdom of Samoa"
+ SAM_KINGDOM_neutrality_DEF_ADJ:0 "Samoan"
+
  # SAM_MALO_KAISALIKA
  SAM_malo_kaisalika_neutrality:0 "Malo Kaisalika"
  SAM_malo_kaisalika_neutrality_DEF:0 "German Samoa" # Kaiser's Government of the Kingdom of Samoa
