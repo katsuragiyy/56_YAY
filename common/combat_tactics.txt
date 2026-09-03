@@ -13,9 +13,7 @@ phases = { # phase = no is the standard phase
 	deadly_trap #R56
 	break_line #R56
 }
-#R56 mod tactics and phases first
 
-#this marks the start of default tactics
 tactic_basic_attack = {
 
 	is_attacker = yes
@@ -28,7 +26,7 @@ tactic_basic_attack = {
 
 	base =  { factor = 4 }
 	picture = attack
-
+	
 	countered_by = tactic_counterattack
 
 	attacker = 0.05
@@ -72,7 +70,7 @@ tactic_counterattack = { # counters basic attack, assault
 		}
 	}
 	picture = counterattack
-
+	
 	defender = 0.25
 }
 
@@ -188,6 +186,7 @@ tactic_assault = {
 
 			NOT = { is_fighting_in_terrain = urban }
 		}
+
 	} #Revisit ideally this should be more common in urban terrain
 	
 	picture = assault

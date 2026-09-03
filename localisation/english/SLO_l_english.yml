@@ -2,6 +2,7 @@
 ##Add in focus tree fight between german influenced and more radical Hlinka guard, more and more imitating the SS and the Slovak Popular Party (still fascist)
 #Gregorij Rožman antocommunist Slovene Bishop
  SLO_generic_focus:0 "Slovakian national focus"
+ SLO_GATHERING_STORM_DESC: "With the break up of the Czechoslovak Republic, Slovakia now finds itself alone in a world that is on the brink of collapse. It is up to it's founders to both solve the internal problems that plauge the country and to ensure that Slovakia remains independent for the coming years."
 #  SLO_fascism_party:0 "SUS" # vanilla is better according to Simpy, if not move to replace
 #  SLO_fascism_party_long:0 "Slovenská ľudová Strana" # vanilla is better according to Simpy, if not move to replace
  SLO_democratic_party:0 "DS"

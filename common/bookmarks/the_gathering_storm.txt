@@ -13,20 +13,19 @@ bookmarks = {
 
 		###---> Majors <><> <><> <><>
 
-		FRA = {
-			history = "FRA_GATHERING_STORM_DESC"
-			ideology = democratic
+		SOV = {
+			history = "SOV_GATHERING_STORM_DESC"
+			ideology = communism
 			version = base_game
 			ideas = {
-				FRA_victors_of_wwi
-				FRA_disjointed_government
-				FRA_full_employment
-				FRA_protected_by_the_maginot_line
+				home_of_revolution
+				trotskyite_plot_nsb
+				SOV_second_five_year_plan_fake_1936_ns
 			}
 			focuses = {
-				FRA_support_daladier
-				FRA_far_right_leagues
-				FRA_the_new_continental_system
+				SOV_left_opposition_coup
+				SOV_found_the_comecon
+				SOV_liberation_of_the_european_proletariat
 			}
 		}
 
@@ -37,7 +36,6 @@ bookmarks = {
 			ideas = {
 				home_of_the_free
 				great_depression
-				rt56_rushed_r_n_d
 				undisturbed_isolation
 			}
 			focuses = {
@@ -52,7 +50,6 @@ bookmarks = {
 			ideology = democratic
 			version = base_game
 			ideas = {
-				MTG_naval_treaty_adherent
 				stiff_upper_lip
 				ENG_the_war_to_end_all_wars
 				george_v
@@ -64,6 +61,22 @@ bookmarks = {
 			}
 		}
 
+		FRA = {
+			history = "FRA_GATHERING_STORM_DESC"
+			ideology = democratic
+			version = base_game
+			ideas = {
+				FRA_victors_of_wwi
+				FRA_disjointed_government
+				FRA_full_employment
+			}
+			focuses = {
+				FRA_support_daladier
+				FRA_far_right_leagues
+				FRA_the_new_continental_system
+			}
+		}
+
 		GER = {
 			history = "GER_GATHERING_STORM_DESC"
 			ideology = fascism
@@ -72,7 +85,6 @@ bookmarks = {
 				sour_loser
 				GER_mefo_bills_1936_fake_ns
 				GER_army_1936_fake_ns
-				r56_ger_naval_treaty
 			}
 			focuses = {
 				GER_fuhrerprinzip
@@ -89,7 +101,6 @@ bookmarks = {
 				ITA_excessive_regia_marina_budget
 				ITA_military_research_stretched_thin
 				vittorio_emanuele
-				MTG_naval_treaty_adherent
 			}
 			focuses = {
 				ITA_mare_nostrum_bba
@@ -108,7 +119,6 @@ bookmarks = {
 				JAP_1936_fake_state_shintoism_idea
 				JAP_1936_fake_industrial_idea
 				JAP_militarism
-				MTG_naval_treaty_adherent
 			}
 			focuses = {
 				JAP_sea_purge_the_kodoha_faction
@@ -127,7 +137,6 @@ bookmarks = {
 				JAP_1936_fake_state_shintoism_idea
 				JAP_1936_fake_industrial_idea
 				JAP_militarism
-				MTG_naval_treaty_adherent
 			}
 			focuses = {
 				JAP_sea_purge_the_kodoha_faction
@@ -136,31 +145,230 @@ bookmarks = {
 			}
 		}
 
-		SOV = {
-			history = "SOV_GATHERING_STORM_DESC"
-			ideology = communism
+		CHI = {
+			history = "CHI_GATHERING_STORM_DESC"
+			ideology = neutrality
 			version = base_game
 			ideas = {
-				home_of_revolution
-				trotskyite_plot_nsb
-				SOV_poor_railnetworks_0
-				SOV_risk_of_disease
+				KMT_nanjing_decade
+				KMT_army_of_a_bygone_era
+				KMT_corrupted_regime
 			}
 			focuses = {
-				SOV_left_opposition_coup
-				SOV_found_the_comecon
-				SOV_liberation_of_the_european_proletariat
+				KMT_end_the_peoples_tutelage
+				KMT_the_great_flight
+				KMT_redefine_democracy
 			}
-		}
-
-		###---> Other Countries <><> <><> <><>
-
-		"---" = {
-			history = "OTHER_GATHERING_STORM_DESC"
 		}
 
 		###---> Minors <><> <><> <><>
 
+		# Holland
+		HOL = {
+			minor = yes
+			history = "NETHERLANDS_GATHERING_STORM_DESC"
+			ideology = democratic
+			version = base_game
+			label = { country_europe }
+			ideas = {
+				HOL_wilhelmina
+				HOL_shell_shocked_spectator_5
+				HOL_de_crisisjaren_5
+			}
+			focuses = {
+				HOL_continue_the_war_in_batavia
+				HOL_liberation
+				HOL_prepare_the_inundation_lines
+			}
+		}
+
+		# Belgium²
+		BEL = {
+			minor = yes
+			history = BEL_GATHERING_STORM_DESC
+			ideology = democratic
+			available = {  NOT = { has_dlc = "No Compromise, No Surrender" } } 
+			required_dlc = { "Gotterdammerung" }
+			version = gotterdammerung
+			label = { country_europe }
+			ideas = {
+				BEL_chasseurs_ardennais_ns
+				BEL_scars_of_ww1_ns_fake
+				BEL_corruption_ns_fake
+			}
+			focuses = {
+				BEL_v_for_victory
+				BEL_belgica
+				BEL_legacy_of_the_great_war
+			}
+		}
+
+		BEL = {
+			minor = yes
+			history = BEL_GATHERING_STORM_DESC
+			ideology = democratic
+			required_dlc = { "Gotterdammerung" "No Compromise, No Surrender" }
+			version = no_compromise_no_surrender
+			label = { country_europe }
+			ideas = {
+				BEL_chasseurs_ardennais_ns_ncns
+				BEL_scars_of_ww1_ns_fake
+				BEL_corruption_ns_fake
+			}
+			focuses = {
+				BEL_v_for_victory
+				BEL_belgica
+				BEL_legacy_of_the_great_war
+			}
+		}
+
+		# Luxembourg
+		LUX = {
+			minor = yes
+			history = "LUX_GATHERING_STORM_DESC"
+			ideology = democratic
+			version = base_game
+			label = { country_europe }
+			ideas = {
+				r56_legacy_of_luxembourg_crisis_1
+				r56_LUX_economic_dependence_1
+				LUX_charlotte
+			}
+			focuses = {
+				LUX_another_declaration_of_neutrality
+				LUX_commemorate_independence
+				LUX_european_revolution
+			}
+		}
+
+		# Switzerland
+		SWI = {
+			minor = yes
+			history = "SWI_GATHERING_STORM_DESC"
+			ideology = democratic
+			version = by_blood_alone
+			label = { country_europe }
+			ideas = {
+				SWI_swiss_neutrality
+				SWI_foreign_fascist_propaganda
+			}
+			focuses = {
+				SWI_national_redoubt
+				SWI_take_a_stance
+				SWI_the_new_eidgenossenschaft
+			}
+		}
+		
+		# Austria
+		AUS = {
+            minor = yes
+            history = "AUS_GATHERING_STORM_DESC"
+            ideology = fascism
+			version = base_game
+			label = { country_europe }
+            ideas = {
+                AUS_july_followed_june
+                AUS_memories_of_februarkampfe
+				AUS_reliant_on_lon_1
+            }
+            focuses = {
+                AUS_rearm_the_bundesheer
+                AUS_clock_ticks_down
+                AUS_end_the_depression
+			}
+		}
+
+		# Liechtenstein
+		LIE = {
+            minor = yes
+            history = "LIE_GATHERING_STORM_DESC"
+            ideology = democratic
+			label = { country_europe }
+            ideas = {
+                LIE_franz_i
+				LIE_legacy_of_1866
+				LIE_the_rotter_curse
+            }
+            focuses = {
+                LIE_princely_cabinet_of_national_defence
+				LIE_prince_no_more
+				LIE_form_the_military_budget
+            }
+        }
+
+		# Spain
+		SPR = {
+			minor = yes
+			history = "SPAIN_GATHERING_STORM_DESC"
+			required_dlc = { "La Resistance" }
+			ideology = democratic
+			version = base_game
+			label = { country_europe }
+			ideas = {
+				SPR_military_disloyalty
+				SPA_carlism_1
+				SPR_political_violence
+			}
+			focuses = {
+				SPA_caudillo_of_spain
+				SPA_no_compromise_on_carlist_ideals
+				SPR_anarchism_knows_no_borders
+			}
+		}
+
+		# Portugal
+		POR = {
+			minor = yes
+			history = "POR_GATHERING_STORM_DESC"
+			ideology = neutrality
+			version = base_game
+			label = { country_europe }
+			ideas = {
+				POR_lackluster_armed_forces
+				POR_disgruntled_republicans
+				POR_austerity_measures
+			}
+			focuses = {
+				POR_unite_against_salazar
+				POR_solidify_popular_support
+				POR_restore_the_empire
+			}
+		}
+
+		# Andorra
+		ADR = {
+			minor = yes
+			history = "MICRONATIONS_GATHERING_STORM_DESC"
+			ideology = neutrality
+			version = base_game
+			label = { country_europe }
+			ideas = {
+				disarmed_nation
+				neutrality_idea
+				TIB_mountainous_people
+			}
+			focuses = {
+				ADR_accept_french_potectorate
+				ADR_continue_the_policy_of_neutrality
+				ADR_accept_spanish_refugees
+			}
+		}
+
+		# Scotland
+		SCO = {
+		 	minor = yes
+		 	history = "SCO_GATHERING_STORM_DESC"
+		 	ideology = democratic
+			label = { country_europe country_releasable }
+		 	ideas = { CEL_pro_union_movement }
+		 	focuses = {
+		 		SCO_the_scottish_workers_republican_party
+				SCO_democratic_constitutionalism
+				SCO_scottish_democratic_fascist_party
+		 	}
+		}
+
+		# Ireland
 		IRE = {
 		 	minor = yes
 		 	history = "IRE_GATHERING_STORM_DESC"
@@ -177,23 +385,927 @@ bookmarks = {
 		 	}
 		}
 
-		GRE = {
+		# Iceland
+		ICE = {
 			minor = yes
-			history = "GRE_GATHERING_STORM_DESC"
+			history = ICE_GATHERING_STORM_DESC
 			ideology = democratic
+			required_dlc = { "Arms Against Tyranny" }
+			version = arms_against_tyranny
 			label = { country_europe }
 			ideas = {
-				GRE_depression_1
-				GRE_government_crisis
-				GRE_shadow_of_1921
+				ICE_christian_x
+				ICE_the_icelandic_economy_modifier_fake_idea
 			}
 			focuses = {
-				GRE_reinforce_4th_of_august_regime
-				GRE_third_hellenic_civilization
-				GRE_Reinforce_the_hierarchy
+				ICE_the_kingdom_of_iceland
+				ICE_the_viking_spirit
+				ICE_republicanism
 			}
 		}
 
+		# Denmark
+		DEN = {
+			minor = yes
+			history = "DEN_GATHERING_STORM_DESC"
+			ideology = democratic
+			required_dlc = { "Arms Against Tyranny" }
+			version = arms_against_tyranny
+			label = { country_europe }
+			ideas = {
+				DEN_fake_neglected_military_ns 
+				DEN_fake_economic_crisis_ns
+				DEN_fake_industrial_capability_ns
+			}
+			focuses = {
+				DEN_declare_neutrality
+				DEN_establish_the_danelaw 
+				DEN_pan_scandinavianism
+			}
+		}
+
+		# Norway
+		NOR = {
+			minor = yes
+			history = "NOR_GATHERING_STORM_DESC"
+			ideology = democratic
+			label = { country_europe }
+			ideas = {
+				NOR_haakon
+				NOR_policy_of_disarmament
+				NOR_aftermath_of_the_depression_3
+			}
+			focuses = {
+            	NOR_three_brothers
+          		NOR_ski_infantry
+				NOR_a_prosperous_kingdom
+			}
+		}
+
+		# Sweden
+		SWE = {
+			minor = yes
+			history = "SWE_GATHERING_STORM_DESC"
+			ideology = democratic
+			label = { country_europe }
+			ideas = {
+				SWE_swedish_german_trade_0_idea
+				SWE_swedish_disarmament_idea
+				SWE_nationalist_military_garrisons
+			}
+			focuses = {
+            	SWE_the_red_menace
+          		SWE_prince_gustafs_coup
+				SWE_sweden_first
+			}
+		}
+
+		# Finland²
+		FIN = {
+			minor = yes
+			history = FIN_GATHERING_STORM_DESC
+			ideology = neutrality
+			available = { NOT = { has_dlc = "Arms Against Tyranny" } }
+			label = { country_europe }
+			version = base_game
+			ideas = {
+				FIN_sisu_2
+				FIN_communism_banned
+			}
+			focuses = {
+				fin_comfoc
+				FIN_a_cry_for_help
+				FIN_the_dream_of_greater_finland_r56
+			}
+		}
+
+		FIN = {
+			minor = yes
+			history = FIN_GATHERING_STORM_DESC
+			ideology = neutrality
+			required_dlc = { "Arms Against Tyranny" }
+			label = { country_europe }
+			version = arms_against_tyranny
+			ideas = {
+				FIN_sisu_2
+				FIN_communism_banned
+			}
+			focuses = {
+				FIN_red_finland
+				FIN_a_cry_for_help
+				FIN_greater_finland
+			}
+		}
+		
+		# Estonia
+		EST = {
+			minor = yes
+			history = "EST_GATHERING_STORM_DESC"
+			ideology = neutrality
+			version = base_game
+			required_dlc = { "No Step Back" }
+			label = { country_europe }
+			ideas = {
+				EST_vaps_idea_1
+				democratic_opposition
+			}
+			focuses = {
+				EST_era_of_silence
+				EST_fight_the_vaps
+				EST_unite_our_nations
+			}
+		}
+
+		# Latvia
+		LAT = {
+			minor = yes
+			history = "LAT_GATHERING_STORM_DESC"
+			ideology = neutrality
+			version = base_game
+			required_dlc = { "No Step Back" }
+			label = { country_europe }
+			ideas = {
+				LAT_perkonkrust_idea
+				democratic_opposition
+			}
+			focuses = {
+				LAT_military_dictatorship
+				LAT_womens_aizsargi
+				LAT_the_old_ways
+			}
+		}
+
+		# Lithuania
+		LIT = {
+			minor = yes
+			history = "LIT_GATHERING_STORM_DESC"
+			ideology = neutrality
+			label = { country_europe }
+			ideas = {
+				LIT_polish_lithuanian_tensions
+				LIT_peasant_strikes
+				LIT_constitutional_loophole
+			}
+			focuses = {
+				LIT_join_northern_lights
+				LIT_restore_the_gdl
+				LIT_propose_a_baltic_union
+			}
+		}
+
+		# Poland
+		POL = {
+			minor = yes
+			history = "POL_GATHERING_STORM_DESC"
+			ideology = neutrality
+			version = base_game
+			label = { country_europe }
+			ideas = {
+				uncontrolled_exports
+				POL_april_constitution_1
+				POL_looming_peasants_strike
+			}
+			focuses = {
+				POL_radicalize_the_front
+				POL_complete_april_constitution
+				POL_prepare_for_the_inevitable
+			}
+		}
+
+		# Czechia um 2
+		CZE = {
+			minor = yes
+			history = "CZE_GATHERING_STORM_DESC"
+			ideology = democratic
+			required_dlc = { "Peace For Our Time" }
+			label = { country_europe }
+			assume_not_played_if_missing_data = yes
+			version = peace_for_our_time
+			ideas = {
+				CZE_a_divided_nation_fake_ns
+				CZE_sudeten_german_quandary
+				CZE_industrialists_veto
+			}
+			focuses = {
+				CZE_the_second_fortification_program
+				CZE_appeal_to_the_castle
+				CZE_coalition_building
+			}
+		}
+
+		CZE  = {
+			minor = yes
+			history = "CZE_GATHERING_STORM_DESC"
+			ideology = democratic
+			available = { NOT = { has_dlc = "Peace For Our Time" } }
+			label = { country_europe }
+			version = base_game
+			ideas = {
+				edvard_benes
+				CZE_divided_nation
+				r56_YUG_little_entente
+			}
+			focuses = {
+				CZE_sokol_movement
+				CZE_revive_little_entente
+				CZE_empower_internationalism
+			}
+		}
+
+		# Slovakia
+		SLO = {
+			minor = yes
+			history = "SLO_GATHERING_STORM_DESC"
+			ideology = fascism
+			version = base_game
+			label = { country_europe country_releasable }
+			ideas = { r56_SLO_economy_dm_fake }
+			focuses = {
+				SLO_purge_fascists
+				SLO_found_the_nation
+				SLO_militarize_the_hlinka_guard
+			}
+		}
+
+		# Ruthenia (Carpatho-Ukraine)
+		RUT = {
+			minor = yes
+			history = RUT_GATHERING_STORM_r56_DESC
+			ideology = democratic
+			version = base_game
+			label = { country_europe country_releasable }
+			ideas = { CZE_back_against_the_mountains_RUT }
+			focuses = {
+				RUT_claim_no_territories
+				RUT_a_free_rusyn_state
+				RUT_one_ukraine
+			}
+		}
+
+		# Ukraine
+		UKR = {
+			minor = yes
+			history = UKR_GATHERING_STORM_r56_DESC
+			ideology = democratic
+			version = base_game
+			label = { country_europe country_releasable }
+			ideas = { GEN_Anti_Invasion_I }
+			focuses = {
+				UKR_free_and_at_peace
+				UKR_a_condominium_in_western_ukraine
+				UKR_free_the_oppressed_cossacks
+			}
+		}
+
+		# Yugoslavia
+		YUG = {
+			minor = yes
+			history = "YUG_GATHERING_STORM_DESC"
+			ideology = neutrality
+			version = base_game
+			label = { country_europe }
+			ideas = {
+				anti_german_military
+				YUG_idea_croatian_opposition
+				YUG_prince_paul
+			}
+			focuses = {
+				YUG_reinforce_old_alliances
+				YUG_end_the_regency
+				YUG_friendship_treaty_with_italy
+			}
+		}
+
+		# Croatia
+		CRO = {
+			minor = yes
+			history = "CRO_GATHERING_STORM_DESC"
+			ideology = neutrality
+			version = base_game
+			label = { country_europe country_releasable }
+			ideas = { CRO_religious_minorities }
+			focuses = {
+				CRO_form_peasant_councils
+				CRO_bosnian_muslim_conscription_focus
+				CRO_nationalism_focus
+			}
+		}
+
+		# Albania
+		ALB = {
+			minor = yes
+			history = "ALB_GATHERING_STORM_DESC"
+			ideology = neutrality
+			version = base_game
+			label = { country_europe }
+			ideas = { ALB_great_depression italian_in_the_army }
+			focuses = {
+				ALB_challenge_zogs_rule
+				ALB_invite_egyptian_exiles
+				ALB_strengthen_zogs_rule
+			}
+		}
+
+		# Hungary
+		HUN = {
+			minor = yes
+			history = "HUN_GATHERING_STORM_DESC"
+			ideology = neutrality
+			available = { NOT = { has_dlc = "Gotterdammerung" } }
+			label = { country_europe }
+			version = base_game
+			ideas = {
+				HUN_treaty_of_triannon
+				HUN_gombos_trade_treaty
+			}
+			focuses = {
+				HUN_proclaim_the_restoration_of_austria_hungary
+				HUN_secret_rearmament
+				HUN_renounce_the_treaty_of_trianon
+			}
+		}
+
+		HUN = {
+			minor = yes
+			history = "HUN_GATHERING_STORM_DESC"
+			ideology = neutrality
+			required_dlc = { "Gotterdammerung" }
+			label = { country_europe }
+			version = gotterdammerung
+			ideas = {
+				HUN_treaty_of_triannon_wuw
+				HUN_gombos_trade_treaty
+				HUN_hungarian_national_defense_association
+			}
+			focuses = {
+				wuw_HUN_renovato_imperii
+				wuw_HUN_strengthen_horthys_reign
+				wuw_HUN_reviving_the_spirit_of_1848
+			}
+		}
+
+		# Romania
+		ROM = {
+            minor = yes
+            history = "r56_ROM_GATHERING_STORM_DESC"
+            ideology = democratic
+			label = { country_europe }
+            ideas = {
+                r56_ROM_carol_idea
+                r56_ROM_flawed_democracy_1
+				r56_YUG_little_entente
+            }
+            focuses = {
+                ROM_exile_or_execution
+                ROM_preservation_of_greater_romania
+                ROM_the_romanian_civil_war
+            }
+        }
+
+		# Bulgaria
+		BUL = {
+			minor = yes
+			history = "BUL_GATHERING_STORM_DESC"
+			required_dlc = { "Battle for the Bosporus" }
+			label = { country_europe }
+			ideology = neutrality
+			version = base_game
+			ideas = {
+				BUL_second_national_catastrophe
+				BUL_army_restrictions
+				BUL_imro_01
+			}
+			focuses = {
+				BUL_the_fatherland_front
+				BUL_restore_the_bulgarian_patriarchate
+				BUL_prussia_of_the_balkans
+			}
+		}
+
+		# Greece
+		GRE = {
+			minor = yes
+			history = "GRE_GATHERING_STORM_DESC"
+			ideology = neutrality
+			version = base_game
+			required_dlc = { "Battle for the Bosporus" }
+			label = { country_europe }
+			ideas = {
+				GRE_debt_to_the_ifc
+				GRE_schachtplan
+				GRE_political_instability_dummy
+			}
+			focuses = {
+				GRE_metaxism_focus
+				GRE_resurrecting_the_megali_idea
+				GRE_stage_an_incident_in_the_bosporus
+			}
+		}
+
+		# Turkey
+		TUR = {
+			minor = yes
+			history = "TUR_GATHERING_STORM_DESC"
+			ideology = neutrality
+			version = base_game
+			label = { country_europe }
+			ideas = {
+				TUR_sectarian_woes
+				TUR_disorganized_armed_forces_idea_dud
+				TUR_kemalist_army_officers_limited_power_loyal_dud
+			}
+			focuses = {
+				TUR_ratify_the_six_arrows
+				TUR_reaffirm_the_balkan_pact
+				TUR_pivot_to_the_past
+			}
+		}
+
+		# Cyprus
+		CYP = {
+			minor = yes
+			history = "CYP_GATHERING_STORM_DESC"
+			ideology = democratic
+			version = base_game
+			label = { country_europe country_releasable }
+			ideas = { r56_CYP_orthodox_church_idea }
+			focuses = {
+				CYP_found_army
+				CYP_begin_urbanisation_efforts
+				CYP_continue_farming_reliance
+			}
+		}
+
+		# Armenia
+		ARM = {
+			minor = yes
+			history = "ARM_GATHERING_STORM_DESC"
+			ideology = democratic
+			version = base_game
+			label = { country_europe country_releasable }
+			ideas = {
+				ARM_dashnak_hunchak_split
+				ARM_fading_national_identity
+			}
+			focuses = {
+				ARM_the_transcaucasian_confederation
+				ARM_cherish_what_we_have
+				ARM_the_10th_crusade
+			}
+		}
+
+		# Kalmykia
+		KAL = {
+			minor = yes
+			history = "KAL_GATHERING_STORM_DESC"
+			ideology = democratic
+			version = base_game
+			label = { country_europe country_releasable }
+			focuses = {
+				KAL_reconcile_buddhism_and_socialism
+				KAL_our_equine_pride
+				KAL_claim_greater_mongolia
+			}
+		}
+
+		# Mandatory Palestine
+		MPL = {
+			minor = yes
+			history = "MPL_GATHERING_STORM_DESC"
+			ideology = neutrality
+			version = base_game
+			label = { country_asia }
+			ideas = {
+				MPL_mandate
+				MPL_aliyah_start
+			}
+			focuses = {
+				MPL_arab_revolt
+				MPL_a_forgone_conclusion
+				MPL_british_occupation
+			}
+		}
+
+		# Iraq 1+1
+		IRQ = {
+			minor = yes
+			history = "IRQ_GATHERING_STORM_DESC"
+			available = { has_dlc = "Graveyard of Empires" }
+			assume_not_played_if_missing_data = yes
+			ideology = neutrality
+			label = { country_asia }
+			version = graveyard_of_empires
+			ideas = {
+				IRQ_golden_square
+				IRQ_anglo_iraqi_treaty
+				IRQ_agrarian_society
+			}
+			focuses = {
+				IRQ_rally_behind_the_hashemite_dynasty
+				IRQ_bakr_sidqi_coup
+				IRQ_promote_kurdish_culture
+			}
+		}
+
+		IRQ = {
+			minor = yes
+			history = "IRQ_GATHERING_STORM_DESC"
+			available = { NOT = { has_dlc = "Graveyard of Empires" } }
+			assume_not_played_if_missing_data = yes
+			ideology = neutrality
+			label = { country_asia }
+			version = base_game
+			ideas = {
+				IRQ_religious_schism
+				IRQ_military_conflict
+				IRQ_oil_concessions
+			}
+			focuses = {
+				IRQ_a_true_republic
+				IRQ_reinforce_the_monarchy
+				IRQ_proclaim_the_neo_assyrian_empire
+			}
+		}
+
+		# Saudi Arabia
+		SAU = {
+			minor = yes
+			history = "SAU_GATHERING_STORM_DESC"
+			ideology = neutrality
+			label = { country_asia }
+			ideas = {
+				bba_AFA_skilled_desert_warriors
+				SAU_legacy_of_1934
+			}
+			focuses = {
+            	SAU_incorporate_nomad_tactics
+          		SAU_diplomacy_in_the_sand
+				SAU_destabilize_the_east
+			}
+		}
+
+		# Persia / Iran
+		PER = {
+			minor = yes
+			history = PER_GATHERING_STORM_DESC
+			ideology = neutrality
+			required_dlc = { "Graveyard of Empires" }
+			version = graveyard_of_empires
+			label = { country_asia }
+			ideas = {
+				PER_anglo_iranian_oil_ns
+				PER_homeland_not_fall_idea
+				PER_imperial_expansionism_idea
+			}
+			focuses = {
+				PER_fight_for_iran
+				PER_glory_of_cyrus
+				PER_strengthen_iranian_parliament
+			}
+		}
+
+		# Afghanistan
+		AFG = {
+            minor = yes
+            history = "r56_AFG_GATHERING_STORM_DESC"
+            ideology = neutrality
+			label = { country_asia }
+            ideas = {
+                AFG_decentralized_economy
+				AFG_illiteracy
+				r56_AFG_zahir_shah_idea
+            }
+            focuses = {
+                AFG_continute_nadir_shahs_reforms
+				AFG_waaidu
+				AFG_the_exiled_king
+            }
+        }
+
+		# Kazakhstan / Qazaqstan
+		KAZ = {
+            minor = yes
+            history = "KAZ_GATHERING_STORM_DESC"
+            ideology = democratic
+            label = { country_europe country_asia country_releasable }
+            ideas = { KAZ_alikhan_b_national_spirit_r56 TRK_severe_soviet_colonization }
+            focuses = {
+				TRK_popular_will
+				TRK_tear_down_stalins_legacy
+                TRK_restore_khanate
+			}
+		}
+
+		# Pakistan
+		PAK = {
+			minor = yes
+			history = "PAK_GATHERING_STORM_DESC"
+			ideology = neutrality
+			label = { country_asia country_releasable }
+			focuses = {
+            	PAK_Unite_the_Proletariat
+          		PAK_Our_Own_Path
+				PAK_Allah_and_State
+			}
+		}
+
+		# Tibet
+		TIB = {
+			minor = yes
+			history = "TIB_GATHERING_STORM_DESC"
+			ideology = neutrality
+			label = { country_asia }
+			ideas = {
+				TIB_poorly_organized_army
+				TIB_backward_industry
+			}
+			focuses = {
+            	TIB_complete_diplomatic_isolation
+          		TIB_search_the_dalai_lama
+				TIB_unite_the_himalayas
+			}
+		}
+
+		# Bhutan
+		BHU = {
+			minor = yes
+			history = "BHU_GATHERING_STORM_DESC"
+			ideology = neutrality
+			label = { country_asia }
+			ideas = {
+				BHU_treaty_with_britain
+				BHU_severe_economic_isolationism
+				BHU_no_army
+			}
+			focuses = {
+            	BHU_aftermath_of_the_visit_to_india
+          		BHU_land_redistribution
+				BHU_create_an_army
+			}
+		}
+
+		# Tannu Tuva
+		TAN = {
+            minor = yes
+            history = "TAN_GATHERING_STORM_DESC"
+            ideology = communism
+            label = { country_asia }
+            ideas = { TAN_disorganized_military }
+            focuses = {
+				TAN_case_of_the_nine
+                TAN_call_for_army_readiness
+                TAN_carry_the_altai_torch
+			}
+		}
+
+		# Mongolia
+		MON = {
+            minor = yes
+            history = "MON_GATHERING_STORM_DESC"
+            ideology = communism
+            label = { country_asia }
+            ideas = {
+                MON_buddhist_opposition
+                MON_dominated_animal_husbandry_idea
+				MON_new_course_policy_idea
+            }
+            focuses = {
+                MON_dream_of_greater_mongolia
+                MON_central_asia_defensive_pact
+                MON_strong_leader_genden
+			}
+		}
+
+		# Inner Mongolia
+		MEN = {
+            minor = yes
+            history = "MEN_GATHERING_STORM_DESC"
+            ideology = neutrality
+			label = { country_asia }
+            ideas = {
+                MEN_kwantungs_invisible_hand
+                MEN_the_long_winter
+				MEN_disorganized_military
+            }
+            focuses = {
+                MEN_strengthen_ties_with_japan
+                MEN_reform_rather_then_change
+                MEN_our_place_under_the_red_sun
+			}
+		}
+
+		# Manchuria
+		MAN = {
+			minor = yes
+			history = "MAN_GATHERING_STORM_DESC"
+			ideology = fascism
+			version = base_game
+			label = { country_asia }
+			ideas = {
+				MAN_banditry
+				MAN_kwantung_veto_2
+				MAN_low_legitimacy_52
+			}
+			focuses = {
+				MAN_the_qing_restoration
+				MAN_the_empire_of_great_manchuria
+				MAN_claim_the_mandate_of_heaven_2
+			}
+		}
+
+		# Korea
+		KOR = {
+            minor = yes
+            history = "KOR_GATHERING_STORM_DESC"
+            ideology = fascism
+			label = { country_asia country_releasable }
+            focuses = {
+                KOR_peoples_committee_of_korea
+                KOR_rise_of_the_chaebols
+                KOR_cement_monarchic_rule
+			}
+		}
+
+		# Raj
+		RAJ = {
+			minor = yes
+			history = "RAJ_GATHERING_STORM_DESC"
+			ideology = neutrality
+			version = base_game
+			label = { country_asia }
+			ideas = {
+				RAJ_agrarian_economy
+				RAJ_Caste_Debuff_3
+				RAJ_Princely_States
+			}
+			focuses = {
+				RAJ_Linlithgows_Reign
+				RAJ_Connect_the_Remote_Provinces
+				RAJ_prepare_an_autonomous_defense_r56
+			}
+		}
+
+		# Siam / Thailand
+		SIA = {
+			minor = yes
+			history = SIA_GATHERING_STORM_r56_DESC
+			ideology = neutrality
+			version = base_game
+			label = { country_asia }
+			ideas = {
+				SIA_state_of_the_civilian_wing_r56
+				SIA_siamese_ultranationalist_movement_r56
+				SIA_agrarian_society_r56
+			}
+			focuses = {
+				SIA_towards_a_great_thai_empire_r56
+				SIA_address_rama_viis_abdication_r56
+				SIA_amend_the_military_service_act_r56
+			}
+		}
+
+		# French Indochina
+		FRI = {
+			minor = yes
+			history = "FRI_GATHERING_STORM_DESC"
+			ideology = neutrality
+			label = { country_asia }
+			ideas = {
+				FRI_unequal_economic_developement
+				FRI_surete_generale_indochinoise
+				FRI_growing_vietnamese_nationalism
+			}
+			focuses = {
+            	FRI_tirailleurs_indochinois
+          		FRI_the_second_yen_bai_mutiny
+				FRI_the_war_arrives_to_indochina
+			}
+		}
+
+		# Indonesia / Dutch East Indies
+		# MAKE NON-DLC VERSION TOO
+		INS = {
+			minor = yes
+			history = "INS_GATHERING_STORM_DESC"
+			ideology = neutrality
+			available = { has_dlc = "Thunder at Our Gates" }
+			assume_not_played_if_missing_data = yes
+			version = thunder_at_our_gates
+			label = { country_asia }
+			ideas = {
+				idea_INS_volksraad
+				idea_INS_great_depression_fake
+				idea_INS_mismanaged_admin_fake
+			}
+			focuses = {
+				INSHOL_autonomous_dominion
+				INS_the_declaration_of_independence
+				INS_support_tan_malakas_coup
+			}
+		}
+
+		INS = {
+			minor = yes
+			history = "INS_GATHERING_STORM_DESC"
+			available = { NOT = { has_dlc = "Thunder at Our Gates" } }
+			assume_not_played_if_missing_data = yes
+			ideology = neutrality
+			label = { country_asia }
+			version = base_game
+			ideas = {
+				INS_political_idea
+				INS_economy_idea
+				INS_army_idea
+			}
+			focuses = {
+				INS_equal_under_god
+				INS_jewel_of_the_pacific
+				INS_hari_kemerdekaan
+			}
+		}
+
+		# Philippines
+		PHI = {
+			minor = yes
+			history = "PHI_GATHERING_STORM_DESC" 
+			ideology = neutrality
+			available = { has_dlc = "No Compromise, No Surrender" }
+			assume_not_played_if_missing_data = yes
+			version = no_compromise_no_surrender
+			label = { country_asia }
+			ideas = {
+				PHI_island_nation_ns_fake
+				PHI_the_great_depression_ns_fake
+				PHI_philippine_army_ns_fake
+			}
+			focuses = {
+				PHI_appoint_macarthur
+				PHI_national_defense_act
+				PHI_treaty_of_manila
+			}
+		}
+
+		PHI = {
+			minor = yes
+			history = "PHI_GATHERING_STORM_DESC"
+			available = { NOT = { has_dlc = "No Compromise, No Surrender" } }
+			assume_not_played_if_missing_data = yes
+			ideology = neutrality
+			label = { country_asia }
+			version = base_game
+			ideas = {
+				PHI_tyding_mcduffie_act
+				PHI_unstable_state
+				PHI_ideological_rebels
+			}
+			focuses = {
+				PHI_adopt_a_national_language
+				PHI_post_indenpence_stabilization
+				PHI_claim_the_spanish_mantle
+			}
+		}
+
+		# Australia 2
+		AST = {
+			minor = yes
+			history = "AST_GATHERING_STORM_DESC"
+			available = { NOT = { has_dlc = "Thunder at Our Gates" } }
+			assume_not_played_if_missing_data = yes
+			ideology = democratic
+			version = base_game
+			label = { country_asia }
+			ideas = {
+				AST_R56_great_depression_1
+				AST_R56_memories_of_gallipoli
+			}
+			focuses = {
+				AST_R56_strengthen_the_coalition
+				AST_R56_appeal_to_the_labour_dissidents
+				AST_R56_australia_first
+			}
+		}
+
+		AST = {
+			minor = yes
+			history = "AST_GATHERING_STORM_DESC"
+			available = { has_dlc = "Thunder at Our Gates" }
+			assume_not_played_if_missing_data = yes
+			version = thunder_at_our_gates
+			label = { country_asia }
+			ideology = democratic
+			ideas = {
+				AST_poor_population_growth
+				AST_great_depression_taog_spirit_fake
+				AST_citizen_army_spirit_fake
+			}
+			focuses = {
+				AST_war_is_coming
+				AST_overseas_loyalties
+				AST_anzac_spirit
+			}
+		}
+
+		# New Zealand
 		NZL = {
 			minor = yes
 			history = "NZL_GATHERING_STORM_DESC"
@@ -208,22 +1320,6 @@ bookmarks = {
 				NZL_the_labour_partys_reform
 				NZL_national_party_triumphant
 				NZL_unite_communist_movements
-			}
-		}
-
-		PER = {
-			minor = yes
-			history = "PER_GATHERING_STORM_DESC"
-			ideology = neutrality
-			label = { country_asia }
-			ideas = {
-				PER_anglo_iranian_oil_company
-				PER_corrupted_bureaucracy
-			}
-			focuses = {
-				PER_continue_government_purges
-				PER_appoint_zahedi
-				PER_restore_constitutionalism
 			}
 		}
 
@@ -272,40 +1368,6 @@ bookmarks = {
 				VEN_join_allies
            	VEN_intergrate_caribbean
            		VEN_venezuelan_way_of_communism
-			}
-		}
-
-		LIT = {
-			minor = yes
-			history = "LIT_GATHERING_STORM_DESC"
-			ideology = neutrality
-			label = { country_europe }
-			ideas = {
-				LIT_polish_lithuanian_tensions
-				LIT_peasant_strikes
-				LIT_constitutional_loophole
-			}
-			focuses = {
-				LIT_join_northern_lights
-				LIT_restore_the_gdl
-				LIT_propose_a_baltic_union
-			}
-		}
-
-	    DEN = { # was oldest before shifting to Afghanistan
-			minor = yes
-			history = "DEN_GATHERING_STORM_DESC"
-			ideology = democratic
-			label = { country_europe }
-			ideas = {
-				DEN_King_Christian_X
-				DEN_stagnant_economy
-				DEN_Disarmed_Military
-			}
-			focuses = {
-				DEN_King_Christian_Coup
-				DEN_Scandinavian_Plan
-				DEN_Invite_the_Wehrwirtschaftsfuhrer
 			}
 		}
 
@@ -388,39 +1450,6 @@ bookmarks = {
 			}
 		}
 
-		MPL = {
-			minor = yes
-			history = "MPL_GATHERING_STORM_DESC"
-			ideology = neutrality
-			version = base_game
-			label = { country_asia }
-			ideas = {
-				MPL_mandate
-				MPL_aliyah_start
-			}
-			focuses = {
-				MPL_arab_revolt
-				MPL_a_forgone_conclusion
-				MPL_british_occupation
-			}
-		}
-
-		SAU = {
-			minor = yes
-			history = "SAU_GATHERING_STORM_DESC"
-			ideology = neutrality
-			label = { country_asia }
-			ideas = {
-				bba_AFA_skilled_desert_warriors
-				SAU_legacy_of_1934
-			}
-			focuses = {
-            	SAU_incorporate_nomad_tactics
-          		SAU_diplomacy_in_the_sand
-				SAU_destabilize_the_east
-			}
-		}
-
 		EGY = {
 			minor = yes
 			history = "EGY_GATHERING_STORM_DESC"
@@ -474,276 +1503,6 @@ bookmarks = {
 			}
 		}
 
-		AUS = {
-            minor = yes
-            history = "AUS_GATHERING_STORM_DESC"
-            ideology = fascism
-			version = base_game
-			label = { country_europe new_r56_content }
-            ideas = {
-                AUS_july_followed_june
-                AUS_memories_of_februarkampfe
-				AUS_president_miklas
-				AUS_reliant_on_lon_1
-            }
-            focuses = {
-                AUS_rearm_the_bundesheer
-                AUS_clock_ticks_down
-                AUS_end_the_depression
-			}
-		}
-
-		LUX = {
-			minor = yes
-			history = "LUX_GATHERING_STORM_DESC"
-			ideology = democratic
-			version = base_game
-			label = { country_europe new_r56_content }
-			ideas = {
-				r56_legacy_of_luxembourg_crisis_1
-				BEL_LUX_BEL_customs_union
-				r56_LUX_economic_dependence_1
-				LUX_charlotte
-			}
-			focuses = {
-				LUX_another_declaration_of_neutrality
-				LUX_commemorate_independence
-				LUX_european_revolution
-			}
-		}
-
-		POR = {
-			minor = yes
-			history = "POR_GATHERING_STORM_DESC"
-			ideology = neutrality
-			version = base_game
-			label = { country_europe new_r56_content }
-			ideas = {
-				POR_lackluster_armed_forces
-				POR_disgruntled_republicans
-				POR_austerity_measures
-				POR_harrowing_illiteracy
-			}
-			focuses = {
-				POR_unite_against_salazar
-				POR_solidify_popular_support
-				POR_restore_the_empire
-			}
-		}
-
-		SIA = {
-			minor = yes
-			history = SIA_GATHERING_STORM_r56_DESC
-			ideology = neutrality
-			version = base_game
-			label = { country_asia new_r56_content }
-			ideas = {
-				SIA_rama_viii_r56
-				SIA_state_of_the_civilian_wing_r56
-				SIA_siamese_ultranationalist_movement_r56
-				SIA_agrarian_society_r56
-			}
-			focuses = {
-				SIA_address_rama_viis_abdication_r56
-				SIA_towards_a_great_thai_empire_r56
-				SIA_amend_the_military_service_act_r56
-			}
-		}
-
-		INS = {
-			minor = yes
-			history = "INS_GATHERING_STORM_DESC"
-			ideology = neutrality
-			required_dlc  = { "Thunder at Our Gates" }
-			version = thunder_at_our_gates
-			label = { country_asia }
-			ideas = {
-				idea_INS_volksraad
-				idea_INS_great_depression_fake
-				idea_INS_mismanaged_admin_fake
-			}
-			focuses = {
-				INSHOL_autonomous_dominion
-				INS_the_declaration_of_independence
-				INS_support_tan_malakas_coup
-			}
-		}
-
-		QUE = {
-			minor = yes
-			history = QUE_GATHERING_STORM_r56_DESC
-			ideology = democratic
-			version = base_game
-			label = { country_america country_releasable }
-			ideas = {
-				QUE_opposition_to_military
-				QUE_independance_economical_shock
-			}
-			focuses = {
-				QUE_greater_quebec_concept
-				QUE_our_own_way
-				QUE_give_canada_another_chance
-			}
-		}
-
-		UKR = {
-			minor = yes
-			history = UKR_GATHERING_STORM_r56_DESC
-			ideology = democratic
-			version = base_game
-			label = { country_europe country_releasable }
-			ideas = {
-				GEN_Anti_Invasion_I
-			}
-			focuses = {
-				UKR_free_and_at_peace
-				UKR_a_condominium_in_western_ukraine
-				UKR_free_the_oppressed_cossacks
-			}
-		}
-
-		LIE = {
-            minor = yes
-            history = "LIE_GATHERING_STORM_DESC"
-            ideology = democratic
-			label = { country_europe }
-            ideas = {
-                LIE_franz_i
-				LIE_legacy_of_1866
-				LIE_the_rotter_curse
-            }
-            focuses = {
-                LIE_princely_cabinet_of_national_defence
-				LIE_prince_no_more
-				LIE_form_the_military_budget
-            }
-        }
-
-		MEN = {
-            minor = yes
-            history = "MEN_GATHERING_STORM_DESC"
-            ideology = neutrality
-			label = { country_asia }
-            ideas = {
-                MEN_kwantungs_invisible_hand
-                MEN_the_long_winter
-				MEN_disorganized_military
-				MEN_pailingmiao_council_idea
-            }
-            focuses = {
-                MEN_strengthen_ties_with_japan
-                MEN_reform_rather_then_change
-                MEN_our_place_under_the_red_sun
-			}
-		}
-
-		MON = {
-            minor = yes
-            history = "MON_GATHERING_STORM_DESC"
-            ideology = neutrality
-            label = { country_asia }
-            ideas = {
-                MON_buddhist_opposition
-                MON_dominated_animal_husbandry_idea
-				MON_new_course_policy_idea
-            }
-            focuses = {
-                MON_dream_of_greater_mongolia
-                MON_central_asia_defensive_pact
-                MON_strong_leader_genden
-			}
-		}
-
-		CHI = {
-			minor = yes
-			history = "CHI_GATHERING_STORM_DESC"
-			ideology = neutrality
-			version = base_game
-			label = { country_asia new_r56_content }
-			ideas = {
-				KMT_nanjing_decade
-				KMT_army_of_a_bygone_era
-				KMT_corrupted_regime
-				public_iliteracy
-			}
-			focuses = {
-				KMT_end_the_peoples_tutelage
-				KMT_the_great_flight
-				KMT_redefine_democracy
-			}
-		}
-
-		MAN = {
-			minor = yes
-			history = "MAN_GATHERING_STORM_DESC"
-			ideology = fascism
-			version = base_game
-			label = { country_asia new_r56_content }
-			ideas = {
-				MAN_banditry
-				MAN_kwantung_veto_2
-				MAN_low_legitimacy_52
-				MAN_communist_cells
-			}
-			focuses = {
-				MAN_the_qing_restoration
-				MAN_the_empire_of_great_manchuria
-				MAN_claim_the_mandate_of_heaven_2
-			}
-		}
-
-		RAJ = {
-			minor = yes
-			history = "RAJ_GATHERING_STORM_DESC"
-			ideology = neutrality
-			version = base_game
-			label = { country_asia new_r56_content }
-			ideas = {
-				RAJ_agrarian_economy
-				RAJ_Caste_Debuff_3
-				RAJ_Princely_States
-			}
-			focuses = {
-				RAJ_Linlithgows_Reign
-				RAJ_Connect_the_Remote_Provinces
-				RAJ_prepare_an_autonomous_defense_r56
-			}
-		}
-
-		FRI = {
-			minor = yes
-			history = "FRI_GATHERING_STORM_DESC"
-			ideology = neutrality
-			label = { country_asia }
-			ideas = {
-				FRI_unequal_economic_developement
-				FRI_surete_generale_indochinoise
-				FRI_growing_vietnamese_nationalism
-			}
-			focuses = {
-            	FRI_tirailleurs_indochinois
-          		FRI_the_second_yen_bai_mutiny
-				FRI_the_war_arrives_to_indochina
-			}
-		}
-
-		BHU = {
-			minor = yes
-			history = "BHU_GATHERING_STORM_DESC"
-			ideology = neutrality
-			label = { country_asia }
-			ideas = {
-				BHU_treaty_with_britain
-				BHU_severe_economic_isolationism
-				TIB_mountainous_people
-			}
-			focuses = {
-            	BHU_aftermath_of_the_visit_to_india
-          		BHU_land_redistribution
-				BHU_create_an_army
-			}
-		}
-
 		#KHM = {
 		#	minor = yes
 		#	history = "WARLORDS_GATHERING_STORM_DESC"
@@ -761,74 +1520,6 @@ bookmarks = {
 		#		CHI_take_leadership_of_islam
 		#	}
 		#}
-
-		AFG = {
-            minor = yes
-            history = "r56_AFG_GATHERING_STORM_DESC"
-            ideology = neutrality
-			label = { country_asia }
-            ideas = {
-                AFG_decentralized_economy
-				AFG_illiteracy
-				r56_AFG_zahir_shah_idea
-            }
-            focuses = {
-                AFG_continute_nadir_shahs_reforms
-				AFG_waaidu
-				AFG_the_exiled_king
-            }
-        }
-
-		ROM = {
-            minor = yes
-            history = "r56_ROM_GATHERING_STORM_DESC"
-            ideology = democratic
-			label = { country_europe }
-            ideas = {
-                r56_ROM_carol_idea
-                r56_ROM_flawed_democracy_1
-				r56_YUG_little_entente
-            }
-            focuses = {
-                ROM_exile_or_execution
-                ROM_preservation_of_greater_romania
-                ROM_the_romanian_civil_war
-            }
-        }
-
-		SWE = {
-			minor = yes
-			history = "SWE_GATHERING_STORM_DESC"
-			ideology = democratic
-			label = { country_europe }
-			ideas = {
-				SWE_swedish_german_trade_0_idea
-				SWE_swedish_disarmament_idea
-				SWE_nationalist_military_garrisons
-			}
-			focuses = {
-            	SWE_the_red_menace
-          		SWE_prince_gustafs_coup
-				SWE_sweden_first
-			}
-		}
-
-		NOR = {
-			minor = yes
-			history = "NOR_GATHERING_STORM_DESC"
-			ideology = democratic
-			label = { country_europe }
-			ideas = {
-				NOR_haakon
-				NOR_policy_of_disarmament
-				NOR_aftermath_of_the_depression_3
-			}
-			focuses = {
-            	NOR_three_brothers
-          		NOR_ski_infantry
-				NOR_a_prosperous_kingdom
-			}
-		}
 
 		CAN = {
 			minor = yes
@@ -898,19 +1589,20 @@ bookmarks = {
 			}
 		}
 
-		AST = {
+		QUE = {
 			minor = yes
-			history = "AST_GATHERING_STORM_DESC"
+			history = QUE_GATHERING_STORM_r56_DESC
 			ideology = democratic
-			label = { country_asia }
+			version = base_game
+			label = { country_america country_releasable }
 			ideas = {
-				AST_R56_great_depression_1
-				AST_R56_memories_of_gallipoli
+				QUE_opposition_to_military
+				QUE_independance_economical_shock
 			}
 			focuses = {
-				AST_R56_strengthen_the_coalition
-				AST_R56_appeal_to_the_labour_dissidents
-				AST_R56_australia_first
+				QUE_greater_quebec_concept
+				QUE_our_own_way
+				QUE_give_canada_another_chance
 			}
 		}
 

@@ -1,5 +1,6 @@
 ﻿l_english:
  pakistani_focus_tree:0 "Pakistani National Focus"
+ PAK_GATHERING_STORM_DESC: "The Muslim League was born out of concern for the Muslims of the Indian subcontinent, their worries being that: if a united Indian state were to emerge, then the Muslims would be the minority, and thus given the short end of the stick. This sparked the Muslim League to rally for a state of it's own opposed to a union with India. This has led to the emergence of Pakistan, a nation for the Muslims of India."
 #  PAK_democratic_party:0 "ML" # moved to replace
  PAK_democratic_party_long:0 "Muslim League"
  PAK_fascism_party:0 "IL"

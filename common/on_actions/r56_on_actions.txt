@@ -16274,9 +16274,13 @@ on_actions = {
 
 			if = { #MOD. Small OP
 				limit = {
-					has_game_rule = {
-						rule = cze_fragmentation_status
-						option = CZE_FRAGMENTED
+					OR = {
+						has_game_rule = {
+							rule = cze_fragmentation_status
+							option = CZE_FRAGMENTED
+						}
+						SLO = { is_ai = no }
+						RUT = { is_ai = no }
 					}
 				}
 				CZE = {
@@ -18723,9 +18727,8 @@ on_actions = {
 				}
 				set_state_flag = r56_SWI_swiss_fortifications_flag
 			}
-			AST = {	#Remove placeholder shown in country selection
-                remove_ideas = AST_R56_economy_placeholder
-            }
+			SLO = { remove_ideas = r56_SLO_economy_dm_fake }
+			AST = { remove_ideas = AST_R56_economy_placeholder } #Remove placeholder shown in country selection
 			#Create VP renaming exception array
 			add_to_array = {
 				global.vp_rename_exceptions = 9833	#Istanbul

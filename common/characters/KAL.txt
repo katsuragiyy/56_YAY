@@ -42,9 +42,6 @@ characters={
 			planning_skill = 1
 			logistics_skill = 1
 			legacy_id = -1
-			visible = {
-				
-			}
 		}		
 	}	
 	KAL_nikolai_tundutov = {
@@ -110,7 +107,6 @@ characters={
 						has_government = neutrality
 						has_idea = GEN_Strenghten_Monarchy_I
 					}
-					 
 					add = 25
 				}
 			}
@@ -132,9 +128,6 @@ characters={
 			allowed = {
 				original_tag = KAL
 			}
-			visible = {
-				
-			}	
 			available = {
 				OR = {
 					has_idea = GEN_Strenghten_Monarchy_I
@@ -174,16 +167,12 @@ characters={
 			idea_token = KAL_chamba_balinov
 			allowed = {
 				original_tag = KAL
-			}
-			visible = {
-				
-			}		
+			}	
 			available = {
 				NOT = {
 					OR = {
 						has_government = communism
 						has_government = fascism # can't be leader and advisor
-
 					}
 				}
 			}
@@ -333,16 +322,14 @@ characters={
 			available = {
 				has_government = fascism
 				has_completed_focus = KAL_solidify_the_military_government
-			}
-			visible = {
-				
-			}			
+			}		
 			traits = {
 				prince_of_terror
 			}
 			ai_will_do = {
 				factor = 1
-		}
-	}	
+			}
+		}	
+	}
 }
 	

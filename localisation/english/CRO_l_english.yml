@@ -1,5 +1,6 @@
 ﻿l_english:
  croatia_focus:0 "Croatian National Focus"
+ CRO_GATHERING_STORM_DESC: "For years, Croatian nationalists have fought against the Serb-dominated Kingdom of Yugoslavia in the hopes of restoring an independent Croat state in the historical Croat lands. However, these nationalists were often oppressed and forced into exile. But with the breakup of Yugoslavia, the Croatian nationalists now have an opportunity to restore an independent Croatia in front of them. An opportunity that they will not dare to miss out on."
 # make focus about Lorković–Vokić plot to make coalition peasant party - moderate ustasha, join the allies and fight the communists
 #  CRO_fascism_party:0 "Ustaša" # same as vanilla
 #  CRO_fascism_party_long:0 "Ustaša - Hrvatski revolucionarni pokret" # moved to replace

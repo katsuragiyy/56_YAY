@@ -73,7 +73,7 @@ ideas = {
 			}
 
 			available = {
-				NOT = { has_completed_focus = URG_pay_of_all_external_debts }
+				#NOT = { has_completed_focus = URG_pay_of_all_external_debts } # 56
 			}
 
 
@@ -367,29 +367,6 @@ ideas = {
 		}
 		
 		# 56 Spirits
-		idea_URG_rapid_industrialization = {
-			name = URG_rapid_industrialization
-			allowed = {
-				always = yes
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			available = {
-			}
-
-			removal_cost = -1
-			
-			picture = generic_build_infrastructure
-			
-			modifier = {
-				consumer_goods_factor = -0.25
-				production_speed_buildings_factor = 0.2
-			}
-		}
-
 		URG_aftermath_of_paso_morlan = {
 
 			allowed = {

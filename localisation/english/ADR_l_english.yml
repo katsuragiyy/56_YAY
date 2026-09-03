@@ -7,6 +7,7 @@
  ADR_ramon_iglesias_i_navarri:0 "Ramón i Navarri"
 
  andorra_focus:0 "Andorran National Focus"
+ MICRONATIONS_GATHERING_STORM_DESC: "Serving as a cross road between Iberia and France, Andorra has held much strategic importance to both nations for centuries, from the times of the Islamic conquest of Iberia to the present day. However, this has not ensured the independnece of Andorra, with French troops entering the principality ever so often in order to ensure that the Andorran government remains stable and loyal to it's neighbour up north. With tensions in Spain reaching a boiling point and a global conflict on the horizon, the fate of Andorra rests in its hands."
  #ideas
 
  ADR_spanish_refugees:0 "[SPR.GetAdjective] Refugees"

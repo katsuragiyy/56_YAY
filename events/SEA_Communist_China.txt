@@ -5811,6 +5811,7 @@ country_event = {
 			has_country_flag = PRC_hand_over_territory_flag
 		}
 		#NO NEED FOR AI CHANCE SINCE PRC WILL ONLY HAVE ACCESS TO ONE OF THESE OPTIONS AT A TIME
+		# Scoping to own cores won't work if sent from Manchuria etc 
 		every_state = {
 			limit = {
 				is_fully_controlled_by = FROM

@@ -1,4 +1,5 @@
 ﻿l_english:
+ KAL_GATHERING_STORM_DESC: "Three centuries ago, hundreds of thousands of Torghut Mongols migrated from the steppes of Kazakhstan and East Turkestan to the Kalmuk Steppe near the Volga river, where they established a Khanate of their own. However, oppression by the Russian Empire drove thousands more Kalmyks to migrate back to their ancestral lands. They never reached their destination. \n\nThe Kalmyks continued to be oppressed by the Russian and Soviet regimes, until now. With their independence secured, the Kalmyks must coordinate together to ensure that their people will suffer no more."
  KAL_khan_fascism_tt:0 "The Popularity of the §YFascist§! and §YNon-aligned§! parties combined is greater than §G50%§!"
  
  KAL_fascism_party: "KTT"
@@ -111,7 +112,46 @@
  KAL_establishing_an_army: "Establishing an Army"
  KAL_establishing_an_army_desc: "We must quickly formed a professional military force in order to protect our people."
  KAL_our_equine_pride: "Our Equine Pride"
- KAL_our_equine_pride_desc: "Our steppe and its horses are our lifestyle and our pride.Even though some derided them as mere "ponypower", they can, should and will be our best military asset."
+ KAL_our_equine_pride_desc: "Our steppe and its horses are our lifestyle and our pride. Even though some derided them as mere "ponypower", they can, should and will be our best military asset."
  KAL_moderate_cavalry_supremacy:0 "Moderate Cavalry Supremacy"
  KAL_moderate_cavalry_supremacy_desc:0 "There are other units to consider than overfocusing on ponies, horses and mares."
+
+ KAL_equipment_effort: "Seize Leftovers of the Red Army's Equipment"
+ KAL_equipment_effort_desc: "The Soviet Red Army is long gone from [ROOT.GetNonIdeologyName], but the massive stockpile left is just waiting to be used. Let us not waste time and put this equipment into use!"
+
+ KAL_equipment_effort_2: "Study Soviet Small Arms"
+ KAL_equipment_effort_2_desc: "With the leftovers of the Soviet Red Army came an abundance of small arms that are waiting to be used. We can look into the blueprints of these designs and take notes for what we can enhance on our own weapons."
+
+ KAL_equipment_effort_3: "Replicate Soviet Artillery Blueprints"
+ KAL_equipment_effort_3_desc: "Likewise, artillery parts left by the Red Army can also be used to enhance our own designs."
+
+ KAL_our_own_katyusha_r56: "The [ROOT.GetAdjective] Choir"
+ KAL_our_own_katyusha_r56_desc: ""
+
+ KAL_special_forces: "An Unstoppable Mobile Force"
+ KAL_special_forces_desc: ""
+
+ KAL_mass_fortification_plan_r56: "Prepare a Mass Fortification Plan"
+ KAL_mass_fortification_plan_r56_desc: "We are surrounded by unfriendly regimes who may seek to undermine our independence. It is vital that we fortify our border in order to ensure the security of both our people and independence."
+
+ KAL_mass_produce_small_arms_r56: "Produce an Abundance of Small Arms"
+ KAL_mass_produce_small_arms_r56_desc: ""
+
+ KAL_invite_tankograd_r56: "Invite Tankograd Engineers"
+ KAL_invite_tankograd_r56_desc: ""
+
+ KAL_purchase_foreign_tanks_r56: "Purchase Foreign Armor"
+ KAL_purchase_foreign_tanks_r56_desc: ""
+
+ KAL_winter_training: "Conduct Winter Training"
+ KAL_winter_training_desc: ""
+
+ KAL_establish_a_armor_corp: "Raise an Armored Brigade"
+ KAL_establish_a_armor_corp_desc: ""
+
+ KAL_motorization_effort: "Invest Into Motor"
+ KAL_motorization_effort_desc: ""
+
+ KAL_signal_companies: "Adopt New Communication Devices"
+ KAL_signal_companies_desc: ""
  

@@ -118,8 +118,8 @@ TUR = {
 }
 
 add_opinion_modifier = {
-		target = GRE
-		modifier = ARM_greek_armenian_friendship_modifier
+	target = GRE
+	modifier = ARM_greek_armenian_friendship_modifier
 }
 GRE = {
 	add_opinion_modifier = {

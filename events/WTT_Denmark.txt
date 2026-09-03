@@ -4,7 +4,7 @@
 
 add_namespace = wtt_denmark
 
-# Icelandic De Facto Independence and Greenland Seizure, Complex event: revist when ever werid interactions pop up
+# Icelandic De Facto Independence
 country_event = {
 	id = wtt_denmark.1
 	title = wtt_denmark.1.t

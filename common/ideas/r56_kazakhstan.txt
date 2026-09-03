@@ -1,0 +1,9 @@
+ideas = {
+	country = {
+		KAZ_alikhan_b_national_spirit_r56 = {
+			picture = KAZ_alikhan_president
+			allowed_civil_war = { NOT = { has_government = communism } }
+			traits = { popular_figurehead }
+		}
+	}
+}

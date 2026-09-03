@@ -1340,7 +1340,7 @@ focus_tree = {
         id = PAK_Form_the_Navy
         icon = GFX_goal_generic_construct_naval_dockyard
         cost = 5
-        x = 33
+        x = 34
         y = 1
         prerequisite = {
             focus = PAK_Pakistan_Armed_Forces
@@ -1445,7 +1445,7 @@ focus_tree = {
         id = PAK_Form_the_Air_Force
         icon = GFX_focus_generic_aircraft_production
         cost = 5
-        x = 38
+        x = 39
         y = 1
         prerequisite = {
             focus = PAK_Pakistan_Armed_Forces
@@ -1463,7 +1463,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_Pakistan_Armed_Forces
         }
-        x = 44
+        x = 45
         y = 1
         ai_will_do = { factor = 5 }
 		completion_reward = {
@@ -1478,7 +1478,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_Form_the_Navy
         }
-        x = 32
+        x = 33
         y = 2
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1512,7 +1512,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_Think_Big
         }
-        x = 32
+        x = 33
         y = 3
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1544,7 +1544,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_Form_the_Navy
         }
-        x = 34
+        x = 35
         y = 2
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1591,7 +1591,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_Coast_Protection
         }
-        x = 34
+        x = 35
         y = 3
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1619,7 +1619,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_Form_the_Air_Force
         }
-        x = 37
+        x = 38
         y = 2
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1639,7 +1639,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_New_Fighter_Designs
         }
-        x = 37
+        x = 38
         y = 3
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1659,7 +1659,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_Form_the_Air_Force
         }
-        x = 39
+        x = 40
         y = 2
         ai_will_do = { factor = 3 }
 		completion_reward = {
@@ -1687,7 +1687,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_Airbase_Expansion
         }
-        x = 39
+        x = 40
         y = 3
         ai_will_do = { factor = 3 }
 		completion_reward = {
@@ -1722,7 +1722,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_Reform_the_Army
         }
-        x = 42
+        x = 43
         y = 2
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1746,7 +1746,7 @@ focus_tree = {
         mutually_exclusive = {
             focus = PAK_Local_Arms_Developement
         }
-        x = 41
+        x = 42
         y = 3
         ai_will_do = { factor = 2 }
 		completion_reward = {
@@ -1764,7 +1764,7 @@ focus_tree = {
         mutually_exclusive = {
             focus = PAK_Foreign_Equipment
         }
-        x = 43
+        x = 44
         y = 3
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1786,7 +1786,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_Reform_the_Army
         }
-        x = 46
+        x = 47
         y = 2
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1804,7 +1804,7 @@ focus_tree = {
         mutually_exclusive = {
             focus = PAK_Radically_Different_Tactics
         }
-        x = 45
+        x = 46
         y = 3
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1821,7 +1821,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_Frigate_Based_Navy
         }
-        x = 33
+        x = 34
         y = 4
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1844,7 +1844,7 @@ focus_tree = {
         prerequisite = {
             focus = PAK_Frigate_Based_Navy
         }
-        x = 36
+        x = 37
         y = 4
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1867,7 +1867,7 @@ focus_tree = {
         mutually_exclusive = {
             focus = PAK_Fall_back_on_the_Great_War
         }
-        x = 47
+        x = 48
         y = 3
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1885,7 +1885,7 @@ focus_tree = {
             focus = PAK_Radically_Different_Tactics
             focus = PAK_Fall_back_on_the_Great_War
         }
-        x = 46
+        x = 47
         y = 4
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1908,7 +1908,7 @@ focus_tree = {
         mutually_exclusive = {
             focus = PAK_Steel_Mines
         }
-        x = 38
+        x = 39
         y = 4
         ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -1931,7 +1931,7 @@ focus_tree = {
         mutually_exclusive = {
             focus = PAK_Bauxite_Mines
         }
-        x = 42
+        x = 43
         y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {

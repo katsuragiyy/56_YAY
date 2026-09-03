@@ -58,7 +58,7 @@ recruit_character = CYP_ihsan_ali
 recruit_character = CYP_ulviye_mithat
 
 #add_ideas = r56_CYP_aftermath_october_events
-#add_ideas = r56_CYP_orthodox_church_idea
+add_ideas = r56_CYP_orthodox_church_idea
 #add_ideas = r56_CYP_ideological_turmoil
 #add_ideas = r56_CYP_ethno_religious_conflict
 

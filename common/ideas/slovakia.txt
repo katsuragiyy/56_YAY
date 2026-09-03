@@ -6,6 +6,15 @@
 ideas = {
 
 	country = {
+		r56_SLO_economy_dm_fake = {
+			name = SLO_industry
+			picture = man_five_year_plan_industry
+			modifier = {
+				global_building_slots_factor = -0.15
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = -0.25
+			}
+		}
 		r56_SLO_strong_catholic_influence = {
 			allowed = {
 				always = no

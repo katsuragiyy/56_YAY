@@ -1,6 +1,7 @@
 ﻿###########################
 # Ace pilots Events
 ###########################
+# 56 - There is nothing to change (05/09/2026). IGNORE FILE
 
 add_namespace = ace_promoted
 add_namespace = ace_died

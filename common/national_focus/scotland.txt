@@ -970,8 +970,8 @@ focus_tree = {
 			}			
 		}
 		
-		x = -2
-		y = 1
+		x = 0
+		y = 2
 		cost = 10
 
 		ai_will_do = {
@@ -990,7 +990,7 @@ focus_tree = {
 		prerequisite = { focus = SCO_research_grants }
 		relative_position_id = SCO_research_grants
 		
-		x = 0
+		x = -1
 		y = 1
 		cost = 10
 
@@ -1428,7 +1428,7 @@ focus_tree = {
 	focus = {
 		id = SCO_celtic_liberation
 		icon = GFX_goal_generic_major_war
-		x = -1
+		x = 0
 		y = 1
 		prerequisite = {
 			focus = SCO_red_army
@@ -1611,8 +1611,8 @@ focus_tree = {
 
 	focus = {
 		id = SCO_push_for_brittany
-		icon = GFX_goal_BRI_hermine
-		x = 1
+		icon = GFX_goal_generic_befriend_brittany
+		x = -1
 		y = 1
 		prerequisite = {
 			focus = SCO_celtic_liberation
@@ -1909,7 +1909,7 @@ focus_tree = {
 			is_in_faction_with = SOV 
 		}	
 		x = -1
-		y = 2
+		y = 1
 		cost = 10
 			
 		completion_reward = {
@@ -1950,7 +1950,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SCO_join_the_comintern }
 		relative_position_id = SCO_reeducate_the_bourgeoisie
 		x = 1
-		y = 2
+		y = 1
 		cost = 5
 		
 		available = {
@@ -2299,7 +2299,7 @@ focus_tree = {
 		}		
 
 		x = -2
-		y = 2
+		y = 1
 		cost = 10
 		
 		completion_reward = {
@@ -2498,7 +2498,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SCO_join_the_axis }
 	
 		x = 0
-		y = 2
+		y = 1
 		cost = 10
 		
 		search_filters = { FOCUS_FILTER_ALLIANCE FOCUS_FILTER_POLITICAL}
@@ -2557,7 +2557,7 @@ focus_tree = {
 		id = SCO_Forced_Conscription
 		icon = GFX_goal_generic_army
 		prerequisite = { focus = SCO_implement_the_total_war_theory }
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = SCO_implement_the_total_war_theory
 

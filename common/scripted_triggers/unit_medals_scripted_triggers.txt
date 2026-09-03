@@ -44,9 +44,8 @@ should_have_english_medals_trigger = {
 			original_tag = MAL
 			has_cosmetic_tag = MAL_UK
 			is_in_faction_with = ENG
-		}						
+		}
 	}
-	
 }
 
 should_have_french_medals_trigger = {
@@ -88,15 +87,19 @@ should_have_austrian_medals_trigger = {
 should_have_hungarian_medals_trigger = {
 	original_tag = HUN
 }
+
 should_have_czechoslovak_medals_trigger = {
 	original_tag = CZE
 }
-
+# 56
 should_have_peruvian_medals_trigger = {
 	original_tag = PRU
 }
 should_have_afghan_medals_trigger = {
 	original_tag = AFG
+}
+should_have_belgian_medals_trigger = {
+	original_tag = BEL
 }
 ##
 should_have_any_unique_medals_trigger = {
@@ -115,8 +118,7 @@ should_have_any_unique_medals_trigger = {
 		should_have_danish_medals_trigger = yes
 		should_have_hungarian_medals_trigger = yes
 		should_have_czechoslovak_medals_trigger = yes
-		should_have_belgian_medals_trigger = yes
-		should_have_peruvian_medals_trigger = yes
-		should_have_afghan_medals_trigger = yes
+		should_have_peruvian_medals_trigger = yes # 56
+		should_have_afghan_medals_trigger = yes # 56
 	}
 }

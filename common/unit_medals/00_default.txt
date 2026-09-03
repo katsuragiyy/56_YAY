@@ -471,9 +471,7 @@ unit_medals = {
 				AND = { # R56
 					original_tag = ROM
 					is_in_faction_with = GER
-					GER = {
-						has_government = fascism
-					}
+					GER = { has_government = fascism }
 				}
 			} 
 		}
@@ -505,9 +503,7 @@ unit_medals = {
 				AND = {
 					original_tag = ROM
 					is_in_faction_with = GER
-					GER = {
-						has_government = fascism
-					}
+					GER = { has_government = fascism }
 				}
 			} 
 		}
@@ -536,9 +532,7 @@ unit_medals = {
 				AND = {
 					original_tag = ROM
 					is_in_faction_with = GER
-					GER = {
-						has_government = fascism
-					}
+					GER = { has_government = fascism }
 				}
 			} 
 		}
@@ -569,9 +563,7 @@ unit_medals = {
 				AND = {
 					original_tag = ROM
 					is_in_faction_with = GER
-					GER = {
-						has_government = fascism
-					}
+					GER = { has_government = fascism }
 				}
 			} 
 		}
@@ -926,7 +918,7 @@ unit_medals = {
 		
 	}
 	
-	order_of_liberation = { #if possible make the order of liberation unique and choose a new medal to reduce fuel cost, link it with the free French focus tree?
+	order_of_liberation = {
 		
 		available = { should_have_french_medals_trigger = yes }
 		frame = 3
@@ -1207,14 +1199,12 @@ unit_medals = {
 	# MEN 
 	genghis_khan_military_merit_badge = {
 		
-		available = {
+		available = { # 56
 			OR = {
 				original_tag = MEN
 				AND = {
 					original_tag = MON
-					NOT = {
-						has_government = communism
-					}
+					NOT = { has_government = communism }
 				}
 				has_country_leader_with_trait = MEN_spirit_of_genghis
 			}
@@ -2070,7 +2060,7 @@ unit_medals = {
 	
 	### Generic Democratic
 	
-	democratic_gallantry = { #australian The Medal for Gallantry was introduced in 1991
+	democratic_gallantry = {
 		
 		available = { 
 			has_government = democratic 
@@ -2141,29 +2131,7 @@ unit_medals = {
 		officer_xp = 100
 		
 	}
-#	CZE_war_cross = {
-#		
-#		available = { 
-#			original_tag = CZE
-#		}
-#		frame = 3
-#		icon = "GFX_medal_icon_democratic"
-#		
-#		cost = @cost
-#		
-#		unit_modifiers = {
-#			army_defence_factor = 0.07
-#			recon_factor = 0.1
-#		}
-#		
-#		ship_modifiers = {
-#			naval_detection = 0.1
-#			naval_defense_factor = 0.07
-#		}	
-#		
-#		officer_xp = 100
-#		
-#	}	
+	
 	democratic_lion = {
 		
 		available = { 
@@ -2187,29 +2155,11 @@ unit_medals = {
 		officer_xp = 100
 		
 	}
-#	CZE_military_order_of_the_white_lion = {
-#		}
-#		frame = 4
-#		icon = "GFX_medal_icon_democratic"
-#	
-#		cost = @cost
-#		
-#		unit_modifiers = {
-#			experience_loss_factor = -0.20
-#			supply_consumption_factor = -0.05
-#		}
-#		
-#		ship_modifiers = {
-#			experience_gain_navy_unit_factor = 0.20
-#			naval_supply_consumption_factor = -0.05
-#		}
-#		
-#		officer_xp = 100
-#		
-#	}
+	
 	### Generic Communist
 	
 	communist_service_medal = {
+		
 		available = { 
 			has_government = communism
 			should_have_any_unique_medals_trigger = no

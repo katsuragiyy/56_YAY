@@ -2122,6 +2122,10 @@ spriteType = {
 		name = "GFX_idea_TRK_severe_soviet_colonization"
 		texturefile = "gfx/interface/ideas/trk/r56_idea_TRK_severe_soviet_colonization.dds"
 	}
+	spriteType = {
+		name = "GFX_idea_KAZ_alikhan_president"
+		texturefile = "gfx/interface/ideas/trk/r56_idea_KAZ_alikhan.dds"
+	}
 
 ###------> TUN <><> <><> <><> <><> <><>
 

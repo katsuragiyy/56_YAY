@@ -1,6 +1,7 @@
 ﻿l_english:
 #characters
  #ALB_king_zog:0 "Zogu I" # moved to replace
+ ALB_GATHERING_STORM_DESC: "Albania has been in complete political chaos for the past couple of decades. The Albanian uprisings in 1910, 1911, and 1912 contributed to the independence of an Albanian republic, however it's independence would be violated by both the Serbian army Austro-Hungarian Empire in the Great War. After their withdrawl, Albania would fall into political turmoil, being only partially stabilized by Zogu, who declared himself King in 1928, resulting in the abolishment of the Republic and the establishment of a Monarchy. Now, King Zogu must lead Albania into an uncertain future, which his nation may, or may not, live to see."
  ALB_ali_klemendi:0 "Ali Klemendi"
  ALB_shefqet_verlaci:0 "Shefqet Vërlaci"
  ALB_myslim_peza:0 "Myslim Peza"
