@@ -2171,6 +2171,10 @@ political_actions = {
 				}
 				NOT = { has_completed_focus = AUS_reinstate_the_imperial_council }
 			}
+			IF = { # 56
+				limit = { original_tag = CHI }
+				has_global_flag = chi_dlc_focus_tree
+			}
 		}
 
 		available = {
@@ -2334,6 +2338,10 @@ political_actions = {
     				original_tag = RAJ
     				has_idea = idea_RAJ_kingmaker	
     			}
+				AND = { # 56
+    				original_tag = CHI
+    				has_global_flag = chi_dlc_focus_tree	
+    			}
 
     			#AND = {
     			#	original_tag = SIA
@@ -2426,6 +2434,10 @@ political_actions = {
 						has_idea = FRA_communism_banned
 					}
 				}
+				AND = { # 56
+    				original_tag = CHI
+    				has_global_flag = chi_dlc_focus_tree	
+    			}
 			}
 		}
 
@@ -2503,6 +2515,10 @@ political_actions = {
     		OR = {
 				NOT = { has_government = neutrality }
     			original_tag = RAJ
+			}
+			if = { # 56
+				limit = { original_tag = CHI }
+				has_global_flag = chi_dlc_focus_tree
 			}
 		}
 
@@ -2656,6 +2672,11 @@ political_actions = {
 				}
 				NOT = { has_completed_focus = AST_australia_first }
 			}
+
+			if = { # 56
+				limit = { original_tag = CHI }
+				has_global_flag = chi_dlc_focus_tree
+			}
 		}
 
 		remove_trigger = {
@@ -2766,6 +2787,10 @@ political_actions = {
 					has_dlc = "Trial of Allegiance"
 				}
 				NOT = { original_tag = CHL }
+			}
+			if = { # 56
+				limit = { original_tag = CHI }
+				has_global_flag = chi_dlc_focus_tree
 			}
 		}
 
@@ -2895,6 +2920,11 @@ political_actions = {
 				}
 				NOT = { has_completed_focus = AST_against_war_and_fascism }
 			}
+
+			if = { # 56
+				limit = { original_tag = CHI }
+				has_global_flag = chi_dlc_focus_tree
+			}
 		}
 
 		remove_trigger = {
@@ -3003,6 +3033,12 @@ political_actions = {
 				}
 				NOT = { original_tag = GRE }
 			}
+			IF = {
+				limit = {
+					original_tag = CHI
+				}
+				has_global_flag = chi_dlc_focus_tree
+			}
 		}
 
 		remove_trigger = {
@@ -3094,6 +3130,12 @@ political_actions = {
 				}
 				NOT = { original_tag = GRE }
 			}
+			IF = {
+				limit = {
+					original_tag = CHI
+				}
+				has_global_flag = chi_dlc_focus_tree
+			}
 		}
 	
 		modifier = {
@@ -3167,6 +3209,12 @@ political_actions = {
 				}
 				NOT = { original_tag = GRE }
 			}
+			IF = {
+				limit = {
+					original_tag = CHI
+				}
+				has_global_flag = chi_dlc_focus_tree
+			}
 		}
 		
 		modifier = {
@@ -3223,6 +3271,12 @@ political_actions = {
 					has_global_flag = gre_bftb_focus_tree	#faction interactions is a core mechanic in Greek BftB tree	# 56
 				}
 				NOT = { original_tag = GRE }
+			}
+			IF = {
+				limit = {
+					original_tag = CHI
+				}
+				has_global_flag = chi_dlc_focus_tree
 			}
 		}
 	
@@ -3296,6 +3350,12 @@ political_actions = {
 					NOT = { has_global_flag = afg_dlc_focus_tree }
 					NOT = {  has_completed_focus = AFG_enact_censorship }
 				}
+			}
+			IF = {
+				limit = {
+					original_tag = CHI
+				}
+				has_global_flag = chi_dlc_focus_tree
 			}
 		}
 	
