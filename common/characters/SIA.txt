@@ -120,7 +120,7 @@ characters = {
 					has_idea = SIA_phraya_songsuradet_chief
 				}
 			}
-			traits = { guerilla_expert }
+			traits = { r56_version_guerilla_expert }
 			cost = 150
 			ai_will_do = { base = 0 }
 		}		

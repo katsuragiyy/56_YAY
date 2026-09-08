@@ -59,7 +59,7 @@ recruit_character = FIN_olavi_sarko				#air chief, ported portrait, otherwise un
 recruit_character = FIN_karl_oesch				#hc, unchanged
 recruit_character = FIN_ruben_lagus				#commander, theorist, keeping theorist role for both trees as DLC lacks any, ported one commander trait
 recruit_character = FIN_valio_porvari			#ported new portrait, otherwise unchanged
-recruit_character = FIN_wiljo_tuompo			#hc, ported new portrait, otherwise unchanged
+recruit_character = FIN_wiljo_einar_tuompo			#hc, ported new portrait, otherwise unchanged
 recruit_character = FIN_harald_ohquist			#hc, ported new portrait and swapped trait like DLC, as his old one regrouping is also done by FIN_karl_oesch
 recruit_character = FIN_ville_pessi				#cpt of industry, communist version of henrik_gartz
 recruit_character = FIN_ake_henrik_gartz		#cpt of industry, ported new portrait, otherwise unchanged (r56 does make him anti-communist)
@@ -137,7 +137,7 @@ recruit_character = FIN_gustaf_magnusson				#unchanged, unconditional theorist i
 #recruit_character = FIN_karl_oesch					#see pre-DLC peeps
 #recruit_character = FIN_harald_ohquist				#see pre-DLC peeps
 #recruit_character = FIN_valio_porvari				#see pre-DLC peeps
-#recruit_character = FIN_lauri_tiainen				#unported, R56 uses FIN_wiljo_tuompo instead
+#recruit_character = FIN_lauri_tiainen				#unported, R56 uses FIN_wiljo_einar_tuompo instead
 recruit_character = FIN_frans_helminen				#hc, unchanged, concealment, R56 had none
 recruit_character = FIN_alpo_marttinen				#hc, unchanged, logistics, R56 had none
 recruit_character = FIN_kaarlo_somerto				#hc, weaker artillery advisor than others, not sure why this'd exist but kept
@@ -523,7 +523,7 @@ if = {
 	FIN_aarne_juutilainen = {
 		set_character_flag = FIN_anti_communist_character_flag
 	}
-	FIN_wiljo_tuompo = {	#R56: changed ID, might give issues, or might not
+	FIN_wiljo_einar_tuompo = {	#R56: changed ID, might give issues, or might not
 		set_character_flag = FIN_anti_communist_character_flag
 	}
 	FIN_kurt_martti_wallenius = {

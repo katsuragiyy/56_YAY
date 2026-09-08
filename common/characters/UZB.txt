@@ -12,36 +12,27 @@ characters={
 		}
 	}
 	
-	UZB_veli_kayum={
+	UZB_veli_kayum={ # Has a role in a reichskomisar file but thats irrelevant
 		name = UZB_veli_kayum
-		portraits={
-			civilian={
-				large = "gfx/leaders/Asia/Portrait_Asia_Generic_3.dds"
-			}
-			army = {
-				small = GFX_idea_generic_air_south_america_2
+		portraits = {
+			civilian = {
+				large = GFX_portrait_GER_weli_kayum_chan
+				small = GFX_portrait_GER_weli_kayum_chan_small
 			}
 		}
 		country_leader={
-			ideology=fascism_ideology
+			ideology=nazism
 			expire="1965.1.1.1"
+			traits = { eager_collaborator }
 			id=-1
 		}
 		advisor={
 			slot = army_chief
 			idea_token = UZB_veli_kayum
-			allowed = {
-				original_tag = UZB
-			}
-			available = {
-				has_government = fascism
-			}
-			traits = {
-				army_chief_offensive_3
-			}
-			ai_will_do = {
-				factor = 1.000
-			}
+			allowed = { original_tag = UZB }
+			available = {  has_government = fascism }
+			traits = { army_chief_offensive_3 }
+			ai_will_do = { base = 1 }
 		}	
 	}
 	UZB_usman_yusupovich_yusupov={

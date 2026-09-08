@@ -6350,13 +6350,6 @@ focus = {
 					}
 				}
 			}
-			SOV_andrey_shkuro = { 
-				set_portraits = {
-					army = {
-						large = "gfx/leaders/SOV/r56_portrait_SOV_Andrey_Shkuro.dds"
-					}
-				}
-			}
 		}
 		SOV_anatoly_rogozhin = {
 			clr_character_flag = SOV_exiled_flag
@@ -13929,7 +13922,7 @@ focus = {
 			create_country_leader = {
 				name = "Lavrentiy Beria"
 				desc = "POLITICS_BERIA_DESC"
-				picture = "gfx/leaders/SOV/r56_portrait_SOV_Lavrenti_Beria.dds"
+				picture = GFX_portrait_SOV_lavrenty_beriya
 				expire = "1965.1.1"
 				ideology = marxism
 				traits = {

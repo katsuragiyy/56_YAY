@@ -19,7 +19,7 @@ mio_policy_land_armor_welding_specialists = {
 	available = { has_mio_size > 5}
 	equipment_bonus = {
 		same_as_mio = {
-			armor_value = 0.1
+			armor_value = 0.05
 		}
 	}
 }
@@ -67,14 +67,6 @@ mio_policy_land_heavy_gantry_cranes = {
 	 }
 	available = { has_mio_size > 5}
 	equipment_bonus = {
-		light_tank_chassis = {
-			production_efficiency_cap_factor = 0.05
-		}
-
-		medium_tank_chassis = {
-			production_efficiency_cap_factor = 0.05
-		}
-
 		heavy_tank_chassis = {
 			production_efficiency_cap_factor = 0.05
 		}
@@ -86,6 +78,10 @@ mio_policy_land_heavy_gantry_cranes = {
 		railway_gun_equipment = {
 			production_efficiency_cap_factor = 0.05
 		}
+		# 56
+		light_tank_chassis = { production_efficiency_cap_factor = 0.05 }
+		medium_tank_chassis = { production_efficiency_cap_factor = 0.05 }
+		##
 	}
 }
 

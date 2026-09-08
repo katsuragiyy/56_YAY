@@ -463,7 +463,7 @@ characters={
 		}
 	}
 
-	NOR_jacob_hvinden_haug = {
+	NOR_jacob_hivden_haug = {
 		name = "Jacob Hvinden Haug"
 		portraits={
 			army={
@@ -487,7 +487,7 @@ characters={
 			cost = 100
 					
 			slot = high_command
-			idea_token = NOR_jacob_hvinden_haug
+			idea_token = NOR_jacob_hivden_haug
 			allowed = {
 				original_tag = NOR
 			}
@@ -1835,10 +1835,10 @@ characters={
 		name = NOR_josef_terboven
 		portraits={
 			civilian={
-				large="gfx/leaders/NOR/r56_portrait_NOR_Josef_Terboven.dds"
+				large=GFX_portrait_NOR_josef_terboven
 			}
 			army={
-				large="gfx/leaders/NOR/r56_portrait_NOR_Josef_Terboven.dds"
+				large=GFX_portrait_NOR_josef_terboven
 				small="GFX_idea_NOR_josef_terboven"
 			}
 		}

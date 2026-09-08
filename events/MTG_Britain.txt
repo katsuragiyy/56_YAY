@@ -243,6 +243,7 @@ country_event = {
 		add_political_power = -150
 		create_country_leader = {
 			name = "Fallen Government"
+			desc = ENG_fallen_government_leader_description
 			picture = "portrait_eng_fallen_government.dds"
 			expire = "1965.1.1"
 			ideology = conservatism

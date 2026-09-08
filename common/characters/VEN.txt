@@ -1176,7 +1176,7 @@ characters={
 				has_completed_focus = VEN_arm_the_companies
 			}
 			traits = {
-				guerilla_expert
+				r56_version_guerilla_expert
 			}
 			ai_will_do = {
 				factor = 0

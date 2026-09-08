@@ -12,6 +12,7 @@ BALTIC_entente = {
 		}
 
 		icon = GFX_decision_hol_exchange_intelligence_data
+		is_good = yes
 		fire_only_once = yes
 		
 		available = {
@@ -40,7 +41,7 @@ BALTIC_entente = {
 			}
 			ELSE = {
 				set_rule = { can_create_factions = yes }
-				create_faction_from_template = {
+				create_faction_from_template = { # 56
 					template = faction_template_regional
 					name = BALTIC_ENTENTE_FACTION
 					icon = GFX_faction_logo_generic
@@ -80,6 +81,7 @@ BALTIC_entente = {
 		}
 
 		icon = GFX_decision_generic_break_treaty
+		is_good = yes
 		fire_only_once = yes
 		
 		available = {
@@ -105,9 +107,9 @@ BALTIC_entente = {
 			if = {
 				limit = {
 					original_tag = LIT
-					has_global_flag = LIT_vanilla_focus_tree
+					has_global_flag = LIT_vanilla_focus_tree # 56
 				}
-				unlock_national_focus = LIT_beyond_the_baltic
+				#unlock_national_focus = LIT_beyond_the_baltic #TODO
 			}
 			if = {
 				limit = {
@@ -510,7 +512,7 @@ infiltrate_belarus_decisions = {
 			hidden_trigger = { always = no }
 		}
 
-		days_mission_timeout = 125
+		days_mission_timeout = 200
 		is_good = yes
 		fire_only_once = yes
 		
@@ -520,6 +522,10 @@ infiltrate_belarus_decisions = {
 				NOT = { has_completed_focus = BALTIC_seek_support_of_soviets }
 			}
 			NOT = { has_global_flag = belarus_baltic_resolved }
+		}
+		
+		cancel_effect = {
+		
 		}
 
 		timeout_effect = {
@@ -533,32 +539,25 @@ infiltrate_belarus_decisions = {
 				}
 			}
 			hidden_effect = {
+				# 56
 				ROOT = { set_cosmetic_tag = BLR_baltic }
 				every_state = {
-					limit = {
-						is_core_of = BLR
-					}
+					limit = { is_core_of = BLR }
 					add_core_of = PREV
 				}
 				if = {
-					limit = {
-						original_tag = LIT
-					}
+					limit = { original_tag = LIT }
 					set_cosmetic_tag = LIT_belarus
 				}
 				if = {
-					limit = {
-						original_tag = LAT
-					}
+					limit = { original_tag = LAT }
 					set_cosmetic_tag = LAT_belarus
 				}
 				if = {
-					limit = {
-						original_tag = EST
-					}
+					limit = { original_tag = EST }
 					set_cosmetic_tag = EST_belarus
 				}
-			
+				##
 				SOV = {
 					release = BLR
 				}
@@ -575,6 +574,8 @@ infiltrate_belarus_decisions = {
 
 							infantry = { x = 0 y = 1 }
 							infantry = { x = 1 y = 1 }
+						}
+						support = {
 						}
 					}
 					random_owned_controlled_state = {

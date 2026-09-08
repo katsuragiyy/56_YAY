@@ -16,7 +16,7 @@ characters = {
 		name = GER_adolf_hitler
 		portraits = {
 			civilian = {
-				large="gfx/leaders/GER/r56_portrait_GER_Adolf_Hitler.dds"
+				large="gfx/leaders/GER/r56_portrait_GER_Adolf_Hitler_old.dds"
 			}
 		}
 		country_leader = {
@@ -3567,7 +3567,7 @@ characters = {
 		name = GER_rudolf_hess
 		portraits = {
 			army = {
-				large = GFX_portrait_GER_rudolf_hess
+				large = "gfx/leaders/GER/r56_portrait_GER_Rudolf_Hess.dds"
 				small = GFX_portrait_GER_rudolf_hess_small
 			}
 		}

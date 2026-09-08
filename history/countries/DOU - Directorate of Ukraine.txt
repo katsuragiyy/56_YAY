@@ -112,7 +112,7 @@ create_country_leader = {
 
 create_country_leader = {
 	name = "Andriy Livytskyi"
-	picture = "r56_portrait_DOU_Andriy_Livytskyi.dds"
+	picture = GFX_DOU_Portrait_Andriy_Livytskyi
 	expire = "1965.1.1"
 	ideology = oligarchism
 	traits = {

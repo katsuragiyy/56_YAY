@@ -755,6 +755,9 @@ ideas = {
 		}
 	}
 
+	army_chief = {
+	}
+
 	materiel_manufacturer = {
 
 		designer = yes

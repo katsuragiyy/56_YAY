@@ -48,6 +48,7 @@ if = {
 	recruit_character = SLO_gustav_husak	#too young too be leader, DLC gets a leader instance on Smidke
 }
 
+add_ideas = r56_SLO_strong_catholic_influence
 add_ideas = r56_SLO_economy_dm_fake
 add_dynamic_modifier = {
 	modifier = SLO_industry

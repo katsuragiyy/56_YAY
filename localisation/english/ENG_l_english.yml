@@ -4,6 +4,8 @@
   ENG_charles_edward_of_albany:0 "Charles Edward of Albany"
   ENG_r56_percy_hobart:0 "Percy Hobart"
   ENG_anthony_eden: "Anthony Eden"
+
+ ENG_fallen_government_leader_description: "Following the current political crisis present in the United Kingdom, multiple members of parliament have renounced their status as members of the parliament, and now only a handful of members remain. Yet not enough remain to continue running the country, and the empire as a whole. \n\nParliament is deserted. \n\n§RThe Sun Begins to Set§!."
  
   ENG_william_birdwood:0 "William Birdwood"
  #Focus Shortcuts
@@ -324,7 +326,7 @@
 
   r56_eng.9.t:0 "[ENG.GetLeader] Wins [ENG.GetAdjective] Elections"
   r56_eng.9.d.a:0 "It has been 5 years since the last [ENG.GetAdjective] elections, and yesterday the [ENG.GetAdjective] people once again went to the polls to decide the future of their government.\n\nAs the ballots have been counted, it appears that the Labour Party under Clement Attlee has secured power, promising to stand against appeasement and progress social reforms in [ENG.GetAdjective] society.\n\nTime will tell if the new [ENG.GetAdjective] government can hold on."
-  r56_eng.9.d.b:0 "It has been 5 years since the last [ENG.GetAdjective] elections, and yesterday the [ENG.GetAdjective] people once again went to the polls to decide the future of their government.\n\nAs the ballots have been counted, it appears that the Conservative Party under [ENG.GetLeader] has secured power, with it's campaign being the continuation of protectionist policies and the maintenance of the Empire.\n\nTime will tell if the new [ENG.GetAdjective] government can hold on."
+  r56_eng.9.d.b:0 "It has been 5 years since the last [ENG.GetAdjective] elections, and yesterday the [ENG.GetAdjective] people once again went to the polls to decide the future of their government.\n\nAs the ballots have been counted, it appears that the [ENG.GetRulingPartyLong] under [ENG.GetLeader] has secured power, with it's campaign being the continuation of protectionist policies and the maintenance of the Empire.\n\nTime will tell if the new [ENG.GetAdjective] government can hold on."
   r56_eng.9.a:0 "A good show."
   r56_eng.9.b:0 "Will he differ from the previous administration?"
 

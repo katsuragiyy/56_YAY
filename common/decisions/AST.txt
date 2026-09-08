@@ -27,6 +27,7 @@ AST_union_control_1_cat = {
 		cancel_trigger = {
 			has_completed_focus = AST_all_for_one_one_for_all
 		}
+
 		modifier = {
 			civilian_factory_use = 1
 		}
@@ -961,7 +962,7 @@ AST_war_is_coming_cat = {
 	   			limit = {
 	   				industrial_complex > 0
 	   			}
-	   			prioritize = { 927 }
+	   			prioritize = { 286 }
 				add_building_construction = { 
 					type = industrial_complex
 					level = -1 
@@ -1271,6 +1272,7 @@ AST_cabinet_trust_cat = {
 	   			days = 30
 	   		}
 	   		custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_dynamic_modifier = {
 			    modifier = AST_eminent_successors_spirit
 			    days = 180
@@ -1353,6 +1355,7 @@ AST_cabinet_trust_cat = {
 	   			days = 30
 	   		}
 	   		custom_effect_tooltip = generic_skip_one_line_tt
+
 			IF = { 
 				limit = {
 					has_government = communism
@@ -2553,6 +2556,7 @@ AST_australia_first_movement_cat = {
 			clr_country_flag = AST_call_on_fascists_flag
 		}
 	}
+
 }
 
 AST_big_business_pact_cat = {
@@ -2779,6 +2783,7 @@ AST_vichy_out_of_africa_cat = {
 			hidden_effect = {
 				set_country_flag = AST_vichy_req_ongoing_flag
 			}
+
 			VIC = { country_event = { id = AST_diplomatic_events.56 days = 1 } }
 
 			543 = { 
@@ -2841,6 +2846,7 @@ AST_vichy_out_of_africa_cat = {
 			hidden_effect = {
 				set_country_flag = AST_vichy_req_ongoing_flag
 			}
+
 			VIC = { country_event = { id = AST_diplomatic_events.56 days = 1 } }
 
 			539 = { 
@@ -2912,6 +2918,7 @@ AST_vichy_out_of_africa_cat = {
 			hidden_effect = {
 				set_country_flag = AST_vichy_req_ongoing_flag
 			}
+
 			VIC = { country_event = { id = AST_diplomatic_events.56 days = 1 } }
 
 			272 = { 
@@ -2969,6 +2976,7 @@ prospect_for_resources = {
 
 		allowed = {
 			original_tag = AST
+			has_dlc = "Thunder at Our Gates"
 		}
 
 		available = {
@@ -3042,6 +3050,7 @@ prospect_for_resources = {
 
 		allowed = {
 			original_tag = AST
+			has_dlc = "Thunder at Our Gates"
 		}
 
 		available = {
@@ -3118,6 +3127,7 @@ prospect_for_resources = {
 
 		allowed = {
 			original_tag = AST
+			has_dlc = "Thunder at Our Gates"
 		}
 
 		available = {
@@ -3192,6 +3202,7 @@ prospect_for_resources = {
 
 		allowed = {
 			original_tag = AST
+			has_dlc = "Thunder at Our Gates"
 		}
 
 		available = {
@@ -3266,6 +3277,7 @@ prospect_for_resources = {
 
 		allowed = {
 			original_tag = AST
+			has_dlc = "Thunder at Our Gates"
 		}
 
 		available = {
@@ -3349,6 +3361,7 @@ prospect_for_resources = {
 
 		allowed = {
 			original_tag = AST
+			has_dlc = "Thunder at Our Gates"
 		}
 
 		available = {

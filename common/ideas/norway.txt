@@ -1096,7 +1096,7 @@ ideas = {
 				factor = 1
 			}
 		}
-
+		# 56
 		NOR_vestlandske_cementstoberi = {
 			name = NOR_vestlandske_cementstoberi
 	
@@ -1131,6 +1131,7 @@ ideas = {
 			traits = { railway_company }
 
 		}
+		##
 
 		NOR_aat_norsk_hydro = {
 

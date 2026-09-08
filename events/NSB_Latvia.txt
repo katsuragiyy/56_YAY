@@ -674,6 +674,9 @@ country_event = {
 	
 	option = { #Dangit!
 		name = LAT_events.601.a
+		ai_chance = {
+			factor = 10
+		}
 	}
 }
 
@@ -723,7 +726,7 @@ country_event = {
 		ai_chance = {
 			base = 10
 		}
-		set_country_flag = fought_perkonkrust_flag
+		set_country_flag = fought_perkonkrust_flag # 56
 		if = { #Easier civil war for AI on historical since we don't want historical Latvian AI to do weird stuff
 			limit = {
 				is_ai = yes

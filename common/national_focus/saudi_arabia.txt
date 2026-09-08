@@ -2011,7 +2011,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SAU_ask_british_colonies
-		icon = GFX_goal_generic_intelligence_exchange
+		icon = GFX_focus_TUR_taking_over_defense_of_the_gulf
 		prerequisite = { 
 			focus = SAU_increase_oil_exportations_to_the_allies
 			focus = SAU_spread_islam_force

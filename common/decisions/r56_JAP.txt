@@ -1389,3 +1389,184 @@ JAP_civilian_investment = {
 		
 	}
 }
+
+JAP_the_co_prosperity_sphere_decisions = {
+	# Empower the Tongan Reactionary Party
+	JAP_empower_the_tongan_reactionary_party_decision_r56 = { # Could use its own cosmetic tag that doesnt make it the tui tonga empire bcuz TUI WAS EXTINCT
+		icon = GFX_r56_decision_CHL_tongan_coa
+		fire_only_once = yes
+		priority = 27
+
+		visible = {
+			has_completed_focus = JAP_sea_greater_east_asian_co_properity_sphere
+			TON = { exists = no }
+		}
+
+		cost = 10
+		available = { 734 = { state_is_fully_controlled_by_ROOT_or_subject = yes } } #56 - Needed because it can mess with active frontlines due to controllership = biggest vp
+		highlight_states = { highlight_state_targets = { state = 734 } }
+
+		complete_effect = {
+
+			custom_effect_tooltip = JAP_establish_tonga_tt_r56
+
+			hidden_effect = {
+				# Tongan States
+				734 = {
+					transfer_state_to = TON
+					add_core_of = TON
+				}
+
+				set_autonomy = {
+					target = TON
+					autonomous_state = autonomy_wtt_imperial_protectorate
+					end_wars = no
+					end_civil_wars = no
+				}
+
+				TON = {
+					#set_cosmetic_tag = SRL_state_of_ceylon_tag
+					JAP_setup_faction_wide_aoe_effects_root_this = yes
+				}
+			}
+		}
+
+		ai_will_do = { 
+			base = 0 # never happened, duhhhhhh
+			modifier = {
+				is_historical_focus_on = no
+				add = 10 # maybe
+			}
+			modifier = {
+				has_war = no
+				add = 200 # now that we arent at war we can ensure that this will be stable
+			}
+		}
+	}
+
+	# Establish a Protectorate in Samoa
+	JAP_establish_a_protectorate_over_samoa_decision_r56 = {
+		icon = GFX_decision_CHL_mapuche_liberate_samoa
+		fire_only_once = yes
+		priority = 28
+
+		visible = {
+			has_completed_focus = JAP_sea_greater_east_asian_co_properity_sphere
+			SAM = { exists = no }
+		}
+
+		cost = 10
+		available = { 726 = { state_is_fully_controlled_by_ROOT_or_subject = yes } 1088 = { state_is_fully_controlled_by_ROOT_or_subject = yes } } #56 - Needed because it can mess with active frontlines due to controllership = biggest vp
+		highlight_states = { highlight_state_targets = { state = 726 state = 1088 } }
+
+		complete_effect = {
+
+			custom_effect_tooltip = JAP_establish_samoa_tt_r56
+
+			hidden_effect = {
+				# Samoan States
+				726 = {
+					transfer_state_to = SAM
+					add_core_of = SAM
+				}
+				1088 = {
+					transfer_state_to = SAM
+					add_core_of = SAM
+				}
+
+				set_autonomy = {
+					target = SAM
+					autonomous_state = autonomy_protectorate
+					end_wars = no
+					end_civil_wars = no
+				}
+
+				SAM = {
+					#set_cosmetic_tag = SRL_state_of_ceylon_tag
+					JAP_setup_faction_wide_aoe_effects_root_this = yes
+
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = no
+					}
+
+					SAM_mataafa_faumuina_fiame = { promote_leader = yes }
+				}
+			}
+		}
+
+		ai_will_do = { 
+			base = 0 # never happened, duhhhhhh
+			modifier = {
+				is_historical_focus_on = no
+				add = 10 # maybe
+			}
+			modifier = {
+				has_war = no
+				add = 200 # now that we arent at war we can ensure that this will be stable
+			}
+		}
+	}
+
+	# Restore the Kingdom of Tahiti
+	JAP_restore_the_kingdom_of_tahiti_decision_r56 = {
+		icon = GFX_decision_CHL_mapuche_liberate_tahiti
+		fire_only_once = yes
+		priority = 28
+
+		visible = {
+			has_completed_focus = JAP_sea_greater_east_asian_co_properity_sphere
+			TAH = { exists = no }
+		}
+
+		cost = 10
+		available = { 641 = { state_is_fully_controlled_by_ROOT_or_subject = yes } } #56 - Needed because it can mess with active frontlines due to controllership = biggest vp
+		highlight_states = { highlight_state_targets = { state = 641 } }
+
+		complete_effect = {
+
+			custom_effect_tooltip = JAP_establish_tahiti_tt_r56
+
+			hidden_effect = {
+				# Tahitian States
+				641 = {
+					transfer_state_to = TAH
+					add_core_of = TAH
+				}
+				270 = {
+					transfer_state_to = TAH
+					add_core_of = TAH
+				}
+
+				set_autonomy = {
+					target = TAH
+					autonomous_state = autonomy_wtt_imperial_protectorate
+					end_wars = no
+					end_civil_wars = no
+				}
+
+				TAH = {
+					#set_cosmetic_tag = SRL_state_of_ceylon_tag
+					JAP_setup_faction_wide_aoe_effects_root_this = yes
+
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = no
+					}
+				}
+			}
+		}
+
+		ai_will_do = { 
+			base = 0 # never happened, duhhhhhh
+			modifier = {
+				is_historical_focus_on = no
+				add = 10 # maybe
+			}
+			modifier = {
+				has_war = no
+				add = 200 # now that we arent at war we can ensure that this will be stable
+			}
+		}
+	}
+}

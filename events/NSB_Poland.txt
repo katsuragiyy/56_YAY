@@ -82,9 +82,7 @@ country_event = {
 				POL = { transfer_state = 664 }
 			}
 			if = {
-				limit = {
-					owns_state = 996
-				}
+				limit = { owns_state = 996 }
 				POL = { transfer_state = 996 }
 			}
 		}
@@ -175,11 +173,9 @@ country_event = {
 				target = FROM
 				transfer_troops = yes
 			}
-			every_state = {
-				limit = {
-					is_core_of = SLO
-				}
-				add_resistance = 25
+			every_state = { # 56
+				limit = { is_core_of = SLO }
+				add_resistance = 10
 			}
 		}
 		else = {
@@ -213,18 +209,16 @@ country_event = {
 				}
 				transfer_state = 664
 			}
+			# 56
 			if = {
-				limit = {
-					FROM = { owns_state = 996 }
-				}
+				limit = { FROM = { owns_state = 996 } }
 				transfer_state = 996
 			}
 			every_state = {
-				limit = {
-					is_core_of = SLO
-				}
-				add_resistance = 25
-			}			
+				limit = { is_core_of = SLO }
+				add_resistance = 10
+			}
+			##			
 		}
 	}
 }
@@ -458,7 +452,7 @@ country_event = {
 		create_faction_from_template = {
 			template = faction_template_GER_mitteleuropa_alliance
 			name = POL_GER_ALLIANCE
-			icon = GFX_faction_logo_generic_4
+			icon = GFX_faction_logo_generic_4 # 56
 		}
 		add_to_faction = GER
 	}
@@ -514,7 +508,7 @@ country_event = {
 		create_faction_from_template = {
 			template = faction_template_GER_mitteleuropa_alliance
 			name = POL_GER_ALLIANCE
-			icon = GFX_faction_logo_generic_4
+			icon = GFX_faction_logo_generic_4 # 56
 		}
 		add_to_faction = GER
 		if = {
@@ -641,9 +635,11 @@ country_event = {
 				factor = 0.5
 				any_controlled_state = {
 					NOT = {
-						state = 543
-						state = 708
-						state = 706
+						OR = {
+							state = 543
+							state = 708
+							state = 706
+						}
 					}
 				}
 			}
@@ -867,19 +863,11 @@ country_event = {
 				remove_decision_on_cooldown = POL_purchase_cheap_colony
 			}
 			if = {
-				limit = {
-					event_target:POL_colony_purchase = {
-						state = 1016
-					}
-				}
+				limit = { event_target:POL_colony_purchase = { state = 1016 } }
 				remove_decision_on_cooldown = POL_purchase_cheap_colony
 			}
 			if = {
-				limit = {
-					event_target:POL_colony_purchase = {
-						state = 1017
-					}
-				}
+				limit = { event_target:POL_colony_purchase = { state = 1017 } }
 				remove_decision_on_cooldown = POL_purchase_cheap_colony
 			}
 		}
@@ -1107,7 +1095,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 360
+		days = 360 # 56
 	}
 
 	fire_only_once = yes
@@ -1119,7 +1107,7 @@ country_event = {
 	option = {
 		name = NSB_poland_events.8.b
 		promote_character = POL_wojtek
-		hidden_effect = {
+		hidden_effect = { # 56
 			news_event = {
 				id = nsb_news.5
 				days = 1
@@ -1140,24 +1128,22 @@ country_event = {
 	
 	option = {
 		name = NSB_poland_royal_election.1.a
-		trigger = {
-			SAX = {
-				exists = no
-			}
-		}
+		trigger = { SAX = { exists = no } } # 56
 		ai_chance = {
 			base = 10
 			modifier = {
 				factor = 0
 				NOT = {
-					has_country_flag = POL_AI_RANDOM_COMMONWEALTH
-					has_game_rule = {
-						rule = POL_ai_behavior
-						option = COMMONWEALTH
-					}
-					has_game_rule = {
-						rule = POL_ai_behavior
-						option = DEFAULT
+					OR = {
+						has_country_flag = POL_AI_RANDOM_COMMONWEALTH
+						has_game_rule = {
+							rule = POL_ai_behavior
+							option = COMMONWEALTH
+						}
+						has_game_rule = {
+							rule = POL_ai_behavior
+							option = DEFAULT
+						}
 					}
 				}
 			}
@@ -1174,6 +1160,7 @@ country_event = {
 		complete_national_focus = POL_fulfil_fifth_of_november
 		unlock_national_focus = POL_claiming_lithuania
 		hidden_effect = {
+			set_country_flag = achievement_POL_elected_monarch
 			news_event = {
 				id = nsb_news.5
 				days = 1
@@ -1221,14 +1208,16 @@ country_event = {
 			modifier = {
 				factor = 0
 				NOT = {
-					has_country_flag = POL_AI_RANDOM_ROMANIA
-					has_game_rule = {
-						rule = POL_ai_behavior
-						option = ROMANIA
-					}
-					has_game_rule = {
-						rule = POL_ai_behavior
-						option = DEFAULT
+					OR = {
+						has_country_flag = POL_AI_RANDOM_ROMANIA
+						has_game_rule = {
+							rule = POL_ai_behavior
+							option = ROMANIA
+						}
+						has_game_rule = {
+							rule = POL_ai_behavior
+							option = DEFAULT
+						}
 					}
 				}
 			}
@@ -1254,6 +1243,7 @@ country_event = {
 		complete_national_focus = POL_fulfil_fifth_of_november
 		unlock_national_focus = POL_hohenzollern
 		hidden_effect = {
+			set_country_flag = achievement_POL_elected_monarch
 			news_event = {
 				id = nsb_news.5
 				days = 1
@@ -1301,14 +1291,16 @@ country_event = {
 			modifier = {
 				factor = 0
 				NOT = {
-					has_country_flag = POL_AI_RANDOM_BERMONDT
-					has_game_rule = {
-						rule = POL_ai_behavior
-						option = BERMONDT
-					}
-					has_game_rule = {
-						rule = POL_ai_behavior
-						option = DEFAULT
+					OR = {
+						has_country_flag = POL_AI_RANDOM_BERMONDT
+						has_game_rule = {
+							rule = POL_ai_behavior
+							option = BERMONDT
+						}
+						has_game_rule = {
+							rule = POL_ai_behavior
+							option = DEFAULT
+						}
 					}
 				}
 			}
@@ -1328,6 +1320,7 @@ country_event = {
 		complete_national_focus = POL_fulfil_fifth_of_november
 		unlock_national_focus = POL_cossack_king
 		hidden_effect = {
+			set_country_flag = achievement_POL_elected_monarch
 			news_event = {
 				id = nsb_news.5
 				days = 1
@@ -1413,6 +1406,7 @@ country_event = {
 		complete_national_focus = POL_fulfil_fifth_of_november
 		unlock_national_focus = POL_romanov
 		hidden_effect = {
+			set_country_flag = achievement_POL_elected_monarch
 			news_event = {
 				id = nsb_news.5
 				days = 1
@@ -1475,6 +1469,7 @@ country_event = {
 		}
 		unlock_national_focus = POL_habsburg
 		hidden_effect = {
+			set_country_flag = achievement_POL_elected_monarch
 			news_event = {
 				id = nsb_news.5
 				days = 1
@@ -1632,7 +1627,6 @@ country_event = {
 			country_event = { hours = 2 id = NSB_poland_monarchist_events.7 }
 		}
 
-
 		hidden_effect = {
 			POL_set_attempted_royal_takeover_flag = yes
 			set_country_flag = POL_banned_monarchy_flag
@@ -1656,8 +1650,9 @@ country_event = {
 					add_country_leader_role = {
 						
 						country_leader = {
-							ideology=constitutional_monarchy # Patriot king doesn't fit when king of Bohemia. 
-							expire="1965.1.1"
+							ideology=constitutional_monarchy # 56
+							traits = {  } # Patriot king doesn't fit when king of Bohemia. 
+							expire="1965.1.1.1"
 							id=-1
 						}
 						promote_leader = yes

@@ -638,7 +638,7 @@ characters={
 				}
 			}
 			traits = {
-				guerilla_expert
+				r56_version_guerilla_expert
 			}
 			cost = 100
 			ai_will_do = {

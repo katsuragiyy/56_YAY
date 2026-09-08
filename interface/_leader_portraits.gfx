@@ -4969,7 +4969,7 @@ spriteType = {
 
 	spriteType = {
 		name = GFX_portrait_NOR_josef_terboven
-		texturefile = "gfx/leaders/GER/portrait_GER_josef_terboven.dds"
+		texturefile = "gfx/leaders/NOR/r56_portrait_NOR_Josef_Terboven.dds"
 	}
 
 	spriteType = {
@@ -6562,7 +6562,7 @@ spriteType = {
 
 	spriteType = {
 		name = GFX_portrait_SOV_iosif_stalin
-		texturefile = "gfx/leaders/SOV/Portrait_Soviet_Joseph_Stalin.dds"
+		texturefile = "gfx/leaders/SOV/r56_portrait_SOV_Joseph_Stalin.dds"
 	}
 
 	spriteType = {
@@ -6572,7 +6572,7 @@ spriteType = {
 
 	spriteType = {
 		name = GFX_portrait_SOV_georgy_zhukov
-		texturefile = "gfx/leaders/SOV/Portrait_Soviet_Gregory_Zhukov.dds"
+		texturefile = "gfx/leaders/SOV/r56_portrait_SOV_Georgy_Zhukov.dds"
 	}
 
 	spriteType = {

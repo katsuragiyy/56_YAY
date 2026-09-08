@@ -98,6 +98,9 @@ BRA_industrial_decisions = {
 				}
 			}
 		}
+	
+		ai_will_do = {
+		}
 	}
 }
 
@@ -1313,6 +1316,9 @@ political_actions = {
 		ai_will_do = {
 			base = 50
 		}
+	
+		allowed = {  
+		}
 
 		visible = { 
 			1058 = { # R56
@@ -1339,6 +1345,15 @@ political_actions = {
 
 		cost = 50
 
+		cancel_trigger = {
+		}
+
+        cancel_effect = {
+        }
+
+		modifier = {
+		}
+
 		complete_effect = { 
 
 			add_war_support = 0.1
@@ -1353,6 +1368,10 @@ political_actions = {
 		}
 
 		fire_only_once = yes
+
+		remove_effect = {
+
+		}
 
 	}
 

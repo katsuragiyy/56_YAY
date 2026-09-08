@@ -2110,7 +2110,7 @@ country_event = {
 				days = 2190
 			}
 		}
-		if = {
+		if = { # 56 - PUT THIS INTO R56 PHILIPPINES PLS PLS PLS PLS PLSP SLPSLP SLPALDLSA
 			limit = {
 				has_character = PHI_manuel_luis_quezon
 			}

@@ -345,10 +345,12 @@ country_event = {
 					has_completed_focus = JAP_subdue_the_kwantung_army
 				}
 			}
+			
 			add_timed_idea = {
 				idea = JAP_surprise_invasion_idea
-				days = 210 
+				days = 245 
 			}	
+			
 		}
 
 		hidden_effect = {
@@ -858,7 +860,7 @@ country_event = {
 			news_event = { days = 5 id = news.5 }
 		}
 		JAP = {
-			if = {
+			IF = {
 				limit = {
 					286 = {
 						CONTROLLER = {
@@ -873,7 +875,7 @@ country_event = {
 				}
 				transfer_state = 286
 			}
-			if = {
+			IF = {
 				limit = {
 					670 = {
 						CONTROLLER = {
@@ -888,7 +890,7 @@ country_event = {
 				}
 				transfer_state = 670
 			}
-			if = {
+			IF = {
 				limit = {
 					924 = {
 						CONTROLLER = {
@@ -903,7 +905,7 @@ country_event = {
 				}
 				transfer_state = 924
 			}
-			if = {
+			IF = {
 				limit = {
 					925 = {
 						CONTROLLER = {
@@ -918,7 +920,7 @@ country_event = {
 				}
 				transfer_state = 925
 			}
-			if = {
+			IF = {
 				limit = {
 					926 = {
 						CONTROLLER = {
@@ -933,7 +935,7 @@ country_event = {
 				}
 				transfer_state = 926
 			}
-			if = {
+			IF = {
 				limit = {
 					927 = {
 						CONTROLLER = {
@@ -948,7 +950,7 @@ country_event = {
 				}
 				transfer_state = 927
 			}
-			if = {
+			IF = {
 				limit = {
 					928 = {
 						CONTROLLER = {
@@ -963,7 +965,7 @@ country_event = {
 				}
 				transfer_state = 928
 			}
-			if = {
+			IF = {
 				limit = {
 					671 = {
 						CONTROLLER = {
@@ -978,7 +980,7 @@ country_event = {
 				}
 				transfer_state = 671
 			}
-			if = {
+			IF = {
 				limit = {
 					741 = {
 						CONTROLLER = {
@@ -993,7 +995,7 @@ country_event = {
 				}
 				transfer_state = 741
 			}
-			if = {
+			IF = {
 				limit = {
 					728 = {
 						CONTROLLER = {

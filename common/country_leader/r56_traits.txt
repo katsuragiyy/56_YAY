@@ -7485,7 +7485,7 @@ leader_traits = {
 		democratic_drift = 0.01
 	}
 	
-	guerilla_expert = {
+	r56_version_guerilla_expert = {
 		random = no
 		sprite = 14
 		ai_will_do = {

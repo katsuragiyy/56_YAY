@@ -29,12 +29,29 @@ country_event = {
 	
 	option = {
 		name = hungary.2.a
+
 		HUN = { 
 			transfer_state = 76
+			add_opinion_modifier = {
+				target = GER
+				modifier = GER_align_hungary	
+			}	
+			add_timed_idea = {
+				idea = fascist_influence
+				days = 365
+			}	
 		}
+
 		hidden_effect = {
-			news_event = { days = 1 id = news.15 }
+			ROM = {
+				set_country_flag = second_vienna_accepted_north #for event bulgaria.4
+			}
 		}
+
+		hidden_effect = {
+			news_event = { days = 1 id = news.15 } # 56
+		}
+
 	}
 }
 
@@ -49,15 +66,33 @@ country_event = {
 	
 	option = {
 		name = hungary.2.a
+
 		HUN = { 
 			transfer_state = 76
 			transfer_state = 83
 			transfer_state = 84
 			transfer_state = 82
+			add_opinion_modifier = {
+				target = GER
+				modifier = GER_align_hungary	
+			}	
+			add_timed_idea = {
+				idea = fascist_influence
+				days = 365
+			}
 		}
+
 		hidden_effect = {
-			news_event = { days = 1 id = news.16 }
+			ROM = {
+				set_country_flag = second_vienna_accepted_all #for event bulgaria.4
+			}
 		}
+		
+
+		hidden_effect = {
+			news_event = { days = 1 id = news.16 } # 56
+		}
+
 	}
 }
 
@@ -72,9 +107,11 @@ country_event = {
 	
 	option = {
 		name = hungary.4.a
+
 		add_state_claim = 76
+
 		hidden_effect = {
-			news_event = { days = 1 id = news.17 }
+			news_event = { days = 1 id = news.17 } # 56
 		}
 	}
 }
@@ -90,13 +127,16 @@ country_event = {
 	
 	option = {
 		name = hungary.4.a
+
 		add_state_claim = 76
 		add_state_claim = 83
 		add_state_claim = 84
 		add_state_claim = 82
+
 		hidden_effect = {
 			news_event = { days = 1 id = news.18 }
 		}
+
 	}
 }
 
@@ -117,7 +157,7 @@ country_event = {
 		}
 	}
 }
-
+# 56
 country_event = { # 3 events to make the recruitement of hungarian loyalists generals really dynamic
 	id = hungary.7
 	title = hungary.7.t
@@ -217,3 +257,4 @@ country_event = { # 3 events to make the recruitement of Dutch generals really d
 		}		
 	}
 }
+##

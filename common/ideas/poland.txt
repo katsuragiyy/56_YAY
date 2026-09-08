@@ -1933,24 +1933,6 @@ country = {
 			training_time_factor = -0.1
 		}
 	}
-	
-	POL_payment_for_weapons = { # 56
-		picture = generic_economic_increase
-		modifier = {
-			consumer_goods_factor = 0.1
-		}
-	}
-	
-	POL_rushed_small_arms_production = { # 56
-		picture = generic_production_bonus
-	
-		equipment_bonus = {
-			infantry_equipment = {
-				build_cost_ic = -0.2
-				instant = yes
-				}
-		}	
-	}
 }
 
 
@@ -2254,18 +2236,18 @@ country = {
 		POL_stocznia_gdynia = {
 
 			picture = stocznia_gdynia
-			
+
+
 			allowed = {
 				original_tag = POL
 			}
-			
+
 			available = {
 				owns_state = 807
 			}
-			
+
 			#research_bonus = {
 			#}
-			
 			traits = { POL_Freighter_Manufacturer }
 			
 			equipment_bonus = {
@@ -2335,12 +2317,12 @@ country = {
 	industrial_concern = {
 
 		POL_pkp = {
-			
+
 			allowed = {
 				original_tag = POL
 				has_dlc = "Poland: United and Ready"
 			}
-			
+
 			picture = generic_industrial_concern_1
 
 			research_bonus = {
@@ -2348,7 +2330,7 @@ country = {
 			}
 
 			traits = { railway_company }
-			
+
 			modifier = {
 			}
 			
@@ -2387,24 +2369,24 @@ country = {
 		}
 
 		POL_ava = {
-			
+
 			allowed = {
 				original_tag = POL
 				has_dlc = "Poland: United and Ready"
 			}
-			
+
 			picture = generic_industrial_concern_2
-			
+
 			research_bonus = {
 				electronics = 0.15
 				engineers_tech = 0.15
 			}
-			
+
 			traits = { electronics_concern }
-			
+
 			modifier = {
 			}
-			
+
 			on_add = {
 				if = { limit = { has_country_flag = POL_Has_Debica }
 					hidden_effect = {

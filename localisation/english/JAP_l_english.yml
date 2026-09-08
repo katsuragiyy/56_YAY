@@ -564,6 +564,14 @@ JAP_mio_trait_simplified_amphibious_vehicle:0 "Simplified Amphibious Vehicles"
 
 #Misc #R56
 kingdoms_of_annam_and_cambodia_road_version_tt: "Establishes the §YKingdom of Annam§! in §Y[671.GetName]§!, §Y[928.GetName]§! and §Y[670.GetName]§!. \nEstablishes the §YKingdom of Cambodia§! in §Y[741.GetName]§! and §Y[286.GetName]§!."
+JAP_empower_the_tongan_reactionary_party_decision_r56: "Empower the Tongan Reactionary Party"
+JAP_empower_the_tongan_reactionary_party_decision_r56_desc: "Ever since the establishment of a protectorate in Tonga, the island's people have resented their supposed 'Ally'. The British have constantly interferred in Tongan affairs, and have over the past couple of decades accumulated large amounts of influence within the Tongan parliament and even the Tongan monarchy. In response, a reactionary front formed to combat British influence, led by disgrunteled politicians fed up with Britain's constant interfering in Tongan affairs. Now with the islands under our control, we can promote these politicians to official offices to minimize the extent of our garrisons, while also promoting anti-British sentiment in the islands."
+JAP_establish_tonga_tt_r56: "Establishes the §YIndependent State of Tonga§! in §Y[734.GetName]§!."
+JAP_establish_a_protectorate_over_samoa_decision_r56: "Establish a Protectorate in Samoa"
+JAP_establish_a_protectorate_over_samoa_decision_r56_desc: "Over the past decade, the Mau has resisted it's colonial oppressors through civil disobedience, and has achieved much progress towards its eventual goal of Samoan independence. However, the Pacific war has disrupted their progress and their new found collaboration with [NZL.GetNameDef], and combined with a failed petition in 1938, some opportunists have suggested overthrowing the Samoan parliament, the Fono, and declaring independnece. With the islands now under our control, we can give the Samoans the state that they desired for so long, while also securing a major strategic location in the Pacific that will most certainly help improve our upcoming operations in the Pacific."
+JAP_establish_samoa_tt_r56: "Establishes the §YKingdom of Samoa§! in §Y[726.GetName] & [1088.GetName]§!."
+JAP_restore_the_kingdom_of_tahiti_decision_r56: "Restore the Kingdom of Tahiti"
+JAP_establish_tahiti_tt_r56: "Establishes the §YKingdom of Tahiti§! in §Y[641.GetName]§!."
 
 COLLECTION_FALLEN_RING_ISLAND_STATES_0:0 "Number of fallen Ring Islands is less than 1"
 COLLECTION_FALLEN_RING_ISLAND_STATES_1:0 "Number of fallen Ring Islands is greater than 0"

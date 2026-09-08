@@ -166,7 +166,7 @@ characters={
 				original_tag = VIN
 			}
 			cost = 250
-			traits = { guerilla_expert }
+			traits = { r56_version_guerilla_expert }
 			available = {
 				has_government = communism
 			}

@@ -286,7 +286,7 @@ characters={
 					}
 				}
 			}
-			traits = { guerilla_expert }
+			traits = { r56_version_guerilla_expert }
 		}		
 		field_marshal={
 			traits = { inflexible_strategist war_hero trait_cautious defensive_doctrine trickster winter_specialist }
@@ -833,7 +833,7 @@ characters={
 		}		
 	}
 	#FIN_lauri_tiainen was commando leader, replaced by Wiljo Tuompo who is a tiny bit more relevant
-	FIN_wiljo_tuompo={
+	FIN_wiljo_einar_tuompo={
 		name="Wiljo Tuompo"
 		portraits={
 			army={
@@ -851,7 +851,7 @@ characters={
 		}		
 		advisor={
 			slot = high_command
-			idea_token = FIN_wiljo_tuompo
+			idea_token = FIN_wiljo_einar_tuompo
 			ledger = army
 			allowed = {
 				original_tag = FIN

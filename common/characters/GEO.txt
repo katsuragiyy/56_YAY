@@ -1,37 +1,184 @@
 characters={
 
 	GEO_noe_zhordania = {
-		name="Noe Zhordania"
+		name = GEO_noe_zhordania
 		portraits = {
 			civilian = {
-				large="gfx/leaders/GEO/portrait_GEO_noe_zhordania.dds"
+				large = GFX_portrait_GEO_noe_zhordania
+				small = GFX_portrait_GEO_noe_zhordania_small
 			}
 		}
 		country_leader = {
 			ideology = liberalism
 			expire="1953.1.1.1"
 			id=-1
-			traits = {
-				savvy_politician
-			}			
+			traits = { savvy_politician reformist_menshevik } # 56	
 		}
 	}
+
 	GEO_kandid_charkviani = {
-		name="Kandid Charkviani"
+		name = GEO_kandid_charkviani
 		portraits = {
 			civilian = {
-				large="gfx/leaders/GEO/r56_portrait_GEO_Kandid_Charkviani.dds"
+				large = GFX_portrait_GEO_kandid_charkviani
 			}
 		}
 		country_leader = {
 			ideology = stalinism
 			expire="1965.1.1.1"
 			id=-1
-			traits = {
-				comintern_workhorse
-			}			
+			traits = { staunch_stalinist }			
 		}
 	}
+
+	GEO_george_bagration = {
+		name = GEO_george_bagration
+		portraits = {
+			civilian = {
+				large = GFX_portrait_GEO_george_bagration_mukhrani
+				small = GFX_portrait_GEO_george_bagration_mukhrani_civilian_small
+			}
+			army = {
+				small = GFX_portrait_GEO_george_bagration_mukhrani_military_small
+			}
+		}
+		country_leader = {
+			ideology = constitutional_monarchy # 56
+			expire = "1957.1.1"
+			id = -1
+			traits = { the_sacred_king anti_communist } # 56
+		}
+	}
+
+	GEO_grigol_robakidze = {
+		name = GEO_grigol_robakidze
+		portraits = {
+			civilian = {
+				large = GFX_portrait_GEO_grigol_robakidze
+				small = GFX_portrait_GEO_grigol_robakidze_small
+			}
+		}
+
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1960.1.1"
+			id = -1
+			traits = { georgian_irredentist_writer }
+		}
+
+		advisor = { # 56
+			cost = 100
+			slot = political_advisor
+			idea_token = GEO_grigol_robakidze
+			allowed = { original_tag = GEO }
+			traits = { editor radical_anti_communist }
+			available = { 
+				OR = { 
+					has_government = neutrality 
+					has_government = fascism
+				}
+				NOT = {
+					has_country_leader = {
+						character = GEO_grigol_robakidze
+						ruling_only = yes
+					}
+				}
+			}
+		}
+	}
+
+	GEO_giorgi_kvinitadze = {
+
+		name = GEO_giorgi_kvinitadze
+
+		portraits = {
+			army = {
+				large = GFX_portrait_GEO_giorgi_kvinitadze
+				small = GFX_portrait_GEO_giorgi_kvinitadze_small
+			}
+		}
+
+		field_marshal = {
+			traits = { war_hero politically_connected old_guard defensive_doctrine } # 56
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+			visible = { NOT = { has_government = communism } } # 56
+		}
+		
+		advisor = { # 56
+			cost = 100
+			slot = army_chief
+			idea_token = GEO_giorgi_kvinitadze
+			allowed = { original_tag = GEO }
+			traits = { army_chief_defensive_2 }
+			ai_will_do = { base = 1 }
+			available = { NOT = { has_government = communism } }
+		}
+	}
+
+	GEO_shalva_maglakelidze = {
+
+		name = GEO_shalva_maglakelidze
+
+		portraits = {
+			army = {
+				large = GFX_portrait_GEO_shalva_maglakelidze
+				small = GFX_portrait_GEO_shalva_maglakelidze_small
+			}
+		}
+
+		corps_commander = {
+			traits = { trait_mountaineer infantry_leader harsh_leader lucky politically_connected } # 56
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = -1
+			visible = {
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+				}
+			}
+		}
+
+		advisor = { # 56
+			slot = army_chief
+			idea_token = GEO_shalva_maglakelidze
+			allowed = { original_tag = GEO }
+			traits = { army_chief_offensive_2 }
+			ai_will_do = { base = 1 }
+			cost = 100
+			available = {
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+				}
+			}
+		}
+	}
+
+	GEO_ioseb_jughashvili = {
+		name = GEO_ioseb_jughashvili
+		portraits = {
+			civilian = {
+				large = GFX_portrait_GEO_ioseb_jughashvili
+			}
+		}
+		#country_leader = {
+		#	ideology = stalinism
+		#	expire = "1953.3.1"
+		#	id = -1
+		#	traits = { }
+		#}
+	}
+
+	# 56 CHARACTERS FILE
 	
 	GEO_alexander_nikuradse = { #nazi collaborator, headed the committee
 		name="Alexander Nikuradse"
@@ -229,59 +376,6 @@ characters={
 			cost = 150
 		}
 	}	
-	GEO_shalva_maglakelidze = { #nazi collaborator, also member of the UGT, could be replaced with Guiorgui Magalachvili, maybe for more "authentic nazism"
-		name="Shalva Maglakelidze"
-		portraits = {
-			civilian = {
-				large = GFX_kr_portrait_russia_generic_land_5
-				small = GFX_kr_portrait_russia_generic_land_5_small
-			}
-		}
-	#	country_leader = {
-	#		ideology = fascism_ideology
-	#		expire="1965.1.1.1"
-	#		id=-1
-	#		traits = {
-	#			lawyer
-	#		}			
-	#	}
-
-		advisor={
-		
-			slot = army_chief
-			idea_token = GEO_shalva_maglakelidze
-			allowed = {
-				original_tag = GEO
-			}
-			traits = {
-				army_chief_offensive_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-			available = {
-				OR = {
-					has_government = neutrality
-					has_government = fascism
-				}
-			}
-		}
-		corps_commander={
-			traits = { harsh_leader lucky politically_connected }
-			skill = 2
-			attack_skill = 3
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 2
-			visible = {
-				OR = {
-					has_government = neutrality
-					has_government = fascism
-				}			
-			}			
-		}
-	}	
 	#
 	GEO_michael_achmeteli = { #maybe change trait, he studied the Soviet economy and worked for the nazis...
 		name= "Michael Achmeteli"
@@ -396,81 +490,7 @@ characters={
 			}
 			cost = 150
 		}
-	}
-	#Grigol Robakidze anti soviet poet
-	GEO_grigol_robakidze = {
-		name= "Grigol Robakidze"
-		portraits = {
-			army = {
-				small="GFX_portrait_GEO_grigol_robakidze_small"
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = GEO_grigol_robakidze
-			allowed = {
-				original_tag = GEO
-			}
-			visible = {
-
-			}
-			available = {
-				OR = {
-					has_government = neutrality
-					has_government = fascism
-				}
-				
-			}
-			traits = {
-				editor
-				radical_anti_communist
-			}
-			cost = 100
-		}
-	}		
-	#Giorgi Kvinitadze old guard chief of the army/field marshal died in 1970 age 95!
-	GEO_giorgi_kvinitadze = {
-		name="Giorgi Kvinitadze"
-		portraits={
-			army = {
-				large="gfx/leaders/GEO/portrait_GEO_giorgi_kvinitadze.dds"
-				small="GFX_portrait_GEO_giorgi_kvinitadze_small"
-			}
-		}
-		advisor={
-		
-			slot = army_chief
-			idea_token = GEO_giorgi_kvinitadze
-			allowed = {
-				original_tag = GEO
-			}
-			traits = {
-				army_chief_defensive_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-			available = {
-				NOT = {
-					has_government = communism
-				}
-			}
-		}
-		field_marshal={
-			traits = { war_hero politically_connected old_guard defensive_doctrine }
-			skill = 3
-			attack_skill = 1
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 2
-			visible = {
-				NOT = {
-					has_government = communism
-				}				
-			}			
-		}
-	}
+	}	
 	#Valerian Tevzadze Polish georgian colonel and resistance fighter
 	GEO_valerian_tevzadze = {
 		name="Valerian Tevzadze"
@@ -934,21 +954,6 @@ characters={
 		}		
 	}
 
-	
-	GEO_ioseb_jughashvili = {
-		name = GEO_ioseb_jughashvili
-		portraits = {
-			civilian = {
-				large = GFX_portrait_GEO_ioseb_jughashvili
-			}
-		}
-		#country_leader = {
-		#	ideology = stalinism
-		#	expire = "1953.3.1"
-		#	id = -1
-		#	traits = { }
-		#}
-	}
 	GEO_georgy_beriev = {
 		name = GEO_georgy_beriev
 		portraits = {

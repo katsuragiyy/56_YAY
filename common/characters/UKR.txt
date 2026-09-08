@@ -1278,7 +1278,20 @@ characters = {
 		name = UKR_pavlo_shandruk
 		portraits = {
 			army = {
-				large = "gfx/leaders/DOU/r56_portrait_DOU_Pavlo_Shandruk.dds"
+				large = GFX_portrait_UKR_pavlo_shandruk
+				small = GFX_portrait_UKR_pavlo_shandruk_small
+			}
+		}
+
+		corps_commander = {
+			traits = { ranger infantry_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id = -1
+			visible = {
 			}
 		}
 	}		

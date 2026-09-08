@@ -1,7 +1,7 @@
 ideas = {
 
 	country = {
-
+		# 56
 		dominion_fascist_influence = {
 			
 			name = dominion_fascist_influence
@@ -192,6 +192,75 @@ ideas = {
 			}
 		}
 		
+		ENG_royal_family_remnants = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			
+			modifier = {
+				army_morale_factor = 0.05
+				stability_factor = 0.05
+			}
+
+			picture = generic_king_handled
+
+			removal_cost = -1
+		}
+		
+		ENG_elisabeth_ii = {
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			allowed_civil_war = {
+				NOT ={
+					has_government = communism
+				}
+				NOT = {
+					any_other_country = {
+						original_tag = ENG
+						has_government = democratic 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+			
+			removal_cost = -1
+			
+			traits = { popular_figurehead }
+			
+
+		}
+		ENG_home_army_idea = {
+
+			name = ENG_the_home_army
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				conscription = 0.02
+				army_core_defence_factor = 0.1
+			}
+
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+		}
+		##
 		george_v = {
 			
 			name = george_v
@@ -257,7 +326,7 @@ ideas = {
 		}
 
 		ENG_king_edward_fascism = {
-
+			
 			name = ENG_king_edward_fascism	 		
 
 			allowed = {
@@ -275,10 +344,8 @@ ideas = {
 
 			modifier = {
 				stability_factor = 0.05
-				drift_defence_factor = 0.02
+				drift_defence_factor = 0.5
 			}
-			
-
 		}
 
 		ENG_george_vi = {
@@ -304,41 +371,14 @@ ideas = {
 				}
 			}
 
-			picture = george_vi_ns #square frame but not in advisor style
+			picture = george_vi_ns
 			
 			removal_cost = -1
 			
 			traits = { popular_figurehead }
 			
-
 		}
-		ENG_elisabeth_ii = {
 
-			allowed = {
-				original_tag = ENG
-			}
-
-			allowed_civil_war = {
-				NOT ={
-					has_government = communism
-				}
-				NOT = {
-					any_other_country = {
-						original_tag = ENG
-						has_government = democratic 
-						NOT = {
-							tag = ROOT
-						}
-					}
-				}
-			}
-			
-			removal_cost = -1
-			
-			traits = { popular_figurehead }
-			
-
-		}
 		ENG_the_war_to_end_all_wars = {
 			
 			name = ENG_the_war_to_end_all_wars
@@ -356,7 +396,7 @@ ideas = {
 			removal_cost = -1
 						
 			modifier = {
-				conscription_factor = -0.25
+				conscription_factor = -0.30
 				#conscription = -0.006
 			}
 		}
@@ -404,6 +444,25 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = -0.15
+			}
+		}
+
+		ENG_evacuated_colonial_assets = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = tur_balkan_central_bank_wealthy_greece
+			
+			modifier = {
+				consumer_goods_factor = -0.1
 			}
 		}
 
@@ -511,7 +570,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				research_speed_factor = 0.05
+				research_speed_factor = 0.07
 			}
 		}
 		
@@ -533,6 +592,9 @@ ideas = {
 			
 			equipment_bonus = {
 				small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				cv_small_plane_airframe = {
 					build_cost_ic = -0.1 instant = yes
 				}
 			}
@@ -605,13 +667,9 @@ ideas = {
 			
 			removal_cost = -1
 
-			on_remove = {
+			on_remove = { # 56
 				if = {
-					limit = {
-						ROOT = {
-							is_subject_of = ENG
-						}
-					}
+					limit = { ROOT = { is_subject_of = ENG } }
 					OVERLORD = {	#Time for India to be free
 						country_event = { id = britain.6 days = 7 random_days = 7 }	
 					}
@@ -644,6 +702,7 @@ ideas = {
 			removal_cost = -1			
 			
 		}
+
 		ENG_special_air_service_idea = {
 
 			name = ENG_special_air_service
@@ -680,7 +739,7 @@ ideas = {
 			}
 
 			modifier = {
-				max_command_power = 25
+				max_command_power = 20
 				command_power_gain_mult = 0.1
 				planning_speed = 0.1
 			}
@@ -699,11 +758,7 @@ ideas = {
 				always = no
 			}
 
-			cancel = {
-				NOT = {
-					is_subject_of = ENG
-				}
-			}
+			cancel = { NOT = { is_subject_of = ENG } } # 56
 
 			allowed_civil_war = {
 				always = yes
@@ -730,12 +785,7 @@ ideas = {
 				always = no
 			}
 
-			cancel = {
-				NOT = {
-					is_subject_of = ENG
-				}
-			}
-
+			cancel = { NOT = { is_subject_of = ENG } } # 56
 			allowed_civil_war = {
 				always = yes
 			}
@@ -762,12 +812,7 @@ ideas = {
 				always = no
 			}
 
-			cancel = {
-				NOT = {
-					is_subject_of = ENG
-				}
-			}
-
+			cancel = { NOT = { is_subject_of = ENG } }
 			allowed_civil_war = {
 				always = yes
 			}
@@ -793,12 +838,7 @@ ideas = {
 				always = no
 			}
 
-			cancel = {
-				NOT = {
-					is_subject_of = ENG
-				}
-			}
-
+			cancel = { NOT = { is_subject_of = ENG } }
 			allowed_civil_war = {
 				always = yes
 			}
@@ -931,27 +971,7 @@ ideas = {
 			
 			removal_cost = -1
 		}
-		ENG_home_army_idea = {
 
-			name = ENG_the_home_army
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			modifier = {
-				conscription = 0.02
-				army_core_defence_factor = 0.1
-			}
-
-			picture = generic_production_bonus
-			
-			removal_cost = -1
-		}
 		ENG_mi6_ns = {
 			removal_cost = -1
 
@@ -974,6 +994,7 @@ ideas = {
 				intel_network_gain_factor = 0.1
 			}
 		}
+
 		ENG_a_change_in_course_idea = {
 
 			name = ENG_a_change_in_course
@@ -988,7 +1009,7 @@ ideas = {
 
 			modifier = {
 				democratic_drift = -0.1
-				war_support_factor = 0.20
+				war_support_factor = 0.1
 				political_power_factor = 0.1
 			}
 
@@ -1098,6 +1119,8 @@ ideas = {
 		}
 
 		ENG_for_the_good_of_the_revolution_idea = {
+
+			name = ENG_for_the_good_of_the_revolution
 			
 			allowed = {
 				always = no
@@ -1399,14 +1422,12 @@ ideas = {
 				always = yes
 			}
 
-			cancel = {
+			cancel = { # 56
 				OR = {
 					is_subject = yes
 					is_puppet = yes
 				}
-				NOT = {
-					has_government = communism
-				}
+				NOT = { has_government = communism }
 			}
 
 			modifier = {
@@ -1504,7 +1525,7 @@ ideas = {
 			}
 
 			modifier = {
-				war_support_factor = 0.20
+				war_support_weekly = 0.005
 			}
 
 			picture = generic_political_support
@@ -1523,7 +1544,7 @@ ideas = {
 				always = yes
 			}
 
-			cancel = {
+			cancel = { # 56
 				OR = {
 					is_subject = yes
 					is_puppet = yes
@@ -1556,7 +1577,7 @@ ideas = {
 				always = yes
 			}
 
-			cancel = {
+			cancel = { # 56
 				OR = {
 					is_subject = yes
 					is_puppet = yes
@@ -1609,7 +1630,7 @@ ideas = {
 				always = yes
 			}
 
-			cancel = {
+			cancel = { # 56
 				OR = {
 					is_subject = yes
 					is_puppet = yes
@@ -1671,25 +1692,6 @@ ideas = {
 				army_morale_factor = 0.1
 				stability_factor = 0.1
 				war_support_factor = 0.05
-			}
-
-			picture = generic_king_handled
-
-			removal_cost = -1
-		}
-		ENG_royal_family_remnants = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = democratic
-			}
-			
-			modifier = {
-				army_morale_factor = 0.05
-				stability_factor = 0.05
 			}
 
 			picture = generic_king_handled
@@ -2084,6 +2086,28 @@ ideas = {
 
 		}
 
+		ENG_federal_integration_tfv = {
+
+			name = ENG_federal_integration
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				autonomy_gain = -1
+			}
+
+			picture = eng_guided_by_britain
+			
+			removal_cost = -1	
+
+		}
+
 		ENG_fortify_the_empire_1 = {
 
 			name = ENG_fortify_the_empire
@@ -2152,7 +2176,7 @@ ideas = {
 			modifier = {
 				experience_gain_air = 0.05
 				experience_gain_air_factor = 0.1
-				air_mission_xp_gain_factor = 0.1
+				air_mission_xp_gain_factor = 0.05
 				air_training_xp_gain_factor = 0.2
 			}
 		}

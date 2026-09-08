@@ -1,8 +1,8 @@
 ideas = {
 
 	hidden_ideas = {
-
-		RAJ_Indian_Ai_Strategies = { #r56
+		# 56
+		RAJ_Indian_Ai_Strategies = {
 			allowed = {
 				tag = RAJ
 			}
@@ -12,7 +12,7 @@ ideas = {
 			}
 		}
 
-		RAJ_AH_Civil_War_Limit = { #r56
+		RAJ_AH_Civil_War_Limit = {
 			allowed = {
 				tag = RAJ
 			}
@@ -20,7 +20,7 @@ ideas = {
 				civil_war_involvement_tension = 0.5
 			}
 		}
-		
+		##
 		RAJ_lions_of_the_great_war = {
 
 			allowed = {
@@ -96,6 +96,8 @@ ideas = {
 				conscription_factor = -0.2
 			}
 		}
+
+
 
 		RAJ_marginalized_muslim_community_angry = {
 		

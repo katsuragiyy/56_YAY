@@ -201,13 +201,13 @@ characters={
 	}
 	
 	MAN_ma_zhanshan = {
-		name = "Ma Zhanshan"
+		name = MAN_ma_zhanshan
 		portraits={
 			civilian={
-				large="gfx/leaders/MAN/r56_portrait_MAN_ma_zhanshan.dds"
+				large=GFX_portrait_MAN_ma_zhanshan
 			}
 			army = {
-				large = "gfx/leaders/MAN/r56_portrait_MAN_ma_zhanshan.dds"
+				large = GFX_portrait_MAN_ma_zhanshan
 				small = "gfx/interface/ideas/man/advisors/r56_idea_MAN_advisor_ma_zhanshan.dds"
 			}
 		}
@@ -232,7 +232,7 @@ characters={
 			expire="1965.1.1"
 			id=-1
 			traits={
-
+				guerilla_warfare_expert
 			}
 		}
 		field_marshal = {
@@ -1023,7 +1023,7 @@ characters={
 		name= MAN_aisin_gioro_pujie
 		portraits={
 			civilian={
-				large="gfx/leaders/MAN/r56_portrait_MAN_Aisin_Gioro_Pujie.dds"
+				large="gfx/leaders/MAN/Portrait_Manchuria_Henry_Pu_Yi.dds"
 			}
 		}
 		country_leader={

@@ -619,7 +619,7 @@ bookmarks = {
 			ideology = fascism
 			version = base_game
 			label = { country_europe country_releasable }
-			ideas = { r56_SLO_economy_dm_fake }
+			ideas = { r56_SLO_economy_dm_fake r56_SLO_strong_catholic_influence }
 			focuses = {
 				SLO_purge_fascists
 				SLO_found_the_nation

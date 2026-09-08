@@ -1065,12 +1065,8 @@ country_event = {
 		add_political_power = 25
 
 		transfer_state = 73
-		if = {
-			limit = {
-				FROM = {
-					owns_state = 996
-				}
-			}
+		if = { # 56
+			limit = { FROM = { owns_state = 996 } }
 			transfer_state = 996
 		}
 
@@ -1099,8 +1095,27 @@ country_event = {
 			type = take_state_focus
 			target = FROM
 			generator = { 73 }
-		}		
-
+		}
+		if = {
+			limit = {
+				RUT = {
+					exists = yes
+					is_subject_of = FROM
+					owns_state = 73
+					owns_state = 996
+				}
+			}
+			add_ai_strategy = {
+				type = declare_war
+				id = RUT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = RUT
+				value = 100
+			}
+		}
 	}
 
 	# It is simply not worth the effort
@@ -1511,7 +1526,7 @@ country_event = {
 		    character = HUN_joseph_august_von_habsburg
 		    promote_leader = yes
 		    country_leader = {
-		        ideology = absolute_monarchism
+		        ideology = absolute_monarchism # 56
 		        expire = "1965.1.1.1"
 		        traits = { HUN_the_old_warden }
 		    }
@@ -2166,7 +2181,9 @@ country_event = {
 		every_state = {
 			limit = {
 				is_controlled_by = ROOT
-				NOT = { is_core_of = ROOT }
+				NOT = {
+					is_core_of = ROOT
+				}
 				is_core_of = ALB
 			}
 			transfer_state_to = ALB
@@ -2175,6 +2192,11 @@ country_event = {
 		ALB = {
 			drop_cosmetic_tag = yes
 			set_cosmetic_tag = ALB_wiedist_principality
+			set_party_name = {
+				ideology = neutrality
+				long_name = ALB_house_of_wied_party_long
+				name = ALB_house_of_wied_party
+			}	
 			add_country_leader_role = { # R56
 				character = ALB_wilhelm_of_wied
 				promote_leader = yes
@@ -2414,11 +2436,11 @@ country_event = {
 		    character = SPA_karl_pius_von_habsburg
 		    promote_leader = yes
 		    country_leader = {
-		        ideology = absolute_monarchism
+		        ideology = absolute_monarchism # 56
 		        expire = "1965.1.1.1"
 		        traits = { 
 					carlist_habsburg_pretender 
-					r56_trait_opposed_to_communism
+					r56_trait_opposed_to_communism # 56
 				}
 		    }
 		}
@@ -2455,7 +2477,7 @@ country_event = {
 				HUN = { is_in_faction = yes }
 				factor = 2
 			}
-			modifier = { # always refuse if totally opposed to monarchism
+			modifier = { # always refuse if totally opposed to monarchism # 56
 				OR = {
 					has_government = communism
 					has_country_leader_ideology = anarchism
@@ -2627,7 +2649,9 @@ country_event = {
 			name = UKR_habsburg_legitimists
 			long_name = UKR_habsburg_legitimists
 		}
+
 		add_country_leader_role = {
+			# 56
 			character = UKR_vasyl_vyshyvanyi
 			promote_leader = yes
 			country_leader = {
@@ -2641,7 +2665,9 @@ country_event = {
 					r56_trait_opposed_to_fascism
 				}
 			}
+			##
 		}
+
 	}
 }
 
@@ -2994,7 +3020,7 @@ country_event = {
 		    character = MEX_maria_de_iturbide
 		    promote_leader = yes
 		    country_leader = {
-		        ideology = absolute_monarchism
+		        ideology = absolute_monarchism # 56
 		        expire = "1965.1.1.1"
 		        traits = { head_of_the_imperial_house_of_mexico_trait }
 		    }
@@ -3187,7 +3213,7 @@ country_event = {
 		    character = CRO_joseph_francis
 		    promote_leader = yes
 		    country_leader = {
-		        ideology = absolute_monarchism
+		        ideology = absolute_monarchism # 56
 		        expire = "1965.1.1.1"
 		        traits = { ban_of_croatia_slavonia }
 		    }
@@ -3954,7 +3980,7 @@ country_event = {
 			factor = 80
 		}
 
-		add_war_support = 0.05
+		add_war_support = 0.02
 
 		create_wargoal = {
 			type = take_claimed_state
@@ -4019,7 +4045,7 @@ country_event = {
 
 		promote_character = {
 			character = ITA_vittorio_emanuele_iii 
-			ideology = absolute_monarchism
+			ideology = absolute_monarchism # 56
 		}
 
 	}
@@ -4774,7 +4800,7 @@ country_event = {
 	}
 
 	# crown istvan horthy as king
-	option = {
+	option = { 
 		name = WW_hungary.90.b 
 		ai_chance = {
 			base = 64
@@ -4786,7 +4812,7 @@ country_event = {
 		    character = HUN_istvan_horthy
 		    promote_leader = yes
 		    country_leader = {
-		        ideology = constitutional_monarchy
+		        ideology = constitutional_monarchy # 56
 		        expire = "1965.1.1.1"
 		        traits = { dislikes_germany HUN_popular_aviator }
 		    }
@@ -4801,7 +4827,7 @@ country_event = {
 		}
 	}
 	
-	# New guy in town
+	# New guy in town # 56
 	option = {
 		name = WW_hungary.90.c
 		ai_chance = {
@@ -5027,7 +5053,7 @@ country_event = {
 		    character = HUN_bela_kun
 		    promote_leader = yes
 		    country_leader = {
-		    	ideology = leninism
+		    	ideology = leninism # 56
 		    	traits = { HUN_the_hungarian_lenin }
 		    	expire = "1965.1.1.1"
 		    	id = -1
@@ -5570,7 +5596,7 @@ country_event = {
 		    character = HUN_gyula_gombos_de_jakfa
 		    promote_leader = yes
 		    country_leader = {
-		    	ideology = conservatism_n
+		    	ideology = conservatism_n # 56
 		    	traits = { HUN_popular_among_paramilitaries }
 		    	expire = "1965.1.1.1"
 		    	id = -1
@@ -5619,7 +5645,7 @@ country_event = {
 
 		add_trait = {
 		    character = HUN_ferenc_szalasi
-		    ideology = ultranationalism
+		    ideology = ultranationalism # 56
 		    trait = HUN_nemzetvezeto_trait
 		}
 

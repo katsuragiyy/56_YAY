@@ -901,28 +901,76 @@ characters = {
 			}
 		}
 	}
-	AST_john_collins = {
-		name = AST_john_collins
-		portraits = {
-			army = {
-				small = "GFX_idea_AST_john_collins"
-			}
-		}
-		advisor = {
-			slot = high_command
-			idea_token = AST_john_collins
-			ledger = navy
+	AST_john_collins={
+
+		instance = {
 			allowed = {
-				original_tag = AST
+				has_dlc = "Thunder at Our Gates"
 			}
-			traits = {
-				navy_capital_ship_2
+			name=AST_john_collins
+			portraits={
+				army={
+					large=GFX_portrait_AST_john_collins
+					small=GFX_portrait_AST_john_collins_small #OLD ONE: small="GFX_idea_AST_john_collins" 
+				}
 			}
-			cost = 100
-			ai_will_do = {
-				factor = 1
+
+			navy_leader={ 
+				traits = { gunnery_expert }
+				skill=3
+				attack_skill=2
+				defense_skill=2
+				coordination_skill=5
+				maneuvering_skill=1
+				legacy_id=-1
+			}
+
+			advisor={
+				slot = high_command
+				idea_token = AST_john_collins
+				ledger = navy
+				allowed = {
+					original_tag = AST
+				}
+				traits = {
+					navy_fleet_logistics_2
+				}
+				cost = 100
+
+				ai_will_do = {
+					factor = 1
+				}
 			}
 		}
+
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "Thunder at Our Gates"
+				}
+			}	
+			name=AST_john_collins
+			portraits={
+				army={
+					small=GFX_portrait_AST_john_collins_small #OLD ONE: small="GFX_idea_AST_john_collins" 
+				}
+			}
+			advisor={
+				slot = high_command
+				idea_token = AST_john_collins
+				ledger = navy
+				allowed = {
+					original_tag = AST
+				}
+				traits = {
+					navy_fleet_logistics_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+			}	
+		}	
 	}
 	AST_edmund_herring = {
 		name = AST_edmund_herring

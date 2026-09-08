@@ -169,16 +169,17 @@ characters={
 		}				
 	}	
 	TIB_thubten_kunpela={
-		name="Thubten Kunphela"
+		name=TIB_thubten_kunpela
 		portraits={
 			civilian={
-				small="gfx/interface/ideas/tib/advisors/r56_idea_TIB_advisor_kunphela.dds"
-				large="gfx/leaders/TIB/portrait_TIB_thubten_kunphela.dds"
+				small=GFX_portrait_TIB_thubten_kunphela_civilian_small
+				large=GFX_portrait_TIB_thubten_kunphela
 			}
 		}
 		country_leader={
 			ideology = conservatism
 			traits = {
+				TIB_strongman_of_tibet
 				r56_trait_opposed_to_communism
 			}
 			expire="1956.1.1.12"
@@ -209,7 +210,7 @@ characters={
 		country_leader={
 			ideology = oligarchism
 			traits = {
-				hedonist
+				TIB_tulku_trait
 				pacifist_isolationist
 			}
 			expire="1956.1.1.12"

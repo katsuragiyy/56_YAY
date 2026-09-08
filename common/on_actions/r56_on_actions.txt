@@ -5511,7 +5511,7 @@ on_actions = {
 					POL = { set_party_name = { ideology = fascism long_name = GER_fascism_party_long name = GER_fascism_party } }
 					create_country_leader = {
 						name = "Hans Frank"
-						picture = "r56_portrait_POL_Hans_Frank.dds"
+						picture = GFX_POL_Portrait_Hans_Frank
 						expire = "1965.1.1"
 						ideology = nazism
 						traits = {
@@ -5646,8 +5646,8 @@ on_actions = {
 						JAP = { has_government = neutrality }
 					}
 					create_country_leader = {
-						name = "Aisin Gioro Pujie"
-						picture = "gfx/leaders/MAN/r56_portrait_MAN_Aisin_Gioro_Pujie.dds"
+						name = MAN_aisin_gioro_puyi
+						picture = "gfx/leaders/MAN/Portrait_Manchuria_Henry_Pu_Yi.dds"
 						expire = "1965.1.1"
 						ideology = despotism
 					}
@@ -5657,8 +5657,8 @@ on_actions = {
 						JAP = { has_government = fascism }
 					}
 					create_country_leader = {
-						name = "Aisin Gioro Pujie"
-						picture = "gfx/leaders/MAN/r56_portrait_MAN_Aisin_Gioro_Pujie.dds"
+						name = MAN_aisin_gioro_puyi
+						picture = "gfx/leaders/MAN/Portrait_Manchuria_Henry_Pu_Yi.dds"
 						expire = "1965.1.1"
 						ideology = fascism_ideology
 					}
@@ -8976,7 +8976,7 @@ on_actions = {
 					POL = { set_party_name = { ideology = fascism long_name = GER_fascism_party_long name = GER_fascism_party } }
 					create_country_leader = {
 						name = "Hans Frank"
-						picture = "r56_portrait_POL_Hans_Frank.dds"
+						picture = GFX_POL_Portrait_Hans_Frank
 						expire = "1965.1.1"
 						ideology = nazism
 						traits = {

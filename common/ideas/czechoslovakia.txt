@@ -3208,7 +3208,7 @@ ideas = {
 			}
 
 			available = {
-				original_tag = RUT
+				original_tag = RUT # 56 - Ruthenia has this spirit at game start.
 			}
 
 			on_add = {
@@ -3219,10 +3219,7 @@ ideas = {
 				set_rule = { can_join_factions = yes }
 			}
 
-			cancel = {
-				num_of_controlled_states > 4	#Realised the statehood idea
-			}
-			
+			cancel = { num_of_controlled_states > 4 } #56 - Realised the statehood idea
 			removal_cost = -1
 
 			modifier = {
@@ -4461,7 +4458,7 @@ ideas = {
 
 			removal_cost = -1
 
-			modifier = {		#discardeded r56 changes since out_of_power makes me think this section was tweaked by Logan
+			modifier = {
 				conversion_cost_civ_to_mil_factor= -0.1
 				industrial_concern_cost_factor = -0.05
 				equipment_conversion_speed = 0.05

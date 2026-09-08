@@ -1,5 +1,26 @@
+### AI ###
+#BUL_is_historical_ai
+#BUL_is_communist_stalinist_ai
+#BUL_is_communist_balkan_ai
+#BUL_is_democratic_socialist_ai
+#BUL_is_democratic_liberal_ai
+#BUL_is_fascist_axis_ai
+#BUL_is_monarchist_ferdinand_ai
+
 ideas = {
-	country = {
+
+
+##    ##    ###    ######## ####  #######  ##    ##    ###    ##           ######  ########  #### ########  #### ########  ######  
+###   ##   ## ##      ##     ##  ##     ## ###   ##   ## ##   ##          ##    ## ##     ##  ##  ##     ##  ##     ##    ##    ## 
+####  ##  ##   ##     ##     ##  ##     ## ####  ##  ##   ##  ##          ##       ##     ##  ##  ##     ##  ##     ##    ##       
+## ## ## ##     ##    ##     ##  ##     ## ## ## ## ##     ## ##           ######  ########   ##  ########   ##     ##     ######  
+##  #### #########    ##     ##  ##     ## ##  #### ######### ##                ## ##         ##  ##   ##    ##     ##          ## 
+##   ### ##     ##    ##     ##  ##     ## ##   ### ##     ## ##          ##    ## ##         ##  ##    ##   ##     ##    ##    ## 
+##    ## ##     ##    ##    ####  #######  ##    ## ##     ## ########     ######  ##        #### ##     ## ####    ##     ######  
+
+
+	country = { #DLC
+
 		BUL_army_restrictions = {
 			picture = tfv_can_conscription_crisis
 
@@ -45,8 +66,8 @@ ideas = {
 					clr_country_flag = BUL_uk_demands_nap_with_balkan_nation_flag
 				}
 				country_lock_all_division_template = no
-				set_rule = {
-					can_not_declare_war = no
+				clear_rule = {
+					can_not_declare_war = yes
 				}
 			}
 			
@@ -58,6 +79,7 @@ ideas = {
 		}
 
 		BUL_army_restrictions_aat = {	#r56: not implemented this yet, it just fixes a bunch of errors
+			name = BUL_army_restrictions
 			picture = tfv_can_conscription_crisis
 
 			allowed = {
@@ -102,8 +124,8 @@ ideas = {
 					clr_country_flag = BUL_uk_demands_nap_with_balkan_nation_flag
 				}
 				country_lock_all_division_template = no
-				set_rule = {
-					can_not_declare_war = no
+				clear_rule = {
+					can_not_declare_war = yes
 				}
 			}
 
@@ -185,7 +207,7 @@ ideas = {
 				stability_factor = -0.1
 				justify_war_goal_time = -0.25 
 				generate_wargoal_tension = -0.75
-				war_support_factor = 0.20
+				war_support_factor = 0.05
 			}
 		}
 
@@ -453,7 +475,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				war_support_weekly = 0.003
+				war_support_factor = 0.05
 				communism_drift = 0.3
 				drift_defence_factor = 0.15
 			}
@@ -476,7 +498,7 @@ ideas = {
 				OR = {
 					has_country_flag = BUL_ff_destroyed_flag 
 					has_country_flag = BUL_ff_civil_war_flag
-					has_government = communism
+					has_government = communism # 56
 				}
 			}
 			
@@ -504,7 +526,7 @@ ideas = {
 				OR = {
 					has_country_flag = BUL_ff_destroyed_flag 
 					has_country_flag = BUL_ff_civil_war_flag
-					has_government = communism
+					has_government = communism # 56
 				}
 			}
 			
@@ -532,7 +554,7 @@ ideas = {
 				OR = {
 					has_country_flag = BUL_ff_destroyed_flag 
 					has_country_flag = BUL_ff_civil_war_flag
-					has_government = communism
+					has_government = communism # 56
 				}
 			}
 			
@@ -578,7 +600,7 @@ ideas = {
 			modifier = {
 				conscription_factor = 0.1
 				political_advisor_cost_factor = -0.25
-				war_support_factor = 0.20
+				war_support_factor = 0.05
 			}
 		}
 
@@ -655,7 +677,7 @@ ideas = {
 				production_speed_buildings_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.02
 				production_factory_max_efficiency_factor = 0.02
-				consumer_goods_factor = 0.08
+				consumer_goods_factor = 0.10
 			}
 		}
 
@@ -676,7 +698,7 @@ ideas = {
 				production_speed_buildings_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.05
 				production_factory_max_efficiency_factor = 0.05
-				consumer_goods_factor = 0.16
+				consumer_goods_factor = 0.15
 			}
 		}
 
@@ -698,7 +720,7 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.1
 				production_factory_max_efficiency_factor = 0.1
 				global_building_slots_factor = 0.2
-				consumer_goods_factor = -0.08
+				consumer_goods_factor = -0.06
 			}
 		}
 
@@ -812,7 +834,7 @@ ideas = {
 			modifier = {
 				experience_gain_navy_factor = 0.1
 				experience_gain_army_factor = 0.1
-				army_leader_cost_factor = -0.25
+				army_leader_cost_factor = -0.2
 			}
 		}
 
@@ -833,7 +855,7 @@ ideas = {
 				conscription_factor = 0.05
 				experience_gain_navy_factor = 0.1
 				experience_gain_army_factor = 0.1
-				army_leader_cost_factor = -0.25
+				army_leader_cost_factor = -0.2
 			}
 		}
 
@@ -850,14 +872,14 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				conscription_factor = 0.1
-				non_core_manpower = 0.05
+				conscription_factor = 0.05
+				non_core_manpower = 0.01
 				experience_gain_navy_factor = 0.1
 				experience_gain_army_factor = 0.1
-				army_leader_cost_factor = -0.25
-				navy_leader_cost_factor = -0.25
-				army_leader_start_level = 2
-				navy_leader_start_level	= 2
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level	= 1
+				navy_leader_start_attack_level = 1
+				navy_leader_start_defense_level = 1
 				army_morale_factor = 0.1
 				max_command_power = 25
 				justify_war_goal_time = -0.5
@@ -879,14 +901,14 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				conscription_factor = 0.1
-				non_core_manpower = 0.05
+				conscription_factor = 0.05
+				non_core_manpower = 0.02
 				experience_gain_navy_factor = 0.1
 				experience_gain_army_factor = 0.1
-				army_leader_cost_factor = -0.25
-				navy_leader_cost_factor = -0.25
-				army_leader_start_level = 2
-				navy_leader_start_level	= 2
+				army_leader_start_attack_level = 2
+				army_leader_start_defense_level	= 2
+				navy_leader_start_attack_level = 2
+				navy_leader_start_defense_level = 2
 				army_morale_factor = 0.1
 				max_command_power = 50
 				justify_war_goal_time = -0.5
@@ -909,18 +931,18 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				conscription_factor = 0.1
-				non_core_manpower = 0.05
+				conscription_factor = 0.05
+				non_core_manpower = 0.03
 				experience_gain_navy_factor = 0.15
 				experience_gain_army_factor = 0.15
-				army_leader_cost_factor = -0.25
-				navy_leader_cost_factor = -0.25
-				army_leader_start_level = 2
-				navy_leader_start_level	= 2
+				army_leader_start_attack_level = 2
+				army_leader_start_defense_level	= 2
+				navy_leader_start_attack_level = 2
+				navy_leader_start_defense_level = 2
 				army_morale_factor = 0.1
 				max_command_power = 75
 				justify_war_goal_time = -0.5
-				army_org_factor = 0.1
+				army_org_factor = 0.10
 			}
 		}
 
@@ -939,18 +961,18 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				conscription_factor = 0.1
-				non_core_manpower = 0.05
+				conscription_factor = 0.05
+				non_core_manpower = 0.04
 				experience_gain_navy_factor = 0.15
 				experience_gain_army_factor = 0.15
-				army_leader_cost_factor = -0.5
-				navy_leader_cost_factor = -0.5
-				army_leader_start_level = 3
-				navy_leader_start_level	= 3
+				army_leader_start_attack_level = 2
+				army_leader_start_defense_level	= 2
+				navy_leader_start_attack_level = 2
+				navy_leader_start_defense_level = 2
 				army_morale_factor = 0.1
 				max_command_power = 100
 				justify_war_goal_time = -0.5
-				army_org_factor = 0.15
+				army_org_factor = 0.10
 			}
 		}
 
@@ -969,14 +991,16 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				conscription_factor = 0.1
+				conscription_factor = 0.05
 				non_core_manpower = 0.05
 				experience_gain_navy_factor = 0.05
 				experience_gain_army_factor = 0.05
-				army_leader_cost_factor = -0.25
-				navy_leader_cost_factor = -0.25
-				army_leader_start_level = 2
-				navy_leader_start_level	= 2
+				army_leader_cost_factor = -0.15
+				navy_leader_cost_factor = -0.15
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level	= 1
+				navy_leader_start_attack_level = 1
+				navy_leader_start_defense_level = 1
 				army_morale_factor = 0.1
 				justify_war_goal_time = -0.5
 			}
@@ -997,12 +1021,12 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				conscription_factor = 0.1
+				conscription_factor = 0.05
 				non_core_manpower = 0.05
 				experience_gain_navy_factor = 0.05
 				experience_gain_army_factor = 0.05
-				army_leader_start_level = 2
-				navy_leader_start_level	= 2
+				army_leader_start_defense_level	= 1
+				navy_leader_start_defense_level = 1
 				army_morale_factor = 0.05
 				justify_war_goal_time = -0.5
 			}
@@ -1023,7 +1047,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				conscription_factor = 0.1
+				conscription_factor = 0.05
 				non_core_manpower = 0.05
 				experience_gain_navy_factor = 0.05
 				experience_gain_army_factor = 0.05
@@ -1128,12 +1152,13 @@ ideas = {
 			}
 
 			modifier = {
-				sp_tag_nuclear_power_speed_factor = 0.10
-				production_speed_nuclear_reactor_factor = 0.10
-				production_speed_nuclear_facility_factor = 0.10
+				sp_tag_nuclear_power_speed_factor = 0.10 # 56
+				production_speed_nuclear_reactor_factor = 0.1
+				nuclear_production_factor = 0.1
+				production_speed_nuclear_facility_factor = 0.05
 			}
 			research_bonus = {
-				nuclear = 0.10
+				nuclear = 0.05
 			}
 		}
 
@@ -1253,9 +1278,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = -0.25
-				military_leader_cost_factor = 0.25
-				political_advisor_cost_factor = 0.25
+				political_power_factor = -0.20
+				military_leader_cost_factor = 0.20
+				political_advisor_cost_factor = 0.20
 			} 
 		}
 
@@ -1584,7 +1609,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				war_support_weekly = 0.005
+				war_support_factor = 0.05
 				weekly_manpower = 500
 				neutrality_drift = 0.1
 			}
@@ -1606,7 +1631,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				war_support_factor = 0.20
+				war_support_factor = 0.05
 				weekly_manpower = 500
 				fascism_drift = 0.1
 			}
@@ -1725,7 +1750,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				war_support_weekly = 0.005
+				war_support_weekly = 0.001
 				conscription = 0.01
 			}
 		}
@@ -1790,7 +1815,7 @@ ideas = {
 			modifier = {
 				economy_cost_factor = -0.5
 				production_speed_industrial_complex_factor = 0.15
-				consumer_goods_factor = -0.08
+				consumer_goods_factor = -0.10
 				trade_laws_cost_factor = 0.5
 				min_export = -0.15
 			} 
@@ -1813,7 +1838,7 @@ ideas = {
 			modifier = {
 				economy_cost_factor = -0.5
 				production_speed_industrial_complex_factor = 0.2
-				consumer_goods_factor = -0.20
+				consumer_goods_factor = -0.15
 				trade_laws_cost_factor = 0.5
 				min_export = -0.15
 				local_resources_factor = 0.15
@@ -1854,7 +1879,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_factor = -0.15
 				production_speed_buildings_factor = 0.05
 				global_building_slots_factor = 0.1
 			} 
@@ -1962,11 +1987,12 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_factor = -0.15
 				drift_defence_factor = -0.5
 				democratic_drift = 0.05
 			}
 		}
+		# this needs to be ported over to the road file
 		BUL_tsar_boris_iii = {
 
 			picture = BUL_tsar_boris_iii
@@ -5284,4 +5310,5 @@ ideas = {
 			}
 		}
 	}
+
 }

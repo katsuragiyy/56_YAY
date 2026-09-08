@@ -25,7 +25,7 @@ recruit_character = NOR_jacob_ager_laurantzon			#unchanged
 ### Corps Commanders (Officers of mid-high to high ranks, Norway didn't have that many commanders at general rank or close to it.)
 recruit_character = NOR_carl_gustav_fleischer
 recruit_character = NOR_william_steffens
-recruit_character = NOR_jacob_hvinden_haug				#unchanged
+recruit_character = NOR_jacob_hivden_haug				#unchanged
 recruit_character = NOR_wilhelm_von_tangen_hansteen		### Not unlocked as field commander at the start, must be unlocked through focus later.
 recruit_character = NOR_birger_eriksen					#made new hc role DLC-tree exclusive as its a bit silly
 recruit_character = NOR_erling_munthe-dahl				### Not unlocked as field commander at the start, must be unlocked through focus later.
