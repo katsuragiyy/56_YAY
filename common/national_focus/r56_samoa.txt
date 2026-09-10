@@ -4,6 +4,9 @@
 #!gfx:interface\r56_goals.gfx
 # ^^ For HOI4 Mod Utilities Support - Do not delete
 
+# CUT CONTENT ---!!!
+# For "Fuse Elements of Religion and Governance": Decisions revolving around Church influence within the government. Way more info on the "Church and Mau" by Brian T. Alofaituli
+
 focus_tree = {
     id = r56_samoa_focus
 
@@ -77,6 +80,9 @@ focus_tree = {
         cost = 1
         x = -2
         y = 1
+
+		available = { NOT = { has_global_flag = LoN_disbanded_flag } }
+		
 	}
 
 	# have scripted loc depending on focus completion
@@ -90,6 +96,14 @@ focus_tree = {
         cost = 1
         x = -4
         y = 1
+
+		available = {
+			country_exists = JAP
+			NOT = {
+				has_war_with = JAP 
+				JAP = { is_in_faction_with = ROOT }
+			}
+		}
 	}
 
 	# Seek International Recognition
@@ -1015,7 +1029,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT }
     }
 
-	# 
+	# Push for Further Decentralization
 	focus = {
         id = r56_SAM_push_for_more_traditionalist_policies
         icon = GFX_focus_generic_court # request new gfx
@@ -1029,7 +1043,7 @@ focus_tree = {
 		# pp, unlock some traditionalist decisions? and those will unlock BOP decisions as well?
     }
 
-	#
+	# Allow Limited Liberalization Policies
 	focus = {
         id = r56_SAM_allow_limited_liberalization_of_constitution
         icon = GFX_goal_FRA_reynaud_economic_reforms
@@ -1045,10 +1059,10 @@ focus_tree = {
 		}
     }
 
-	#
+	# Combat the West's Political Influence
 	focus = {
         id = r56_SAM_combat_western_influences
-        icon = GFX_goal_FRA_front_de_la_liberte
+        icon = GFX_goal_generic_destroy_socdem
         prerequisite = { focus = r56_SAM_incorporate_traditionalists_into_government }
 		relative_position_id = r56_SAM_incorporate_traditionalists_into_government
 
@@ -1191,7 +1205,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
     }
 
-	# The Coronation of Faumuina Fiame Mulinuu
+	# The Coronation of Faumuina
 	focus = {
         id = r56_SAM_proclaim_faumuina_as_king
         icon = GFX_focus_generic_monarchy_2
@@ -1482,8 +1496,6 @@ focus_tree = {
 
 		completion_reward = {
 			add_stability = 0.1
-			unlock_decision_category_tooltip = r56_SAM_churches_intervention
-			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = r56_SAM_church_government_cooperation
 			set_country_flag = SAM_church_is_doing_things_now_whoops
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -2085,8 +2097,8 @@ focus_tree = {
 		relative_position_id = r56_SAM_samoa_united_under_one_cause
 
         cost = 4
-        x = 0
-        y = 2
+        x = -2
+        y = 1
 
 		#allow_branch = { has_country_flag = SAM_tuimanua_we_have }
 
@@ -2361,7 +2373,7 @@ focus_tree = {
 		relative_position_id = r56_SAM_affirming_our_territorial_ambitions
 
         cost = 2
-        x = 1
+        x = -2
         y = 1
 
 		available = {
@@ -2404,7 +2416,7 @@ focus_tree = {
 		relative_position_id = r56_SAM_affirming_our_territorial_ambitions
 
         cost = 2
-        x = -1
+        x = 2
         y = 1
 
 		available = {
@@ -2438,40 +2450,40 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ALLIANCE }
 	}
 
-	#focus = {
-   #    id = r56_SAM_support_japan_conquest
-   #    icon = GFX_focus_JAP_isolate_oceania
-   #    prerequisite = { focus = r56_SAM_join_the_east_asian_hegemon }
-	#	relative_position_id = r56_SAM_join_the_east_asian_hegemon
+	focus = {
+      	id = r56_SAM_support_japan_conquest
+      	icon = GFX_focus_JAP_isolate_oceania
+      	prerequisite = { focus = r56_SAM_join_the_east_asian_hegemon }
+		relative_position_id = r56_SAM_join_the_east_asian_hegemon
+      	
+		cost = 10
+		x = -2
+		y = 1
 
-   #    cost = 10
-   #    x = -1
-   #    y = 1
+		available = {
+			is_ally_with = JAP
+			any_country = {
+				OR = {
+					original_tag = JAP
+					original_tag = ROOT
+				}
+				OR = {
+					has_war_with = AST
+					has_war_with = NZL
+					has_war_with = TON
+				}
+			}
+		}
+		
+      	ai_will_do = { factor = 1 }
 
-	#	available = {
-	#		is_ally_with = JAP
-	#		any_country = {
-	#			OR = {
-	#				original_tag = JAP
-	#				original_tag = ROOT
-	#			}
-	#			OR = {
-	#				has_war_with = AST
-	#				has_war_with = NZL
-	#				has_war_with = TON
-	#			}
-	#		}
-	#	}
-	#	
-   #    ai_will_do = { factor = 1 }
-
-   #    completion_reward = {
-	#		add_timed_idea = {
-	#			idea = r56_SAM_operation_fs
-	#			days = 365
-	#		}
-   #    }
-   #}
+      	completion_reward = {
+			add_timed_idea = {
+				idea = r56_SAM_operation_fs
+				days = 365
+			}
+      	}
+	}
 
     # Request Foreign Industrial Aid
 	focus = {
@@ -2481,7 +2493,7 @@ focus_tree = {
 		relative_position_id = r56_SAM_join_the_east_asian_hegemon
 
         cost = 10
-        x = 1
+        x = 4
         y = 1
 
 		available = {
@@ -2615,7 +2627,7 @@ focus_tree = {
 		relative_position_id = r56_SAM_join_the_east_asian_hegemon
 
         cost = 7.2
-        x = -3
+        x = 0
         y = 1
 
 		available = {
@@ -2947,7 +2959,7 @@ focus_tree = {
 		relative_position_id = r56_SAM_entrance_into_the_nauru_pact
     
         cost = 5
-        x = 6
+        x = 3
         y = 1
     
 		available = { 
@@ -3047,7 +3059,7 @@ focus_tree = {
 		relative_position_id = r56_SAM_join_the_east_asian_hegemon
 	
         cost = 5
-        x = -1
+        x = 2
         y = 1
 	
 		available = {
@@ -3234,6 +3246,24 @@ focus_tree = {
 	
         completion_reward = {
 			#op as fuck national spirit
+        }
+    }
+
+	# Tagaloa's Chosen
+	focus = {
+        id = r56_SAM_reclaim_zion
+        icon = GFX_goal_PAL_destroy_israel
+        prerequisite = { focus = r56_SAM_tagaloa_chosen }
+		relative_position_id = r56_SAM_tagaloa_chosen
+	
+        cost = 8
+        x = 1
+        y = 1
+		
+        ai_will_do = { factor = 1 }
+	
+        completion_reward = {
+			# WE ARE TRUE JEWS or some schizo larp
         }
     }
 

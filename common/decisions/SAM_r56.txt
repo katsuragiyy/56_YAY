@@ -632,33 +632,6 @@ r56_SAM_faleniu_17_plot = {
 	}
 }
 
-r56_SAM_churches_intervention = {
-	r56_SAM_intervene_on_the_side_of_the_spanish_catholics = {
-		icon = GFX_decision_SWE_set_army_budget
-		fire_only_once = yes
-		priority = 50
-
-		available = {
-			has_government = fascism
-			SPR_scw_in_progress = yes
-			country_exists = SPA
-			NOT = { has_war_with = SPA }
-		}
-
-		visible = {
-			has_completed_focus = r56_SAM_entrench_the_christian_faith
-			has_completed_focus = r56_SAM_form_a_pacific_volunteer_legion
-		}
-		
-		complete_effect = {
-			add_relation_rule_override = {
-				target = SPA
-				can_send_volunteers = yes 
-			}
-		}
-	}
-}
-
 economy_decisions = {
 	r56_SAM_invite_japanese_scholars = {
 		icon = GFX_decision_generic_research
@@ -993,6 +966,30 @@ r56_SAM_smuggle_operations = {
 }
 
 political_actions = {
+	r56_SAM_intervene_on_the_side_of_the_spanish_catholics = {
+		icon = GFX_decision_generic_army_support
+		fire_only_once = yes
+		priority = 50
+
+		available = {
+			has_government = fascism
+			SPR_scw_in_progress = yes
+			country_exists = SPA
+			NOT = { has_war_with = SPA }
+		}
+
+		visible = { # intentional
+			has_completed_focus = r56_SAM_entrench_the_christian_faith
+			has_completed_focus = r56_SAM_form_a_pacific_volunteer_legion
+		}
+		
+		complete_effect = {
+			add_relation_rule_override = {
+				target = SPA
+				can_send_volunteers = yes 
+			}
+		}
+	}
 	r56_SAM_peace_out_nzl_partition = {
 		icon = GFX_decision_generic_operation
 		fire_only_once = yes

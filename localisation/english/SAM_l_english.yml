@@ -689,7 +689,7 @@
  r56_SAM_organize_new_government: "Begin Organizing the New Government"
  r56_SAM_organize_new_government_desc:  ""
  
- r56_SAM_expand_rights_of_aristocracy: "Expand Rights of Village Councils"
+ r56_SAM_expand_rights_of_aristocracy: "Expand the Rights of Village Councils"
  r56_SAM_expand_rights_of_aristocracy_desc: ""
 
  r56_SAM_expand_rights_of_fono: "Expand the Powers of the Fono"
@@ -704,14 +704,14 @@
  # SHARED DIPLOMACY
 
  r56_SAM_reach_out_to_the_japanese_empire: "Reach out to [JAP.GetNameDef]"
- r56_SAM_reach_out_to_the_japanese_empire_desc: ""
+ r56_SAM_reach_out_to_the_japanese_empire_desc: "By establishing a connection to [JAP.Capital.GetCapitalVictoryPointName], we can obtain leverage over [NZL.GetNameDef] and threaten to use this connection to our benefit."
 
  r56_SAM_address_the_un: "Criticize Mandateship at the League of Nations"
- r56_SAM_address_the_un_desc: ""
+ r56_SAM_address_the_un_desc: "The League of Nations has proven itself to be a useless political entity that has failed our nation. We must continue speaking out, not only our behalf, but on the behalf of all oppressed people's under the Mandate system imposed on people by this hideous organization."
 
  r56_SAM_seek_international_recognition: "Seek International Recognition"
  r56_SAM_seek_international_recognition_desc: "Although we have secured our independence, we are not yet recognised as a legitimate political body by the international community. This must change. We will send our diplomats abroad to secure recognition from states who share our political ideology."
- r56_SAM_recognition: "Each time a country recognizes us, we will get §G+5§! §YPolitical Power§! and §G+1§! §YStability§!."
+ r56_SAM_recognition: "For each country that recognizes us, we will get §G+5§! §YPolitical Power§! and §G+1§! §YStability§!."
 
  # PRESSURE THE LEGISLATIVE COUNCIL
 
@@ -813,9 +813,6 @@
  r56_SAM_entrench_the_christian_faith_desc: ""
  r56_SAM_church_government_cooperation: "Government-Church Cooperation"
  SAM_if_completed_form_pacific_legion_focus: "If we have §GCompleted§! the §O$r56_SAM_form_a_pacific_volunteer_legion$§! focus, we will gain:"
-
- r56_SAM_churches_intervention: "Church Influence"
- r56_SAM_churches_intervention_desc: "After [ROOT.GetLeader]'s recent policies that have granted considerable influence to the churches present in Samoa, the churches have begun exercising their power. While they are currently loyal to the government, if we happen to become too dependent on the churches and missionaries, they may begin to undermine the authority of our government."
 
  r56_SAM_forge_the_pacific_legion: "Revive the Eastern Mau Movement"
  r56_SAM_forge_the_pacific_legion_desc: ""
@@ -966,6 +963,9 @@
 
  r56_SAM_tagaloa_chosen: "Tagaloa's Chosen"
  r56_SAM_tagaloa_chosen_desc: ""
+
+ r56_SAM_reclaim_zion: "The Thirteenth Tribe"
+ r56_SAM_reclaim_zion_desc: ""
 
  # GERMAN PATH
 
