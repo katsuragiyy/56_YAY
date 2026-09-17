@@ -4370,6 +4370,22 @@ spriteTypes = {
 	
 ###------> YUG <><> <><> <><> <><> <><>
 	spriteType = {
+		name = "GFX_report_event_YUG_retiring_petar_zivkovic"
+		texturefile = "gfx/event_pictures/YUG/report_event_YUG_retiring_petar_zivkovic.dds"
+	}					
+	spriteType = {
+		name = "GFX_report_event_YUG_military_exercises"
+		texturefile = "gfx/event_pictures/YUG/report_event_YUG_military_exercises.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_YUG_captured_soldiers"
+		texturefile = "gfx/event_pictures/YUG/report_event_YUG_captured_soldiers.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_YUG_nedic_army"
+		texturefile = "gfx/event_pictures/YUG/report_event_YUG_nedic_army.dds"
+	}
+	spriteType = {
 		name = "GFX_news_event_YUG_capitulation"
 		texturefile = "gfx/event_pictures/YUG/news_event_YUG_capitulation.dds"
 	}

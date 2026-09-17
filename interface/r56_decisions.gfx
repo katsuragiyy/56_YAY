@@ -885,6 +885,16 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/decision_cat_MEN_decisions.dds"
 	}
 
+###--->  YUG <><> <><> <><>
+	spriteType = {
+		name = "GFX_decision_cat_new_economic_policy"
+		texturefile = "gfx/interface/decisions/decision_cat_YUG_new_economic_policy.dds"
+	}
+	spriteType = {
+		name = "GFX_r56_decision_yugoslav_army"
+		texturefile = "gfx/interface/decisions/r56_decision_yugoslav_army.dds"
+	}
+
 ###===> KBK <><> <><> <><>
 	spriteType = {
 		name = "GFX_decision_category_form_circassia"

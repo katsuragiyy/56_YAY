@@ -5990,6 +5990,10 @@ spriteType = {
 		name = "GFX_idea_YUG_aleksandar_beric"
 		texturefile = "gfx/interface/ideas/yug/advisors/r56_idea_YUG_advisor_aleksandar_beric.dds"
 	}
+	spriteType = {
+		name = "GFX_idea_YUG_advisor_petar_zivkovic"
+		texturefile = "gfx/interface/ideas/yug/advisors/r56_idea_YUG_advisor_petar_zivkovic.dds"
+	}
 	#SER with YUG because yeah...
 	spriteType = {
 		name = "GFX_idea_SER_aleksandar_rankovic"
