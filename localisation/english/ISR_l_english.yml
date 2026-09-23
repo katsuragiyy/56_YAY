@@ -798,7 +798,7 @@
  ISR_promote_urban_desc:0 "The urban workers are the lifeblood of the nation. We must protect their rights to secure their support."
  ISR_form_DLN:0 "Form the DLN"
  ISR_form_DLN_desc:0 "We should support the formation of a friendly Arab party to our government, so that we may gather their support."
- ISR_steady:0 "Steady As She Goes"
+ ISR_steady:0 "Steady as She Goes"
  ISR_steady_desc:0 "Mapai and Ben-Gurion have lead us this far. They will guide us to a stable society!"
 
  ISR_centre:0 "Unite the Centre Bloc"
@@ -840,7 +840,7 @@
  ISR_hashomer_leads_desc:0 "Victory! Our great ideals for a socialist commonwealth for the Jewish people is within reach. But we must remember that we are not alone here, and we must tend to the needs of everyone else as well."
 
  ISR_strengthen_union:0 "Strengthen the Histadruts"
- ISR_strengthen_union_desc:0 "The workers' unions of the country, the Histadruts, must be strengthened for the rights of the worker to be protected."
+ ISR_strengthen_union_desc:0 "The worker's unions of the country, the Histadruts, must be strengthened in order for the rights of the worker to be protected."
  ISR_soviet_support:0 "Secure Soviet Support"
  ISR_soviet_support_desc:0 "[SOV.GetNameDefCap] is the obvious champion of Zionism worldwide. We must reach out to them for support."
  ISR_limited_austerity:0 "Limit Austerity Measures"

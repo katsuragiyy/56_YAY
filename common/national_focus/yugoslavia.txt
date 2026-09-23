@@ -1902,7 +1902,7 @@ focus_tree = {
 	
 	focus = {
 		id = YUG_coronation
-		icon = GFX_focus_generic_monarchy_2
+		icon = GFX_goal_YUG_yugoslav_kingdom
 		prerequisite = { focus = YUG_end_the_regency focus = YUG_join_axis }
 		x = -2
 		y = 1
@@ -2623,7 +2623,7 @@ focus_tree = {
 	
 	focus = {
 		id = YUG_united_kingdom
-		icon = GFX_goal_generic_befriend_yugoslavia
+		icon = GFX_goal_YUG_yugoslav_flag
 		prerequisite = { focus = YUG_fate_of_banat }
 		mutually_exclusive = { focus = YUG_towards_independence }
 		x = 3
@@ -3575,8 +3575,8 @@ focus_tree = {
 		id = YUG_form_the_balkan_federation
 		icon = GFX_focus_BUL_balkan_federation_of_socialist_republics
 		prerequisite = { focus = YUG_pan_balkan_workers_congress }
-		x = -4
-		y = 1
+		x = -3
+		y = 2
 		relative_position_id = YUG_pan_balkan_workers_congress
 
 		cost = 10

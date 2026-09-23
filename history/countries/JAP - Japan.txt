@@ -564,6 +564,8 @@ add_ideas = {
 	JAP_japanese_armor_doctrine
 }
 
+country_event = { id = r56_japan_steinsgate.1 days = 143 }
+
 609 = {
 	start_resistance = yes
 	set_compliance = 15

@@ -108,7 +108,6 @@ recruit_character = SIA_tiang_sirikhan
 recruit_character = SIA_phra_bisal_sukhumvit
 recruit_character = SIA_sanguan_tularaksa
 recruit_character = SIA_vanich_pananont
-recruit_character = SIA_luang_yuthasastr_kosol
 recruit_character = SIA_adul_aduldejajaras
 recruit_character = SIA_luang_chawengsaksongkhram
 recruit_character = SIA_phichit_kriangsakphichit
@@ -137,6 +136,11 @@ if = {
 	recruit_character = SIA_chamkat_phalangkun
 	recruit_character = SIA_kukrit_pramoj
 	recruit_character = SIA_luang_subhachalasai
+
+	set_technology = {
+		elephantry = 1
+		popup = no
+	}
 }
 
 set_convoys = 15

@@ -2723,6 +2723,10 @@ spriteTypes = {
 		name = "GFX_news_event_JAP_join_faction_ITA"
 		texturefile = "gfx/event_pictures/JAP/news_event_JAP_join_faction_ITA.dds"
 	}
+	spriteType = {
+		name = "GFX_report_event_JAP_this_is_the_choice_of_steinsgate"
+		texturefile = "gfx/event_pictures/JAP/report_event_jap_jellymans_report_steinsgate.dds"
+	}
 
 ###------> KAZ <><> <><> <><> <><> <><>
 	spriteType = {

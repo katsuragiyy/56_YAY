@@ -191,6 +191,7 @@
 	### USA OFFSET END ###
 
 	### FRANCE OFFSET START ###
+
 	offset = {
 		x = 19
 		y = 0
@@ -209,6 +210,7 @@
 			has_completed_focus = FRA_radicalize_front
 		}
 	}
+
 	offset = {
 		x = -46
 		y = 0
@@ -383,7 +385,14 @@
 	}
 
 	available = {
-		is_in_faction = yes
+		OR = {
+		      is_in_faction_with = USA
+		      is_in_faction_with = FRA
+		      is_in_faction_with = ENG
+		      is_in_faction_with = AST
+		      is_in_faction_with = HOL
+		      is_in_faction_with = INS
+		}
 		has_war_with = JAP
 		OR = {
 			is_major = yes

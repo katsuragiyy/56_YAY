@@ -1,6 +1,7 @@
 ﻿add_namespace = r56_japan
 add_namespace = sfl
 add_namespace = kns
+add_namespace = r56_japan_steinsgate
 
 #February 26 Incident
 country_event = {
@@ -2325,5 +2326,21 @@ news_event = {
 	
 	option = {
 		name = kns.2.a
+	}
+}
+
+# Jellyman Report 07 (STEINS;GATE REFERENCE!!!)
+country_event = {
+	id = r56_japan_steinsgate.1
+	title = r56_japan_steinsgate.1.t
+	desc = r56_japan_steinsgate.1.desc
+	picture = GFX_report_event_JAP_this_is_the_choice_of_steinsgate
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = r56_japan_steinsgate.1.a
+		add_manpower = -1
 	}
 }

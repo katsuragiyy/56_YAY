@@ -1,11 +1,10 @@
 ENG_historical_plan = {
 	name = "United Kingdom historical plan"
-	desc = "Historical behaviour for United Kingdom"
+	desc = "Historical behavior for United Kingdom"
 
 	allowed = {
 		original_tag = ENG
 	}
-
 	enable = {
 		OR = {
 			AND = {
@@ -23,24 +22,23 @@ ENG_historical_plan = {
 		}
 	}
 	abort = {
-		GER = {
-			OR = {
-				has_completed_focus = GER_the_kaiser_rises
-				has_completed_focus = GER_a_new_reich
-			}
+		OR = {
+			GER = { has_completed_focus = GER_oppose_hitler }
+			GER = { has_completed_focus = GER_oppose_hitler_ww }
 		}
 	}
 
 	ai_national_focuses = {
 		limited_rearmament_focus #March 10 1936	
-		shadow_scheme_focus #May 20 1936	
-		uk_industrial_focus #July 30 1936
-		general_rearmament_focus #October 10 1936
-		royal_ordinance_focus #October 10 1936	
-		uk_small_arms_focus #December 20 1936
-		uk_extra_tech_slot #February 30 1937
-		ENG_reinforce_the_empire  #May 10 1937	
-		uk_service_focus  #July 20 1937
+		ENG_reinforce_the_empire
+		uk_service_focus #July 30 1936
+		shadow_scheme_focus #October 10 1936
+		uk_industrial_focus #October 10 1936	
+		general_rearmament_focus #December 20 1936
+		royal_ordinance_focus #February 30 1937
+		ENG_vickers_experimental_facility_focus # Everything after will be pushed back slightly by this 35 day focus but is is one that it better the earlier it is done
+		uk_small_arms_focus #May 10 1937	
+		uk_extra_tech_slot #July 20 1937 
 		uk_colonial_focus #September 30 1937	
 		uk_asia_focus #December 10 1937
 		uk_burma_focus #February 20 1938	
@@ -48,23 +46,21 @@ ENG_historical_plan = {
 		radar_focus #July 10 1938
 		air_rearmament_focus#September 20 1938
 		ENG_steady_as_she_goes #November 30 1938
-		ENG_maintaining_the_balance_of_power #February 10 1939
-		ENG_prepare_for_the_inevitable #March 17 1939
-		ENG_home_defence #May 16 1939
-		ENG_military_training_act#June 30 1939
-		ENG_kickstart_the_war_industry#September 10 1939
+		ENG_prepare_for_the_inevitable #February 10 1939
+		ENG_home_defence #April 20 1939
+		ENG_maintaining_the_balance_of_power
+		ENG_kickstart_the_war_industry
+		ENG_military_training_act#September 10 1939
 		fighter_command_focus #November 20 1939
 		bomber_command_focus #January 30 1940
 		coastal_command_focus #April 10 1940
 		aircraft_production_focus #June 20 1940	
 		naval_rearmament_focus #August 30 1940
 		ENG_motorized_focus #November 10 1940
-						 
 		crypto_bomb_focus #January 20 1941	
 		tizard_mission_focus#March 30 1941	
 		ENG_arms_purchases_in_the_us#
 		ENG_special_air_service#June 10 1941
-								
 		uk_destroyer_focus#August 20 1941
 		uk_waves_focus#October 30 1941	
 		uk_convoy_focus#January 10
@@ -77,6 +73,7 @@ ENG_historical_plan = {
  		uk_iraq_focus#March 10 1943
  		uk_rock_focus#May 20 1943
  		singapore_focus#July 30 1943
+ 		ENG_royal_malay_regiment_focus
  		peninsular_focus
  		uk_amphibious_focus
  		uk_protect_suez

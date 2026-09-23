@@ -358,6 +358,7 @@ focus_tree = {
 			#has_tech = excavation5
 			1010 = { is_owned_and_controlled_by = ROOT } #r56 was 1009
 		}
+		
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 
 		completion_reward = {
@@ -833,7 +834,7 @@ focus_tree = {
 
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = AFG_nisar_muhammad_yousafzai
-
+			
 		}
 	}
 
@@ -1323,6 +1324,7 @@ focus_tree = {
 		available = {
 		}
 
+		search_filters = {  }
 
 		completion_reward = {
 
@@ -1449,6 +1451,7 @@ focus_tree = {
 		}
 		#allow_branch = {
 		#}
+		search_filters = {  }
 
 		completion_reward = {
 
@@ -1493,6 +1496,7 @@ focus_tree = {
 		}
 		#allow_branch = {
 		#}
+		search_filters = {  }
 
 		completion_reward = {
 
@@ -1889,6 +1893,7 @@ focus_tree = {
 		bypass = {
 			has_done_agency_upgrade = upgrade_training_centers
 		}
+		search_filters = {  }
 
 		completion_reward = {
 			IF = {
@@ -1940,6 +1945,7 @@ focus_tree = {
 			
 		}
 		
+		search_filters = {  }
 
 		completion_reward = {
 			
@@ -1982,6 +1988,7 @@ focus_tree = {
 		available = {
 			
 		}
+		search_filters = {  }
 
 		completion_reward = {
 
@@ -2192,7 +2199,7 @@ focus_tree = {
 			navy_experience = 20
 			custom_effect_tooltip = r56_newline	#56
 			add_naval_commander_role = {	#56
-				Character = AFG_mohammad_siddiq_choudri
+				character = AFG_mohammad_siddiq_choudri
 				skill = 2
 				attack_skill = 1
 				defense_skill = 2
@@ -3166,6 +3173,7 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = {  }
 		completion_reward = {
 
 			custom_effect_tooltip = AFG_hold_a_loya_jirga_tt
@@ -4385,6 +4393,7 @@ focus_tree = {
 			
 		}
 		
+		search_filters = {  }
 
 		completion_reward = {
 
@@ -4427,16 +4436,25 @@ focus_tree = {
 	            #division_names_group = NAMELIST_ID # optional
 	            priority = 1 # optional 
 	            template_counter = 108 # optional
-	            regiments = {
-	                elephantry = { x = 0 y = 0 }
-	                elephantry = { x = 0 y = 1 }
-	                elephantry = { x = 0 y = 2 }
-	                elephantry = { x = 0 y = 3 }
-	                elephantry = { x = 1 y = 0 }
-	                elephantry = { x = 1 y = 1 }
-	                elephantry = { x = 1 y = 2 }
-	                elephantry = { x = 1 y = 3 }
-	            }
+				override_model = RAJ_elephantry_entity
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                    infantry = { x = 0 y = 1 }
+                    infantry = { x = 0 y = 2 }
+                    infantry = { x = 0 y = 3 }
+                    infantry = { x = 1 y = 0 }
+                    infantry = { x = 1 y = 1 }
+                    infantry = { x = 1 y = 2 }
+                    infantry = { x = 1 y = 3 }
+
+                    artillery_brigade = { x = 2 y = 0 }
+                    artillery_brigade = { x = 2 y = 1 }
+                    artillery_brigade = { x = 2 y = 2 }
+                    artillery_brigade = { x = 2 y = 3 }
+                }
+                support = {
+                    elephantry = { x = 0 y = 0 }
+                }
 	        }
 	        capital_scope = {
 	            create_unit = {
@@ -5586,7 +5604,6 @@ focus_tree = {
         								has_wargoal_against = PREV
         							}
         						}
-
         					}
         				}
         			}
@@ -6509,7 +6526,7 @@ focus_tree = {
 				limit = {
 					has_completed_focus = AFG_contact_rural_loyalists
 				}
-				AFG_faqir_of_ipi = { #R56 - merged character entries of Faqir of Ipi
+				AFG_faqir_of_ipi = {
 					set_character_flag = AFG_rural_cw_started
 				}
 				AFG_mazrak_zadran = {

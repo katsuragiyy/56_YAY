@@ -9482,16 +9482,8 @@ spriteType = {
 		texturefile = "gfx/interface/goals/yug/r56_goal_YUG_deals_with_krupp.dds"
 	}
 	SpriteType = {
-		name = "GFX_goal_YUG_revitalize_air_industry"
-		texturefile = "gfx/interface/goals/yug/r56_goal_YUG_revitalize_air_industry.dds"
-	}
-	SpriteType = {
 		name = "GFX_goal_YUG_trade_with_france"
 		texturefile = "gfx/interface/goals/yug/r56_goal_YUG_trade_with_france.dds"
-	}
-	SpriteType = {
-		name = "GFX_goal_YUG_modernize_railway"
-		texturefile = "gfx/interface/goals/yug/r56_goal_YUG_modernize_railway.dds"
 	}
 	SpriteType = {
 		name = "GFX_goal_YUG_develop_engine_industry"

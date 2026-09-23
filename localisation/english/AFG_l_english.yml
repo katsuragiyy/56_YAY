@@ -1140,7 +1140,7 @@
  AFG_soviet_menace_desc:0 "[AFG.GetNonIdeologyName] sits in an incredibly useful position from which the invasion of [SOV.GetNameDef] is completely effortless and simple. We can use our geographic location to our advantage and strike the [SOV.GetAdjective]s where it hurts them the most; straight into the Belly of the Bear!"
  AFG_revolution_through_belief:0 "Revolution Through Peace!"
  AFG_revolution_through_belief_desc:0 "Communism is not an ideology of war and bloodshed, but rather an ideology that calls for the peace, brotherhood and equality among all. It is only the extremists that propose the forceful spread of communism by war and sheding the blood of our brothers!"
- AFG_revolution_through_force:0 "Revolution By Blood!"
+ AFG_revolution_through_force:0 "Revolution by Blood!"
  AFG_revolution_through_force_desc:0 "Communism cannot be spread by any other means than force, there are communists that believe communism must be spread by peace, calling for brotherhood and unity among all people, but this is simply untrue and would lead us to the ultimate end of communism!"
  AFG_secure_the_corridor:0 "Secure the Wakhan Corridor"
  AFG_secure_the_corridor_desc:0 "The Wakhan Corridor, the territory connecting [AFG.GetNonIdeologyName] and Altishahr, was granted to [AFG.GetNonIdeologyName] in order to disconnect the [ENG.GetAdjective] colonial possesions in [RAJ.GetNonIdeologyName] and the Central Asian territories of Russia in the 19th century. We must secure this corridor by extending it to maintain regional stability!"

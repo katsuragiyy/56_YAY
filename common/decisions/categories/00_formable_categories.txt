@@ -1,3 +1,12 @@
+#formable_nations = {
+#
+#	icon = generic_formable_nations
+#
+#	allowed = {
+#		has_dlc = "Waking the Tiger"
+#	}
+#}
+
 form_scandinavia_category = {
 
 	icon = scandinavia_decision_icon_category
@@ -114,7 +123,7 @@ form_gran_colombia_category = {
 
 form_austria_hungary_category = {
 
-	icon = habsburg_decision_icon
+	icon = GFX_decision_cat_generic_austria_hungary_icon
 
 	picture = GFX_decision_cat_generic_austria_hungary
 
@@ -1898,28 +1907,42 @@ neo_assyrian_empire_category = {
 	}
 }
 
+GOE_form_hindustan_category = {
+
+	icon = generic_formable_nations
+ 
+	picture = GFX_form_hindustan_category_icon
+
+	allowed = {
+		has_dlc = "Graveyard of Empires" 
+	}
+}
+
 raj_formable_cat = {
 	icon = generic_formable_nations
 
 	#picture = GFX_decision_cat_picture_neo_assyrian_empire
 	
 	allowed = {
-		original_tag = RAJ 
+		original_tag = RAJ # India 
 	}
 }
 
 neo_mesopotamia_category = {
 	icon = generic_formable_nations
 
+	picture = GFX_decision_cat_picture_neo_assyrian_empire
+
 	allowed = {
 		OR = {
 			original_tag = KUR #Kurdistan
-			original_tag = IRQ 
-			original_tag = SYR
-			original_tag = PAL
-			original_tag = EGY
-			original_tag = KUW
-			original_tag = LEB
+			original_tag = IRQ # Iraq 
+			original_tag = SYR # Syria 
+			original_tag = PAL # Palestine 
+			original_tag = EGY # Egypt 
+			original_tag = KUW # Kuwait 
+			original_tag = LEB # Lebanon 
+			#original_tag = ASY # Assyria # 56 - We don't have Assyria
 		}
 		
 	}
@@ -1933,5 +1956,19 @@ form_maphilindo_category = {
 	allowed = {
 		original_tag = PHI # Philippines 
 		has_dlc = "No Compromise, No Surrender"
+	}
+}
+
+AST_australia_formables_category = {
+	icon = generic_formable_nations
+
+	visible_when_empty = no
+
+	allowed = {
+		OR = {
+			original_tag = AST
+			original_tag = NZL
+		}
+		has_dlc = "Thunder at Our Gates"
 	}
 }

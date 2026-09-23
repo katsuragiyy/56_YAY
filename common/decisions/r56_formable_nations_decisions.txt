@@ -1,3 +1,372 @@
+AST_australia_formables_category = {
+	AST_realise_the_australasian_identity_r56 = {
+		icon = generic_form_nation
+
+		allowed = {
+			OR = {
+				original_tag = AST
+                original_tag = NZL
+			}
+			has_dlc = "Thunder at Our Gates"
+		}
+
+		fire_only_once = yes
+
+		on_map_mode = decision_view_only
+
+		highlight_states = { 
+			highlight_state_targets = {
+				# Australia
+				state = 518
+				state = 517
+				state = 285
+				state = 521
+				state = 873
+				state = 519
+				state = 674
+				state = 871
+				state = 522
+				state = 870
+				state = 520
+				state = 872
+
+				# New Zealand
+				state = 1136
+				state = 284
+				state = 1139
+				state = 723
+				state = 1140
+                state = 1087
+			}
+		}
+
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = AST_form_australasia_australia_required_states_tt
+				# Australia
+				controls_state = 518
+				controls_state = 517
+				controls_state = 285
+				controls_state = 521
+				controls_state = 873
+				controls_state = 519
+				controls_state = 674
+				controls_state = 871
+				controls_state = 522
+				controls_state = 870
+				controls_state = 520
+				controls_state = 872
+			}
+			custom_trigger_tooltip = {
+				tooltip = AST_form_australasia_new_zealand_required_states_tt
+				# New Zealand
+				controls_state = 1136
+				controls_state = 284
+				controls_state = 1139
+				controls_state = 723
+				controls_state = 1140 
+                controls_state = 1087
+			}
+		}
+
+        visible = {
+            if = {
+                limit = { original_tag = NZL }
+                NOT = { has_country_flag = NZL_i_cannot_do_australasia_sorry }
+            }
+        }
+
+		complete_effect = {
+			set_cosmetic_tag = AST_australasia
+			set_global_flag = AST_australasia_flag
+			custom_effect_tooltip = AST_form_australasia_melanesia_core_states_tt
+            set_country_flag = NZL_we_have_formed_australasia
+
+			# Australia
+			IF = {
+				limit = {
+					any_state = {
+						NOT = { 
+							is_core_of = ROOT
+						}
+						OR = {
+							state = 518
+							state = 517
+							state = 285
+							state = 521
+							state = 873
+							state = 1075
+							state = 519
+							state = 674
+							state = 1074
+							state = 871
+							state = 522
+							state = 870
+							state = 520
+							state = 872
+						}
+					}
+				}
+				custom_effect_tooltip = AST_form_australasia_australia_core_states_tt
+				hidden_effect = {
+					518 = { add_core_of = ROOT }
+					517 = { add_core_of = ROOT }
+					285 = { add_core_of = ROOT }
+					521 = { add_core_of = ROOT }
+					873 = { add_core_of = ROOT }
+					519 = { add_core_of = ROOT }
+					674 = { add_core_of = ROOT }
+					871 = { add_core_of = ROOT }
+					522 = { add_core_of = ROOT }
+					870 = { add_core_of = ROOT }
+					520 = { add_core_of = ROOT }
+					872 = { add_core_of = ROOT }
+				}
+			}
+
+			# New Zealand
+			IF = {
+				limit = {
+					any_state = {
+						NOT = { 
+							is_core_of = ROOT
+						}
+						OR = {
+							state = 1136
+                            state = 284
+                            state = 1139
+                            state = 723
+                            state = 1140
+                            state = 1087
+						}
+					}
+				}
+				custom_effect_tooltip = AST_form_australasia_new_zealand_core_states_tt
+				hidden_effect = {
+					1136 = { add_core_of = ROOT }
+					284 = { add_core_of = ROOT }
+					1139 = { add_core_of = ROOT }
+					723 = { add_core_of = ROOT }
+					1140 = { add_core_of = ROOT }
+                    1087 = { add_core_of = ROOT }
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 3
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+
+    AST_integrate_the_class_c_mandate_r56 = {
+		icon = GFX_decision_generic_nationalism
+
+		allowed = {
+			OR = {
+                original_tag = AST
+                original_tag = NZL
+            }
+			has_dlc = "Thunder at Our Gates"
+		}
+
+		visible = {
+            has_cosmetic_tag = AST_australasia
+			has_country_flag = NZL_we_have_formed_australasia
+
+            NOT = {
+                523 = { is_core_of = ROOT }
+                1096 = { is_core_of = ROOT }
+                737 = { is_core_of = ROOT }
+                1138 = { is_core_of = ROOT }
+                725 = { is_core_of = ROOT }
+            }
+		}
+
+		fire_only_once = yes
+
+		on_map_mode = decision_view_only
+
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 523
+                state = 1096
+                state = 737
+                state = 1138
+                state = 725
+			}
+		}
+
+		available = {
+			has_global_flag = AST_australasia_flag
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = AST_integrate_class_c_mandataes
+				# Papua
+                523 = {
+                    is_controlled_by = ROOT
+                    resistance < 20
+                    compliance > 20
+                }
+                1096 = {
+                    is_controlled_by = ROOT
+                    resistance < 20
+                    compliance > 20
+                }
+                737 = {
+                    is_controlled_by = ROOT
+                    resistance < 20
+                    compliance > 20
+                }
+                1138 = {
+                    is_controlled_by = ROOT
+                    resistance < 20
+                    compliance > 20
+                }
+
+                # Nauru
+                725 = {
+                    is_controlled_by = ROOT
+                    resistance < 20
+                    compliance > 20
+                }
+			}
+		}
+
+		complete_effect = {
+            add_political_power = 45
+            add_stability = 0.03
+            add_popularity = {
+                popularity = 0.05
+                ideology = ROOT
+            }
+			custom_effect_tooltip = AST_get_cores_on_class_c_mandates
+			hidden_effect = {
+				every_state = {
+                    limit = {
+                        OR = {
+                            state = 523
+                            state = 1096
+                            state = 737
+                            state = 1138
+                            state = 725
+                        }
+                    }
+                    add_core_of = ROOT
+                }
+			}
+		}
+
+		ai_will_do = {
+			base = 3
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+
+    AST_achieve_seddons_wet_dream_r56 = {
+		icon = GFX_decision_CHL_mapuche_liberate_samoa
+
+		allowed = {
+			OR = {
+                original_tag = AST
+                original_tag = NZL
+            }
+			has_dlc = "Thunder at Our Gates"
+		}
+
+		visible = {
+            has_cosmetic_tag = AST_australasia
+			has_country_flag = NZL_we_have_formed_australasia
+		}
+
+		fire_only_once = yes
+
+		on_map_mode = decision_view_only
+
+		highlight_states = { 
+			highlight_state_targets = {
+                state = 636
+				state = 734
+                state = 726
+                state = 1088
+                state = 1089
+			}
+		}
+
+		available = {
+			has_global_flag = AST_australasia_flag
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = AST_integrate_class_c_mandataes
+				# Fiji
+                636 = {
+                    is_controlled_by = ROOT
+                    resistance < 20
+                    compliance > 20
+                }
+
+                # Tonga
+                734 = {
+                    is_controlled_by = ROOT
+                    resistance < 20
+                    compliance > 20
+                }
+
+                # Samoa
+                726 = {
+                    is_controlled_by = ROOT
+                    resistance < 20
+                    compliance > 20
+                }
+                1088 = {
+                    is_controlled_by = ROOT
+                    resistance < 20
+                    compliance > 20
+                }
+
+                # Niue
+                1089 = {
+                    is_controlled_by = ROOT
+                    resistance < 20
+                    compliance > 20
+                }
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = AST_get_cores_on_seddons_islands_r56
+			hidden_effect = {
+				every_state = {
+                    limit = {
+                        OR = {
+                            state = 636
+                            state = 734
+                            state = 726
+                            state = 1088
+                            state = 1089
+                        }
+                    }
+                    add_core_of = ROOT
+                }
+			}
+		}
+
+		ai_will_do = {
+			base = 3
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+}
 unite_the_levant_category = {
     form_greater_syria = {
         icon = generic_form_nation

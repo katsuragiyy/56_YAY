@@ -1,5 +1,26 @@
 ideas = {
 	country = {
+		AST_british_intel_sharing = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_spy_intel
+
+			modifier = { 
+				operative_slot = 1
+				agency_upgrade_time = -0.15
+				intel_network_gain_factor = 0.15
+			}
+
+		}
 		AST_R56_great_depression_1 = {
 			name = AST_R56_great_depression
 			allowed = {

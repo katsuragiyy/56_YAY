@@ -573,6 +573,11 @@ JAP_establish_samoa_tt_r56: "Establishes the §YKingdom of Samoa§! in §Y[726.G
 JAP_restore_the_kingdom_of_tahiti_decision_r56: "Restore the Kingdom of Tahiti"
 JAP_establish_tahiti_tt_r56: "Establishes the §YKingdom of Tahiti§! in §Y[641.GetName]§!."
 
+# Misc Events
+r56_japan_steinsgate.1.t: ""Jellyman" Found in Kyoto"
+r56_japan_steinsgate.1.desc: "This afternoon, reporters and tourists flooded Mount Hiei in Kyoto as news spread of an unidentifiable object appearing out of thin air. News spread across Japan like wildfire, with the entire country wondering what the thing on Mount Hiei actually is. \n\nThe object was taken into a scientific lab, where it was soon uncovered to be a deceased human who's body had melted into nothing but this sticky, jelly like substance. Police have closed off Mount Hiei as the scientists reported back on the status of the person. \n\nNobody, not even the smartest of our elite, can figure out where, what, or how a person can become something like this. Nor can they identify where this human came from originally."
+r56_japan_steinsgate.1.a: "The organisation.."
+
 COLLECTION_FALLEN_RING_ISLAND_STATES_0:0 "Number of fallen Ring Islands is less than 1"
 COLLECTION_FALLEN_RING_ISLAND_STATES_1:0 "Number of fallen Ring Islands is greater than 0"
 COLLECTION_FALLEN_RING_ISLAND_STATES_2:0 "Number of fallen Ring Islands is greater than 1"

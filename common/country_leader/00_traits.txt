@@ -490,7 +490,7 @@ leader_traits = {
 		
 	}
 
-	expert_unifier = { #R56:  Unused for us, vanilla uses on Sukarno
+	expert_unifier = {
 		random = no
 		sprite = 13 
 
@@ -3422,17 +3422,17 @@ leader_traits = {
 		conscription = 0.002
 	}
 
-	#guerilla_expert = { # Bandaid solution. Conflicts with our trait, must be changed TODO-KAT
-	#	random = no
-	#	sprite = 13
-	#
-	#
-	#	resistance_growth_on_our_occupied_states = 0.15
-	#	resistance_damage_to_garrison_on_our_occupied_states = 0.1
-	#	resistance_target_on_our_occupied_states = 0.1
-	#
-	#
-	#}
+	guerilla_expert = {
+		random = no
+		sprite = 13
+
+
+		resistance_growth_on_our_occupied_states = 0.15
+		resistance_damage_to_garrison_on_our_occupied_states = 0.1
+		resistance_target_on_our_occupied_states = 0.1
+
+
+	}
 
 	# TURKEY MINISTERS
 
@@ -12018,7 +12018,7 @@ leader_traits = {
 
 	inventive_genius = {
 		random = no
-		sprite = 10
+		sprite = 10 
 
 		custom_modifier_tooltip = TUR_inventive_genius_electronics_modifier_tt
 		political_power_gain = 0.05
@@ -12600,6 +12600,15 @@ leader_traits = {
 	#	}
 	#}
 
+	rubber_development_company_trait = {
+
+		country_resource_rubber = 8 
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	industrial_steel_mills_trait = {
 
 		country_resource_steel = 10 
@@ -12612,15 +12621,6 @@ leader_traits = {
 	oil_extraction_company_trait = {
 
 		country_resource_oil = 20 
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	rubber_development_company_trait = {
-
-		country_resource_rubber = 8 
 
 		ai_will_do = {
 			factor = 1

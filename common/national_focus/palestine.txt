@@ -3518,7 +3518,7 @@ focus_tree = {
 		prerequisite = { focus = PAL_reclaim_mecca focus = PAL_revenge_on_nejd }
 
         x = 0
-        y = 2
+        y = 1
         relative_position_id = PAL_greater_palestine
 
         cost = 5
@@ -4302,7 +4302,7 @@ focus_tree = {
 
 	focus = {
         id = PAL_antijew_army
-        icon = GFX_goal_centralize_power
+        icon = GFX_goal_control_army
 
 		prerequisite = { focus = PAL_theyre_bourgeoisie }
 		
@@ -6958,7 +6958,7 @@ focus_tree = {
 
 	focus = {
         id = PAL_invite_the_saudis
-        icon = GFX_focus_generic_befriend_saudi_arabia
+        icon = GFX_goal_SAU_the_unifier
         prerequisite = { focus = PAL_cooperation_with_the_nasserists }
 
         x = 1
@@ -7765,7 +7765,7 @@ focus_tree = {
 	focus = {
 		id = PAL_fund_education_ministries
 		icon = GFX_goal_generic_education
-		x = 1	
+		x = -1	
 		y = 1
 
 		prerequisite = {
@@ -7783,7 +7783,7 @@ focus_tree = {
 	focus = {
 		id = PAL_investments_into_state
 		icon = GFX_goal_generic_construct_civilian
-		x = -1	
+		x = 1	
 		y = 1
 
 		prerequisite = {

@@ -140,7 +140,7 @@ characters={
 		name=ENG_oswald_mosley
 		portraits={
 			civilian={
-				large="gfx/leaders/ENG/Portrait_Britain_Oswald_Mosley.dds"
+				large="gfx/leaders/ENG/r56_portrait_ENG_Oswald_Mosley.dds"
 			}
 			army={
 				small="GFX_idea_ENG_oswald_mosley"

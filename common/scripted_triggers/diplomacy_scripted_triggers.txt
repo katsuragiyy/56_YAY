@@ -29,7 +29,7 @@
 #				}
 #			}
 #		}
-############ NEEDS TO ADD R56 GAME RULES SUPPORT #############################################
+
 # This specifically overrides the rule check as to whether or not you can guarantee other ideologies
 DIPLOMACY_GUARANTEE_ENABLE_TRIGGER_OVERRIDES_GAME_TRIGGER = {
 	NOT = {
@@ -927,7 +927,7 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			NOT = { FROM = { tag = KUR } }
 		}
 	}
-	
+
 	if = {
 		limit = {
 			has_game_rule = {
@@ -1375,6 +1375,7 @@ DIPLOMACY_REVOKE_OFFER_AIR_BASE_ACCESS_ENABLE_TRIGGER = {
 		}
 	}
 }
+
 DIPLOMACY_DOCKING_RIGHTS_ENABLE_TRIGGER = {
 	if = {
 		limit = {
@@ -1630,7 +1631,7 @@ DIPLOMACY_GENERATE_WARGOAL_ENABLE_TRIGGER = {
 				option = FREE_25
 			}
 		}
-		threat > 0.24
+		threat>0.24
 	}
 	if = {
 		limit = {
@@ -1639,7 +1640,7 @@ DIPLOMACY_GENERATE_WARGOAL_ENABLE_TRIGGER = {
 				option = FREE_50
 			}
 		}
-		threat > 0.49
+		threat>0.49
 	}
 	if = {
 		limit = {
@@ -1648,7 +1649,7 @@ DIPLOMACY_GENERATE_WARGOAL_ENABLE_TRIGGER = {
 				option = FREE_75
 			}
 		}
-		threat > 0.74
+		threat>0.74
 	}
 	if = {
 		limit = {
@@ -1657,7 +1658,7 @@ DIPLOMACY_GENERATE_WARGOAL_ENABLE_TRIGGER = {
 				option = FREE_100
 			}
 		}
-		threat > 0.99
+		threat>0.99
 	}
 	if = {
 		limit = {

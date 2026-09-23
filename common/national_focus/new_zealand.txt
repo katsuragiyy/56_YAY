@@ -18,7 +18,7 @@ focus_tree = {
 
 	focus = {
 		id = NZL_reaffirm_commonwelth_commitments
-		icon = GFX_goal_NZL_kac
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		x = 28
 		y = 0
 		cost = 7.2
@@ -377,7 +377,7 @@ focus_tree = {
 
 	focus = {
 		id = NZL_australian_nzl_agreement
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_goal_AST_coa_anzac
 		prerequisite = { focus = NZL_reaffirm_commonwelth_commitments }
 		relative_position_id = NZL_reaffirm_commonwelth_commitments
 		x = 1
@@ -874,7 +874,7 @@ focus_tree = {
 
 	focus = {
 		id = NZL_shore_defences
-		icon = GFX_goal_generic_fortify_city
+		icon = GFX_focus_generic_coastal_fort
 		prerequisite = { focus = NZL_destroyer_production }
 
 		x = -1
@@ -921,7 +921,7 @@ focus_tree = {
 
 	focus = {
 		id = NZL_naval_equipment
-		icon = GFX_goal_generic_admirality
+		icon = GFX_goal_naval_treaty
 		x = -3
 		y = 1
 		relative_position_id = NZL_destroyer_production
@@ -2239,7 +2239,7 @@ focus_tree = {
 
 	focus = {
 		id = NZL_pilot_recruitment_drive
-		icon = GFX_goal_italy_further_pilots_training
+		icon = GFX_focus_SOV_flying_clubs
 		prerequisite = { focus = NZL_allocate_resources_to_the_rnzf }
 		x = 0
 		y = 2
@@ -2963,7 +2963,7 @@ focus_tree = {
 
 	focus = {
 		id = NZL_prioritize_city_growth
-		icon = GFX_goal_NZL_bt
+		icon = GFX_focus_generic_industry_investment
 		prerequisite = { focus = NZL_aquire_foreign_machinery }
 		prerequisite = { focus = NZL_industrial_awakening  focus = NZL_the_inudtrial_segment }
 		relative_position_id = NZL_industrial_awakening

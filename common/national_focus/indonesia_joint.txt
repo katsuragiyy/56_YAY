@@ -2614,7 +2614,7 @@ joint_focus = {
 					add_mio_funds = 1000
 				}
 			}
-
+			# 56
 			custom_effect_tooltip = generic_skip_one_line_tt
 			unlock_decision_tooltip = INS_expand_ai_bandung
 		}
@@ -3581,7 +3581,7 @@ joint_focus = {
 					}
 				}
 			}
-
+			# 56
 			custom_effect_tooltip = generic_skip_one_line_tt
 			unlock_decision_tooltip = INS_expand_andir_workshop
 		}
@@ -4438,7 +4438,7 @@ joint_focus = {
 	completion_reward_joint_originator = {
 		if = {
 			limit = { original_tag = INS }
-			unlock_decision_tooltip = INS_expand_surabaya_dm
+			unlock_decision_tooltip = INS_expand_surabaya_dm # 56
 		}
 		else_if = {
 			limit = { original_tag = HOL }
@@ -4470,7 +4470,7 @@ joint_focus = {
 	completion_reward_joint_member = {
 		if = {
 			limit = { original_tag = INS }
-			unlock_decision_tooltip = INS_expand_surabaya_dm
+			unlock_decision_tooltip = INS_expand_surabaya_dm # 56
 		}
 		else_if = {
 			limit = { original_tag = HOL }
@@ -4505,7 +4505,7 @@ joint_focus = {
 
 	available = {
 		original_tag = INS
-		is_subject_of = HOL
+		is_subject_of = HOL # 56
 	}
 	prerequisite = { focus = INSHOL_reform_knil }
 	mutually_exclusive = { }
@@ -4562,7 +4562,7 @@ joint_focus = {
 
 	available = {
 		original_tag = INS
-		is_subject_of = HOL
+		is_subject_of = HOL # 56
 	}
 	prerequisite = { focus = INSHOL_east_indies_navy }
 	mutually_exclusive = { }
@@ -4617,7 +4617,7 @@ joint_focus = {
 
 	available = {
 		original_tag = INS
-		is_subject_of = HOL
+		is_subject_of = HOL # 56
 	}
 	prerequisite = { focus = INSHOL_east_indies_navy }
 	mutually_exclusive = { }
@@ -4700,7 +4700,15 @@ joint_focus = {
 	text_icon = INSHOL_INS_HOL_focus_style
 
 	available = {
-		OR = { original_tag = INS original_tag = HOL } INS = { is_subject_of = HOL }
+		OR = {
+			AND = {
+				original_tag = HOL
+				INS = {
+					is_subject_of = HOL
+				}
+			}
+			original_tag = INS
+		}
 	}
 	prerequisite = { focus = INSHOL_domestic_ship_production }
 	mutually_exclusive = { }
@@ -4803,7 +4811,15 @@ joint_focus = {
 	text_icon = INSHOL_INS_HOL_focus_style
 
 	available = {
-		OR = { original_tag = INS original_tag = HOL } INS = { is_subject_of = HOL }
+		OR = {
+			AND = {
+				original_tag = HOL
+				INS = {
+					is_subject_of = HOL
+				}
+			}
+			original_tag = INS
+		}
 	}
 	prerequisite = { focus = INSHOL_domestic_ship_production }
 	mutually_exclusive = { }
@@ -4906,7 +4922,15 @@ joint_focus = {
 	text_icon = INSHOL_INS_HOL_focus_style
 
 	available = {
-		OR = { original_tag = INS original_tag = HOL } INS = { is_subject_of = HOL }
+		OR = {
+			AND = {
+				original_tag = HOL
+				INS = {
+					is_subject_of = HOL
+				}
+			}
+			original_tag = INS
+		}
 	}
 	prerequisite = { focus = INSHOL_domestic_ship_production }
 	mutually_exclusive = { }
@@ -5010,7 +5034,7 @@ joint_focus = {
 
 	available = {
 		original_tag = INS
-		is_subject_of = HOL
+		is_subject_of = HOL # 56
 	}
 	prerequisite = { focus = INSHOL_destroyers focus = INSHOL_cruisers focus = INSHOL_submarines }
 	mutually_exclusive = { focus = INSHOL_divert_civilian_to_navy }
@@ -5056,7 +5080,7 @@ joint_focus = {
 
 	available = {
 		original_tag = INS
-		is_subject_of = HOL
+		is_subject_of = HOL # 56
 	}
 	prerequisite = { focus = INSHOL_destroyers focus = INSHOL_cruisers focus = INSHOL_submarines }
 	mutually_exclusive = { focus = INSHOL_outsourced_navy }
@@ -5143,7 +5167,7 @@ joint_focus = {
 					}
 				}
 			}
-
+			# 56
 			custom_effect_tooltip = generic_skip_one_line_tt
 			unlock_decision_tooltip = INS_expand_surabaya_dm
 		}
@@ -5179,7 +5203,7 @@ joint_focus = {
 					}
 				}
 			}
-
+			# 56
 			custom_effect_tooltip = generic_skip_one_line_tt
 			unlock_decision_tooltip = INS_expand_surabaya_dm
 		}
@@ -6444,7 +6468,7 @@ joint_focus = {
 					add_extra_state_shared_building_slots = 1
 				}
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			custom_effect_tooltip = INS_dutch_east_indies_tt
 			add_to_variable = { var = INS_dutch_east_indies_resources_to_overlord_factor value = 0.05 tooltip = resources_to_overlord_factor_tt }
 			add_to_variable = { var = INS_dutch_east_indies_mic_to_overlord_factor value = 0.1 tooltip = mic_to_overlord_factor_tt }
@@ -6490,8 +6514,7 @@ joint_focus = {
 					add_extra_state_shared_building_slots = 1
 				}
 			}
-			
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			custom_effect_tooltip = INS_dutch_east_indies_tt
 			add_to_variable = { var = INS_dutch_east_indies_resources_to_overlord_factor value = 0.05 tooltip = resources_to_overlord_factor_tt }
 			add_to_variable = { var = INS_dutch_east_indies_mic_to_overlord_factor value = 0.1 tooltip = mic_to_overlord_factor_tt }
@@ -8962,7 +8985,7 @@ joint_focus = {
 						is_ai = yes
 					}
 				}
-				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = newline_tt
 				custom_effect_tooltip = INS_dutch_investment_rate_10
 			}
 		}
@@ -9400,16 +9423,16 @@ joint_focus = {
 						is_ai = yes
 					}
 				}
-				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = newline_tt
 				custom_effect_tooltip = INS_dutch_investment_rate_20
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			INS_andries_cornelis_dirk_de_graeff = {
 				set_can_be_fired_in_advisor_role = {
 					value = yes
 				}
 			}
-
+			# 56
 			custom_effect_tooltip = generic_skip_one_line_tt
 			unlock_decision_tooltip = INS_atjeh_management_2
 		}
@@ -9437,13 +9460,13 @@ joint_focus = {
 				value = -100 
 				localization = INSHOL_loyalty_to_crown
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			INS_andries_cornelis_dirk_de_graeff = {
 				set_can_be_fired_in_advisor_role = {
 					value = yes
 				}
 			}
-
+			# 56
 			custom_effect_tooltip = generic_skip_one_line_tt
 			unlock_decision_tooltip = INS_atjeh_management_2
 		}
@@ -9566,15 +9589,11 @@ joint_focus = {
 					instant_build = yes
 				}
 			}
-			INS = {
+			INS = { # 56
 				if = {
 					limit = {
 						has_dlc = "No Compromise, No Surrender"
-						NOT = {
-							any_core_state = {
-								naval_headquarters > 0
-							}
-						}
+						NOT = { any_core_state = { naval_headquarters > 0 } }
 					}
 					random_owned_controlled_state = {
 						limit = {
@@ -9624,15 +9643,11 @@ joint_focus = {
 					instant_build = yes
 				}
 			}
-			INS = {
+			INS = { # 56
 				if = {
 					limit = {
 						has_dlc = "No Compromise, No Surrender"
-						NOT = {
-							any_core_state = {
-								naval_headquarters > 0
-							}
-						}
+						NOT = { any_core_state = { naval_headquarters > 0 }	}
 					}
 					random_owned_controlled_state = {
 						limit = {
@@ -10608,7 +10623,7 @@ joint_focus = {
 		if = {
 			limit = { original_tag = INS }
 			remove_ideas = idea_INS_netherlands_most_precious_jewel
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			random_character = {
 				limit = {
 					is_country_leader = yes
@@ -10699,7 +10714,7 @@ joint_focus = {
 
 	available = {
 		original_tag = INS
-		is_subject = no
+		is_subject = no # 56
 	}
 	prerequisite = { focus = INSHOL_begin_negotiations_soetardjo focus = INSHOL_sideline_the_volksraad }
 	mutually_exclusive = { }
@@ -10787,20 +10802,20 @@ joint_focus = {
 			custom_effect_tooltip = INS_will_not_keep_characters_tt
 			custom_effect_tooltip = INSHOL_nationalist_coallition_tt
 
-			set_party_name = {
+			set_party_name = { # 56
 				ideology = democratic
 				long_name = INS_democratic_volksraad_party
 				name = INS_democratic_volksraad_party_long
 			}
-			set_party_name = {
+			set_party_name = { # 56
 				ideology = neutrality
 				long_name = INS_neutrality_volksraad_gg_party_long
 				name = INS_neutrality_volksraad_gg_party
 			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			custom_effect_tooltip = available_political_advisor
-			if = {
+			if = { # 56
 				limit = {
 					NOT = { has_country_flag = INS_dr_sutomo_passed }
 				}
@@ -10823,10 +10838,9 @@ joint_focus = {
 			limit = { original_tag = INS }
 			custom_effect_tooltip = INS_will_not_keep_characters_tt
 			custom_effect_tooltip = INSHOL_nationalist_coallition_tt
-
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			custom_effect_tooltip = available_political_advisor
-			if = {
+			if = { # 56
 				limit = {
 					NOT = { has_country_flag = INS_dr_sutomo_passed }
 				}
@@ -10874,13 +10888,8 @@ joint_focus = {
 		if = {
 			limit = { original_tag = INS }
 			custom_effect_tooltip = INS_will_keep_characters_tt
-			if = {
-				limit = { 
-					NOT = { has_completed_focus = INS_governor_general_tjarda }
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				custom_effect_tooltip = INS_focus_time_reduce_tjarda_tt
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = INS_focus_time_reduce_tjarda_tt
 		}
 		else_if = {
 			limit = { original_tag = HOL }
@@ -10892,13 +10901,8 @@ joint_focus = {
 		if = {
 			limit = { original_tag = INS }
 			custom_effect_tooltip = INS_will_keep_characters_tt
-			if = {
-				limit = { 
-					NOT = { has_completed_focus = INS_governor_general_tjarda }
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				custom_effect_tooltip = INS_focus_time_reduce_tjarda_tt
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = INS_focus_time_reduce_tjarda_tt
 		}
 		else_if = {
 			limit = { original_tag = HOL }
@@ -10909,7 +10913,7 @@ joint_focus = {
 
 joint_focus = {
 	id = INSHOL_democracy
-	icon = GFX_goal_INS_democracy
+	icon = GFX_goal_INS_democracy # 56
 	text_icon = INSHOL_INS_focus_style
 
 	available = {
@@ -10960,7 +10964,7 @@ joint_focus = {
 					value = yes
 				}
 			}
-
+			# 56
 			custom_effect_tooltip = generic_skip_one_line_tt
 			unlock_decision_tooltip = INS_atjeh_management_2
 		}
@@ -10994,13 +10998,13 @@ joint_focus = {
 				last_election = "1936.1.1"
 				election_frequency = 48
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			INS_andries_cornelis_dirk_de_graeff = {
 				set_can_be_fired_in_advisor_role = {
 					value = yes
 				}
 			}
-
+			# 56
 			custom_effect_tooltip = generic_skip_one_line_tt
 			unlock_decision_tooltip = INS_atjeh_management_2
 		}
@@ -11038,7 +11042,7 @@ joint_focus = {
 		if = {
 			limit = { original_tag = INS }
 			indonesia_princely_advisors_effect_no_atjeh = yes
-			JVA = {
+			JVA = { # 56
 				JVA_pakubuwono_x = {
 					set_nationality = INS
 				}
@@ -11054,7 +11058,7 @@ joint_focus = {
 		if = {
 			limit = { original_tag = INS }
 			indonesia_princely_advisors_effect_no_atjeh = yes
-			JVA = {
+			JVA = { # 56
 				JVA_pakubuwono_x = {
 					set_nationality = INS
 				}
@@ -12803,15 +12807,15 @@ joint_focus = {
 	ai_will_do = {
 		base = 0.2
 		modifier = {
-			add = 0.5
+			add = 1
 			num_of_controlled_states > 4
 		}
 		modifier = {
-			add = 2
+			add = 1
 			num_of_controlled_states > 5
 		}
 		modifier = {
-			add = 2
+			add = 1
 			num_of_controlled_states > 6
 		}
 		modifier = {
@@ -12871,8 +12875,7 @@ joint_focus = {
 			set_country_flag = INS_java_mission_ongoing
 			activate_mission_tooltip = INS_take_batavia
 			custom_effect_tooltip = INS_take_batavia_explination_tt
-
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			add_timed_idea = {
 				idea = INS_no_compromise_idea
 				days = 240
@@ -12932,8 +12935,7 @@ joint_focus = {
 			set_country_flag = INS_java_mission_ongoing
 			activate_mission_tooltip = INS_take_batavia
 			custom_effect_tooltip = INS_take_batavia_explination_tt
-
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			add_timed_idea = {
 				idea = INS_no_compromise_idea
 				days = 240

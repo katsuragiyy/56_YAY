@@ -40,7 +40,7 @@ focus_tree = {
 
 		icon = GFX_goal_MON_inner_mongolian_army2
 		
-		x = 6
+		x = 7
 		y = 0
 		
 		cost = 5
@@ -87,7 +87,7 @@ focus_tree = {
 			focus = MEN_embrace_horses_of_steel 
 		}
 
-		x = 4
+		x = 3
 		y = 1
 		
 		cost = 10
@@ -124,7 +124,7 @@ focus_tree = {
 			focus = MEN_continue_the_ways_of_old 
 		}
 		
-		x = -4
+		x = -3
 		y = 1
 		
 		cost = 10
@@ -772,7 +772,7 @@ focus_tree = {
 
 		relative_position_id = MEN_continue_the_ways_of_old
 		
-		x = -4
+		x = -3
 		y = 1
 		
 		cost = 10
@@ -4432,7 +4432,7 @@ focus_tree = {
 		prerequisite = { 
 			focus = MEN_tear_up_the_qin_doihara_agreement focus = MEN_reinvite_the_chinese_military
 		}
-		x = -2
+		x = -1
 		y = 1
 	
 		relative_position_id = MEN_tear_up_the_qin_doihara_agreement
@@ -4471,7 +4471,7 @@ focus_tree = {
 			focus =  MEN_reinvite_the_chinese_military 
 		}
 
-		x = 2
+		x = 1
 		y = 1
 	
 		relative_position_id = MEN_reinvite_the_chinese_military
@@ -4507,7 +4507,7 @@ focus_tree = {
 			focus = MEN_subdue_the_communist_threat
 		}
 
-		x = 2
+		x = 1
 		y = 1
 	
 		relative_position_id = MEN_the_principle_of_democracy
@@ -4571,7 +4571,7 @@ focus_tree = {
 			focus = MEN_work_with_the_communists
 		}
 
-		x = 4
+		x = 3
 		y = 1
 	
 		relative_position_id = MEN_the_principle_of_democracy

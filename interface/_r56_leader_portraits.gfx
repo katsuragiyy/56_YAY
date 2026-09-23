@@ -286,19 +286,15 @@ spriteTypes = {
 	spriteType = { name = "GFX_Portrait_SIA_khuang_aphaiwong" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Khuang_Aphaiwong.dds" }
 	spriteType = { name = "GFX_Portrait_SIA_Plaek_Phibunsongkhram" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Plaek_Phibunsongkhram.dds" }
 	spriteType = { name = "GFX_Portrait_SIA_Plaek_Phibunsongkhram2" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Plaek_Phibunsongkhram.dds" }
-	spriteType = { name = "GFX_Portrait_SIA_Pridi_Banomyong" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Pridi_Banomyong.dds" }
-	spriteType = { name = "GFX_Portrait_SIA_Rama_Vii" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Rama_Vii.dds" }
 	spriteType = { name = "GFX_Portrait_SIA_Seni_Pramoj" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Seni_Pramoj.dds" }
 	spriteType = { name = "GFX_Portrait_Siam_Charun_Rattanakun_Seriroengrit" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Charun_Rattanakun_Seriroengrit.dds" }
 	spriteType = { name = "GFX_Portrait_Siam_Mangkorn_Phromyothi" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Mangkorn_Phromyothi.dds" }
 	spriteType = { name = "GFX_Portrait_Siam_Phin_Choonhavan" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Phin_Choonhavan.dds" }
 	spriteType = { name = "GFX_Portrait_Siam_Phraya_Phahon" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Phraya_Phahon.dds" }
 	spriteType = { name = "GFX_Portrait_Siam_Phraya_Phahon2" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Phraya_Phahon.dds" }
-	spriteType = { name = "GFX_Portrait_Siam_Phraya_Songsuradej" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Phraya_Songsuradej.dds" }
 	spriteType = { name = "GFX_Portrait_Siam_Pichit_Kriangsak" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Pichit_Kriangsak.dds" }
 	spriteType = { name = "GFX_Portrait_Siam_Sinthin_Kamolnawin" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Sinthin_Kamolnawin.dds" }
 	spriteType = { name = "GFX_Portrait_Siam_Thawan_Thamrongnawasawat" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Thawan_Thamrongnawasawat.dds" }
-	spriteType = { name = "GFX_Portrait_Siam_Yuthasastrkosol" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Yuthasastrkosol.dds" }
 
 #->  SPR <><>
 	spriteType = { name = "GFX_portrait_SPA_juan_yague" texturefile = "gfx/leaders/SPR/r56_portrait_SPR_Juan_Yague_Blanco.dds" } #Non-Lar override

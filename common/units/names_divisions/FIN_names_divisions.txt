@@ -8,30 +8,31 @@
 # can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
 #
 # division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
-#			however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
-#			for example the current one is no longer available due to the can_use trigger saying so).
-#			In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
 #
 # fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
-#			mechanics to be used for fallbacks, then just skip this option.
+#                 mechanics to be used for fallbacks, then just skip this option.
 #
 # unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
-#			this option is available here mainly for a mods.
+#             this option is available here mainly for a mods.
 #
-# ordered - Is a list of all historical names.
-#			Numbers must start from 1 and up.
-#			Numbers can't repeat in one scope.
-#			If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
-#			All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
-#			1st argument = The name. It must contain either:
-#						%d (for decimal number placement)
-#						%s (for string number placement - ROMAN numbers like XIV).
-#			2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
-#									where you choose the historical division name.
-#			3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
-#									the current game version.
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
 
-FIN_INF_01 = {
+FIN_INF_01 = 
+{
 	name = "Infantry Divisions"
 
 	for_countries = { FIN }
@@ -45,9 +46,10 @@ FIN_INF_01 = {
 
 	fallback_name = "%d. Divisioona"
 
-	# Names with numbers (only one number per entry).
+	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered = {
+	ordered =
+	{
 		1 = { "%d. Divisioona" }
 		4 = { "%d. Divisioona" }
 		5 = { "%d. Divisioona 'Ilvesdivisioona'" }
@@ -108,7 +110,7 @@ FIN_INF_02 = {
 
 	for_countries = { FIN } 
 
-	#can_use = { has_completed_focus = FIN_finnish_legion_of_honor } #TODO_Manu: Game checks this after daily tick, making new templates attempting to use this namelist to default to something else (Garrison Divs)
+	#can_use = { has_completed_focus = FIN_finnish_legion_of_honor } #MM: Game checks this after daily tick, making new templates attempting to use this namelist to default to something else (Garrison Divs)
 
 	can_use = { has_dlc = "Arms Against Tyranny" }
 
@@ -124,9 +126,11 @@ FIN_INF_03 = {
 
 	can_use = { always = yes }
 
-	division_types = { "infantry" } 
+	division_types = { "infantry" "ranger_battalion" } 
 
 	fallback_name = "%d. Sissidivisioona"
+
+	link_numbering_with = { FIN_MTN_01 }
 }
 
 FIN_INF_04 = { 
@@ -139,36 +143,6 @@ FIN_INF_04 = {
 	division_types = { "infantry" } 
 
 	fallback_name = "%d. Neuvostoliiton Ryhmä"
-}
-
-FIN_CAV_01 = {
-	name = "Cavalry Divisions"
-
-	for_countries = { FIN }
-
-	can_use = { always = yes }
-
-	division_types = { "cavalry" }
-
-	# Number reservation system will tie to another group.
-	#link_numbering_with = { GER_Gar_01 }
-
-	fallback_name = "%d. Ratsuväkiprikaati"
-
-	# Names with numbers (only one number per entry).
-	# It's okay to have gaps in numbering.
-	ordered = {
-		1 = { "%d. Ratsuväkiprikaati" }
-		2 = { "%d. Ratsuväkiprikaati" }
-		3 = { "%d. Ratsuväkiprikaati" }
-		4 = { "%d. Ratsuväkiprikaati" }
-		5 = { "%d. Ratsuväkiprikaati" }
-		6 = { "%d. Ratsuväkiprikaati" }
-		7 = { "%d. Ratsuväkiprikaati" }
-		8 = { "%d. Ratsuväkiprikaati" }
-		9 = { "%d. Ratsuväkiprikaati" }
-		10 = { "%d. Ratsuväkiprikaati" }
-	}
 }
 
 FIN_GAR_01 = {
@@ -185,9 +159,10 @@ FIN_GAR_01 = {
 
 	fallback_name = "%d. Ryhmä"
 
-	# Names with numbers (only one number per entry).
+	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered = {
+	ordered =
+	{
 		1 = { "Taipals. Komennuskunta" }
 		4 = { "Taivalal. Komennuskunta" }
 		5 = { "Äänl. Komennuskunta" }
@@ -239,16 +214,18 @@ FIN_GAR_01 = {
 		51 = { "%d. Ryhmä" }
 		52 = { "%d. Ryhmä" }
 		53 = { "%d. Ryhmä" }
+
 		# FIN converted some of its groups or similar into divisions for the continuation war, but they fought as garrison units or therabouts for the winter war.  Thus, the INF and GAR lists are linked, with the idea that converting one of the starting "Ryhmä's" into a div will give it a sensible div number (although these groups have not been matched to their division numbers, and this approach may or may not be appropriate).
 	}
 }
 
-FIN_GAR_02 = {
+FIN_GAR_02 = 
+{
 	name = "Suojeluskunta Divisions"
 
 	for_countries = { FIN }
 
-	#can_use = { has_completed_focus = FIN_take_over_the_suojeluskunta }  #TODO_Manu: Game checks this after daily tick, making new templates attempting to use this namelist to default to something else (Garrison Divs)
+	#can_use = { has_completed_focus = FIN_take_over_the_suojeluskunta }  #MM: Game checks this after daily tick, making new templates attempting to use this namelist to default to something else (Garrison Divs)
 
 	can_use = { has_dlc = "Arms Against Tyranny" }
 
@@ -258,7 +235,8 @@ FIN_GAR_02 = {
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered = {
+	ordered =
+	{
 		#These 6 are spawned via focus
 		1 = { "Helsingin Suojeluskuntapiiri" } #Helsinki
 		2 = { "Turunmaan Suojeluskuntapiiri" } #Turku
@@ -304,7 +282,128 @@ FIN_GAR_02 = {
 	}
 }
 
-FIN_MOT_01 = {
+FIN_MIL_01 = { 
+	name = "Mustapaidat Legions" 
+
+	for_countries = { FIN } 
+
+	#can_use = { #MM: Broken
+	#	NOT = {
+	#		has_government = communism
+	#		has_government = democratic
+	#	}
+	#}
+
+	can_use = { has_dlc = "Arms Against Tyranny" }
+
+	division_types = { "militia" } 
+
+	fallback_name = "%d. Mustapaita Legioona"
+}
+
+FIN_MIL_02 = { 
+	name = "Red Guard Divisions" 
+
+	for_countries = { FIN } 
+
+	#can_use = { has_government = communism } #MM: Broken
+
+	can_use = { has_dlc = "Arms Against Tyranny" }
+
+	division_types = { "militia" } 
+
+	fallback_name = "%d. Punakaartin Divisioona"
+}
+
+FIN_PEN_01 = { 
+	name = "Penal Units" 
+
+	for_countries = { FIN } 
+
+	can_use = { has_dlc = "Arms Against Tyranny" } #MM: Broken
+
+	division_types = { "penal_battalion" "infantry" } 
+
+	fallback_name = "%d. Rangaistusdivisioona"
+}
+
+FIN_CAV_01 = 
+{
+	name = "Cavalry Divisions"
+
+	for_countries = { FIN }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { GER_Gar_01 }
+
+	fallback_name = "%d. Ratsuväkiprikaati"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "Ratsuväkiprikaati" }
+		2 = { "%d. Ratsuväkiprikaati" }
+		3 = { "%d. Ratsuväkiprikaati" }
+		4 = { "%d. Ratsuväkiprikaati" }
+		5 = { "%d. Ratsuväkiprikaati" }
+		6 = { "%d. Ratsuväkiprikaati" }
+		7 = { "%d. Ratsuväkiprikaati" }
+		8 = { "%d. Ratsuväkiprikaati" }
+		9 = { "%d. Ratsuväkiprikaati" }
+		10 = { "%d. Ratsuväkiprikaati" }
+		11 = { "%d. Ratsuväkiprikaati" }
+		12 = { "%d. Ratsuväkiprikaati" }
+		13 = { "%d. Ratsuväkiprikaati" }
+		14 = { "%d. Ratsuväkiprikaati" }
+		15 = { "%d. Ratsuväkiprikaati" }
+		16 = { "%d. Ratsuväkiprikaati" }
+		17 = { "%d. Ratsuväkiprikaati" }
+		18 = { "%d. Ratsuväkiprikaati" }
+		19 = { "%d. Ratsuväkiprikaati" }
+		20 = { "%d. Ratsuväkiprikaati" }
+		21 = { "%d. Ratsuväkiprikaati" }
+		22 = { "%d. Ratsuväkiprikaati" }
+		23 = { "%d. Ratsuväkiprikaati" }
+		24 = { "%d. Ratsuväkiprikaati" }
+		25 = { "%d. Ratsuväkiprikaati" }
+		26 = { "%d. Ratsuväkiprikaati" }
+		27 = { "%d. Ratsuväkiprikaati" }
+		28 = { "%d. Ratsuväkiprikaati" }
+		29 = { "%d. Ratsuväkiprikaati" }
+		30 = { "%d. Ratsuväkiprikaati" }
+		31 = { "%d. Ratsuväkiprikaati" }
+		32 = { "%d. Ratsuväkiprikaati" }
+		33 = { "%d. Ratsuväkiprikaati" }
+		34 = { "%d. Ratsuväkiprikaati" }
+		35 = { "%d. Ratsuväkiprikaati" }
+		36 = { "%d. Ratsuväkiprikaati" }
+		37 = { "%d. Ratsuväkiprikaati" }
+		38 = { "%d. Ratsuväkiprikaati" }
+		39 = { "%d. Ratsuväkiprikaati" }
+		40 = { "%d. Ratsuväkiprikaati" }
+		41 = { "%d. Ratsuväkiprikaati" }
+		42 = { "%d. Ratsuväkiprikaati" }
+		43 = { "%d. Ratsuväkiprikaati" }
+		44 = { "%d. Ratsuväkiprikaati" }
+		45 = { "%d. Ratsuväkiprikaati" }
+		46 = { "%d. Ratsuväkiprikaati" }
+		47 = { "%d. Ratsuväkiprikaati" }
+		48 = { "%d. Ratsuväkiprikaati" }
+		49 = { "%d. Ratsuväkiprikaati" }
+		50 = { "%d. Ratsuväkiprikaati" }
+		51 = { "%d. Ratsuväkiprikaati" }
+		52 = { "%d. Ratsuväkiprikaati" }
+		53 = { "%d. Ratsuväkiprikaati" }
+	}
+}
+
+FIN_MOT_01 = 
+{
 	name = "Motorised Divisions"
 
 	for_countries = { FIN }
@@ -318,9 +417,10 @@ FIN_MOT_01 = {
 
 	fallback_name = "%d. Jääkäridivisioona"
 
-	# Names with numbers (only one number per entry).
+	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered = {
+	ordered =
+	{
 		1 = { "Jääkäridivisioona" }
 		2 = { "%d. Jääkäridivisioona" }
 		3 = { "%d. Jääkäridivisioona" }
@@ -354,10 +454,12 @@ FIN_MOT_01 = {
 		31 = { "%d. Jääkäridivisioona" }
 		32 = { "%d. Jääkäridivisioona" }
 		33 = { "%d. Jääkäridivisioona" }
+
 	}
 }
 
-FIN_ARM_01 = {
+FIN_ARM_01 = 
+{
 	name = "Armoured Divisions"
 
 	for_countries = { FIN }
@@ -371,9 +473,10 @@ FIN_ARM_01 = {
 
 	fallback_name = "%d. Panssaridivisioona"
 
-	# Names with numbers (only one number per entry).
+	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered = {
+	ordered =
+	{
 		1 = { "Panssaridivisioona 'Lagus'" }
 		2 = { "%d. Panssaridivisioona" }
 		3 = { "%d. Panssaridivisioona" }
@@ -412,7 +515,8 @@ FIN_ARM_01 = {
 	}
 }
 
-FIN_MEC_01 = {
+FIN_MEC_01 = 
+{
 	name = "Mechanised Divisions"
 
 	for_countries = { FIN }
@@ -426,9 +530,10 @@ FIN_MEC_01 = {
 
 	fallback_name = "%d. Panssarijääkäridivisioona"
 
-	# Names with numbers (only one number per entry).
+	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered = {
+	ordered =
+	{
 		1 = { "Panssarijääkäridivisioona" }
 		2 = { "%d. Panssarijääkäridivisioona" }
 		3 = { "%d. Panssarijääkäridivisioona" }
@@ -467,7 +572,8 @@ FIN_MEC_01 = {
 	}
 }
 
-FIN_MAR_01 = {
+FIN_MAR_01 = 
+{
 	name = "Marine Divisions"
 
 	for_countries = { FIN }

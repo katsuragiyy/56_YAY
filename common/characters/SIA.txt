@@ -1,21 +1,18 @@
-characters = {
-	SIA_phraya_phahon = {
-		name = SIA_phahon_phonphayuhasena
-		portraits = {
-			civilian = {
-				large = gfx/leaders/SIA/r56_portrait_SIA_Phraya_Phahon.dds
-			}
-			army = {
-				large = GFX_Portrait_Siam_Phraya_Phahon2
+characters={
+	SIA_phraya_phahon={
+		name=SIA_phahon_phonphayuhasena
+		portraits={
+			civilian={
+				large=gfx/leaders/SIA/r56_portrait_SIA_Phraya_Phahon.dds
 				small= GFX_idea_SIA_R56_advisor_Phraya_Phahon
-			}			
+			}
 		}
-		country_leader = {
-			ideology = military_junta
-			expire = "1965.1.1"
-			traits = { SIA_pragmatic_old_guard_r56 }
-			id = 6004
-			desc = SIA_phahon_phonphayuhasena_desc
+		country_leader={
+			ideology=military_junta
+			expire="1965.1.1.1"
+			traits={ SIA_pragmatic_old_guard_r56 }
+			id=6004
+			desc=SIA_phahon_phonphayuhasena_desc
 		}
 		advisor = {
 			slot = high_command
@@ -86,7 +83,7 @@ characters = {
 		portraits = {
 			civilian = {
 				small = GFX_idea_minister_siam_phraya_songsuradej_minister
-				large = GFX_Portrait_Siam_Phraya_Songsuradej
+				large = GFX_portrait_SIA_phraya_songsuradet
 			}
 		}	
 		country_leader = {
@@ -464,62 +461,6 @@ characters = {
 			coordination_skill = 2
 		}		
 	}
-
-	SIA_luang_yuthasastr_kosol= {
-		advisor = {
-			slot = navy_chief
-			idea_token = SIA_luang_yuthasastr_kosol
-			allowed = {
-				original_tag = SIA
-			}
-			available = {
-				NOT = {
-					has_idea = SIA_luang_yuthasastr_kosol2
-				}
-			}			
-			traits = {
-				navy_chief_maneuver_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-		advisor = {
-			slot = high_command
-			idea_token = SIA_luang_yuthasastr_kosol2
-			allowed = {
-				original_tag = SIA
-			}
-			available = {
-				NOT = {
-					has_idea = SIA_luang_yuthasastr_kosol
-				}
-			}
-			traits = {
-				navy_screen_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-		navy_leader = {
-			traits = { blockade_runner naval_lineage }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 1
-			maneuvering_skill = 3
-			coordination_skill = 1
-		}		
-		name = SIA_luang_yuthasastr_kosol
-		portraits = {
-			army = {
-				small= GFX_idea_minister_siam_Yuthasastrkosol_naval
-				large = GFX_Portrait_Siam_Yuthasastrkosol
-			}
-		}
-	}	
 
 	SIA_manphya_khanphialong = {
 		advisor = {
@@ -1940,7 +1881,7 @@ characters = {
 			portraits={
 				navy = {
 					small = GFX_idea_minister_siam_Yuthasastrkosol_naval
-					large = GFX_Portrait_Siam_Yuthasastrkosol
+					large = GFX_portrait_SIA_prayoon_yuthasastrkosol
 				}
 			}
 			advisor = {

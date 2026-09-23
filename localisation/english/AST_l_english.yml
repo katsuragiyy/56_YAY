@@ -2,7 +2,6 @@
  # characters
  AST_isaac_isaacs:0 "Isaac Isaacs"
  AST_william_mackay:0 "William MacKay"
- AST_adela_pankhurst:0 "Adela Pankhurst"
  AST_jack_patten:0 "Jack Patten"
  AST_william_ferguson:0 "William Ferguson"
  AST_alexander_rud_mills:0 "Alexander Rud Mills"
@@ -669,3 +668,15 @@
  AST_economy_recovered_name: "The Australian Economy"
 
  AST_modify_economy_tt:0 "Modify §Y[GetASTCurrentEconomyName]§! by:"
+
+ AST_realise_the_australasian_identity_r56: "Realise the Australasian Idea"
+ AST_realise_the_australasian_identity_r56_desc: "For too long have both Australia and New Zealand been detached from one another. We are, for all intents and purposes, the same people and nation, and thus must unite into one formidable South Pacific nation."
+
+ AST_integrate_the_class_c_mandate_r56: "Assimilate the Class C Mandates"
+ AST_integrate_the_class_c_mandate_r56_desc: "At the beginning of the Great War, Australian troops were quick to seize the German possesions in Melanesia and Micronesia. In Melanesia, those territories were the German colony of Northern Papua, and the Bismarck Archipelago. In Micronesia, it was the phosphate-rich island of Nauru. Following the occupation of these lands at the hands of the Australians and the end of the Great War, these territories became Class C mandates under the supervision of Canberra. \n\nHowever, many years have passed since our occupation began. These territories have become integrated into the [ROOT.GetAdjective] political network as much as any other territory of our nation. It is time to assert our claim to these lands, and finally bring about the assimilation of the people's into [ROOT.GetNameDef]."
+ AST_integrate_class_c_mandataes: "All of the §YHighlighted States§! must meet the following conditions: \n-They are §YControlled§! by us \n-Have less than §Y20% Resistance§! \n-More than §Y20% Compliance§!."
+ AST_get_cores_on_class_c_mandates: "\nWe will gain cores on §Y[523.GetName]§!, §Y[1096.GetName]§!, §Y[737.GetName]§!, §Y[1138.GetName]§!, & §Y[725.GetName]§!."
+
+ AST_achieve_seddons_wet_dream_r56: "Achieve the Dream of Richard Seddon"
+ AST_achieve_seddons_wet_dream_r56_desc: ""
+ AST_get_cores_on_seddons_islands_r56: "\nWe will gain cores on §Y[636.GetName]§!, §Y[734.GetName]§!, §Y[726.GetName]§!, §Y[1088.GetName]§!, & §Y[1089.GetName]§!."

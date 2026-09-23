@@ -9268,10 +9268,7 @@ spriteType = {
 	spriteType = { name = "GFX_portrait_URG_luis_alberto_herrera" texturefile = "gfx/leaders/URG/r56_portrait_URG_Luis_Alberto_de_Herrera.dds" }
 
 	# RAJ - GOE
-	spriteType = {
-	    name = "GFX_portrait_RAJ_freeman_freeman_thomas"
-	    texturefile = "gfx/leaders/RAJ/r56_portrait_RAJ_Freeman_Freeman_Thomas.dds"
-	}
+	spriteType = { name = "GFX_portrait_RAJ_freeman_freeman_thomas" texturefile = "gfx/leaders/RAJ/r56_portrait_RAJ_Freeman_Freeman_Thomas.dds" }
 
 	# KHM - NCNS
 	spriteType = { name = "GFX_Portrait_Ma_Hushan" texturefile = "gfx/leaders/KHM/r56_KHM_Ma_Hushan.dds" }
@@ -9289,6 +9286,7 @@ spriteType = {
 	spriteType = { name = "GFX_portrait_AST_jack_miles" texturefile = "gfx/leaders/AST/r56_portrait_AST_JB_Miles.dds" }
 	spriteType = { name = "GFX_portrait_AST_joseph_lyons" texturefile = "gfx/leaders/AST/r56_portrait_AST_Joseph_Lyons.dds" }
 	spriteType = { name = "GFX_portrait_AST_leslie_morshead" texturefile = "gfx/leaders/AST/r56_portrait_AST_Leslie_Morshead.dds" }
+	spriteType = { name = "GFX_portrait_AST_alexander_hore_ruthven" texturefile = "gfx/leaders/AST/r56_portrait_AST_Alexander_Hore_Ruthven.dds" }
 
 	# INS - TAOG
 	spriteType = { name = "GFX_portrait_INS_sudirman" texturefile = "gfx/leaders/INS/r56_portrait_INS_Sudirman2.dds" }
@@ -9300,6 +9298,13 @@ spriteType = {
 	spriteType = { name = "GFX_portrait_INS_oerip_soemohardjo" texturefile = "gfx/leaders/INS/r56_portrait_INS_Urip_Sumoharjo.dds" }
 	spriteType = { name = "GFX_portrait_INS_tjalling_bakker" texturefile = "gfx/leaders/INS/r56_portrait_INS_Tjalling_Bakker.dds" }
 	spriteType = { name = "GFX_portrait_INS_geradus_berenschot" texturefile = "gfx/leaders/INS/r56_portrait_INS_Gerardus_Berenschot.dds" }
+
+	# SIA - TAOG
+	spriteType = { name = "GFX_portrait_SIA_ananda_mahidol" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Rama_Viii.dds" }
+	spriteType = { name = "GFX_portrait_SIA_prajadhipok" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Rama_Vii.dds" }
+	spriteType = { name = "GFX_portrait_SIA_pridi_banomyong" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Pridi_Banomyong.dds" }
+	spriteType = { name = "GFX_portrait_SIA_prayoon_yuthasastrkosol" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Yuthasastrkosol.dds" }
+	spriteType = { name = "GFX_portrait_SIA_phraya_songsuradet" texturefile = "gfx/leaders/SIA/r56_portrait_SIA_Phraya_Songsuradej.dds" }
 
 	##################
 	### OPERATIVES ###
