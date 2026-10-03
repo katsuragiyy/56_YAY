@@ -5454,6 +5454,7 @@ leader_traits = {
 	
 	international_communist = {
 		random = no
+		sprite = 13 # 56 - Used on Israeli Advisor
 		opinion_gain_monthly_same_ideology_factor = 1
 		subversive_activites_upkeep = -0.5
 		conscription = 0.02

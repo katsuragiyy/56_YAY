@@ -8166,7 +8166,10 @@ focus_tree = {
 		available = {
 			has_government = fascism
 			any_country = {	#56
-				original_tag = SPR
+				OR = {
+					original_tag = SPR
+					original_tag = SPA
+				}
 				OR = {
 					has_government = fascism
 					has_government = neutrality

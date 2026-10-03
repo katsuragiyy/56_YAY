@@ -1322,12 +1322,6 @@ ideas = {
 		free_trade = {
 
 			available = {
-				IF = {
-					limit = {
-						original_tag = GXC
-					}
-					NOT = { has_completed_focus = GXC_full_self_reliance }
-				}
 				if = {
 					limit = {
 						original_tag = SPR
@@ -1354,7 +1348,10 @@ ideas = {
 					limit = { has_completed_focus = HON_free_our_markets }
 					NOT = { has_idea = r56_idea_capitalism_anarchist_society  }
 				}
-				
+				IF = {
+					limit = { original_tag = GXC  }
+					NOT = { has_completed_focus = GXC_full_self_reliance }
+				}
 				if = {
 					limit = { original_tag = MON }
 					NOT = { has_completed_focus = MON_changes_within }
@@ -1448,14 +1445,6 @@ ideas = {
 		export_focus = {
 
 			available = {
-				IF = {
-					limit = {
-						original_tag = GXC
-					}
-					NOT = { has_completed_focus = GXC_full_self_reliance }
-				}
-
-
 				#if = { # R56
 				#	limit = {
 				#		original_tag = CHI
@@ -1485,10 +1474,12 @@ ideas = {
 					NOT = { has_completed_focus = PRC_promote_paper_bills }
 				}
 				# 56
+				IF = {
+					limit = { original_tag = GXC  }
+					NOT = { has_completed_focus = GXC_full_self_reliance }
+				}
 				if = {
-					limit = {
-						original_tag = MON
-					}
+					limit = { original_tag = MON }
 					NOT = { has_completed_focus = MON_changes_within }
 				}
 				if = {
@@ -1627,10 +1618,8 @@ ideas = {
 						}
 						has_completed_focus = RAJ_raise_import_duties
 					}
-					else_if = {
-						limit = {
-							original_tag = GXC
-						}
+					else_if = { # 56
+						limit = { original_tag = GXC }
 						has_completed_focus = GXC_full_self_reliance
 					}
 					else = {

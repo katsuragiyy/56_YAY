@@ -6568,13 +6568,21 @@ leader_traits = {
 		consumer_goods_factor = -0.15
 	}
 
-###------> KAZ <><> <><> <><> <><> <><>	
+###------> KAZ & UZB <><> <><> <><> <><> <><>	
 		
 	KAZ_healthcare_expert = {
 		random = no
 		sprite = 13
 		army_morale_factor = 0.05
 		monthly_population = 0.25
+	}
+
+	UZB_founder_of_the_turkestan_republic = {
+		random = no
+		sprite = 13
+		army_morale_factor = 0.05
+		political_power_factor = 0.1
+		drift_defence_factor = 0.1
 	}
 
 ###------> SIA <><> <><> <><> <><> <><>	
@@ -7501,6 +7509,13 @@ leader_traits = {
 	}
 	ISR_kibbutznik = {
 		random = no
+		global_building_slots_factor = 1
+		production_speed_buildings_factor = 0.05
+	}
+	ISR_pro_soviet_kibbutznik = {
+		random = no
+		improve_relations_maintain_cost_factor = -0.1
+		opinion_gain_monthly_factor = 1
 		global_building_slots_factor = 1
 		production_speed_buildings_factor = 0.05
 	}

@@ -124,3 +124,10 @@ ISR_lehi_uprising_category = {
 		}
 	}
 }
+
+ISR_maki_five_year_plan_category = {
+	icon = GFX_decision_category_generic_communist_revolution
+	allowed = { original_tag = ISR }
+	visible = { has_country_flag = ISR_five_year_plan_has_BEGUN_flag }
+	priority = 100
+}

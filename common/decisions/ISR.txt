@@ -1,3 +1,29 @@
+ISR_maki_five_year_plan_category = {
+	ISR_mission_timeout_until_five_year_plan_is_over = {
+		icon = GFX_decision_eng_trade_unions_support
+		days_mission_timeout = 1825
+		is_good = no
+
+		available = {
+			has_stability > 0.74
+			industrial_complex > 14
+      		arms_factory > 7
+			dockyard > 2
+			all_owned_state = {
+				is_core_of = ROOT
+				infrastructure > 2
+			}
+  		}
+
+		complete_effect = {
+        	# major buffs
+    	}
+		timeout_effect = {
+			# major downsides
+		}
+	}
+}
+
 ISR_sinai_war_category = {
 	ISR_push_for_negotiations = {
 

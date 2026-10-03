@@ -1,5 +1,12 @@
 spriteTypes = {
 
+	# MAKI
+	spriteType = {
+		name = "GFX_decision_header_ISR_maki_five_year_program"
+		texturefile = "gfx/texticons/decision_header_ISR_maki_five_year_plan.dds"
+		legacy_lazy_load = no
+	}
+
 ###------> Militia <><> <><> <><> <><> <><>
 
 	spriteType = {

@@ -15,6 +15,7 @@ add_ideas = ISR_austerity
 add_ideas = ISR_histadrut_start
 add_ideas = ISR_disorganized_militias
 recruit_character = ISR_david_ben_gurion
+recruit_character = ISR_meir_yaari
 recruit_character = ISR_yaakov_hazan
 recruit_character = ISR_shmuel_mikunis
 recruit_character = ISR_zeev_jabotinsky
@@ -43,7 +44,8 @@ promote_character = ISR_zeev_jabotinsky
 recruit_character = ISR_abba_ahimeir
 recruit_character = ISR_pinchas_ben_porat
 recruit_character = ISR_avraham_tehomi
-
+recruit_character = ISR_radwan_hilu
+recruit_character = ISR_fuad_nassar
 
 
 # Starting tech

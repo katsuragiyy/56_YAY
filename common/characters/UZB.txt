@@ -7,7 +7,7 @@ characters={
 			ideology = conservatism_n
 			expire = "1956.12.27"
 			desc = UZB_mustafa_shokay_leader_desc
-			traits = { polyglot democratic_tendencies r56_trait_opposed_to_communism }
+			traits = { UZB_founder_of_the_turkestan_republic polyglot democratic_tendencies r56_trait_opposed_to_communism }
 			id = -1
 		}
 	}

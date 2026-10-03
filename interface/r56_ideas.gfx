@@ -2840,6 +2840,10 @@ spriteType = {
 		textureFile = "gfx/interface/ideas/isr/advisors/r56_idea_ISR_Dov_Hoz.dds"
 	}
 	spriteType = {
+		name = "GFX_idea_ISR_yaakov_hazan"
+		textureFile = "gfx/interface/ideas/isr/advisors/r56_idea_ISR_yaakov_hazan.dds"
+	}
+	spriteType = {
 		name = "GFX_idea_ISR_avraham_tehomi"
 		textureFile = "gfx/interface/ideas/isr/advisors/r56_idea_ISR_Avraham_Tehomi.dds"
 	}

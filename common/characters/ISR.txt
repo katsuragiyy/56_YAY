@@ -67,6 +67,7 @@ characters={
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/ISR/r56_portrait_ISR_Yaakov_Hazan_old.dds"
+				small = GFX_idea_ISR_yaakov_hazan
 			}
 		}
 		country_leader = {
@@ -74,6 +75,38 @@ characters={
 			desc = ISR_yaakov_hazan_leader_desc
 			traits = { ISR_kibbutznik }
 		}
+		advisor={
+			slot = political_advisor
+			idea_token = ISR_yaakov_hazan_advisor
+			allowed = { original_tag = ISR }
+			ai_will_do = { base = 1 }
+			traits = { agrarian_nationalist }
+			cost = 100
+
+			available = {
+				has_completed_focus = ISR_invite_socialist_zionist_politicians
+				has_government = communism
+			}
+		}	
+	}
+	ISR_meir_yaari = {
+		name = ISR_meir_yaari
+		portraits = {
+			civilian = { small = GFX_idea_generic_political_advisor_europe_4 }
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ISR_ISR_meir_yaari_advisor
+			allowed = { original_tag = ISR }
+			ai_will_do = { base = 1 }
+			traits = { ISR_pro_soviet_kibbutznik }
+			cost = 100
+
+			available = {
+				has_government = communism
+				has_completed_focus = ISR_invite_socialist_zionist_politicians
+			}
+		}	
 	}
 	ISR_shmuel_mikunis={
 		portraits = {
@@ -657,5 +690,51 @@ characters={
 				factor = 1.000
 			}
 		}				
-	}					
+	}		
+	
+	# im so fucking sorry
+	ISR_radwan_hilu= {
+		name="Radwan Al-Hilu"
+		portraits={
+			civilian={
+				large = GFX_kr_portrait_arabia_generic_2
+				small = GFX_kr_portrait_arabia_generic_2_small
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = PAL_radwan_hilu_advisor
+			allowed = { original_tag = ISR }
+			ai_will_do = { base = 1 }
+			traits = { international_communist }
+			cost = 100
+
+			available = {
+				has_government = communism
+				has_completed_focus = ISR_reconcile_with_arab_politicians
+			}
+		}
+	}
+	ISR_fuad_nassar = {
+		name= "Fu'ad Nassar"
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_middle_eastern_2d" 
+				large = "gfx/leaders/PAL/r56_portrait_PAL_fuad_nassar.dds"
+			}
+		}	
+		advisor={
+			slot = political_advisor
+			idea_token = PAL_fuad_nassar_israeli_version
+			allowed = { original_tag = ISR }
+			ai_will_do = { base = 1 }
+			traits = { MEN_militant_communist }
+			cost = 100
+
+			available = {
+				has_government = communism
+				has_completed_focus = ISR_reconcile_with_arab_politicians
+			}
+		}	
+	}
 }

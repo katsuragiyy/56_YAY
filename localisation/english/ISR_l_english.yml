@@ -13,6 +13,7 @@
  ISR_abba_ahimeir: "Abba Ahimeir"
  ISR_yaakov_hazan: "Ya'akov Hazan"
  ISR_yaakov_hazan_leader_desc: "Ya'akov Hazan, alongisde Meir Ya'ari, are the key figure of Marxist ideology within the Yishuv. Born in 1899 into a Jewish family in Brest-Litovsk, Hazan quickly became involved with Jewish movements across the Russian Empire. He joined the Labor-Zionist Hashomer Hatzair branch in Warsaw and rose through the ranks rapidly to become one of the leaders of the Polish branch of the organisation. During the Great War, many within the Hashomer Hatsair secretly migrated to the Land of Israel, however Hazan stayed in Poland in order to maintain leadership for the Polish branch. He enlisted into the Polish army, and would participate in the Polish War of Independence. \n\nAfter the war's conclusion, Hazan himself migrated to the Land of Israel, working in the coastal city of Hadera and in the Beit She'an Valley near the [JOR.GetAdjective] border. During his years within the Mandate, he became involved with Kibbutizm institutions, and later the Histadrut, becoming a key figure in both institutions. He and Meir Ya'ari became the central figures of the Socialist faction within the Yishuv around this time, founding the Kibbutz Artzi. After Israel's establishment, the two would found the Hashomer Hatzair Workers Party, which now leads [ISR.GetNameDef] into the uncertain future."
+ ISR_meir_yaari: "Meir Ya'ari"
  ISR_shmuel_mikunis: "Shmuel Mikunis"
  ISR_yisrael_rokach: "Yisrael Rokach"
  ISR_pinchas_rosen: "Pinchas Rosen"
@@ -34,6 +35,7 @@
 
  ISR_poali_zion_veteran:0 "Poali Zion Veteran"
  ISR_kibbutznik:0 "Kibbutznik Veteran"
+ ISR_pro_soviet_kibbutznik: "Pro-Soviet Kibbutznik Veteran"
  ISR_liberal_nationalist:0 "Liberal Nationalist"
  ISR_militia_veteran:0 "Irgun Veteran"
 
@@ -849,18 +851,30 @@
  ISR_limited_return:0 "Limited Right of Return for Arabs"
  ISR_limited_return_desc:0 "Many Arab people of the land were displaced during the war. If we are to legitimize ourselves, we must slowly let them back in."
 
- ISR_strengthen_maki:0 "Grant Power to the Maki Faction"
- ISR_strengthen_maki_desc:0 "Maki's dream of a binational commune is the future of this nation. We must empower them and work towards it."
- ISR_expand_industrial_hubs:0 "Expand Urban Industrial Hubs"
- ISR_expand_industrial_hubs_desc:0  "By expanding industrial hubs in Urban areas such as Haifa, we can promote further urbanization of the nation."
- ISR_soviet_cooperation:0 "Deepen the [SOV.GetAdjective] Connection"
- ISR_soviet_cooperation_desc:0 "It is in the best interest of both our nations to cooperate militarily with each other, as enemies of the revolution are getting stronger."
- ISR_centralization:0 "Establish the [ROOT.GetAdjective] Politburo"
- ISR_centralization_desc:0 "Our nation has been decentralized for a long time. If we are to expand our influence, we must centralize many institutions."
- ISR_merge_unions:0 "Merge Labor Unions"
- ISR_merge_unions_desc:0 "We must work to merge Arab and Jewish labor unions together, in order to further cooperation in the populace."
+ ISR_strengthen_maki: "Grant Power to the Maki Faction"
+ ISR_strengthen_maki_desc: "Maki's dream of a binational commune is the future of this nation. We must empower them and work towards it."
+
+ ISR_unpopular_regime: "Unpopular Regime"
+ ISR_unpopular_regime_desc: "While we hold administrative power over the nation, many in the nation have not taken our ascenion into power well. Many wish to see our regime dismantled and in it's place be estalbished a more conservative government. We must not allow this to happen, and present ourselves as liberators to all of the people inhabiting Palestine."
+
+ ISR_unstable_party_maki: "Inter-party Bickering"
+ ISR_unstable_party_maki_desc: "Bickering within the party is frequent, and many key issues remain unresolved, such as many of our Arab members branching into their own party."
+
+ ISR_expand_industrial_hubs: "Expand Urban Industrial Hubs"
+ ISR_expand_industrial_hubs_desc:  "By expanding industrial hubs in Urban areas such as Haifa, we can promote further urbanization of the nation."
+ 
+ ISR_soviet_cooperation: "Deepen the [SOV.GetAdjective] Connection"
+ ISR_soviet_cooperation_desc: "It is in the best interest of both our nations to cooperate militarily with each other, as enemies of the revolution are getting stronger."
+ 
+ ISR_centralization: "Establish the [ROOT.GetAdjective] Politburo"
+ ISR_centralization_desc: "Our nation has been decentralized for a long time. If we are to expand our influence, we must centralize many institutions."
+ 
+ ISR_merge_unions: "Merge Labor Unions"
+ ISR_merge_unions_desc: "We must work to merge Arab and Jewish labor unions together, in order to further cooperation in the populace."
+ 
  ISR_arab_recruitment: "Crush Reactionary Movements"
  ISR_arab_recruitment_desc: ""
+ 
  ISR_levantine_commune: "Unite Both Sides of the Jordan River"
  ISR_levantine_commune_desc: "We must transcend the boundaries of ethnic conflict and unite our working classes once and for all into a new union. This is how we gain peace."
 
@@ -868,7 +882,26 @@
  ISR_ally_the_uar_desc: ""
 
  ISR_a_five_year_plan: "Implement a Five Year Plan"
- ISR_a_five_year_plan_desc:  ""
+ ISR_a_five_year_plan_desc:  "We will attempt to replicate the success of Joseph Stalin's Soviet Five Year Plan in the hopes of modernizing and industrialising our nation. While a tremendous task, the benefits that will come with it should we succeed will massively help our economy, and solidify us as a regional power."
+
+ ISR_this_and_that_and_maki_fyp: "We will begin the §YFive Year Plan§!, which aims to industrialize the mostly agricultural and rural [ROOT.GetName]. If we are to §GAccomplish§! our objectives, we will receive the §OFollowing Bonuses§!:"
+ ISR_this_and_that_and_maki_fyp_FUCK: "§YHowever§!, if we are to §RFail§! in our objectives, and not reaach the desired quotas by the end of the deadline, we will instead receive the §OFollowing Effects§!:"
+
+ ISR_maki_five_year_plan_category: "The Five Year Plan"
+ ISR_maki_five_year_plan_category_desc: "\n\n\n£decision_header_ISR_maki_five_year_program£\n\n\n\nInspired by the Soviet Five Year Plan that rapidly transformed the Soviet Union from a predominantly agricultural nation to a heavily industrialised power, [ROOT.GetLeader] seeks to replicate the success that the Soviets achieved under Joseph Stalin and give rise to [ROOT.GetNameDef]'s economic sector by forcibly industrialising the heavily agricultural land of Palestine. \n\nObjectives of the Five Year Plan: \n§Y15 Civilian Factories§!, §Y8 Military Factories§!, §Y3 Dockyards§!, §OAll§! of our §OOwned§! and §OCored§! states must have §Y60% Infrastructure§! and have §Y75% Stability§!. Achieving these quotas will bring about the prosperity of the [ROOT.GetAdjective] state and make us a regional power in our own right."
+
+ ISR_five_year_plan_successful: "Successes of the Five Year Plan"
+ ISR_five_year_plan_fucked: "The Five Year Failure"
+
+ ISR_mission_timeout_until_five_year_plan_is_over: "Five Year Plan Timeout"
+ ISR_mission_timeout_until_five_year_plan_is_over_desc: "As the name suggests, we aim to accomplish our objectives in the coming five years, which gives us a deadline. If we do not accomplish the objectives of the five year plan in the next five years, then a disaster may unfold."
+
+ israel_r56x.1.t: "The Five Year Plan Begins"
+ israel_r56x.1.desc: "Under the orders of [ROOT.GetLeader], a Five Year Plan has been implemented, which seeks to modernize the [ROOT.GetAdjective] state and bring about the long-term economic propserity of our nation."
+ israel_r56x.1.a: "We shall achieve greatness!"
+
+ ISR_maki_party_name: "Maki"
+ ISR_maki_party_name_long: "HaMiflega HaKomunistit HaYisraelit"
 
  ISR_reconcile_with_arab_politicians: "Reconcile with Socialist Arab Politicians"
  ISR_reconcile_with_arab_politicians_desc: ""
@@ -965,11 +998,40 @@
  ISR_seize_rabbi_funds: "Confiscate Rabbinite Funds"
  ISR_seize_rabbi_funds_desc: ""
 
+ ISR_seized_rabbi_money_noooo: "Seized Rabbinite Funds"
+
  ISR_invite_elements_of_mapai: "Invite Mapai Politicians Into Our Government"
  ISR_invite_elements_of_mapai_desc: ""
 
  ISR_utilise_hashomer_hatzair: "Utilize Hashomer Hatsair"
  ISR_utilise_hashomer_hatzair_desc: ""
+
+ ISR_one_state_two_peoples: "One State, Two People's"
+ ISR_one_state_two_peoples_desc: ""
+
+ ISR_develop_the_arab_communities: "Develop the New Administrative Divisions"
+ ISR_develop_the_arab_communities_desc: ""
+
+ ISR_economic_integration_with_falestine: "Propose Economic Integration"
+ ISR_economic_integration_with_falestine_desc: ""
+
+ ISR_sponsor_the_palestinian_communist_party: "Prop up the National Liberation League"
+ ISR_sponsor_the_palestinian_communist_party_desc: ""
+
+ ISR_arms_build_up_for_jordan: "Prepare the Army for Battle"
+ ISR_arms_build_up_for_jordan_desc: ""
+
+ ISR_bring_the_eastern_bank_under_our_control: "Bring the Eastern Bank Under Our Control"
+ ISR_bring_the_eastern_bank_under_our_control_desc: ""
+
+ ISR_develop_amman_mapam: "Develop the Amman Area"
+ ISR_develop_amman_mapam_desc: ""
+
+ ISR_establish_a_special_economic_region_in_eilat_and_aqaba: "Establish a Special Economic Zone"
+ ISR_establish_a_special_economic_region_in_eilat_and_aqaba_desc: ""
+
+ ISR_develop_the_sinai_region: "Settle the Sinai"
+ ISR_develop_the_sinai_region_desc: ""
 
  ISR_toe_line:0 "The Three Principles"
  ISR_toe_line_desc:0 "The Maki extremists are too radical and will only destabilize the nation. We must toe the middle line as to not cause a collapse."

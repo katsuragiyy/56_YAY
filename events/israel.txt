@@ -3,6 +3,22 @@
 ###########################
 
 add_namespace = israel
+add_namespace = israel_r56x
+
+country_event = {
+	id = israel_r56x.1
+	title = israel_r56x.1.t # Five Year Plan
+	desc = israel_r56x.1.desc
+
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = israel_r56x.1.a
+		set_country_flag = ISR_five_year_plan_has_BEGUN_flag
+	}
+}
 
 
 country_event = { # Haganah - Irgun fight

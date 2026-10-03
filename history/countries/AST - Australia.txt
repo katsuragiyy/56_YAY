@@ -473,9 +473,9 @@ set_popularities = {
 	communism = 2
 }
 
-country_event = {
-	id = r56_australia.1
-	days = 23
+news_event = {
+	id = r56.news_event.1121
+	days = 512
 }
 
 country_event = {

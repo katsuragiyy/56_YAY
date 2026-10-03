@@ -2443,84 +2443,14 @@ news_event = {
 	picture = GFX_report_event_r56_papua_eruption
 
 	fire_only_once = yes
-
-	trigger = {
-		date > 1937.5.27
-		date < 1937.5.29
-		NOT = {
-			has_global_flag = rabaul_eruption_1937_took_place
-		}
-	}
-
-	immediate = {
-		set_global_flag = rabaul_eruption_1937_took_place
-	}
-
-	mean_time_to_happen = {
-		days = 2
-	}
+	is_triggered_only = yes
 
 	option = {
 		name = r56.news_event.1121.a
-		trigger = {
-			OR = {
-			    tag = AST
-				tag = NZL
-				tag = VAN
-				tag = SOL
-				tag = PNG
-				tag = WPG
-				tag = MLK
-				tag = FIJ
-				tag = TML
-				tag = TUV
-				tag = KIR
-				tag = NRU
-				tag = FSM
-				tag = HAW
-				tag = GUM
-				tag = PLU
-				tag = PHI
-				tag = INS
-				tag = TON
-				tag = SAM
-				tag = TAH
-				tag = RAP
-				tag = MRS
-				tag = NIU
-				tag = CHT
-			}
-		}
-	}
-	
-	option = {
-		name = r56.news_event.1121.b
-		trigger = {
-		    NOT = {
-				OR = {
-					tag = AST
-					tag = NZL
-					tag = VAN
-					tag = SOL
-					tag = PNG
-					tag = WPG
-					tag = MLK
-					tag = FIJ
-					tag = TML
-					tag = TUV
-					tag = KIR
-					tag = NRU
-					tag = FSM
-					tag = HAW
-					tag = GUM
-					tag = PLU
-					tag = PHI
-					tag = INS
-					tag = TON
-					tag = SAM
-					tag = TAH
-					tag = RAP
-				}
+		737 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
 			}
 		}
 	}
