@@ -12,6 +12,7 @@
  ISR_lehi_triumvirate: "Lehi Triumvirate"
  ISR_abba_ahimeir: "Abba Ahimeir"
  ISR_yaakov_hazan: "Ya'akov Hazan"
+ ISR_yaakov_hazan_leader_desc: "Ya'akov Hazan, alongisde Meir Ya'ari, are the key figure of Marxist ideology within the Yishuv. Born in 1899 into a Jewish family in Brest-Litovsk, Hazan quickly became involved with Jewish movements across the Russian Empire. He joined the Labor-Zionist Hashomer Hatzair branch in Warsaw and rose through the ranks rapidly to become one of the leaders of the Polish branch of the organisation. During the Great War, many within the Hashomer Hatsair secretly migrated to the Land of Israel, however Hazan stayed in Poland in order to maintain leadership for the Polish branch. He enlisted into the Polish army, and would participate in the Polish War of Independence. \n\nAfter the war's conclusion, Hazan himself migrated to the Land of Israel, working in the coastal city of Hadera and in the Beit She'an Valley near the [JOR.GetAdjective] border. During his years within the Mandate, he became involved with Kibbutizm institutions, and later the Histadrut, becoming a key figure in both institutions. He and Meir Ya'ari became the central figures of the Socialist faction within the Yishuv around this time, founding the Kibbutz Artzi. After Israel's establishment, the two would found the Hashomer Hatzair Workers Party, which now leads [ISR.GetNameDef] into the uncertain future."
  ISR_shmuel_mikunis: "Shmuel Mikunis"
  ISR_yisrael_rokach: "Yisrael Rokach"
  ISR_pinchas_rosen: "Pinchas Rosen"
@@ -32,7 +33,7 @@
  ISR_shmuel_tankus: "Shmuel Tankus"
 
  ISR_poali_zion_veteran:0 "Poali Zion Veteran"
- ISR_kibbutznik:0 "Kibbutznik"
+ ISR_kibbutznik:0 "Kibbutznik Veteran"
  ISR_liberal_nationalist:0 "Liberal Nationalist"
  ISR_militia_veteran:0 "Irgun Veteran"
 
@@ -848,34 +849,139 @@
  ISR_limited_return:0 "Limited Right of Return for Arabs"
  ISR_limited_return_desc:0 "Many Arab people of the land were displaced during the war. If we are to legitimize ourselves, we must slowly let them back in."
 
- ISR_strengthen_maki:0 "Empower Maki"
+ ISR_strengthen_maki:0 "Grant Power to the Maki Faction"
  ISR_strengthen_maki_desc:0 "Maki's dream of a binational commune is the future of this nation. We must empower them and work towards it."
  ISR_expand_industrial_hubs:0 "Expand Urban Industrial Hubs"
  ISR_expand_industrial_hubs_desc:0  "By expanding industrial hubs in Urban areas such as Haifa, we can promote further urbanization of the nation."
- ISR_soviet_cooperation:0 "Soviet Military Cooperation"
+ ISR_soviet_cooperation:0 "Deepen the [SOV.GetAdjective] Connection"
  ISR_soviet_cooperation_desc:0 "It is in the best interest of both our nations to cooperate militarily with each other, as enemies of the revolution are getting stronger."
- ISR_centralization:0 "Continue Political Centralization"
+ ISR_centralization:0 "Establish the [ROOT.GetAdjective] Politburo"
  ISR_centralization_desc:0 "Our nation has been decentralized for a long time. If we are to expand our influence, we must centralize many institutions."
  ISR_merge_unions:0 "Merge Labor Unions"
  ISR_merge_unions_desc:0 "We must work to merge Arab and Jewish labor unions together, in order to further cooperation in the populace."
- ISR_arab_recruitment:0 "Arab Army Recruitment"
- ISR_arab_recruitment_desc:0 "If we are to reach a unitary society, we must allow Arabic soldiers in our military."
- ISR_levantine_commune:0 "A Levantine Commune"
- ISR_levantine_commune_desc:0 "We must transcend the boundaries of ethnic conflict and unite our working classes once and for all into a new union. This is how we gain peace."
+ ISR_arab_recruitment: "Crush Reactionary Movements"
+ ISR_arab_recruitment_desc: ""
+ ISR_levantine_commune: "Unite Both Sides of the Jordan River"
+ ISR_levantine_commune_desc: "We must transcend the boundaries of ethnic conflict and unite our working classes once and for all into a new union. This is how we gain peace."
 
+ ISR_ally_the_uar: "Ally the United Arab Republic" 
+ ISR_ally_the_uar_desc: ""
 
+ ISR_a_five_year_plan: "Implement a Five Year Plan"
+ ISR_a_five_year_plan_desc:  ""
 
- ISR_toe_line:0 "Toe the Line"
+ ISR_reconcile_with_arab_politicians: "Reconcile with Socialist Arab Politicians"
+ ISR_reconcile_with_arab_politicians_desc: ""
+
+ ISR_invite_socialist_zionist_politicians: "Limited Cooperation With Zionist Politicians"
+ ISR_invite_socialist_zionist_politicians_desc: ""
+
+ ISR_hold_the_first_government_meeting: "Hold the First Hearing"
+ ISR_hold_the_first_government_meeting_desc: ""
+
+ ISR_stoke_the_anti_imperialist_flames: "Found the Jordanian Communist Party"
+ ISR_stoke_the_anti_imperialist_flames_desc: ""
+
+ ISR_accept_soviet_dominionship: "A Treaty of Eternal Friendship"
+ ISR_accept_soviet_dominionship_desc: ""
+
+ ISR_invite_soviet_economic_advisors: "Invite [SOV.GetAdjective] Economic Advisors"
+ ISR_invite_soviet_economic_advisors_desc: ""
+
+ ISR_joint_military_cooperation_with_the_soviets: "Joint Military Exercises with the [SOV.GetAdjective]s"
+ ISR_joint_military_cooperation_with_the_soviets_desc: ""
+
+ ISR_keep_moscow_at_a_distance: "Keep the [SOV.GetAdjective]s at a Distance"
+ ISR_keep_moscow_at_a_distance_desc: ""
+
+ ISR_propogandize_maki_rule: "Mobilize Anti Imperialist Sentiment"
+ ISR_propogandize_maki_rule_desc: ""
+
+ ISR_combat_party_bureaucracy: "Combat Party Bureaucracy"
+ ISR_combat_party_bureaucracy_desc: ""
+
+ ISR_nationalise_foreign_assets: "Nationalize Western Economic Assets"
+ ISR_nationalise_foreign_assets_desc: ""
+
+ ISR_train_the_next_generation_of_leaders: "Attract Youth Leaders From the Urban Centers"
+
+ ISR_begin_army_economy_stuff: "Begin Moderate Mobilisation"
+ ISR_begin_army_economy_stuff_desc: ""
+
+ ISR_guarantee_employment_for_all: "Guaranteed Employment"
+ ISR_guarantee_employment_for_all_desc: ""
+
+ ISR_open_up_a_university_maki: "Educate the Lower Class Workers"
+ ISR_open_up_a_university_maki_desc: ""
+
+ ISR_the_levantine_commune: "The Levantine Commune"
+ ISR_the_levantine_commune_desc: ""
+
+ ISR_maki_is_israel_real_real: "The Communist Party of Palestine, Reborn!"
+ ISR_maki_is_israel_real_real_desc: ""
+
+ ISR_friendship_between_nations: "Friendship Between Nations"
+ ISR_friendship_between_nations_desc: ""
+
+ ISR_appeal_to_the_west: "Appeal to the Western Powers"
+ ISR_appeal_to_the_west_desc: ""
+
+ ISR_join_the_comintern: "The Second Home of the Jewish People"
+ ISR_join_the_comintern_desc: ""
+
+ ISR_push_for_neutrality: "Declare a Policy of Non-intervention"
+ ISR_push_for_neutrality_desc: ""
+ 
+ ISR_invite_nkvd: "Mossad-NKVD Intelligence Exchange"
+ ISR_invite_nkvd_desc: ""
+
+ ISR_soviet_exchange_program: "[SOV.GetAdjective] Exchange Program"
+ ISR_soviet_exchange_program_desc: ""
+
+ ISR_for_once_and_for_all: "Join the Fight Against European Capitalism"
+ ISR_for_once_and_for_all_desc: ""
+
+ ISR_address_the_urban_working_class: "Address the Urban Working Class"
+ ISR_address_the_urban_working_class_desc: ""
+
+ ISR_construct_public_housing: "Public Housing Initiative"
+ ISR_construct_public_housing_desc: ""
+
+ ISR_modern_agricultural_tools: "Develop Arab Communities"
+ ISR_modern_agricultural_tools_desc: ""
+
+ ISR_wage_equality: "Strive for Wage Equality"
+ ISR_wage_equality_desc: ""
+
+ ISR_educate_the_masses: "Mass-education Program"
+ ISR_educate_the_masses_desc: ""
+
+ ISR_transition_into_the_democratic_framework: "Transition Into the Democratic Framework"
+ ISR_transition_into_the_democratic_framework_desc: ""
+
+ ISR_the_religious_compromise: "The Religious Compromise"
+ ISR_the_religious_compromise_desc: ""
+
+ ISR_seize_rabbi_funds: "Confiscate Rabbinite Funds"
+ ISR_seize_rabbi_funds_desc: ""
+
+ ISR_invite_elements_of_mapai: "Invite Mapai Politicians Into Our Government"
+ ISR_invite_elements_of_mapai_desc: ""
+
+ ISR_utilise_hashomer_hatzair: "Utilize Hashomer Hatsair"
+ ISR_utilise_hashomer_hatzair_desc: ""
+
+ ISR_toe_line:0 "The Three Principles"
  ISR_toe_line_desc:0 "The Maki extremists are too radical and will only destabilize the nation. We must toe the middle line as to not cause a collapse."
  ISR_fix_bureaucracy:0 "Address Histardrut Bureaucracy"
  ISR_fix_bureaucracy_desc:0 "The Histadruts are very bureaucratic currently, which makes many people dislike them. We must address this if we are to continue letting them run the economy."
- ISR_galilee_development:0 "Develop the Galilee"
+ ISR_galilee_development:0 "Fund Kibbutizm in the Galilee"
  ISR_galilee_development_desc:0 "We must develop the Galilee area of our nation if we are to keep the support of the rural population there."
 
- ISR_reconciliation:0 "Reconciliation With the Arabs"
+ ISR_reconciliation:0 "Zionism"
  ISR_reconciliation_desc:0 "We cannot be enemies forever. It is time to reconcile, and find out a solution for the future."
- ISR_work_with_arab:0 "Work with Arab Leaders"
- ISR_work_with_arab_desc:0 "We must reach out to likeminded Arab leaders in order to secure a mutual agreement."
+ ISR_work_with_arab:0 "Grant Party Membership to Arabs"
+ ISR_work_with_arab_desc:0 "."
  ISR_recognize_beduin:0 "Recognize Beduin Settlments"
  ISR_recognize_beduin_desc:0 "If we are to gain the support of the Beduin in the south, we must recognize their settlements and help them settle down."
  ISR_two_state_solution:0 "Two State Solution"
@@ -884,7 +990,7 @@
  ISR_shearim:0 "She'arim Po Niftach"
  ISR_shearim_desc:0 "Our dream of a great Socialist commonwealth has been achieved. For the good of the Jews and the Arabs.\n\nThe gates are opened."
 
- ISR_invest_in_kibbutzim:0 "Invest in Kibbutzim"
+ ISR_invest_in_kibbutzim:0 "Socialism"
  ISR_invest_in_kibbutzim_desc:0 "Agrarian Kibbutzim are the base behind our economic plan. We must support them to reduce our reliance on foreign food imports."
 
  ISR_mapai_hashomer:0 "Mending Old Rifts"

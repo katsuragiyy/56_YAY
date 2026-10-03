@@ -65157,6 +65157,294 @@ spriteTypes = {
     legacy_lazy_load = no
   }
 
+  spriteType = {
+    name = "GFX_goal_OTHER_bringing_breakaways_back_into_the_fold_shine"
+    texturefile = "gfx/interface/goals/OTHER_bringing_breakaways_back_into_the_fold.dds"
+    effectFile = "gfx/FX/buttonstate.lua"
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_bringing_breakaways_back_into_the_fold.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = -90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_bringing_breakaways_back_into_the_fold.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = 90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+    legacy_lazy_load = no
+  }
+
+  spriteType = {
+    name = "GFX_goal_OTHER_capital_of_russia_tsar_shine"
+    texturefile = "gfx/interface/goals/OTHER_capital_of_the_tsars.dds"
+    effectFile = "gfx/FX/buttonstate.lua"
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_capital_of_the_tsars.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = -90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_capital_of_the_tsars.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = 90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+    legacy_lazy_load = no
+  }
+
+  spriteType = {
+    name = "GFX_goal_OTHER_beaten_but_not_defeated_shine"
+    texturefile = "gfx/interface/goals/OTHER_beaten_but_not_defeated.dds"
+    effectFile = "gfx/FX/buttonstate.lua"
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_beaten_but_not_defeated.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = -90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_beaten_but_not_defeated.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = 90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+    legacy_lazy_load = no
+  }
+
+  spriteType = {
+    name = "GFX_goal_OTHER_russian_fascist_youth_movement_shine"
+    texturefile = "gfx/interface/goals/OTHER_russian_fascist_youth_movement.dds"
+    effectFile = "gfx/FX/buttonstate.lua"
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_russian_fascist_youth_movement.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = -90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_russian_fascist_youth_movement.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = 90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+    legacy_lazy_load = no
+  }
+
+  spriteType = {
+    name = "GFX_goal_OTHER_world_revolution_by_force_shine"
+    texturefile = "gfx/interface/goals/OTHER_world_violent_world_revolution_raaah.dds"
+    effectFile = "gfx/FX/buttonstate.lua"
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_world_violent_world_revolution_raaah.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = -90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_world_violent_world_revolution_raaah.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = 90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+    legacy_lazy_load = no
+  }
+
+  spriteType = {
+    name = "GFX_goal_OTHER_stalins_personal_constitution_shine"
+    texturefile = "gfx/interface/goals/OTHER_stalins_personal_constitution.dds"
+    effectFile = "gfx/FX/buttonstate.lua"
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_stalins_personal_constitution.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = -90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_stalins_personal_constitution.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = 90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+    legacy_lazy_load = no
+  }
+
+  spriteType = {
+    name = "GFX_goal_OTHER_mongolian_war_me_shine"
+    texturefile = "gfx/interface/goals/OTHER_mongolian_war_me.dds"
+    effectFile = "gfx/FX/buttonstate.lua"
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_mongolian_war_me.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = -90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_mongolian_war_me.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = 90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+    legacy_lazy_load = no
+  }
+
+  spriteType = {
+    name = "GFX_goal_OTHER_heros_of_the_soviet_union_shine"
+    texturefile = "gfx/interface/goals/OTHER_heros_of_the_soviet_union.dds"
+    effectFile = "gfx/FX/buttonstate.lua"
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_heros_of_the_soviet_union.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = -90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_heros_of_the_soviet_union.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = 90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+    legacy_lazy_load = no
+  }
+
+  spriteType = {
+    name = "GFX_goal_OTHER_restoring_the_triple_alliance_yeeeee_shine"
+    texturefile = "gfx/interface/goals/OTHER_restoring_the_triple_alliance_whooo.dds"
+    effectFile = "gfx/FX/buttonstate.lua"
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_restoring_the_triple_alliance_whooo.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = -90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+
+    animation = {
+      animationmaskfile = "gfx/interface/goals/OTHER_restoring_the_triple_alliance_whooo.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = 90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+    legacy_lazy_load = no
+  }
+
 	spriteType = {
     name = "GFX_goal_SOV_russian_monarchy_shine"
     texturefile = "gfx/interface/goals/sov/r56_goal_SOV_russian_monarchy.dds"

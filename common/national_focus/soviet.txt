@@ -18415,7 +18415,7 @@ focus_tree = {
 
 	focus = {
 		id = SOV_beaten_but_not_defeated
-		icon = GFX_goal_SOV_russian_monarchy
+		icon = GFX_goal_OTHER_beaten_but_not_defeated # 56
 		x = 61
 		y = 0
 		relative_position_id = SOV_the_path_of_marxism_leninism
@@ -18837,7 +18837,7 @@ focus_tree = {
 
 	focus = {
 		id = SOV_fascist_youth_union
-		icon = GFX_goal_small_infantry
+		icon = GFX_goal_OTHER_russian_fascist_youth_movement # 56
 		prerequisite = { 
 			focus = SOV_embrace_the_black_hundreds
 		}
@@ -19462,7 +19462,7 @@ focus_tree = {
 
 	focus = {
 		id = SOV_bringing_breakaways_back_to_the_fold
-		icon = GFX_goal_prometheism
+		icon = GFX_goal_OTHER_bringing_breakaways_back_into_the_fold # 56
 		prerequisite = { focus = SOV_consolidate_power }
 		x = 1
 		y = 1
@@ -19497,7 +19497,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SOV_offer_autonomy_to_former_soviet_republics 
-		icon = GFX_goal_generic_secret_documents
+		icon = GFX_goal_SOV_dissolve_the_ussr # 56
 		prerequisite = { focus = SOV_consolidate_power }
 		x = -1
 		y = 1
@@ -26123,7 +26123,7 @@ focus = {
 
 	focus = {
 		id = SOV_capital_of_the_tsars
-		icon = GFX_goal_SOV_imperial_eagle
+		icon = GFX_goal_OTHER_capital_of_russia_tsar # 56
 		prerequisite = { focus = SOV_romanov_reconstruction }
 		x = -2
 		y = 1

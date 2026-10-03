@@ -1665,7 +1665,7 @@ focus_tree = {
 		id = ISR_hashomer_leads
 		icon = GFX_goal_generic_communism
 		relative_position_id = ISR_brighter_future
-		x = 0 
+		x = -2 
 		y = 2
 		prerequisite = {
 			focus = ISR_the_elections
@@ -1685,51 +1685,13 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ISR_strengthen_union
-		icon = GFX_goal_generic_industrial_unionism
-		relative_position_id = ISR_hashomer_leads
-		x = 0
-		y = 1
-		prerequisite = {
-			focus = ISR_hashomer_leads
-		}
-		cost = 8
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ISR_histadrut_start
-				add_idea = ISR_histadrut_strong
-			}
-		}
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-			FOCUS_FILTER_INDUSTRY
-		}
-	}
-	focus = {
-		id = ISR_limited_austerity 
-		icon = GFX_generic_goal_communist_reforms
-		relative_position_id = ISR_strengthen_union
-		x = -1 
-		y = 1
-		prerequisite = {
-			focus = ISR_strengthen_union
-		} 
-		cost = 5
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ISR_austerity
-				add_idea = limited_exports
-			}
-		}
-	}
-	focus = {
 		id = ISR_soviet_support
 		icon = GFX_focus_generic_russian_deal_communist
-		relative_position_id = ISR_strengthen_union
+		relative_position_id = ISR_hashomer_leads
 		x = 1 
 		y = 1
 		prerequisite = {
-			focus = ISR_strengthen_union
+			focus = ISR_hashomer_leads
 		}
 		available = {
 			SOV = {
@@ -1761,14 +1723,11 @@ focus_tree = {
 	focus = {
 		id = ISR_limited_return 
 		icon = GFX_focus_generic_immigration
-		relative_position_id = ISR_strengthen_union
-		x = 0 
-		y = 2
+		relative_position_id = ISR_hashomer_leads
+		x = -1 
+		y = 1
 		prerequisite = {
-			focus = ISR_limited_austerity
-		}
-		prerequisite = {
-			focus = ISR_soviet_support
+			focus = ISR_hashomer_leads
 		}
 		cost = 8
 		completion_reward = {
@@ -1824,10 +1783,16 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_strengthen_maki
-		icon = GFX_goal_ISR_communists
+		icon = GFX_goal_MPL_mikunis
+		prerequisite = { focus = ISR_limited_return }
+		prerequisite = { focus = ISR_soviet_support }
+		mutually_exclusive = { focus = ISR_toe_line }
 		relative_position_id = ISR_limited_return
+		
+		cost = 6
 		x = -3
 		y = 1
+
 		available = {
 			if = {
 				limit = {
@@ -1842,14 +1807,10 @@ focus_tree = {
 				}
 			}
 		}
-		prerequisite = {
-			focus = ISR_limited_return
-		}
-		mutually_exclusive = {
-			focus = ISR_toe_line
-		}
-		cost = 6
+
 		completion_reward = {
+			# our party literally sucks ass we need to repair it
+			# national spirit about popularity of maki within israel
 			set_party_name = {
 				ideology = communism
 				long_name = "HaMiflega HaKomunistit HaYisraelit"
@@ -1859,42 +1820,15 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ISR_expand_industrial_hubs
-		icon = GFX_goal_communist_factory
-		relative_position_id = ISR_strengthen_maki
-		x = -1
-		y = 1
-		prerequisite = {
-			focus = ISR_strengthen_maki
-		}
-		cost = 5
-		completion_reward = {
-			random_owned_controlled_state = {
-				prioritize = {
-					454
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-				}
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
 		id = ISR_soviet_cooperation
 		icon = GFX_goal_ISR_military_soviet
+		prerequisite = { focus = ISR_centralization }
 		relative_position_id = ISR_strengthen_maki
-		x = 1 
-		y = 1
-		prerequisite = {
-			focus = ISR_strengthen_maki
-		}
+		
+		cost = 5
+		x = -4 
+		y = 2
+
 		available = {
 			SOV = {
 				has_government = communism
@@ -1914,7 +1848,6 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 5
 		completion_reward = {
 			army_experience = 25
 			air_experience = 25
@@ -1927,18 +1860,16 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_centralization
-		icon = GFX_goal_communist_visible_hand
+		icon = GFX_goal_generic_council_communism
 		relative_position_id = ISR_strengthen_maki
-		x = 0
-		y = 2
+		prerequisite = { focus = ISR_strengthen_maki }
+		
 		cost = 5
-		prerequisite = {
-			focus = ISR_soviet_cooperation
-		}
-		prerequisite = {
-			focus = ISR_expand_industrial_hubs
-		}
+		x = -1
+		y = 1
+
 		completion_reward = {
+			# WE HAVE POLITBURO!!
 			add_timed_idea = {
 				idea = MPL_centralization
 				days = 180
@@ -1950,46 +1881,200 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ISR_arab_recruitment
-		icon = GFX_goal_generic_red_commando
+		id = ISR_reconcile_with_arab_politicians
+		icon = GFX_goal_generic_befriend_palestine
 		relative_position_id = ISR_centralization
+		prerequisite = { focus = ISR_centralization }
+		
+		cost = 5
+		x = -1
+		y = 1
+
+		completion_reward = {
+			# we are frens with araps
+		}
+	}
+	focus = {
+		id = ISR_invite_socialist_zionist_politicians
+		icon = GFX_goal_generic_socdem_2
+		relative_position_id = ISR_centralization
+		prerequisite = { focus = ISR_centralization }
+		
+		cost = 5
 		x = 1
 		y = 1
-		prerequisite = {
-			focus = ISR_centralization
+
+		completion_reward = {
+			# we are frens with socialist zios
 		}
+	}
+	focus = {
+		id = ISR_hold_the_first_government_meeting
+		icon = GFX_focus_SOV_the_supreme_soviet
+		relative_position_id = ISR_centralization
+		prerequisite = { focus = ISR_invite_socialist_zionist_politicians }
+		prerequisite = { focus = ISR_reconcile_with_arab_politicians }
+		
+		cost = 5
+		x = 0
+		y = 2
+
+		completion_reward = {
+			# we are frens with araps
+		}
+	}
+	focus = {
+		id = ISR_stoke_the_anti_imperialist_flames
+		icon = GFX_focus_ITA_peasants_rise
+		relative_position_id = ISR_centralization
+		prerequisite = { focus = ISR_soviet_cooperation }
+		prerequisite = { focus = ISR_reconcile_with_arab_politicians }
+		
+		cost = 7.2
+		x = -2
+		y = 2
+
+		completion_reward = {
+			# the levant will have revolution whether it likes it or not
+		}
+	}
+	focus = {
+		id = ISR_ally_the_uar
+		icon = GFX_goal_EGY_neu
+		relative_position_id = ISR_stoke_the_anti_imperialist_flames
+		prerequisite = { focus = ISR_stoke_the_anti_imperialist_flames focus = ISR_keep_moscow_at_a_distance }
+		
+		cost = 4
+		x = -2
+		y = 2
+
+		completion_reward = {
+			# the levant will have revolution whether it likes it or not
+		}
+	}
+	focus = {
+		id = ISR_keep_moscow_at_a_distance
+		icon = GFX_goal_soviet_threat
+		relative_position_id = ISR_centralization
+		mutually_exclusive = { focus = ISR_accept_soviet_dominionship }
+		prerequisite = { focus = ISR_soviet_cooperation }
+		
+		cost = 7.2
+		x = -4
+		y = 2
+
+		completion_reward = {
+			# we accept being a puppet, it suits us
+		}
+	}
+	focus = {
+		id = ISR_accept_soviet_dominionship
+		icon = GFX_goal_generic_soviet_assistance
+		relative_position_id = ISR_centralization
+		mutually_exclusive = { focus = ISR_keep_moscow_at_a_distance }
+		prerequisite = { focus = ISR_soviet_cooperation }
+		
+		cost = 5
+		x = -6
+		y = 2
+
+		completion_reward = {
+			# we accept being a puppet, it suits us
+		}
+	}
+
+	focus = {
+		id = ISR_invite_soviet_economic_advisors
+		icon = GFX_goal_sov_soviet_ind_upgrade
+		relative_position_id = ISR_accept_soviet_dominionship
+		prerequisite = { focus = ISR_accept_soviet_dominionship }
+		
+		cost = 10
+		x = -1
+		y = 1
+
+		completion_reward = {
+			# we accept being a puppet, it suits us
+		}
+	}
+	focus = {
+		id = ISR_joint_military_cooperation_with_the_soviets
+		icon = GFX_focus_AFG_defender_of_central_asia
+		relative_position_id = ISR_accept_soviet_dominionship
+		prerequisite = { focus = ISR_accept_soviet_dominionship }
+		
+		cost = 8
+		x = 1
+		y = 1
+
+		completion_reward = {
+			# we accept being a puppet, it suits us
+		}
+	}
+	
+	focus = {
+		id = ISR_arab_recruitment
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		relative_position_id = ISR_centralization
+		x = 2
+		y = 0
+		prerequisite = { focus = ISR_strengthen_maki }
 		cost = 7
 		completion_reward = {
 			add_ideas = ISR_arab_recruitment
 		}
 	}
 	focus = {
-		id = ISR_merge_unions
-		icon = GFX_goal_generic_communist_government2
-		relative_position_id = ISR_centralization
+		id = ISR_propogandize_maki_rule
+		icon = GFX_focus_SWE_refuge_for_revolutionaries
+		relative_position_id = ISR_hold_the_first_government_meeting
+		prerequisite = { focus = ISR_hold_the_first_government_meeting }
+		
+		cost = 5
 		x = -1
 		y = 1
-		prerequisite = {
-			focus = ISR_centralization
-		}
-		cost = 5
+
 		completion_reward = {
-			add_ideas = MPL_unions
+			# newspaper goes WILD. minor buffs
+		}
+	}
+	focus = {
+		id = ISR_combat_party_bureaucracy
+		icon = GFX_focus_SOV_the_last_purge
+		relative_position_id = ISR_hold_the_first_government_meeting
+		prerequisite = { focus = ISR_hold_the_first_government_meeting }
+		
+		cost = 5
+		x = 0
+		y = 2
+
+		completion_reward = {
+			# our party is kind of corrupt. lets fix that!
+		}
+	}
+
+	focus = {
+		id = ISR_train_the_next_generation_of_leaders
+		icon = GFX_focus_JAP_organize_the_student_movements
+		relative_position_id = ISR_propogandize_maki_rule
+		prerequisite = { focus = ISR_propogandize_maki_rule }
+		
+		cost = 5
+		x = -1
+		y = 1
+
+		completion_reward = {
+			# our party is kind of corrupt. lets fix that!
 		}
 	}
 	focus = {
 		id = ISR_levantine_commune
-		icon = GFX_goal_MPL_levant_unified
+		icon = GFX_focus_PRC_revolutionary_war_of_the_masses
+		prerequisite = { focus = ISR_stoke_the_anti_imperialist_flames }
 		relative_position_id = ISR_centralization
-		x = 0
-		y = 2
-		prerequisite = {
-			focus = ISR_arab_recruitment
-		}
-		prerequisite = {
-			focus = ISR_merge_unions
-		}
-		cost = 5
+		x = -3
+		y = 3
+		cost = 10
 		completion_reward = {
 			set_cosmetic_tag = MPL_free
 			add_state_core = 966
@@ -2051,9 +2136,9 @@ focus_tree = {
 	
 	focus = {
 		id = ISR_toe_line
-		icon = GFX_goal_generic_labor_regulation
+		icon = GFX_goal_FRA_social_reforms
 		relative_position_id = ISR_limited_return
-		x = 3
+		x = 5
 		y = 1
 		prerequisite = {
 			focus = ISR_limited_return
@@ -2063,6 +2148,10 @@ focus_tree = {
 		}
 		cost = 6
 		completion_reward = {
+			# make hazan's portrait switch in in 1945 to older one? or just keep his 1952 portrait at all times
+			# hey guys elections are like really cool you know have you ever heard of elections they are like really cool..
+			# factionalism mechanic. merge to become mapam
+			# usa isnt that bad actually and we will accept loans
 			add_political_power = 100
 			add_popularity = {
 				ideology = communism
@@ -2080,13 +2169,11 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_fix_bureaucracy
-		icon = GFX_goal_generic_communal_statistical_commission
-		relative_position_id = ISR_toe_line
-		x = -1
+		icon = GFX_goal_generic_state_economy
+		prerequisite = { focus = ISR_strengthen_union }
+		relative_position_id = ISR_strengthen_union
+		x = 0
 		y = 1
-		prerequisite = {
-			focus = ISR_toe_line
-		} 
 		available = {
 			has_completed_focus = ISR_welfare_for_refugees
 		}
@@ -2100,14 +2187,13 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_invest_in_kibbutzim
-		icon = GFX_goal_generic_agriculture2
+		icon = GFX_goal_generic_industrial_democracy
+		prerequisite = { focus = ISR_toe_line }
+		#prerequisite = { focus = ISR_strengthen_union }
 		relative_position_id = ISR_toe_line
-		x = 1
+		x = -2
 		y = 1
 		cost = 10
-		prerequisite = {
-			focus = ISR_toe_line
-		}
 		completion_reward = {
 			add_ideas = ISR_kibbutzim
 		}
@@ -2116,35 +2202,11 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ISR_galilee_development 
-		icon = GFX_goal_generic_commie_investments
-		relative_position_id = ISR_invest_in_kibbutzim
+		id = ISR_reconciliation 
+		icon = GFX_goal_ISR_flag_6
+		relative_position_id = ISR_toe_line
 		x = 1
 		y = 1
-		prerequisite = {
-			focus = ISR_invest_in_kibbutzim
-		}
-		available = {
-			controls_province = 1065
-		}
-		cost = 5
-		completion_reward = {
-			454 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ISR_reconciliation 
-		icon = GFX_goal_generic_risky_deal
-		relative_position_id = ISR_toe_line
-		x = 0
-		y = 2
 		prerequisite = {
 			focus = ISR_toe_line
 		}
@@ -2155,14 +2217,135 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = ISR_friendship_between_nations
+		icon = GFX_goal_USA_united_nations
+		relative_position_id = ISR_toe_line
+		x = 4
+		y = 1
+		prerequisite = {
+			focus = ISR_toe_line
+		}
+		cost = 5
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = ISR_join_the_comintern
+		icon = GFX_focus_SOV_socialism_in_one_country
+		prerequisite = { focus = ISR_friendship_between_nations }
+		relative_position_id = ISR_friendship_between_nations
+		
+		cost = 5
+		x = 3
+		y = 1
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = ISR_appeal_to_the_west
+		icon = GFX_allies
+		prerequisite = { focus = ISR_friendship_between_nations }
+		relative_position_id = ISR_friendship_between_nations
+		
+		cost = 5
+		x = 0
+		y = 1
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = ISR_soviet_exchange_program
+		icon = GFX_goal_fighters_soviet
+		prerequisite = { focus = ISR_join_the_comintern }
+		relative_position_id = ISR_join_the_comintern
+		
+		cost = 5
+		x = -2
+		y = 1
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = ISR_invite_nkvd
+		icon = GFX_SOV_nkvd_primacy_ccp_2d_sov_compatibility
+		prerequisite = { focus = ISR_join_the_comintern }
+		relative_position_id = ISR_join_the_comintern
+		
+		cost = 5
+		x = 0
+		y = 1
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.1
+		}
+	}
+	#focus = { this should be a decision
+	#	id = ISR_accept_american_loans
+	#	icon = GFX_Goal_USA_new_deal
+	#	prerequisite = { focus = ISR_appeal_to_the_west }
+	#	relative_position_id = ISR_friendship_between_nations
+	#	
+	#	cost = 5
+	#	x = -1
+	#	y = 2
+#
+	#	completion_reward = {
+	#		add_political_power = 100
+	#		add_stability = 0.1
+	#	}
+	#}
+	focus = {
+		id = ISR_push_for_neutrality
+		icon = GFX_focus_SWI_neutrality_on_the_move
+		prerequisite = { focus = ISR_appeal_to_the_west focus = ISR_join_the_comintern }
+		mutually_exclusive = { focus = ISR_for_once_and_for_all }
+		relative_position_id = ISR_friendship_between_nations
+		
+		cost = 5
+		x = 0
+		y = 3
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = ISR_for_once_and_for_all
+		icon = GFX_goal_sov_east_vs_west
+		prerequisite = { focus = ISR_join_the_comintern }
+		mutually_exclusive = { focus = ISR_push_for_neutrality }
+		relative_position_id = ISR_friendship_between_nations
+		
+		cost = 5
+		x = 2
+		y = 3
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.1
+		}
+	}
+	focus = {
 		id = ISR_recognize_beduin
-		icon = GFX_goal_camelry
+		icon = GFX_focus_generic_camel_corps
+		prerequisite = { focus = ISR_invest_in_kibbutzim focus = ISR_reconciliation }
 		relative_position_id = ISR_reconciliation
 		x = -1
 		y = 1
-		prerequisite = {
-			focus = ISR_reconciliation
-		}
+		
 
 		bypass = {
 			NOT = {
@@ -2194,16 +2377,12 @@ focus_tree = {
 	}
 	focus = {
 		id = ISR_work_with_arab
-		icon = GFX_goal_generic_befriend_palestine
+		icon = GFX_focus_generic_workers_and_farmers_rise
+		prerequisite = { focus = ISR_reconciliation }
 		relative_position_id = ISR_reconciliation
 		x = 1
 		y = 1
-		prerequisite = {
-			focus = ISR_reconciliation
-		}
-		prerequisite = {
-			focus = ISR_galilee_development
-		}
+		
 		cost = 5
 		completion_reward = {
 			add_political_power = 50
@@ -2219,17 +2398,74 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ISR_two_state_solution
-		icon = GFX_goal_MPL_stable_union
+		id = ISR_invite_elements_of_mapai
+		icon = GFX_goal_generic_internal_democracy
+		prerequisite = { focus = ISR_work_with_arab }
 		relative_position_id = ISR_work_with_arab
+		
+		cost = 5
+		x = 1
+		y = 1
+
+		completion_reward = {
+			# additional seats and SHIT
+		}
+	}
+	focus = {
+		id = ISR_the_religious_compromise
+		icon = GFX_goal_star_of_david
+		prerequisite = { focus = ISR_work_with_arab }
+		relative_position_id = ISR_work_with_arab
+		
+		cost = 5
 		x = -1
 		y = 1
-		prerequisite = {
-			focus = ISR_work_with_arab
+
+		completion_reward = {
+			# yeah guys u gotta go
 		}
-		prerequisite = {
-			focus = ISR_recognize_beduin
+	}
+	focus = {
+		id = ISR_utilise_hashomer_hatzair
+		icon = GFX_focus_JAP_integrate_the_great_japan_youth_party
+		prerequisite = { focus = ISR_work_with_arab }
+		relative_position_id = ISR_work_with_arab
+		
+		cost = 5
+		x = 0
+		y = 2
+
+		completion_reward = {
+			# WE WILL UTILISE HASHOMER HATASIER FOR ECONOMIC PURPOSES
 		}
+	}
+	focus = {
+		id = ISR_pleasehelpwithideasplsplsplspsl
+		icon = GFX_focus_JAP_integrate_the_great_japan_youth_party
+		prerequisite = { focus = ISR_utilise_hashomer_hatzair }
+		relative_position_id = ISR_work_with_arab
+		
+		cost = 5
+		x = -1
+		y = 3
+
+		completion_reward = {
+			# WE WILL UTILISE HASHOMER HATASIER FOR ECONOMIC PURPOSES
+		}
+	}
+	focus = {
+		id = ISR_two_state_solution
+		icon = GFX_goal_MPL_cooperation
+		relative_position_id = ISR_work_with_arab
+		x = -2
+		y = 6
+		# opposite of greater israel
+		#prerequisite = {
+		#	focus = ISR_work_with_arab
+		#}
+		#prerequisite = {
+		#	focus = ISR_recognize_beduin
+		#}
 		cost = 10
 		bypass = {
 			OR = {
@@ -2359,20 +2595,319 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = ISR_strengthen_union # scripted loc bcuz pcp was literally banned from participating in this
+		icon = GFX_goal_industrial_investment
+		relative_position_id = ISR_hashomer_leads
+		x = 0
+		y = 3
+		prerequisite = { focus = ISR_strengthen_maki focus = ISR_toe_line }
+		cost = 8
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ISR_histadrut_start
+				add_idea = ISR_histadrut_strong
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INDUSTRY
+		}
+	}
+	focus = {
+		id = ISR_galilee_development 
+		icon = GFX_goal_generic_wheat
+		relative_position_id = ISR_invest_in_kibbutzim
+		x = -1
+		y = 2
+		prerequisite = {
+			focus = ISR_invest_in_kibbutzim
+		}
+		prerequisite = {
+			focus = ISR_strengthen_union
+		}
+		available = {
+			controls_province = 1065
+		}
+		cost = 5
+		completion_reward = {
+			454 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ISR_address_the_urban_working_class
+		icon = GFX_focus_generic_public_works
+		prerequisite = { focus = ISR_strengthen_union focus = ISR_invest_in_kibbutzim }
+		relative_position_id = ISR_invest_in_kibbutzim
+		
+		cost = 5
+		x = 0
+		y = 1
+
+		completion_reward = {
+			# bunch of events deciding on party policy
+			add_political_power = 100
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = ISR_construct_public_housing
+		icon = GFX_forced_urbanization
+		prerequisite = { focus = ISR_address_the_urban_working_class }
+		relative_position_id = ISR_invest_in_kibbutzim
+		
+		cost = 5
+		x = 1
+		y = 2
+
+		completion_reward = {
+			# activate mission which if finished grants building slots across israel and eliminates a % of aliyah
+		}
+	}
+	focus = {
+		id = ISR_seize_rabbi_funds
+		icon = GFX_goal_generic_business_bills
+		prerequisite = { focus = ISR_the_religious_compromise }
+		prerequisite = { focus = ISR_construct_public_housing }
+		relative_position_id = ISR_work_with_arab
+		
+		cost = 5
+		x = -2
+		y = 2
+
+		completion_reward = {
+			# thanks for the consumer goods idiot
+		}
+	}
+	focus = {
+		id = ISR_wage_equality
+		icon = GFX_focus_generic_welfare
+		prerequisite = { focus = ISR_galilee_development focus = ISR_address_the_urban_working_class }
+		relative_position_id = ISR_invest_in_kibbutzim
+		
+		cost = 5
+		x = 0
+		y = 3
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ISR_educate_the_masses
+		icon = GFX_goal_generic_education
+		prerequisite = { focus = ISR_wage_equality }
+		relative_position_id = ISR_invest_in_kibbutzim
+		
+		cost = 5
+		x = 1
+		y = 4
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ISR_modern_agricultural_tools
+		icon = GFX_goal_generic_farming
+		prerequisite = { focus = ISR_galilee_development }
+		relative_position_id = ISR_galilee_development
+		
+		cost = 5
+		x = 0
+		y = 2
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ISR_a_five_year_plan
+		icon = GFX_goal_generic_industrial_unionism
+		prerequisite = { focus = ISR_strengthen_union }
+		prerequisite = { focus = ISR_strengthen_maki }
+		relative_position_id = ISR_strengthen_union
+
+		cost = 5
+		x = -2
+		y = 1
+
+		completion_reward = {
+			# add mission to complete the following objectives or smt smt:
+			# 15 civs
+			# 8 mils
+			# 3 dockyards
+			# not any owned state with less than 60% infrastructure
+			# stability check
+		}
+	}
+	focus = {
+		id = ISR_expand_industrial_hubs
+		icon = GFX_focus_generic_low_cost_housing
+		prerequisite = { focus = ISR_a_five_year_plan }
+		#prerequisite = { focus = ISR_strengthen_maki }
+		relative_position_id = ISR_strengthen_maki
+
+		cost = 5
+		x = 3
+		y = 3
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = {
+					454
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ISR_merge_unions
+		icon = GFX_social_welfare
+		prerequisite = { focus = ISR_a_five_year_plan }
+		relative_position_id = ISR_expand_industrial_hubs
+
+		cost = 5
+		x = -2
+		y = 0
+
+		completion_reward = {
+			add_ideas = MPL_unions
+		}
+	}
+	focus = {
+		id = ISR_nationalise_foreign_assets
+		icon = GFX_goal_generic_banking_legislation
+		prerequisite = { focus = ISR_merge_unions focus = ISR_expand_industrial_hubs }
+		relative_position_id = ISR_expand_industrial_hubs
+
+		cost = 5
+		x = -1
+		y = 1
+
+		completion_reward = {
+			add_ideas = MPL_unions
+		}
+	}
+	focus = {
+		id = ISR_guarantee_employment_for_all
+		icon = GFX_goal_workers_support
+		prerequisite = { focus = ISR_merge_unions }
+		relative_position_id = ISR_expand_industrial_hubs
+
+		cost = 5
+		x = -3
+		y = 1
+
+		completion_reward = {
+			add_ideas = MPL_unions
+		}
+	}
+	focus = {
+		id = ISR_open_up_a_university_maki
+		icon = GFX_focus_generic_socialist_science
+		prerequisite = { focus = ISR_nationalise_foreign_assets }
+		relative_position_id = ISR_nationalise_foreign_assets
+
+		cost = 5
+		x = -1
+		y = 1
+
+		completion_reward = {
+			add_ideas = MPL_unions
+		}
+	}
+	focus = {
+		id = ISR_begin_army_economy_stuff
+		icon = GFX_focus_generic_combined_arms
+		prerequisite = { focus = ISR_expand_industrial_hubs }
+		relative_position_id = ISR_expand_industrial_hubs
+
+		cost = 5
+		x = 0
+		y = 2
+
+		completion_reward = {
+			add_ideas = MPL_unions
+		}
+	}
+	focus = {
+		id = ISR_limited_austerity 
+		icon = GFX_generic_goal_communist_reforms
+		relative_position_id = ISR_strengthen_union
+		x = 0 
+		y = 3
+		prerequisite = { focus = ISR_expand_industrial_hubs focus = ISR_galilee_development } 
+		cost = 5
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ISR_austerity
+				add_idea = limited_exports
+			}
+		}
+	}
+	focus = {
 		id = ISR_shearim
 		icon = GFX_goal_communist_revolt
+		prerequisite = { focus = ISR_combat_party_bureaucracy }
+		prerequisite = { focus = ISR_train_the_next_generation_of_leaders } 
 		relative_position_id = ISR_limited_return
-		x = 0 
-		y = 6
-		prerequisite = {
-			focus = ISR_two_state_solution
-			focus = ISR_levantine_commune
-		} 
+
 		cost = 10
+		x = -5 
+		y = 7
+
+		# must have done everything, including five year plan
+
 		completion_reward = {
 			add_ideas = ISR_shearim
 		}
-		
+	}
+	focus = {
+		id = ISR_the_levantine_commune
+		icon = GFX_goal_MPL_levant
+		prerequisite = { focus = ISR_shearim }
+		mutually_exclusive = { focus = ISR_maki_is_israel_real_real }
+		relative_position_id = ISR_shearim
+
+		cost = 10
+		x = -2
+		y = 1
+
+		# must have done everything, including five year plan
+
+		completion_reward = {
+			# we are now known as XXX and claim levant
+		}
+	}
+	focus = {
+		id = ISR_maki_is_israel_real_real
+		icon = GFX_goal_ISR_communists
+		prerequisite = { focus = ISR_shearim }
+		mutually_exclusive = { focus = ISR_the_levantine_commune }
+		relative_position_id = ISR_shearim
+
+		cost = 10
+		x = 2
+		y = 1
+
+		completion_reward = {
+			# change party name and uhhhhhhhhhhhhhhhh
+		}
 	}
 	focus = {
 		id = ISR_mapai_hashomer
@@ -4265,20 +4800,10 @@ focus_tree = {
 		id = ISR_join_SOV
 		icon = GFX_focus_chi_mission_to_the_soviet_union
 		relative_position_id = ISR_shearim 
-		x = 0
-		y = 1
-		prerequisite = {
-			focus = ISR_shearim
-		}
-		mutually_exclusive = {
-			focus = ISR_join_USA
-			focus = ISR_alone
-			focus = ISR_join_ENG
-			focus = ISR_join_ITA
-		}
-		bypass = {
-			is_ally_with = SOV
-		}
+		x = -11
+		y = -2
+		allow_branch = { always = no }
+		bypass = { is_ally_with = SOV }
 		available = {
 			is_subject = no
 			SOV = {
@@ -4352,7 +4877,7 @@ focus_tree = {
 		x = -9
 		y = 1
 		prerequisite = {
-			focus = ISR_shearim
+			#focus = ISR_shearim
 			focus = ISR_moses_hess_legacy
 			focus = ISR_legacy_of_basel
 			focus = ISR_yodefet_masada_betar
@@ -4383,7 +4908,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ISR_join_ENG
 			focus = ISR_alone
-			focus = ISR_join_SOV
+			#focus = ISR_join_SOV
 			focus = ISR_join_ITA
 		}
 		cost = 5
@@ -4432,7 +4957,7 @@ focus_tree = {
 		x = 0
 		y = 8
 		prerequisite = {
-			focus = ISR_shearim
+			#focus = ISR_shearim
 			focus = ISR_moses_hess_legacy
 			focus = ISR_legacy_of_basel
 			focus = ISR_yodefet_masada_betar
@@ -4440,7 +4965,7 @@ focus_tree = {
 		cost = 5
 		mutually_exclusive = {
 			focus = ISR_join_ENG
-			focus = ISR_join_SOV
+			#focus = ISR_join_SOV
 			focus = ISR_join_USA
 			focus = ISR_join_ITA
 		}
@@ -4466,11 +4991,11 @@ focus_tree = {
 	focus = {
 		id = ISR_join_ENG
 		icon = GFX_focus_chi_british_cooperation
-		relative_position_id = ISR_shearim 
-		x = 9
-		y = 1
+		relative_position_id = ISR_herzl_successor 
+		x = -1
+		y = 2
 		prerequisite = {
-			focus = ISR_shearim
+			#focus = ISR_shearim
 			focus = ISR_moses_hess_legacy
 			focus = ISR_legacy_of_basel
 			focus = ISR_yodefet_masada_betar
@@ -4502,7 +5027,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ISR_join_USA
 			focus = ISR_alone
-			focus = ISR_join_SOV
+			#focus = ISR_join_SOV
 			focus = ISR_join_ITA
 		}
 		cost = 5
@@ -4589,7 +5114,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ISR_join_USA
 			focus = ISR_alone
-			focus = ISR_join_SOV
+			#focus = ISR_join_SOV
 			focus = ISR_join_ENG
 		}
 		cost = 5
@@ -4647,7 +5172,7 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = ISR_alone
-			focus = ISR_join_SOV
+			#focus = ISR_join_SOV
 			focus = ISR_join_ENG
 			focus = ISR_join_USA
 			focus = ISR_join_ITA

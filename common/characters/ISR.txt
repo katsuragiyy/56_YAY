@@ -71,10 +71,8 @@ characters={
 		}
 		country_leader = {
 			ideology = soviet_labour_zionism
-			traits = {
-				ISR_kibbutznik
-				communist_sympathiser
-			}
+			desc = ISR_yaakov_hazan_leader_desc
+			traits = { ISR_kibbutznik }
 		}
 	}
 	ISR_shmuel_mikunis={
