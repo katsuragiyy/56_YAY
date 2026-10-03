@@ -342,6 +342,10 @@ ideas = {
 				}
 				# R56
 				IF = {
+					limit = { original_tag = GXC }
+					NOT = { has_completed_focus = GXC_rely_on_volunteer_units }
+				}
+				IF = {
 					limit = { has_idea = GER_no_conscription }
 					OR = {
 						NOT = { has_idea = GER_no_conscription }
@@ -826,6 +830,10 @@ ideas = {
 				}
 				# R56
 				IF = {
+					limit = { original_tag = GXC }
+					NOT = { has_completed_focus = GXC_rely_on_volunteer_units }
+				}
+				IF = {
 					limit = { has_idea = GER_no_conscription }
 					OR = {
 						NOT = { has_idea = GER_no_conscription }
@@ -909,7 +917,6 @@ ideas = {
 					}
 					NOT = { has_country_flag = SWI_reliance_on_militia } 
 				}
-				##
 			}
 			ai_will_do = {
    				factor = 1
@@ -1228,6 +1235,10 @@ ideas = {
 					has_completed_focus = AFG_adopt_nufus
 				}
 				# R56
+				IF = {
+					limit = { original_tag = GXC }
+					NOT = { has_completed_focus = GXC_rely_on_volunteer_units }
+				}
 				IF = {
 					limit = { has_idea = GER_no_conscription }
 					OR = {
@@ -1632,6 +1643,12 @@ ideas = {
 					limit = { original_tag = LIE }
 					NOT = { has_idea = LIE_legacy_of_1866 }
 				}
+				IF = {
+					limit = {
+						original_tag = GXC
+					}
+					NOT = { has_completed_focus = GXC_rely_on_volunteer_units }
+				}
 			}
 
 			ai_will_do = {
@@ -1877,6 +1894,10 @@ ideas = {
 					has_completed_focus = AFG_adopt_nufus
 				}	
 				# R56
+				IF = {
+					limit = { original_tag = GXC }
+					NOT = { has_completed_focus = GXC_rely_on_volunteer_units }
+				}
 				IF = {
 					limit = { has_idea = GER_no_conscription }
 					OR = {
