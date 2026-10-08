@@ -14852,8 +14852,8 @@ focus_tree = {
 			}
 			else_if = {
 				limit = {
-					any_country = {
-						original_tag = FRA
+					any_country_with_original_tag = {
+						original_tag_to_check = FRA
 						exists = yes
 					}
 				}
@@ -14863,8 +14863,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country = {
-						original_tag = LUX
+					any_country_with_original_tag = {
+						original_tag_to_check = LUX
 						exists = yes
 					}
 				}
@@ -28636,8 +28636,8 @@ focus_tree = {
 					is_guaranteed_by = SOV
 					has_guaranteed = SOV
 				}
-				any_country = {
-					original_tag = SOV #in the event of cw weirdness
+				any_country_with_original_tag = {
+					original_tag_to_check = SOV #in the event of cw weirdness
 					OR = {
 						exists = no
 						NOT = { has_government = communism }
@@ -36076,8 +36076,8 @@ focus_tree = {
 				FRA = { has_capitulated = yes }
 				FRA = { is_subject_of = GER }
 				NOT = {
-					any_country = {
-						original_tag = FRA
+					any_country_with_original_tag = {
+						original_tag_to_check = FRA
 						exists = yes
 					}
 				}
@@ -39089,8 +39089,8 @@ focus_tree = {
 			is_subject = no
 			has_war = no
 			NOT = {
-				any_country = {
-					original_tag = GER
+				any_country_with_original_tag = {
+					original_tag_to_check = GER
 					has_government = fascism
 				}
 			}
@@ -40328,8 +40328,8 @@ focus_tree = {
 				FRA = { has_capitulated = yes }
 				FRA = { is_subject_of = GER }
 				NOT = {
-					any_country = {
-						original_tag = FRA
+					any_country_with_original_tag = {
+						original_tag_to_check = FRA
 						exists = yes
 					}
 				}
@@ -41400,20 +41400,20 @@ focus_tree = {
 		available = {
 			is_subject = no
 			OR = {
-				any_country = { 
-					original_tag = HUN
+				any_country_with_original_tag = {
+					original_tag_to_check = HUN
 					has_government = communism 
 				}
-				any_country = { 
-					original_tag = ROM
+				any_country_with_original_tag = {
+					original_tag_to_check = ROM
 					has_government = communism 
 				}
-				any_country = { 
-					original_tag = YUG
+				any_country_with_original_tag = {
+					original_tag_to_check = YUG
 					has_government = communism 
 				}
-				any_country = { 
-					original_tag = BUL
+				any_country_with_original_tag = {
+					original_tag_to_check = BUL
 					has_government = communism 
 				}
 			}
@@ -41430,8 +41430,8 @@ focus_tree = {
 			custom_effect_tooltip = GER_no_balkan_communism_tt
 			if = {
 				limit = {
-					any_country = { 
-						original_tag = HUN
+					any_country_with_original_tag = {
+						original_tag_to_check = HUN
 						has_government = communism 
 					}
 				}
@@ -41454,8 +41454,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country = { 
-						original_tag = ROM
+					any_country_with_original_tag = {
+						original_tag_to_check = ROM
 						has_government = communism 
 					}
 				}
@@ -41478,8 +41478,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country = { 
-						original_tag = YUG
+					any_country_with_original_tag = {
+						original_tag_to_check = YUG
 						has_government = communism 
 					}
 				}
@@ -41502,8 +41502,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country = { 
-						original_tag = BUL
+					any_country_with_original_tag = {
+						original_tag_to_check = BUL
 						has_government = communism 
 					}
 				}
@@ -41618,20 +41618,20 @@ focus_tree = {
 		available = {
 			is_subject = no
 			OR = {
-				any_country = { 
-					original_tag = FRA
+				any_country_with_original_tag = {
+					original_tag_to_check = FRA
 					has_government = communism 
 				}
-				any_country = { 
-					original_tag = HOL
+				any_country_with_original_tag = {
+					original_tag_to_check = HOL
 					has_government = communism 
 				}
-				any_country = { 
-					original_tag = BEL
+				any_country_with_original_tag = {
+					original_tag_to_check = BEL
 					has_government = communism 
 				}
-				any_country = { 
-					original_tag = LUX
+				any_country_with_original_tag = {
+					original_tag_to_check = LUX
 					has_government = communism 
 				}
 			}
@@ -41652,8 +41652,8 @@ focus_tree = {
 			custom_effect_tooltip = GER_no_reds_in_western_europe_tt
 			if = {
 				limit = {
-					any_country = { 
-						original_tag = FRA
+					any_country_with_original_tag = {
+						original_tag_to_check = FRA
 						has_government = communism 
 					}
 				}
@@ -41676,8 +41676,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country = { 
-						original_tag = HOL
+					any_country_with_original_tag = {
+						original_tag_to_check = HOL
 						has_government = communism 
 					}
 				}
@@ -41700,8 +41700,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country = { 
-						original_tag = BEL
+					any_country_with_original_tag = {
+						original_tag_to_check = BEL
 						has_government = communism 
 					}
 				}
@@ -41724,8 +41724,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country = { 
-						original_tag = LUX
+					any_country_with_original_tag = {
+						original_tag_to_check = LUX
 						has_government = communism 
 					}
 				}
@@ -71784,8 +71784,8 @@ focus_tree = {
 			is_faction_leader = yes
 			custom_trigger_tooltip = {
 				tooltip = intervene_soviet_civil_war_tt		
-				any_country = {
-					original_tag = SOV
+				any_country_with_original_tag = {
+					original_tag_to_check = SOV
 					NOT = {
 						tag = SOV
 					}

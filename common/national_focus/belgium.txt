@@ -4466,8 +4466,8 @@ focus = {
 
 			IF = {
 				limit = {
-					any_country = {
-						original_tag = ENG
+					any_country_with_original_tag = {
+						original_tag_to_check = ENG
 						has_government = democratic
 						is_subject = no
 					}
@@ -4490,8 +4490,8 @@ focus = {
 
 			ELSE_IF = {
 				limit = {
-					any_country = {
-						original_tag = FRA
+					any_country_with_original_tag = {
+						original_tag_to_check = FRA
 						has_government = democratic
 						is_subject = no
 					}
@@ -4799,8 +4799,8 @@ focus = {
 		cost = 5
 
 		available = {
-			any_country = {
-				original_tag = SOV
+			any_country_with_original_tag = {
+				original_tag_to_check = SOV
 				has_government = communism
 				is_subject = no
 				NOT = {
@@ -4811,8 +4811,8 @@ focus = {
 
 		bypass = {
 			OR = {
-				any_country = {
-					original_tag = SOV
+				any_country_with_original_tag = {
+					original_tag_to_check = SOV
 					exists = no
 					NOT = { has_government = communism }
 				}
@@ -5014,8 +5014,8 @@ focus = {
 		completion_reward = {
 			IF = {
 				limit = {
-					any_country = {
-						original_tag = ENG
+					any_country_with_original_tag = {
+						original_tag_to_check = ENG
 						has_government = democratic
 						is_faction_leader = yes
 					}
@@ -5030,8 +5030,8 @@ focus = {
 
 			ELSE_IF = {
 				limit = {
-					any_country = {
-						original_tag = FRA
+					any_country_with_original_tag = {
+						original_tag_to_check = FRA
 						has_government = democratic
 						is_faction_leader = yes
 					}
@@ -5046,8 +5046,8 @@ focus = {
 
 			ELSE_IF = {
 				limit = {
-					any_country = {
-						original_tag = USA
+					any_country_with_original_tag = {
+						original_tag_to_check = USA
 						has_government = democratic
 						is_faction_leader = yes
 					}
@@ -5187,8 +5187,8 @@ focus = {
 		cost = 5
 
 		available = {
-			any_country = {
-				original_tag = SOV
+			any_country_with_original_tag = {
+				original_tag_to_check = SOV
 				exists = yes
 				has_government = communism 
 			}
@@ -5451,8 +5451,8 @@ focus = {
 
 		available = {
 			SPR_scw_in_progress = yes
-			any_country = {
-				original_tag = SPR
+			any_country_with_original_tag = {
+				original_tag_to_check = SPR
 				OR = {
 					has_government = democratic
 					has_government = communism
@@ -5464,8 +5464,8 @@ focus = {
 		completion_reward = {
 			IF = {
 				limit = {
-					any_country = {
-						original_tag = SPR
+					any_country_with_original_tag = {
+						original_tag_to_check = SPR
 						OR = {
 							has_government = democratic
 							has_government = communism
