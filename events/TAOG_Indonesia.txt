@@ -8194,19 +8194,69 @@ country_event = {
 			base = 1
 		}
 
+		trigger = { #R56
+			has_completed_focus = INS_seize_oppurtunity
+			has_completed_focus = INS_integrate_sarekat_islam
+		}
+
 		INS_sekarmaji_kartosuwiryo = {
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
-					ideology = despotism
+					ideology = moderate_islamism # 56
 					traits = { islamic_scholar } 
 				}
 			}
 		}
-
 	}
 
-#	option = { #Field Marshal, requires art before can be implemented fully
+	option = { ##R56 - Abikoesno
+		name = INS_martial_law_events.16.e
+
+		ai_chance = {
+			base = 1
+		}
+
+		trigger = {
+			has_completed_focus = INS_underground_revolution
+			has_completed_focus = INS_integrate_sarekat_islam
+		}
+
+		INS_abikusno_cokrosuyoso = {
+			add_country_leader_role = {
+				country_leader = {
+					ideology = islamic_nationalism
+					traits = { shadow_of_cokroaminoto } 
+				}
+				promote_leader = yes
+			}
+		}
+	}
+
+	option = { ##R56 - Thamrin
+		name = INS_martial_law_events.16.f
+
+		ai_chance = {
+			base = 1
+		}
+
+		trigger = {
+			has_completed_focus = INS_underground_revolution
+		}
+
+		INS_abikusno_cokrosuyoso = {
+			add_country_leader_role = {
+				country_leader = {
+					ideology = islamic_nationalism
+					traits = { shadow_of_cokroaminoto } 
+				}
+				promote_leader = yes
+			}
+		}
+	}
+}
+
+#	option = { #Field Marshal, requires art before can be implemented fully #R56 Krasna: Thank g*d it did not make it in
 #		name = INS_martial_law_events.16.d
 #
 #		trigger = {
@@ -8222,7 +8272,7 @@ country_event = {
 #
 #
 #	}
-}
+#}
 
 # country_event = { #Dismantle Indonesia 1
 # 	id = INS_martial_law_events.17

@@ -1,4 +1,5 @@
 # Katusragiyy: this hurts to do. to import more files. but it what has to be done. hello to anyone who's reading this btw.
+# Krasna: Hello too
 # Indonesia
 INS_dutch_east_indies = {
 	icon = GFX_idea_INS_dutch_east_indies
