@@ -5101,6 +5101,9 @@ focus_tree = {
 				has_full_control_of_state = 643
 				has_full_control_of_state = 639
 				has_full_control_of_state = 336
+				has_full_control_of_state = 1131
+				has_full_control_of_state = 333
+				has_full_control_of_state = 916
 				has_full_control_of_state = 1014
 			OR = {
 				RAJ = {
@@ -5128,6 +5131,9 @@ focus_tree = {
 					owns_state = 639
 					owns_state = 336
 					owns_state = 1014
+					owns_state = 916
+					owns_state = 1131
+					owns_state = 333
 				}
 			}
 		}
@@ -5343,8 +5349,9 @@ focus_tree = {
 			RAJ = {
 				transfer_state = 733
 			}
+			PHI = { transfer_state = 916 }
 			MAL = {
-				remove_ideas = MAL_colonial_idea
+				#remove_ideas = MAL_colonial_idea
 				drop_cosmetic_tag = yes
 			}
 			if = {
@@ -5423,12 +5430,33 @@ focus_tree = {
 						}
 					}
 					every_other_country = {
-						limit = {
-							has_war_with = ENG
+						limit = { has_war_with = ENG }
+						BRN = { add_to_war = { targeted_alliance = ENG enemy = PREV hostility_reason = asked_to_join } }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 333
+				}
+				release = SAR
+				set_autonomy = { target = SAR autonomy_state = autonomy_protectorate }
+				hidden_effect = {
+					SAR = {
+						set_politics = {
+							ruling_party = neutrality
+							elections_allowed = no
+							last_election = "1935.12.17"
+							election_frequency = 48
 						}
-						BRN = {
-							add_to_war = { targeted_alliance = ENG enemy = PREV hostility_reason = asked_to_join }
+						set_political_party = {
+							ideology = neutrality
+							popularity = 50
 						}
+					}
+					every_other_country = {
+						limit = { has_war_with = ENG }
+						SAR = { add_to_war = { targeted_alliance = ENG enemy = PREV hostility_reason = asked_to_join } }
 					}
 				}
 			}
@@ -6440,6 +6468,98 @@ focus_tree = {
 				}
 			}
 
+			# 56
+			if = {
+				limit = { MAL = { is_subject_of = ROOT } }
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = MAL_we_get_this_and_that_now_lets_go
+
+				effect_tooltip = {
+					custom_effect_tooltip = generic_skip_one_line_tt
+					swap_ideas = {
+						remove_idea = MAL_neglected_army_idea_r56
+						add_idea = MAL_neglected_army_idea2_r56
+					}
+
+					custom_effect_tooltip = SMB_jungle_pioneers_tt
+					IF = {
+						limit = { has_dlc = "No Compromise, No Surrender" }
+						custom_effect_tooltip = generic_skip_one_line_tt
+						
+						add_tech_bonus = {
+							name = ENG_sarawakrangers_focus
+							bonus = 0.75 
+							uses = 1
+							category = rangers_tech_cat
+						}
+						
+						IF = {
+							limit = { has_dlc = "Arms Against Tyranny" }
+							add_doctrine_cost_reduction = {
+								name = ENG_sarawakrangers_focus
+								cost_reduction = 0.75 
+								uses = 1
+								category = special_forces_doctrine
+							}
+							custom_effect_tooltip = generic_skip_one_line_tt
+							custom_effect_tooltip = ranger_subdoctrines_default_add_mastery_bonus_effect_tooltip			
+						}
+					}
+				}
+				hidden_effect = {
+					MAL = { 
+						swap_ideas = {
+							remove_idea = MAL_neglected_army_idea_r56
+							add_idea = MAL_neglected_army_idea2_r56
+						}
+
+						hidden_effect = {
+							set_technology = { 
+								TOA_jungle_pioneers_support_tech = 1 
+								popup = no
+							}
+						}
+						custom_effect_tooltip = SMB_jungle_pioneers_tt
+						IF = {
+							limit = { has_dlc = "No Compromise, No Surrender" }
+							custom_effect_tooltip = generic_skip_one_line_tt
+
+							add_tech_bonus = {
+								name = ENG_sarawakrangers_focus
+								bonus = 0.75 
+								uses = 1
+								category = rangers_tech_cat
+							}
+
+							IF = {
+								limit = { has_dlc = "Arms Against Tyranny" }
+								add_doctrine_cost_reduction = {
+									name = ENG_sarawakrangers_focus
+									cost_reduction = 0.75 
+									uses = 1
+									category = special_forces_doctrine
+								}
+								custom_effect_tooltip = ranger_subdoctrines_default_add_mastery_bonus_effect_tooltip
+								hidden_effect = {
+									add_mastery_bonus = {
+										name = PHI_philippine_scouts
+										bonus = 0.1
+										days = 240
+										sub_doctrine = rangers_1
+									}
+									add_mastery_bonus = {
+										name = PHI_philippine_scouts
+										bonus = 0.1
+										days = 240
+										sub_doctrine = rangers_2
+									}
+								}				
+							}
+						}
+					}
+				}
+			}
+			##
 		}
 
 	}
@@ -6476,7 +6596,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-
+			# 56 - GRANT JOHORE GENERAL INSTEAD
 			MAL = {
 				add_autonomy_score = { 
 					value = 150
@@ -6484,6 +6604,57 @@ focus_tree = {
 				}	
 				army_experience = 50 
 				add_manpower = 10000
+				# 56
+				custom_effect_tooltip = generic_skip_one_line_tt
+				swap_ideas = {
+					remove_idea = MAL_neglected_army_idea_r56
+					add_idea = MAL_neglected_army_idea2_r56
+				}
+
+				hidden_effect = {
+					set_technology = { 
+						TOA_jungle_pioneers_support_tech = 1 
+						popup = no
+					}
+				}
+				custom_effect_tooltip = SMB_jungle_pioneers_tt
+				IF = {
+					limit = { has_dlc = "No Compromise, No Surrender" }
+					custom_effect_tooltip = generic_skip_one_line_tt
+					
+					add_tech_bonus = {
+						name = ENG_sarawakrangers_focus
+						bonus = 0.75 
+						uses = 1
+						category = rangers_tech_cat
+					}
+					
+					IF = {
+						limit = { has_dlc = "Arms Against Tyranny" }
+						add_doctrine_cost_reduction = {
+							name = ENG_sarawakrangers_focus
+							cost_reduction = 0.75 
+							uses = 1
+							category = special_forces_doctrine
+						}
+						custom_effect_tooltip = ranger_subdoctrines_default_add_mastery_bonus_effect_tooltip
+						hidden_effect = {
+							add_mastery_bonus = {
+								name = PHI_philippine_scouts
+								bonus = 0.1
+								days = 240
+								sub_doctrine = rangers_1
+							}
+							add_mastery_bonus = {
+								name = PHI_philippine_scouts
+								bonus = 0.1
+								days = 240
+								sub_doctrine = rangers_2
+							}
+						}				
+					}
+				}
+				##
 			}
 
 			#IF = {
@@ -6731,64 +6902,64 @@ focus_tree = {
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 
-			IF = {
-				limit = {
-					has_subject = MAL
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				MAL = {
-
-					hidden_effect = {
-						set_technology = { 
-							TOA_jungle_pioneers_support_tech = 1 
-							popup = no
-						}
-					}
-					custom_effect_tooltip = SMB_jungle_pioneers_tt
-
-					IF = {
-						limit = {
-							has_dlc = "No Compromise, No Surrender"
-						}
-
-						custom_effect_tooltip = generic_skip_one_line_tt
-						
-						add_tech_bonus = {
-							name = ENG_sarawakrangers_focus
-							bonus = 0.75 
-							uses = 1
-							category = rangers_tech_cat
-						}
-						
-						IF = {
-							limit = {
-								has_dlc = "Arms Against Tyranny"
-							}
-							add_doctrine_cost_reduction = {
-								name = ENG_sarawakrangers_focus
-								cost_reduction = 0.75 
-								uses = 1
-								category = special_forces_doctrine
-							}
-							custom_effect_tooltip = ranger_subdoctrines_default_add_mastery_bonus_effect_tooltip
-							hidden_effect = {
-								add_mastery_bonus = {
-									name = PHI_philippine_scouts
-									bonus = 0.1
-									days = 240
-									sub_doctrine = rangers_1
-								}
-								add_mastery_bonus = {
-									name = PHI_philippine_scouts
-									bonus = 0.1
-									days = 240
-									sub_doctrine = rangers_2
-								}
-							}				
-						}
-					}
-				}
-			}
+			#IF = { # 56 - Why Malaya
+			#	limit = {
+			#		has_subject = MAL
+			#	}
+			#	custom_effect_tooltip = generic_skip_one_line_tt
+			#	MAL = {
+#
+			#		hidden_effect = {
+			#			set_technology = { 
+			#				TOA_jungle_pioneers_support_tech = 1 
+			#				popup = no
+			#			}
+			#		}
+			#		custom_effect_tooltip = SMB_jungle_pioneers_tt
+#
+			#		IF = {
+			#			limit = {
+			#				has_dlc = "No Compromise, No Surrender"
+			#			}
+#
+			#			custom_effect_tooltip = generic_skip_one_line_tt
+			#			
+			#			add_tech_bonus = {
+			#				name = ENG_sarawakrangers_focus
+			#				bonus = 0.75 
+			#				uses = 1
+			#				category = rangers_tech_cat
+			#			}
+			#			
+			#			IF = {
+			#				limit = {
+			#					has_dlc = "Arms Against Tyranny"
+			#				}
+			#				add_doctrine_cost_reduction = {
+			#					name = ENG_sarawakrangers_focus
+			#					cost_reduction = 0.75 
+			#					uses = 1
+			#					category = special_forces_doctrine
+			#				}
+			#				custom_effect_tooltip = ranger_subdoctrines_default_add_mastery_bonus_effect_tooltip
+			#				hidden_effect = {
+			#					add_mastery_bonus = {
+			#						name = PHI_philippine_scouts
+			#						bonus = 0.1
+			#						days = 240
+			#						sub_doctrine = rangers_1
+			#					}
+			#					add_mastery_bonus = {
+			#						name = PHI_philippine_scouts
+			#						bonus = 0.1
+			#						days = 240
+			#						sub_doctrine = rangers_2
+			#					}
+			#				}				
+			#			}
+			#		}
+			#	}
+			#}
 
 			IF = {
 				limit = {
@@ -6972,7 +7143,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = hongkong_focus
 
-		cost = 10
+		cost = 6 # 56
 
 		ai_will_do = {
 			factor = 1
@@ -7100,7 +7271,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = peninsular_focus
 
-		cost = 10
+		cost = 8 # 56
 
 		ai_will_do = {
 			factor = 1

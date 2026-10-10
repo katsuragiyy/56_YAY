@@ -6698,6 +6698,10 @@ ITA_diplomacy_balkan_decision_category = {
 
 		ai_will_do = {
 			base = 10
+			modifier = { # 56 - Dont create weird shit on historical
+				factor = 0
+				is_historical_focus_on = yes
+			}
 			modifier = {
 				factor = 0
 				105 = {
@@ -6782,6 +6786,10 @@ ITA_diplomacy_balkan_decision_category = {
 
 		ai_will_do = {
 			base = 5
+			modifier = { # 56 - Dont create weird shit on historical
+				factor = 0
+				is_historical_focus_on = yes
+			}
 			modifier = {
 				factor = 0
 				105 = {

@@ -2871,7 +2871,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_doctrine_cost_reduction = {
+			add_tech_bonus = {
 				name = industry
 				cost_reduction = 1
 				uses = 1

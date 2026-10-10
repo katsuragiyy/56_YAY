@@ -3484,6 +3484,15 @@
 		}
 
 		completion_reward = {
+			if = {
+				limit = { original_tag = MAL }
+				hidden_effect = {
+					country_event = { # SKIZO
+						id = r56_malaya.1
+						days = 180
+					}
+				}
+			}
 			add_ideas = HUN_indigenous_designs
 			if = {	#Swiss unique DLC tree effects here	- Fantom
 				limit = {

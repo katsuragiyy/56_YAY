@@ -74,6 +74,10 @@ ideas = {
 				production_speed_buildings_factor = 0.05
 			}
 		}
+		ISR_developing_urban_hubs_suka_blyat = {
+			picture = ARG_economic_reactivation
+			modifier = { consumer_goods_factor = 0.25 }
+		}
 		ISR_diaspora_volunteers = {
 			picture = ISR_defend_israel
 			allowed = {

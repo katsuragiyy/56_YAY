@@ -23,7 +23,7 @@ ai_historical_focus_list_HON = {
 		HON_better_industry
 		HON_against_axis
 		HON_arms
-		HON_join_allies
+		#HON_join_allies # STOP JOINING ALLIES SO EARLY
 		HON_special_forces
 		HON_build_docks1
 		HON_special_forces_2

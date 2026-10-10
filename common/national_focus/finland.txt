@@ -5968,6 +5968,8 @@ focus_tree = {
 			set_country_flag = r56_fin_trigger_con_war_front_control
 			add_ideas = FIN_the_lone_wolf
 		}
+
+		ai_will_do = { base = 999 } # 56 - PLEASE FUCKING DO THIS SO THAT FINLAND WILL STOP JOINING ALLIES
 	}
 	
 	focus = {

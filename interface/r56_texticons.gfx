@@ -7,6 +7,13 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
+	# MCP
+	spriteType = {
+		name = "GFX_decision_header_MAL_MCP_STUFF"
+		texturefile = "gfx/texticons/decision_header_MAL_chinese_migration.dds"
+		legacy_lazy_load = no
+	}
+
 ###------> Militia <><> <><> <><> <><> <><>
 
 	spriteType = {

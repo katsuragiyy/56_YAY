@@ -1600,7 +1600,7 @@ INS_militias_cat = {
 		available = {
 			OR = {
 				has_completed_focus = INS_integrate_sarekat_islam
-				has_completed_focus = INS_dominion_of_atjeh
+				has_completed_focus = INS_shining_from_the_periphery
 			}
 		}
 

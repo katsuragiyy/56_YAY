@@ -4810,13 +4810,11 @@ focus_tree = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				is_historical_focus_on = yes
-				USA = { has_war = yes }
-				factor = 10
-			}
-			modifier = {
-				is_historical_focus_on = no
-				factor = 5
+				add = 10
+				AND = { # Having these as separate doesnt seem to work, so this should do
+					is_historical_focus_on = yes
+					USA = { has_war = yes }
+				}
 			}
 		}
 		completion_reward = {

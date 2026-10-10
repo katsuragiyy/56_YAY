@@ -236,6 +236,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/afg/advisors/r56_idea_AFG_mohammed_hashim_khan.dds"
 	}
 	spriteType = {
+		name = "GFX_idea_PAL_fuad_nasser"
+		texturefile = "gfx/interface/ideas/pal/advisors/r56_idea_PAL_fuad_nasser.dds"
+	}
+	spriteType = {
 		name = "GFX_idea_PAL_amin_al-husseini"
 		texturefile = "gfx/interface/ideas/pal/advisors/r56_idea_PAL_amin_al-husseini.dds"
 	}
@@ -500,6 +504,10 @@ SpriteType = {
 	SpriteType = {
 		name = "GFX_idea_r56_CAN_adrien_arcand"
 		texturefile = "gfx/interface/ideas/can/idea_r56_CAN_adrien_arcand.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_r56_CAN_scottish_looking_fella"
+		texturefile = "gfx/interface/ideas/can/idea_r56_CAN_scottish_looking_guy_advisor.dds"
 	}
 
 
@@ -3638,10 +3646,6 @@ spriteType = {
 		name = "GFX_idea_foreign_office"
 		texturefile = "gfx/interface/ideas/mal/advisors/advisor_foreign_office.dds"
 	}
-	spriteType = {
-		name = "GFX_idea_gent"
-		texturefile = "gfx/interface/ideas/mal/advisors/advisor_gent.dds"
-	}
 
 	spriteType = {
 		name = "GFX_idea_ismail"
@@ -3707,7 +3711,25 @@ spriteType = {
 		texturefile = "gfx/interface/ideas/mal/advisors/advisor_popham.dds"
 	}
 
+	spriteType = {
+		name = "GFX_idea_MAL_iskandar_shah"
+		texturefile = "gfx/interface/ideas/mal/advisors/r56_idea_MAL_advisor_iskandar_shah.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_MAL_abdul_rahman"
+		texturefile = "gfx/interface/ideas/mal/advisors/r56_idea_MAL_advisor_abdul_rahman.dds"
+	}
 
+	spriteType = {
+		name = "GFX_idea_MAL_john_johor"
+		texturefile = "gfx/interface/ideas/mal/advisors/r56_idea_MAL_advisor_ibrahim_johor.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_MAL_ahmad_fuad_hassan"
+		texturefile = "gfx/interface/ideas/mal/advisors/r56_idea_MAL_advisor_ahmad_fuad_hassan.dds"
+	}
 
 ###------> MAN <><> <><> <><> <><> <><>
 
@@ -5269,6 +5291,10 @@ spriteType = {
 	}
 
 ###------> SOV <><> <><> <><> <><> <><>
+	spriteType = {
+		name = "GFX_idea_r56_SOV_kliment"
+		texturefile = "gfx/interface/ideas/sov/advisors/r56_idea_SOV_advisor_kliment.dds"
+	}
 	spriteType = {
 		name = "GFX_idea_SOV_lavrentiy_beria"
 		texturefile = "gfx/interface/ideas/sov/advisors/r56_idea_SOV_advisor_lavrentiy_beria.dds"

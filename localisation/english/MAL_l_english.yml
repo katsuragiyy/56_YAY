@@ -517,15 +517,15 @@ mal_fascist_denied:0 "Denied Freedom"
  MAL_monarchy_party_long:0 "Malayan Royalists"
 #  MAL_fascism_party:0 "KMM" #Young Malaysian Union # moved to replace
 #  MAL_fascism_party_long:0 "Kesatuan Melayu Muda" # moved to replace
- MAL_fascism_party_puppet:0 "PETA"
- MAL_fascism_party_puppet_long:0 "Pembela Tanah Ayer" #Defenders of the Motherland
+ MAL_fascism_party_puppet:0 "Temenggong"
+ MAL_fascism_party_puppet_long:0 "House of Temenggong"
 #  MAL_democratic_party:0 "PEKEMBAR" #or UMNO or PEKEMBAR # moved to replace
 #  MAL_democratic_party_long:0 "Pertubuhan Kebangsaan Melayu Bersatu" #or UMNO or PEKEMBAR # moved to replace
  MAL_democratic_party_puppet:0 "KM"
  MAL_democratic_party_puppet_long:0 "Kesatuan Melayu"
 #  MAL_communism_party:0 "MCP" #or MCP # moved to replace
  MAL_communism_party_long:0 "Parti Komunis Malaya" #or MCP
- MAL_neutrality_party_puppet:0 "Kerajaan Penjajah"
+ MAL_neutrality_party_puppet:0 "Colonial Administration"
 
 MAL_democratic_umno:0 "UMNO"
 MAL_democratic_umno_long:0 "Pertubuhan Kebangsaan Melayu"
@@ -537,3 +537,47 @@ MAL_democratic_imp_long:0 "Parti Kemerdekaan Malaya"
 #tooltips
 MAL_status_quo_tooltip:0 "For AI use only."
 MAL_singapore_tooltip:0 "This currently does nothing"
+
+# R56EX
+MAL_shenton_thomas_leader_desc: "§LShenton Thomas was born in London in 1879. Thomas expeirenced the start of his colonial service in Africa, serving in various civilian positions across a vast array of British colonies on the continent before finding himself at the head of the Strait Settlements government in 1934, replacing the previous governor, Cecil Clementi Smith, who's administration was 'a failure'. \n\nAlthough his reputation in West Africa is in all but ruins, with many local newpapers in the region having characterised him as a "Harsh and Uncompromising Autocrat", the Malayans have attempted to accept an unbiased approach to his governance. Thomas's policies of centralisation of the Malay Peninsula and the repeated ignored signs of Japanese expansionism has left many in Malaya, from both the lower and higher ranks of society, suspicious and doubtful of Thomas's governance.§!"
+
+MAL_ian_stewart: "Ian Stewart"
+
+MAL_iskandar_shah: "Iskandar Shah"
+MAL_iskandar_shah_political_advisor_desc: "§LBorn at Kuala Keboi, Kampar, 10 May 1876, to the 28th Sultan of Perak, Sultan Idris Murshidul Azzam Shah. In the years leading up to his ascension to the throne of Perak, he enlisted into the Federated Malay Police force and served in its ranks up until he became the Sultan of Perak. In 1918, following the passing of his father, his elder brother became the Sultan, and appointed Iskandar as the Deputy Crown Prince. In the same year, his brother would pass as well, and Iskandar ascended to the throne of Perak. \n\nOver the course of his reign, Iskandar has become widely popular within his Sultanate. Alongside advocating for a decentralised Malayan peninsula, he also engages in religious practices, and has all but entrenched Islamic tradition in Perak. And as of last year, the British territory of Dinding has been returned to Perak's hands under the careful diplomacy of Iskandar Shah. \n\nWithin his Sultanate, he is a man of upmost respect, and serves as a model for the rest of the Malayan sultans in the region.§!"
+
+MAL_abdul_rahman_sultan: "Abdul Rahman"
+MAL_abdul_rahman_sultan_political_advisor_desc: "§LBorn in 1895 to Tuanku Muhammad, who many consider the father of Negeri Sembilan's modernisation. Rahman would hold many positions within the Federated Malay States, such as a lieutenant in the Malayan Volunteer Infantry and many civilian offices. In 1933, following the passing of his father, he was elected to become the Yang di-Pertuan Besar of Negeri Sembilan.§!"
+
+MAL_ibrahim_of_johor: "Wan Ibrahim"
+MAL_ibrahim_of_johor_political_advisor_desc: "§LIbrahim was born in 1873 in Singapore to the former Sultan of Johore, Abu Bakar. From a young age, he became involved with Johore's politics and its military forces, having been one of the signatories of the Johorean constitution. Ibrahim would be proclaimed the sultan of Johore following his father's passing in England in 1895. \n\nHowever, it was clear that Ibrahim lacked the experience to govern the Sultanate, as much of his early rule consisted of his private secretary governing the state. During his early rule, Ibrahim was responsible for the expansion of the Johorean army, and constantly averted attempts by the British to expand their influence in the sultanate. In 1910 however, under immense British pressure, Johore would accept a British resident and became a de-facto British protectorate. \n\nAfter accepting a British resident, Ibrahim largely adopted a ceremonial position within Johore, instead spending most of his time abroad, which he was able to fund with his immense wealth. However, his spending and large opposition to growing British influence within the sultanate would always cause tension between him and the residents. During this time, he also befriended Yoshichika Tokugawa, a member of the Tokugawa clan whose ancestors included the shoguns who ruled Japan. \n\nNow, Ibrahim stil serves as the monarch of Johore, and still finds himself in conflict with the Strait Settlements governors.§!"
+MAL_ahmad_fuad_hassan: "Ahmad Fuad Hassan"
+#MAL_ahmad_fuad_hassan_desc: ""
+
+MAL_sultan_of_perak_trait: "Sultan of Perak"
+MAL_sultan_of_negri_trait: "Yamtuan Besar of Negeri Sembilan"
+MAL_sultan_of_johore: "Sultan of Johore"
+MAL_melayu_raya_proponent: "Melayu Raya Proponent"
+
+MAL_neglected_army_idea_r56: "Neglected Army"
+MAL_neglected_army_idea_r56_desc: "From the times of the Malacca and Johor Sultanates who dominated the region now known as the Malaya Peninsula, the Malays have always been known to fight with glory and were formidable forces in their time. But after many violent confrontations between these Malay states and the European powers, it left their armies shattered, and this weakness allowed for much of the peninsula to fall under the influence of [ENG.GetNameDef]. \n\nNow, [ROOT.GetNameDef] rely on [ROOT.OVERLORD.GetNameDef] for its defense against foreign threats, which has left the army lacking the necessary funds and to become neglected by the government. If we want to fully ensure our own security, we must restore Malaya's former military capabilities."
+
+
+MAL_dealing_with_chinese_migration: "Dealing With the Chinese Community"
+MAL_dealing_with_chinese_migration_desc: "\n\n\n£decision_header_MAL_MCP_STUFF£\n\n\n\n$MAL_chinese_migration_idea_r56_desc$"
+MAL_scale_up_chinese_migration: "Allow Mass Chinese Migration"
+MAL_scale_down_chinese_migration: "Scale Down Chinese Migration"
+MAL_combat_the_mcp: "Combat the Malayan Communist Party"
+
+MAL_chinese_migration_idea_r56: "Overseas Chinese Community"
+MAL_chinese_migration_idea_r56_desc: "Ever since the early 19th century, Chinese migration to the Malayan Peninsula has been frequent and rapid. Thousands of Chinese migrants, mainly from Guangdong and Fujian, have been arriving en masse in Malaya in order to seek out work in the tin mines and rubber plantations, while also intending to seek a better future for both themselves and their families. As a result, multiple Chinese communities have formed all around Malaya, including but not limited to Singapore and Penang. \n\nHowever, their mass migration has also resulted in ethnic and political conflict erupting between the three parties present in Malaya: The Malays, Chinese, and the British. Chinese migrants are blamed by the Malays for taking most of the jobs and increasing their influence on supposed Malay land, while the British remain fearful of the Chinese migrants because of their political affiliations with mainland Chinese politics. \n\nOnly time will tell whether the three parties will be able to get along, or a conflict erupts between the three parties."
+
+MAL_we_get_this_and_that_now_lets_go: "§Y[MAL.GetNameWithFlag]§! will gain: \n§YIan Stewart§! becomes a General. \n§YAdnan Saidi§! becomes a General. \n\n§GAvailable§! as §YChief of Army§!: \n§YIan Stewart§!, which grants \nDivision Speed: §G+10.00%§!, Army Experience Gain: §G+0.30§! daily."
+
+r56_malaya.1.t: "Sultan of Johor Expresses Interest in a Johorean Airforce"
+r56_malaya.1.desc: "After our recent advancements in the aerodynamics field, the Sultan of Johor, Ibrahim, has shown great interest in developing a Johorean airforce based in his sultanate down south. With the Sultanate of Johor already possesing its own army independent from us and [ENG.GetNameDef], would an airforce of its own make Johor an obstacle in the future if we come into conflict with the state?"
+r56_malaya.1.b: "Tell him to cut the idea short."
+
+r56_malaya.2.t: "Iskandar of Perak Passes"
+r56_malaya.2.desc: "Earlier this morning, it was reported that Iskandar Shah of the Sultnaate of Perak had passed away. His commitment to his state and unwavering love for his people has made him highly respected amongst thousands in the sultanate, and hundreds are going to attend his funeral."
+r56_malaya.2.b: "Rest in peace."

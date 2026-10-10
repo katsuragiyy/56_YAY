@@ -1,9 +1,9 @@
 characters = {
 	SAR_vyner_brooke={
-		name="SAR_vyner_brooke"
+		name = SAR_vyner_brooke
 		portraits={
 			civilian={
-				large = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+				large = "gfx/leaders/MAL/SAR_charles_vyner_brooke.dds"
 			}
 		}
 		country_leader={

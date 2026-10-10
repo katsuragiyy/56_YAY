@@ -357,6 +357,10 @@ ideas = {
 					NOT = { has_idea = BHU_no_army }
 				}
 				if = {
+                    limit = { original_tag = MAL }
+                    NOT = { has_idea = MAL_neglected_army_idea_r56 }
+                }
+				if = {
 					limit = {
 						original_tag = HON
 						has_completed_focus = HON_free_our_markets
@@ -844,6 +848,10 @@ ideas = {
 					limit = { original_tag = BHU }
 					NOT = { has_idea = BHU_no_army }
 				}
+				if = {
+                    limit = { original_tag = MAL }
+                    NOT = { has_idea = MAL_neglected_army_idea_r56 }
+                }
 				if = { # Should be able to replace Hasht Nafari on AFG
 					limit = {
 						original_tag = AFG
@@ -1251,6 +1259,10 @@ ideas = {
 					NOT = { has_idea = BHU_no_army }
 				}
 				if = {
+                    limit = { original_tag = MAL }
+                    NOT = { has_idea = MAL_neglected_army_idea_r56 }
+                }
+				if = {
 					limit = {
 						original_tag = HON
 						has_completed_focus = HON_free_our_markets
@@ -1592,6 +1604,10 @@ ideas = {
 					NOT = { has_idea = BHU_no_army }
 				}
 				if = {
+                    limit = { original_tag = MAL }
+                    NOT = { has_idea = MAL_neglected_army_idea_r56 }
+                }
+				if = {
 					limit = { original_tag = SAU }
 					NOT = { has_idea = isolation }
 				}
@@ -1909,6 +1925,10 @@ ideas = {
 					limit = { original_tag = BHU }
 					NOT = { has_idea = BHU_no_army }
 				}
+				if = {
+                    limit = { original_tag = MAL }
+                    NOT = { has_idea = MAL_neglected_army_idea_r56 }
+                }
 				if = {
 					limit = {
 						original_tag = HON

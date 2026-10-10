@@ -13,6 +13,27 @@
 # area_priority
 # building_target
 
+chinese_war = { # 56
+	allowed = { original_tag = JAP }
+	enable = {
+		has_completed_focus = JAP_reinforce_the_beijing_garrison
+		country_exists = CHI
+	}
+	abort = {
+		OR = {
+			is_subject = yes				#lost the war, likely
+			is_in_faction_with = CHI		#don't hate your allies, pal
+			NOT = { country_exists = CHI }
+		}
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = "CHI"
+		value = 200
+	}
+}
+
 r56_JAP_we_dont_really_need_those = {
 	allowed = {
 		original_tag = JAP

@@ -3826,9 +3826,9 @@ DEN_overlord_category = {
 		icon = GFX_decision_oppression
 
 		ai_will_do = { 
-			base = 5
+			base = 0 # 56
 			modifier = {
-				factor = 2
+				factor = 0 # 56
 				ROOT = {
 					original_tag = GER
 				}
@@ -3836,21 +3836,21 @@ DEN_overlord_category = {
 				is_historical_focus_on = yes
 			}
 			modifier = {
-				factor = 2
+				add = 2 # 56
 				has_opinion = {
 				    target = DEN
 				    value < -14
 				}
 			}
 			modifier = {
-				factor = 2
+				add = 2 # 56
 				has_opinion = {
 				    target = DEN
 				    value < -29
 				}
 			}
 			modifier = {
-				factor = 2
+				factor = 0 # 56
 				is_historical_focus_on = yes
 			}
 		}

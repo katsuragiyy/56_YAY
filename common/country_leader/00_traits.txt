@@ -18359,8 +18359,8 @@ leader_traits = {
 		random = no
 		sprite = 13
 		
-		political_power_factor = 0.05
-		stability_factor = -0.1
+		political_power_factor = 0.1 # 56 - Shenton was a strong centraliser
+		stability_factor = -0.05 # 56 - Stability debuff too big...?
 		production_speed_buildings_factor = 0.05
 
 	}

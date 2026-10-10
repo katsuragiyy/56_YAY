@@ -862,6 +862,7 @@
 
  ISR_expand_industrial_hubs: "Expand Urban Industrial Hubs"
  ISR_expand_industrial_hubs_desc:  "By expanding industrial hubs in Urban areas such as Haifa, we can promote further urbanization of the nation."
+ ISR_upon_focus_completion_tt: "Upon the Completion of this Focus:"
  
  ISR_soviet_cooperation: "Deepen the [SOV.GetAdjective] Connection"
  ISR_soviet_cooperation_desc: "It is in the best interest of both our nations to cooperate militarily with each other, as enemies of the revolution are getting stronger."
@@ -888,7 +889,7 @@
  ISR_this_and_that_and_maki_fyp_FUCK: "§YHowever§!, if we are to §RFail§! in our objectives, and not reaach the desired quotas by the end of the deadline, we will instead receive the §OFollowing Effects§!:"
 
  ISR_maki_five_year_plan_category: "The Five Year Plan"
- ISR_maki_five_year_plan_category_desc: "\n\n\n£decision_header_ISR_maki_five_year_program£\n\n\n\nInspired by the Soviet Five Year Plan that rapidly transformed the Soviet Union from a predominantly agricultural nation to a heavily industrialised power, [ROOT.GetLeader] seeks to replicate the success that the Soviets achieved under Joseph Stalin and give rise to [ROOT.GetNameDef]'s economic sector by forcibly industrialising the heavily agricultural land of Palestine. \n\nObjectives of the Five Year Plan: \n§Y15 Civilian Factories§!, §Y8 Military Factories§!, §Y3 Dockyards§!, §OAll§! of our §OOwned§! and §OCored§! states must have §Y60% Infrastructure§! and have §Y75% Stability§!. Achieving these quotas will bring about the prosperity of the [ROOT.GetAdjective] state and make us a regional power in our own right."
+ ISR_maki_five_year_plan_category_desc: "\n\n\n£decision_header_ISR_maki_five_year_program£\n\n\n\nInspired by the Soviet Five Year Plan that rapidly transformed the Soviet Union from a predominantly agricultural nation to a heavily industrialised great power, [ROOT.GetLeader] seeks to replicate the success that the Soviets achieved under Joseph Stalin and give rise to [ROOT.GetNameDef]'s economic sector by forcibly industrialising the heavily agricultural land of Palestine. \n\nObjectives of the Five Year Plan: \n§Y15 Civilian Factories§!, §Y8 Military Factories§!, §Y3 Dockyards§!, §OAll§! of our §OOwned§! and §OCored§! states must have §Y60% Infrastructure§! and have §Y75% Stability§!. Achieving these quotas will bring about the prosperity of the [ROOT.GetAdjective] state and make us a regional power in our own right."
 
  ISR_five_year_plan_successful: "Successes of the Five Year Plan"
  ISR_five_year_plan_fucked: "The Five Year Failure"
@@ -1000,6 +1001,8 @@
 
  ISR_seized_rabbi_money_noooo: "Seized Rabbinite Funds"
 
+ ISR_developing_urban_hubs_suka_blyat: "Funding Urban Expansion"
+
  ISR_invite_elements_of_mapai: "Invite Mapai Politicians Into Our Government"
  ISR_invite_elements_of_mapai_desc: ""
 
@@ -1009,7 +1012,7 @@
  ISR_one_state_two_peoples: "One State, Two People's"
  ISR_one_state_two_peoples_desc: ""
 
- ISR_develop_the_arab_communities: "Develop the New Administrative Divisions"
+ ISR_develop_the_arab_communities: "Develop the Palestinian State"
  ISR_develop_the_arab_communities_desc: ""
 
  ISR_economic_integration_with_falestine: "Propose Economic Integration"

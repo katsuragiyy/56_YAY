@@ -302,7 +302,7 @@ characters={
 		}
 	}	
 	SWE_viking_tamm={
-		name="Viking Tamm"
+		name=ETH_viking_tamm
 		portraits={
 			army={
 				large="gfx/leaders/SWE/r56_portrait_SWE_Viking_Tamm.dds"

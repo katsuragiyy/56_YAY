@@ -1679,7 +1679,7 @@ focus_tree = {
 			}
 			has_country_flag = ISR_hashomer_formed
 		}
-		cost = 5
+		cost = 2
 		completion_reward = {
 			custom_effect_tooltip = ISR_coalition_will_be_updated
 		}
@@ -1789,7 +1789,7 @@ focus_tree = {
 		mutually_exclusive = { focus = ISR_toe_line }
 		relative_position_id = ISR_limited_return
 		
-		cost = 5
+		cost = 2
 		x = -3
 		y = 1
 
@@ -2133,7 +2133,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ISR_strengthen_maki
 		}
-		cost = 5
+		cost = 2
 		completion_reward = {
 			# make hazan's portrait switch in in 1945 to older one? or just keep his 1952 portrait at all times
 			# hey guys elections are like really cool you know have you ever heard of elections they are like really cool..
@@ -2671,8 +2671,8 @@ focus_tree = {
 		completion_reward = {
 			build_railway = {
 				level = 1
-				build_only_on_allied = yes
-				controller_priority = { base = 1 }
+				#build_only_on_allied = yes
+				#controller_priority = { base = 1 }
 				fallback = yes
 				path = { 10099 12073 1015 }
 				start_state = 453
@@ -2744,7 +2744,8 @@ focus_tree = {
 	focus = {
 		id = ISR_address_the_urban_working_class
 		icon = GFX_focus_generic_public_works
-		prerequisite = { focus = ISR_strengthen_union focus = ISR_invest_in_kibbutzim }
+		prerequisite = { focus = ISR_strengthen_union }
+		prerequisite = { focus = ISR_invest_in_kibbutzim }
 		relative_position_id = ISR_invest_in_kibbutzim
 		
 		cost = 5
@@ -2968,7 +2969,23 @@ focus_tree = {
 		x = 3
 		y = 3
 
+		select_effect = {
+			add_timed_idea = {
+				idea = ISR_developing_urban_hubs_suka_blyat
+				days = 70
+			}
+		}
+
 		completion_reward = {
+			custom_effect_tooltip = SOV_focus_select_effect_tt
+			effect_tooltip = {
+				add_timed_idea = {
+					idea = ISR_developing_urban_hubs_suka_blyat
+					days = 70
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = ISR_upon_focus_completion_tt
 			random_owned_controlled_state = {
 				limit = { is_core_of = ROOT }
 				prioritize = { 454 }
@@ -2984,7 +3001,7 @@ focus_tree = {
 				prioritize = { 1016 }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = arms_factory
+					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
@@ -3012,7 +3029,7 @@ focus_tree = {
 		prerequisite = { focus = ISR_merge_unions focus = ISR_expand_industrial_hubs }
 		relative_position_id = ISR_expand_industrial_hubs
 
-		cost = 5
+		cost = 6
 		x = -1
 		y = 1
 
@@ -3047,13 +3064,11 @@ focus_tree = {
 		prerequisite = { focus = ISR_merge_unions }
 		relative_position_id = ISR_expand_industrial_hubs
 
-		cost = 5
+		cost = 8
 		x = -3
 		y = 1
 
-		completion_reward = {
-			add_ideas = MPL_unions
-		}
+		completion_reward = { add_ideas = r56i_laws_gender_equality }
 	}
 	focus = {
 		id = ISR_open_up_a_university_maki

@@ -1704,9 +1704,7 @@ country_event = {
 		}
 		hidden_effect = {
 			retire_country_leader = yes
-			SWE_gosta_bagge = {	#added R56
-				promote_character = yes
-			}
+			SWE_gosta_bagge = { promote_character = yes } #added R56
 			set_party_name = {
 				ideology = democratic
 				name = SWE_aat_hogern
@@ -7770,8 +7768,6 @@ country_event = {
 			SWE = {
 				has_completed_focus = SWE_decentralized_nordic_army_command
 			}
-			#Lone Wolf Finland can't join any factions
-			FIN_is_lone_wolf_finland = no
 		}
 		ai_chance = {
 			base = 2
@@ -7826,6 +7822,11 @@ country_event = {
 			}
 		}
 
+		trigger = {
+			#Lone Wolf Finland can't join any factions
+			FIN_is_lone_wolf_finland = no
+		}
+
 		hidden_effect = {
 			if = {
 				limit = {
@@ -7859,8 +7860,6 @@ country_event = {
 			SWE = {
 				has_completed_focus = SWE_central_nordic_army_command
 			}
-			#Lone Wolf Finland can't join any factions
-			FIN_is_lone_wolf_finland = no
 		}
 		name = AAT_Sweden_nordic_defense_council.1.c
 		ai_chance = {
@@ -7870,11 +7869,6 @@ country_event = {
 					is_ai = yes
 				}
 				factor = 1.2
-			}
-
-			modifier = {
-				is_in_faction = yes
-				factor = 0
 			}
 
 			modifier = {
@@ -7918,6 +7912,15 @@ country_event = {
 				}
 				add = 20
 			}
+			modifier = { # 56
+				is_in_faction = yes
+				factor = 0
+			}
+		}
+
+		trigger = {
+			#Lone Wolf Finland can't join any factions
+			FIN_is_lone_wolf_finland = no
 		}
 
 		#cant use FROM here due to ICE being a puppet, and DEN is the one sending  that event via Sweden

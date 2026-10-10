@@ -1832,6 +1832,9 @@
  #Maphilindo
  MALPHIINDO:0 "Maphilindo"
 
+ MAL_UK_DEF: "the Federated Malay States"
+ MAL_UK_ADJ: "Malayan"
+
  #MAC
  #Yugoslavian Puppet
  MAC_YUG_neutrality_autonomy_dominion:0 "Banovina of Macedonia"

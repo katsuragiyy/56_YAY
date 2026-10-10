@@ -1489,6 +1489,22 @@ country_event = {
 			}
 			activate_advisor = IRQ_faisal_ii
 		}
+		IF = { # 56 - Historical accuracy
+			limit = {
+				NOT = { 
+					has_country_leader = {
+						character = IRQ_nuri_as_said
+						ruling_only = yes
+					}
+				}
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = yes
+				election_frequency = 48 # 56 - Needs to be adjusted in the future. But is low priority
+			}
+			promote_character = IRQ_nuri_as_said
+		}
 		ELSE_IF = {
 			limit = {
 				NOT = { 

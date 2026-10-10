@@ -719,7 +719,7 @@ characters={
 		name= "Fu'ad Nassar"
 		portraits={
 			army={
-				small="GFX_idea_generic_communist_revolutionary_middle_eastern_2d" 
+				small="GFX_idea_PAL_fuad_nasser" 
 				large = "gfx/leaders/PAL/r56_portrait_PAL_fuad_nassar.dds"
 			}
 		}	

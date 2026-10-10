@@ -493,10 +493,12 @@ l_english:
  KOR_neutrality_party:0 "CPC"
  KOR_neutrality_party_long:0 "Central People's Committee"
  KUR_communism_party:0 "PDK"
- MAL_fascism_party:0 "KMM" #Young Malaysian Union
- MAL_fascism_party_long:0 "Kesatuan Melayu Muda"
- MAL_democratic_party:0 "PEKEMBAR" #or UMNO or PEKEMBAR
- MAL_democratic_party_long:0 "Pertubuhan Kebangsaan Melayu Bersatu" #or UMNO or PEKEMBAR
+ MAL_fascism_party:0 "Temenggong"
+ MAL_fascism_party_long:0 "House of Temenggong"
+ MAL_democratic_party:0 "KMM-L"
+ MAL_democratic_party_long:0 "Kesatuan Melayu Muda (Left)"
+ MAL_neutrality_party: "KMM-R"
+ MAL_neutrality_party_long: "Kesatuan Melayu Muda (Right)"
  PAK_democratic_party:0 "ML"
  PAR_fascism_party:0 "ANR - Colorado"
  PAR_neutrality_party:0 "UNR" #The UNR was the predecessor of the febrerist party and was founded in 1936 in the coup d'etat

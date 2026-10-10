@@ -3,7 +3,7 @@ characters={
 		name="Mohammed V"
 		portraits={
 		army={
-			large="gfx/leaders/MOR/r56_portrait_MOR_Mohammed_V_2.dds"
+			large="gfx/leaders/MOR/r56_portrait_MOR_Mohammed_V.dds"
 			}
 		}
 		country_leader={

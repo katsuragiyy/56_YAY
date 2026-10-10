@@ -11738,8 +11738,20 @@ JAP_the_co_prosperity_sphere_decisions = {
 	
 		icon = GFX_decision_generic_nationalism
 	
-		ai_will_do = {
-			base = 800
+		ai_will_do = { # 56
+			base = 0
+			modifier = {
+				has_war = no
+				add = 20
+			}
+			modifier = {
+				date > 1943.8.8
+				add = 1
+			}
+			modifier = {
+				RAJ = { has_capitulated = yes }
+				add = 5
+			}
 		}
 
 		highlight_states = {
@@ -11969,8 +11981,20 @@ JAP_the_co_prosperity_sphere_decisions = {
 	
 		icon = GFX_decision_generic_nationalism
 	
-		ai_will_do = {
-			base = 800
+		ai_will_do = { # 56
+			base = 0
+			modifier = {
+				has_war = no
+				add = 20
+			}
+			modifier = {
+				date > 1943.8.8
+				add = 1
+			}
+			#modifier = {
+			#	RAJ = { has_capitulated = yes }
+			#	add = 5
+			#}
 		}
 
 		highlight_states = {
@@ -12391,12 +12415,20 @@ JAP_the_co_prosperity_sphere_decisions = {
 			}
 		}
 
-		ai_will_do = {
-			base = 500 
+		ai_will_do = { # 56
+			base = 0
 			modifier = {
-				factor = 0
-				date < 1942.01.01 # Don't click this immediatly 
+				has_war = no
+				add = 20
 			}
+			modifier = {
+				date > 1942.01.01
+				add = 1
+			}
+			#modifier = {
+			#	RAJ = { has_capitulated = yes }
+			#	add = 5
+			#}
 		}
 
 	}
@@ -12489,12 +12521,20 @@ JAP_the_co_prosperity_sphere_decisions = {
 			}
 		}
 
-		ai_will_do = {
-			base = 500 
+		ai_will_do = { # 56
+			base = 0
 			modifier = {
-				factor = 0
-				date < 1942.01.01 # Don't click this immediatly 
+				has_war = no
+				add = 20
 			}
+			modifier = {
+				date > 1942.01.01
+				add = 1
+			}
+			#modifier = {
+			#	RAJ = { has_capitulated = yes }
+			#	add = 5
+			#}
 		}
 
 	}
@@ -12596,12 +12636,20 @@ JAP_the_co_prosperity_sphere_decisions = {
 			}
 		}
 
-		ai_will_do = {
-			base = 500 
+		ai_will_do = { # 56
+			base = 0
 			modifier = {
-				factor = 0
-				date < 1942.01.01 # Don't click this immediatly 
+				has_war = no
+				add = 20
 			}
+			modifier = {
+				date > 1942.01.01
+				add = 1
+			}
+			#modifier = {
+			#	RAJ = { has_capitulated = yes }
+			#	add = 5
+			#}
 		}
 
 	}

@@ -1,29 +1,198 @@
 characters={
-	#Leaders are just copies from vanilla, that's why not ported
 	MAL_onn_jaafar={
-		name="Onn Jaafar"
+		name= MAL_onn_jaafar
 		portraits={
 			civilian={
-				large = "gfx/leaders/MAL/Portrait_Onn_Jaafar.dds"
-				small = GFX_idea_onn_jafaar
+				large=GFX_portrait_Onn_Jaafar
+				small = GFX_idea_onn_jafaar # 56
 			}
 		}
 		country_leader={
 			ideology=conservatism
-			traits = { liberal_journalist }
+			traits = { liberal_journalist } # 56
 			expire="1953.3.1.1"
 			id=-1
 		}
-		advisor = {
+		advisor = { # 56
 			slot = political_advisor
 			idea_token = MAL_onn_jaafar
+			allowed = { original_tag = MAL }
+			traits = { democratic_reformer }
+		}
+	}
+	MAL_shenton_thomas={
+		name= MAL_shenton_thomas
+		portraits={
+			civilian={
+				large="GFX_portrait_malaya_shenton_thomas"
+			}
+		}
+		country_leader={
+			ideology=colonial_government # 56
+			desc = MAL_shenton_thomas_leader_desc
+			expire="1953.3.1.1"
+			traits = {
+				MAL_governor_of_the_straits_settlements_trait 
+			}
+			id=-1
+		}
+	}
+	MAL_lai_teck={
+		name= MAL_lai_teck
+		portraits={
+			civilian={
+				large="gfx/leaders/MAL/Portrait_Lai_Teck.dds" # 56
+				small = GFX_idea_lai_teck # 56
+			}
+		}
+		country_leader={
+			ideology=marxism
+			traits = { political_dancer } # 56
+			expire="1953.3.1.1"
+			id=-1
+		}
+		advisor = { # 56
+			slot = political_advisor
+			idea_token = MAL_lai_teck
 			allowed = {
 				original_tag = MAL
 			}
-			traits = {
-				democratic_reformer
+			available = { NOT = {  has_autonomy_state = autonomy_supervised_state } }
+			traits = { communist_revolutionary }
+		}
+	}
+	MAL_ibrahim_hj_yaacob={
+		name= MAL_ibrahim_hj_yaacob
+		portraits={
+			civilian={
+				large="gfx/leaders/MAL/Portrait_Ibrahim_Yaacob.dds" # 56
 			}
 		}
+		country_leader={
+			ideology=social_nationalism # 56
+			traits = { MAL_melayu_raya_proponent } # 56
+			expire="1953.3.1.1"
+			id=-1
+		}
+	}
+
+	# 56 CHARACTERS
+	MAL_ian_stewart = {
+        name = MAL_ian_stewart
+        portraits = {
+            army = {
+                large = "gfx/leaders/CAN/r56_portrait_CAN_Bert_Hoffmeister.dds"
+                small = GFX_idea_r56_CAN_scottish_looking_fella
+            }
+        }
+
+        advisor = {
+            slot = army_chief
+            cost = 100
+            idea_token = MAL_ian_stewart
+            allowed = { original_tag = MAL }
+            available = { ENG = { has_completed_focus = ENG_royal_malay_regiment_focus } }
+            traits = { army_chief_maneuver_2 }
+        }
+
+        corps_commander = {
+            traits = { unpopular harsh_leader jungle_rat trait_reckless }
+            skill = 2
+            attack_skill = 2
+            defense_skill = 1
+            planning_skill = 3
+            logistics_skill = 2
+            legacy_id = -1
+            visible = { ENG = { has_completed_focus = ENG_royal_malay_regiment_focus } }
+    	}
+	}
+	MAL_iskandar_shah = {
+        name = MAL_iskandar_shah
+        portraits = {
+            army = {
+                large = "gfx/leaders/MAL/Portrait_Iskandar_Shah.dds"
+                small = GFX_idea_MAL_iskandar_shah
+            }
+        }
+
+        advisor = {
+            slot = political_advisor
+            cost = 150
+            idea_token = MAL_iskandar_shah_political_advisor
+            allowed = { original_tag = MAL }
+            available = { NOT = { has_government = communism } }
+            traits = { MAL_sultan_of_perak_trait } # make event about his death
+        }
+	}
+	MAL_abdul_rahman_sultan = {
+        name = MAL_abdul_rahman_sultan
+        portraits = {
+            army = {
+                large = "gfx/leaders/MAL/Portrait_Abdul_Rahman.dds"
+                small = GFX_idea_MAL_abdul_rahman
+            }
+        }
+
+        advisor = {
+            slot = political_advisor
+            cost = 150
+            idea_token = MAL_abdul_rahman_sultan_political_advisor
+            allowed = { original_tag = MAL }
+            available = { NOT = { has_government = communism } }
+            traits = { MAL_sultan_of_negri_trait }
+        }
+	}
+	MAL_ibrahim_of_johor = {
+        name = MAL_ibrahim_of_johor
+        portraits = {
+            army = {
+                large = "gfx/leaders/MAL/Portrait_Ibrahim_of_Johor.dds"
+                small = GFX_idea_MAL_john_johor
+            }
+        }
+
+        advisor = {
+            slot = political_advisor
+            cost = 150
+            idea_token = MAL_ibrahim_of_johor_political_advisor
+            allowed = { original_tag = MAL }
+			traits = { MAL_sultan_of_johore }
+            available = { 
+				NOT = { has_government = communism }
+				NOT = {
+					has_country_leader = {
+						character = MAL_ibrahim_of_johor
+						ruling_only = yes
+					}
+				} 
+			}
+        }
+
+		country_leader={
+			ideology=ultranationalism
+			desc = MAL_ibrahim_of_johor_political_advisor_desc
+			traits = { MAL_sultan_of_johore anti_communist }
+			expire="1953.3.1.1"
+			id=-1
+		}
+	}
+	MAL_ahmad_fuad_hassan = {
+        name = MAL_ahmad_fuad_hassan
+        portraits = {
+            army = {
+                #large = "gfx/leaders/MAL/Portrait_Iskandar_Shah.dds"
+                small = GFX_idea_MAL_ahmad_fuad_hassan
+            }
+        }
+
+        advisor = {
+            slot = political_advisor
+            cost = 150
+            idea_token = MAL_ahmad_fuad_hassan_political_advisor
+            allowed = { original_tag = MAL }
+            available = { NOT = { has_government = communism } }
+            traits = { AFG_islamic_scholar NZL_social_welfare_architect_trait }
+        }
 	}
 	MAL_tunku_abdul_rahman={
 		name="Tunku Abdul Rahman"
@@ -39,50 +208,6 @@ characters={
 			id=-1
 		}
 	}
-	MAL_shenton_thomas={
-		name="Shenton Thomas"
-		portraits={
-			civilian={
-				large="GFX_portrait_malaya_shenton_thomas"
-			}
-		}
-		country_leader={
-			ideology= colonial_government
-			traits = { MAL_governor_of_the_straits_settlements_trait }
-			expire="1953.3.1.1"
-			id=-1
-		}
-	}
-	MAL_lai_teck={
-		name="Lai Teck"
-		portraits={
-			civilian={
-				large = "gfx/leaders/MAL/Portrait_Lai_Teck.dds"
-				small = GFX_idea_lai_teck
-			}
-		}
-		country_leader={
-			ideology=marxism
-			traits = { political_dancer }
-			expire="1953.3.1.1"
-			id=-1
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = MAL_lai_teck
-			allowed = {
-				original_tag = MAL
-			}
-			available = {
-				NOT = { 
-					has_autonomy_state = autonomy_supervised_state
-				}
-			}
-			traits = {
-				communist_revolutionary
-			}
-		}
-	}
 	MAL_chin_peng={
 		name="Chin Peng"
 		portraits={
@@ -93,21 +218,6 @@ characters={
 		country_leader={
 			ideology=marxism
 			traits = { fierce_patriot }
-			expire="1953.3.1.1"
-			id=-1
-		}
-	}
-	#There was a brief plan to put Ibrahim of Johor as a puppet leader of Japan in an expanded malaysian peninsula
-	MAL_ibrahim_hj_yaacob={ #this guy supported Japanese during the war, and was imprisoned for it, could be made fascist?
-		name="Ibrahim Hj Yaacob"
-		portraits={
-			civilian={
-				large="gfx/leaders/MAL/Portrait_Ibrahim_Yaacob.dds"
-			}
-		}
-		country_leader={
-			ideology=fascism_ideology
-			traits = { propaganda_expert }
 			expire="1953.3.1.1"
 			id=-1
 		}
@@ -132,29 +242,6 @@ characters={
 			}
 			traits = {
 				fascist_demagogue
-			}
-		}
-	}
-	MAL_edward_james_gent={
-		name="Edward James Gent"
-		portraits={
-			civilian={
-				small = GFX_idea_gent
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = MAL_edward_james_gent
-			allowed = {
-				original_tag = MAL
-			}
-			available = {
-				NOT = { 
-					has_autonomy_state = autonomy_supervised_state
-				}
-			}
-			traits = {
-				status_quo_enthusiast
 			}
 		}
 	}
@@ -452,27 +539,6 @@ characters={
 			}
 		}
 	}
-
-	MAN_Gordon_Bennett={
-		name= "Gordon Bennett"
-		portraits={
-			army = {
-				large= "gfx/leaders/MAL/Portrait_Gordon_Bennett.dds"
-				small= "gfx/interface/ideas/mal/advisors/r56_idea_MAL_advisor_gordon_bennett.dds"
-			}
-		}
-		corps_commander = {
-			skill = 2
-			attack_skill = 3
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 1
-			legacy_id = 1218
-			visible = {
-				has_completed_focus = MAL_the_empire
-			}
-		}
-	}
 	
 	MAN_Lewis_Heath={
 		name= "Lewis Heath"
@@ -489,9 +555,9 @@ characters={
 			planning_skill = 2
 			logistics_skill = 2
 			legacy_id = 1217
-			visible = {
-				has_completed_focus = MAL_the_empire
-			}
+			#visible = {
+			#	has_completed_focus = MAL_the_empire
+			#}
 		}
 	}
 	
@@ -503,13 +569,14 @@ characters={
 			}
 		}
 		corps_commander = {
-			traits = { promising guerilla_fighter  }
+			traits = { promising guerilla_fighter }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
 			planning_skill = 1
 			logistics_skill = 2
 			legacy_id = 1213
+			visible = { ENG = { has_completed_focus = ENG_royal_malay_regiment_focus } }
 		}
 	}
 	

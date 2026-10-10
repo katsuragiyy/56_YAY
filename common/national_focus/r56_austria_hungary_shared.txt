@@ -51,11 +51,27 @@
 			}
 		}
 		offset = {
-			x = -42
+			x = -43
 			y = -8
 			trigger = {
 				has_focus_tree = mu_czech_focus
 				has_completed_focus = CZE_appeal_to_the_castle
+			}
+		}
+		offset = {
+			x = -5
+			y = 0
+			trigger = {
+				has_focus_tree = mu_czech_focus
+				has_completed_focus = CZE_petition_the_nobles
+			}
+		}
+		offset = {
+			x = -5
+			y = 0
+			trigger = {
+				has_focus_tree = mu_czech_focus
+				has_completed_focus = CZE_unify_the_fascist_parties
 			}
 		}						
 		ai_will_do = {

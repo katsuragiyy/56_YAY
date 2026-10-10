@@ -371,7 +371,7 @@ ideas = {
 				}
 			}
 
-			picture = george_vi_ns
+			picture = george_vi # 56
 			
 			removal_cost = -1
 			

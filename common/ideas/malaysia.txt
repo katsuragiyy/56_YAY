@@ -2,6 +2,150 @@ ideas = {
 
 	country = {
 
+		MAL_ketuanan_melayu = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = saf_history_of_segregation
+			
+			modifier = {
+				conscription_factor = -0.25
+				drift_defence_factor = -0.15 
+				stability_factor = -0.1
+			}
+		}
+
+		MAL_ketuanan_melayu_2 = {
+
+			name = MAL_ketuanan_melayu
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = saf_history_of_segregation
+			
+			modifier = {
+				conscription_factor = -0.15
+				drift_defence_factor = -0.15 
+				stability_factor = -0.05
+			}
+		}
+
+		MAL_ketuanan_melayu_3 = {
+
+			name = MAL_ketuanan_melayu
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = saf_history_of_segregation
+			
+			modifier = {
+				conscription_factor = -0.05
+				drift_defence_factor = -0.05 
+				stability_factor = -0.05
+			}
+		}
+
+		MAL_colonial_administration_idea = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				is_subject = yes 
+			}
+
+			cancel = {
+				is_subject = no 
+			}
+
+			removal_cost = -1
+
+			picture = ARG_resource_extration_focus
+
+			modifier = {
+				resources_to_overlord_factor = 0.1
+				cic_to_overlord_factor = 0.15 
+			}
+		}
+
+		# 56 - NEW
+		MAL_chinese_migration_idea_r56 = {
+            allowed = { original_tag = MAL }
+            picture = chi_chinese_unity
+
+            modifier = {
+                weekly_manpower = 100
+				monthly_population = 0.5
+				stability_weekly = -0.0010
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = 0.1
+				communism_drift = 0.03
+            }
+        }
+
+		MAL_neglected_army_idea_r56 = {
+            allowed = { original_tag = MAL }
+            picture = generic_army_problems
+
+            modifier = {
+                army_org_factor = -0.1
+                planning_speed = -0.25
+
+                custom_modifier_tooltip = BHU_no_army_tt
+            }
+
+            #on_remove = {
+            #    country_lock_all_division_template = no
+            #    set_rule = { can_not_declare_war = no }
+            #}
+        }
+
+		MAL_neglected_army_idea2_r56 = {
+			name = MAL_neglected_army_idea_r56
+            allowed = { original_tag = MAL }
+            picture = generic_army_problems
+
+            modifier = {
+                army_org_factor = -0.05
+                planning_speed = -0.15
+
+                custom_modifier_tooltip = BHU_no_army_tt
+            }
+
+            on_remove = {
+                country_lock_all_division_template = no
+                set_rule = { can_not_declare_war = no }
+            }
+        }
+
+		# No 3rd because after this, its removed
+
+		##################################################
+
 		MAL_status_quo_idea = {
 			
 		

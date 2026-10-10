@@ -1,78 +1,145 @@
 
 
-## Political Actions  # Causes errors due to us not having these ideas. 
-#political_actions = { 
-#
-#	MAL_loosen_societal_restrictions_decision = {
-#
-#		icon = GFX_decision_SWI_support_humanitarian_efforts
-#
-#		allowed = {
-#			original_tag = MAL 
-#		}
-#
-#		visible = {
-#			OR = {
-#				has_idea = MAL_ketuanan_melayu
-#				has_idea = MAL_ketuanan_melayu_2
-#				has_idea = MAL_ketuanan_melayu_3
-#			}
-#		}
-#
-#		available = {
-#			OR = {
-#				is_subject = no 
-#				compare_autonomy_state > autonomy_puppet
-#			}
-#		}
-#
-#		fire_only_once = no
-#
-#		cost = 100 
-#
-#		priority = 100
-#
-#		ai_will_do = {
-#			base = 500
-#		}
-#
-#		modifier = {
-#			political_power_factor = -0.1
-#		}
-#
-#		days_remove = 70 
-#
-#		remove_effect = {
-#			IF = {
-#				limit = { has_idea = MAL_ketuanan_melayu }
-#				swap_ideas = {
-#					remove_idea = MAL_ketuanan_melayu
-#					add_idea = MAL_ketuanan_melayu_2
-#				}
-#			}
-#			ELSE_IF = {
-#				limit = { has_idea = MAL_ketuanan_melayu_2 }
-#				swap_ideas = {
-#					remove_idea = MAL_ketuanan_melayu_2
-#					add_idea = MAL_ketuanan_melayu_3
-#				}
-#			}
-#			ELSE_IF = {
-#				limit = { has_idea = MAL_ketuanan_melayu_3 }
-#				remove_ideas = MAL_ketuanan_melayu_3
-#			}
-#		}
-#
-#		complete_effect = {
-#					
-#		}	
-#
-#	}
-#
-#
-#}
+# Political Actions  # Causes errors due to us not having these ideas. 
+political_actions = { 
+
+	MAL_loosen_societal_restrictions_decision = {
+
+		icon = GFX_decision_SWI_support_humanitarian_efforts
+
+		allowed = {
+			original_tag = MAL 
+		}
+
+		visible = {
+			OR = {
+				has_idea = MAL_ketuanan_melayu
+				has_idea = MAL_ketuanan_melayu_2
+				has_idea = MAL_ketuanan_melayu_3
+			}
+		}
+
+		available = {
+			OR = {
+				is_subject = no 
+				compare_autonomy_state > autonomy_puppet
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 100 
+
+		priority = 100
+
+		ai_will_do = {
+			base = 500
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+		}
+
+		days_remove = 70 
+
+		remove_effect = {
+			IF = {
+				limit = { has_idea = MAL_ketuanan_melayu }
+				swap_ideas = {
+					remove_idea = MAL_ketuanan_melayu
+					add_idea = MAL_ketuanan_melayu_2
+				}
+			}
+			ELSE_IF = {
+				limit = { has_idea = MAL_ketuanan_melayu_2 }
+				swap_ideas = {
+					remove_idea = MAL_ketuanan_melayu_2
+					add_idea = MAL_ketuanan_melayu_3
+				}
+			}
+			ELSE_IF = {
+				limit = { has_idea = MAL_ketuanan_melayu_3 }
+				remove_ideas = MAL_ketuanan_melayu_3
+			}
+		}
+
+		complete_effect = {
+					
+		}	
+
+	}
 
 
+}
+
+# 56
+MAL_dealing_with_chinese_migration = {
+	MAL_scale_down_chinese_migration = {
+		icon = GFX_decision_eng_trade_unions_support
+		fire_only_once = no
+
+		available = { has_idea = MAL_chinese_migration_idea_r56 }	
+		complete_effect = { remove_ideas = MAL_chinese_migration_idea_r56 }
+
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_stability < 0.39
+				add = 50 # WE NEED TO STABILISE
+			}
+		}
+	}
+
+	MAL_scale_up_chinese_migration = {
+		icon = GFX_decision_generic_merge_plant_ship
+		fire_only_once = no
+
+		available = { NOT = { has_idea = MAL_chinese_migration_idea_r56 } }	
+		complete_effect = { add_ideas = MAL_chinese_migration_idea_r56 }
+
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_stability > 0.5
+				add = 50 # okay maybe we can handle this now
+			}
+		}
+	}
+
+	MAL_combat_the_mcp = {
+		icon = GFX_decision_generic_police_action
+		fire_only_once = no
+		days_re_enable = 180
+		days_remove = 90
+		cost = 50
+
+		available = {
+			communism > 0.1
+			NOT = { has_government = communism }
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+			consumer_goods_factor = 0.05
+		}
+
+		remove_effect = {
+			add_stability = -0.05
+			add_popularity = {
+				ideology = communism
+				popularity = -0.1
+			}
+		}
+
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				communism > 0.5
+				NOT = { has_government = communism }
+			}
+		}
+	}
+}
 
 
 

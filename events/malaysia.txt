@@ -1,4 +1,64 @@
-﻿  add_namespace = malaysia
+﻿add_namespace = malaysia
+add_namespace = r56_malaya
+
+country_event = { #Sultan of Johore expresses interest in Air force.
+    id = r56_malaya.1
+    title = r56_malaya.1.t
+    desc = r56_malaya.1.desc
+    picture = GFX_report_event_tur_military_affair
+
+    fire_only_once = yes
+    is_triggered_only = yes
+
+    # Request he not follow up with whatever is going on in his head.
+    option = { name = r56_malaya.1.b }
+}
+
+country_event = { # Iskandar of Perak DIES
+    id = r56_malaya.2
+    title = r56_malaya.2.t
+    desc = r56_malaya.2.desc
+    picture = GFX_report_event_tur_military_affair
+
+    fire_only_once = yes
+    is_triggered_only = yes
+
+    # RIP
+    option = { 
+		name = r56_malaya.2.b
+		remove_advisor_role = {
+			character = MAL_iskandar_shah
+			slot = political_advisor
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 country_event = {
 	id = malaysia.1
@@ -632,7 +692,7 @@ country_event = { #mal
 	
 	option = {#yes
 		name = malaysia.23.a
-		unlock_decision_category_tooltip = mal_independence_decisions
+		#unlock_decision_category_tooltip = mal_independence_decisions
 		set_country_flag = mal_fascist_denied
 
 		

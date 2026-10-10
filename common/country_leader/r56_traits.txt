@@ -3658,9 +3658,8 @@ leader_traits = {
 	}
 	GXC_last_defender_of_the_three_principles = {
 		political_power_factor = 0.1
-		democratic_acceptance = 25
-		democratic_drift = 0.05
-		neutrality_drift = 0.05
+		neutrality_acceptance = 20
+		democratic_acceptance = 20
 		stability_factor = 0.1
 		political_advisor_cost_factor = -0.25
 	}
@@ -4667,6 +4666,43 @@ leader_traits = {
 		neutrality_acceptance = 15
 		consumer_goods_factor = 0.08
 		
+	}
+
+###------> MAL <><> <><> <><> <><> <><>
+
+	MAL_sultan_of_perak_trait = {
+		random = no
+		sprite = 13
+		research_speed_factor = 0.05
+		political_power_factor = -0.1
+		army_core_attack_factor = 0.05
+		army_core_defence_factor = 0.05
+	}
+
+	MAL_sultan_of_negri_trait = {
+		random = no
+		sprite = 13
+		political_power_factor = -0.05
+		stability_factor = 0.08
+		autonomy_gain = 0.1
+		war_support_factor = 0.08
+	}
+
+	MAL_sultan_of_johore = {
+		random = no
+		sprite = 13
+		consumer_goods_factor = -0.08
+		fascism_drift = 0.05
+		conscription = 0.015
+		improve_relations_maintain_cost_factor = -0.25
+	}
+
+	MAL_melayu_raya_proponent = {
+		random = no
+		sprite = 13
+		compliance_gain = 0.03
+		conscription_factor = 0.05
+		justify_war_goal_time = -0.25
 	}
 
 ###------> LIE <><> <><> <><> <><> <><>
@@ -7510,7 +7546,7 @@ leader_traits = {
 	}
 	ISR_kibbutznik = {
 		random = no
-		global_building_slots_factor = 1
+		global_building_slots_factor = 0.1
 		production_speed_buildings_factor = 0.05
 	}
 	ISR_pro_soviet_kibbutznik = {
