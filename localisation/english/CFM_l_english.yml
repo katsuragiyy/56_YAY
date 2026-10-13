@@ -517,3 +517,10 @@
 #cityfall.12.a:0 "."
 #cityfall.12.b:0 "We only correct the wrongs of the past."
 #cityfall.12.c:0 "The fight in London may be over, but shall never win."
+
+ new_cityfall.1.t: "Fall of Perm"
+ new_cityfall.1.desc: "The last bastion of [old_controller.GetAdjective] resistance has reportedly fallen today. The city of Perm, after the fall of Moscow, served as the de-facto capital of [old_controller.GetNameDef], behind the Urals and supposedly secure from [new_controller.GetAdjective] bombing. But reality has come crashing down on the [old_controller.GetAdjective]s today, as the [new_controller.GetAdjective] troops crossed the Urals and captured the city. \n\nThe clock ticks for [old_controller.GetNameDef]."
+ new_cityfall.1.a: "Not one step back!"
+ new_cityfall.1.b: "The East has been conquered."
+ new_cityfall.1.c: "Uralin!"
+ new_cityfall.1.d: "The walls are closing in on Russia."

@@ -1,0 +1,77 @@
+
+r56_SAM_decentralization_balance = {
+	initial_value = -0.25
+	left_side = r56_SAM_government_side	
+	right_side = r56_SAM_district_side
+	#decision_category = ETH_centralization_balance_of_power_category
+
+	### The "middle ground"
+	range = {
+		id = SAM_balance_range
+		min = -0.10
+		max = 0.10
+		modifier = {
+			war_support_factor = 0
+			research_speed_factor = 0
+			political_power_factor = 0
+			max_command_power_mult = 0
+			consumer_goods_factor = 0
+			custom_modifier_tooltip = ETH_balance_range_tt
+		}
+	}
+
+	### Centralization 
+	side = {
+		id = r56_SAM_government_side	
+		icon = GFX_bop_ETH_decentralisation_side
+		range = {
+			id = r56_SAM_full_government_control
+			min = -1
+			max = -0.8
+			modifier = {
+			}
+		}
+		range = {
+			id = r56_SAM_centralised_authority
+			min = -0.8
+			max = -0.6
+			modifier = {
+			}
+		}
+		range = {
+			id = r56_SAM_encroaching_government_power
+			min = -0.6
+			max = -0.3
+		}
+		range = {
+			id = r56_SAM_minimal_government_interferrence
+			min = -0.3
+			max = -0.10
+		}
+	}
+	side = {
+		id = r56_SAM_district_side	
+		icon = GFX_bop_ETH_centralisation_side
+		range = {
+			id = r56_SAM_minimal_decentralization
+			min = 0.1
+			max = 0.3
+		}
+		range = {
+			id = r56_SAM_autonomous_districts
+			min = 0.3
+			max = 0.6
+		}
+		range = {
+			id = r56_SAM_even_more_autonomous_districts
+			min = 0.6
+			max = 0.8
+		}
+		range = {
+			id = r56_SAM_centralization_whats_that
+			min = 0.8
+			max = 1
+		}
+	}
+}
+

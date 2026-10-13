@@ -739,8 +739,8 @@
  STATE_639:0 "Gilbert Islands"
  STATE_640:0 "Shan State"
  STATE_641:0 "Tahiti"
- STATE_642:0 "Canton and Enderbury Islands"
- KIR_STATE_642:0 "Abariringa"
+ STATE_642:0 "Union Islands"
+ SAM_STATE_642:0 "Tokelau" # To represent native name
  STATE_643:0 "Ellice Islands"
  STATE_644:1 "Kolyma"
  STATE_645:0 "Iwo Jima"

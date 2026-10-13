@@ -14607,7 +14607,7 @@ focus_tree = {
 					}
 					if = {
 						limit = {
-							is_special_project_completed = sp_air_helicopter
+							is_special_project_completed = sp:sp_air_helicopter # 56 - Vanilla fix
 						}
 						mio:CZE_praga_aviation_organization = {
 							add_mio_size = 1

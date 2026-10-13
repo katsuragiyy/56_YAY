@@ -80,6 +80,14 @@ focus_tree = {
 		x = -2
 		y = 1
 
+		ai_will_do = {
+			base = 1
+			modifier = {
+				is_historical_focus_on = yes
+				add = 20
+			}
+		}
+
 		completion_reward = {
 			add_ideas = CUB_the_nine_cent_law
 		}
@@ -103,6 +111,7 @@ focus_tree = {
 			show_ideas_tooltip = CUB_raul_castillo
 		}		
 
+		ai_will_do = { base = 1 }
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 	}
 
@@ -119,6 +128,7 @@ focus_tree = {
 			add_ideas = VEN_tax_reform
 		}
 
+		ai_will_do = { base = 1 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
@@ -131,6 +141,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
+		ai_will_do = { base = 15 }
 		completion_reward = {
 			add_ideas = CUB_minimum_wage_laws_idea
 		}
@@ -154,6 +165,7 @@ focus_tree = {
 			show_ideas_tooltip = CUB_eduardo_chibas
 		}
 
+		ai_will_do = { base = 15 }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
 
@@ -181,6 +193,7 @@ focus_tree = {
 			show_ideas_tooltip = USA_general_motors
 		}
 
+		ai_will_do = { base = 15 }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 	}
 
@@ -240,6 +253,7 @@ focus_tree = {
 			
 		}
 
+		ai_will_do = { base = 15 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
@@ -260,6 +274,7 @@ focus_tree = {
 			}
 		}
 
+		ai_will_do = { base = 15 }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 
 	}
@@ -291,6 +306,20 @@ focus_tree = {
 			}
 			NOT = {
 				has_completed_focus = CUB_caribbean_dominance
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 500 # oh shit usa is in trouble we need to help
+				AND = {
+					is_historical_focus_on = yes
+					USA = {
+						has_government = democratic
+						has_war = yes 
+					}
+				}
 			}
 		}
 
@@ -3057,7 +3086,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 1
+			base = 1
 			modifier = {
 				is_historical_focus_on = yes
 				factor = 0

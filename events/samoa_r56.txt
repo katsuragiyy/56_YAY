@@ -1,0 +1,2878 @@
+﻿###########################
+# Samoa Events
+###########################
+
+add_namespace = r56_samoa
+add_namespace = r56_samoa_manua
+add_namespace = r56_samoa_smuggle_stuffs
+add_namespace = r56_samoa_fautasi_race
+add_namespace = r56_goodwill_negotiations
+add_namespace = r56_goodwill_outcome
+add_namespace = r56_goodwill_war
+add_namespace = r56_samoa_news
+
+# Tuimaleali'ifano dies
+country_event = {
+	id = r56_samoa.1
+	title = r56_samoa.1.t
+	desc = r56_samoa.1.desc
+	picture = GFX_report_event_IRQ_ghazi_i_death
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa.1.a
+		retire_ideology_leader = democratic
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_country_leader_role = {
+			character = SAM_tupua_tamasese_meaole
+			promote_leader = yes
+			country_leader = {
+				ideology = liberalism
+				expire = "1965.1.1.1"
+				traits = { liberal_grandee likes_usa }
+			}
+		}
+		set_country_flag = r56_SAM_tuimalealiifano_dead_flag
+	}
+}
+
+# Nelson Returns from Exile
+country_event = {
+	id = r56_samoa.2
+	title = r56_samoa.2.t
+	desc = r56_samoa.2.desc
+	picture = GFX_report_event_SAM_nelson_and_family
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa.2.a
+		add_stability = 0.03
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = SAM_olaf_nelson
+		set_country_flag = r56_SAM_nelson_returns_flag
+	}
+}
+
+# Question of New Zealand
+country_event = {
+	id = r56_samoa.3
+	title = r56_samoa.3.t
+	desc = r56_samoa.3.desc
+	picture = GFX_report_event_ARG_coup_consolidating
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { # Ally with the New Zealand Legion
+		name = r56_samoa.3.a
+		if = {
+			limit = { is_in_faction = yes is_faction_leader = no }
+			every_country = {
+				limit = {
+					is_in_faction_with = ROOT
+					is_faction_leader = yes
+				}
+				country_event = r56_samoa.32
+			}
+
+			else_if = {
+				limit = { is_faction_leader = yes }
+				NZL = { country_event = { id = generic.5 days = 2 } }
+			}
+
+			else_if = {
+				limit = { is_in_faction = no }
+				NZL = { country_event = { id = r56_samoa.29 days = 2 } }
+
+				custom_effect_tooltip = if_they_accept_tt
+				effect_tooltip = {
+					give_guarantee = NZL
+					NZL = { give_guarantee = ROOT }
+					if = {
+						limit = { 726 = { is_claimed_by = NZL } }
+						custom_effect_tooltip = generic_skip_one_line_tt
+						726 = { remove_claim_by = NZL }
+					}
+				}
+			}
+		}
+	}
+
+
+	option = { # Avenge Black Saturday
+		name = r56_samoa.3.b
+		#war goal
+	}
+
+	option = { # Partition New Zealand with Australia
+		name = r56_samoa.3.c
+		trigger = {
+			is_in_faction_with = AST
+			AST = { is_faction_leader = yes }
+			NOT = { is_ally_with = NZL }
+		}
+
+		AST = {
+			country_event = {
+				id = r56_samoa.33
+				days = 2
+			}
+		}
+
+		custom_effect_tooltip = if_they_accept_tt
+		effect_tooltip = {
+			every_state = {
+				limit = {
+					is_controlled_by = NZL
+					NOT = { 
+						is_controlled_by_ROOT_or_ally = yes
+						is_claimed_by = AST
+					}
+					OR = {
+						state = 1136 # Auckland
+						state = 284 # Wellington
+						state = 1139 # Marlborough
+						state = 723 # Canterbury
+						state = 1140 # Otago
+						state = 1087 # Chatham Islands
+					}
+				}
+				add_claim_by = AST
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_state = {
+				limit = {
+					is_controlled_by = NZL
+					NOT = { 
+						is_controlled_by_ROOT_or_ally = yes
+						is_claimed_by = ROOT
+					}
+					state = 1089 # Niue
+				}
+				add_claim_by = ROOT
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			AST = {
+				declare_war_on = {
+					target = NZL
+					type = take_state_focus
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_to_war = {
+					targeted_alliance = ROOT
+					enemy = NZL
+					hostility_reason = asked_to_join
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = r56_SAM_conquering_the_oppressor
+		}
+	}
+}
+
+# Western Samoa makes a donation to the British
+country_event = {
+	id = r56_samoa.4
+	title = r56_samoa.4.t
+	desc = r56_samoa.4.desc
+	picture = GFX_report_event_airplane_factory
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa.4.a
+		if = {
+			limit = { has_dlc = "By Blood Alone" }
+			add_equipment_to_stockpile = {
+				type = small_plane_airframe_0
+				producer = ENG
+				amount = 1
+			}
+
+			else = {
+				add_equipment_to_stockpile = {
+					type = nav_bomber_equipment_1
+					amount = 1
+					producer = ENG
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_opinion_modifier = {
+			target = SAM
+			modifier = aided_industry
+		}
+	}
+}
+
+# 1936 Elections
+country_event = { #Mau Election
+	id = r56_samoa.5
+	title = r56_samoa.5.t
+	desc = r56_samoa.5.desc
+	picture = GFX_report_event_election_vote
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa.5.a
+		swap_ruler_traits = { remove = AFG_divided_council add = r56_SAM_mau_movement_trait }
+	}
+}
+
+# Malietoa's Thoughts Concerning Samoan Independence
+country_event = {
+	id = r56_samoa.6
+	title = r56_samoa.6.t
+	desc = r56_samoa.6.desc
+	picture = GFX_report_event_generic_handshake
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa.6.a
+		add_political_power = 5
+		set_country_flag = r56_SAM_malietoa_unopposed_to_independence
+	}
+}
+
+# Tuimaleali'ifano's Thoughts Concerning Samoan Independence
+country_event = {
+	id = r56_samoa.7
+	title = r56_samoa.7.t
+	desc = r56_samoa.7.desc
+	picture = GFX_report_event_gre_allied_diplomacy_military
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa.7.a
+		add_political_power = 10
+		set_country_flag = r56_SAM_tuimalealiifano_recognises_our_independence
+	}
+}
+
+# Malietoa Dies
+country_event = {
+	id = r56_samoa.8
+	title = r56_samoa.8.t
+	desc = r56_samoa.8.desc
+	picture = GFX_report_event_election_vote
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa.8.a
+		set_country_flag = r56_SAM_malietoa_died_flag
+	}
+}
+
+# Fate of the Malietoa Dynasty
+country_event = {
+	id = r56_samoa.9
+	title = r56_samoa.9.t
+	desc = r56_samoa.9.desc
+	picture = GFX_report_event_fascist_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa.9.a #BRING HIM TO ME!
+		remove_ideas = r56_SAM_malietoa_opposition
+	}
+
+	option = {
+		name = r56_samoa.9.b #Frens
+		swap_ideas = {
+			remove_idea = r56_SAM_malietoa_opposition
+			add_idea = r56_SAM_malietoa_cooperation
+		}
+	}
+}
+
+# Event for 1088 Controller - Samoa Demands A.S
+country_event = {
+	id = r56_samoa.10
+	title = r56_samoa.10.t
+	desc = r56_samoa.10.desc
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { # Lets try and be the good guys in this situation
+		name = r56_samoa.10.a
+		1088 = { transfer_state_to = FROM }
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = { country_event = r56_samoa.12 }
+
+		# do ai chances eventually BANABA
+	}
+
+	option = { # Empty threats
+		name = r56_samoa.10.b
+		FROM = { country_event = r56_samoa.11 }
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = SAM_hirohitothisdoggonemad
+
+		# do ai chances eventually BANABA
+	}
+}
+
+# FROM Rejects
+country_event = {
+	id = r56_samoa.11
+	title = r56_samoa.11.t
+	desc = r56_samoa.11.desc
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { # We gave it a shot
+		name = r56_samoa.11.a
+		add_political_power = -100
+		add_stability = -0.1
+
+		# do ai chances eventually BANABA
+	}
+
+	option = { # Mobilize the army!
+		name = r56_samoa.11.b
+		add_war_support = 0.1
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 726
+				num_provinces = 2
+				#on_win = japan_border_conflict.2
+				#on_lose = japan_border_conflict.3
+				#on_cancel = japan_border_conflict.4
+				#modifier = 0.1
+				#dig_in_factor = 0
+				#terrain_factor = 0
+			}	
+			defender = {
+				state = 1088
+				num_provinces = 1
+				#on_win = japan_border_conflict.3
+				#on_lose = japan_border_conflict.2
+				#on_cancel = japan_border_conflict.4
+			}
+		}
+
+		# do ai chances eventually BANABA
+	}
+}
+
+# FROM Accepts
+country_event = {
+	id = r56_samoa.12
+	title = r56_samoa.12.t
+	desc = r56_samoa.12.desc
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa.12.a # Hurray!
+		set_country_flag = SAM_tuimanua_we_have
+		mark_focus_tree_layout_dirty = yes
+		add_popularity = {
+			ideology = ROOT
+			popularity = 0.1
+		}
+		country_event = {
+			id = r56_samoa_manua.6
+			days = 2
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		effect_tooltip = { 1088 = { transfer_state_to = ROOT } }
+	}
+}
+
+# Our Territorial Ambitions
+country_event = {
+	id = r56_samoa.13
+	title = r56_samoa.13.t
+	desc = r56_samoa.13.desc
+	picture = GFX_report_event_military_planning
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { # Are we any better than our colonizers if we pursue expansionism
+		name = r56_samoa.13.a
+		set_country_flag = SAM_we_are_peaceful_peoples
+		add_political_power = 100
+		add_stability = 0.1
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_other_country = {
+			limit = {
+				has_war = no
+				NOT = { has_government = fascism }
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = medium_increase
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		effect_tooltip = { unlock_national_focus = r56_SAM_disengage_from_global_affairs }
+	}
+
+	option = { # Claim the former tributaries, Manu'a will rule all!
+		name = r56_samoa.13.b
+		set_country_flag = SAM_we_want_to_expand_NOW
+		add_war_support = 0.05
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_state = {
+			limit = {
+				OR = {
+					state = 734
+					state = 636
+					state = 634
+					state = 639
+					state = 727
+					state = 641
+				}
+			}
+			add_claim_by = ROOT
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = SAM_unlocks_faction_joining_focuses
+	}
+
+	option = { # We shall be the unifiers of the Pacific people's
+		name = r56_samoa.13.c
+		set_country_flag = SAM_we_want_to_expand_NOW
+		add_war_support = 0.1
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_state = {
+			limit = {
+				OR = {
+					state = 734
+					state = 636
+					state = 634
+					state = 727
+					state = 641
+					state = 270
+					state = 1074
+					state = 630
+					state = 629
+					state = 643
+				}
+			}
+			add_claim_by = ROOT
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_other_country = {
+			limit = {
+				NOT = { 
+					OR = {
+						has_government = fascism
+						has_idea = GEN_Intervene_I
+						has_idea = GEN_Conquer_I
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = medium_decrease
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = SAM_unlocks_faction_joining_focuses
+	}
+}
+
+# Event for Japan - Samoa requests aid
+country_event = {
+	id = r56_samoa.14
+	title = r56_samoa.14.t
+	desc = r56_samoa.14.desc
+	picture = GFX_report_event_royal_parade
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa.14.a # We must aid them
+		send_equipment = {
+			equipment = infantry_equipment
+			amount = 750
+			target = FROM
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = { country_event = r56_samoa.15 }
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 25
+				ROOT = {
+					has_opinion = {
+						target = FROM
+						value > 50
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = r56_samoa.14.b # we dont owe them anything
+		add_political_power = 10
+		FROM = { country_event = r56_samoa.16 }
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 25
+				ROOT = {
+					has_opinion = {
+						target = FROM
+						value < 0
+					}
+				}
+			}
+		}
+	}
+}
+
+# Japan sends aid
+country_event = {
+	id = r56_samoa.15
+	title = r56_samoa.15.t
+	desc = r56_samoa.15.desc	
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa.15.a
+		add_opinion_modifier = {
+			target = FROM
+			modifier = r56_SAM_accepted_to_support_opinion
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		effect_tooltip = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 750
+				producer = JAP
+			}
+		}
+	}
+}
+
+# Japan denies
+country_event = {
+	id = r56_samoa.16
+	title = r56_samoa.16.t
+	desc = r56_samoa.16.desc	
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa.16.a
+		add_opinion_modifier = {
+			target = FROM
+			modifier = r56_SAM_refused_to_support_opinion
+		}
+	}
+}
+
+# Can we have territories pls
+country_event = {
+	id = r56_samoa.17
+	title = r56_samoa.17.t
+	desc = r56_samoa.17.desc	
+	picture = GFX_report_event_SOV_negotiations_japan_bukharin
+	
+	is_triggered_only = yes
+	
+	option = { # yes
+		name = r56_samoa.17.a
+		effect_tooltip = {
+			every_state = {
+				limit = {
+					has_state_flag = SAM_manua_state_flag
+					is_controlled_by = ROOT
+				}
+				transfer_state_to = FROM
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = huge_increase
+				}
+			}
+		}
+
+		hidden_effect = { FROM = { country_event = r56_samoa.18 } }
+	}
+
+	option = { # no
+		name = r56_samoa.17.b
+		effect_tooltip = {
+			every_state = {
+				limit = { has_state_flag = SAM_manua_state_flag }
+				add_claim_by = FROM
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = huge_decrease
+				}
+			}
+		}
+
+		hidden_effect = { FROM = { country_event = r56_samoa.19 } }
+	}
+}
+
+# Territories received
+country_event = {
+	id = r56_samoa.18
+	title = r56_samoa.18.t
+	desc = r56_samoa.18.desc	
+	picture = GFX_report_event_chinese_japanese_handshake
+	
+	is_triggered_only = yes
+	
+	option = { # yipe
+		name = r56_samoa.18.a
+		every_state = {
+			limit = {
+				has_state_flag = SAM_manua_state_flag
+				is_controlled_by = FROM
+			}
+			transfer_state_to = ROOT
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_opinion_modifier = {
+			target = FROM
+			modifier = huge_increase
+		}
+	}
+}
+
+# Territories remain non-samoan
+country_event = {
+	id = r56_samoa.19
+	title = r56_samoa.19.t
+	desc = r56_samoa.19.desc	
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { # damn you
+		name = r56_samoa.19.a
+		every_state = {
+			limit = { has_state_flag = SAM_manua_state_flag }
+			add_claim_by = ROOT
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_opinion_modifier = {
+			target = FROM
+			modifier = huge_decrease
+		}
+	}
+}
+
+# Samoa requests international recognition
+country_event = {
+	id = r56_samoa.20
+	title = r56_samoa.20.t
+	desc = r56_samoa.20.desc	
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { # sure
+		name = r56_samoa.20.a
+		add_political_power = -5
+		FROM = {
+			add_political_power = 5
+			add_stability = 0.01
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = r56_samoa_recognized_us
+			}
+		}
+
+		ai_chance = {
+			base = 5
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 10
+				} 
+				add = 5
+			}
+
+			modifier = {
+				has_government = FROM
+				add = 5
+			}
+
+			modifier = {
+				is_in_faction_with = FROM
+				add = 10
+			}
+		}
+	}
+
+	option = { # no
+		name = r56_samoa.20.b
+		ai_chance = {
+			base = 5
+
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 10
+				} 
+				add = 5
+			}
+
+			modifier = {
+				has_wargoal_against = FROM
+				add = 5
+			}
+		}
+	}
+}
+
+# Samoa Offers Resource Rights in 726
+country_event = {
+	id = r56_samoa.21
+	title = r56_samoa.21.t
+	desc = r56_samoa.21.desc	
+	picture = GFX_report_event_FIN_petsamo_melting_plant
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { # Sure
+		name = r56_samoa.21.a
+		give_resource_rights = { receiver = GER state = 726 }
+		random_owned_controlled_state = {
+			limit = { is_fully_controlled_by = ROOT is_core_of = ROOT }
+			add_building_construction = {
+				type = industrial_complex
+				level = -1
+				instant_build = yes
+			}
+      	}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			custom_effect_tooltip = SAM_offmap_civ_tt
+			hidden_effect = {
+				add_timed_idea = {
+					idea = SAM_offmap_civ_bcuz_germany_wants_rubber_r56
+					days = 720
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			country_event = r56_samoa.22
+		}
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 20
+				}
+				add = 3
+			}
+
+			modifier = {
+				has_government = FROM
+				add = 2
+			}
+
+			modifier = {
+				rubber < 1
+				add = 10
+			}
+		}
+	}
+
+	option = { # No
+		name = r56_samoa.21.b
+		ai_chance = {
+			base = 1
+
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 10
+				} 
+				add = 2
+			}
+		}
+	}
+}
+
+# FROM accepts
+country_event = {
+	id = r56_samoa.22
+	title = r56_samoa.22.t
+	desc = r56_samoa.22.desc	
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { # Yipe
+		name = r56_samoa.22.a
+		effect_tooltip = {
+			give_resource_rights = { receiver = GER state = 726 }
+			FROM = {
+				random_owned_controlled_state = {
+					limit = { is_fully_controlled_by = ROOT is_core_of = ROOT }
+					add_building_construction = {
+						type = industrial_complex
+						level = -1
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			custom_effect_tooltip = SAM_offmap_civ_tt
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		unlock_decision_tooltip = r56_SAM_revoke_rubber_agreement
+
+		ai_chance = { base = 1 }
+	}
+}
+
+# FROM rejects
+country_event = {
+	id = r56_samoa.23
+	title = r56_samoa.23.t
+	desc = r56_samoa.23.desc	
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { # Oh well
+		name = r56_samoa.23.a
+		ai_chance = { base = 1 }
+	}
+}
+
+# Samoa Revokes Rubber Deal
+country_event = {
+	id = r56_samoa.24
+	title = r56_samoa.24.t
+	desc = r56_samoa.24.desc
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = r56_samoa.24.a
+		effect_tooltip = {
+			remove_resource_rights = 726
+			random_owned_controlled_state = {
+				limit = { is_fully_controlled_by = ROOT is_core_of = ROOT }
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = { base = 1 }
+	}
+}
+
+# Samoa Requests Naval Vessels
+country_event = {
+	id = r56_samoa.25
+	title = r56_samoa.25.t
+	desc = r56_samoa.25.desc
+	picture = GFX_report_event_GER_anglo_german_naval_treaty
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #Yes
+		name = r56_samoa.25.a
+		custom_effect_tooltip = SAM_we_will_transfer_the_following # better tooltip
+		hidden_effect = {
+			transfer_ship = {
+				prefer_name = "Yubari"
+				type = light_cruiser
+				target = SAM
+			}
+			transfer_ship = {
+				prefer_name = "Kuretake"
+				type = destroyer
+				target = SAM
+			}
+			transfer_ship = {
+				prefer_name = "Wakatake"
+				type = destroyer
+				target = SAM
+			}
+			transfer_ship = {
+				prefer_name = "Nadakaze"
+				type = destroyer
+				target = SAM
+			}
+			transfer_ship = {
+				prefer_name = "Ro-29"
+				type = submarine
+				target = SAM
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			country_event = r56_samoa.26
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.85
+				uses = 1
+				category = naval_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.75
+				uses = 3
+				category = cat_fleet_in_being
+				category = cat_base_strike
+			}
+		}
+
+		ai_chance = { base = 1 }
+	}
+
+	option = { #No
+		name = r56_samoa.25.b
+		FROM = { country_event = r56_samoa.27 }
+		ai_chance = { base = 1 }
+	}
+}
+
+# Samoa Requests Naval Vessels = Yes
+country_event = {
+	id = r56_samoa.26
+	title = r56_samoa.26.t
+	desc = r56_samoa.26.desc
+	picture = GFX_report_event_generic_naval_treaty
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = r56_samoa.26.a
+		custom_effect_tooltip = SAM_we_will_transfer_the_following
+		effect_tooltip = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.85
+				uses = 1
+				category = naval_doctrine
+			}
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				unlock_military_industrial_organization_tooltip = mio:JAP_mitsubishi_kobe_shipyard_organization
+				custom_effect_tooltip = generic_skip_one_line_tt
+				mio:JAP_mitsubishi_kobe_shipyard_organization = { 
+					add_mio_size = 1
+					add_mio_funds = 1000
+				}
+			}
+		}
+		ai_chance = { base = 1 }
+	}
+}
+
+# Samoa Requests Naval Vessels = No
+country_event = {
+	id = r56_samoa.27
+	title = { 
+		text = SAM_JAP_rejected_naval_vessels_title
+		trigger = { }
+	}
+
+	title = { 
+		text = SAM_AST_rejected_gun_shipments_title
+		trigger = {  }
+	}
+
+	desc = { 
+		text = SAM_JAP_rejected_naval_vessels_desc
+		trigger = { }
+	}
+
+	desc = { 
+		text = SAM_AST_rejected_gun_shipments_desc
+		trigger = {
+			has_government = FROM
+		}
+	}
+
+	picture = GFX_report_event_generic_naval_treaty
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = r56_samoa.27.a
+		
+		ai_chance = { base = 1 }
+	}
+}
+
+# Samoa Requests Arms
+country_event = {
+	id = r56_samoa.28
+	title = r56_samoa.28.t
+	desc = r56_samoa.28.desc
+	picture = GFX_report_event_czech_soldiers_02
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #Yes
+		name = r56_samoa.25.a
+		send_equipment = {
+			equipment = infantry_equipment
+			amount = 1500
+			target = FROM
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		send_equipment = {
+			equipment = support_equipment
+			amount = 100
+			target = FROM
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		send_equipment = {
+			equipment = artillery_equipment
+			amount = 250
+			target = FROM
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			set_country_flag = SAM_AST_purchase_weapons_title_desc_accepted
+			country_event = r56_samoa.26
+			custom_effect_tooltip = generic_skip_one_line_tt
+			effect_tooltip = {
+				add_doctrine_cost_reduction = {
+					cost_reduction = 0.85
+					uses = 1
+					category = land_doctrine
+				}
+				add_doctrine_cost_reduction = {
+					cost_reduction = 0.75
+					uses = 3
+					category = infantry_weapons
+					category = support_tech
+				}
+			}
+		}
+
+		ai_chance = { base = 1 }
+	}
+
+	option = { #No
+		name = r56_samoa.25.b
+		FROM = { country_event = r56_samoa.27 set_country_flag = SAM_AST_purchase_weapons_title_desc_denied }
+		ai_chance = { base = 1 }
+	}
+}
+
+# Samoa Suggests Defensive Pact
+country_event = {
+	id = r56_samoa.29
+	title = r56_samoa.29.t
+	desc = r56_samoa.29.desc
+	picture = GFX_report_event_SAM_nzl_and_samoa_flag
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #Yes
+		name = r56_samoa.29.a
+		set_country_flag = SAM_defense_pact_accepted
+		give_guarantee = FROM
+		if = {
+			limit = { 726 = { is_claimed_by = ROOT } }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			726 = { remove_claim_by = ROOT }
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			set_country_flag = SAM_defense_pact_accepted
+			give_guarantee = ROOT
+			custom_effect_tooltip = generic_skip_one_line_tt
+			country_event = {
+				id = r56_samoa.30
+				days = 2
+			}
+		}
+	}
+
+	option = { #No
+		name = r56_samoa.29.b
+		FROM = {
+			set_country_flag = SAM_defense_pact_rejected
+			country_event = {
+				id = r56_samoa.30
+				days = 2
+			}
+		}
+	}
+}
+
+# FROM Accepts Defense Pact
+country_event = {
+	id = r56_samoa.30
+	picture = GFX_report_event_SAM_nzl_and_samoa_flag
+
+	title = {
+		text = r56_samoa.30.t.r
+		trigger = { has_country_flag = SAM_defense_pact_rejected }
+	}
+
+	title = {
+		text = r56_samoa.30.t.a
+		trigger = { has_country_flag = SAM_defense_pact_accepted }
+	}
+
+	desc = {
+		text = r56_samoa.30.desc.r
+		trigger = { has_country_flag = SAM_defense_pact_rejected }
+	}
+
+	desc = {
+		text = r56_samoa.30.desc.a
+		trigger = { has_country_flag = SAM_defense_pact_accepted }
+	}
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Yes
+		name = r56_samoa.30.a
+		trigger = { has_country_flag = SAM_defense_pact_accepted }
+		#clr_country_flag = SAM_defense_pact_accepted # Used on decision
+		effect_tooltip = {
+			give_guarantee = FROM
+			FROM = { give_guarantee = ROOT }
+			if = {
+				limit = { 726 = { is_claimed_by = FROM } }
+				custom_effect_tooltip = generic_skip_one_line_tt
+				726 = { remove_claim_by = FROM }
+			}
+		}
+	}
+	
+	option = { # No
+		name = r56_samoa.30.b
+		trigger = { has_country_flag = SAM_defense_pact_rejected }
+		clr_country_flag = SAM_defense_pact_rejected
+	}
+}
+
+# Samoa Suggests New Zealander Entry Into Our Alliance
+country_event = {
+	id = r56_samoa.31
+	title = r56_samoa.31.t
+	desc = r56_samoa.31.desc
+	picture = GFX_report_event_SAM_nzl_and_samoa_flag
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Yes
+		name = r56_samoa.31.a
+		NZL = { country_event = generic.5 }
+	}
+
+	option = { # No
+		name = r56_samoa.31.b
+		FROM = {
+			country_event = {
+				id = r56_samoa.32
+				days = 2
+			}
+		}
+	}
+}
+
+# Samoa Suggests New Zealander Entry Into Our Alliance - Rejected
+country_event = {
+	id = r56_samoa.32
+	title = r56_samoa.32.t
+	desc = r56_samoa.32.desc
+	picture = GFX_report_event_hitler_croatia_handshake
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Shame
+		name = r56_samoa.19.a
+	}
+}
+
+# Samoa Suggests Partition of New Zealand
+country_event = {
+	id = r56_samoa.33
+	title = r56_samoa.33.t
+	desc = r56_samoa.33.desc
+	picture = GFX_report_event_hitler_croatia_handshake
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Yes
+		name = r56_samoa.33.a
+		set_country_flag = SAM_we_are_partitioning_nzl_tonight
+		every_state = {
+			limit = {
+				is_controlled_by = NZL
+				NOT = { 
+					is_controlled_by_ROOT_or_ally = yes
+					is_claimed_by = ROOT
+				}
+				OR = {
+					state = 1136 # Auckland
+					state = 284 # Wellington
+					state = 1139 # Marlborough
+					state = 723 # Canterbury
+					state = 1140 # Otago
+					state = 1087 # Chatham Islands
+				}
+			}
+			add_claim_by = ROOT
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_state = {
+			limit = {
+				is_controlled_by = NZL
+				NOT = { 
+					is_controlled_by_ROOT_or_ally = yes
+					OR = {
+						is_claimed_by = FROM
+						is_core_of = ROOT
+					}
+				}
+				state = 1089 # Niue
+			}
+			add_claim_by = FROM
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		declare_war_on = {
+			target = NZL
+			type = take_state_focus
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_to_war = {
+			targeted_alliance = SAM
+			enemy = NZL
+			hostility_reason = asked_to_join
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			set_country_flag = SAM_we_are_partitioning_nzl_tonight
+			country_event = {
+				id = r56_samoa.35
+				days = 2
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = r56_SAM_conquering_the_oppressor
+		}
+	}
+
+	option = { # No
+		name = r56_samoa.33.b
+		FROM = {
+			country_event = {
+				id = r56_samoa.34
+				days = 2
+			}
+		}
+	}
+}
+
+# Samoa Suggests Partition of New Zealand - Australia Rejects
+country_event = {
+	id = r56_samoa.34
+	title = r56_samoa.34.t
+	desc = r56_samoa.34.desc
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Shame
+		name = r56_samoa.34.a
+	}
+}
+
+# Samoa Suggests Partition of New Zealand - Australia Accepts
+country_event = {
+	id = r56_samoa.35
+	title = r56_samoa.35.t
+	desc = r56_samoa.35.desc
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Yipe
+		name = r56_samoa.35.a
+		effect_tooltip = {
+			every_state = {
+				limit = {
+					is_controlled_by = NZL
+					NOT = { 
+						is_controlled_by_ROOT_or_ally = yes
+						is_claimed_by = FROM
+					}
+					OR = {
+						state = 1136 # Auckland
+						state = 284 # Wellington
+						state = 1139 # Marlborough
+						state = 723 # Canterbury
+						state = 1140 # Otago
+						state = 1087 # Chatham Islands
+					}
+				}
+				add_claim_by = FROM
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_state = {
+				limit = {
+					is_controlled_by = NZL
+					NOT = { 
+						is_controlled_by_ROOT_or_ally = yes
+						is_claimed_by = ROOT
+					}
+					state = 1089 # Niue
+				}
+				add_claim_by = ROOT
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			FROM = {
+				declare_war_on = {
+					target = NZL
+					type = take_state_focus
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_to_war = {
+					targeted_alliance = ROOT
+					enemy = NZL
+					hostility_reason = asked_to_join
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = r56_SAM_conquering_the_oppressor
+		}
+	}
+}
+
+# FROM Suggests We Lay Down Our Arms - Event for Overlord of NZL
+country_event = {
+	id = r56_samoa.36
+	title = r56_samoa.36.t
+	desc = r56_samoa.36.desc
+	picture = GFX_report_event_polish_army
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # We will surrender
+		name = r56_samoa.36.a
+		effect_tooltip = { white_peace = FROM }
+		hidden_effect = {
+			white_peace = SAM
+			white_peace = AST
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		SAM = { transfer_state = 1089 } # Niue
+		custom_effect_tooltip = generic_skip_one_line_tt
+		AST = {
+			transfer_state = 1136 # Auckland
+			transfer_state = 284 # Wellington
+			transfer_state = 1139 # Marlborough
+			transfer_state = 723 # Canterbury
+			transfer_state = 1140 # Otago
+			transfer_state = 1087 # Chatham Islands
+		}
+		every_state = {
+			limit = {
+				OR = {
+					is_claimed_by = SAM
+					is_core_of = SAM
+				}
+				OR = {
+					is_owned_by = ROOT
+					is_owned_by = NZL
+				}
+				NOT = { is_owned_by = SAM }
+				OR = {
+					is_controlled_by = SAM
+					is_controlled_by = AST
+				}
+			}
+			transfer_state_to = SAM
+		}
+
+		every_state = {
+			limit = {
+				OR = {
+					is_claimed_by = AST
+					is_core_of = AST
+				}
+				OR = {
+					is_owned_by = ROOT
+					is_owned_by = NZL
+				}
+				NOT = { is_owned_by = SAM }
+				OR = {
+					is_controlled_by = SAM
+					is_controlled_by = AST
+				}
+			}
+			transfer_state_to = AST
+		}
+	}
+
+	option = { # The Sun Shall Never Set!
+		name = r56_samoa.36.b
+		
+	}
+}
+
+# Coronation of Faumuina Event
+country_event = {
+	id = r56_samoa.37
+	title = r56_samoa.37.t
+	desc = r56_samoa.37.desc
+	picture = GFX_report_event_por_return_of_the_monarchy
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { name = r56_samoa.37.a } # Hurray!!
+}
+
+# Faletolu Gathered
+country_event = {
+	id = r56_samoa_manua.1
+	title = r56_samoa_manua.1.t
+	desc = r56_samoa_manua.1.desc
+	picture = GFX_report_event_romania_parliament
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa_manua.1.a
+		add_political_power = 150
+		add_stability = 0.1
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_cosmetic_tag = SAM_MANUA
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_province_name = {
+			id = 13080
+			name = "Fitiuta"
+		}
+		set_capital = {
+			state = 1088
+			remember_old_capital = no
+		}
+
+		hidden_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 636
+						state = 734
+						state = 1089
+						state = 726
+						state = 1088
+						state = 641
+						state = 642
+						state = 727
+						state = 643
+					}
+				}
+				set_state_flag = SAM_manua_state_flag
+			}
+
+			country_event = {
+				id = r56_samoa_manua.2
+				days = 35
+			}
+		}
+	}
+}
+
+# Tufele Revolt
+country_event = {
+	id = r56_samoa_manua.2
+	title = r56_samoa_manua.2.t
+	desc = r56_samoa_manua.2.desc
+	picture = GFX_report_event_kenya_army
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa_manua.2.a
+		custom_effect_tooltip = r56_tufele_revolt_tt
+	}
+}
+
+# Samoa Requests Diplomatic Support
+country_event = {
+	id = r56_samoa_manua.3
+	title = r56_samoa_manua.3.t
+	desc = r56_samoa_manua.3.desc
+	picture = GFX_report_event_generic_handshake
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { # Anything to weaken the American scum!
+		name = r56_samoa_manua.3.a
+		add_political_power = -10
+		FROM = {
+			country_event = {
+				id = r56_samoa_manua.4
+				days = 2
+			}
+		}
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 1
+				has_government = FROM
+			}
+
+			modifier = {
+				factor = 3
+				is_in_faction_with = FROM
+			}
+
+			modifier = {
+				factor = 1
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+			}
+		}
+	}
+
+	option = { # Lets not get too involved in their struggle.
+		name = r56_samoa_manua.3.b
+		add_political_power = 10
+		FROM = {
+			country_event = {
+				id = r56_samoa_manua.5
+				days = 2
+			}
+		}
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 3
+				strength_ratio = {
+					tag = USA
+					ratio < 2
+				}
+			}
+		}
+	}
+}
+
+# Japan supports us
+country_event = {
+	id = r56_samoa_manua.4
+	title = r56_samoa_manua.4.t
+	desc = r56_samoa_manua.4.desc
+	picture = GFX_report_event_generic_handshake
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_samoa_manua.4.a
+		set_country_flag = we_have_support_from_japan
+	}
+}
+
+# Japan denies support us
+country_event = {
+	id = r56_samoa_manua.5
+	title = r56_samoa_manua.5.t
+	desc = r56_samoa_manua.5.desc
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { name = r56_samoa_manua.5.a }
+}
+
+# Choosing Manu'a
+country_event = {
+	id = r56_samoa_manua.6
+	title = r56_samoa_manua.6.t
+	desc = r56_samoa_manua.6.desc
+	picture = GFX_report_event_AFG_fate_of_the_royal_family
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { # Taliutafa Kilisi Young
+		name = r56_samoa_manua.6.a
+		set_country_flag = SAM_has_manua
+		add_stability = 0.1
+
+		add_country_leader_role = {
+			character = SAM_taliutafa_kilisi_young
+			promote_leader = yes
+			country_leader = {
+				ideology = oligarchism
+				expire = "1965.1.1.1"
+				traits = { pacifist_isolationist }
+			}
+		}
+
+		if = {
+			limit = { NOT = { has_government = neutrality } }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+				long_name = SAM_manua_party_taliutafa
+				name = SAM_manua_party
+			}
+		}
+	}
+
+	option = { # Galea'i Makapi
+		name = r56_samoa_manua.6.b
+		set_country_flag = SAM_has_manua
+		add_war_support = 0.1
+
+		add_country_leader_role = {
+			character = SAM_galeai_makapi
+			promote_leader = yes
+			country_leader = {
+				ideology = oligarchism
+				expire = "1965.1.1.1"
+				traits = { r56_dislikes_usa ECU_moderate_dictator }
+			}
+		}
+
+		if = {
+			limit = { NOT = { has_government = neutrality } }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+				long_name = SAM_manua_party_galeai
+				name = SAM_manua_party
+			}
+		}
+	}
+
+	option = { # Tuifiti
+		name = r56_samoa_manua.6.c
+		trigger = { controls_state = 636 }
+		set_country_flag = SAM_has_manua
+		636 = { add_compliance = 30 }
+
+		add_country_leader_role = {
+			character = SAM_tuiviti
+			promote_leader = yes
+			country_leader = {
+				ideology = oligarchism
+				expire = "1965.1.1.1"
+				traits = { defender_of_the_homeland }
+			}
+		}
+
+		if = {
+			limit = { NOT = { has_government = neutrality } }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+				long_name = SAM_manua_party_fiji
+				name = SAM_manua_party_fiji
+			}
+		}
+	}
+}
+
+# A bunch of smuggling events here
+country_event = { #Infantry Equipment
+	id = r56_samoa_smuggle_stuffs.1
+	title = r56_samoa_smuggle_stuffs.1.t
+	desc = r56_samoa_smuggle_stuffs.1.desc	
+	picture = GFX_report_event_canada_army
+	
+	is_triggered_only = yes
+	
+	option = {  #Yipe?
+		name = r56_samoa_smuggle_stuffs.success
+		add_equipment_to_stockpile = { 
+			type = infantry_equipment_0
+			amount = 500
+			producer = USA
+		}
+	}
+}
+
+country_event = { #Infantry Equipment
+	id = r56_samoa_smuggle_stuffs.2
+	title = r56_samoa_smuggle_stuffs.1.t
+	desc = r56_samoa_smuggle_stuffs.1.desc
+	picture = GFX_report_event_canada_army
+	
+	is_triggered_only = yes
+	
+	option = {  #Yipe?
+		name = r56_samoa_smuggle_stuffs.success
+		add_equipment_to_stockpile = { 
+			type = infantry_equipment_0
+			amount = 250
+			producer = USA
+		}
+	}
+}
+
+country_event = { #Support Equipment
+	id = r56_samoa_smuggle_stuffs.3
+	title = r56_samoa_smuggle_stuffs.1.t
+	desc = r56_samoa_smuggle_stuffs.1.desc
+	picture = GFX_report_event_canada_army
+	
+	is_triggered_only = yes
+	
+	option = {  #Yipe?
+		name = r56_samoa_smuggle_stuffs.success
+		add_equipment_to_stockpile = {
+			type = support_equipment_1
+			amount = 25
+			producer = USA
+		}
+	}
+}
+
+country_event = { #Artillery
+	id = r56_samoa_smuggle_stuffs.4
+	title = r56_samoa_smuggle_stuffs.1.t
+	desc = r56_samoa_smuggle_stuffs.1.desc
+	picture = GFX_report_event_british_artillery
+	
+	is_triggered_only = yes
+	
+	option = {  #Yipe?
+		name = r56_samoa_smuggle_stuffs.success
+		add_equipment_to_stockpile = {
+			type = artillery_equipment_1
+			amount = 25
+			producer = USA
+		}
+	}
+}
+
+country_event = { #Trucks
+	id = r56_samoa_smuggle_stuffs.5
+	title = r56_samoa_smuggle_stuffs.1.t
+	desc = r56_samoa_smuggle_stuffs.1.desc
+	picture = GFX_report_event_generic_truck
+	
+	is_triggered_only = yes
+	
+	option = {  #Yipe?
+		name = r56_samoa_smuggle_stuffs.success
+		add_equipment_to_stockpile = {
+			type = motorized_equipment_0
+			amount = 25
+			producer = USA
+		}
+	}
+}
+
+country_event = { #Operational Failure
+	id = r56_samoa_smuggle_stuffs.6
+	title = r56_samoa_smuggle_stuffs.6.t
+	desc = r56_samoa_smuggle_stuffs.6.desc
+	picture = GFX_report_event_canada_army
+	
+	is_triggered_only = yes
+	
+	option = { #Darn
+		name = r56_samoa_smuggle_stuffs.6.a
+		add_manpower = -25
+	}
+}
+
+# Goodwill Mission - Samoa
+country_event = {
+	id = r56_goodwill_negotiations.1
+	title = new_zealand.11.t
+	desc = r56_goodwill_negotiations.1.d
+	picture = GFX_report_event_spanish_parliament
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = r56_goodwill_negotiations.1.a
+		ai_chance = { base = 100 }
+
+		add_political_power = 25
+		#activate_mission_tooltip = r56_SAM_mission_duration
+		set_country_flag = r56_SAM_goodwill_mission_has_arrived_flag
+		country_event = {
+			id = r56_goodwill_negotiations.2
+			days = 2
+		}
+	}
+}
+
+# Goodwill Mission - (1) - The Question of the Fono - Samoa's Event
+country_event = {
+	id = r56_goodwill_negotiations.2
+	title = r56_goodwill_negotiations.2.t
+	desc = r56_goodwill_negotiations.2.d
+	picture = GFX_report_event_SAM_fono
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = r56_goodwill_negotiations.2.a
+		NZL = {
+			country_event = { # Question of the Fono
+				id = r56_goodwill_negotiations.3
+				days = 2
+			}
+		}
+
+		effect_tooltip = {
+			custom_effect_tooltip = if_they_accept_tt
+			custom_effect_tooltip = SAM_this_will_happen_fono_accepted
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_this_will_happen_fono_accepted_independence
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_if_they_reject
+			unlock_national_focus = r56_SAM_pressure_the_legislative_council
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_this_will_happen_fono_rejected
+		}
+
+		ai_chance = { base = 100 }
+	}
+}
+
+# Goodwill Mission - (1) - The Question of the Fono - New Zealand's Choice
+country_event = {
+	id = r56_goodwill_negotiations.3
+	title = r56_goodwill_negotiations.3.t
+	desc = r56_goodwill_negotiations.3.d
+	picture = GFX_report_event_SAM_fono
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Accepted Demands
+		name = r56_goodwill_negotiations.3.a
+
+		FROM = {
+			country_event = { # Accept
+				id = r56_goodwill_negotiations.4
+				days = 2
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = SAM_this_will_happen_fono_accepted
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = SAM_this_will_happen_fono_accepted_independence
+
+		ai_chance = { # to-do
+			base = 15 
+		}
+	}
+	
+	option = { # Rejected / Dead
+		name = r56_goodwill_negotiations.3.b
+		FROM = {
+			country_event = { # Reject
+				id = r56_goodwill_negotiations.5
+				days = 2
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = NZL_this_leads_to_something_bigger
+		effect_tooltip = { SAM = { unlock_national_focus = r56_SAM_pressure_the_legislative_council } }
+
+		ai_chance = { base = 0 }
+	}
+}
+
+# Goodwill Mission - (1) - The Question of the Fono - New Zealand Accepts - Event for Samoa
+country_event = {
+	id = r56_goodwill_negotiations.4
+	title = r56_goodwill_negotiations.4.t
+	desc = r56_goodwill_negotiations.4.d
+	picture = GFX_report_event_SAM_fono
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = r56_goodwill_negotiations.4.a
+		set_country_flag = NZL_one_big_samoan_cookie # One demand achieved, more to go
+		FROM = { # Question of Fa'a Sāmoa
+			country_event = {
+				id = r56_goodwill_negotiations.6
+				days = 2
+			}
+		}
+
+		effect_tooltip = {
+			custom_effect_tooltip = if_they_accept_tt
+			custom_effect_tooltip = SAM_this_will_happen_fono_accepted
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_this_will_happen_fono_accepted_independence
+			custom_effect_tooltip = generic_skip_one_line_tt
+			ROOT = { add_ideas = r56i_laws_social_normal }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_if_they_reject
+			unlock_national_focus = r56_SAM_pressure_the_legislative_council
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_this_will_happen_fono_rejected
+		}
+
+		ai_chance = { base = 100 }
+	}
+}
+
+# to do
+# Goodwill Mission - Fono Proposal Rejected booo
+country_event = {
+	id = r56_goodwill_negotiations.5
+	title = r56_goodwill_negotiations.5.t
+	desc = r56_goodwill_negotiations.5.d
+	picture = GFX_report_event_SAM_fono
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = r56_goodwill_negotiations.5.a
+		ai_chance = { base = 100 }
+	}
+}
+
+# Goodwill Mission (2) - Question of Fa'a Sāmoa - New Zealand's Choice
+country_event = {
+	id = r56_goodwill_negotiations.6
+	title = r56_goodwill_negotiations.6.t
+	desc = r56_goodwill_negotiations.6.d
+	picture = GFX_report_event_generic_sign_treaty2 #needs new pic
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Finee
+		name = r56_goodwill_negotiations.6.a
+
+		FROM = {
+			country_event = { # Accept
+				id = r56_goodwill_negotiations.7
+				days = 2
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = SAM_this_will_happen_fono_accepted
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = SAM_this_will_happen_fono_accepted_independence
+		custom_effect_tooltip = generic_skip_one_line_tt
+		effect_tooltip = { FROM = { add_ideas = r56i_laws_social_normal } }
+
+		ai_chance = { # to-do
+			base = 15 
+		}
+	}
+	
+	option = { # Rejected / Dead
+		name = r56_goodwill_negotiations.6.b
+		FROM = {
+			country_event = { # Reject
+				id = r56_goodwill_negotiations.5
+				days = 2
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = NZL_this_leads_to_something_bigger
+		effect_tooltip = { SAM = { unlock_national_focus = r56_SAM_pressure_the_legislative_council } }
+
+		ai_chance = { base = 0 }
+	}
+}
+
+# Goodwill Mission - Question of Fa'a Sāmoa - New Zealand Accepts - Event for Samoa
+country_event = {
+	id = r56_goodwill_negotiations.7
+	title = r56_goodwill_negotiations.7.t
+	desc = r56_goodwill_negotiations.7.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = r56_goodwill_negotiations.7.a
+		clr_country_flag = NZL_one_big_samoan_cookie
+		set_country_flag = NZL_two_big_samoan_cookies # enough for a compromise
+
+		add_ideas = r56i_laws_social_normal
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = SAM_this_will_happen_okay_now_this_is_epic
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			country_event = {
+				id = r56_goodwill_negotiations.8
+				days = 2
+			}
+		}
+
+		custom_effect_tooltip = if_they_accept_tt
+		custom_effect_tooltip = SAM_this_will_happen_fono_accepted_independence
+		effect_tooltip = {
+			remove_opinion_modifier = {
+				target = FROM
+				modifier = hostile_status
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			FROM = {
+				remove_opinion_modifier = {
+					target = ROOT
+					modifier = hostile_status
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_after_elections_are_held
+			unlock_national_focus = r56_SAM_propose_making_nelson_faatonu
+		}
+	}
+}
+
+# Goodwill Mission (3) - Ordinances and Nelson's Exile - New Zealand's Choice
+country_event = {
+	id = r56_goodwill_negotiations.8
+	title = r56_goodwill_negotiations.8.t
+	desc = r56_goodwill_negotiations.8.d
+	picture = GFX_report_event_SWE_saltsjobaden # change pls
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Hes good
+		name = r56_goodwill_negotiations.8.a
+
+		#FROM = {
+		#	country_event = {
+		#		id = r56_goodwill_negotiations.7
+		#		days = 2
+		#	}
+		#}
+#
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = SAM_this_will_happen_okay_now_this_is_epic
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = SAM_this_will_happen_fono_accepted_independence
+		custom_effect_tooltip = generic_skip_one_line_tt
+		effect_tooltip = {
+			remove_opinion_modifier = {
+				target = FROM
+				modifier = hostile_status
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			FROM = {
+				remove_opinion_modifier = {
+					target = ROOT
+					modifier = hostile_status
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SAM_after_elections_are_held_nzl_version
+			unlock_national_focus = r56_SAM_propose_making_nelson_faatonu
+		}
+
+		ai_chance = { # to-do
+			base = 15
+		}
+	}
+	
+	option = { # No he isnt lol
+		name = r56_goodwill_negotiations.8.b
+		#FROM = {
+		#	country_event = {
+		#		id = r56_goodwill_negotiations.5
+		#		days = 2
+		#	}
+		#}
+#
+		#custom_effect_tooltip = generic_skip_one_line_tt
+		#custom_effect_tooltip = NZL_this_leads_to_something_bigger
+		#effect_tooltip = { SAM = { unlock_national_focus = r56_SAM_pressure_the_legislative_council } }
+
+		ai_chance = { base = 0 }
+	}
+}
+
+# stop our eco restrictions
+
+# Goodwill Mission (4) - Economic Restrictions - New Zealand's Choice
+country_event = {
+	id = r56_goodwill_negotiations.9
+	title = r56_goodwill_negotiations.9.t
+	desc = r56_goodwill_negotiations.9.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = r56_goodwill_negotiations.9.a
+		effect_tooltip = {
+			FROM = {
+				add_timed_idea = {
+					idea = r56_SAM_trade_agreements_with_nzl
+					days = 720
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_timed_idea = {
+				idea = r56_SAM_paying_samoa
+				days = 720
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = SAM_this_will_happen_fono_accepted_independence
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = r56_goodwill_negotiations.9.b
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# Goodwill Mission (5) - Full Independence - New Zealand's Choice - Only Available if All Demands Are Met
+country_event = {
+	id = r56_goodwill_negotiations.10
+	title = r56_goodwill_negotiations.10.t
+	desc = r56_goodwill_negotiations.10.d
+	picture = GFX_report_event_SAM_tokelau
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = r56_goodwill_negotiations.10.a
+		# bypass all focuses after negotiations, unlock dissolve fono, malietoa, and democraitc path
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = r56_goodwill_negotiations.10.b
+		ai_chance = { base = 100 }
+	}
+}
+
+# Goodwill Mission (6) - Tokelau Annexation - New Zealand's Choice - Only Available if All Demands Are Met & Is Player
+# make ai NEVER do this
+country_event = {
+	id = r56_goodwill_negotiations.11
+	title = r56_goodwill_negotiations.11.t
+	desc = r56_goodwill_negotiations.11.d
+	picture = GFX_report_event_spanish_parliament
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # just leave me alone already
+		name = r56_goodwill_negotiations.11.a
+		effect_tooltip = {
+			642 = {
+				transfer_state_to = SAM
+				add_core_of = SAM
+			}
+		}
+
+		ai_chance = { base = 0 }
+	}
+
+	option = { # how about you FUCK OFF
+		name = r56_goodwill_negotiations.11.b
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# Goodwill Mission concludes in compromise - Samoa
+country_event = {
+	id = r56_goodwill_outcome.1
+	title = r56_goodwill_outcome.1.t
+	desc = r56_goodwill_outcome.1.d
+	picture = GFX_report_event_SWE_saltsjobaden
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = r56_goodwill_outcome.1.a
+		custom_effect_tooltip = r56_SAM_samoa_will_become_puppet_tt
+		hidden_effect = {
+			NZL = {
+				set_autonomy = {
+					target = SAM
+					autonomous_state = autonomy_protectorate
+					end_wars = no
+					end_civil_wars = no
+				}
+			}
+			SAM = {
+				add_ideas = SAM_alfred_turnbull
+				add_ideas = r56_SAM_palauli_rebelion
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SAM_TWS
+				add_opinion_modifier = { target = NZL modifier = r56_goodwill_compromise }
+				add_ideas = r56_SAM_goodwill_mission_compromise
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.5
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.5
+				}
+			}
+			726 = { set_demilitarized_zone = no }
+			set_province_name = { id = 7290 name = VICTORY_POINTS_7290 }
+		}
+
+		ai_chance = { base = 100 }
+	}
+}
+
+# Goodwill Mission concludes in compromise - New Zealand
+country_event = {
+	id = r56_goodwill_outcome.2
+	title = r56_goodwill_outcome.2.t
+	desc = r56_goodwill_outcome.2.d
+	picture = GFX_report_event_SWE_saltsjobaden
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = r56_goodwill_outcome.2.a
+		add_political_power = -10
+		add_stability = 0.01
+		custom_effect_tooltip = r56_SAM_samoa_will_become_puppet_tt
+
+		ai_chance = { base = 100 }
+	}
+}
+
+#Goodwill Mission concludes in favour of Samoa - Samoa
+country_event = {
+	id = r56_goodwill_outcome.3
+	title = r56_goodwill_outcome.3.t
+	desc = r56_goodwill_outcome.3.d
+	picture = GFX_report_event_SAM_nzl_and_samoa_flag
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = r56_goodwill_outcome.3.a
+		custom_effect_tooltip = r56_SAM_samoa_will_become_protectorate_tt
+		hidden_effect = {
+			NZL = {
+				set_autonomy = {
+					target = SAM
+					autonomous_state = autonomy_protectorate
+					end_wars = no
+					end_civil_wars = no
+				}
+			}
+			SAM = {
+				add_opinion_modifier = { target = NZL modifier = r56_goodwill_samoa_favored }
+				add_ideas = r56_SAM_goodwill_mission
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.5
+				}
+			}
+			726 = { set_demilitarized_zone = no }
+			set_province_name = { id = 7290 name = VICTORY_POINTS_7290 }
+		}
+
+		ai_chance = { base = 100 }
+	}
+}
+
+# Goodwill Mission concludes in favour of Samoa - New Zealand
+country_event = {
+	id = r56_goodwill_outcome.4
+	title = r56_goodwill_outcome.4.t
+	desc = r56_goodwill_outcome.4.d
+	picture = GFX_report_event_SAM_nzl_and_samoa_flag
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = r56_goodwill_outcome.4.a
+		add_political_power = 10
+		add_stability = -0.01
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# Goodwill Mission concludes in favour of New Zealand - Samoan event sent to NZL
+country_event = {
+	id = r56_goodwill_outcome.5
+	title = r56_goodwill_outcome.5.t
+	desc = r56_goodwill_outcome.5.d
+	picture = GFX_report_event_spanish_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #LES GOOOOOOOOOOOOOOOOOOO
+		name = r56_goodwill_outcome.5.a
+		
+		add_political_power = 25
+		custom_effect_tooltip = r56_SAM_dissatisfaction_with_goodwill_tt
+
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# Goodwill Mission concludes in favour of New Zealand - Samoa
+country_event = {
+	id = r56_goodwill_outcome.6
+	title = r56_goodwill_outcome.6.t
+	desc = r56_goodwill_outcome.6.d
+	picture = GFX_report_event_spanish_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #PISS
+		name = r56_goodwill_outcome.6.a
+
+		add_war_support = 0.15
+		unlock_national_focus = r56_SAM_pressure_the_legislative_council
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		NZL = { country_event = { id = r56_goodwill_outcome.5 } }
+
+		hidden_effect = {
+			726 = { set_demilitarized_zone = no }
+			set_province_name = { id = 7290 name = VICTORY_POINTS_7290 }
+		}
+
+		ai_chance = { base = 100 }
+	}
+}
+
+# Goodwill Mission concludes in favour of New Zealand - Samoa splits off of NZL
+country_event = {
+	id = r56_goodwill_outcome.7
+	title = r56_goodwill_outcome.7.t
+	desc = r56_goodwill_outcome.7.d
+	picture = GFX_report_event_ast_army
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #they wat
+		name = r56_goodwill_outcome.7.a
+		custom_effect_tooltip = r56_SAM_this_will_collapse_your_country_do_at_your_own_risk_tt
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		SAM = { country_event = r56_goodwill_war.1 }
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_popularity = {
+			ideology = NZL
+			popularity = -0.05
+		}
+
+		add_state_claim = 726
+		declare_war_on = {
+			target = SAM
+			type = puppet_wargoal_focus
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_ideas = r56_NZL_unsupported_war #Fucks it all up
+		set_country_flag = r56_SAM_mau_new_zealand_war_flag
+		custom_effect_tooltip = generic_skip_one_line_tt
+		
+		every_other_country = {
+			limit = {
+				NOT = {
+					has_government = fascism
+					has_government = communism
+					has_offensive_war = yes
+					is_ally_with = ROOT
+				}
+			}
+			add_opinion_modifier = {
+				target = NZL
+				modifier = small_decrease
+			}
+		}
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					exists = yes
+					has_capitulated = no
+					OR = {
+						is_major = yes
+						is_ally_with = NZL
+						capital_scope = {
+							is_on_continent = australia
+							is_core_of = PREV
+						}
+
+						original_tag = SAM
+						original_tag = NZL
+						original_tag = CHT
+						original_tag = TON
+						original_tag = NIU
+						original_tag = TAH
+						original_tag = RAP
+						original_tag = VAN
+						original_tag = SOL
+						original_tag = PNG
+						original_tag = FIJ
+						original_tag = WPG
+						original_tag = TML
+						original_tag = INS
+						original_tag = NRU
+						original_tag = TUV
+						original_tag = KIR
+						original_tag = HAW
+						original_tag = MRS
+						original_tag = FSM
+						original_tag = PLU
+						original_tag = GUM
+					}
+				}
+				news_event = { 
+					hours = 1
+					id = r56_samoa_news.1
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 100
+			modifier = {
+				has_war_support < 0.15
+				factor = -100
+			}
+			modifier = {
+				has_stability < 0.85
+				factor = -50
+			}
+		}
+	}
+	
+	option = { #we dont care
+		name = r56_goodwill_outcome.7.b
+		add_political_power = 25
+		add_war_support = -0.05
+		add_command_power = -15
+
+		ai_chance = { base = 100 }
+	}
+}
+
+# Goodwill Mission doesn't happen
+country_event = {
+	id = r56_goodwill_outcome.8
+	title = r56_goodwill_outcome.8.t
+	desc = r56_goodwill_outcome.8.d
+	picture = GFX_report_event_spanish_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = r56_goodwill_outcome.8.a
+
+		add_war_support = 0.05
+		custom_effect_tooltip = r56_SAM_they_what_tt
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		NZL = {
+			country_event = {
+				id = r56_goodwill_outcome.7
+				days = 7
+				random_hours = 12
+				random_days = 7
+			}
+		}
+
+		hidden_effect = {
+			add_ideas = r56_SAM_malietoa_opposition
+
+			if = {
+				limit = { is_in_faction = yes }
+				leave_faction = yes
+			}
+			
+			if = {
+				limit = { is_subject = yes }
+				OVERLORD = { end_puppet = SAM }
+			}
+
+			726 = { set_demilitarized_zone = no }
+			set_province_name = { id = 7290 name = VICTORY_POINTS_7290 }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# Goodwill War - New Zealand declares war on Samoa
+country_event = {
+	id = r56_goodwill_war.1
+	title = r56_goodwill_war.1.t
+	desc = r56_goodwill_war.1.d
+	picture = GFX_report_event_SAM_nzl_trucks
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = r56_goodwill_war.1.a
+
+		add_ideas = r56_SAM_samoa_arise
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_ideas = war_economy
+		set_country_flag = r56_SAM_mau_new_zealand_war_flag
+		ai_chance = { base = 100 }
+	}
+}
+
+# Goodwill War - USA Intervention in the War
+country_event = {
+	id = r56_goodwill_war.2
+	title = r56_goodwill_war.2.t
+	desc = r56_goodwill_war.2.d
+	picture = GFX_report_event_spanish_parliament
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = r56_goodwill_war.2.a
+
+		NZL = { country_event = r56_goodwill_war.3 }
+
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# Goodwill War - Peace
+country_event = {
+	id = r56_goodwill_war.3
+	title = r56_goodwill_war.3.t
+	desc = r56_goodwill_war.3.d
+	picture = GFX_report_event_spanish_parliament
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = r56_goodwill_war.3.a
+
+		if = {
+			limit = {
+				original_tag = NZL
+				has_war_with = SAM
+			}
+			white_peace = SAM
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# Goodwill War - Peace because of losses
+country_event = {
+	id = r56_goodwill_war.4
+	title = r56_goodwill_war.4.t
+	desc = r56_goodwill_war.4.d
+	picture = GFX_report_event_spanish_parliament
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = r56_goodwill_war.4.a
+
+		white_peace = FROM
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		country_event = r56_goodwill_war.7
+		FROM = { country_event = r56_goodwill_war.6 }
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				casualties < 1000
+				factor = 30
+			}
+			modifier = {
+				surrender_progress > 0.1
+				factor = 20
+			}
+		}
+	}
+	
+	option = {
+		name = r56_goodwill_war.4.b
+
+		FROM = { country_event = r56_goodwill_war.5 }
+
+		ai_chance = { 
+			base = 50
+			modifier = {
+				casualties > 1000
+				factor = 30
+			}
+			modifier = {
+				surrender_progress < 0.1
+				factor = 20
+			}
+		}
+	}
+}
+
+# Goodwill War - The war continues
+country_event = {
+	id = r56_goodwill_war.5
+	title = r56_goodwill_war.5.t
+	desc = r56_goodwill_war.5.d
+	picture = GFX_report_event_spanish_parliament
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = r56_goodwill_war.5.a
+
+		set_country_flag = r56_SAM_war_must_continue
+		country_event = r56_goodwill_war.7
+
+		FROM = { set_country_flag = r56_SAM_war_must_continue }
+
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# Goodwill War - Peace in our time.. for now.
+country_event = {
+	id = r56_goodwill_war.6
+	title = r56_goodwill_war.6.t
+	desc = r56_goodwill_war.6.d
+	picture = GFX_report_event_spanish_parliament
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = r56_goodwill_war.6.a
+
+		NZL = { country_event = r56_goodwill_war.7 }
+
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# Second Samoan Crisis - Niueans rebel
+country_event = {
+	id = r56_goodwill_war.7
+	title = r56_goodwill_war.7.t
+	desc = r56_goodwill_war.7.d
+	picture = GFX_report_event_china_infiltration
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = r56_goodwill_war.7.a
+		if = {
+			limit = { has_country_flag = r56_SAM_war_must_continue }
+			1089 = {
+				set_demilitarized_zone = yes
+				add_compliance = -25
+				add_resistance = 25
+			}
+		}
+
+		else = {
+			1089 = {
+				add_compliance = -35
+				add_resistance = 25
+			}
+		}
+
+		ai_chance = { base = 100 }
+	}
+}
+
+# Second Samoan Crisis - Police Raid
+country_event = {
+	id = r56_goodwill_war.8
+	title = r56_goodwill_war.8.t
+	desc = r56_goodwill_war.8.d
+	picture = GFX_report_event_SAM_police_station
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = r56_goodwill_war.8.a
+
+		add_manpower = -21
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			producer = NZL
+			amount = 200
+		}
+
+		ai_chance = { base = 100 }
+	}
+}
+
+# News Event for all of Oceania - War in the South Pacific
+news_event = {
+	id = r56_samoa_news.1
+	title = r56_samoa_news.1.t
+	desc = r56_samoa_news.1.desc
+	picture = GFX_news_event_saf_soldiers
+	is_triggered_only = yes
+
+	option = {
+		name = r56_samoa_news.1.a
+		trigger = {
+			NOT = { original_tag = SAM }
+			NOT = { original_tag = NZL }
+		}
+	}
+	option = {
+		name = r56_samoa_news.1.b
+		trigger = { original_tag = SAM }
+	}
+	option = {
+		name = r56_samoa_news.1.c
+		trigger = { original_tag = NZL }
+	}
+}
+
+# Radicals Assume Leadership of Samoa
+news_event = {
+	id = r56_samoa_news.2
+	title = r56_samoa_news.2.t
+	desc = r56_samoa_news.2.desc
+	picture = GFX_news_event_SAM_mau_peoples
+	is_triggered_only = yes
+
+	option = {  name = r56_samoa_news.2.a }
+}

@@ -876,10 +876,63 @@
  DEN_RUS_neutrality_DEF:0 "the Tsardom of Denmark"
  
  # Western Samoa
- SAM_TWS:0 "Territory of Western Samoa"
- SAM_TWS_DEF:0 "the Territory of Western Samoa"
+ SAM_TWS_fascism:0 "Territory of Western Samoa"
+ SAM_TWS_fascism_DEF:0 "the Territory of Western Samoa"
+ SAM_TWS_democratic:0 "Territory of Western Samoa"
+ SAM_TWS_democratic_DEF:0 "the Territory of Western Samoa"
+ SAM_TWS_neutrality:0 "Territory of Western Samoa"
+ SAM_TWS_neutrality_DEF:0 "the Territory of Western Samoa"
+ SAM_TWS_communism:0 "Communes of Western Samoa"
+ SAM_TWS_communism_DEF:0 "the Communes of Western Samoa"
  SAM_TWS_ADJ:0 "Western Samoan"
 
+ #SAM_MAU 
+ SAM_MAU_neutrality:0 "O Le Mau a Samoa"
+ SAM_MAU_neutrality_DEF:0 "O Le Mau a Samoa"
+ SAM_MAU_neutrality_DEF_ADJ:0 "Samoan"
+
+ # SAM_MALO_KAISALIKA
+ SAM_malo_kaisalika_neutrality:0 "Malo Kaisalika"
+ SAM_malo_kaisalika_neutrality_DEF:0 "German Samoa" # Kaiser's Government of the Kingdom of Samoa
+ SAM_malo_kaisalika_neutrality_ADJ:0 "German Samoan"
+
+ SAM_malo_kaisalika_democratic:0 "Territory of Western Samoa"
+ SAM_malo_kaisalika_democratic_DEF:0 "the Territory of Western Samoa"
+ SAM_malo_kaisalika_democratic_ADJ:0 "Samoan"
+
+ #SAM_MANUA
+ SAM_MANUA_neutrality:0 "Empire of Manu'a"
+ SAM_MANUA_neutrality_DEF:0 "the Empire of Manu'a"
+ SAM_MANUA_neutrality_ADJ:0 "Samoan"
+
+ SAM_MANUA_fascism:0 "Great Empire of Manu'a"
+ SAM_MANUA_fascism_DEF:0 "the Great Empire of Manu'a"
+ SAM_MANUA_fascism_ADJ:0 "Samoan"
+
+ SAM_MANUA_democratic:0 "Confederacy of Pacific States"
+ SAM_MANUA_democratic_DEF:0 "the Confederacy of Pacific States"
+ SAM_MANUA_democratic_ADJ:0 "Pacific"
+
+ SAM_MANUA_communism:0 "Union of Pacific Socialist Republics"
+ SAM_MANUA_communism_DEF:0 "the Union of Pacific Socialist Republics"
+ SAM_MANUA_communism_ADJ:0 "Pacific"
+
+ # SAM_MANUAFIJ
+ SAM_MANUAFIJ_neutrality:0 "Kingdom of Fiti"
+ SAM_MANUAFIJ_neutrality_DEF:0 "the Kingdom of Fiti"
+ SAM_MANUAFIJ_neutrality_ADJ:0 "Fijian"
+
+ SAM_MANUAFIJ_fascism:0 "Empire of Fiti"
+ SAM_MANUAFIJ_fascism_DEF:0 "the Empire of Fiti"
+ SAM_MANUAFIJ_fascism_ADJ:0 "Fijian"
+
+ SAM_MANUAFIJ_democratic:0 "Commonwealth of Lapita People's"
+ SAM_MANUAFIJ_democratic_DEF:0 "the Commonwealth of Lapita People's"
+ SAM_MANUAFIJ_democratic_ADJ:0 "Lapitan"
+
+ SAM_MANUAFIJ_communism:0 "Union of Pacific Socialist Republics"
+ SAM_MANUAFIJ_communism_DEF:0 "the Union of Pacific Socialist Republics"
+ SAM_MANUAFIJ_communism_ADJ:0 "Pacific"
 
  #DOU
  DOU_CONDOMINIUM:0 "Condominium of Volhynia-Eastern Galicia"

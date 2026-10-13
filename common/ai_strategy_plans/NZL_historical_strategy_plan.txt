@@ -28,9 +28,20 @@ NZL_historical = {
 	}
 
 	ai_national_focuses = {				#add more focuses to match the historical pattern best
+		NZL_army_review
+		NZL_industrialization_fund
+		NZL_connect_the_nation
 		NZL_the_goodwill_mission
-		NZL_the_labour_partys_reform
-		NZL_frasers_leadership		
+		NZL_modernize_railways
+		NZL_allocate_resources_to_the_rnzf
+		NZL_remember_anzac
+		NZL_strenghten_british_ties
+		NZL_construct_the_whenuapai_base
+		NZL_expand_devonport
+		NZL_reaffirm_commonwelth_commitments
+		NZL_the_second_nzl_volunteer_force
+		NZL_adapt_to_the_jungles
+		NZL_the_inudtrial_segment
 	}
 
 	research = {

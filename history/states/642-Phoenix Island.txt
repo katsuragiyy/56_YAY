@@ -1,26 +1,23 @@
 
 state={
 	id=642
-	name="STATE_642"
-	manpower=24
-	
+	name=STATE_642
+	manpower=1173
 	state_category = tiny_island
 
 	history={
-		owner = ENG
-		add_core_of = KIR
-		add_claim_by = USA
+		owner = NZL
+		add_claim_by = SAM
+
 		buildings = {
-			infrastructure = 1 #Should probably be 0 xdd
-			13050 = {
-				naval_base = 1
-			}
+			infrastructure = 1
+			13050 = { naval_base = 1 }
 		}
+
+		victory_points = { 13050 1 } # Fakaofo
+		add_to_array = { state_victory_points = 13050 } # Fakaofo
 	}
 
-	provinces={
-		13050 
-	}
-
-	local_supplies=0.0 
+	provinces = { 13050 }
+	local_supplies=1.0 
 }

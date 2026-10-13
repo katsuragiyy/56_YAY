@@ -3,6 +3,45 @@
 ###########################
 
 add_namespace = cityfall
+add_namespace = new_cityfall
+
+# PERM
+news_event = {
+	id = new_cityfall.1
+	title = new_cityfall.1.t
+	desc = new_cityfall.1.desc
+	picture = GFX_news_event_SOV_fall_of_perm
+	
+	major = yes
+	is_triggered_only = yes
+	immediate = { set_global_flag = fall_of_perm }
+	
+	option = { # Not one step back!
+		name = new_cityfall.1.a
+		trigger = {
+			NOT = {
+				TAG = MON
+				TAG = SOV
+				TAG = TAN
+			}
+		}
+	}
+
+	option = { # The East has been conquered.
+		name = new_cityfall.1.b
+		trigger = { TAG = GER }
+	}
+
+	option = { # Uralin!
+		name = new_cityfall.1.c
+		trigger = { TAG = FIN }
+	}
+
+	option = { # The walls are closing in on Russia.
+		name = new_cityfall.1.d
+		trigger = { NOT = { OR = { TAG = FIN TAG = GER TAG = TAN TAG = SOV TAG = MON } } }
+	}
+}
 
 #### LONDON ####
 

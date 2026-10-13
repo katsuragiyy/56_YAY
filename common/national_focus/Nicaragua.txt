@@ -572,26 +572,15 @@ shared_focus = USC_UNIFIED_central_american_unification
 		relative_position_id = NIC_nicaraguan_diplomacy
 		cost = 5
 		prerequisite = { focus = NIC_nicaraguan_diplomacy }
-		#Nicaragua declared war on six Axis countries December 1941.
 		ai_will_do = {
-			factor = 0.1
+			base = 0
 			modifier = {
-				AND = {
-					date > 1941.12.7
-					USA = {
-						has_war = yes
-					}
+				factor = 10
+				is_historical_focus_on = yes
+				USA = {
+					has_government = democratic
+					has_war = yes 
 				}
-				GER = {
-					has_government = fascism
-					has_war = yes
-				}
-				ROOT = {
-					NOT = {
-						has_government = fascism
-					}
-				}
-				add = 10
 			}
 		}
 		

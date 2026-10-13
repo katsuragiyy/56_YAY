@@ -1427,7 +1427,7 @@ focus_tree = {
 	focus = {
 		id = URG_join_the_allies
 		icon = GFX_allies
-		cost = 10
+		cost = 4
 		prerequisite = {
 			focus = URG_democracia_y_paz
 			focus = URG_legacy_of_saravia
@@ -1438,7 +1438,7 @@ focus_tree = {
 			focus = URG_expand_the_montevideo_treaty
 		}
 		available = {
-			is_puppet = no
+			is_subject = no
 			is_in_faction = no
 			any_other_country = {
 				is_major = yes
@@ -1458,10 +1458,16 @@ focus_tree = {
 		y = 6
 		relative_position_id = URG_colorado_victory
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 10
+			base = 0
+			modifier = { # LET ME GET ON THAT!!!
+				add = 10
 				is_historical_focus_on = yes
+				USA = {
+					focus_progress = {
+						focus = r56_USA_form_united_nations
+						progress < 0.01
+					}
+				}
 			}
 		}
 		completion_reward = {
@@ -2681,7 +2687,7 @@ focus_tree = {
 		}
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 			any_other_country = {
 				is_major = yes
 				has_government = fascism

@@ -4324,6 +4324,7 @@ country_event = { # AFG RETURN EVENT ABOUT PAKISTAN - YES
 				transfer_state = 442
 				transfer_state = 444
 				transfer_state = 445
+				transfer_state = 1093
 			}
 		}
 	}
@@ -5212,7 +5213,7 @@ country_event = { # SUBBHAS CHANDRA BOSE CAPTURED BY AFGHANISTAN
 		name = r56_afghanistan.84.a # SEND HIM BACK
 		RAJ = {
 			add_opinion_modifier = {
-				target = THIS
+				target = ROOT
 				modifier = AFG_RAJ_sent_bose
 			}
 			add_ai_strategy = {

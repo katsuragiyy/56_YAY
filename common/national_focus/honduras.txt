@@ -4810,10 +4810,13 @@ focus_tree = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				add = 10
-				AND = { # Having these as separate doesnt seem to work, so this should do
+				add = 500 # oh shit usa is in trouble we need to help
+				AND = {
 					is_historical_focus_on = yes
-					USA = { has_war = yes }
+					USA = {
+						has_government = democratic
+						has_war = yes 
+					}
 				}
 			}
 		}

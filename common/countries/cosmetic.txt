@@ -2417,8 +2417,23 @@ NRU_GER = {
 }
 
 SAM_TWS = {
-	color = rgb { 0 43 127 }
-	color_ui = rgb { 1 43 127 }	
+	color = rgb { 152 130 191 }
+	color_ui = rgb { 198 169 248 }	
+}
+
+SAM_malo_kaisalika = {
+	color = rgb { 128 128 128 }
+	color_ui = rgb { 115 115 115 }
+}
+
+SAM_MANUA = {
+	color = rgb { 230 230 230 }
+	color_ui = rgb { 230 230 230 }
+}
+
+SAM_MANUAFIJ = {
+	color = rgb { 0 204 204 } # Copy from Fiji
+	color_ui = rgb { 0 204 204 } # Copy from Fiji
 }
 
 BUL_ff_bulgaria = {

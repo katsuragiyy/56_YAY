@@ -118,6 +118,24 @@ DEN_focus_tree_selection = {
 	}
 }
 
+#-> INS: Indonesia <><>
+INS_focus_tree_selection = {
+	name = "INS_FOCUS_TREE_SELECTION"
+	required_dlc = "Thunder at Our Gates"
+	group = "RULE_GROUP_CHOOSE_FOCUS_TREE"
+	default = {
+		name = STANDARD_TREE
+		text = "RULE_OPTION_STANDARD_TREE"
+		desc = "RULE_OPTION_STANDARD_TREE_DESC"
+	}
+	option = {
+		name = R56_TREE
+		text = "RULE_OPTION_R56_TREE"
+		desc = "RULE_OPTION_R56_TREE_DESC"
+		allow_achievements = yes
+	}
+}
+
 #-> EST: Estonia <><>
 EST_focus_tree_selection = {
 	name = "EST_FOCUS_TREE_SELECTION"
@@ -132,6 +150,31 @@ EST_focus_tree_selection = {
 		name = R56_TREE
 		text = "RULE_OPTION_R56_TREE"
 		desc = "RULE_OPTION_R56_TREE_DESC"
+		allow_achievements = yes
+	}
+}
+
+#-> GER: Germany <><>
+GER_focus_tree_selection = {
+	name = "GER_FOCUS_TREE_SELECTION"
+	group = "RULE_GROUP_CHOOSE_FOCUS_TREE"
+	option = {
+		name = STANDARD_TREE
+		text = "RULE_OPTION_STANDARD_TREE"
+		desc = "RULE_OPTION_STANDARD_TREE_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = R56_TREE
+		text = "RULE_OPTION_R56_TREE"
+		desc = "RULE_OPTION_R56_TREE_DESC"
+		required_dlc = "Gotterdammerung"
+		allow_achievements = yes
+	}
+	option = {
+		name = R56_TREE_OLD
+		text = "RULE_OPTION_R56_TREE_OLD"
+		desc = "RULE_OPTION_R56_TREE_OLD_DESC"
 		allow_achievements = yes
 	}
 }
@@ -208,42 +251,6 @@ IRQ_focus_tree_selection = {
 	}
 }
 
-#-> SIA: Siam <><>
-SIA_focus_tree_selection = {
-	name = "SIA_FOCUS_TREE_SELECTION"
-	required_dlc = "Thunder at Our Gates"
-	group = "RULE_GROUP_CHOOSE_FOCUS_TREE"
-	default = {
-		name = R56_TREE
-		text = "RULE_OPTION_R56_TREE"
-		desc = "RULE_OPTION_R56_TREE_DESC"
-	}
-	option = {
-		name = STANDARD_TREE
-		text = "RULE_OPTION_STANDARD_TREE"
-		desc = "RULE_OPTION_STANDARD_TREE_DESC"
-		allow_achievements = yes
-	}
-}
-
-#-> INS: Indonesia <><>
-INS_focus_tree_selection = {
-	name = "INS_FOCUS_TREE_SELECTION"
-	required_dlc = "Thunder at Our Gates"
-	group = "RULE_GROUP_CHOOSE_FOCUS_TREE"
-	default = {
-		name = STANDARD_TREE
-		text = "RULE_OPTION_STANDARD_TREE"
-		desc = "RULE_OPTION_STANDARD_TREE_DESC"
-	}
-	option = {
-		name = R56_TREE
-		text = "RULE_OPTION_R56_TREE"
-		desc = "RULE_OPTION_R56_TREE_DESC"
-		allow_achievements = yes
-	}
-}
-
 #-> LAT: Latvia <><>
 LAT_focus_tree_selection = {
 	name = "LAT_FOCUS_TREE_SELECTION"
@@ -280,31 +287,6 @@ LIT_focus_tree_selection = {
 	}
 }
 
-#-> GER: Germany <><>
-GER_focus_tree_selection = {
-	name = "GER_FOCUS_TREE_SELECTION"
-	group = "RULE_GROUP_CHOOSE_FOCUS_TREE"
-	option = {
-		name = STANDARD_TREE
-		text = "RULE_OPTION_STANDARD_TREE"
-		desc = "RULE_OPTION_STANDARD_TREE_DESC"
-		allow_achievements = yes
-	}
-	default = {
-		name = R56_TREE
-		text = "RULE_OPTION_R56_TREE"
-		desc = "RULE_OPTION_R56_TREE_DESC"
-		required_dlc = "Gotterdammerung"
-		allow_achievements = yes
-	}
-	option = {
-		name = R56_TREE_OLD
-		text = "RULE_OPTION_R56_TREE_OLD"
-		desc = "RULE_OPTION_R56_TREE_OLD_DESC"
-		allow_achievements = yes
-	}
-}
-
 #-> NOR: Norway <><>
 NOR_focus_tree_selection = {
 	name = "NOR_FOCUS_TREE_SELECTION"
@@ -327,6 +309,24 @@ NOR_focus_tree_selection = {
 POR_focus_tree_selection = {
 	name = "POR_FOCUS_TREE_SELECTION"
 	required_dlc = "La Resistance"
+	group = "RULE_GROUP_CHOOSE_FOCUS_TREE"
+	default = {
+		name = R56_TREE
+		text = "RULE_OPTION_R56_TREE"
+		desc = "RULE_OPTION_R56_TREE_DESC"
+	}
+	option = {
+		name = STANDARD_TREE
+		text = "RULE_OPTION_STANDARD_TREE"
+		desc = "RULE_OPTION_STANDARD_TREE_DESC"
+		allow_achievements = yes
+	}
+}
+
+#-> SIA: Siam <><>
+SIA_focus_tree_selection = {
+	name = "SIA_FOCUS_TREE_SELECTION"
+	required_dlc = "Thunder at Our Gates"
 	group = "RULE_GROUP_CHOOSE_FOCUS_TREE"
 	default = {
 		name = R56_TREE
@@ -4511,6 +4511,20 @@ eng_fragmentation_status = {
 		text = "RULE_OPTION_ENG_FRAGMENTED_CELTIC_UNION"
 		desc = "RULE_OPTION_ENG_FRAGMENTED_CELTIC_UNION_DESC"
 	}	
+}
+nzl_fragmentation_status = {
+	name = "NZL_FRAGMENTATION_STATUS"
+	group = "RULE_GROUP_GAME_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_FRAGMENTATION_DESC"
+	}
+	option = {
+		name = NZL_FRAGMENTED
+		text = "RULE_OPTION_NZL_FRAGMENTED"
+		desc = "RULE_OPTION_NZL_FRAGMENTED_DESC"
+	}
 }
 yug_fragmentation_status = {
 	name = "YUG_FRAGMENTATION_STATUS"

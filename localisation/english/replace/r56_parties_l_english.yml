@@ -1359,13 +1359,6 @@
  ZAN_communism_party:0 "Ummah Party"
  ZAN_neutrality_party:0 "Āl Bū-Sa'īd"
 
- #SAM
- SAM_democratic_party:0 "Mau"
- SAM_neutrality_party:0 "Sā Mālietoa"
- SAM_colonial_administration:0 "Colonial Administration"
- SAM_tumua_and_pule:0 "Tumua ma Pule"
-
-
  #Was replaced_parties_l_english
  communism:0 "Communist"
  communism_noun:0 "Communism"

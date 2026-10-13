@@ -7620,6 +7620,19 @@ spriteTypes = {
 
 ###------> NZL <><> <><> <><> <><> <><>
 	SpriteType = {
+		name = "GFX_goal_NZL_seato"
+		texturefile = "gfx/interface/goals/nzl/r56_goal_NZL_seato.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_NZL_home_defense"
+		texturefile = "gfx/interface/goals/nzl/r56_goal_NZL_home_defense.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_NZL_breaking_out"
+		texturefile = "gfx/interface/goals/nzl/r56_goal_NZL_breaking_out.dds"
+	}
+	SpriteType = {
 		name = "GFX_goal_NZL_coa_air_force"
 		texturefile = "gfx/interface/goals/nzl/r56_goal_NZL_coa_air_force.dds"
 	}
@@ -7722,6 +7735,62 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/generic/r56_goal_generic_befriend_samoa.dds"
 	}
 
+###------> SAM <><> <><> <><> <><> <><>
+
+	spriteType = {
+		name = "GFX_goal_SAM_armed_forces_independent"
+		textureFile = "gfx/interface/goals/sam/r56_goal_SAM_armed_forces_independent.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_SAM_armed_forces_colonial"
+		textureFile = "gfx/interface/goals/sam/r56_goal_SAM_armed_forces_colonial.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_SAM_navy_independent"
+		textureFile = "gfx/interface/goals/sam/r56_goal_SAM_navy_independent.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_SAM_navy_colonial"
+		textureFile = "gfx/interface/goals/sam/r56_goal_SAM_navy_colonial.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_SAM_airforce_independent"
+		textureFile = "gfx/interface/goals/sam/r56_goal_SAM_airforce_independent.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_SAM_airforce_colonial"
+		textureFile = "gfx/interface/goals/sam/r56_goal_SAM_airforce_colonial.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_SAM_tongan_alliance"
+		textureFile = "gfx/interface/goals/sam/r56_goal_SAM_tongan_alliance.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_SAM_independence_fight"
+		textureFile = "gfx/interface/goals/sam/r56_goal_SAM_samoa_with_fist.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_SAM_purchase_nzl_aircraft"
+		textureFile = "gfx/interface/goals/sam/r56_goal_SAM_purchase_nzl_aircraft.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_SAM_nelson_icon"
+		textureFile = "gfx/interface/goals/sam/r56_goal_SAM_nelson.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_SAM_democracy"
+		textureFile = "gfx/interface/goals/sam/r56_goal_SAM_democracy.dds"
+	}
 
 ###------> PER <><> <><> <><> <><> <><>
 	SpriteType = {
@@ -10375,6 +10444,24 @@ spriteType = {
 	SpriteType = {
 		name = "GFX_goal_islam_and_state"
 		texturefile = "gfx/interface/goals/generic/r56_goal_generic_islam_and_state.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_MAL_coa_army"
+		texturefile = "gfx/interface/goals/mal/r56_goal_MAL_army_coa.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_MAL_coa_navy"
+		texturefile = "gfx/interface/goals/mal/r56_goal_MAL_navy_coa.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_MAL_coa_airforce"
+		texturefile = "gfx/interface/goals/mal/r56_goal_MAL_airforce_coa.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_MAL_MCP_collaborate_with_britain"
+		texturefile = "gfx/interface/goals/mal/r56_goal_MAL_british_soviet_friendship.dds"
 	}
 
 	# ISR

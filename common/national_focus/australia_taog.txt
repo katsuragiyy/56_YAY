@@ -6831,7 +6831,7 @@ focus_tree = {
 							state = 631
 							state = 632
 							state = 638
-							state = 642
+							# state = 642 # 56 - Tokelau, not american
 							state = 727
 						}
 					}
@@ -6857,7 +6857,7 @@ focus_tree = {
 								state = 631
 								state = 632
 								state = 638
-								state = 642
+								# state = 642 # 56 - Tokelau, not american
 								state = 727
 							}
 						}
@@ -6876,7 +6876,7 @@ focus_tree = {
 								state = 631
 								state = 632
 								state = 638
-								state = 642
+								# state = 642 # 56 - Tokelau, not american
 								state = 727
 							}
 						}

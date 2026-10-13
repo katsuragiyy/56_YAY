@@ -250,7 +250,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GUA_leave_the_league_of_nations
-		icon = GFX_goal_italy_leave_the_league_of_nations
+		icon = GFX_focus_generic_league_of_nations_dissolved
 		prerequisite = { focus = GUA_the_central_american_detente }
 		x = -1
 		y = 1
@@ -1420,8 +1420,19 @@ focus_tree = {
 			focus = GUA_join_the_axis
 		}
 		cost = 5
+		
 		ai_will_do = {
-			factor = 10
+			base = 0
+			modifier = {
+				add = 500 # oh shit usa is in trouble we need to help
+				AND = {
+					is_historical_focus_on = yes
+					USA = {
+						has_government = democratic
+						has_war = yes 
+					}
+				}
+			}
 		}
 
 		available = {
@@ -1481,7 +1492,7 @@ focus_tree = {
 		}
 		cost = 5
 		ai_will_do = {
-			factor = 10
+			factor = 1 # please do not
 		}
 
 		available = {
@@ -1575,7 +1586,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GUA_american_military_assistance
-		icon = GFX_focus_generic_befriend_usa
+		icon = GFX_goal_generic_befriend_united_states
 		prerequisite = { focus = GUA_join_the_allies }
 		x = -1
 		y = 1

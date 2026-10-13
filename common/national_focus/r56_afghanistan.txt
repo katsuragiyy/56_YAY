@@ -5389,6 +5389,7 @@ focus_tree = {
 						state = 445
 						state = 444
 						state = 442
+						state = 1093
 					}
 				}
 				NOT = {
@@ -5405,11 +5406,13 @@ focus_tree = {
 					owns_state = 445
 					owns_state = 444
 					owns_state = 442
+					owns_state = 1093
 				}
 				any_country = {
 					owns_state = 445
 					owns_state = 444
 					owns_state = 442
+					owns_state = 1093
 					OR = {
 						has_war_with = ROOT
 						is_ally_with = ROOT
@@ -5776,6 +5779,7 @@ focus_tree = {
 				owns_state = 442
 				owns_state = 444
 				owns_state = 445
+				owns_state = 1093
 			}
 		}
 
@@ -5790,6 +5794,7 @@ focus_tree = {
 					state = 442
 					state = 444
 					state = 445
+					state = 1093
 				}
 			}
 		}
@@ -5860,6 +5865,8 @@ focus_tree = {
 					controls_state = 444
 					owns_state = 445
 					controls_state = 445
+					owns_state = 1093
+					controls_state = 1093
 				}
 			}
 		}
@@ -5868,15 +5875,10 @@ focus_tree = {
 			add_war_support = 0.05
 			if = {
 				limit = {
-					442 = {
-						is_owned_and_controlled_by = PAK
-					}
-					444 = {
-						is_owned_and_controlled_by = PAK
-					}
-					445 = {
-						is_owned_and_controlled_by = PAK
-					}
+					442 = { is_owned_and_controlled_by = PAK }
+					444 = { is_owned_and_controlled_by = PAK }
+					445 = { is_owned_and_controlled_by = PAK }
+					1093 = { is_owned_and_controlled_by = PAK }
 				}
 				PAK = { country_event = { id = r56_afghanistan.51 hours = 3 } }
 				custom_effect_tooltip = if_they_accept_tt
@@ -5884,15 +5886,10 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					442 = {
-						is_owned_and_controlled_by = RAJ
-					}
-					444 = {
-						is_owned_and_controlled_by = RAJ
-					}
-					445 = {
-						is_owned_and_controlled_by = RAJ
-					}
+					442 = { is_owned_and_controlled_by = RAJ }
+					444 = { is_owned_and_controlled_by = RAJ }
+					445 = { is_owned_and_controlled_by = RAJ }
+					1093 = { is_owned_and_controlled_by = RAJ }
 				}
 				RAJ = { country_event = { id = r56_afghanistan.51 hours = 3 } }
 				custom_effect_tooltip = if_they_accept_tt
@@ -8022,6 +8019,7 @@ focus_tree = {
 						state = 445
 						state = 444
 						state = 442
+						state = 1093
 					}
 				}
 				NOT = {
@@ -8037,11 +8035,13 @@ focus_tree = {
 					owns_state = 445
 					owns_state = 444
 					owns_state = 442
+					owns_state = 1093
 				}
 				any_country = {
 					owns_state = 445
 					owns_state = 444
 					owns_state = 442
+					owns_state = 1093
 					OR = {
 						has_war_with = ROOT
 						is_ally_with = ROOT
@@ -10758,6 +10758,7 @@ focus_tree = {
 						state = 445
 						state = 444
 						state = 442
+						state = 1093
 					}
 				}
 				NOT = {
@@ -10773,11 +10774,13 @@ focus_tree = {
 					owns_state = 445
 					owns_state = 444
 					owns_state = 442
+					owns_state = 1093
 				}
 				any_country = {
 					owns_state = 445
 					owns_state = 444
 					owns_state = 442
+					owns_state = 1093
 					OR = {
 						has_war_with = ROOT
 						is_ally_with = ROOT
@@ -12682,6 +12685,7 @@ focus_tree = {
 						state = 445
 						state = 444
 						state = 442
+						state = 1093
 					}
 				}
 				NOT = {
@@ -12697,11 +12701,13 @@ focus_tree = {
 					owns_state = 445
 					owns_state = 444
 					owns_state = 442
+					owns_state = 1093
 				}
 				any_country = {
 					owns_state = 445
 					owns_state = 444
 					owns_state = 442
+					owns_state = 1093
 					OR = {
 						has_war_with = ROOT
 						is_ally_with = ROOT

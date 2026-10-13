@@ -3882,6 +3882,31 @@ spriteTypes = {
 		name = "GFX_news_event_SAM_capitulates_nzl"
 		texturefile = "gfx/event_pictures/SAM/news_event_SAM_capitulates_NZL.dds"
 	}
+
+	spriteType = {
+		name = "GFX_news_event_SAM_mau_peoples"
+		texturefile = "gfx/event_pictures/SAM/r56_news_event_SAM_radicals.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_SAM_fono"
+		texturefile = "gfx/event_pictures/SAM/r56_report_event_SAM_fono.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_SAM_nelson_and_family"
+		texturefile = "gfx/event_pictures/SAM/r56_report_event_SAM_nelson.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_SAM_nzl_and_samoa_flag"
+		texturefile = "gfx/event_pictures/SAM/r56_report_event_SAM_flags.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_SAM_tokelau"
+		texturefile = "gfx/event_pictures/SAM/r56_report_event_SAM_tokelau.dds"
+	}
 	
 ###------> SAF <><> <><> <><> <><> <><>	
 	spriteType = {
@@ -3906,7 +3931,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_event_SOV_tuvan_annexation"
 		texturefile = "gfx/event_pictures/SOV/news_event_SOV_tuvan_annexation.dds"
-	}	
+	}
+	spriteType = {
+		name = "GFX_news_event_SOV_fall_of_perm"
+		texturefile = "gfx/event_pictures/SOV/news_event_SOV_fall_of_perm.dds"
+	}
 	
 ###------> SPR <><> <><> <><> <><> <><>
 

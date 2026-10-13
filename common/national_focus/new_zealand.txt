@@ -107,7 +107,7 @@ focus_tree = {
 			OR = {
 				has_war_with = NEP
 				NOT = { country_exists = USA }
-				USA = { is_puppet_of = NZL }
+				USA = { is_subject_of = NZL }
 			}
 		}
 
@@ -161,7 +161,7 @@ focus_tree = {
 			OR = {
 				has_war_with = NEP
 				NOT = { country_exists = USA }
-				USA = { is_puppet_of = NZL }
+				USA = { is_subject_of = NZL }
 			}
 		}
 
@@ -386,7 +386,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			
+			base = 0 # dont do it pls
 		}
 
 		available = {
@@ -1038,6 +1038,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_doctrine_cost_reduction = {
+				name = NZL_submarine_production
 				cost_reduction = 0.75
 				uses = 3
 				category = cat_trade_interdiction
@@ -1446,6 +1447,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
+				name = NZL_bren_transport_carrier
 				bonus = 1.0
 				ahead_reduction = 0.5
 				uses = 2
@@ -1469,6 +1471,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
+				name = NZL_abandon_and_combat_enemy_armour
 				bonus = 1.5
 				uses = 1
 				ahead_reduction = 0.5
@@ -1682,6 +1685,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
+				name = NZL_the_charlton_rifle
 				bonus = 1
 				uses = 1
 				category = infantry_weapons
@@ -2102,11 +2106,13 @@ focus_tree = {
 
         completion_reward = {
             add_tech_bonus = {
+				name = NZL_adapt_to_the_jungles
                 bonus = 1
                 uses = 1
                 category = summer_clothing_tech
                 }
             add_tech_bonus = {
+				name = NZL_adapt_to_the_jungles
                 bonus = 1
                 uses = 2
                 category = r56_jungle_infantry_tech
@@ -2200,6 +2206,7 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				add_doctrine_cost_reduction = {
+					name = NZL_new_zealand_special_forces
 					cost_reduction = 0.5
 					uses = 2
 					category = special_forces_doctrine
@@ -2276,6 +2283,7 @@ focus_tree = {
 		completion_reward = {
 			air_experience = 50
 			add_doctrine_cost_reduction = {
+				name = NZL_form_the_actual_new_zealander_airforce
 				cost_reduction = 0.5
 				uses = 2
 				category = air_doctrine
@@ -2344,6 +2352,7 @@ focus_tree = {
 	
 		completion_reward = {
 			add_tech_bonus = {
+				name = NZL_into_the_jet_age
 				bonus = 1.0
 				uses = 1
 				category = jet_technology
@@ -2381,7 +2390,7 @@ focus_tree = {
 					has_dlc = "By Blood Alone"
 				}
 				add_tech_bonus = {
-					name = NZL_fighter_productions
+					name = NZL_aircraft_research_group
 					bonus = 1.0
 					uses = 1
 					category = light_air
@@ -2389,7 +2398,7 @@ focus_tree = {
 			}
 			else = {
 				add_tech_bonus = {
-					name = NZL_fighter_productions
+					name = NZL_aircraft_research_group
 					bonus = 1.0
 					uses = 1
 					category = light_fighter
@@ -2508,7 +2517,7 @@ focus_tree = {
 					has_dlc = "By Blood Alone"
 				}
 				add_tech_bonus = {
-					name = NZL_bomber_production
+					name = NZL_aircraft_engine_upgrades
 					technology = engines_1
 					technology = engines_2
 					technology = engines_3
@@ -2519,6 +2528,7 @@ focus_tree = {
 			}
 			else = {
 				add_tech_bonus = {
+					name = NZL_aircraft_engine_upgrades
 					bonus = 1.0
 					uses = 2
 					category = cat_heavy_fighter
@@ -2748,6 +2758,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			add_tech_bonus = {
+				name = NZL_industrialization_fund
 				bonus = 0.75
 				uses = 1
 				category = construction_tech
@@ -2861,6 +2872,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
+				name = NZL_aquire_foreign_machinery
 				bonus = 0.75
 				uses = 1
 				technology = basic_machine_tools
@@ -2894,6 +2906,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_tech_bonus = {
+				name = NZL_modernize_hydroelectric_power
 				bonus = 0.75
 				uses = 1
 				category = construction_tech
@@ -3071,7 +3084,7 @@ focus_tree = {
 
 	focus = {
 		id = NZL_industrialize_christchurch
-		icon = GFX_goal_generic_construction
+		icon = GFX_goal_generic_production2
 		prerequisite = { focus = NZL_prioritize_city_growth }
 		relative_position_id = NZL_prioritize_city_growth
 		x = 1
@@ -3568,31 +3581,43 @@ focus_tree = {
 		x = -6
 		y = 0
 
+		cost = 4
+
         available = {
-		    OR = {
-			    controls_state = 726
-				owns_state = 726
-			}
-		    has_government = democratic
-			has_war = no
-			SAM = {
-				exists = no
+			if = {
+				limit = { has_global_flag = samoa_we_exist_gamerule_bcuz_its_easier }
+				SAM = { exists = yes is_subject_of = ROOT }
+				else = {
+					OR = {
+						controls_state = 726
+						owns_state = 726
+					}
+				}
 			}
 		}
-		
-		available_if_capitulated = no
 
-		cost = 8
-
-		ai_will_do = {
-			factor = 35
-		}
-		
-		search_filters = { FOCUS_FILTER_POLITICAL  FOCUS_FILTER_HISTORICAL }
+		ai_will_do = { base = 35 }
 
 		completion_reward = {
-			NZL = {
-				country_event = new_zealand.11
+			if = {
+				limit = { has_global_flag = samoa_we_exist_gamerule_bcuz_its_easier }
+				effect_tooltip = { # This targets two countries while the one below targets one which is why this is effect tooltip
+					every_country = {
+						limit = {
+							OR = {
+								original_tag = NZL
+								original_tag = SAM
+							}
+						}
+						country_event = new_zealand.11
+					}
+				}
+				hidden_effect = {
+					country_event = new_zealand.11
+					SAM = { country_event = r56_goodwill_negotiations.1 }
+				}
+
+				else = { country_event = new_zealand.11 }
 			}
 		}
 	}
@@ -3707,7 +3732,7 @@ focus_tree = {
 		id = NZL_nationalize_commerical_broadcasting
 		icon = GFX_goal_generic_radar
 		relative_position_id = NZL_the_social_security_acts
-		x = -2
+		x = -1
 		y = 1
 		prerequisite = { focus = NZL_the_social_security_acts }
 		cost = 10
@@ -3728,7 +3753,7 @@ focus_tree = {
 		id = NZL_state_controlled_bank
 		icon = GFX_goal_generic_banking
 		relative_position_id = NZL_the_social_security_acts
-		x = 2
+		x = 1
 		y = 1
 		prerequisite = { focus = NZL_the_social_security_acts }
 		cost = 10
@@ -3764,7 +3789,7 @@ focus_tree = {
 		prerequisite = { focus = NZL_nationalize_commerical_broadcasting }
 		prerequisite = { focus = NZL_state_controlled_bank }
 		relative_position_id = NZL_nationalize_commerical_broadcasting
-		x = 2
+		x = 1
 		y = 1
 		cost = 10
 

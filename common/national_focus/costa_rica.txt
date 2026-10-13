@@ -37,7 +37,7 @@ focus_tree = {
 		}
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 58
+		x = 55
 		y = 0
 		ai_will_do = {
 			factor = 11
@@ -1027,15 +1027,15 @@ focus_tree = {
 		}
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
-		x = 0
+		x = -2
 		y = 3
 		relative_position_id = COS_strengthen_democratic_institutions
 		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 10
-				is_historical_focus_on = yes
-			}
+			factor = 1
+			#modifier = { # 56 - Historically Costa Rica joined the war as soon as the U.S got involved
+			#	factor = 10
+			#	is_historical_focus_on = yes
+			#}
 		}
 		completion_reward = {
 			add_war_support = -0.25
@@ -1077,7 +1077,7 @@ focus_tree = {
 		}	
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ALLIANCE }
-		x = -2
+		x = 0
 		y = 3
 		relative_position_id = COS_strengthen_democratic_institutions
 		ai_will_do = {
@@ -1152,10 +1152,16 @@ focus_tree = {
 		y = 3
 		relative_position_id = COS_strengthen_democratic_institutions
 		ai_will_do = {
-			factor = 5
+			base = 0
 			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
+				add = 500 # oh shit usa is in trouble we need to help
+				AND = {
+					is_historical_focus_on = yes
+					USA = {
+						has_government = democratic
+						has_war = yes 
+					}
+				}
 			}
 		}
 		completion_reward = {
@@ -1203,7 +1209,7 @@ focus_tree = {
 		}	
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH }
-		x = 0
+		x = 1
 		y = 4
 		relative_position_id = COS_strengthen_democratic_institutions
 		ai_will_do = {
@@ -1222,15 +1228,17 @@ focus_tree = {
 		id = COS_trabajo_y_paz
 		icon = GFX_focus_ETH_peacekeeping_forces
 		prerequisite = {
-			focus = COS_scientific_exchange
+			focus = COS_central_american_cooperation
+			focus = COS_join_the_allies
+			focus = COS_maintain_our_neutrality
 		}
 		available = {
 			is_subject = no
 		}	
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
-		x = 0
-		y = 5
+		x = -1
+		y = 4
 		relative_position_id = COS_strengthen_democratic_institutions
 		ai_will_do = {
 			factor = 5

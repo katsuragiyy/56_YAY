@@ -1,6 +1,7 @@
 ###########################
 # Abemama and (Moslty) Canton Island Events
 ###########################
+# NOT USED ANYMORE LELLL
 
 add_namespace = abemama
 add_namespace = canton_island

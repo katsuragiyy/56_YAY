@@ -196,9 +196,7 @@ country_event = {
 			}
 		}
 		trigger = {
-			if = {
-				limit = { is_ai = yes }
-			}
+			if = { limit = { is_ai = yes } }
 			else = {
 				OR = {
 					neutrality > 0.29
@@ -298,9 +296,7 @@ country_event = {
 			}
 		}
 		trigger = {
-			if = {
-				limit = { is_ai = yes }
-			}	
+			if = { limit = { is_ai = yes } }	
 			OR = {
 				fascism > 0.29
 				AND = {

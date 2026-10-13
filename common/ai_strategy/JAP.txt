@@ -381,7 +381,7 @@ northern_expansion = {
 	enable = {
 		OR = {
 			has_completed_focus = JAP_kantokuen
-			has_completed_focus = JAP_prepare_for_war_with_the_soviet_union
+			has_completed_focus = JAP_preemptive_strike_soviet # 56
 		}
 		has_completed_focus = JAP_ensure_temporary_peace_with_china	#56
 		country_exists = SOV

@@ -637,9 +637,9 @@ PRU_inca_nationalism_decisions = {
 			highlight_state_targets = {
 				state = 629
 				state = 630
-				state = 727
+				#state = 727 # 56 - Not hawaii
 				state = 631
-				state = 642
+				#state = 642 # 56 - Not hawaii
 			}
 		}
 

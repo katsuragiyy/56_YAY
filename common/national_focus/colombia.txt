@@ -1972,17 +1972,14 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				OR = {
-					USA = {
-						NOT = {
-							is_in_faction_with = ENG
-						}
+			base = 0
+			modifier = { # LET ME GET ON THAT!!!
+				add = 1000
+				USA = {
+					focus_progress = {
+						focus = r56_USA_form_united_nations
+						progress < 0.01
 					}
-					date < 1943.11.1
 				}
 			}
 		}

@@ -4468,8 +4468,8 @@ country_event = {
 			631 = { add_claim_by = JAP } #Midway Island
 			629 = { add_claim_by = JAP } #Hawaii
 			630 = { add_claim_by = JAP } #Johnston Atoll
-			727 = { add_claim_by = JAP } #Line Islands
-			642 = { add_claim_by = JAP } #Phoenix Island
+			#727 = { add_claim_by = JAP } #Line Islands # 56 - Line Islands, not American
+			#642 = { add_claim_by = JAP } # 56 - Tokelau, not American
 			638 = { add_claim_by = JAP } #Guam
 
 			#War
@@ -4570,8 +4570,8 @@ country_event = {
 			631 = { add_claim_by = JAP } #Midway Island
 			629 = { add_claim_by = JAP } #Hawaii
 			630 = { add_claim_by = JAP } #Johnston Atoll
-			727 = { add_claim_by = JAP } #Line Islands
-			642 = { add_claim_by = JAP } #Phoenix Island
+			#727 = { add_claim_by = JAP } #Line Islands # 56 - Line Islands, not American
+			#642 = { add_claim_by = JAP } # 56 - Tokelau, not American
 			638 = { add_claim_by = JAP } #Guam
 		}
 		#War

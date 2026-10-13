@@ -98,6 +98,23 @@ DIPLOMACY_REVOKE_GUARANTEE_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
+	if = { # R56
+		limit = {
+			has_game_rule = {
+				rule = allow_revoke_guarantees
+				option = ALLOWED
+			}
+			OR = {
+				original_tag = NZL
+				original_tag = SAM
+			}
+			has_country_flag = SAM_defense_pact_accepted
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_REVOKE_GUARANTEES_BLOCKED_TOOLTIP_SAMANDNZL
+			always = no
+		}
+	}
 }
 
 DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
@@ -1148,18 +1165,14 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			NOT = { FROM = { tag = SOV } }
 		}
 	}
-	if = { # R56 - New Zealander administrative collapse in Samoa # BANABA - Make only Samoa unable to be released
+	if = { # R56 - New Zealander administrative collapse in Samoa
 		limit = {
 			original_tag = NZL
-			NOT = {
-				has_completed_focus = NZL_the_goodwill_mission
-			}
+			NOT = { has_completed_focus = NZL_the_goodwill_mission }
 		}
 		custom_trigger_tooltip = {
 			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SAMOA_TOOLTIP
 			NOT = { FROM = { tag = SAM } }
-			NOT = { FROM = { tag = NIU } }
-			NOT = { FROM = { tag = CHT } }
 		}
 	}
 	if = { # Oman 
@@ -2381,6 +2394,19 @@ DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
+	if = { # R56 - Mau-New Zealander War
+		limit = {
+			FROM = {
+				original_tag = NZL
+				has_idea = r56_NZL_unsupported_war
+				has_war_with = SAM
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = r56_NZL_cant_call_allies_diplo
+			always = no
+		}
+	}
 	if = { # R56 - Israeli-Arab War
 		limit = {
 			FROM = {
@@ -2509,6 +2535,19 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 		}
 		custom_trigger_tooltip = {
 			tooltip = IRQ_british_occupation_diplo_tt
+			always = no
+		}
+	}
+	if = { # R56 - Mau-New Zealander War
+		limit = {
+			FROM = {
+				original_tag = NZL
+				has_idea = r56_NZL_unsupported_war
+				has_war_with = SAM
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = r56_NZL_cant_call_allies_diplo
 			always = no
 		}
 	}

@@ -199,11 +199,11 @@ country_event = {
 							is_neighbor_of = KHM
 							is_neighbor_of = SIK
 							is_neighbor_of = TIB #This region is local news event straved
-							tag = KHM
 							is_subject_of = CHI
 							original_tag = CHI
 							original_tag = PRC
 							is_subject_of = PRC
+							original_tag = TAN # why not
 						}
 					}
 					news_event = { 

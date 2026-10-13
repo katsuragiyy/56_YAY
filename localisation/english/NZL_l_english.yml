@@ -419,6 +419,12 @@
  new_zealand.10.d: "Adam Hamilton has stepped down from the leader of the National Party, and Prime Minister today leaving the position open to Sidney Holland. Holland has proven to be a worthy successor, and has stated to continue the National's agenda."
  new_zealand.10.a: "Holland shows great promise."
 
+ # Begin Negotiations - NZL
+ new_zealand.11.t: "Mission of Goodwill Arrives in [726.GetName]"
+ new_zealand.11.d: "Recently a 'Mission of Goodwill' has arrived in [SAM.Capital.GetCapitalVictoryPointName], [SAM.GetNonIdeologyName]'s de-facto capital, to discuss with the Mau Movement about the future of [726.GetName]. Their demands will not be light, and there is a very high likelyhood that we will lose more than what we will gain. However, if we can negotiate on the right terms, the damage may be limited, and we can secure a victory in the long term."
+ new_zealand.11.a: "All ends well."
+ new_zealand.11.b: "About time."
+
  #Chatham Stuff
  cheese_man: "King of Cheese"
  CHT_fading_national_identity: "Fading National Identity"

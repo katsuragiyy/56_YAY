@@ -5611,9 +5611,10 @@ focus_tree = {
 	focus = { # R56
 		id = GER_desperate_measures
 		icon = GFX_goal_manpower
+		relative_position_id = GER_panzergrenadier
 		prerequisite = { focus = GER_improve_the_logistics_system focus = GER_defend_the_vaterland }
-		x = 7
-		y = 7
+		x = 0
+		y = 2
 		
 		cost = 5
 		ai_will_do = {
@@ -7958,7 +7959,7 @@ focus_tree = {
 				GER_add_or_modify_wunderwaffen = yes
 				if = {
 					limit = {
-						NOT = { is_special_project_completed = sp_air_intercontinental_bomber }
+						NOT = { is_special_project_completed = sp:sp_air_intercontinental_bomber } # 56 - Vanilla fix
 					}
 					add_to_variable = { 
 						GER_wunderwaffen_sp_air_intercontinental_bomber_speed_factor = 0.2 #MM: This is the focus of this focus, so extra speed
@@ -7967,7 +7968,7 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						NOT = { is_special_project_completed = sp_air_mothership_aircraft }
+						NOT = { is_special_project_completed = sp:sp_air_mothership_aircraft }
 					}
 					add_to_variable = { 
 						GER_wunderwaffen_sp_air_mothership_aircraft_speed_factor = GER_wunderwaffe_research_speed_bonus

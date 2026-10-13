@@ -1478,8 +1478,6 @@ JAP_the_co_prosperity_sphere_decisions = {
 						ruling_party = neutrality
 						elections_allowed = no
 					}
-
-					SAM_mataafa_faumuina_fiame = { promote_leader = yes }
 				}
 			}
 		}

@@ -650,6 +650,22 @@ opinion_modifiers = {
 		value = -5
 	}
 
+###------> SAM <><> <><> <><> <><> <><>
+	r56_SAM_seized_american_assets_opinion = { value = -25 }
+
+	r56_SAM_refused_to_support_opinion = { value = -35 }
+
+	r56_SAM_accepted_to_support_opinion = { value = 35 }
+
+	r56_goodwill_compromise = { value = -100 }
+
+	r56_goodwill_samoa_favored = { value = 45 }
+
+	r56_samoa_recognized_us = { 
+		value = 10
+		decay = 0.1
+	}
+
 ###------> JAP <><> <><> <><> <><> <><>
 	
 	Tora_Large_Decrease = { value = -100 }

@@ -5735,7 +5735,7 @@ country_event = { #SOV accepts NAP
 	id = wuw_GER_diplomacy.102
 	title = wuw_GER_diplomacy.102.t
 	desc = wuw_GER_diplomacy.102.desc
-	picture = GFX_report_event_hitler_handshake # R56
+	picture = [GetHitlerHandshakeEventPicture]
 
 	is_triggered_only = yes
 
@@ -13920,7 +13920,7 @@ country_event = {
 					add_core_of = SIL
 				}
 			}
-			if = {
+			if = { # 56
 				limit = {
 					has_game_rule = {
 						rule = minor_releasables_status
@@ -17082,12 +17082,9 @@ country_event = {
 					}
 				}
 			}
+			# 56
 			IF = {
-				limit = {
-					DNZ = {
-						is_subject_of = ROOT
-					}
-				}
+				limit = { DNZ = { is_subject_of = ROOT } }
 				FROM = {
 					annex_country = {
 						target = DNZ
@@ -17203,12 +17200,9 @@ country_event = {
 
 	option = {
 		name = wuw_GER_realpolitik.18.a
+		# 56
 		IF = {
-			limit = {
-				DNZ = {
-					is_subject_of = FROM
-				}
-			}
+			limit = { DNZ = { is_subject_of = FROM } }
 			ROOT = {
 				annex_country = {
 					target = DNZ
@@ -17216,12 +17210,13 @@ country_event = {
 				}
 			}
 		}
-		add_state_core = 85					#r56
+		add_state_core = 85
+		##
 		FROM =  {
 			every_controlled_state = {
 				limit = {
 					OR = {
-						#state = 85 #Danzig #R56 - danzig isn't controlled by Poland so this doesn't work properly
+						state = 85 #Danzig
 						state = 807 #Gdnyia
 						state = 86 #Poznan
 						state = 762 #Katovice
@@ -17682,7 +17677,6 @@ country_event = {
 				}
 			}
 		}
-		# R56
 
 		FROM = {
 			every_controlled_state = {
@@ -20959,6 +20953,7 @@ country_event = {
 	picture = GFX_report_event_election_vote
 
 	# R56 - We have our own content, kept incase of future use. 
+	# 56 - Actually on second thought this can lead to monarchist luxembourg..
 	is_triggered_only = yes
 
 	mean_time_to_happen = { days = 1 }
@@ -21862,7 +21857,7 @@ country_event = {
 
 		add_trait = {
 		    character = HUN_ferenc_szalasi
-		    ideology = ultranationalism
+		    ideology = nazism
 		    trait = HUN_nemzetvezeto_trait
 		}
 

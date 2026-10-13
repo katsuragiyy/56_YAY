@@ -1855,7 +1855,7 @@
  AFG_red_cross_idea_tt:0 "Field Hospital Trickleback: §G+10%§!, Exp. Loss Factor: §G-10%§!"
  AFG_improve_amanullah_spirit:0 "This will improve §YAmanullah Khan's§! public image and reputation."
 
- AFG_gets_pakistan_press:0 "§Y[444.GetName]§!, §Y[442.GetName]§! and §Y[445.GetName]§! will be transferred to §Y[AFG.GetNonIdeologyName]§!."
+ AFG_gets_pakistan_press:0 "§Y[444.GetName]§!, §Y[442.GetName]§!, §Y[445.GetName]§!, and §Y[1093.GetName]§! will be transferred to §Y[AFG.GetNonIdeologyName]§!."
  AFG_get_fakhri_pasha_tt:0 "§YFakhri Pasha§! becomes a General."
  AFG_get_fakhri_pasha:0 "Has invited §YFakhri Pasha§!."
  AFG_qiamuddin_dies_in_prison:0 "§YMawlana Qiamuddin Khadim§! dies."
