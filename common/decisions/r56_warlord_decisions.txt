@@ -130,6 +130,7 @@ CHI_chinese_united_front = {
 				has_war_with = ROOT
 			}
 			RNG = { exists = no }
+			ROOT = { is_ai = no }
 		}
 		available = { 
 			NOT = { has_country_flag = KMT_no_peace }
@@ -171,6 +172,7 @@ CHI_chinese_united_front = {
 				is_subject = no
 				has_war_with = ROOT
 			}
+			ROOT = { is_ai = no }
 		}
 		available = {
 			NOT = { has_country_flag = KMT_no_peace } 
@@ -247,6 +249,7 @@ CHI_chinese_united_front = {
 				has_war_with = ROOT
 			}
 			owns_state = 1116
+			ROOT = { is_ai = no }
 		}
 		available = { 
 			NOT = { has_country_flag = KMT_no_peace }
@@ -292,6 +295,7 @@ CHI_chinese_united_front = {
 				is_subject = no
 				has_war_with = ROOT
 			}
+			ROOT = { is_ai = no }
 		}
 		available = { 
 			surrender_progress > 0.35

@@ -488,7 +488,31 @@ AFG_ai_behavior = {
 		allow_achievements = no
 	}
 	option = {
-		name = AFG_KHALQ
+		name = AFG_GHULAM # Vanilla & Road
+		text = "RULE_OPTION_GHULAM_AFG"
+		desc = "RULE_OPTION_GHULAM_AFG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = AFG_KINGS_PATH
+		text = "RULE_OPTION_KINGS_PATH_AFG"
+		desc = "RULE_OPTION_KINGS_PATH_AFG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = AFG_DAOUD
+		text = "RULE_OPTION_DAOUD_AFG"
+		desc = "RULE_OPTION_DAOUD_AFG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = AFG_AMANULLAH # Vanilla and Road
+		text = "RULE_OPTION_AMANULLAH_AFG"
+		desc = "RULE_OPTION_AMANULLAH_AFG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = AFG_KHALQ # Vanilla and Road
 		text = "RULE_OPTION_KHALQ_AFG"
 		desc = "RULE_OPTION_KHALQ_AFG_AI_DESC"
 		allow_achievements = no
@@ -500,13 +524,7 @@ AFG_ai_behavior = {
 		allow_achievements = no
 	}
 	option = {
-		name = AFG_GHULAM
-		text = "RULE_OPTION_GHULAM_AFG"
-		desc = "RULE_OPTION_GHULAM_AFG_AI_DESC"
-		allow_achievements = no
-	}
-	option = {
-		name = AFG_MIRZALI
+		name = AFG_MIRZALI # Vanilla and Road
 		text = "RULE_OPTION_MIRZALI_AFG"
 		desc = "RULE_OPTION_MIRZALI_AFG_AI_DESC"
 		allow_achievements = no
@@ -518,21 +536,17 @@ AFG_ai_behavior = {
 		allow_achievements = no
 	}
 	option = {
-		name = AFG_DAOUD
-		text = "RULE_OPTION_DAOUD_AFG"
-		desc = "RULE_OPTION_DAOUD_AFG_AI_DESC"
+		name = EMPIRE # Vanilla Only
+		text = "RULE_OPTION_EMPIRE_AFG_R56"
+		desc = "RULE_OPTION_EMPIRE_AFG_AI_DESC_R56"
+		required_dlc = "Graveyard of Empires"
 		allow_achievements = no
 	}
 	option = {
-		name = AFG_AMANULLAH
-		text = "RULE_OPTION_AMANULLAH_AFG"
-		desc = "RULE_OPTION_AMANULLAH_AFG_AI_DESC"
-		allow_achievements = no
-	}
-	option = {
-		name = AFG_KINGS_PATH
-		text = "RULE_OPTION_KINGS_PATH_AFG"
-		desc = "RULE_OPTION_KINGS_PATH_AFG_AI_DESC"
+		name = MUGHALS # Vanilla Only
+		text = "RULE_OPTION_MUGHAL_AFG_R56"
+		desc = "RULE_OPTION_MUGHAL_AFG_AI_DESC_R56"
+		required_dlc = "Graveyard of Empires"
 		allow_achievements = no
 	}
 	option = {

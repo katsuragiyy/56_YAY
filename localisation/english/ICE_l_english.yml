@@ -102,7 +102,7 @@
  ICE_mountain_train:0 "Establish the Akureyi Tactical School"
  ICE_mountain_train_desc:0 "Iceland's cold and mountainous terrain is the perfect landscape for the training of snow and mountaineer troops. [ENG.GetNameDefCap] has offered to build a school dedicated to training soldiers for just that purpose."
  ICE_eng_expand_airport:0 "Expand Reykjavík Airport"
- ICE_eng_expand_airport_desc:0 "The [ENG.GetADjective] need places to keep their planes for patrols over the Atlantic, and they have expressed interest in expanding Reykjavík Airport for such a purpose."
+ ICE_eng_expand_airport_desc:0 "The [ENG.GetAdjective] need places to keep their planes for patrols over the Atlantic, and they have expressed interest in expanding Reykjavík Airport for such a purpose."
  ICE_usa_airport:0 "Establish Keflavík Airport"
  ICE_usa_airport_desc:0 "[USA.GetNameDefCap] has expressed an interest in building an airport in Keflavík. They promise to turn this base over to us within a couple of years after the war's end."
  ICE_fas_youth:0 "Establish the Icelandic Youth"
@@ -130,13 +130,15 @@
  ICE_sov_group:0 "[SOV.GetAdjective] Volunteers"
  ICE_sov_group_desc:0 "For all of Iceland's greatness, it lacks manpower. Perhaps [SOV.GetNameDef] would agree to send "volunteers" to help protect our shared interests?"
  ICE_com_kill_oppressors:0 "Turn the Tables"
- ICE_com_kill_oppressors_desc:0 "Denmark has ruled our lands for hundreds of years, bringing hardship and despair to our people. Now, with the help of [SOV.GetNameDef], it is time that we freed the [DEN.GetADjective] workers from their oppressive overlords so that they know the same freedom that we do!"
+ ICE_com_kill_oppressors_desc:0 "Denmark has ruled our lands for hundreds of years, bringing hardship and despair to our people. Now, with the help of [SOV.GetNameDef], it is time that we freed the [DEN.GetAdjective] workers from their oppressive overlords so that they know the same freedom that we do!"
  ICE_ally_tech:0 "Allied Research Teams"
  ICE_ally_tech_desc:0 "Democracy is the best conductor of scientific progress, and never has this been more obvious than now. Our scientists have been amazed by the spectacular advances our allies have made. Now it is time to use those advances to benefit our own country."
  ICE_shieldmaidens_desc:0 "In the past, the Vikings sent their women into battle. Fierce as tigers and twice as deadly, the shieldmaidens were feared by all of Medieval Europe. It is only fitting that [ICE.GetNameDef], as the rightful heir of the Norse, continues this tradition. To arms women, your fight awaits!"
  ICE_shieldmaidens:0 "Form Shieldmaiden Legions"
- ICE_national_def_force:0 "Create the National Defence Force"
- ICE_national_def_force_desc:0 "We rely entirely on [DEN.GetNameDef] to defend ourselves. This is unacceptable; we should begin to create an army to protect ourselves."
+
+ ICE_national_def_force_r56:0 "Create the National Defence Force"
+ ICE_national_def_force_r56_desc:0 "We rely entirely on [DEN.GetNameDef] to defend ourselves. This is unacceptable; we should begin to create an army to protect ourselves."
+
  ICE_train_reserves:0 "Train Reserve Forces"
  ICE_train_reserves_desc:0 "Now that we have a National Defence Force and have trained officers for it, it is time to train some reserves for the force."
  ICE_look_into_armour:0 "Full Metal Doctrine"
@@ -404,3 +406,181 @@
  #MISC
  ICE_elite_infantry:0 "Yfirstétt Fótgöngulið"
  ICE_futile_resistance:0 "Futile Resistance"
+
+ #ARMY TREE
+ ICE_winter_equipment_r56:0 "Enhanced Winter Training"
+ ICE_winter_equipment_r56_desc:0 "Due to the harsh nordic climate it is obviously imperative that we outfit our soldiers with appropriate winter uniforms and training."
+
+ ICE_weapon_production_r56:0 "Encourage Local Arms Production"
+ ICE_weapon_production_r56_desc:0 "With the development of our independent armed forces comes the issue of equipment. Though some advises relying on foreign equipment, we have decided to produce our own."
+
+ ICE_weapon_research_r56:0 "Expand Weapons Research"
+ ICE_weapon_research_r56_desc:0 "With growing global tensions and the ever-present threat of conflict, the National Defence Forces must develop more effective arms to protect Iceland's sovereignity"
+
+ ICE_recruitment_initiatives_r56:0 "Recruitment Initiatives"
+ ICE_recruitment_initiatives_r56_desc:0 "We must expend incentives and benefits for those who wish to join the Icelandic army"
+
+ ICE_expand_doctrines_r56:0 "Develop Local Doctrine"
+ ICE_expand_doctrines_r56_desc:0 ""
+
+ ICE_motorized_research_r56:0 "Motorized Development"
+ ICE_motorized_research_r56_desc:0 ""
+
+ ICE_armor_research_r56:0 "The Future of Warfare"
+ ICE_armor_research_r56_desc:0 ""
+
+ ICE_reshuffle_high_command_r56:0 "Reshuffle High Command"
+ ICE_reshuffle_high_command_r56_desc:0 ""
+
+ ICE_expand_the_national_police_r56:0 "Expand the National Police"
+ ICE_expand_the_national_police_r56_desc:0 ""
+
+ ICE_effective_army_focus_r56:0 "Prepare an Elite Mountaineer Force"
+ ICE_effective_army_focus_r56_desc:0 ""
+
+ ICE_special_forces_army_r56:0 "Specialize the Army"
+ ICE_special_forces_army_r56_desc:0 "The situation of [ICE.GetNameDef] is unique. We now have the capacity to form a strong military yet we should look toward specializing our military forces."
+
+ ICE_conventional_army_r56:0 "Conventional Armed Forces"
+ ICE_conventional_army_r56_desc:0 ""
+
+ ICE_large_guns_r56:0 "Focus on Artillery"
+ ICE_large_guns_r56_desc:0 ""
+
+ ICE_expansive_army_focus_r56:0 "Prepare an Efficent Amphibious Force"
+ ICE_expansive_army_focus_r56_desc:0 "Offense is key. We must prepare an amphibious force capable of landing on the shores of our enemies and securing victory over them. This is the only way to ensure the survival of our nation."
+
+ ICE_ensure_cohesion_r56:0 "Ensure Cohesion"
+ ICE_ensure_cohesion_r56_desc:0 ""
+
+ ICE_modernized_army_r56:0 "Modernized Army"
+ ICE_modernized_army_r56_desc:0 "Through extensive reforms and tough compromises, we managed to turn our small island's defence force into a real modern military!"
+
+ ICE_utilise_the_terrain_r56:0 "Conduct Exercises in the [ROOT.GetAdjective] Interior"
+ ICE_utilise_the_terrain_r56_desc:0 ""
+
+ ICE_mountain_gun_r56: "The Sounds of Thunder"
+ ICE_mountain_gun_r56_desc: ""
+
+ #navy tree
+ ICE_coastguard_r56:0 "Expand the Coast Guard"
+ ICE_coastguard_r56_desc:0 "[ICE.GetNameDefCap]'s main force of defense, the Icelandic Coast Guard, works tirelessly as our nation's bastion against those who would do us harm, but they are criminally understaffed. It is time to change that."
+
+ ICE_nav_doc_r56:0 "Establish Coast Guard Mission"
+ ICE_nav_doc_r56_desc:0 "The coast guard protects [ICE.GetNameDef] from all threats, both foreign and domestic, but what exactly is their authority? What do they have jurisdiction over, and what tactics should they focus on? These are the kind of questions that need to be answered to ensure the effectiveness of our coast guard."
+
+ ICE_build_dock_r56:0 "Build True Dockyards"
+ ICE_build_dock_r56_desc:0 "While [ICE.GetNameDef] has some small dockyards, it does not have dockyards comparable to other countries. If we wish to build ships of appreciable size, we need to build up an actual dockyard."
+
+ ICE_nav_marine_corps_r56:0 "Form Specialized Marine Corps"
+ ICE_nav_marine_corps_r56_desc:0 "[ICE.GetNameDef] is fully surrounded by water with no land borders whatsoever. In the event of war it would be impossible to reach our enemies without landing on their shores. As such, training marines especially to facilitate coastal breakthroughs will greatly facilitate this task."
+
+ ICE_carrier_r56:0 "PROJECT: Mávur"
+ ICE_carrier_r56_desc:0 "Having spent months designing and developing, we have finally come up with the ultimate seaborne carrier. It will take all of our nation's resources, but upon completion, we will stand unkillable!"
+
+ ICE_coast_guard_r56:0 "[ICE.GetNameDefCap]'s Navy"
+ ICE_coast_guard_r56_desc:0 "[ICE.GetNameDefCap]'s coast guard is not a navy in the full sense of the word. They protect our shores and our skies, but their job has remained that of a protective guard force. It is time that we decide if they are a guard force or indeed the navy and air force of [ICE.GetNameDef]."
+
+ ICE_ships_r56:0 "Begin Large Ship Building"
+ ICE_ships_r56_desc:0 "We have been reduced to putting cannons on trawlers to defend ourselves in the past. It is time that we had a proper fleet, with proper ships."
+
+ ICE_fighting_ships_r56:0 "Fighting Ships"
+ ICE_fighting_ships_r56_desc:0 "[ICE.GetNameDefCap] must be able to defend itself from all who would do it harm. We must grant our coast guard ships large enough to protect us."
+
+ ICE_sub_r56:0 "Submarine Operations"
+ ICE_sub_r56_desc:0 "Our seas lie vulnerable to enemy fleets and ships, but we do not have the resources to fight these fleets in one-on-one engagements. By building submarines, we should be able to alleviate some of the danger."
+
+ ICE_anti_sub_r56:0 "Wolf Hunters"
+ ICE_anti_sub_r56_desc:0 "Submarines threaten our existence by preying on our essential trading and fishing vessels. It is time that we taught these "wolfpacks" who the real top dog is."
+
+ ICE_establish_naval_academy_r56:0 "Establish a Naval Academy"
+ ICE_establish_naval_academy_r56_desc:0 ""
+
+ ICE_naval_bomber_development_r56:0 "Naval Bomber Development"
+ ICE_naval_bomber_development_r56_desc:0 ""
+
+ #air tree
+ ICE_airforce_r56:0 "The [ICE.GetName] Air Force "
+ ICE_airforce_r56_desc:0 ""
+
+ ICE_naval_airforce_r56:0 "The Airforce Serves the Navy"
+ ICE_naval_airforce_r56_desc:0 ""
+
+ ICE_independent_air_branch_r56:0 "Form an Independent Air Council"
+ ICE_independent_air_branch_r56_desc:0 ""
+
+ ICE_radar_development_r56:0 "Radar Development"
+ ICE_radar_development_r56_desc:0 ""
+
+ ICE_fighter_development_r56:0 "Fighter Development"
+ ICE_fighter_development_r56_desc:0 ""
+
+ ICE_bomber_development_r56:0 "Bomber Development"
+ ICE_bomber_development_r56_desc:0 ""
+
+ ICE_jet_development_r56:0 "The Future of Aircrafts"
+ ICE_jet_development_r56_desc:0 ""
+
+ #peaceful mini-tree
+ ICE_establish_merchant_marine_r56:0 "Demilitarize the Naval Industry"
+ ICE_establish_merchant_marine_r56_desc:0 ""
+
+ ICE_permanent_neutrality_r56:0 "Reaffirm Our Neutrality"
+ ICE_permanent_neutrality_r56_desc:0 ""
+
+ ICE_aid_denmark_r56:0 "Contribute to the [DEN.GetAdjective] Economy"
+ ICE_aid_denmark_r56_desc:0 ""
+
+ ICE_focus_on_civ_sector_r56:0 "Prioritize the Civilian Sector"
+ ICE_focus_on_civ_sector_r56_desc:0 ""
+
+ ICE_fortify_the_land_r56:0 "Fortify the Interior"
+ ICE_fortify_the_land_r56_desc:0 ""
+
+ ICE_global_trade_r56:0 "Engage in International Trade"
+ ICE_global_trade_r56_desc:0 ""
+
+ # Army Spirit
+ ICE_army_spirit_r56: "Iceland Defense Force"
+ ICE_army_spirit_r56_desc: "As tensions rise across Europe, we must begin preparing for the worst. We rely on [DEN.GetNameDef] for our defense as of now, but we cannot rely on a foreign power who shares different aims and goals than us to protect us. We must take up arms ourselves, prepare ourselves with our own weapons, and if need be, protect our nation from any foreign occupiers who seek to impose their rule upon the [ROOT.GetAdjective] people!"
+
+ #TOOLTIPS
+ ICE_winter_supplies_attrition_tt:0 "$ICE_modify_national_defence_forces$ \nWinter Attrition: §G-15%§!\n\n"
+ ICE_more_manpower_tt:0 "$ICE_modify_national_defence_forces$ \nRecruitable Population: §Y+1.00%§!\nMobilization Speed: §G+5%§!\n\n"
+ ICE_more_mp2_tt:0 "$ICE_modify_national_defence_forces$ \nRecruitable Population: §Y+2.50%§!\nPlanning Speed Factor: §G+10%§!\nDivision Training Time: §G-10%§!\n\n"
+ ICE_land_doctrine_reduction_tt:0 "$ICE_modify_national_defence_forces$ \nLand Doctrine Cost: §G-10%§!\n\n"
+ ICE_high_command_tt:0 "$ICE_modify_national_defence_forces$ \nArmy Experience Gain: §G10%§!\nMilitary Leader Cost: §G-25%§! \nMaximum Command Power Increase: §G+40§!\n\n"
+ ICE_cohesion_tt:0 "$ICE_modify_national_defence_forces$ \nDivision Organization: §G+10%§! \nDivision Recovery Rate: §G+10%§!\n\n"
+ ICE_modern_army_tt:0 "$ICE_modify_national_defence_forces$ \nEntrenchment Speed: §G+10%§! \nDivision Organization: §G+5%§! \nDivision Recovery Rate: §G+5%§!\n\n"
+ ICE_effective_army_tt:0 "$ICE_modify_national_defence_forces$ \nDivision Attack: §G+5%§! \nDivision Defence: §G+5%§! \nDivision Training Time: §R+10%§!\n\n"
+ ICE_special_forces_tt:0 "$ICE_modify_national_defence_forces$ \nSpecial Forces Capacity Multiplier: §G+25%§! \nSpecial Forces Attack: §G+10%§! \nSpecial Forces Defense: §G+10%§!\n\n"
+ ICE_inf_conventional_tt:0 "$ICE_modify_national_defence_forces$ \nInfantry Division Attack: §G+5%§! \nInfantry Division Defense: §G+5%§!\n\n"
+ ICE_large_guns_tt:0 "$ICE_modify_national_defence_forces$ \nArtillery Attack: §G+15%§! \nArtillery Defense: §G+15%§!\n\n"
+ ICE_attrition_factor_tt:0 "$ICE_modify_national_defence_forces$ \nDivision Attrition: §G-10%§!\n\n"
+
+ ICE_modify_national_defence_forces:0 "Modify §YThe National Defence Forces§! by"
+
+ #ARMY IDEAS
+ ICE_rifle_production:0 "Small Arms Production"
+ ICE_army_recruitment:0 "Army Recruitment"
+ ICE_funding_a_military:0 "Funding the Army"
+ ICE_overlord_aid:0 "Aiding the Danish Economy"
+ ICE_civilian_focus:0 "Demilitarization of Industry"
+ ICE_convoy_production:0 "Demilitarization of Industry"
+ ICE_fortifications:0 "Expanded Fortifications"
+ ICE_trading:0 "Expanded Trade"
+ ICE_marine_idea:0 "The [ICE.GetAdjectiveCap] Marines Corps"
+ ICE_independent_air_idea:0 "Independent Air Command"
+ ICE_navy_air_idea:0 "Joint Navy-Airforce Command"
+ ICE_navy_academy:0 "Reykjavík Naval Academy"
+ ICE_armour_focused:0 "Full Metal Doctrine"
+ ICE_armour_focused_desc:0 "This country has adopted a wholly mechanized army."
+ ICE_mountain_strong:0 "Regular Mountaineers"
+ ICE_mountain_strong_desc:0 "Mountaineers Soft Attack: §G+5%§!\nMountaineers Infantry Equipment Needed: §G-40§!"
+ ICE_marine_strong:0 "Regular Marines."
+ ICE_marine_strong_desc:0 "Marines Soft Attack: §G+5%§!\nMarines Infantry Equipment Needed: §G-50§!"
+ ICE_para_strong:0 "Regular Paratroopers"
+ ICE_para_strong_desc:0 "Paratroopers Soft Attack: §G+5%§!\nParatroopers Infantry Equipment Needed: §G-30§!"
+ ICE_elite_forces_1:0 "Elite Army"
+ ICE_elite_forces_2:0 "Elite Forces"
+ ICE_elite_forces_2_desc:0 "Mountaineers Soft Attack: §G+5%§!\nMountaineers Infantry Equipment Needed: §G-40§!\nMarines Soft Attack: §G+5%§!\nMarines Infantry Equipment Needed: §G-50§!\nParatroopers Soft Attack: §G+5%§!\nParatroopers Infantry Equipment Needed: §G-30§!"

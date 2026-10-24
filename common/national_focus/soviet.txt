@@ -3780,6 +3780,10 @@ focus_tree = {
 		y = 2
 		relative_position_id = SOV_expand_the_red_fleet
 		cost = 5
+
+		available = {
+
+		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
@@ -3831,6 +3835,10 @@ focus_tree = {
 		cost = 10
 
 		mutually_exclusive = { focus = SOV_submarine_warfare }
+
+		available = {
+
+		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP}
 
@@ -3876,6 +3884,10 @@ focus_tree = {
 		cost = 10
 
 		mutually_exclusive = { focus = SOV_surface_warfare }
+
+		available = {
+
+		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP}
 
@@ -3960,6 +3972,7 @@ focus_tree = {
 				category = ca_tech
 				category = cl_tech # 56
 			}
+
 			#Kronshtadt Class Battlecruiser
 			create_equipment_variant = {
 				name = "Kronshtadt Class"		
@@ -4168,6 +4181,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SOV_submarine_warfare
 		cost = 10
+
+		available = {
+
+		}
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -4192,6 +4209,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SOV_submarine_warfare
 		cost = 10
+
+		available = {
+
+		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP}
 
@@ -4305,6 +4326,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SOV_advanced_maneuvers
 		cost = 10
+
+		available = {
+
+		}
 		
 		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR_XP FOCUS_FILTER_NAVY_XP}
 
@@ -4470,6 +4495,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SOV_advanced_maneuvers
 		cost = 10
+
+		available = {
+
+		}
 		
 		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP FOCUS_FILTER_ARMY_XP}
 
@@ -4478,25 +4507,12 @@ focus_tree = {
 				limit = {
 					has_dlc = "Arms Against Tyranny"
 				}
+				add_potential_special_forces_tree = yes
 				add_doctrine_cost_reduction = {
 					name = SOV_naval_infantry
 					cost_reduction = 0.25
 					uses = 2
 					category = special_forces_doctrine
-				}
-				
-
-			}
-			if = { # otherwise granted by shocktroops focus 
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-					NOT = {
-						has_country_flag = added_special_forces_specialization
-					}
-				}
-				add_potential_special_forces_tree = yes
-				hidden_effect = {
-					set_country_flag = added_special_forces_specialization
 				}
 			}
 			else = {
@@ -4541,6 +4557,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 1
+		}
+
+		available = {
+
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -4629,10 +4649,10 @@ focus_tree = {
 				limit = {
 					has_dlc = "No Step Back"
 				}
-				has_tech = improved_medium_tank_chassis
+				has_tech = basic_medium_tank_chassis
 			}
 			else = {
-				has_tech = improved_medium_tank
+				has_tech = basic_medium_tank
 			}
 		}
 		
@@ -4699,8 +4719,8 @@ focus_tree = {
 							special_type_slot_1 = sloped_armor
 						}
 						upgrades = {
-							tank_nsb_engine_upgrade = 10
-							tank_nsb_armor_upgrade = 7
+							tank_nsb_engine_upgrade = 7
+							tank_nsb_armor_upgrade = 5
 						}
 						icon = "GFX_SOV_improved_medium_tank_medium"
 					}
@@ -4722,8 +4742,8 @@ focus_tree = {
 							special_type_slot_1 = sloped_armor
 						}
 						upgrades = {
-							tank_nsb_engine_upgrade = 10
-							tank_nsb_armor_upgrade = 7
+							tank_nsb_engine_upgrade = 5
+							tank_nsb_armor_upgrade = 5
 						}
 						icon = "GFX_SOV_improved_medium_tank_medium"
 					}
@@ -4742,8 +4762,8 @@ focus_tree = {
 							special_type_slot_1 = sloped_armor
 						}
 						upgrades = {
-							tank_nsb_engine_upgrade = 10
-							tank_nsb_armor_upgrade = 7
+							tank_nsb_engine_upgrade = 5
+							tank_nsb_armor_upgrade = 3
 						}
 						icon = "GFX_SOV_improved_medium_tank_medium"
 					}
@@ -4852,6 +4872,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SOV_pc_of_mechanical_engineering
 		cost = 5
+
+		available = {
+
+		}
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -4861,7 +4885,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = SOV_the_means_to_wage_war
-				bonus = 0.75
+				bonus = 0.5
 				uses = 2
 				category = support_tech
 			}
@@ -4949,6 +4973,7 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = SOV_defense_industry_artillery_bonus
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -4983,7 +5008,7 @@ focus_tree = {
 				}
 				else_if = {
 					limit = {
-						has_tech = antitank2
+						has_tech = antitank4
 					}
 					create_equipment_variant = {
 						name = "SU-100"
@@ -5048,6 +5073,7 @@ focus_tree = {
 					}
 				}
 
+				#SU-122 tank template (SPG)
 				if = {
 					limit = {
 						has_tech = artillery4
@@ -5291,7 +5317,7 @@ focus_tree = {
 						}
 						set_state_flag = SOV_development_of_tankograd_flag
 						add_to_temp_variable = { SOV.temp_targets_index = 1 }
-						log = "Round [?SOV.temp_targets_index]"
+						#log = "Round [?SOV.temp_targets_index]"
 					}
 				}
 			}
@@ -5529,6 +5555,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+
+		available = {
+
+		}
 		
 		search_filters = {FOCUS_FILTER_MANPOWER}
 
@@ -5541,6 +5571,7 @@ focus_tree = {
 			#Need for tooltip
 			set_variable = { SOV_the_red_army_mastery_loss_factor_inverted = SOV_the_red_army_mastery_loss_factor }
 			multiply_variable = { SOV_the_red_army_mastery_loss_factor_inverted = -1 }
+
 		}
 	}
 
@@ -5554,10 +5585,16 @@ focus_tree = {
 		relative_position_id = SOV_found_the_pcdi
 		cost = 5
 
+		available = {
+
+		}
+		
+		search_filters = {}
+
 		completion_reward = {
 			add_to_variable = { SOV_defense_industry_production_speed_coastal_bunker_factor = 0.05 }
 			add_to_variable = { SOV_defense_industry_production_speed_bunker_factor = 0.05 }
-			add_to_variable = { SOV_defense_industry_max_dig_in_factor = 0.05 }
+			add_to_variable = { SOV_defense_industry_max_dig_in = 2 }
 			custom_effect_tooltip = SOV_military_engineering_university_ns_tt
 		}
 	}
@@ -5604,6 +5641,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
+
 			IF = {
 				limit = {
 					NOT = {
@@ -5631,12 +5669,8 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			IF = {
-				limit = { 
-					588 = {
-						is_fully_controlled_by = ROOT
-					}
-				}
+			IF = { # 56
+				limit = {  588 = { is_fully_controlled_by = ROOT } }
 				custom_effect_tooltip = SOV_soviet_atomic_bomb_project_tt
 			}
 			hidden_effect = {
@@ -5753,7 +5787,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 10
+		cost = 5
 
 		available = {
 			has_full_control_of_state = 219 #MOSCOW
@@ -5903,7 +5937,7 @@ focus_tree = {
 				}
 				random_controlled_state = { #Different State please thanks
 					limit = {
-						NOT = { state = 195 }
+						NOT = { state = PREV }
 						SOV_is_industrial_relocation_destiny_state = yes
 					}
 					add_extra_state_shared_building_slots = 2
@@ -5930,7 +5964,7 @@ focus_tree = {
 				}
 				random_controlled_state = { #Different State please thanks
 					limit = {
-						NOT = { state = 202 }
+						NOT = { state = PREV }
 						SOV_is_industrial_relocation_destiny_state = yes
 					}
 					add_extra_state_shared_building_slots = 2
@@ -6055,6 +6089,8 @@ focus_tree = {
 				has_full_control_of_state = 766
 			}
 		}
+		
+		search_filters = {}
 
 		completion_reward = {
 			custom_effect_tooltip = SOV_the_molotov_line_tt
@@ -6311,6 +6347,21 @@ focus_tree = {
 
 		mutually_exclusive = { focus = SOV_the_molotov_line }
 
+		available = {
+			OR = {
+				has_full_control_of_state = 209
+				has_full_control_of_state = 210
+				has_full_control_of_state = 207
+				has_full_control_of_state = 206
+				has_full_control_of_state = 202
+				has_full_control_of_state = 203
+				has_full_control_of_state = 834
+				has_full_control_of_state = 192
+			}
+		}
+		
+		search_filters = {}
+
 		completion_reward = {
 			209 = {
 				if = {
@@ -6440,6 +6491,7 @@ focus_tree = {
 		available = {
 			219 = {
 				is_controlled_by = ROOT
+				
 				OR = {
 					any_neighbor_state = {
 						NOT = { is_controlled_by = ROOT }

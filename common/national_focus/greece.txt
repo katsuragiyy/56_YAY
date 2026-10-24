@@ -1619,12 +1619,7 @@ focus_tree = {
 		relative_position_id = GRE_dominate_the_bulgarians
 		cost = 10
 		ai_will_do = {
-			factor = 0
-			modifier = { 
-				add = 1
-				has_offensive_war = no
-				num_of_military_factories > 20
-			}
+			factor = 0	#the idea upgrade is useless and the wargoals are primarily against much larger enemies
 		}
 
 		available = {

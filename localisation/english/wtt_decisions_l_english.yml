@@ -73,6 +73,7 @@
  form_country_transylvania_required_states_tt:0 "Controls all §YTransylvanian§! states."
  form_country_transylvania_coring_states_tt:0 "Gain cores on all §YTransylvanian§! states.\n"
  form_ottoman_britain_coring_states_tt:0 "Gain cores on all §YBritish§! states in Egypt, the Middle East, and the Eastern Mediterranean.\n"
+ form_ottoman_syria_coring_states_tt: "Gain cores on all §YSyrian§! states.\n"
  form_ottoman_italy_coring_states_tt:0 "Gain cores on all §YItalian§! states in North Africa and the Eastern Mediterranean.\n"
  form_country_estonia_required_states_tt:0 "Controls all §YEstonian§! states."
  form_country_latvia_required_states_tt:0 "Controls all §YLatvian§! states."

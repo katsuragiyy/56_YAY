@@ -7248,10 +7248,7 @@ focus_tree = {
 					69 = { #Sudetenland
 						OR = {
 							is_fully_controlled_by = ROOT
-							any_country = {
-								is_in_faction_with = ROOT
-								controls_state = 69
-							}
+							controller = { is_in_faction_with = ROOT}
 							OWNER = {
 								has_war_with = ROOT
 							}
@@ -7261,10 +7258,7 @@ focus_tree = {
 					1078 = { #South Sudetenland
 						OR = {
 							is_fully_controlled_by = ROOT
-							any_country = {
-								is_in_faction_with = ROOT
-								controls_state = 1078
-							}
+							controller = { is_in_faction_with = ROOT}
 							OWNER = {
 								has_war_with = ROOT
 							}
@@ -7274,10 +7268,7 @@ focus_tree = {
 					9 = { #Bohemia
 						OR = {
 							is_fully_controlled_by = ROOT
-							any_country = {
-								is_in_faction_with = ROOT
-								controls_state = 9
-							}
+							controller = { is_in_faction_with = ROOT}
 							OWNER = {
 								has_war_with = ROOT
 							}
@@ -7287,10 +7278,7 @@ focus_tree = {
 					75 = { #Moravia
 						OR = {
 							is_fully_controlled_by = ROOT
-							any_country = {
-								is_in_faction_with = ROOT
-								controls_state = 75
-							}
+							controller = { is_in_faction_with = ROOT}
 							OWNER = {
 								has_war_with = ROOT
 							}
@@ -7300,10 +7288,7 @@ focus_tree = {
 					74 = { #Eastern Sudetenland
 						OR = {
 							is_fully_controlled_by = ROOT
-							any_country = {
-								is_in_faction_with = ROOT
-								controls_state = 74
-							}
+							controller = { is_in_faction_with = ROOT}
 							OWNER = {
 								has_war_with = ROOT
 							}
@@ -7313,10 +7298,7 @@ focus_tree = {
 					72 = { #Zaolzie
 						OR = {
 							is_fully_controlled_by = ROOT
-							any_country = {
-								is_in_faction_with = ROOT
-								controls_state = 72
-							}
+							controller = { is_in_faction_with = ROOT}
 							OWNER = {
 								has_war_with = ROOT
 							}

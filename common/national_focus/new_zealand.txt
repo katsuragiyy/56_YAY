@@ -2292,6 +2292,61 @@ focus_tree = {
 				remove_idea = NZL_form_the_new_zealand_air_force
 				add_idea = NZL_formed_the_new_zealand_air_force
 			}
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				create_equipment_variant = {
+					name = "Bristol Blenheim"
+					type = medium_plane_airframe_1
+					modules = {
+						fixed_main_weapon_slot = medium_bomb_bay
+						engine_type_slot = engine_2_2x
+						special_type_slot_1 = lmg_defense_turret
+					}
+					icon = "GFX_ENG_heavy_fighter1_medium"
+				}
+
+				add_equipment_to_stockpile = {
+					type = medium_plane_airframe_1
+					producer = ENG
+					amount = 116
+					variant_name = "Bristol Blenheim"
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = nav_bomber_equipment_1
+					amount = 56
+					producer = ENG
+				}
+				
+				if = {
+					limit = {
+						ENG = { has_tech = tactical_bomber1 }
+					}
+					add_equipment_to_stockpile = {
+						type = tac_bomber_equipment_1
+						amount = 30
+						producer = ENG
+					}
+					else = {
+						add_equipment_to_stockpile = {
+							type = tac_bomber_equipment_0
+							amount = 30
+							producer = ENG
+						}	
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 1000
+					equipment_type = medium_plane_airframe
+					seller_tags = { ENG }
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 	}

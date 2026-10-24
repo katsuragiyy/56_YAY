@@ -457,6 +457,51 @@ has_naval_treaty_trigger = {
 	}
 }
 
+# Single definition of being past the treaty benchmark, used live by the signatory panel and daily by its refresh counter.
+# The benchmark selection and the weights match MTG_treaty_reduction_signatory_mission so the badge and the mission agree.
+has_naval_treaty_over_allowance_trigger = {
+	if = {
+		limit = {
+			ENG = { has_naval_treaty_trigger = yes }
+		}
+		NOT = {
+			naval_strength_comparison = {
+				other = ENG
+				ratio < 1
+				sub_unit_def_weights = {
+					carrier = 0.5
+					battleship = 1
+					battle_cruiser = 0.8
+					heavy_cruiser = 0.5
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			USA = { has_naval_treaty_trigger = yes }
+		}
+		NOT = {
+			naval_strength_comparison = {
+				other = USA
+				ratio < 1
+				sub_unit_def_weights = {
+					carrier = 0.5
+					battleship = 1
+					battle_cruiser = 0.8
+					heavy_cruiser = 0.5
+				}
+			}
+		}
+	}
+	else = {
+		has_navy_size = {
+			type = capital_ship
+			size > 50
+		}
+	}
+}
+
 # ai_air_doctrine_tier_1_trigger = {
 # 	OR = {
 # 		has_tech = naval_strike_tactics
@@ -697,14 +742,14 @@ enemy_has_equal_or_better_radar_tech_trigger = {
 		tooltip = enemy_has_equal_or_better_radar_tech_trigger_tt
 		if = {
 			limit = {
-				ROOT = { 
+				ROOT = {
 					is_special_project_completed = sp:sp_air_radar 
 					NOT = {
 						has_tech = cavity_magnatron
 					}
-				} 
+				}
 			}
-			FROM = { 
+			FROM = {
 				OR = {
 					is_special_project_completed = sp:sp_air_radar 
 					has_tech = cavity_magnatron
@@ -713,12 +758,12 @@ enemy_has_equal_or_better_radar_tech_trigger = {
 		}
 		else_if = {
 			limit = {
-				ROOT = { 
+				ROOT = {
 					has_tech = cavity_magnatron 
 					NOT = { has_tech = centimetric_radar } # R56
-				} 
+				}
 			}
-			FROM = { 
+			FROM = {
 				OR = {
 					has_tech = cavity_magnatron 
 					has_tech = centimetric_radar # R56
@@ -727,12 +772,12 @@ enemy_has_equal_or_better_radar_tech_trigger = {
 		}
 		else_if = {
 			limit = {
-				ROOT = { 
+				ROOT = {
 					has_tech = centimetric_radar 
 					NOT = { has_tech = phased_array } # R56
-				} 
+				}
 			}
-			FROM = { 
+			FROM = {
 				OR = {
 					has_tech = centimetric_radar 
 					has_tech = phased_array # R56
@@ -741,12 +786,12 @@ enemy_has_equal_or_better_radar_tech_trigger = {
 		}
 		else_if = {
 			limit = {
-				ROOT = { 
+				ROOT = {
 					has_tech = phased_array 
 					NOT = { has_tech = monopulse_radar } # R56
-				} 
+				}
 			}
-			FROM = { 
+			FROM = {
 				OR = {
 					has_tech = phased_array 
 					has_tech = monopulse_radar # R56
@@ -755,14 +800,14 @@ enemy_has_equal_or_better_radar_tech_trigger = {
 		}
 		else_if = {
 			limit = {
-				ROOT = { 
+				ROOT = {
 					has_tech = monopulse_radar 
 					NOT = {
 						has_tech = future_radar # R56
 					}
-				} 
+				}
 			}
-			FROM = { 
+			FROM = {
 				OR = {
 					has_tech = future_radar # R56
 					has_tech = monopulse_radar 
@@ -1690,3 +1735,23 @@ check_allow_alternate_political_events = {
 	}
 }
 
+
+### Countries that a designer has written a deliberate wholesale puppet plan for in common/peace_conference/ai_peace.
+### dont_even_try_to_puppet_large_states exists to stop the AI fragmenting a big loser by accident, but its
+### num_owned_states > 30 test also fires on the countries whose authored plan is precisely to puppet them whole,
+### which silently cancels that plan. Exempt those, and the rule keeps working for the incidental cases.
+### Scoped in the loser, ROOT is the winner doing the bidding. Paired where only one winner has a plan, so the
+### -200 still protects the loser from every other winner carving a second puppet out of it.
+pc_has_authored_wholesale_puppet_plan = {
+	OR = {
+		original_tag = GER # yalta.txt, FRA/USA/ENG each puppet an occupation zone. Was the existing exemption.
+		AND = {
+			original_tag = CHI # JAP.txt, JAP_create_chinese_puppet
+			ROOT = { original_tag = JAP }
+		}
+		AND = {
+			original_tag = JAP # USA.txt, USA_puppet_japan
+			ROOT = { original_tag = USA }
+		}
+	}
+}

@@ -25,6 +25,41 @@ focus_tree = {
 
 	continuous_focus_position = { x = 20 y = 1000 }
 
+#	focus = {
+#		id = LIT_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
 	shared_focus = BALTIC_rejoin_the_railways
 	shared_focus = BALTIC_restore_workers_republic
 	
@@ -37,6 +72,32 @@ focus_tree = {
 		mutually_exclusive = { focus = BALTIC_restore_workers_republic }
 		x = 34
 		y = 0
+
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					has_completed_focus = BALTIC_restore_workers_republic
+				}
+			}
+		}
+
+		offset = {
+			x = -12
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = LIT_secure_a_loyal_cabinet
+			}
+		}
 
 		cost = 10
 
@@ -53,6 +114,16 @@ focus_tree = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = LIT_jonas_staugaitis
 			activate_mission_tooltip = LIT_iron_wolf_partisans
+
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				mark_focus_tree_layout_dirty = yes 
+			}
 		}
 	}
 	
@@ -79,6 +150,7 @@ focus_tree = {
 				uses = 2
 				category = land_doctrine
 			}
+
 			army_experience = 40
 		}
 	}
@@ -126,10 +198,19 @@ focus_tree = {
 		}
 
 		available = {
+			SOV = { exists = yes }
 			SOV = { has_civil_war = no } 	
-			NOT = { is_in_faction_with = POL } 
+			NOT = { is_in_faction_with = POL }
+			NOT = { 
+				SOV = { has_war_with = GER}
+			} 
+			SOV = { is_subject = no }
 		}
 
+		bypass = {
+			SOV = { is_subject = yes }
+			SOV = { has_capitulated = yes }
+		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			if = {
@@ -151,6 +232,7 @@ focus_tree = {
 							has_war_with = POL
 						}
 					}
+					SOU = { NOT = { has_war_with = POL } }
 				}
 				SOU = { country_event = { id = LIT_events.1 days = 10 } }
 			}
@@ -525,10 +607,13 @@ focus_tree = {
 					}
 				}
 			}
-			if = {
+			IF = {
 				limit = {
 					GER = {
-						has_government = fascism
+						OR = {
+							has_government = fascism
+							has_country_flag = GER_imprisoned_fascist_leadership
+						}
 					}
 				}
 				GER = {
@@ -662,7 +747,7 @@ focus_tree = {
 			}
 			else = {
 				add_tech_bonus = {
-					name = LIT_infiltrate_homeland
+					name = underground_bonus
 					bonus = 1.0
 					uses = 2
 					category = electronics
@@ -1627,6 +1712,7 @@ focus_tree = {
 				POL = {
 					country_event = {
 						id = LIT_events.8
+						hours = 5
 					}
 				}
 			}
@@ -1663,12 +1749,11 @@ focus_tree = {
 					}
 				}
 			}
-			any_allied_country = {
-				any_state = {
-					is_controlled_by = PREV
-					is_core_of = POL
+			any_core_state = {
+					controller = {
+						is_in_faction_with = ROOT
+					}
 				}
-			}
 		}
 
 		bypass = {
@@ -1714,7 +1799,10 @@ focus_tree = {
 				OR = {
 					exists = no
 					has_capitulated = yes
-					is_subject_of = ROOT
+					AND = {
+						is_subject_of = ROOT
+						is_ai = yes
+					}
 				}
 			}
 		}
@@ -1820,13 +1908,22 @@ focus_tree = {
 							puppet = PREV
 							set_autonomy = { target = PREV autonomy_state = autonomy_collaboration_government }
 						}
+						every_possible_country = {
+							limit = { has_character = POL_boleslaw_piasecki }
+							POL_boleslaw_piasecki = { 
+								set_nationality = PREV 
+							} 
+						}
 					}
 					every_possible_country = {
-						limit = { has_character = POL_boleslaw_piasecki }
-						POL_boleslaw_piasecki = { 
-							set_nationality = PREV 
-							promote_character = { ideology = falangism }
-						} 
+						limit = {
+							is_subject_of = ROOT 
+							original_tag = POL
+						}
+						promote_character = {
+							character = POL_boleslaw_piasecki
+							ideology = falangism
+						}
 					}
 				}
 				else = {
@@ -2592,6 +2689,7 @@ focus_tree = {
 		}
 
 		available = {
+			is_subject = no
 			any_other_country = {
 				NOT = { has_war_with = ROOT }
 				is_faction_leader = yes
@@ -2693,6 +2791,7 @@ focus_tree = {
 		}
 
 		available = {
+			is_subject = no
 			is_in_faction = no
 			OR = {
 				EST = { exists = yes }
@@ -3205,8 +3304,8 @@ focus_tree = {
 					infantry = { x = 1 y = 2 }
 		
 					infantry = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
 				}
 				support = {
 					engineer = { x = 0 y = 0 }
@@ -3405,6 +3504,9 @@ focus_tree = {
 					has_war = no
 				}
 			}
+			ROOT = {
+				is_subject = no 
+			}
 		}
 
 		bypass = {
@@ -3490,6 +3592,23 @@ focus_tree = {
 						exists = yes
 						is_ai = yes
 					}
+				}
+				random_other_country = {
+					limit = {
+						is_puppet_of = ROOT 
+						original_tag = POL 
+					}
+					every_character = {
+						limit = {
+							OR = {
+								is_corps_commander = yes 
+								is_navy_leader = yes
+								is_field_marshal = yes
+							}
+							has_unit_leader_flag = POL_monarchy_sympathies_flag
+						}
+						set_nationality = ROOT 
+					}					
 				}
 				annex_country = {
 					target = POL

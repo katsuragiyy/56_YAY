@@ -1327,17 +1327,6 @@ DIPLOMACY_REVOKE_OFFER_DOCKING_RIGHTS_ENABLE_TRIGGER = {
 			has_country_flag = PHI_permanent_usa_naval_bases
 		}
 	}
-	if = { # R56
-		limit = {
-			original_tag = ENG
-			FROM = {
-				original_tag = USA
-			}
-		}
-		NOT = {
-			has_idea = r56_USA_destroyers_for_bases_idea
-		}
-	}
 	if = {
 		limit = {
 			has_dlc = "Graveyard of Empires"
@@ -1349,6 +1338,13 @@ DIPLOMACY_REVOKE_OFFER_DOCKING_RIGHTS_ENABLE_TRIGGER = {
 		NOT = {
 			has_idea = IRQ_anglo_iraqi_treaty
 		}
+	}
+	if = { # R56
+		limit = {
+			original_tag = ENG
+			FROM = { original_tag = USA }
+		}
+		NOT = { has_idea = r56_USA_destroyers_for_bases_idea }
 	}
 }
 
@@ -1367,13 +1363,9 @@ DIPLOMACY_REVOKE_OFFER_AIR_BASE_ACCESS_ENABLE_TRIGGER = {
 	if = { # R56
 		limit = {
 			original_tag = ENG
-			FROM = {
-				original_tag = USA
-			}
+			FROM = { original_tag = USA }
 		}
-		NOT = {
-			has_idea = r56_USA_destroyers_for_bases_idea
-		}
+		NOT = { has_idea = r56_USA_destroyers_for_bases_idea }
 	}
 	if = {
 		limit = {
@@ -1866,6 +1858,21 @@ DIPLOMACY_KICK_FROM_FACTION_ENABLE_TRIGGER = {
 		}
 	}
 }
+DIPLOMACY_RECALL_VOLUNTEERS_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = allow_volunteers
+				option = ALWAYS_FREE
+			}
+		}
+		if = {
+			limit = {
+				has_volunteers = from
+			}
+		}
+	}
+}
 DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 	if = {
 		limit = {
@@ -2287,7 +2294,7 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 				FROM = {
 					tag = SPC
 					has_completed_focus = SPR_regional_defense_council_of_aragon
-				}
+	}
 			}
 			custom_trigger_tooltip = {
 				tooltip = RULE_VOLUNTEERS_NOT_ANARCHISTS_TT
@@ -2652,4 +2659,5 @@ DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
 		}
 	}
 }
+
 

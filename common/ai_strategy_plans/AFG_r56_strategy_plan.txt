@@ -4,15 +4,12 @@ AFG_historical_plan_r56 = {
 	name = "AFG: Afghan Historical AI Plan"
 	desc = "Historical behavior for Afghanistan."
 
-	allowed = {
-		original_tag = AFG
-	}
+	allowed = { original_tag = AFG }
 
 	enable = {
-		NOT = {
-			has_global_flag = afg_dlc_focus_tree
-		}
+		NOT = { has_global_flag = afg_dlc_focus_tree }
 		OR = {
+			has_country_flag = AFG_AI_RANDOM_HASHIM
 			AND = {
 				is_historical_focus_on = yes
 				has_game_rule = {
@@ -20,7 +17,6 @@ AFG_historical_plan_r56 = {
 					option = DEFAULT
 				}
 			}
-			has_country_flag = AFG_AI_RANDOM_HASHIM
 			has_game_rule = {
 				rule = AFG_ai_behavior
 				option = HISTORICAL

@@ -247,6 +247,7 @@ country_event = { #Iran demands Baluchistan from the Raj
 		hidden_effect = {
 			PER = {
 				transfer_state = 444
+				444 = { set_state_flag = RAJ_resistance_already_squashed_flag}
 			}
 		}
 	}
@@ -332,6 +333,7 @@ country_event = { #Raj counter offer
 		hidden_effect = {
 			PER = {
 				transfer_state = 444
+				444 = { set_state_flag = RAJ_resistance_already_squashed_flag}
 				add_timed_idea = {
 					idea = PER_paying_for_baluchistan_idea
 					days = 365
@@ -978,19 +980,22 @@ country_event = { #Negotiating Capitulations SOV
 			}
 			white_peace = {
 				tag = PER
-			}
+				}
 
 			PER = {
 				every_owned_state = {
 					limit = {
+						any_neighbor_state = {
+							is_controlled_by = SOU
+						}
 						OR = {
-							state = 420
+							state = 420 #Gilan
 							state = 987
-							state = 419
+							state = 419 #West Azerbaijan
 							state = 988
 							state = 983
 							state = 984
-							state = 416
+							state = 416 #Khorasan
 							is_controlled_by = SOU
 						}
 					}
@@ -999,8 +1004,8 @@ country_event = { #Negotiating Capitulations SOV
 						transfer_state = PREV
 					}
 				}
-			}
-		}		
+			}		
+		}
 	}
 
 		PER = {
@@ -1060,14 +1065,17 @@ country_event = { #Negotiating Capitulations SOV
 			PER = {
 				every_owned_state = {
 					limit = {
+						any_neighbor_state = {
+							is_controlled_by = SOU
+						}
 						OR = {
-							state = 420
+							state = 420 #Gilan
 							state = 987
-							state = 419
+							state = 419 #West Azerbaijan
 							state = 988
 							state = 983
 							state = 984
-							state = 416
+							state = 416 #Khorasan
 							is_controlled_by = SOU
 						}
 					}
@@ -1076,7 +1084,7 @@ country_event = { #Negotiating Capitulations SOV
 						transfer_state = PREV
 					}
 				}
-			}
+			}	
 		}
 	}
 }
@@ -1110,6 +1118,20 @@ country_event = { #REBELLION
 		name = PER_imperial_events.140.a
 		ai_chance = {
 			base = 90
+			# Once the world war is won the occupiers leave Iran peacefully
+			modifier = {
+				factor = 0
+				is_post_ww2_era = yes
+				OR = {
+					is_historical_focus_on = yes
+					has_global_flag = brussels_to_fired
+				}
+			}
+			modifier = {
+				factor = 0.25
+				is_post_ww2_era = yes
+				has_war = no
+			}
 		}
 		PER = {
 			country_event = {
@@ -1125,6 +1147,11 @@ country_event = { #REBELLION
 		name = BBA_ethiopia_fascist_events.20.b
 		ai_chance = {
 			base = 5
+			modifier = {
+				add = 45
+				is_post_ww2_era = yes
+				has_war = no
+			}
 		}
 		PER = {
 			country_event = {
@@ -2351,7 +2378,8 @@ country_event = {
 			ideology = democratic
 			long_name = PER_iran_party_dem_long
 			name = PER_iran_party_dem
-		}
+		}	
+
 	}
 	# guy 2
 	option = {
@@ -2369,7 +2397,8 @@ country_event = {
 			ideology = democratic
 			long_name = PER_revival_party_dem_long
 			name = PER_revival_party_dem
-		}
+		}	
+
 	}
 	# guy 3
 	#option = {
@@ -2414,9 +2443,9 @@ country_event = {
 			retire_country_leader = yes
 		}
 		set_party_name = {
-			ideology = neutrality
-			long_name = PER_qajar_dynasty_party_long
-			name = PER_qajar_dynasty_party
+				ideology = neutrality
+				long_name = PER_qajar_dynasty_party_long
+				name = PER_qajar_dynasty_party
 		}
 		add_country_leader_role = { #r56
 			character = PER_mohammad_hassan_mirza
@@ -2722,7 +2751,7 @@ country_event = {
 }
 
 ################################
-#### OPERATION COUNTENANCE ####
+#### OOPERATION COUNTENANCE ####
 ################################
 
 # Ultimatum to Iran - Event for Iran
@@ -3603,7 +3632,7 @@ country_event = {
 			country_event = {
 				id = PER_communist_events.9
 				days = 1
-			 }
+			}
 		}
 	}
 }

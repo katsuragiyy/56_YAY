@@ -1426,6 +1426,10 @@ JAP_the_co_prosperity_sphere_decisions = {
 				is_historical_focus_on = no
 				add = 10 # maybe
 			}
+			modifier = { # extra checks
+				factor = 0
+				date < 1943.09.09 # Don't click this immediatly 
+			}
 			modifier = {
 				has_war = no
 				add = 200 # now that we arent at war we can ensure that this will be stable
@@ -1488,6 +1492,10 @@ JAP_the_co_prosperity_sphere_decisions = {
 				is_historical_focus_on = no
 				add = 10 # maybe
 			}
+			modifier = { # extra checks
+				factor = 0
+				date < 1943.09.09 # Don't click this immediatly 
+			}
 			modifier = {
 				has_war = no
 				add = 200 # now that we arent at war we can ensure that this will be stable
@@ -1549,6 +1557,10 @@ JAP_the_co_prosperity_sphere_decisions = {
 			modifier = {
 				is_historical_focus_on = no
 				add = 10 # maybe
+			}
+			modifier = { # extra checks
+				factor = 0
+				date < 1943.09.09 # Don't click this immediatly 
 			}
 			modifier = {
 				has_war = no

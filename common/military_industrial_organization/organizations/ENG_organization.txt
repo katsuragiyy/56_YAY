@@ -1220,20 +1220,82 @@ ENG_royal_arsenal_organization = {
 	}
 }
 
-ENG_daimler_company_organization = { #
-	name = "Daimler Company"
+ENG_crossley_motors_organization = {
 	include = generic_armored_car_organization
-	icon = GFX_idea_generic_motorized_equipment_manufacturer_2
+	icon = GFX_idea_ENG_crossley_motors
+	
 	allowed = {	
-		tag = ENG
 		has_dlc = "La Resistance"
-	}
-	initial_trait = {
-		name = generic_armored_car_organization
-		equipment_bonus = {
-			armor_value = 0.05
-			defense =0.05
-			build_cost_ic = -0.05
+		OR = {
+			tag = ENG 
+			tag = SAF 
+			AND = {
+				tag = HUN
+				has_dlc = "Gotterdammerung"
+			}
+			AND = {
+				tag = EST
+				has_dlc = "No Step Back"
+			}
+			AND = {
+				tag = LAT
+				has_dlc = "No Step Back"
+			}
+			AND = {
+				tag = LIT
+				has_dlc = "No Step Back"
+			}
+			AND = {
+				tag = IRQ
+				has_dlc = "Graveyard of Empires"
+			}
 		}
-	}	
+	}
+
+	visible = {
+	}
+
+	available = {
+		# When in a Foreign MIO, countries need to be at peace with original country
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = ENG } }
+			}
+			FROM = { NOT = { has_war_with = ENG } }
+		}
+
+		IF = { 
+			limit = {
+				FROM = { tag = HUN }
+			}
+			FROM = {
+				wuw_HUN_does_not_have_trianon = yes
+			}
+		}
+
+		IF = { 
+			limit = {
+				FROM = { 
+					OR = {
+						original_tag = EST 
+						original_tag = LAT
+						original_tag = LIT
+					}
+				}
+			}
+			FROM = {
+				has_completed_focus = BALTIC_crossley_motors
+			}
+		}
+
+		IF = {
+			limit = { FROM = { original_tag = IRQ } }
+			FROM = {
+				OR = {
+					has_idea = IRQ_anglo_iraqi_treaty
+					has_idea = IRQ_anglo_iraqi_mutual_defense_agreement
+				}
+			}
+		}
+	}
 }

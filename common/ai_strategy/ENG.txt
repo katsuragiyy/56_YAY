@@ -1,15 +1,3 @@
-# befriend
-# conquer
-# antagonize
-# build_ship
-# build_army
-# unit_ratio
-# build_building
-# research_tech
-# garrison
-# protect
-# influence
-
 ENG_unit_production = {
 
 	allowed = {	original_tag = ENG }
@@ -23,14 +11,6 @@ ENG_unit_production = {
 		id = garrison
 		value = 7
 	}
-	#R56 Change
-	# Old garrison system against resistance
-	# ai_strategy = {
-	# 	type = role_ratio
-	# 	id = suppression
-	# 	value = 1
-	# }
-
 
 	ai_strategy = {
 		type = role_ratio
@@ -146,7 +126,6 @@ ENG_bba_air_prod_1 = {
 	enable = {
 		date < 1940.1.1
 	}
-
 	abort_when_not_enabled = yes
 
 	#Air unit factors
@@ -363,7 +342,6 @@ ENG_bba_air_prod_2 = {
 		id = cv_naval_bomber
 		value = 25
 	}
-
 }
 
 ENG_build_more_patrol_bombers = {
@@ -638,7 +616,6 @@ ENG_royal_air_force = {
 		type = air_factory_balance
 		value = 50
 	}
-
 }
 
 ENG_template_design_1 = {
@@ -703,7 +680,7 @@ ENG_template_design_2 = {
 	enable = {
 		date > 1940.1.1
 	}
-	abort = { always = no }
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = template_prio
@@ -773,7 +750,6 @@ ENG_ALLIES_careful_with_early_invasions = {
 			is_in_faction_with = ENG # anyone in allies
 			tag = FRA #R56 Change
 		}
-
 		NOT = {
 			SOV = {
 				has_war_with = GER
@@ -782,40 +758,36 @@ ENG_ALLIES_careful_with_early_invasions = {
 		}
 	}
 	abort = {
-		#OR = { # commented in case we want to add it back
-		#	has_tech = landing_craft
-		#	has_tech = mtg_landing_craft
-		#}
 		OR = {
 			SOV = {
 				has_war_with = GER
 				surrender_progress > 0.23
 			}
-			date > 1943.1.1 #R56 Change
+			date > 1942.1.1 #R56 Change
 		}
 	}
 
 	ai_strategy = {
 		type = invade
-		id = "ITA"
+		id = ITA
 		value = -500
 	}
 
 	ai_strategy = {
 		type = invade
-		id = "GER"
+		id = GER
 		value = -500
 	}
 
 	ai_strategy = {
 		type = invade
-		id = "VIC"
+		id = VIC
 		value = -500
 	}
 
-	ai_strategy = { #TODO why does this crash
+	ai_strategy = {
 		type = invade
-		id = "JAP"
+		id = JAP
 		value = -500
 	}
 
@@ -832,15 +804,9 @@ ENG_USA_careful_with_early_invasions = { #Same as above, alter in tandem
 
 	enable = {
 		date < 1942.5.1
-
-		#if = { # commented in case we want to add it back
-		#	NOT = { has_tech = mtg_landing_craft }
-		#}
-
 		OR = {
 			is_in_faction_with = ENG # anyone in allies
 		}
-
 		NOT = {
 			SOV = {
 				has_war_with = GER
@@ -849,10 +815,6 @@ ENG_USA_careful_with_early_invasions = { #Same as above, alter in tandem
 		}
 	}
 	abort = {
-		#OR = { # commented in case we want to add it back
-		#	has_tech = landing_craft
-		#	has_tech = mtg_landing_craft
-		#}
 		OR = {
 			SOV = {
 				has_war_with = GER
@@ -1189,6 +1151,7 @@ ENG_lifeline_of_the_empire = {
 	}
 }
 
+
 ENG_home_guard = {
 	allowed = { original_tag = ENG }
 	enable = {
@@ -1226,9 +1189,11 @@ ENG_home_guard = {
 		value = 200
 	}
 
+
+
 	ai_strategy = { #closest sea zones
 	    type = put_unit_buffers
-	    ratio = 0.35
+	    ratio = 0.25
 	    states = {
 			127
 			338
@@ -1240,6 +1205,7 @@ ENG_home_guard = {
 			125
 	    }
 	    subtract_fronts_from_need = no
+		subtract_fronts_from_need = yes
 	}
 
 	abort_when_not_enabled = yes
@@ -1280,6 +1246,7 @@ ENG_home_guard_2 = { #we are being invaded help help
 			125
 	    }
 	    subtract_fronts_from_need = yes
+		subtract_fronts_from_need = yes
 	}
 
 	ai_strategy = {
@@ -1764,7 +1731,7 @@ ENG_accept_USA_access = {
 }
 
 #R56 Change out of place
-ENG_dont_get_sucked_into_FRA_and_die = {
+ENG_COMMONWEALTH_dont_get_sucked_into_FRA_and_die = {
 
 	enable = {
 		OR = {
@@ -1811,7 +1778,7 @@ ENG_please_stop_stomping_italy_so_hard_in_africa_ty = {
 			is_subject_of = ENG
 		}
 
-		date < 1941.2.1
+		date < 1942.1.1
 
 		has_global_flag = FRA_already_surrendered
 	}
@@ -1820,7 +1787,7 @@ ENG_please_stop_stomping_italy_so_hard_in_africa_ty = {
    	ai_strategy = {
 		type = put_unit_buffers
 		area = UK
-		ratio = 0.2
+		ratio = 0.25
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = yes
 	}
@@ -1834,6 +1801,7 @@ ENG_in_for_the_long_haul_bruv = {
 		has_war = no
 	}
 	abort_when_not_enabled = yes
+
 	ai_strategy = {
 		type = building_target
 		id = industrial_complex
@@ -1841,7 +1809,7 @@ ENG_in_for_the_long_haul_bruv = {
 	}
 	ai_strategy = {
 		type = air_factory_balance
-		value = 20
+		value = 15
 	}
 }
 
@@ -1893,6 +1861,12 @@ ENG_if_the_best_arrangements_are_made_as_they_are_being_made = {
 	ai_strategy = {
 		type = added_military_to_civilian_factory_ratio
 		value = 50
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 150
 	}
 }
 
@@ -1978,7 +1952,7 @@ ENG_allies_dont_ask_for_diplo_access_to_SOV = {
 	}
 }
 
-ENG_Defends_Mediterranean = {
+ENG_defend_mediterranean = {
 	allowed = {
 		tag = ENG
 	}
@@ -1986,13 +1960,13 @@ ENG_Defends_Mediterranean = {
 	enable = {
 		always = yes
 	}
-	abort = { always = no }
+	abort_when_not_enabled = yes
 
 	# Alexandria
 	ai_strategy = {
 		type = theatre_distribution_demand_increase
 		id = 447
-		value = 10
+		value = 15
 	}
 
 	# Gibraltar
@@ -2010,6 +1984,64 @@ ENG_Defends_Mediterranean = {
 	}
 }
 
+ENG_defend_alexandria = {
+	allowed = { original_tag = ENG }
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = ITA
+		NOT = {
+			controls_state = 448 # Tripoli
+			controls_state = 451 # Tobruk
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		area = north_east_africa
+		value = 25
+	}
+	ai_strategy = {
+		type = theatre_distribution_demand_increase
+		id = 447 # Alexandria
+		value = 10
+	}
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.06
+		states = {
+			447 # Alexandria
+		}
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
+
+ENG_defend_alexandria_reduced = {
+	allowed = { original_tag = ENG }
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = ITA
+		controls_state = 448 # Tripoli
+		controls_state = 451 # Tobruk
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		area = north_east_africa
+		value = 10
+	}
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.02
+		states = {
+			447 # Alexandria
+		}
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
 
 ENG_convoy_raids_german_italian_convoys = {
 	allowed = {
@@ -2064,6 +2096,7 @@ ENG_unit_buffer_for_african_defense = {
 			AND = {
 				has_war = yes
 				surrender_progress < 0.5
+
 			}
 		}
 	}
@@ -2073,8 +2106,8 @@ ENG_unit_buffer_for_african_defense = {
 	ai_strategy = {
 		type = put_unit_buffers
 
-		# ratio of total armeis in country to be buffered
-		ratio = 0.1
+		# ratio of total armies in country to be buffered
+		ratio = 0.20
 
 		# you can specify an order id. ratio of same orders ids will be share same ratio
 		#order_id = 2
@@ -2088,7 +2121,7 @@ ENG_unit_buffer_for_african_defense = {
 
 		area = suez
 
-		subtract_invasions_from_need = no
+		subtract_invasions_from_need = yes
 		subtract_fronts_from_need = yes
 	}
 }
@@ -2105,69 +2138,39 @@ ENG_prepare_for_war_with_iraq = {
 				progress > 0 
 			}
 		}
-		NOT = { is_ally_with = IRQ }
+		NOT = { is_in_faction_with = IRQ }
 	}
 
-	abort = {
-		IRQ = {
-			OR = {
-				exists = no
-				has_capitulated = yes
-				is_ally_with = ROOT
-			}
-		}
-	}
+	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = prepare_for_war
 		id = IRQ
-		value = 300
+		value = 100
 	}
 	ai_strategy = {
 		type = front_unit_request
 		tag = IRQ
-		value = 300
+		value = 100
 	}
 	ai_strategy = {
-		type = front_control
+		type = put_unit_buffers
 
-		tag = IRQ
+		ratio = 0.08
 
-		ratio = 0.16
+		# you can specify an order id. ratio of same orders ids will be share same ratio
+		#order_id = 2
 
-		priority = 1
-		ordertype = front
-		execution_type = rush
-		execute_order = yes
-	}
-}
-ENG_prepare_for_war_with_iraq_2 = {	#this send units to Kuwait state, but once the war starts, they should focus on pushing inland
-	allowed = {
-		original_tag = ENG
-		has_dlc = "Graveyard of Empires"
-	}
-	enable = {
-		IRQ = {
-			focus_progress = {
-				focus = IRQ_revoke_anglo_iraq_treaty
-				progress > 0 
-			}
-		}
-		NOT = { is_ally_with = IRQ }
-	}
-	abort = {
-		IRQ = {
-			OR = {
-				has_war_with = ROOT
-				has_capitulated = yes
-				exists = no
-				is_ally_with = ROOT
-			}
-		}
+		# states to put garrison orders (if no state is friendly, strat is invalid)
+
+		area = middle_east
+
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = yes
 	}
 	ai_strategy = {
 		type = theatre_distribution_demand_increase
 		id = 656 # Kuwait
-		value = 7	#r56: 5 was too few, they instantly get encircled
+		value = 8	#r56: 5 was too few, they instantly get encircled
 	}
 }
 
@@ -2183,7 +2186,6 @@ ENG_ALLIES_norway_is_not_THAT_important = {
 			NORDIC_is_nordic = yes
 		}
 	}
-	
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -2290,7 +2292,7 @@ ENG_super_boost_armor_div_med = { #lets make sure the uk upgrades armor divs to 
 	}
 }
 
-ENG_take_italys_spaghetti = {
+ENG_USA_take_italys_spaghetti = {
 	allowed = {
 		OR = {
 			original_tag = USA
@@ -2299,17 +2301,23 @@ ENG_take_italys_spaghetti = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		date > 1943.1.1
+		date > 1942.6.1
 		ITA = {
-				surrender_progress < 0.2
-			}
+			surrender_progress < 0.2
+		}
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = area_priority
 		id = italy
-		value = 50
+		value = 60
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = north_africa
+		value = 100
 	}
 
 	ai_strategy = {
@@ -2319,7 +2327,32 @@ ENG_take_italys_spaghetti = {
 	}
 }
 
-ENG_onto_the_beaches = {
+ENG_USA_onto_the_beaches = {
+	allowed = {
+		OR = {
+			original_tag = USA
+			original_tag = ENG
+		}
+		is_historical_focus_on = yes
+	}
+	enable = {
+		date > 1942.6.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 10
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		area = normandy_landing_zone
+		value = 10
+	}
+}
+
+ENG_USA_onto_the_beaches_2 = {
 	allowed = {
 		OR = {
 			original_tag = USA
@@ -2334,18 +2367,23 @@ ENG_onto_the_beaches = {
 
 	ai_strategy = {
 		type = naval_invasion_focus
-		value = 10
+		value = 20
 	}
 
 	ai_strategy = {
 		type = invasion_unit_request
 		area = normandy_landing_zone
-		value = 10
+		value = 6
 	}
 
+	ai_strategy = {
+		type = area_priority
+		id = normandy_landing_zone
+		value = 80
+	}
 }
 
-ENG_onto_the_beaches_2 = {
+ENG_USA_onto_the_beaches_3 = {
 	allowed = {
 		OR = {
 			original_tag = USA
@@ -2360,11 +2398,11 @@ ENG_onto_the_beaches_2 = {
 
 	ai_strategy = {
 		type = naval_invasion_focus
-		value = 20
+		value = 30
 	}
 }
 
-ENG_onto_the_beaches_3 = {
+ENG_USA_onto_the_beaches_4 = {
 	allowed = {
 		OR = {
 			original_tag = USA
@@ -2379,29 +2417,76 @@ ENG_onto_the_beaches_3 = {
 
 	ai_strategy = {
 		type = naval_invasion_focus
-		value = 30
-	}
-}
-
-ENG_onto_the_beaches_4 = {
-	allowed = {
-		OR = {
-			original_tag = USA
-			original_tag = ENG
-		}
-		is_historical_focus_on = yes
-	}
-	enable = {
-		date > 1944.6.1
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = naval_invasion_focus
 		value = 20
 	}
 }
 
+## US struggle to do torch, so let's help them a tad
+#ENG_torch_support = {
+#	allowed = {
+#		original_tag = ENG
+#	}
+#	enable = {
+#		country_exists = VIC
+#		has_war_with = GER
+#		date > 1942.5.1
+#	}
+#	abort = {
+#		OR = {
+#			date > 1943.9.1 # if we haven't succeeded by now, maybe try somewhere else
+#			461 = { is_controlled_by_ROOT_or_ally = yes }
+#			459 = { is_controlled_by_ROOT_or_ally = yes }
+#		}
+#	}
+#
+#	ai_strategy = {
+#		type = put_unit_buffers
+#
+#		states = {
+#			118
+#			114
+#		}
+#
+#		ratio = 0.15
+#
+#		subtract_invasions_from_need = yes
+#		subtract_fronts_from_need = no
+#	}
+#
+#	ai_strategy = {
+#		type = area_priority
+#		id = torch_landing_zone
+#		value = 800
+#	}
+#	ai_strategy = { # Let's avoid losing units in France for now. We'll go there later
+#		type = area_priority
+#		id = vichy_mainland
+#		value = -500
+#	}
+#
+#	ai_strategy = {
+#		type = invasion_unit_request
+#		area = torch_landing_zone
+#		value = 10
+#	}
+#	ai_strategy = {
+#		type = front_unit_request
+#		area = torch_landing_zone
+#		value = 5
+#	}
+#	ai_strategy = {
+#		type = prepare_for_war
+#		id = VIC
+#		value = 200
+#	}
+#	ai_strategy = {
+#		type = invade
+#		id = VIC
+#		value = 200
+#	}
+#}
+#
+# Note USA has an additional boost in the USA_d_day_boost strategy
 ENG_USA_d_day = {
 	allowed = {
 		OR = {
@@ -2411,10 +2496,8 @@ ENG_USA_d_day = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		exists = yes
 		date > 1943.9.1
 	}
-
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -2428,8 +2511,49 @@ ENG_USA_d_day = {
 		area = normandy_landing_zone
 		value = 5
 	}
-
 }
+
+#ENG_RAJ_the_hot_gates = {
+#	allowed = {
+#		OR = {
+#			original_tag = ENG
+#			original_tag = RAJ
+#		}
+#	}
+#	enable = {
+#		OR = {
+#			671 = { is_controlled_by = JAP }
+#			670 = { is_controlled_by = JAP }
+#		}
+#	}
+#	abort_when_not_enabled = yes
+#
+#	ai_strategy = {
+#		type = area_priority
+#		id = burma
+#		value = 60
+#	}
+#
+#	ai_strategy = {
+#		type = front_unit_request
+#		area = burma
+#		value = 8
+#	}
+#
+#	ai_strategy = {
+#		type = put_unit_buffers
+#		# burmese states
+#		states = {
+#			288
+#			640
+#			430
+#		}
+#		ratio = 0.05
+#		area = burma
+#		subtract_invasions_from_need = no
+#		subtract_fronts_from_need = yes
+#	}
+#}
 
 ENG_RAJ_the_hot_gates = {
 	allowed = {
@@ -2655,6 +2779,91 @@ ENG_chill_on_the_pacific = {
 		id = JAP
 		value = -500
 	}
+
+	# Let USA handle the Pacific — deprioritize naval dominance in deep Pacific
+	# Keep Malacca (72) and Gulf of Thailand (73) untouched for Singapore defense
+	ai_strategy = {
+		type = naval_dominance
+		id = 78 #Philippine Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 79 #Sea of Japan
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 80 #Celebes Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 84 #Bismarck Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 90 #Coast of Japan
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 93 #Banda Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 94 #Western Pacific
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 95 #Western Pacific 2
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 96 #North West Pacific
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 97 #South West Pacific
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 160 #Philippines
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 77 #Yellow Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 75 #South China Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 81 #Coral Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 83 #Solomon Sea
+		value = -100
+	}
+
+	# Zero-out Bismarck so ENG won't commit invasion support to Pacific corridors.
+	ai_strategy = {
+		type = naval_invasion_support_priority
+		id = 84 # Bismarck Sea
+		value = -100
+	}
 }
 
 ENG_ethiopian_continuation_war = {
@@ -2815,6 +3024,65 @@ ENG_supply_for_tobruk_push = {
 	}
 }
 
+# Continued naval-base buildup at Matrouh to sustain the wider Africa campaign once the initial push is underway.
+ENG_upgrade_matrouh_naval_base = {
+	allowed = { original_tag = ENG }
+	enable = {
+		is_historical_focus_on = yes
+		date > 1941.3.1
+		date < 1943.6.1
+		has_war_with = ITA
+		ITA = { is_ai = yes }
+
+		452 = {  # Matrouh
+			any_province_building_level = {
+				province = {
+					id = 10061  # Marsa Matruh
+				}
+				building = naval_base
+				level < 3
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = naval_base
+		target = 10061  # Marsa Matruh
+		value = 300
+	}
+}
+
+ENG_supply_for_tobruk_push_sidi_barrani = {
+	allowed = { original_tag = ENG }
+	enable = {
+		is_historical_focus_on = yes
+		date > 1940.9.1
+		date < 1943.6.1
+		451 = { is_controlled_by = ITA }
+		ITA = { is_ai = yes }
+
+		452 = {  # Matrouh
+			any_province_building_level = {
+				province = {
+					id = 9989  # Sidi Barrani
+				}
+				building = naval_base
+				level < 1
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = naval_base
+		target = 9989  # Sidi Barrani
+		value = 500
+	}
+}
+
 ENG_avoid_balkans_until_africa_is_secure = {
 	allowed = { original_tag = ENG }
 	enable = {
@@ -2930,4 +3198,207 @@ ENG_raids = {
         id = GER
         value = 200 # +200% more likely to target GER
     }
+}
+
+ENG_i_like_raj = {
+
+	allowed = {	
+		original_tag = ENG 
+		has_dlc = "Graveyard of Empires"
+	}
+	enable = {
+		has_government = democratic
+		RAJ = {
+			has_completed_focus = RAJ_tryst_with_destiny	
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = befriend
+		id = "RAJ"
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "RAJ"
+		value = 200
+	}
+}
+
+ENG_become_head_of_crypto = {
+	allowed = {	
+		original_tag = ENG 
+		has_dlc = "No Compromise, No Surrender"
+		has_dlc = "La Resistance"
+	}
+	enable = {
+		has_done_agency_upgrade  = upgrade_form_department
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = become_head_of_crypto
+		value = 8
+	}
+}
+
+ENG_become_supreme_commander = {
+	allowed = {	
+		original_tag = ENG 
+		has_dlc = "No Compromise, No Surrender"
+	}
+	enable = {
+		date > 1938.1.1
+		date < 1940.1.1 
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = spent_faction_initiative_priority
+		id = unlock_faction_commander
+		value = 5
+	}
+}
+
+ENG_dominate_the_home_islands = {
+	allowed = {
+		original_tag = ENG
+	}
+	
+	enable = {
+		has_war_with = JAP
+		date > 1943.8.1
+		NOT = { has_war_with = GER }
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = naval_dominance
+		id = home_islands_control_zone
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = naval_dominance
+		id = micronesia_pacific_control_zone
+		value = 80
+	}
+	
+	ai_strategy = {
+		type = naval_dominance
+		id = mariana_pacific_control_zone
+		value = 80
+	}
+	
+}
+
+ENG_develop_mediterranean_supremacy = {
+	allowed = {
+		original_tag = ENG
+	}
+
+	# Phase 1: Italy still contests North Africa — supremacy along the supply lanes that feed it.
+	enable = {
+		has_war_with = ITA
+		ITA = {
+			OR = {
+				controls_state = 448 # Tripoli
+				controls_state = 450 # Benghazi
+				controls_state = 451 # Tobruk
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_dominance
+		id = western_med_control_zone
+		value = 80
+	}
+
+	ai_strategy = {
+		type = naval_dominance
+		id = italy_med_control_zone
+		value = 150
+	}
+}
+
+ENG_med_invasion_phase = {
+	allowed = {
+		original_tag = ENG
+	}
+
+	# Phase 2: N. Africa cleared — pivot to the Med invasion corridor for landings on Italy itself.
+	enable = {
+		has_war_with = ITA
+		ENG = {
+			controls_state = 448 # Tripoli
+			controls_state = 450 # Benghazi
+			controls_state = 451 # Tobruk
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_dominance
+		id = med_invasion_zone
+		value = 150
+	}
+}
+
+# Modest standing synthetic capacity: Britain depends on imported rubber.
+ENG_synthetic_industry_baseline = {
+	allowed = { original_tag = ENG }
+	enable = { date > 1940.1.1 }
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = synth_oil_experiments
+		value = 100
+	}
+	#ai_strategy = { # 56 - In Road to 56, we were too poor to afford rubber processing..
+	#	type = research_weight_factor
+	#	id = rubber_processing
+	#	value = 100
+	#}
+	ai_strategy = {
+		type = building_target
+		id = synthetic_refinery
+		value = 5
+	}
+}
+
+# Pacific war cuts off Malayan and East Indies rubber, so prioritise synthetics hard.
+ENG_synthetic_industry_pacific_war = {
+	allowed = { original_tag = ENG }
+	enable = {
+		has_war_with = JAP
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = synthetic_refinery
+		value = 12
+	}
+}
+
+ENG_switch_to_licensed_sherman = {
+	allowed = { original_tag = ENG }
+	enable = {
+		has_license = {
+			from = USA
+			archetype = medium_tank_chassis
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = production_upgrade_desire_offset
+		id = medium_tank_chassis_2
+		value = 100
+	}
 }

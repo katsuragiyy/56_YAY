@@ -323,6 +323,7 @@ MON_greater_mongolia = {
 			original_tag = TAN
 			original_tag = BYA
 			original_tag = KAL
+			original_tag = AFG # DLC content urghhhhhhhhhhhh
 		}
 	}
 

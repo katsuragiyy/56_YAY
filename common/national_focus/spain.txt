@@ -9857,6 +9857,7 @@ focus_tree = {
 		available = {
 		}
 		bypass = {
+			has_war_support > 0.99
 		}
 		prerequisite = { focus = SPR_all_must_bear_the_torch }
 		
@@ -9914,10 +9915,10 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT } # R56
 		completion_reward = {
 			add_ideas = SPR_torchbearers_of_tomorrow
-			swap_ideas = {
-				remove_idea = SPR_the_threats_abound_1
-				add_idea = SPR_the_threats_abound_2
-			}
+			#swap_ideas = {
+			#	remove_idea = SPR_the_threats_abound_1
+			#	add_idea = SPR_the_threats_abound_2
+			#}
 			create_operative_leader = { # R56
 				name = "Ramón Rufat Llop"
 				portrait_path = "GFX_portrait_europe_generic_operative_male_7"
@@ -9925,6 +9926,42 @@ focus_tree = {
 				bypass_recruitment = no
 				available_to_spy_master = yes
 				nationalities = { SPR }
+			}
+		}
+	}
+	
+	focus = {
+		id = SPR_factory_and_plant_committees
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPR_regional_defense_council_of_iberia }
+		prerequisite = { focus = SPR_torchbearers_of_tomorrow }
+		
+		icon = GFX_focus_SOV_merge_plants
+		x = 0
+		y = 1
+		relative_position_id = SPR_regional_defense_council_of_iberia
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = SPR_torchbearers_of_tomorrow
+				add_idea = SPR_torchbearers_of_tomorrow_2
 			}
 		}
 	}
@@ -10426,9 +10463,13 @@ focus_tree = {
 	focus = {
 		id = SPR_faith_in_the_cause
 		available = {
+			has_country_leader = {
+				name = "Anarchist Commune"
+				ruling_only = yes
+			}
 		}
 		bypass = {
-			has_war_support > 0.98 # R56
+			has_war_support > 0.99 # R56
 		}
 		prerequisite = { focus = SPR_torchbearers_of_tomorrow }
 		
@@ -10442,6 +10483,21 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		completion_reward = {
 			add_war_support = 0.1
+			effect_tooltip = { add_country_leader_trait = protector_of_the_people }
+			hidden_effect = {
+				if = { # Target the Commune directly so the trait cannot land on another ruling leader
+					limit = {
+						has_country_leader = {
+							name = "Anarchist Commune"
+							ruling_only = yes
+						}
+					}
+					add_country_leader_trait = {
+						ideology = anarchism
+						trait = protector_of_the_people
+					}
+				}
+			}
 		}
 	}
 
@@ -10472,6 +10528,30 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = SPR_the_threats_abound_2
 				add_idea = SPR_the_threats_abound_3
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_to_do_that_which_is_right
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPR_anarchism_knows_no_borders } # 56
+		
+		icon = GFX_focus_ITA_corpo_volontari_della_liberta
+		x = 0
+		y = 3 # 56
+		relative_position_id = SPR_militarize_the_people
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_MANPOWER}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SPR_the_threats_abound_3
+				add_idea = SPR_the_threats_abound_4
 			}
 		}
 	}
@@ -12203,7 +12283,7 @@ focus_tree = {
 
 		icon = GFX_goal_generic_small_arms
 		x = -1
-		y = 1
+		y = 1 # 56
 		relative_position_id = SPR_the_red_tide
 		cost = 10
 

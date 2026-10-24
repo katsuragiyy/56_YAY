@@ -5120,8 +5120,8 @@ focus_tree = {
 				has_government = democratic
 				has_government = neutrality
 			}
-			any_other_country = {
-				is_major = yes
+			any_collection_element = {
+				collection = game:all_majors
 				has_government = democratic
 				is_faction_leader = yes
 				NOT = { has_war_with = ROOT }
@@ -5212,8 +5212,8 @@ focus_tree = {
 				has_government = fascism
 				has_government = neutrality
 			}
-			any_other_country = {
-				is_major = yes
+			any_collection_element = {
+				collection = game:all_majors
 				has_government = fascism
 				is_faction_leader = yes
 				NOT = { has_war_with = ROOT }
@@ -7830,8 +7830,8 @@ focus_tree = {
 				has_government = fascism
 				has_government = neutrality
 			}
-			any_other_country = {
-				is_major = yes
+			any_collection_element = {
+				collection = game:all_majors
 				has_government = fascism
 				is_faction_leader = yes
 				NOT = { has_war_with = ROOT }
@@ -10474,8 +10474,8 @@ focus_tree = {
 
 		available = {
 			has_government = communism
-			any_other_country = {
-				is_major = yes
+			any_collection_element = {
+				collection = game:all_majors
 				has_government = fascism
 			}
 		}

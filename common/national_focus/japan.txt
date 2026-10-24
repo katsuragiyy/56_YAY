@@ -4915,13 +4915,18 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			any_country = {
-				any_state = {
-					is_owned_by = PREV
-					is_on_continent = asia
+			custom_override_tooltip = {
+				tooltip = JAP_strike_down_the_enemy_of_the_people_available_tt
+				any_collection_element = { #any country into any state is ~200k checks
+					collection = { #collection:communist_countries_asia only checks countries with their capitals in asia
+						input = collection:world_communist_countries #focus calls for all communists owning states in asia
+					}
+					any_owned_state = {
+						is_on_continent = asia
+					}
 				}
-				has_government = communism
 			}
+			
 		}
 
 		bypass = {
@@ -23316,6 +23321,7 @@ focus_tree = {
 					expire = 0
 				}
 			}
+
 			IF = {
 				limit = {
 					SOV = {
@@ -26054,7 +26060,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_tech = synth_oil_experiments
+			has_tech = synth_oil_experiments # 56
 		}
 
 		bypass = {
@@ -29696,7 +29702,7 @@ focus_tree = {
 
 	focus = {
 		id = JAP_army_weapons_administration_headquarters
-		icon = GFX_goal_JAP_flag_army
+		icon = GFX_goal_JAP_flag_army # 56
 		
 		#mutually_exclusive = {
 		#	focus = 
@@ -30522,7 +30528,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -30584,7 +30590,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -30825,7 +30831,7 @@ focus_tree = {
 
 	focus = {
 		id = JAP_sea_unify_the_air_forces
-		icon = GFX_goal_JAP_coa_air_force
+		icon = GFX_goal_JAP_coa_air_force # 56
 		
 		#mutually_exclusive = {
 		#	focus = 
@@ -31327,7 +31333,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -31480,9 +31486,24 @@ focus_tree = {
 				add_potential_special_forces_tree = yes
 				add_doctrine_cost_reduction = {
 					name = JAP_expand_the_snlf
-					cost_reduction = 0.5
+					cost_reduction = 0.25
 					uses = 1
-					category = cat_marines_doctrine
+					category = special_forces_doctrine
+				}
+				custom_effect_tooltip = marine_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = JAP_expand_the_snlf
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_1
+					}
+					add_mastery_bonus = {
+						name = JAP_expand_the_snlf
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_2
+					}
 				}
 			}
 			
@@ -32018,9 +32039,8 @@ focus_tree = {
 					fixed_ship_radar_slot = empty
 					fixed_ship_engine_slot = light_ship_engine_2
 					fixed_ship_torpedo_slot = ship_torpedo_1
-					mid_1_custom_slot = ship_anti_air_2
+					mid_1_custom_slot = dp_light_battery_2
 					rear_1_custom_slot = ship_depth_charge_1
-					front_1_custom_slot = dp_light_battery_1
 				}
 				design_team = mio:JAP_maizuru_naval_arsenal_organization
 			}
@@ -32118,6 +32138,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = JAP_form_the_kido_butai_tt
+
 		}
 
 	}
@@ -32180,7 +32201,7 @@ focus_tree = {
 
 	focus = {
 		id = JAP_naval_armaments_program
-		icon = GFX_goal_JAP_new_naval_estimates
+		icon = GFX_goal_JAP_new_naval_estimates # 56
 
 		#mutually_exclusive = {
 		#	focus = 
@@ -32743,7 +32764,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3

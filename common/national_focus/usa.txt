@@ -10154,6 +10154,11 @@ focus_tree = {
 				exists = yes
 				NOT = { has_government = ROOT }
 			}
+			any_state_of = {
+				target = {650 631 532 638 642}
+
+				is_fully_controlled_by = ROOT
+			}
 		}
 		#will_lead_to_war_with = JAP 	#Not quite sure why this is here exactly but eh
 		x = 0
@@ -10193,6 +10198,7 @@ focus_tree = {
 					}
 				}
 			}
+
 			if = {
 				limit = {
 					OR = {

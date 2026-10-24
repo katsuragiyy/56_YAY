@@ -46,7 +46,7 @@ default_unit_production = { #If adding country-unique ones, bear in mind that th
 		value = 80
 	}
 
-	#Air unit factors
+	# Air unit factors
 	ai_strategy = {
 		type = unit_ratio
 		id = fighter
@@ -56,19 +56,19 @@ default_unit_production = { #If adding country-unique ones, bear in mind that th
 	ai_strategy = {
 		type = unit_ratio
 		id = cas
-		value = 5
+		value = 10
 	}
 
 	ai_strategy = {
 		type = unit_ratio
 		id = tactical_bomber
-		value = 5
+		value = 10
 	}
 
 	ai_strategy = {
 		type = unit_ratio
 		id = strategic_bomber
-		value = 1
+		value = 5
 	}
 
 	ai_strategy = {
@@ -112,6 +112,12 @@ default_unit_production = { #If adding country-unique ones, bear in mind that th
 		type = unit_ratio
 		id = convoy
 		value = 15
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 1
 	}
 
 	ai_strategy = {
@@ -256,7 +262,7 @@ bba_air_prod_1 = {
 	ai_strategy = {
 		type = unit_ratio
 		id = tactical_bomber
-		value = 15
+		value = 10
 	}
 
 	ai_strategy = {
@@ -322,13 +328,11 @@ bba_air_prod_1 = {
 }
 
 bba_support_boosts = {
-	# TODO BFW: this was moved from germany's strats
 
 	enable = {
 		is_historical_focus_on = yes
 		date < 1939.1.1
 	}
-	#abort_when_not_enabled = yes
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -498,6 +502,7 @@ default_garrison_production = {
 			original_tag = FRA
 			original_tag = JAP
 			original_tag = ENG
+			original_tag = SIA
 		}
 		ai_wants_divisions >  12 #Massively decreasing the amount of garrison and suppression the AI wants
 		is_major = yes
@@ -512,13 +517,6 @@ default_garrison_production = {
 		id = garrison
 		value = 5
 	}
-
-	# Old garrison system against resistance
-	# ai_strategy = {
-	# 	type = role_ratio
-	# 	id = suppression
-	# 	value = 2
-	# }
 }
 
 default_mountaineers_production = {
@@ -767,7 +765,7 @@ default_area_priority_non_africa = {
         NOT = { is_subject_of = ENG }
         NOT = { capital_scope = { is_on_continent = africa } }
     }
-	abort_when_not_enabled = yes
+    abort_when_not_enabled = yes
 
     ai_strategy = {
         type = area_priority
@@ -973,26 +971,26 @@ DEFAULT_midlate_template_design = {
 	}
 }
 
-save_admiral_pp_for_later = {
-	enable = {
-		has_war = no
-		threat < 0.3
-		has_political_power < 200
-	}
-	abort = {
-		OR = {
-			has_war = yes
-			threat > 0.3
-			has_political_power > 200
-		}
-	}
+# save_admiral_pp_for_later = {	#Obsolete
+# 	enable = {
+# 		has_war = no
+# 		threat < 0.3
+# 		has_political_power < 200
+# 	}
+# 	abort = {
+# 		OR = {
+# 			has_war = yes
+# 			threat > 0.3
+# 			has_political_power > 200
+# 		}
+# 	}
 
-	ai_strategy = { # dont burn PP on admirals (can still get free ones)
-		type = pp_spend_priority
-		id = admiral
-		value = -100
-	}
-}
+# 	ai_strategy = { # dont burn PP on admirals (can still get free ones)
+# 		type = pp_spend_priority
+# 		id = admiral
+# 		value = -100
+# 	}
+# }
 
 do_not_waste_pp_if_saving_for_manpower_laws = {
 
@@ -1097,7 +1095,7 @@ upgrade_intelligence_agency_as_spy_master = {
 	}
 }
 
-addintelligence_agency_normal_upgrade_prio = {
+add_intelligence_agency_normal_upgrade_prio = {
 	enable = {
 		always = yes
 	}

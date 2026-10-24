@@ -67,8 +67,8 @@
  SOV_autonomy_puppet_DEF:0 "$OVERLORDADJ$ Russia"
  SOV_autonomy_reichskommissariat:0 "Reichskommissariat Russia"
  SOV_autonomy_reichskommissariat_DEF:0 "the Reichskommissariat Russia"
- SOV_GER_fascism_autonomy_reichskommissariat:0 "Reichskommissariat Muscovien"
- SOV_GER_fascism_autonomy_reichskommissariat_DEF:0 "Reichskommissariat Muscovien"
+ SOV_GER_fascism_autonomy_reichskommissariat:0 "Reichskommissariat Moskowien"
+ SOV_GER_fascism_autonomy_reichskommissariat_DEF:0 "Reichskommissariat Moskowien"
  SOV_autonomy_reichsprotectorate:0 "Protectorate Russia"
  SOV_autonomy_reichsprotectorate_DEF:0 "the Protectorate of Russia"
  SOV_autonomy_wtt_imperial_protectorate:0 "Russian Imperial Protectorate"
@@ -2312,8 +2312,8 @@
  SUR_ADJ:0 "Surinamese"
 
  #TAJ
- TAJ_fascism:1 "State of Tajikistan"
- TAJ_fascism_DEF:1 "the State of Tajikistan"
+ TAJ_fascism:1 "Darvaz Shahdom"
+ TAJ_fascism_DEF:1 "the Darvaz Shahdom"
  TAJ_democratic:1 "Republic of Tajikistan"
  TAJ_democratic_DEF:1 "the Republic of Tajikistan"
  TAJ_neutrality:0 "Republic of Tajikistan"
@@ -3938,6 +3938,15 @@
  BYA:0 "Buryatia"
  BYA_DEF:0 "Buryatia"
  BYA_ADJ:0 "Buryat-Mongol"
+ BYA_SOV_communism_subject: "Buryat-Mongol Autonomous Soviet Socialist Republic"
+ BYA_SOV_communism_subject_DEF: "the Buryat-Mongol Autonomous Soviet Socialist Republic"
+ BYA_SOV_communism_subject_ADJ: "Buryat-Mongol"
+ BYA_JAP_neutrality_subject: "Trans-Mongolian Protectorate"
+ BYA_JAP_neutrality_subject_DEF: "the Trans-Mongolian Protectorate"
+ BYA_JAP_neutrality_subject_ADJ: "Trans-Mongolian"
+ BYA_JAP_fascism_subject: "Ulan Ude Autonomous Army"
+ BYA_JAP_fascism_subject_DEF: "the Ulan Ude Autonomous Army"
+ BYA_JAP_fascism_subject_ADJ: "Ulan Uden"
 
  #FER
  FER_fascism:0 "East Siberian Empire"

@@ -456,7 +456,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_officer JAP_communist_sympathizer }
+			traits={ infantry_officer communist_sympathizer }
 			skill=3
 			attack_skill=2
 			defense_skill=3
@@ -491,7 +491,7 @@ characters={
 			}
 		}
 		field_marshal = {
-			traits = { JAP_communist_sympathizer career_officer politically_connected }
+			traits = { communist_sympathizer career_officer politically_connected }
 			attack_skill = 1
 			defense_skill = 2
 			planning_skill = 2

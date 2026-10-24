@@ -129,101 +129,6 @@ focus_tree = {
 		}
 	}
 
-	# Seek International Recognition
-	focus = {
-        id = r56_SAM_seek_international_recognition
-        icon = GFX_goal_befriend_samoa
-		prerequisite = { focus = r56_SAM_hold_first_elections focus = r56_SAM_pressure_the_legislative_council }
-		relative_position_id = r56_SAM_address_the_un
-
-        cost = 4
-        x = -1
-        y = 1
-
-        available = { has_war = no is_subject = no }
-        ai_will_do = { factor = 1 }
-
-        completion_reward = {
-			if = {
-				limit = { has_completed_focus = r56_SAM_dissolve_the_fono }
-				every_other_country = {
-					limit = {
-						OR = {
-							has_government = fascism
-							has_government = neutrality
-							has_country_leader_ideology = conservatism
-						}
-						NOT = { 
-							has_country_leader_ideology = colonial_government
-							has_country_flag = is_warlords
-							has_war_with = ROOT
-							has_capitulated = yes
-							original_tag = NZL
-						}
-						has_civil_war = no
-						if = {
-							limit = { is_subject = yes }
-							has_autonomy_state = autonomy_dominion
-						}
-					}
-					country_event = { id = r56_samoa.20 hours = 4 random_hours = 2 }
-				}
-			}
-
-			else_if = {
-				limit = { has_completed_focus = r56_SAM_samoas_path_to_democracy }
-				every_other_country = {
-					limit = {
-						OR = {
-							has_government = democratic
-							has_government = communism
-							has_country_leader_ideology = imperialist_corporatism
-							has_country_leader_ideology = constitutional_monarchy
-						}
-						NOT = { 
-							has_country_flag = is_warlords
-							has_war_with = ROOT
-							has_capitulated = yes
-							original_tag = NZL
-						}
-						has_civil_war = no
-						if = {
-							limit = { is_subject = yes }
-							has_autonomy_state = autonomy_dominion
-						}
-					}
-					country_event = { id = r56_samoa.20 hours = 4 random_hours = 2 }
-				}
-			}
-
-			else = {
-				every_other_country = {
-					limit = {
-						OR = {
-							has_government = democratic
-							has_government = neutrality
-						}
-						NOT = { 
-							has_country_leader_ideology = colonial_government
-							has_country_flag = is_warlords
-							has_war_with = ROOT
-							has_capitulated = yes
-							original_tag = NZL
-						}
-						has_civil_war = no
-						if = {
-							limit = { is_subject = yes }
-							has_autonomy_state = autonomy_dominion
-						}
-					}
-					country_event = { id = r56_samoa.20 hours = 4 random_hours = 2 }
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = r56_SAM_recognition
-        }
-    }
-
 	# Elections Branch - START
 	# Westernize Fa'asamoa
 	focus = {
@@ -233,7 +138,7 @@ focus_tree = {
         relative_position_id = r56_SAM_hold_first_elections
 
         cost = 5
-        x = 1
+        x = 3
         y = 1
 
         ai_will_do = { base = 1 }
@@ -279,7 +184,7 @@ focus_tree = {
 
         cost = 5
         x = 0
-        y = 2
+        y = 1
 
         ai_will_do = { base = 1 }
 
@@ -353,13 +258,13 @@ focus_tree = {
         id = r56_SAM_commonwealth_commitments
 		text = NZL_reaffirm_commonwelth_commitments
         icon = GFX_focus_chi_british_cooperation
-		prerequisite = { focus = r56_SAM_reach_out_to_wellington }
+		prerequisite = { focus = r56_SAM_seek_international_recognition }
         mutually_exclusive = { focus = r56_SAM_samoas_path_to_democracy }
 		relative_position_id = r56_SAM_reach_out_to_wellington
 
         cost = 5
         x = 2
-        y = 1
+        y = 2
 
         available = {
 			# petition must have failed
@@ -483,13 +388,13 @@ focus_tree = {
 	focus = {
         id = r56_SAM_samoas_path_to_democracy
         icon = GFX_goal_SAM_democracy
-		prerequisite = { focus = r56_SAM_reach_out_to_wellington }
+		prerequisite = { focus = r56_SAM_seek_international_recognition }
         mutually_exclusive = { focus = r56_SAM_commonwealth_commitments }
 		relative_position_id = r56_SAM_reach_out_to_wellington
 
         cost = 5
         x = 11
-        y = 1
+        y = 2
 
 		# petition must have succceede
     }
@@ -585,12 +490,13 @@ focus_tree = {
 
 	# Pressure Council - START
 
-	# The Spark We Require
+	# Adopt the 1930 Constitution
 	focus = {
-        id = r56_SAM_the_spark_that_we_required
-        icon = GFX_goal_generic_phone_crisis
+        id = r56_SAM_adopt_1930_constitution
+        icon = GFX_focus_hol_the_foundations_of_defense
 		prerequisite = { focus = r56_SAM_pressure_the_legislative_council }
-        relative_position_id = r56_SAM_pressure_the_legislative_council
+        prerequisite = { focus = r56_SAM_pressure_the_legislative_council }
+		relative_position_id = r56_SAM_pressure_the_legislative_council
 
         cost = 5
         x = 0
@@ -604,8 +510,8 @@ focus_tree = {
 	focus = {
         id = r56_SAM_gather_tumua_ma_pule
         icon = GFX_goal_generic_neutrality_focus
-		prerequisite = { focus = r56_SAM_the_spark_that_we_required }
-        relative_position_id = r56_SAM_the_spark_that_we_required
+		prerequisite = { focus = r56_SAM_adopt_1930_constitution }
+        relative_position_id = r56_SAM_adopt_1930_constitution
 
         cost = 5
         x = -1
@@ -619,28 +525,12 @@ focus_tree = {
 	focus = {
         id = r56_SAM_rally_the_advisors # wokemafili and tuffmalealiifano
         icon = GFX_focus_BRA_reach_out_to_military_dem
-		prerequisite = { focus = r56_SAM_the_spark_that_we_required }
-        relative_position_id = r56_SAM_the_spark_that_we_required
+		prerequisite = { focus = r56_SAM_adopt_1930_constitution }
+        relative_position_id = r56_SAM_adopt_1930_constitution
 
         cost = 5
         x = 1
         y = 1
-
-        ai_will_do = { factor = 1 }
-
-    }
-
-	# Adopt the 1930 Constitution
-	focus = {
-        id = r56_SAM_adopt_1930_constitution
-        icon = GFX_focus_hol_the_foundations_of_defense
-		prerequisite = { focus = r56_SAM_gather_tumua_ma_pule }
-        prerequisite = { focus = r56_SAM_rally_the_advisors }
-		relative_position_id = r56_SAM_the_spark_that_we_required
-
-        cost = 5
-        x = 0
-        y = 2
 
         ai_will_do = { factor = 1 }
 
@@ -655,7 +545,7 @@ focus_tree = {
 		
         cost = 10
         x = 0
-        y = 1
+        y = 2
 
 		bypass = { is_subject = no }
 
@@ -726,18 +616,113 @@ focus_tree = {
         }
 	}
 
+	# Seek International Recognition
+	focus = {
+        id = r56_SAM_seek_international_recognition
+        icon = GFX_goal_befriend_samoa
+		prerequisite = { focus = r56_SAM_declaration_of_independence focus = r56_SAM_reach_out_to_wellington }
+		relative_position_id = r56_SAM_aftermath_of_the_goodwill_mission
+
+        cost = 4
+        x = 0
+        y = 5
+
+        available = { has_war = no is_subject = no }
+        ai_will_do = { factor = 1 }
+
+        completion_reward = {
+			if = {
+				limit = { has_completed_focus = r56_SAM_dissolve_the_fono }
+				every_other_country = {
+					limit = {
+						OR = {
+							has_government = fascism
+							has_government = neutrality
+							has_country_leader_ideology = conservatism
+						}
+						NOT = { 
+							has_country_leader_ideology = colonial_government
+							has_country_flag = is_warlords
+							has_war_with = ROOT
+							has_capitulated = yes
+							original_tag = NZL
+						}
+						has_civil_war = no
+						if = {
+							limit = { is_subject = yes }
+							has_autonomy_state = autonomy_dominion
+						}
+					}
+					country_event = { id = r56_samoa.20 hours = 4 random_hours = 2 }
+				}
+			}
+
+			else_if = {
+				limit = { has_completed_focus = r56_SAM_samoas_path_to_democracy }
+				every_other_country = {
+					limit = {
+						OR = {
+							has_government = democratic
+							has_government = communism
+							has_country_leader_ideology = imperialist_corporatism
+							has_country_leader_ideology = constitutional_monarchy
+						}
+						NOT = { 
+							has_country_flag = is_warlords
+							has_war_with = ROOT
+							has_capitulated = yes
+							original_tag = NZL
+						}
+						has_civil_war = no
+						if = {
+							limit = { is_subject = yes }
+							has_autonomy_state = autonomy_dominion
+						}
+					}
+					country_event = { id = r56_samoa.20 hours = 4 random_hours = 2 }
+				}
+			}
+
+			else = {
+				every_other_country = {
+					limit = {
+						OR = {
+							has_government = democratic
+							has_government = neutrality
+						}
+						NOT = { 
+							has_country_leader_ideology = colonial_government
+							has_country_flag = is_warlords
+							has_war_with = ROOT
+							has_capitulated = yes
+							original_tag = NZL
+						}
+						has_civil_war = no
+						if = {
+							limit = { is_subject = yes }
+							has_autonomy_state = autonomy_dominion
+						}
+					}
+					country_event = { id = r56_samoa.20 hours = 4 random_hours = 2 }
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = r56_SAM_recognition
+        }
+    }
+
 	# FAUMUINA-TUIMANUA-GERMAN PATHS
 
 	# Dissolve the Fono
 	focus = {
         id = r56_SAM_dissolve_the_fono
         icon = GFX_goal_emergency_powers
-		prerequisite = { focus = r56_SAM_declaration_of_independence }
+		prerequisite = { focus = r56_SAM_seek_international_recognition }
 		relative_position_id = r56_SAM_declaration_of_independence
 
         cost = 5
         x = -6
-        y = 1
+        y = 2
 
 		completion_reward = {
 			add_political_power = -75

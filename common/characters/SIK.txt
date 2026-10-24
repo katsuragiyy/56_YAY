@@ -15,6 +15,7 @@ characters={
 			desc = SIK_sheng_shicai_leader_desc # R56
 			traits = {
 				baron_of_terror
+				SIK_communist_in_name_only
 				corrupt
 				warlords
 			}

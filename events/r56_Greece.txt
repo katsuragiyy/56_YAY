@@ -2284,7 +2284,7 @@ country_event = {
 				politically_connected
 				trait_cautious
 				trait_mountaineer
-				JAP_communist_sympathizer
+				communist_sympathizer
 			}
 			skill = 2
 			attack_skill = 2
@@ -2296,7 +2296,7 @@ country_event = {
 		create_corps_commander = {
 			name = "Stefanos Sarafis"
 			picture = "r56_portrait_GRE_stefanos_sarafis.dds"
-			traits = { skirmisher decided_planner JAP_communist_sympathizer }
+			traits = { skirmisher decided_planner communist_sympathizer }
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1

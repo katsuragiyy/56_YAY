@@ -23,6 +23,10 @@ state = {
 			1208 3 # Kuching
 		}
 
+		victory_points = {
+			10285 1 # Miri
+		}
+
 		buildings = {
 
 			infrastructure = 2

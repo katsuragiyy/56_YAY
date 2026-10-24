@@ -2247,7 +2247,7 @@ focus_tree = {
 
 			hidden_effect = {
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer }
+					traits = { communist_sympathizer }
 					skill = 1
 					attack_skill = 1
 					defense_skill = 1
@@ -2255,7 +2255,7 @@ focus_tree = {
 					logistics_skill = 1
 				}
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer }
+					traits = { communist_sympathizer }
 					skill = 1
 					attack_skill = 1
 					defense_skill = 1
@@ -2263,7 +2263,7 @@ focus_tree = {
 					logistics_skill = 1
 				}
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer }
+					traits = { communist_sympathizer }
 					skill = 1
 					attack_skill = 1
 					defense_skill = 1

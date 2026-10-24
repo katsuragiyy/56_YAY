@@ -77,26 +77,42 @@
 
  #-> AFG: Afghanistan <><>
  AFG_AI_BEHAVIOR:0 "@AFG Afghanistan"
- RULE_OPTION_HASHIM_AFG:0 "@AFG The Regency - Hashim Khan"
- RULE_OPTION_HASHIM_AFG_AI_DESC:0 "Afghanistan will remain neutral and the regency will be preserved, Afghanistan will seek closer relations with Germany."
- RULE_OPTION_MAHMUD_AFG:0 "@AFG The Regency - Shah Mahmud"
- RULE_OPTION_MAHMUD_AFG_AI_DESC:0 "Afghanistan will transition into a democracy and the regency will be preserved, Afghanistan will seek closer relations with the United Kingdom."
- RULE_OPTION_KINGS_PATH_AFG:0 "@AFG The King's Government"
- RULE_OPTION_KINGS_PATH_AFG_AI_DESC:0 "The regency will be abolished and King Muhammad Zahir Shah will take power, Afghanistan will seek closer relations with the Middle East."
- RULE_OPTION_PARCHAM_AFG:0 "£GFX_gamerules_AFG_parcham   Communism - Parcham"
- RULE_OPTION_PARCHAM_AFG_AI_DESC:0 "The King will be deposed by the Weekh Zalmiān, the Parcham faction will be dominant in communist politics."
- RULE_OPTION_KHALQ_AFG:0 "£GFX_gamerules_AFG_khalq   Communism - Khalq"
- RULE_OPTION_KHALQ_AFG_AI_DESC:0 "The King will be deposed by the Weekh Zalmiān, the Khalq faction will be dominant in communist politics."
- RULE_OPTION_GHULAM_AFG:0 "@AFG Democratic - Watan"
- RULE_OPTION_GHULAM_AFG_AI_DESC:0 "Afghanistan will slowly transition into a democracy with the win of the Watan Party, Afghanistan will seek closer relations with the Western Powers."
- RULE_OPTION_MIRZALI_AFG:0 "£GFX_gamerules_AFG_mirzali   Fascist - The Golden Emir"
- RULE_OPTION_MIRZALI_AFG_AI_DESC:0 "The King will be deposed by the Loya Jirga, Haji Mirzali Khan will become the Emir of Afghanistan."
- RULE_OPTION_MAUDUDI_AFG:0 "£GFX_gamerules_AFG_maududi   Fascist - Jamiat-e Islami"
- RULE_OPTION_MAUDUDI_AFG_AI_DESC:0 "The King will be deposed by the Loya Jirga, Abul A'la al-Maududi will become the Sheikh of Afghanistan."
- RULE_OPTION_DAOUD_AFG:0 "£GFX_gamerules_AFG_daoud   Authoritarian - The General's Coup"
- RULE_OPTION_DAOUD_AFG_AI_DESC:0 "The King will be deposed by the military, Muhammad Daoud Khan will become the leader of Afghanistan. The nation will strive towards a greater Afghanistan."
- RULE_OPTION_AMANULLAH_AFG:0 "£GFX_gamerules_AFG_amanullah   Authoritarian - The Exiled King"
- RULE_OPTION_AMANULLAH_AFG_AI_DESC:0 "The King will be deposed by the military, Amanullah Khan will become the leader of Afghanistan. The nation will seek closer relations with the Middle East."
+ RULE_OPTION_HASHIM_AFG:0 "@AFG Historical§!: Continue Hashim's Mandate"
+ RULE_OPTION_HASHIM_AFG_AI_DESC:0 "Afghanistan under the rule of Muhammad Hashim Khan will preserve the regency and establish closer ties with @GERGermany, while also attempting to secure its neutrality in a potential second Great War."
+
+ RULE_OPTION_MAHMUD_AFG:0 "@AFG Afghan Conservative Party"
+ RULE_OPTION_MAHMUD_AFG_AI_DESC:0 "Afghanistan will transition into a democracy under Shah Mahmud Khan, who will continue his premiership after being elected by the people. Under his premiership, Afghanistan will seek closer ties with the @ENGUnited Kingdom and to secure the nations neutrality."
+
+ RULE_OPTION_GHULAM_AFG:0 "@AFG Watan Party"
+ RULE_OPTION_GHULAM_AFG_AI_DESC:0 "Afghanistan will transition into a democracy and hold free elections, with the Watan Party coming out victorious and Ghulam Muhammad Ghubar becoming the nations leader. Under his premiership, Afghanistan will seek closer ties with the Western powers and will join the allies. \n\nIf: $AFG_FOCUS_TREE_SELECTION$ - §Y$RULE_OPTION_STANDARD_TREE$§! \nAfter retiring the uncles, the King moves to secure the nation, however the democratic opposition rises up against his regime. After overthrowing the King's government, the opposition declares a republic in Afghanistan, and will seek to modernise Afghanistan."
+ 
+ RULE_OPTION_KINGS_PATH_AFG:0 "@AFG King's Government"
+ RULE_OPTION_KINGS_PATH_AFG_AI_DESC:0 "The regency will be abolished, followed by King Muhammad Zahir Shah assuming power and enacting constitutional reforms. Under his rule, Afghanistan will seek to deepen its ties with the Middle East."
+
+ RULE_OPTION_DAOUD_AFG:0 "£GFX_gamerules_AFG_daoud   General's Coup"
+ RULE_OPTION_DAOUD_AFG_AI_DESC:0 "After abolishing the regency and assuming power, King Muhammad Zahir Shah will be deposed by the military, led by Muhammad Daoud Khan, who will in the long term try to secure the territories of greater Afghanistan."
+
+ RULE_OPTION_AMANULLAH_AFG:0 "£GFX_gamerules_AFG_amanullah   Exiled King"
+ RULE_OPTION_AMANULLAH_AFG_AI_DESC:0 "After abolishing the regency and assuming power, King Muhammad Zahir Shah will be deposed by the military, with Amanullah Khan becoming the leader of Afghanistan. Under his rule, Afghanistan will seek to deepen its ties with the Middle East. \n\nIf: $AFG_FOCUS_TREE_SELECTION$ - §Y$RULE_OPTION_STANDARD_TREE$§! \nAfter gathering his remaining loyalists in Afghanistan, Amanullah will begin an uprising against the Afghan government and successfully overthrow it. Following this, he will seek to modernise Afghanistan before then attempting to unify the lands of Pashtunistan."
+
+ RULE_OPTION_KHALQ_AFG:0 "£GFX_gamerules_AFG_khalq   Loyalty to Moscow"
+ RULE_OPTION_KHALQ_AFG_AI_DESC:0 "The King will be deposed by the communist Weekh Zalmiān. After which, the Khalq faction of the People's Democratic Party of Afghanistan will assume responsibility of the government and with Soviet oversight, chose capable leader for the nation. As time progresses, Afghanistan will become a loyal subject to the Soviets, and will try to resolve the Tajik question. \n\nIf: $AFG_FOCUS_TREE_SELECTION$ - §Y$RULE_OPTION_STANDARD_TREE$§! \n§LAfter tying itself economically to the Soviet Union, a Soviet sponsored uprising overthrows the King's government and establishes a socialist state under Nisar Muhammad. Under this new government, the Afghan state will seek to lift the administrative burden of Turkestan from the Soviets, and potentially open the course to democratic elections.§!"
+
+ RULE_OPTION_PARCHAM_AFG:0 "£GFX_gamerules_AFG_parcham   National Front"
+ RULE_OPTION_PARCHAM_AFG_AI_DESC:0 "The King will be deposed by the communist Weekh Zalmiān. After which, the Parcham faction of the People's Democratic Party of Afghanistan will assume responsibility of the government and Mawlana Qiamuddin Khadim will become the leader of the country. Under this new found leadership, Afghanistan will distance itself from the @SOVSoviet Union and try to find allies in the Jungle Movement of neighbouring @PERPersia."
+
+ RULE_OPTION_MIRZALI_AFG:0 "£GFX_gamerules_AFG_mirzali   Golden Emir"
+ RULE_OPTION_MIRZALI_AFG_AI_DESC:0 "The King will be deposed by the Loya Jirga and Jamiat-e Islami. After which, Haji Mirzali Khan, alternatively known as the "Golden Emir" will assume leadership of the nation. Under his rule, the exiled King, Amanullah Khan will be return to Afghanistan and a 4th Anglo-Afghan war will break out with the goal of unifying Pashtunistan under one banner. \n\nIf: $AFG_FOCUS_TREE_SELECTION$ - §Y$RULE_OPTION_STANDARD_TREE$§! \nAfter gathering support for his planned uprising from both abroad and from within, Haji Mirzali Khan will overthrow the Afghan government in a planned uprising. Shortly after, he will crown himself as the Emir of Afghanistan, and seek to establish a caliphate encompassing the Muslim world."
+ 
+ RULE_OPTION_MAUDUDI_AFG:0 "£GFX_gamerules_AFG_maududi   Sheikh of Afghanistan"
+ RULE_OPTION_MAUDUDI_AFG_AI_DESC:0 "The King will be deposed by the Loya Jirga and Jamiat-e Islami. After which, the Jamiat-e Islami will appoint Abul A'la al-Maududi as the sheikh of Afghanistan. Under his rule, Afghanistan will pursue a Pan-Islamist policy and will attempt to unify the Islamic world under one banner."
+
+ RULE_OPTION_EMPIRE_AFG_R56: "£GFX_gamerules_AFG_bukhara   Bukharan Emir"
+ RULE_OPTION_EMPIRE_AFG_AI_DESC_R56: "§RREQUIRES:§! $AFG_FOCUS_TREE_SELECTION$ - §Y$RULE_OPTION_STANDARD_TREE$§! \n\nThe Afghan AI will attempt to oust King Zahir Shah and replace him with Emir Sayyid Mir Muhammad Alim Khan who will then attempt to unify the Afghan tribes. Afghanistan will then look to expanding its borders eventually forming a new Afghan Empire. \n\n§RREQUIRES:§! $AFG_FOCUS_TREE_SELECTION$ - §Y$RULE_OPTION_STANDARD_TREE$§!"
+
+ RULE_OPTION_MUGHAL_AFG_R56: "£GFX_gamerules_AFG_mughal   New Mughal Empire"
+ RULE_OPTION_MUGHAL_AFG_AI_DESC_R56: "§RREQUIRES:§! $AFG_FOCUS_TREE_SELECTION$ - §Y$RULE_OPTION_STANDARD_TREE$§! \n\nThe Afghan AI will attempt to oust King Zahir Shah and replace him with Mirza Khurshid Jah Bahadur who will then attempt to recreate the Mughal Empire. They will then look to expanding their borders eventually forming a new Timurid Empire."
+
  
  #-> ALB: Albania <><>
  ALB_AI_BEHAVIOR:0 "@ALB Albania"

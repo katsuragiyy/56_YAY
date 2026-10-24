@@ -5150,7 +5150,7 @@ ITA_colonial_management_dec_cat = {
 
 			# British Somaliland
 			AOI = {
-				transfer_state = 269
+				set_state_controller = 269 # 56
 				add_state_claim = 269
 			}
 
@@ -5204,7 +5204,7 @@ ITA_colonial_management_dec_cat = {
 
 			# French Somaliland
 			AOI = {
-				transfer_state = 268
+				set_state_controller = 268 # 56
 				add_state_claim = 268
 			}
 

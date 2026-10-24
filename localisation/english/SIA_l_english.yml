@@ -769,10 +769,10 @@
 
   SIA_avenge_chulaloks_legacy_r56: "Avenge Chulalok's Legacy"
   SIA_avenge_chulaloks_legacy_r56_desc: "We have done what so many call impossible: [SIA.GetNameDef] once more holds total supremacy in southeast-Asia. This feat shall become a point of celebration for years to come and the west will finally treat us as an equal once more!"
-  you_or_a_subject_contros_all_starting_laotian_cores_r56_tt: "You or a subject controls all starting §Y[LAO.GetAdjective]§! cores."
-  you_or_a_subject_controls_all_starting_cambodian_cores_r56_tt: "You or a subject controls all starting §Y[CAM.GetAdjective]§! cores."
-  you_or_a_subject_controls_all_starting_vietnamese_cores_r56_tt: "You or a subject controls all starting §Y[VIN.GetAdjective]§! cores."
-  you_or_a_subject_controls_all_starting_burmese_cores_r56_tt: "You or a subject controls all starting §Y[BRM.GetAdjective]§! cores."
+  you_or_a_subject_contros_all_starting_laotian_cores_r56_tt: "We or a subject controls all starting §Y[LAO.GetAdjective]§! cores."
+  you_or_a_subject_controls_all_starting_cambodian_cores_r56_tt: "We or a subject controls all starting §Y[CAM.GetAdjective]§! cores."
+  you_or_a_subject_controls_all_starting_vietnamese_cores_r56_tt: "We or a subject controls all starting §Y[VIN.GetAdjective]§! cores."
+  you_or_a_subject_controls_all_starting_burmese_cores_r56_tt: "We or a subject controls all starting §Y[BRM.GetAdjective]§! cores."
   SIA_southeast_asias_regional_power_r56: "Southeast-Asia's Regional Power"
   SIA_southeast_asias_regional_power_r56_desc: "We have done what so many call impossible: [SIA.GetNameDef] once more holds total supremacy in southeast-Asia. This feat shall become a point of celebration for years to come and the west will finally treat us as an equal once more!"
 
@@ -1056,7 +1056,7 @@
 
   SIA_the_question_of_the_regency_r56: "The Question of the Regency"
   SIA_the_question_of_the_regency_r56_desc: "The abdication of Prajadhipok set off a wave of instability throughout the nation and we are yet to recover from its effects. With the monarchy at its lowest point, we should decide now what its long-term role for the country will be."
-  unlocks_decision_levy_additional_taxes_on_royal_wealth_which_grants_tt: "Unlocks Decision: §YLevy Additional Taxes on Royal Wealth§!, which grants:"
+  unlocks_decision_levy_additional_taxes_on_royal_wealth_which_grants_tt: "If we have completed the focus "§!$SIA_crown_property_bureau_r56$§!" \n\nUnlocks Decision: §YLevy Additional Taxes on Royal Wealth§!, which grants:"
   SIA_levy_additional_taxes_on_royal_wealth_r56: "Levy Additional Taxes on Royal Wealth"
   SIA_levy_additional_taxes_on_royal_wealth_r56_desc: "The royal family still holds excessive financial resources despite our best efforts. With much of the nation destitute, this small elite cannot continue to hold so much economic power over our nation."
   upon_the_completion_of_focus_prioritize_socioeconomic_progress_r56_tt: "Upon the completion of Focus: §YPrioritize Socioeconomic Progress§!:"
@@ -1186,9 +1186,9 @@
 
   SIA_iron_chancellor_of_the_east_r56: "Iron Chancellor of the East"
   SIA_iron_chancellor_of_the_east_r56_desc: "After decades of grief over our national losses, we, under the righteous reign of Phibunsongkhram, have undone the worst of our losses and united the Tai peoples behind our flag, just as Bismark had the Germans! Who can seriously doubt our rule now, after all that we've accomplished?"
-  all_starting_laotian_cores_are_owned_by_you_or_a_subject_tt: "All starting §Y[LAO.GetAdjective]§! cores are owned by you or a subject"
-  shanland_is_owned_by_you_or_a_subject_tt: "§Y[1018.GetName]§! is owned by you or a subject"
-  batambang_is_owned_by_you_or_a_subject_tt: "§Y[925.GetName]§! is owned by you or a subject"
+  all_starting_laotian_cores_are_owned_by_you_or_a_subject_tt: "All starting §Y[LAO.GetAdjective]§! cores are owned by us or a subject"
+  shanland_is_owned_by_you_or_a_subject_tt: "§Y[1018.GetName]§! is owned by us or a subject"
+  batambang_is_owned_by_you_or_a_subject_tt: "§Y[925.GetName]§! is owned by us or a subject"
 
   SIA_opportunistic_militarization_r56: "Opportunistic Militarization"
   SIA_opportunistic_militarization_r56_desc: "A time of great opportunity is upon us, should we decide to act on it. For [SIA.GetNameDef] to be an acting power in Asia once more, we must take vital steps to bolster our military readiness! The time has come to issue economic mobilization, and make clear to our people that we have begun the final steps to restore our power on the world stage!"

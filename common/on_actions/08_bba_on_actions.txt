@@ -947,14 +947,108 @@ on_actions = {
 					IF = {
 						limit = {
 							controller = {
-								NOT = { original_tag = ETH }
-								has_full_control_of_state = PREV
-								is_in_faction_with = ETH
+								#Eth or ally must control the state
+								controls_state = PREV
+
+								OR = {
+									is_in_faction_with = ETH
+									original_tag = ETH
+									ETH = {
+										is_subject_of = PREV
+									}
+								}
+								#Must have war with the owned of the state for transfer
 								has_war_with = PREV.owner
+								 
+								#Only flip the state if theres no enemy divisions in this state to prevent out of supply cheese
+								NOT = {
+									any_enemy_country = {
+										OR = {
+											divisions_in_state = {
+												type = infantry
+												size > 0
+												state = PREV.PREV
+											}
+
+
+											divisions_in_state = {
+												type = support
+												size > 0
+												state = PREV.PREV
+											}
+											divisions_in_state = {
+												type = artillery
+												size > 0
+												state = PREV.PREV
+											}
+
+											divisions_in_state = {
+												type = anti_tank
+												size > 0
+												state = PREV.PREV
+											}
+
+											divisions_in_state = {
+												type = armor
+												size > 0
+												state = PREV.PREV
+											}
+										}
+									}
+								}
 							}
 
 							owner = {
 								has_war_with = ETH
+							}
+
+
+							#Only flip the state if theres no enemy divisions in any surrounding states to prevent edge cases with border skirmishes and fast moving tanks
+							all_neighbor_state = {
+								controller = {  
+									OR = {
+										NOT = { has_war_with = ETH }	#every neighbor state has to either be not at war with ETH
+										AND = {
+											has_war_with = ETH #or be at war and no enemy division (direct or allied to) is in an adjecent state
+											ETH = {
+												NOT = {
+													any_enemy_country = { #check if any allied enemy troops is in a neighboring the state of any kind
+														OR = {
+															divisions_in_state = {
+																type = infantry
+																size > 0
+																state = PREV.PREV.PREV #PREV PREV PREV here is the adjecent state
+
+															}
+															divisions_in_state = {
+																type = support
+																size > 0
+																state = PREV.PREV.PREV
+															}
+															divisions_in_state = {
+																type = artillery
+																size > 0
+																state = PREV.PREV.PREV
+															}
+
+															divisions_in_state = {
+																type = anti_tank
+																size > 0
+																state = PREV.PREV.PREV
+															}
+
+															divisions_in_state = {
+																type = armor
+																size > 0
+																state = PREV.PREV.PREV
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 
@@ -975,6 +1069,7 @@ on_actions = {
 							OR = {
 								tag = ETH
 								is_in_faction_with = ETH
+								ETH = { is_subject_of = ROOT }
 							}
 						}
 					}

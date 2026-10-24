@@ -5,7 +5,6 @@ HUN_alternate_AH = {
 	allowed = {
 		original_tag = HUN
 	}
-
 	enable = {
 		OR = {
 			has_country_flag = HUN_AI_RANDOM_AUSTRIA_HUNGARY

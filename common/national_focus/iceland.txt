@@ -793,7 +793,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ICE_united_we_stand
-		icon = GFX_focus_generic_befriend_denmark
+		icon = GFX_goal_generic_befriend_denmark # 56
 		prerequisite = { focus = ICE_the_kingdom_of_iceland }
 		mutually_exclusive = { focus = ICE_declare_absolute_neutrality }
 		x = -2
@@ -2865,6 +2865,8 @@ focus_tree = {
 			NOT = { has_idea = disarmed_nation }
 		}
 
+		allow_branch = { always = no } # 56 - Replaced by Laura's
+
 		search_filters = {FOCUS_FILTER_MANPOWER}
 
 		completion_reward = {
@@ -3261,7 +3263,1250 @@ focus_tree = {
 		}
 	}
 
+	# 56 - NEW FOCUSES IMPORTED FROM LAURA'S BRANCH
+	# i just thought they were better. tank u laura for ur work!!!
+	
+	###############
+	### ARMY ######
+	###############
 
+	focus = {
+		id = ICE_permanent_neutrality_r56
+		icon = GFX_goal_swe_disarmament
+		mutually_exclusive = { focus = ICE_national_def_force_r56 }
+
+		cost = 10
+		x = -21
+		y = 0
+
+		available = {
+			has_war = no
+			is_in_faction = no
+		}
+
+		ai_will_do = { base = 3 }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+
+		completion_reward = {
+			add_ideas = disarmed_nation
+			set_rule = {
+				desc = ICE_test
+				can_decline_call_to_war = yes
+			}
+			set_rule = {
+				desc = ICE_test
+				can_not_declare_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_fortify_the_land_r56
+		icon = GFX_focus_generic_fortify_iceland
+		cost = 10
+
+		x = -2
+		y = 3
+		prerequisite = { focus = ICE_focus_on_civ_sector_r56 }
+		relative_position_id = ICE_permanent_neutrality_r56
+	
+		completion_reward = {
+			add_ideas = ICE_fortifications
+			custom_effect_tooltip = generic_skip_one_line_tt
+			100 = {
+				add_building_construction = {
+                    type = bunker
+                    level = 1
+                    province = 12674
+                    instant_build = yes
+                }
+                add_building_construction = {
+                    type = bunker
+                    level = 1
+                    province = 13311
+                    instant_build = yes
+                }
+                add_building_construction = {
+                    type = bunker
+                    level = 1
+                    province = 4861
+                    instant_build = yes
+                }
+			}
+		}
+		ai_will_do = {
+			factor = 3
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_global_trade_r56
+		icon = GFX_focus_BRA_ethical_internationalism
+		cost = 10
+
+		x = 0
+		y = 1
+		prerequisite = { focus = ICE_permanent_neutrality_r56 }
+		relative_position_id = ICE_permanent_neutrality_r56
+	
+		completion_reward = {
+			add_ideas = ICE_trading
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = free_trade
+		}
+		ai_will_do = {
+			factor = 3
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_aid_denmark_r56
+		icon = GFX_focus_DEN_no_regulations
+		cost = 10
+
+		x = 1
+		y = 2
+		prerequisite = { focus = ICE_global_trade_r56 }
+		relative_position_id = ICE_permanent_neutrality_r56
+
+		available = {
+			is_subject_of = DEN
+			has_completed_focus = ICE_united_we_stand
+			DEN = {
+				is_subject = no
+				has_capitulated = no
+			}
+		}
+	
+		completion_reward = {
+			DEN = {
+				add_offsite_building = { 
+					type = arms_factory 
+					level = 1 
+				}
+			}
+			add_ideas = ICE_overlord_aid
+		}
+		ai_will_do = {
+			factor = 3
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_focus_on_civ_sector_r56
+		icon = GFX_goal_industrial_investment
+		cost = 10
+
+		x = -1
+		y = 2
+		prerequisite = { focus = ICE_global_trade_r56 }
+		relative_position_id = ICE_permanent_neutrality_r56
+	
+		completion_reward = {
+			add_ideas = ICE_civilian_focus
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 3
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_establish_merchant_marine_r56
+		icon = GFX_goal_naval_treaty
+		cost = 10
+
+		x = 0
+		y = 3
+		prerequisite = { focus = ICE_focus_on_civ_sector_r56 }
+		relative_position_id = ICE_permanent_neutrality_r56
+	
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ICE_civilian_focus
+				add_idea = ICE_convoy_production
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 3
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_national_def_force_r56
+		icon = GFX_focus_ICE_iceland_defense_force
+		mutually_exclusive = { focus = ICE_permanent_neutrality_r56 }
+
+		cost = 10
+		x = -15
+		y = 0
+	
+		ai_will_do = { base = 3 }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+
+		completion_reward = {
+			army_experience = 25
+			add_war_support = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			remove_ideas = ICE_icelandic_neutrality
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_timed_idea = {
+				idea = ICE_funding_a_military
+				days = 180
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ICE_army_spirit_r56
+			#add_dynamic_modifier = { modifier = r56_national_defence_forces }
+		}
+	}
+
+	focus = {
+		id = ICE_effective_army_focus_r56
+		icon = GFX_focus_generic_mountain_training
+		cost = 10
+		prerequisite = { focus = ICE_reshuffle_high_command_r56 }
+		relative_position_id = ICE_national_def_force_r56
+
+		mutually_exclusive = { focus = ICE_expansive_army_focus_r56 }
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -3
+		y = 3
+	
+		completion_reward = {
+			add_to_variable = { ICE_attack_factor = 0.05 }
+			add_to_variable = { ICE_defence_factor = 0.05 }
+			add_to_variable = { ICE_training_time = 0.1 }
+
+			custom_effect_tooltip = ICE_effective_army_tt
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_expand_the_national_police_r56
+		icon = GFX_goal_ICE_security_force
+		cost = 8
+		prerequisite = { focus = ICE_national_def_force_r56 focus = ICE_permanent_neutrality_r56 }
+		relative_position_id = ICE_national_def_force_r56
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -4
+		y = 1
+	
+		completion_reward = {
+
+			division_template = {
+                name = "Ríkislögreglan"
+                division_names_group = ICE_INF_01
+                is_locked = no
+                template_counter = 6
+                regiments = {
+                	infantry = { x = 0 y = 0 }
+                	infantry = { x = 0 y = 1 }
+                }
+                support = {   
+					recon = { x = 0 y = 0 }
+                }
+			}
+
+			random_owned_state = {
+           		create_unit = {
+               	    division = "division_template = \"Ríkislögreglan\" start_experience_factor = 0 start_equipment_factor = 0"
+               	    owner = ICE
+               	}
+           	}
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_expand_doctrines_r56
+		icon = GFX_goal_generic_officers
+		prerequisite = { focus = ICE_national_def_force_r56 }
+		relative_position_id = ICE_national_def_force_r56
+
+		available = { NOT = { has_idea = ICE_funding_a_military } }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		ai_will_do = { base = 3 }
+
+		cost = 10
+		x = 0
+		y = 1
+	
+		completion_reward = {
+			army_experience = 10
+			#add_to_variable = { ICE_land_doctrine_reduction = -0.1 }
+			#custom_effect_tooltip = ICE_land_doctrine_reduction_tt
+			add_doctrine_cost_reduction = {
+				name = ICE_expand_doctrines_r56
+				cost_reduction = 0.5
+				uses = 2
+	 			category = land_doctrine
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = ICE_army_spirit_r56
+				add_idea = ICE_army_spirit_2_r56
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_utilise_the_terrain_r56
+		icon = GFX_goal_generic_mountain_warfare
+		cost = 8
+		prerequisite = { focus = ICE_effective_army_focus_r56 }
+		relative_position_id = ICE_national_def_force_r56
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -2
+		y = 4
+	
+		completion_reward = {
+			add_to_variable = { ICE_attrition_factor = 0.1 }
+			custom_effect_tooltip = ICE_attrition_factor_tt
+			add_tech_bonus = {
+				name = ROM_vanatori_de_munte
+				bonus = 1.0
+				uses = 1
+				category = mountaineers_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_reshuffle_high_command_r56
+		icon = GFX_goal_ICE_military_academy
+		cost = 5
+		prerequisite = { focus = ICE_expand_doctrines_r56 }
+		prerequisite = { focus = ICE_recruitment_initiatives_r56 }
+		relative_position_id = ICE_national_def_force_r56
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -1
+		y = 2
+	
+		completion_reward = {
+			add_to_variable = { ICE_more_exp_factor = 0.10 }
+			add_to_variable = { ICE_more_command_power = 40 }
+			add_to_variable = { ICE_military_leader_cost = -0.25 }
+			custom_effect_tooltip = ICE_high_command_tt
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_recruitment_initiatives_r56
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		prerequisite = { focus = ICE_national_def_force_r56 }
+		relative_position_id = ICE_national_def_force_r56
+
+		available = { NOT = { has_idea = ICE_funding_a_military } }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		ai_will_do = { base = 3 }
+
+		cost = 10
+		x = -2
+		y = 1
+	
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ICE_army_spirit_r56
+				add_idea = ICE_army_spirit_3_r56
+			}
+			add_timed_idea = {
+				days = 365
+				idea = ICE_army_recruitment
+			}
+			if = {
+				limit = { has_idea = disarmed_nation }
+				custom_effect_tooltip = generic_skip_one_line_tt
+				swap_ideas = {
+					remove_idea = disarmed_nation
+					add_idea = volunteer_only
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_weapon_research_r56
+		icon = GFX_goal_generic_warfighting_technology
+		prerequisite = { focus = ICE_national_def_force_r56 }
+		relative_position_id = ICE_national_def_force_r56
+
+
+		available = { NOT = { has_idea = ICE_funding_a_military } }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		ai_will_do = { base = 3 }
+
+		cost = 5
+		x = 2
+		y = 1
+	
+		completion_reward = {
+			add_tech_bonus = {
+                name = infantry_artillery_bonus
+                bonus = 1
+                uses = 1
+                category = infantry_weapons
+            }
+		}
+	}
+
+	focus = {
+		id = ICE_weapon_production_r56
+		icon = GFX_focus_ICE_the_armed_forces_of_iceland
+		cost = 10
+		prerequisite = { focus = ICE_weapon_research_r56 }
+		relative_position_id = ICE_national_def_force_r56
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 3
+		y = 2
+	
+		completion_reward = {
+			add_tech_bonus = {
+                name = infantry_artillery_bonus
+                bonus = 0.5
+                uses = 1
+                category = infantry_weapons
+            }
+			add_ideas = ICE_rifle_production
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_armor_research_r56
+		icon = GFX_goal_tank_offensive
+		cost = 10
+		prerequisite = { focus = ICE_weapon_research_r56 focus = ICE_expand_doctrines_r56 }
+		relative_position_id = ICE_national_def_force_r56
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 1
+		y = 2
+	
+		completion_reward = {
+			add_tech_bonus = {
+                name = armor_bonus
+                bonus = 0.5
+                uses = 2
+                category = armor
+            }
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_winter_equipment_r56
+		icon = GFX_focus_generic_winter_warfare
+		cost = 5
+		prerequisite = { focus = ICE_effective_army_focus_r56 }
+		relative_position_id = ICE_national_def_force_r56
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -4
+		y = 4
+	
+		completion_reward = {
+			add_to_variable = { ICE_winter_supplies_attrition = -0.15 }
+			custom_effect_tooltip = ICE_winter_supplies_attrition_tt
+
+			add_tech_bonus = {
+                name = infantry_artillery_bonus
+                bonus = 1
+                uses = 1
+                category = winter_clothing_tech
+            }
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_mountain_gun_r56
+		icon = GFX_focus_RAJ_mountain_guns
+		prerequisite = { focus = ICE_utilise_the_terrain_r56 }
+		relative_position_id = ICE_national_def_force_r56
+
+		cost = 8
+		x = -1
+		y = 5
+
+		ai_will_do = { base = 3 }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	
+		completion_reward = {
+			add_tech_bonus = {
+                name = ICE_mountain_gun_r56
+                bonus = 0.85
+                uses = 1
+                category = artillery
+            }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = mountain_guns_tt
+            hidden_effect = {
+                set_technology = {
+                    mountain_gun = 1
+                    popup = no
+                }
+            }
+		}
+	}
+
+
+	focus = {
+		id = ICE_expansive_army_focus_r56
+		icon = GFX_focus_generic_naval_invasion
+		cost = 10
+		prerequisite = { focus = ICE_reshuffle_high_command_r56 }
+		relative_position_id = ICE_national_def_force_r56
+
+		mutually_exclusive = { focus = ICE_effective_army_focus_r56 }
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 1
+		y = 3
+	
+		completion_reward = {
+			add_to_variable = { ICE_more_manpower = 0.025 }
+			add_to_variable = { ICE_planning_speed_factor = 0.1 }
+			add_to_variable = { ICE_training_time = -0.1 }
+			custom_effect_tooltip = ICE_more_mp2_tt
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_ensure_cohesion_r56
+		icon = GFX_goal_iron_people
+		cost = 10
+		prerequisite = { focus = ICE_expansive_army_focus_r56 }
+		relative_position_id = ICE_expansive_army_focus_r56
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 1
+		y = 1
+	
+		completion_reward = {
+			add_to_variable = { ICE_army_org = 0.1 }
+			add_to_variable = { ICE_recovery_rate_factor = 0.05 }
+			custom_effect_tooltip = ICE_cohesion_tt
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_modernized_army_r56
+		icon = GFX_goal_generic_democratic_army
+		cost = 10
+		prerequisite = { focus = ICE_expansive_army_focus_r56 }
+		relative_position_id = ICE_expansive_army_focus_r56
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 2
+		y = 2
+	
+		completion_reward = {
+			add_to_variable = { ICE_entrenchment_factor = 0.1 }
+			add_to_variable = { ICE_army_org = 0.05 }
+			add_to_variable = { ICE_recovery_rate_factor = 0.05 }
+
+			custom_effect_tooltip = ICE_modern_army_tt
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_conventional_army_r56
+		icon = GFX_goal_infantry_offensive
+		cost = 10
+		#prerequisite = { focus = ICE_effective_army_focus_r56 }
+		relative_position_id = ICE_effective_army_focus_r56
+		
+		mutually_exclusive = { focus = ICE_special_forces_army_r56 }
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 2
+		y = 4
+	
+		completion_reward = {
+			add_to_variable = { ICE_inf_attack = 0.05 }
+			add_to_variable = { ICE_inf_defence = 0.05 }
+			custom_effect_tooltip = ICE_inf_conventional_tt
+			add_tech_bonus = {
+                name = infantry_artillery_bonus
+                bonus = 0.25
+                uses = 1
+                category = infantry_weapons
+            }
+			add_doctrine_cost_reduction = {
+				name = ICE_expand_doctrines_r56
+				cost_reduction = 0.25
+				uses = 1
+	 			category = land_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_special_forces_army_r56
+		icon = GFX_goal_generic_army_elite
+		cost = 10
+		#prerequisite = { focus = ICE_effective_army_focus_r56 }
+		relative_position_id = ICE_effective_army_focus_r56
+
+		mutually_exclusive = { focus = ICE_conventional_army_r56 }
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 4
+		y = 4
+	
+		completion_reward = {
+			add_to_variable = { ICE_specforces_attack = 0.1 }
+			add_to_variable = { ICE_specforces_defence = 0.1 }
+			add_to_variable = { ICE_specforces_number = 0.25 }
+			custom_effect_tooltip = ICE_special_forces_tt
+			add_doctrine_cost_reduction = {
+				name = ICE_expand_doctrines_r56
+				cost_reduction = 0.5
+				uses = 2
+	 			category = special_forces_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = ICE_large_guns_r56
+		icon = GFX_goal_generic_combined_arms_artillery_antiair_antitank
+		cost = 10
+		prerequisite = { focus = ICE_conventional_army_r56 focus = ICE_special_forces_army_r56 }
+		relative_position_id = ICE_effective_army_focus_r56
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 3
+		y = 5
+	
+		completion_reward = {
+			add_to_variable = { ICE_art_attack = 0.15 }
+			add_to_variable = { ICE_art_defence = 0.15 }
+			add_to_variable = { ICE_army_org = 0.05 }
+			custom_effect_tooltip = ICE_large_guns_r56_tt
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+
+
+
+	###############
+	### NAVY ######
+	###############
+
+
+	focus = {
+		id = ICE_coastguard_r56
+		icon = GFX_focus_ICE_modernizing_the_coast_guard
+
+		available = { has_completed_focus = ICE_national_def_force_r56 }
+
+		cost = 5
+		x = -4
+		y = 0
+
+		ai_will_do = { base = 3 }
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		
+		completion_reward = {
+			air_experience = 5
+			navy_experience = 10
+		}
+	}
+	
+	focus = {
+		id = ICE_nav_doc_r56
+		icon = GFX_goal_generic_blue_navy
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ICE_coastguard_r56
+		}
+
+		
+		relative_position_id = ICE_coastguard_r56
+
+
+		x = 0
+		y = 1
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = ICE_naval_doctrine_tech
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+	}
+
+	focus = {
+		id = ICE_build_dock_r56
+		icon = GFX_goal_generic_expand_the_naval_industry
+		cost = 5
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = ICE_coastguard_r56
+		}
+		
+		relative_position_id = ICE_coastguard_r56
+		
+		available = {
+			100 = { CONTROLLER = { tag = ICE } }
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				100 = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		
+		x = 2
+		y = 1
+		
+		completion_reward = {
+			100 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = ICE_ships_r56
+		icon = GFX_focus_generic_navy_battleship2
+		cost = 10.00
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ICE_establish_naval_academy_r56
+		}
+
+		relative_position_id = ICE_coastguard_r56
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ICE_no_neutral_tt
+				NOT = { has_idea = ICE_icelandic_neutrality }
+				NOT = { has_idea = ICE_icelandic_neutrality2 }
+			}
+		}
+		
+		x = 2
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = ICE_heavy_ships
+				bonus = 1
+				uses = 4
+				category = ca_tech
+				category = bc_tech
+				category = bb_tech
+				category = cv_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+	}
+
+	focus = {
+		id = ICE_establish_naval_academy_r56
+		icon = GFX_goal_generic_naval_academy
+		cost = 10.00
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = ICE_build_dock_r56
+		}
+
+		relative_position_id = ICE_coastguard_r56
+		
+		x = 1
+		y = 2
+		
+		completion_reward = {
+			add_ideas = ICE_navy_academy
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+
+	focus = {
+		id = ICE_nav_marine_corps_r56
+		icon = GFX_goal_ICE_coast_guard
+		cost = 5
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = { focus = ICE_establish_naval_academy_r56 }
+		prerequisite = { focus = ICE_nav_doc_r56 }
+
+		relative_position_id = ICE_coastguard_r56
+		
+		x = 0
+		y = 3
+		
+		completion_reward = {
+			add_ideas = ICE_marine_idea
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+
+	focus = {
+		id = ICE_sub_r56
+		icon = GFX_goal_generic_navy_submarine
+		cost = 10.00
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ICE_establish_naval_academy_r56
+		}
+
+		
+		relative_position_id = ICE_coastguard_r56
+
+		x = 4
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = ICE_subs_tech
+				bonus = 1
+				uses = 2
+				category = ss_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+	}
+	focus = {
+		id = ICE_fighting_ships_r56
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10.00
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ICE_ships_r56
+		}
+
+		
+		relative_position_id = ICE_coastguard_r56
+		x = 1
+		y = 4
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = SPR_navy_modernization
+				bonus = 1
+				uses = 2
+				category = naval_equipment
+			}
+			add_doctrine_cost_reduction = {
+				name = SPR_navy_modernization
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = ICE_anti_sub_r56
+		icon = GFX_goal_generic_wolf_pack
+		cost = 10.00
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ICE_sub_r56
+		}
+		relative_position_id = ICE_coastguard_r56
+		x = 3
+		y = 4
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = ICE_lc_tech
+				bonus = 1
+				uses = 1
+				category = cl_tech
+			}
+			add_tech_bonus = {
+				name = ICE_destroyer_tech
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ICE_wolf_hunter
+		}
+	}
+	focus = {
+		id = ICE_coast_guard_r56
+		icon = GFX_goal_generic_multiple_ships
+		cost = 10.00
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ICE_anti_sub_r56
+		}
+		prerequisite = {
+			focus = ICE_ships_r56
+		}
+		relative_position_id = ICE_coastguard_r56
+		x = 2
+		y = 5
+		
+		completion_reward = {
+			custom_effect_tooltip = ICE_merge_everything
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ICE_merged_navy_spirit
+		}
+	}
+
+	###############
+	### AIR #######
+	###############
+
+	focus = {
+		id = ICE_airforce_r56
+		icon = GFX_goal_generic_airport
+		cost = 5
+		prerequisite = { focus = ICE_coastguard_r56 }
+		relative_position_id = ICE_coastguard_r56
+
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		x = -2
+		y = 1
+		
+		completion_reward = {
+			air_experience = 10
+			100 = { 
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_naval_airforce_r56
+		icon = GFX_goal_naval_treaty
+		cost = 5
+		prerequisite = { focus = ICE_airforce_r56 }
+		mutually_exclusive = { focus = ICE_independent_air_branch_r56 }
+		relative_position_id = ICE_airforce_r56
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		x = 1
+		y = 1
+		
+		completion_reward = {
+			add_ideas = ICE_navy_air_idea
+		}
+	}
+
+	focus = {
+		id = ICE_naval_bomber_development_r56
+		icon = GFX_goal_generic_naval_bombers
+		cost = 10
+		prerequisite = { focus = ICE_naval_airforce_r56 }
+		relative_position_id = ICE_airforce_r56
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		x = 1
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = QBC_naval_support_focus
+				bonus = 1
+				uses = 1
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_carrier_r56
+		icon = GFX_goal_generic_aircraft_carrier
+		cost = 5
+		prerequisite = { focus = ICE_naval_bomber_development_r56 }
+		prerequisite = { focus = ICE_fighting_ships_r56 }
+		relative_position_id = ICE_airforce_r56
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 2
+		y = 4
+		
+		completion_reward = {
+			air_experience = 5
+			navy_experience = 10
+		}
+	}
+
+	focus = {
+		id = ICE_independent_air_branch_r56
+		icon = GFX_goal_ICE_air_patrol
+		cost = 5
+		prerequisite = { focus = ICE_airforce_r56 }
+		relative_position_id = ICE_airforce_r56
+
+		mutually_exclusive = { focus = ICE_naval_airforce_r56 }
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -1
+		y = 1
+		
+		completion_reward = {
+			add_ideas = ICE_independent_air_idea
+		}
+	}
+
+	focus = {
+		id = ICE_fighter_development_r56
+		icon = GFX_goal_generic_air_fighter2_new
+		cost = 10
+		prerequisite = { focus = ICE_independent_air_branch_r56 focus = ICE_naval_airforce_r56 }
+		relative_position_id = ICE_airforce_r56
+
+		#mutually_exclusive = { focus = ICE_naval_airforce_r56 }
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = 0
+		y = 2
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_bomber_development_r56
+		icon = GFX_goal_generic_air_bomber_new
+		cost = 10
+		prerequisite = { focus = ICE_independent_air_branch_r56 }
+		relative_position_id = ICE_airforce_r56
+
+		#mutually_exclusive = { focus = ICE_naval_airforce_r56 }
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -2
+		y = 2
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = ICE_bomber_development_r56
+				bonus = 1
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_jet_development_r56
+		icon = GFX_goal_generic_air_jet_new
+		cost = 10
+		prerequisite = { focus = ICE_bomber_development_r56 }
+		prerequisite = { focus = ICE_fighter_development_r56 }
+		relative_position_id = ICE_airforce_r56
+
+		#mutually_exclusive = { focus = ICE_naval_airforce_r56 }
+
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		x = -1
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_research
+				bonus = 1
+				uses = 1
+				category = jet_technology
+			}
+		}
+	}
+
+	focus = {
+		id = ICE_radar_development_r56
+		icon = GFX_goal_generic_radar2
+		cost = 5
+		prerequisite = { focus = ICE_airforce_r56 }
+		relative_position_id = ICE_airforce_r56
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		x = -3
+		y = 1
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = radar_focus
+				bonus = 1
+				uses = 1
+				category = radar_tech
+			}
+		}
+	}
 
 
 }

@@ -74,6 +74,7 @@ focus_tree = {
 			}
 		}
 	}
+
 	shortcut = {
 		name = GER_historical_path_shortcut
 		target = GER_remilitarize_the_rhineland
@@ -152,6 +153,7 @@ focus_tree = {
 				has_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier }
 			}
 		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL_CHARACTER }
 
 		completion_reward = {
@@ -1278,50 +1280,142 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
-			custom_effect_tooltip = GER_autobahn_tt
-			hidden_effect = {
-				64 = {
-					if = {
-						limit = { is_controlled_by = ROOT }
-						add_building_construction = {
-							type = infrastructure
-							level = 5
-							instant_build = yes
-						}
+			if = {
+				limit = {
+					64 = {
+						
+							infrastructure < 5
+											
 					}
-				}
-				59 = {
-					if = {
-						limit = { is_controlled_by = ROOT }
+					59 = {
 
-						add_building_construction = {
-							type = infrastructure
-							level = 5
-							instant_build = yes
+							infrastructure < 5 
+						
+					}
+					60 = {
+
+							infrastructure < 5 
+						
+					}
+					54 = {
+						
+							infrastructure < 5 
+						
+					}
+				}
+				custom_effect_tooltip = GER_autobahn_tt
+				hidden_effect = {
+					64 = {
+						if = {
+							limit = { is_controlled_by = ROOT }
+							add_building_construction = {
+								type = infrastructure
+								level = 5
+								instant_build = yes
+							}
+						}
+					}
+					59 = {
+						if = {
+							limit = { is_controlled_by = ROOT }
+
+							add_building_construction = {
+								type = infrastructure
+								level = 5
+								instant_build = yes
+							}
+						}
+					}
+					60 = {
+						if = {
+							limit = { is_controlled_by = ROOT }
+							add_building_construction = {
+								type = infrastructure
+								level = 5
+								instant_build = yes
+							}
+						}
+					}
+					54 = {
+						if = {
+							limit = { is_controlled_by = ROOT }
+							add_building_construction = {
+								type = infrastructure
+								level = 5
+								instant_build = yes
+							}
 						}
 					}
 				}
-				60 = {
-					if = {
-						limit = { is_controlled_by = ROOT }
+			}
+
+			else = {
+				custom_override_tooltip = {
+					tooltip = GER_autobahn_fallback_tt
+					random_core_state = {
+						limit = {
+							
+								infrastructure < 5
+							
+						}
 						add_building_construction = {
 							type = infrastructure
-							level = 5
+							level = 1
 							instant_build = yes
 						}
+						set_state_flag = GER_autobahn_built
 					}
-				}
-				54 = {
-					if = {
-						limit = { is_controlled_by = ROOT }
+					random_core_state = {
+						limit = {
+							
+								infrastructure < 5
+							
+							NOT = {
+								has_state_flag = GER_autobahn_built
+							}
+						}
 						add_building_construction = {
 							type = infrastructure
-							level = 5
+							level = 1
 							instant_build = yes
 						}
+						set_state_flag = GER_autobahn_built
+					}
+					random_core_state = {
+						limit = {
+							
+								infrastructure < 5
+							
+							NOT = {
+								has_state_flag = GER_autobahn_built
+							}
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+						set_state_flag = GER_autobahn_built
+					}
+					random_core_state = {
+						limit = {
+							
+								infrastructure < 5
+							
+							NOT = {
+								has_state_flag = GER_autobahn_built
+							}
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+						set_state_flag = GER_autobahn_built
 					}
 				}
-			}		
+			}
+					
 		}
 	}
 	
@@ -8461,105 +8555,110 @@ focus_tree = {
 				}
 			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = GER_carrier_variants_tt
-			if = { 
-				limit = {
-					NOT = {
-						has_tech = basic_ship_hull_carrier
-						has_tech = improved_ship_hull_carrier
-					}
+			if = {
+				limit = { 
+					has_dlc = "Man the Guns"
 				}
-				create_equipment_variant = {
-					name = "Graf Zeppelin Class"				
-					name_group = GER_CV_HISTORICAL
-					type = ship_hull_carrier_conversion_ca
-					modules = {
-						fixed_ship_deck_slot_1 = ship_deck_space
-						fixed_ship_deck_slot_2 = ship_deck_space
-						fixed_ship_anti_air_slot = ship_anti_air_1
-						fixed_ship_engine_slot = cruiser_ship_engine_2
-						fixed_ship_secondaries_slot = empty
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = GER_carrier_variants_tt
+				if = { 
+					limit = {
+						NOT = {
+							has_tech = basic_ship_hull_carrier
+							has_tech = improved_ship_hull_carrier
+						}
 					}
-					design_team = mio:GER_deutsche_werke_organization
-				}
-				add_equipment_production = { #You get a Converted Carrier
-					equipment = {
+					create_equipment_variant = {
+						name = "Graf Zeppelin"				
+						name_group = GER_CV_HISTORICAL
 						type = ship_hull_carrier_conversion_ca
-						creator = "GER"
-						version_name = "Graf Zeppelin Class"
+						modules = {
+							fixed_ship_deck_slot_1 = ship_deck_space
+							fixed_ship_deck_slot_2 = ship_deck_space
+							fixed_ship_anti_air_slot = ship_anti_air_1
+							fixed_ship_engine_slot = cruiser_ship_engine_2
+							fixed_ship_secondaries_slot = empty
+						}
+						design_team = mio:GER_deutsche_werke_organization
 					}
-					name = "Graf Zeppelin"
-					requested_factories = 1
-					progress = 0.3
-					amount = 1
-					industrial_manufacturer = mio:GER_deutsche_werke_organization
+					add_equipment_production = { #You get a Converted Carrier
+						equipment = {
+							type = ship_hull_carrier_conversion_ca
+							creator = "GER"
+							version_name = "Graf Zeppelin"
+						}
+						name = "Graf Zeppelin"
+						requested_factories = 1
+						progress = 0.3
+						amount = 1
+						industrial_manufacturer = mio:GER_deutsche_werke_organization
+					}
 				}
-			}
-			if = { 
-				limit = {
-					has_tech = basic_ship_hull_carrier
-					NOT = {
+				if = { 
+					limit = {
+						has_tech = basic_ship_hull_carrier
+						NOT = {
+							has_tech = improved_ship_hull_carrier
+						}
+					}
+					create_equipment_variant = {
+						name = "Graf Zeppelin"				
+						name_group = GER_CV_HISTORICAL
+						type = ship_hull_carrier_1
+						modules = {
+							fixed_ship_deck_slot_1 = ship_deck_space
+							fixed_ship_deck_slot_2 = ship_deck_space
+							fixed_ship_anti_air_slot = ship_anti_air_1
+							fixed_ship_engine_slot = carrier_ship_engine_2
+							fixed_ship_secondaries_slot = empty
+							front_1_custom_slot = ship_deck_space
+						}
+						design_team = mio:GER_deutsche_werke_organization
+					}		
+					add_equipment_production = {
+						equipment = {
+							type = ship_hull_carrier_1
+							creator = "GER"
+							version_name = "Graf Zeppelin"
+						}
+						name = "Graf Zeppelin"
+						requested_factories = 1
+						progress = 0.3
+						amount = 1
+						industrial_manufacturer = mio:GER_deutsche_werke_organization
+					}
+				}
+				if = { 
+					limit = {
 						has_tech = improved_ship_hull_carrier
 					}
-				}
-				create_equipment_variant = {
-					name = "Graf Zeppelin Class"				
-					name_group = GER_CV_HISTORICAL
-					type = ship_hull_carrier_1
-					modules = {
-						fixed_ship_deck_slot_1 = ship_deck_space
-						fixed_ship_deck_slot_2 = ship_deck_space
-						fixed_ship_anti_air_slot = ship_anti_air_1
-						fixed_ship_engine_slot = carrier_ship_engine_3
-						fixed_ship_secondaries_slot = empty
-						front_1_custom_slot = ship_deck_space
-					}
-					design_team = mio:GER_deutsche_werke_organization
-				}		
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_carrier_1
-						creator = "GER"
-						version_name = "Graf Zeppelin Class"
-					}
-					name = "Graf Zeppelin"
-					requested_factories = 1
-					progress = 0.3
-					amount = 1
-					industrial_manufacturer = mio:GER_deutsche_werke_organization
-				}
-			}
-			if = { 
-				limit = {
-					has_tech = improved_ship_hull_carrier
-				}
-				create_equipment_variant = {
-					name = "Graf Zeppelin Class"				
-					name_group = GER_CV_HISTORICAL
-					type = ship_hull_carrier_2
-					modules = {
-						fixed_ship_deck_slot_1 = ship_deck_space
-						fixed_ship_deck_slot_2 = ship_deck_space
-						fixed_ship_anti_air_slot = ship_anti_air_2
-						fixed_ship_engine_slot = carrier_ship_engine_2
-						fixed_ship_secondaries_slot = empty
-						front_1_custom_slot = ship_deck_space
-						mid_1_custom_slot = ship_deck_space
-					}
-					design_team = mio:GER_deutsche_werke_organization
-				}
-				add_equipment_production = {
-					equipment = {
+					create_equipment_variant = {
+						name = "Graf Zeppelin"				
+						name_group = GER_CV_HISTORICAL
 						type = ship_hull_carrier_2
-						creator = "GER"
-						version_name = "Graf Zeppelin Class"
+						modules = {
+							fixed_ship_deck_slot_1 = ship_deck_space
+							fixed_ship_deck_slot_2 = ship_deck_space
+							fixed_ship_anti_air_slot = ship_anti_air_2
+							fixed_ship_engine_slot = carrier_ship_engine_3
+							fixed_ship_secondaries_slot = empty
+							front_1_custom_slot = ship_deck_space
+							mid_1_custom_slot = ship_deck_space
+						}
+						design_team = mio:GER_deutsche_werke_organization
 					}
-					name = "Graf Zeppelin"
-					requested_factories = 1
-					progress = 0.3
-					amount = 1
-					industrial_manufacturer = mio:GER_deutsche_werke_organization
+					add_equipment_production = {
+						equipment = {
+							type = ship_hull_carrier_2
+							creator = "GER"
+							version_name = "Graf Zeppelin"
+						}
+						name = "Graf Zeppelin"
+						requested_factories = 1
+						progress = 0.3
+						amount = 1
+						industrial_manufacturer = mio:GER_deutsche_werke_organization
+					}
 				}
 			}
 
@@ -13034,6 +13133,15 @@ focus_tree = {
 							is_core_of = LIT
 						}
 					}
+					NOT = {
+						AND = {
+							tag = LIT
+							has_country_flag = cave_to_enemy_pressure_flag
+							NOT = {    #Appeased the wrong side
+								has_completed_focus = LIT_appease_soviets
+							}
+						}
+					}
 				}
 				display_individual_scopes = yes
 				every_controlled_state = {
@@ -13055,6 +13163,27 @@ focus_tree = {
 						target = PREV
 						generator = PREV.GER_baltic_target_states_array
 					}
+				}
+			}
+			if = {
+				limit = {
+					LIT = {
+						has_country_flag = cave_to_enemy_pressure_flag
+						NOT = {    #Appeased the wrong side
+							has_completed_focus = LIT_appease_soviets
+						}
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				set_global_flag = GER_wishes_to_puppet_lithuania_flag
+				custom_effect_tooltip = LIT_occupation_tt
+				LIT = {
+					# Germany demands we become their vassal
+					country_event = {
+						id = wuw_GER_realpolitik.7
+						hours = 6
+						random_hours = 12
+					}	
 				}
 			}
 		}
@@ -28568,8 +28697,10 @@ focus_tree = {
 			NOT = {
 				has_war_with = SOV
 				SOV = {
-					has_government = neutrality
-					has_government = fascism
+					OR = {
+						has_government = neutrality
+						has_government = fascism
+					}
 				}
 			}
 		}
@@ -28577,7 +28708,7 @@ focus_tree = {
 		bypass = {
 			OR = {
 				SOV = { is_subject = yes }
-				NOT = { country_exists = SOV }				
+				NOT = { country_exists = SOV }
 				is_in_faction_with = SOV
 				has_non_aggression_pact_with = SOV
 				AND = {

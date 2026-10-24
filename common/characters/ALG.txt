@@ -183,7 +183,7 @@ characters = {
 		}
 		corps_commander = {
 			traits = {
-				politically_connected aggressive_assaulter JAP_communist_sympathizer
+				politically_connected aggressive_assaulter communist_sympathizer
 			}
 			skill = 1
 			attack_skill = 1
@@ -228,7 +228,7 @@ characters = {
 			traits = {
 				politically_connected
 				trait_reckless
-				JAP_communist_sympathizer
+				communist_sympathizer
 			}
 			skill = 1
 			attack_skill = 2

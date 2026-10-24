@@ -401,26 +401,55 @@ FRA_vichy_france = {
 					# transfer states to Free France if controlled by Free france
 					ROOT  = {
 						every_owned_state = {
-							if = {
+							limit = { is_controlled_by = PREV.PREV }
+							transfer_state_to = GER.transfer_target
+						}
+					}
+					# transfer non-core states to Free France if Germany does not have troops in them 
+					ROOT  = {
+						every_owned_state = {
+							limit = { 
+								NOT = { is_core_of = FRA }
+								is_controlled_by_ROOT_or_ally = yes 
+							}
+							set_variable = { GER.state_to_target = THIS}
+							IF = {
 								limit = {
-									OR = {
-										is_controlled_by = PREV.PREV
-										controller = {	#r56: or an ally of Free France
-											is_ally_with = PREV.PREV.PREV
+									GER = {
+										divisions_in_state = {
+											state = GER.state_to_target
+											size < 1
+										}
+										NOT = {
+											any_allied_country = {
+												NOT = { tag = ROOT }
+												divisions_in_state = {
+													state = GER.state_to_target
+													size > 0
+												}
+											}
 										}
 									}
 								}
 								transfer_state_to = GER.transfer_target
 							}
-							else_if = {	#r56 - greatly condensed code that sets ownership of all colonial states to free France, instead of messing with control as well
-								limit = {
-									NOT = { is_core_of = FRA }
-								}
-								set_state_owner_to = GER.transfer_target
-							}
 						}
 					}
 				}
+
+				every_country = {
+					limit = {
+						is_subject_of = ROOT 
+					}
+					GER = {
+						puppet = {
+						    target = PREV
+						    end_wars = no
+						    end_civil_wars = no 
+						}
+					}
+				}
+
 				GER = { annex_country = { target = ROOT } }
 			}
 
@@ -445,15 +474,11 @@ FRA_vichy_france = {
 	}
 	FRA_demand_unification_with_vichy = {
 		available = {
-			any_other_country = {
-				tag = VIC #tag alias, does not work as proper scope? TODO_GABRIEL recheck
-				exists = yes
-				NOT = {
-					has_war_with = ROOT
-				}
+			country_exists = VIC
+			VIC = {
+				FRA_vichy_can_rejoin_free_france = yes
 			}
 			controls_state = 16 #Paris
-			is_government_in_exile = no		#just taking Paris won't do it
 		}
 
 		visible = {
@@ -463,7 +488,7 @@ FRA_vichy_france = {
 			country_exists = VIC
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		cost = 0
 		fire_only_once = yes
@@ -479,21 +504,22 @@ FRA_vichy_france = {
 	FRA_failsafe_join_axis = {
 		available = {
 			tag = VIC
-			any_state = {
-				NOT = { #algeria
-					state = 459
-					state = 460
-					state = 513
-					state = 933
-				}
-				is_core_of = FRA
-				is_controlled_by = FRA #Free France has taken back some territory on the mainland
-			}
 			NOT = {
 				has_war_with = GER
 				is_in_faction_with = GER
 			}
 			date > 1942.6.1
+			FRA = {
+				any_controlled_state = {
+					NOT = { #algeria
+						state = 459
+						state = 460
+						state = 513
+						state = 933
+					}
+					is_core_of = FRA
+				}
+			}
 		}
 		visible = {
 			is_ai = yes #if you are not a member of the dev team - avert thy eyes, traveller, for thou hath gazed upon my shame
@@ -550,6 +576,7 @@ category_test_decisions = {
 						OR = {
 							state = 735
 							state = 21
+							state = 851
 							state = 32
 							state = 20
 							state = 26
@@ -594,7 +621,7 @@ category_test_decisions = {
 						character = FRA_philippe_petain
 					}
 				}
-				FRA_philippe_petain = {
+				FRA_philippe_petain= {
 					add_country_leader_role = {
 						promote_leader = yes
 						country_leader = { 
@@ -606,7 +633,7 @@ category_test_decisions = {
 						}
 					}
 				}
-				set_country_flag = is_vichy_france
+				set_cosmetic_tag = FRA_VICHY
 				add_ideas = FRA_occupation_costs_4
 				load_focus_tree = vichy_french_focus
 				FRA = {
@@ -619,6 +646,8 @@ category_test_decisions = {
 						air_ratio = 1.0
 					}
 				}
+				event_target:france_vichy = {set_country_flag  = is_vichy_france}
+				
 				change_tag_from = FRA
 			}
 		}
@@ -629,7 +658,7 @@ FRA_weapons_purchases_category = {
 	FRA_order_weapons_in_USA = {
 	icon = generic_prepare_civil_war
 		available = {
-
+			
 		}
 		visible = {
 			USA_can_sell_weapons_trigger = yes
@@ -645,7 +674,7 @@ FRA_weapons_purchases_category = {
 				factor = 50
 			}
 			modifier = {
-				has_manpower < 10000
+				has_manpower < 10000 
 				factor = 0 #need to up conscription laws
 			}
 		}
@@ -660,6 +689,16 @@ FRA_weapons_purchases_category = {
 				producer = USA
 				amount = 2500
 			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 500
+					equipment_type = infantry_equipment
+					seller_tags = { USA } 
+				}
+			}
 			USA = {
 				add_offsite_building = { type = industrial_complex level = -2 }
 			}
@@ -668,7 +707,7 @@ FRA_weapons_purchases_category = {
 	FRA_order_artillery_in_USA = {
 		icon = ger_military_buildup
 		available = {
-
+			
 		}
 		visible = {
 			USA_can_sell_weapons_trigger = yes
@@ -684,13 +723,13 @@ FRA_weapons_purchases_category = {
 				factor = 50
 			}
 			modifier = {
-				has_manpower < 10000
+				has_manpower < 10000 
 				factor = 0 #need to up conscription laws
 			}
 		}
 		complete_effect = {
 			USA = {
-				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = industrial_complex level = 3 }
 			}
 		}
 		remove_effect = {
@@ -699,13 +738,26 @@ FRA_weapons_purchases_category = {
 				producer = USA
 				amount = 100
 			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 250
+					equipment_type = artillery_equipment
+					seller_tags = { USA } 
+				}
+			}
 			USA = {
-				add_offsite_building = { type = industrial_complex level = -2 }
+				add_offsite_building = { type = industrial_complex level = -3 }
 			}
 		}
 	}
 	FRA_order_tanks_in_USA = {
-		icon = generic_tank
+		icon = GFX_decision_generic_tank
+		available = {
+			
+		}
 		visible = {
 			USA_can_sell_weapons_trigger = yes
 		}
@@ -715,12 +767,12 @@ FRA_weapons_purchases_category = {
 			factor = 1
 			modifier = {
 				has_equipment = {
-					light_tank_chassis < 10
+					light_tank_chassis < 50
 				}
 				factor = 5
 			}
 			modifier = {
-				has_manpower < 10000
+				has_manpower < 10000 
 				factor = 0 #need to up conscription laws
 			}
 		}
@@ -740,6 +792,35 @@ FRA_weapons_purchases_category = {
 							has_tech = basic_light_tank_chassis
 						}
 						NOT = { 
+							OR = {
+								has_tech = basic_medium_tank 
+								has_tech = improved_medium_tank #needed because basic can be bypassed
+								has_tech = basic_medium_tank_chassis
+								has_tech = improved_medium_tank_chassis
+							}
+						}
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis
+					amount = 50
+					producer = USA
+				}
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+					}
+					add_equipment_subsidy = {
+						cic = 500
+						equipment_type = light_tank_chassis
+						seller_tags = { USA } 
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					USA = {
+						OR = {
 							has_tech = basic_medium_tank 
 							has_tech = improved_medium_tank #needed because basic can be bypassed
 							has_tech = basic_medium_tank_chassis
@@ -748,26 +829,19 @@ FRA_weapons_purchases_category = {
 					}
 				}
 				add_equipment_to_stockpile = {
-					type = light_tank_chassis
-					producer = USA
-					amount = 50
-				}
-			}
-			else_if = {
-				limit = {
-					USA = {
-						OR = {
-							has_tech = basic_medium_tank
-							has_tech = improved_medium_tank #needed because basic can be bypassed
-							has_tech = basic_medium_tank_chassis
-							has_tech = improved_medium_tank_chassis
-						}
-					}
-				}
-				add_equipment_to_stockpile = {
 					type = medium_tank_chassis
-					producer = USA
 					amount = 50
+					producer = USA
+				}
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+					}
+					add_equipment_subsidy = {
+						cic = 500
+						equipment_type = medium_tank_chassis
+						seller_tags = { USA } 
+					}
 				}
 			}
 			USA = {
@@ -778,7 +852,7 @@ FRA_weapons_purchases_category = {
 	FRA_order_fighters_in_USA = {
 		icon = generic_air
 		available = {
-
+			
 		}
 		visible = {
 			OR = {
@@ -798,7 +872,7 @@ FRA_weapons_purchases_category = {
 				factor = 5
 			}
 			modifier = {
-				has_manpower < 10000
+				has_manpower < 10000 
 				factor = 0 #need to up conscription laws
 			}
 		}
@@ -810,10 +884,33 @@ FRA_weapons_purchases_category = {
 			}
 		}
 		remove_effect = {
-			add_equipment_to_stockpile = {
-				type = small_plane_airframe
-				producer = USA
-				amount = 50
+			if = {
+				limit = {
+					NOT = { has_dlc = "By Blood Alone" }
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_1
+					amount = 50
+					producer = USA
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = small_plane_airframe_1
+					amount = 50
+					producer = USA
+					variant_name = "P-36A"
+				}	
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 500
+					equipment_type = small_plane_airframe
+					seller_tags = { USA } 
+				}
 			}
 			USA = {
 				add_offsite_building = { type = industrial_complex level = -5 }
@@ -823,7 +920,7 @@ FRA_weapons_purchases_category = {
 	FRA_order_bombers_in_USA = {
 		icon = generic_air
 		available = {
-
+			
 		}
 		visible = {
 			OR = {
@@ -838,17 +935,17 @@ FRA_weapons_purchases_category = {
 			factor = 1
 			modifier = {
 				has_equipment = {
-					tac_bomber_equipment < 1
+					medium_plane_airframe < 1
 				}
 				factor = 5
 			}
 			modifier = {
-				has_manpower < 10000
+				has_manpower < 10000 
 				factor = 0 #need to up conscription laws
 			}
 		}
 		modifier = {
-
+			
 		}
 		complete_effect = {
 			USA = {
@@ -856,10 +953,33 @@ FRA_weapons_purchases_category = {
 			}
 		}
 		remove_effect = {
-			add_equipment_to_stockpile = {
-				type = medium_plane_airframe
-				producer = USA
-				amount = 25
+			if = {
+				limit = {
+					NOT = { has_dlc = "By Blood Alone" }
+				}
+				add_equipment_to_stockpile = {
+					type = tac_bomber_equipment_1
+					amount = 25
+					producer = USA
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = medium_plane_airframe_1
+					amount = 25
+					producer = USA
+					variant_name = "B-18"
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 500
+					equipment_type = medium_plane_airframe
+					seller_tags = { USA } 
+				}
 			}
 			USA = {
 				add_offsite_building = { type = industrial_complex level = -5 }
@@ -879,11 +999,9 @@ FRA_spanish_intervention_category = {
 		target_trigger = {
 			FROM = {
 				exists = yes
-				not = {
-					OR = {
-						has_country_flag = FRA_non_intervention_agreed
-						has_country_flag = FRA_non_intervention_refused
-					}
+				NOT = { 
+					has_country_flag = FRA_non_intervention_agreed 
+					has_country_flag = FRA_non_intervention_refused
 				}
 				capital_scope = {
 					is_on_continent = europe
@@ -897,6 +1015,7 @@ FRA_spanish_intervention_category = {
 			has_country_flag = FRA_non_intervention	
 		}
 		cost = 25
+		fire_only_once = yes
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -927,8 +1046,8 @@ FRA_spanish_intervention_category = {
 			}
 		}
 
-		complete_effect = {
-			set_country_flag = FRA_non_military_aid_allowed
+		complete_effect = { 
+			set_country_flag = FRA_non_military_aid_allowed 
 			clr_country_flag = FRA_non_intervention
 			custom_effect_tooltip = FRA_non_military_aid_tt
 			unlock_decision_tooltip = FRA_ban_non_military_aid
@@ -936,7 +1055,7 @@ FRA_spanish_intervention_category = {
 
 		cost = 25
 		ai_will_do = {
-			factor = 1
+			factor = 1.5
 			modifier = {
 				has_stability < 0.3
 				factor = 0
@@ -953,8 +1072,8 @@ FRA_spanish_intervention_category = {
 
 		visible = { has_country_flag = FRA_non_military_aid_allowed }
 
-		complete_effect = {
-			clr_country_flag = FRA_non_military_aid_allowed
+		complete_effect = { 
+			clr_country_flag = FRA_non_military_aid_allowed 
 			set_country_flag = FRA_non_intervention
 		}
 
@@ -969,10 +1088,10 @@ FRA_spanish_intervention_category = {
 	}
 
 	FRA_send_non_military_aid_to_FROM = {
-		available = {
+		available = { 
 			has_equipment = {
 				support_equipment > 99
-			}
+			} 
 		}
 		icon = hol_draw_up_staff_plans
 		visible = { has_country_flag = FRA_non_military_aid_allowed }
@@ -988,7 +1107,7 @@ FRA_spanish_intervention_category = {
 			}
 		}
 		days_re_enable = 30
-		complete_effect = {
+		complete_effect = { 
 			send_equipment = {
 				type = support_equipment
 				amount = 100
@@ -1016,8 +1135,8 @@ FRA_spanish_intervention_category = {
 			}
 		}
 
-		complete_effect = {
-			set_country_flag = FRA_arms_purchases_allowed
+		complete_effect = { 
+			set_country_flag = FRA_arms_purchases_allowed 
 			clr_country_flag = FRA_non_intervention
 			custom_effect_tooltip = FRA_allow_arms_purchases_tt
 			unlock_decision_tooltip = FRA_ban_arms_purchases
@@ -1044,8 +1163,8 @@ FRA_spanish_intervention_category = {
 
 		visible = { has_country_flag = FRA_arms_purchases_allowed }
 
-		complete_effect = {
-			clr_country_flag = FRA_arms_purchases_allowed
+		complete_effect = { 
+			clr_country_flag = FRA_arms_purchases_allowed 
 			set_country_flag = FRA_non_intervention
 		}
 
@@ -1071,8 +1190,8 @@ FRA_spanish_intervention_category = {
 			}
 		}
 
-		complete_effect = {
-			set_country_flag = FRA_sending_weapons_allowed
+		complete_effect = { 
+			set_country_flag = FRA_sending_weapons_allowed 
 			clr_country_flag = FRA_non_intervention
 			unlock_decision_tooltip = FRA_ban_sending_weapons
 		}
@@ -1083,6 +1202,7 @@ FRA_spanish_intervention_category = {
 			stability_factor = -0.15
 			war_support_factor = 0.075
 			lend_lease_tension = -1
+			request_lease_tension = -1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1098,8 +1218,8 @@ FRA_spanish_intervention_category = {
 
 		visible = { has_country_flag = FRA_sending_weapons_allowed }
 
-		complete_effect = {
-			clr_country_flag = FRA_sending_weapons_allowed
+		complete_effect = { 
+			clr_country_flag = FRA_sending_weapons_allowed 
 		}
 
 		cost = 0
@@ -1124,8 +1244,8 @@ FRA_spanish_intervention_category = {
 			}
 		}
 
-		complete_effect = {
-			set_country_flag = FRA_volunteer_work_allowed
+		complete_effect = { 
+			set_country_flag = FRA_volunteer_work_allowed 
 			clr_country_flag = FRA_non_intervention
 			unlock_decision_tooltip = FRA_ban_volunteer_work
 			every_other_country = {
@@ -1164,8 +1284,8 @@ FRA_spanish_intervention_category = {
 
 		visible = { has_country_flag = FRA_volunteer_work_allowed }
 
-		complete_effect = {
-			clr_country_flag = FRA_volunteer_work_allowed
+		complete_effect = { 
+			clr_country_flag = FRA_volunteer_work_allowed 
 		}
 		ai_will_do = {
 			factor = 0
@@ -1188,8 +1308,8 @@ FRA_spanish_intervention_category = {
 			}
 		}
 
-		complete_effect = {
-			set_country_flag = FRA_covert_intervention_allowed
+		complete_effect = { 
+			set_country_flag = FRA_covert_intervention_allowed 
 			clr_country_flag = FRA_non_intervention
 			set_rule = { can_send_volunteers = yes }
 		}
@@ -1215,7 +1335,7 @@ FRA_spanish_intervention_category = {
 	}
 
 	FRA_ban_covert_intervention = {
-		available = {
+		available = { 
 			NOT = {
 				any_other_country = {
 					has_volunteers_amount_from = {
@@ -1228,8 +1348,8 @@ FRA_spanish_intervention_category = {
 
 		visible = { has_country_flag = FRA_covert_intervention_allowed }
 
-		complete_effect = {
-			clr_country_flag = FRA_covert_intervention_allowed
+		complete_effect = { 
+			clr_country_flag = FRA_covert_intervention_allowed 
 			#recall_volunteers_from = SPR
 		}
 
@@ -1250,7 +1370,7 @@ FRA_spanish_intervention_category = {
 
 		targets = { SPD SPA SPC SPB SPR }
 
-		target_trigger = {
+		target_trigger = { 
 			FROM = {
 				original_tag = SPR
 				has_government = ROOT
@@ -1278,29 +1398,29 @@ FRA_spanish_intervention_category = {
 				limit = {
 					has_country_flag = FRA_covert_intervention_allowed
 				}
-				clr_country_flag = FRA_covert_intervention_allowed
+				clr_country_flag = FRA_covert_intervention_allowed 
 			}
 			if = {
 				limit = {
 					has_country_flag = FRA_volunteer_work_allowed
 				}
-				clr_country_flag = FRA_volunteer_work_allowed
+				clr_country_flag = FRA_volunteer_work_allowed 
 			}
 			if = {
 				limit = {
 					has_country_flag = FRA_sending_weapons_allowed
 				}
-				clr_country_flag = FRA_sending_weapons_allowed
+				clr_country_flag = FRA_sending_weapons_allowed 
 			}
-			if = {
+			if = { 
 				limit = { has_country_flag = FRA_non_military_aid_allowed }
 				clr_country_flag = FRA_non_military_aid_allowed
 			}
-			if = {
+			if = { 
 				limit = { has_country_flag = FRA_arms_purchases_allowed }
 				clr_country_flag = FRA_arms_purchases_allowed
 			}
-
+			
 		}
 
 		cost = 25
@@ -1315,6 +1435,7 @@ FRA_spanish_intervention_category = {
 				factor = 0
 			}
 		}
+		
 	}
 }
 economy_decisions = {
@@ -1330,7 +1451,7 @@ economy_decisions = {
 		cost = 50
 
 		ai_will_do = {
-			factor = 10
+			factor = 15
 			modifier = {
 				has_war = no
 				factor = 0
@@ -1339,15 +1460,11 @@ economy_decisions = {
 
 		complete_effect = {
 			if = {
-				limit = {
-					has_idea = FRA_matignon_agreements1
-				}
+				limit = { has_idea = FRA_matignon_agreements1 }
 				remove_ideas = FRA_matignon_agreements1
 			}
 			if = {
-				limit = {
-					has_idea = FRA_matignon_agreements2
-				}
+				limit = { has_idea = FRA_matignon_agreements2 }
 				remove_ideas = FRA_matignon_agreements2
 			}
 			if = {
@@ -1364,67 +1481,105 @@ economy_decisions = {
 
 		visible = { has_completed_focus = FRA_aircraft_manufacturer_nationalisation }
 
-		remove_effect = {
+		remove_effect = { 
 			set_country_flag = FRA_SNCAN_formed
 			random_owned_state = {
-				limit = {
+				limit = { 
 					OR = {
-						state = 29
-						state = 785
-						state = 15
+						state = 29 
+						state = 785 
+						state = 15 
 						state = 16
 					}
-					is_fully_controlled_by = ROOT
+					is_fully_controlled_by = ROOT 
 					free_building_slots = {
 						building = arms_factory
 						size > 0
 						include_locked = yes
 					}
 				}
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
 			}
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:FRA_amiot_organization = {
+					set_mio_name_key = SNCAN
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.05
+					
+				}
+				hidden_effect = {
+					mio:FRA_amiot_organization = {
+						set_mio_icon = GFX_idea_FRA_sncan
+					}
+				}
+
+			}
 		}
 		days_remove = 120
 		cost = 50
+		fire_only_once = yes
 		ai_will_do = {
 			factor = 5
 		}
-
+		
 	}
 	FRA_reorganize_aviation_industry_west = {
 		available = {  }
 
 		visible = { has_completed_focus = FRA_aircraft_manufacturer_nationalisation }
 
-		remove_effect = {
+		remove_effect = { 
 			set_country_flag = FRA_SNCAO_formed
 			random_owned_state = {
-				limit = {
+				limit = { 
 					OR = {
 						state = 30
 						state = 14
 						state = 23
 					}
-					is_fully_controlled_by = ROOT
+					is_fully_controlled_by = ROOT 
 					free_building_slots = {
 						building = arms_factory
 						size > 0
 						include_locked = yes
 					}
 				}
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
 			}
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:FRA_bloch_organization = {
+					set_mio_name_key = SNCAO
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.05
+					
+				}
+				hidden_effect = {
+					mio:FRA_bloch_organization = {
+						set_mio_icon = GFX_idea_FRA_sncao
+					}
+				}
+
+			}
 		}
 		days_remove = 120
 		cost = 50
+		fire_only_once = yes
 		ai_will_do = {
 			factor = 5
 		}
@@ -1434,10 +1589,10 @@ economy_decisions = {
 
 		visible = { has_completed_focus = FRA_aircraft_manufacturer_nationalisation }
 
-		remove_effect = {
+		remove_effect = { 
 			set_country_flag = FRA_SNCAC_formed
 			random_owned_state = {
-				limit = {
+				limit = { 
 					OR = {
 						state = 24
 						state = 33
@@ -1445,22 +1600,35 @@ economy_decisions = {
 						state = 26
 						state = 25
 					}
-					is_fully_controlled_by = ROOT
+					is_fully_controlled_by = ROOT 
 					free_building_slots = {
 						building = arms_factory
 						size > 0
 						include_locked = yes
 					}
 				}
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
 			}
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				custom_effect_tooltip = invites_mio_tt
+				show_mio_tooltip = FRA_SNCAC_organization
+				mio:FRA_SNCAC_organization = {
+					add_mio_size = 2
+					add_mio_funds_gain_factor = 0.05
+				}
+			}
 		}
 		days_remove = 120
 		cost = 50
+		fire_only_once = yes
 		ai_will_do = {
 			factor = 5
 		}
@@ -1470,32 +1638,52 @@ economy_decisions = {
 
 		visible = { has_completed_focus = FRA_aircraft_manufacturer_nationalisation }
 
-		remove_effect = {
+		remove_effect = { 
 			set_country_flag = FRA_SNCASE_formed
 			random_owned_state = {
-				limit = {
+				limit = { 
 					OR = {
 						state = 735
 						state = 32
 						state = 20
 						state = 21
+						state = 851
 					}
-					is_fully_controlled_by = ROOT
+					is_fully_controlled_by = ROOT 
 					free_building_slots = {
 						building = arms_factory
 						size > 0
 						include_locked = yes
 					}
 				}
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
 			}
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:FRA_morane_saulnier_organization = {
+					set_mio_name_key = SNCASE
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.05
+					
+				}
+				hidden_effect = {
+					mio:FRA_morane_saulnier_organization = {
+						set_mio_icon = GFX_idea_FRA_sncase
+					}
+				}
+
+			}
 		}
 		days_remove = 120
 		cost = 50
+		fire_only_once = yes
 		ai_will_do = {
 			factor = 5
 		}
@@ -1505,35 +1693,54 @@ economy_decisions = {
 
 		visible = { has_completed_focus = FRA_aircraft_manufacturer_nationalisation }
 
-		remove_effect = {
+		remove_effect = { 
 			set_country_flag = FRA_SNCASO_formed
 			random_owned_state = {
-				limit = {
+				limit = { 
 					OR = {
 						state = 22
 						state = 31
 						state = 19
 						state = 25
 					}
-					is_fully_controlled_by = ROOT
+					is_fully_controlled_by = ROOT 
 					free_building_slots = {
 						building = arms_factory
 						size > 0
 						include_locked = yes
 					}
 				}
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
 			}
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:FRA_levasseur_organization = {
+					set_mio_name_key = SNCASO
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.05
+				}
+				hidden_effect = {
+					mio:FRA_levasseur_organization = {
+						set_mio_icon = GFX_idea_FRA_sncaso
+					}
+				}
+
+			}
 		}
 		days_remove = 120
 		cost = 50
+		fire_only_once = yes
 		ai_will_do = {
 			factor = 5
 		}
+
 	}
 }
 #political_actions = {
@@ -1657,7 +1864,7 @@ VIC_concessions_to_the_germans = {
 	}
 	VIC_send_guest_workers = {
 		available = {
-
+			
 		}
 		visible = { has_any_occupation_cost_trigger = yes }
 		cancel_trigger = {
@@ -1694,7 +1901,7 @@ VIC_concessions_to_the_germans = {
 		available = {
 			has_country_flag = VIC_send_guest_workers
 		}
-		visible = {
+		visible = { 
 		 	has_country_flag = VIC_send_guest_workers
 		}
 		cost = 0
@@ -1725,19 +1932,19 @@ VIC_concessions_to_the_germans = {
 			}
 			clr_country_flag = VIC_send_guest_workers
 		}
-	}
+	}	
 }
 FRA_intervention_in_overseas_territories = {
 	FRA_promise_independence_to_north_africa = {
-		available = {
+		available = { 
 			NOT = {
 				FRA_controls_north_africa = yes
 			}
-		}
+		} 
 
 		visible = { has_completed_focus = FRA_intervention_in_north_africa }
 
-		complete_effect = {
+		complete_effect = { 
 			set_country_flag = FRA_north_africa_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
@@ -1773,22 +1980,22 @@ FRA_intervention_in_overseas_territories = {
 		}
 	}
 	FRA_prepare_coup_in_north_africa = {
-		available = {
+		available = { 
 			NOT = {
 				FRA_controls_north_africa = yes
 			}
 			has_intelligence_agency = yes
+		} 
+
+		visible = { 
+			has_completed_focus = FRA_intervention_in_north_africa 
 		}
 
-		visible = {
-			has_completed_focus = FRA_intervention_in_north_africa
-		}
-
-		complete_effect = {
+		complete_effect = { 
 			set_country_flag = FRA_coup_in_north_africa_flag
 			custom_effect_tooltip = FRA_prepare_coup_tt
-
-
+			
+			
 		}
 		fire_only_once = yes
 		cost = 25
@@ -1797,22 +2004,22 @@ FRA_intervention_in_overseas_territories = {
 		}
 	}
 	FRA_promise_independence_to_syria = {
-		available = {
+		available = { 
 			NOT = {
 				FRA_controls_syria = yes
-			}
-		}
+			} 
+		} 
 
 		visible = {
-			has_completed_focus = FRA_intervention_in_syria
+			has_completed_focus = FRA_intervention_in_syria 
 			NOT = {
 				FRA_controls_syria = yes
 			}
 		}
 
+		
 
-
-		complete_effect = {
+		complete_effect = { 
 			set_country_flag = FRA_syria_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
@@ -1840,28 +2047,28 @@ FRA_intervention_in_overseas_territories = {
 		ai_will_do = {
 			factor = 3
 		}
-
+		
 	}
 	FRA_prepare_coup_in_syria = {
-		available = {
+		available = { 
 			NOT = {
 				FRA_controls_syria = yes
 			}
 			has_intelligence_agency = yes
-		}
+		} 
 
-		visible = {
-			has_completed_focus = FRA_intervention_in_syria
+		visible = { 
+			has_completed_focus = FRA_intervention_in_syria 
 			NOT = {
 				FRA_controls_syria = yes
 			}
 		}
 
-		complete_effect = {
+		complete_effect = { 
 			custom_effect_tooltip = FRA_prepare_coup_tt
 			set_country_flag = FRA_coup_in_syria_flag
 		}
-
+		
 		fire_only_once = yes
 		cost = 25
 		ai_will_do = {
@@ -1869,16 +2076,17 @@ FRA_intervention_in_overseas_territories = {
 		}
 	}
 	FRA_invasion_in_syria = {
-		available = {
+		available = { 
 			NOT = {
 				FRA_controls_syria = yes
 			}
-			any_state = {
-				OR = {
-					state = 680
-					state = 677
-					state = 554
-					state = 553
+			any_state_of = {
+				target = {680 677 554 553}
+				
+				CONTROLLER = {
+					NOT = {
+						has_war_with = ROOT
+					}
 				}
 				any_neighbor_state = {
 					CONTROLLER = {
@@ -1889,13 +2097,11 @@ FRA_intervention_in_overseas_territories = {
 					}
 				}
 			}
-		}
+		} 
 
 		visible = { has_completed_focus = FRA_intervention_in_syria }
 
-
-
-		complete_effect = {
+		complete_effect = { 
 			random_state = { #find a neighbouring state of Syria that is controlled by an ally or ourselves
 				limit = {
 					OR = {
@@ -1905,6 +2111,9 @@ FRA_intervention_in_overseas_territories = {
 						state = 553
 					}
 					not = { is_controlled_by = ROOT }
+					CONTROLLER = {
+						NOT = { has_war_with = ROOT }
+					}
 					any_neighbor_state = {
 						CONTROLLER = {
 							OR = {
@@ -1930,17 +2139,17 @@ FRA_intervention_in_overseas_territories = {
 			event_target:FRA_attacker_state = {
 				CONTROLLER = {
 					division_template = {
-						name = "Syria Intervention Force"
+						name = "Syria Intervention Force"	
 						division_names_group = FRA_INF_01
 						is_locked = yes
 						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 0 }		
+							infantry = { x = 0 y = 1 }		
 							infantry = { x = 0 y = 2 }
 
-							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 0 }		
 							infantry = { x = 1 y = 1 }
-							infantry = { x = 1 y = 2 }
+							infantry = { x = 1 y = 2 }		
 						}
 						support = {
 							engineer = { x = 0 y = 0 }
@@ -1949,15 +2158,15 @@ FRA_intervention_in_overseas_territories = {
 					}
 					event_target:FRA_attacker_state = { #set up attacker unit(s)
 						create_unit = {
-							division = "name = \"Gentforce 1\" division_template = \"Syria Intervention Force\" start_experience_factor = 0.5"
+							division = "name = \"Gentforce 1\" division_template = \"Syria Intervention Force\" start_experience_factor = 0.5"  
 							owner = PREV
 						}
 						create_unit = {
-							division = "name = \"Gentforce 2\" division_template = \"Syria Intervention Force\" start_experience_factor = 0.5"
+							division = "name = \"Gentforce 2\" division_template = \"Syria Intervention Force\" start_experience_factor = 0.5"  
 							owner = PREV
 						}
 						create_unit = {
-							division = "name = \"Gentforce 3\" division_template = \"Syria Intervention Force\" start_experience_factor = 0.5"
+							division = "name = \"Gentforce 3\" division_template = \"Syria Intervention Force\" start_experience_factor = 0.5"  
 							owner = PREV
 						}
 					}
@@ -1966,17 +2175,17 @@ FRA_intervention_in_overseas_territories = {
 			event_target:FRA_defender_state = { #set up defender unit(s)
 				CONTROLLER = {
 					division_template = {
-						name = "Syria Defense Force"
+						name = "Syria Defense Force" 	
 						division_names_group = FRA_INF_01
 						is_locked = yes
 						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 0 }		
+							infantry = { x = 0 y = 1 }		
 							infantry = { x = 0 y = 2 }
 
-							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 0 }		
 							infantry = { x = 1 y = 1 }
-							infantry = { x = 1 y = 2 }
+							infantry = { x = 1 y = 2 }		
 						}
 						support = {
 							engineer = { x = 0 y = 0 }
@@ -1985,7 +2194,7 @@ FRA_intervention_in_overseas_territories = {
 					}
 					event_target:FRA_defender_state = { #set up defenders
 						create_unit = {
-							division = "name = \"Syria Defense Force 1\" division_template = \"Syria Defense Force\" start_experience_factor = 0.5"
+							division = "name = \"Syria Defense Force 1\" division_template = \"Syria Defense Force\" start_experience_factor = 0.5"  
 							owner = PREV
 						}
 					}
@@ -2019,20 +2228,20 @@ FRA_intervention_in_overseas_territories = {
 		ai_will_do = {
 			factor = 5
 		}
-
+		
 	}
 	FRA_promise_independence_to_indochina = {
-		available = {
+		available = {  
 			NOT = {
 				FRA_controls_indochina = yes
 			}
-		}
+		} 
 
 		visible = { has_completed_focus = FRA_intervention_in_indochina }
 
+		
 
-
-		complete_effect = {
+		complete_effect = { 
 			set_country_flag = FRA_indochina_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
@@ -2067,18 +2276,18 @@ FRA_intervention_in_overseas_territories = {
 		}
 	}
 	FRA_prepare_coup_in_indochina = {
-		available = {
+		available = { 
 			NOT = {
 				FRA_controls_indochina = yes
 			}
 			has_intelligence_agency = yes
+		} 
+
+		visible = { 
+			has_completed_focus = FRA_intervention_in_indochina 
 		}
 
-		visible = {
-			has_completed_focus = FRA_intervention_in_indochina
-		}
-
-		complete_effect = {
+		complete_effect = { 
 			custom_effect_tooltip = FRA_prepare_coup_tt
 			set_country_flag = FRA_coup_in_indochina_flag
 		}
@@ -2089,7 +2298,7 @@ FRA_intervention_in_overseas_territories = {
 		}
 	}
 	FRA_invasion_in_indochina = {
-		available = {
+		available = { 
 			NOT = {
 				FRA_controls_indochina = yes
 			}
@@ -2113,12 +2322,12 @@ FRA_intervention_in_overseas_territories = {
 						}
 					}
 				}
-			}
-		}
+			} 
+		} 
 
 		visible = { has_completed_focus = FRA_intervention_in_indochina }
 
-		complete_effect = {
+		complete_effect = { 
 			random_state = { #find a neighbouring state of Syria that is controlled by an ally or ourselves
 				limit = {
 					OR = {
@@ -2133,6 +2342,9 @@ FRA_intervention_in_overseas_territories = {
 						state = 928
 					}
 					not = { is_controlled_by = ROOT }
+					CONTROLLER = {
+						NOT = { has_war_with = ROOT }
+					}
 					any_neighbor_state = {
 						CONTROLLER = {
 							OR = {
@@ -2257,9 +2469,9 @@ FRA_intervention_in_overseas_territories = {
 
 		visible = { has_completed_focus = FRA_intervention_in_central_africa }
 
+		
 
-
-		complete_effect = {
+		complete_effect = { 
 			set_country_flag = FRA_central_africa_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
@@ -2286,20 +2498,20 @@ FRA_intervention_in_overseas_territories = {
 		fire_only_once = yes
 		cost = 25
 		ai_will_do = {
-			factor = 3
+			factor = 4
 		}
-
+		
 	}
 	FRA_prepare_coup_in_central_africa = {
-		available = {
+		available = { 
 			NOT = {
 				FRA_controls_central_africa = yes
 			}
 			has_intelligence_agency = yes
-		}
+		} 
 
-		visible = {
-			has_completed_focus = FRA_intervention_in_central_africa
+		visible = { 
+			has_completed_focus = FRA_intervention_in_central_africa 
 		}
 
 		complete_effect = {
@@ -2314,7 +2526,7 @@ FRA_intervention_in_overseas_territories = {
 		}
 	}
 	FRA_invasion_in_central_africa = {
-		available = {
+		available = { 
 			NOT = {
 				FRA_controls_central_africa = yes
 			}
@@ -2334,12 +2546,12 @@ FRA_intervention_in_overseas_territories = {
 						}
 					}
 				}
-			}
-		}
+			} 
+		} 
 
 		visible = { has_completed_focus = FRA_intervention_in_central_africa }
 
-		complete_effect = {
+		complete_effect = { 
 			random_state = { #find a neighbouring state of Syria that is controlled by an ally or ourselves
 				limit = {
 					OR = {
@@ -2350,6 +2562,9 @@ FRA_intervention_in_overseas_territories = {
 						state = 774
 					}
 					not = { is_controlled_by = ROOT }
+					CONTROLLER = {
+						NOT = { has_war_with = ROOT }
+					}
 					any_neighbor_state = {
 						CONTROLLER = {
 							OR = {
@@ -2472,20 +2687,19 @@ FRA_intervention_in_overseas_territories = {
 		ai_will_do = {
 			factor = 0
 		}
-	}	
-	
+	}
 	FRA_promise_independence_to_west_africa = {
-		available = {
+		available = { 
 			NOT = {
 				FRA_controls_west_africa = yes
 			}
-		}
+		} 
 
 		visible = { has_completed_focus = FRA_intervention_in_west_africa }
 
+		
 
-
-		complete_effect = {
+		complete_effect = { 
 			set_country_flag = FRA_west_africa_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
@@ -2516,25 +2730,25 @@ FRA_intervention_in_overseas_territories = {
 		fire_only_once = yes
 		cost = 25
 		ai_will_do = {
-			factor = 3
+			factor = 4
 		}
 	}
 	FRA_prepare_coup_in_west_africa = {
-		available = {
+		available = { 
 			NOT = {
 				FRA_controls_west_africa = yes
 			}
 			has_intelligence_agency = yes
+		} 
+
+		visible = { 
+			has_completed_focus = FRA_intervention_in_west_africa 
 		}
 
-		visible = {
-			has_completed_focus = FRA_intervention_in_west_africa
-		}
-
-		complete_effect = {
+		complete_effect = { 
 			custom_effect_tooltip = FRA_prepare_coup_tt
 			set_country_flag = FRA_coup_in_west_africa_flag
-
+						
 		}
 		fire_only_once = yes
 		cost = 25
@@ -2543,7 +2757,7 @@ FRA_intervention_in_overseas_territories = {
 		}
 	}
 	FRA_invasion_in_west_africa = {
-		available = {
+		available = { 
 			NOT = {
 				FRA_controls_west_africa = yes
 			}
@@ -2567,12 +2781,12 @@ FRA_intervention_in_overseas_territories = {
 						}
 					}
 				}
-			}
-		}
+			} 
+		} 
 
 		visible = { has_completed_focus = FRA_intervention_in_west_africa }
 
-		complete_effect = {
+		complete_effect = { 
 			random_state = { #find a neighbouring state of Syria that is controlled by an ally or ourselves
 				limit = {
 					OR = {
@@ -2587,6 +2801,9 @@ FRA_intervention_in_overseas_territories = {
 						state = 777 	#Togo too
 					}
 					not = { is_controlled_by = ROOT }
+					CONTROLLER = {
+						NOT = { has_war_with = ROOT }
+					}
 					any_neighbor_state = {
 						CONTROLLER = {
 							OR = {
@@ -2711,7 +2928,7 @@ FRA_intervention_in_overseas_territories = {
 	}
 
 	FRA_promise_independence_to_madagascar = {
-		available = {
+		available = {  
 			NOT = {
 				543 = {
 					OR = {
@@ -2722,11 +2939,11 @@ FRA_intervention_in_overseas_territories = {
 					}
 				}
 			}
-		}
+		} 
 
 		visible = { has_completed_focus = FRA_intervention_in_madagascar }
 
-		complete_effect = {
+		complete_effect = { 
 			set_country_flag = FRA_madagascar_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
@@ -2743,11 +2960,11 @@ FRA_intervention_in_overseas_territories = {
 		fire_only_once = yes
 		cost = 25
 		ai_will_do = {
-			factor = 3
+			factor = 5
 		}
 	}
 	FRA_prepare_coup_in_madagascar = {
-		available = {
+		available = { 
 			NOT = {
 				543 = {
 					OR = {
@@ -2759,16 +2976,16 @@ FRA_intervention_in_overseas_territories = {
 				}
 			}
 			has_intelligence_agency = yes
-		}
+		} 
 
-		visible = {
+		visible = { 
 			has_completed_focus = FRA_intervention_in_madagascar
 		}
 
-		complete_effect = {
+		complete_effect = { 
 			custom_effect_tooltip = FRA_prepare_coup_tt
 			set_country_flag = FRA_coup_in_madagascar_flag
-
+			
 		}
 		fire_only_once = yes
 		cost = 25
@@ -2937,7 +3154,7 @@ FRA_decolonization = {
 			country_exists = GNA
 			country_exists = SEN
 			country_exists = MRT
-
+			
 		}
 
 		activation = {
@@ -2988,7 +3205,7 @@ FRA_decolonization = {
 			country_exists = CAR
 			country_exists = CMR
 			country_exists = CHA
-
+			
 		}
 
 		activation = {

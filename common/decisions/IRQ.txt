@@ -68,22 +68,28 @@ IRQ_arab_free_legion_cat = {
 					has_state_flag = IRQ_recruited_arab_legion_here
 				}
 			}
-			NOT = { has_country_flag = IRQ_recruiting_arab_legion }	
+			NOT = { has_country_flag = IRQ_recruiting_arab_legion }
+			
 		}
 
 		target_root_trigger = {
 			original_tag = IRQ
 		}
+
 		state_target = yes
 		targets = { 292 455 454 677 553 907 448 458 459 461 293 294	658 765 656 }
+
 	    target_trigger = {   
 	    }
+
 	    on_map_mode = map_and_decisions_view 
+
 		custom_cost_trigger = {
 			command_power > 24.9
-			has_equipment = { infantry_equipment > 1999 }
+			has_equipment = { infantry_equipment > 999 }
 		}
-		custom_cost_text = decision_cost_cp_25_ie_2000
+
+		custom_cost_text = decision_cost_cp_25_ie_1000
 		
 		fire_only_once = yes
 		days_remove = 30
@@ -92,7 +98,7 @@ IRQ_arab_free_legion_cat = {
 			add_command_power = -25
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
-				amount = -2000
+				amount = -1000
 			}
 			hidden_effect = {
 				set_country_flag = IRQ_recruiting_arab_legion
@@ -147,14 +153,14 @@ greater_iraq_decision_cat = {
 	        		is_core_of = LEB
 	        		is_core_of = PAL
 	        		is_core_of = JOR
-					state = 413
+	        		state = 413
 	        	}
 	        }
 	    }
 	    on_map_mode = map_and_decisions_view 
 	    cost = 50		
 		fire_only_once = yes
-		days_remove = 14
+		days_remove = 14 
 		complete_effect = {
 			hidden_effect = {
 				set_country_flag = { flag = IRQ_coring_state_in_progress value = 1 days = 31 }
@@ -275,6 +281,7 @@ hashemite_federation_cat = {
 				is_subject = no
 			}
 		}
+
 		available = {
 			NOT = { has_country_flag = IRQ_inviting_to_federation_in_progress }
 			FROM = {
@@ -302,21 +309,27 @@ hashemite_federation_cat = {
 				}
 			}
 		}
-	    on_map_mode = map_and_decisions_view 
+
+		on_map_mode = map_and_decisions_view
+
 		highlight_states = {
 			highlight_states_trigger = {
 				is_owned_and_controlled_by = FROM
 			}
 		}
+
 	    cost = 25
 		fire_only_once = yes
+
 		days_remove = 30
+
 		complete_effect = {
 			set_country_flag = { flag = IRQ_inviting_to_federation_in_progress value = 1 days = 31 }
 			FROM = {
 				set_country_flag = is_the_current_invitation_target_of_IRQ_hashemite_flag
 			}
 		}
+
 		remove_effect = {
 			hidden_effect = {
 				clr_country_flag = IRQ_inviting_to_federation_in_progress
@@ -338,6 +351,7 @@ hashemite_federation_cat = {
 		}
 
 		cancel_trigger = {
+
 			any_country = {
 				has_country_flag = is_the_current_invitation_target_of_IRQ_hashemite_flag
 				OR = {
@@ -346,6 +360,7 @@ hashemite_federation_cat = {
 					has_war_with = ROOT
 				}
 			}
+
 		}
 
 		cancel_effect = {
@@ -360,6 +375,7 @@ hashemite_federation_cat = {
 			}
 		}
 	}
+
 	IRQ_invite_to_federation_africa = {
 		icon = GFX_decision_infiltrate_state
 	
@@ -381,6 +397,7 @@ hashemite_federation_cat = {
 				is_subject = no
 			}
 		}
+
 		available = {
 			NOT = { has_country_flag = IRQ_inviting_to_federation_in_progress }
 			FROM = {
@@ -389,7 +406,8 @@ hashemite_federation_cat = {
 				}
 			}
 		}
-	    target_trigger = {
+
+		target_trigger = {
 			FROM = {
 				NOT = {
 					original_tag = ROOT
@@ -412,15 +430,18 @@ hashemite_federation_cat = {
 				is_owned_and_controlled_by = FROM
 			}
 		}
+
 		cost = 25
 		fire_only_once = yes
 		days_remove = 30
+
 		complete_effect = {
 			set_country_flag = { flag = IRQ_inviting_to_federation_in_progress value = 1 days = 31 }
 			FROM = {
 				set_country_flag = is_the_current_invitation_target_of_IRQ_hashemite_flag
 			}
 		}
+
 		remove_effect = {
 			hidden_effect = {
 				clr_country_flag = IRQ_inviting_to_federation_in_progress
@@ -763,4 +784,5 @@ KUR_syrian_border_skrimish_cat = {
 			}
 		}
 	}
+
 }

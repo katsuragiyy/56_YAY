@@ -1897,7 +1897,7 @@ characters={
 			expire="1965.1.1"
 			id=-1
 		}
-		name="RAJ_louis_mountbatten"
+		name=RAJ_louis_mountbatten
 		portraits={
 			army={
 				small="GFX_idea_generic_navy_europe_2"
@@ -1906,6 +1906,21 @@ characters={
 				large="gfx/leaders/RAJ/r56_portrait_RAJ_Luis_Mountbatten.dds"
 			}
 		}
+	}
+	RAJ_abdul_ghaffar_khan = {
+		name = RAJ_abdul_ghaffar_khan
+		portraits = {
+			civilian = {
+				large = GFX_portrait_RAJ_abdul_ghaffar_khan
+				small = GFX_portrait_RAJ_abdul_ghaffar_khan_small
+			}
+		}
+		#country_leader = {
+		#	ideology = despotism
+		#	traits = { RAJ_khudai_khidmatgar_leader }
+		#	expire = "1965.1.1.1"
+		#	id = -1
+		#}
 	}
 	RAJ_archibald_wavell={
 		advisor={
@@ -3061,7 +3076,25 @@ characters={
 				has_dlc = "Graveyard of Empires"
 			}
 			visible = {
-				has_country_flag = RAJ_industrialists_joined_eic 
+				OR = {
+					has_country_flag = RAJ_industrialists_joined_eic
+					has_completed_focus = RAJ_concessions_to_the_industrialists
+					RAJ_eic_branch_open = yes
+					NOT = {
+						has_completed_focus = RAJ_great_depression_price_controls
+						has_completed_focus = RAJ_provincial_autonomy
+						has_completed_focus = RAJ_empower_provincial_authorities
+					}
+				}
+			}
+			available = {
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = RAJ_industrialists_joined_eic_tt
+						has_country_flag = RAJ_industrialists_joined_eic
+					}
+					has_completed_focus = RAJ_concessions_to_the_industrialists
+				}
 			}
 			traits = {
 				motor_tycoon
@@ -3084,7 +3117,25 @@ characters={
 				has_dlc = "Graveyard of Empires"
 			}
 			visible = {
-				has_country_flag = RAJ_industrialists_joined_eic 
+				OR = {
+					has_country_flag = RAJ_industrialists_joined_eic
+					has_completed_focus = RAJ_concessions_to_the_industrialists
+					RAJ_eic_branch_open = yes
+					NOT = {
+						has_completed_focus = RAJ_great_depression_price_controls
+						has_completed_focus = RAJ_provincial_autonomy
+						has_completed_focus = RAJ_empower_provincial_authorities
+					}
+				}
+			}
+			available = {
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = RAJ_industrialists_joined_eic_tt
+						has_country_flag = RAJ_industrialists_joined_eic
+					}
+					has_completed_focus = RAJ_concessions_to_the_industrialists
+				}
 			}
 			traits = {
 				tata_chairman
@@ -3179,24 +3230,45 @@ characters={
 		}
 	}
 
-	RAJ_subbier_appadurai_ayer={
-		name="Subbier Appadurai Ayer"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_india_2"
+	RAJ_GOE_subbier_appadurai_ayer = {
+		name = RAJ_GOE_subbier_appadurai_ayer
+		portraits = {
+			civilian = {
+				small = GFX_portrait_RAJ_subbier_appadurai_ayer_small
 			}
 		}
-		advisor={
+		advisor = {
 			slot = political_advisor
-			idea_token = RAJ_subbier_appadurai_ayer
-			available = {
-				has_government = fascism
-			}
+			idea_token = RAJ_GOE_subbier_appadurai_ayer
 			allowed = {
 				original_tag = RAJ
+				has_dlc = "Graveyard of Empires"
+			}
+			visible = {
+				OR = {
+					has_completed_focus = RAJ_azad_hind_dlc_radio
+					RAJ_forward_bloc_branch_open = yes
+				}
+			}
+			available = {
+				has_completed_focus = RAJ_azad_hind_dlc_radio
+			}
+			on_add = {
+				hidden_effect = {
+					ROOT = {
+						set_country_flag = RAJ_GOE_ayer_in_cabinet
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					ROOT = {
+						clr_country_flag = RAJ_GOE_ayer_in_cabinet
+					}
+				}
 			}
 			traits = {
-				propaganda_expert
+				RAJ_GOE_minister_of_publicity_and_propaganda
 			}
 		}
 	}
@@ -3220,6 +3292,49 @@ characters={
 			}
 			traits = {
 				marxist_philosopher
+			}
+		}
+	}
+	RAJ_GOE_vallabhbhai_patel = {
+		name = RAJ_GOE_vallabhbhai_patel
+		portraits = {
+			civilian = {
+				small = GFX_portrait_RAJ_vallabhbhai_patel_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = RAJ_GOE_vallabhbhai_patel
+			allowed = {
+				original_tag = RAJ
+				has_dlc = "Graveyard of Empires"
+			}
+			visible = {
+				OR = {
+					has_completed_focus = RAJ_a_congress_resurgent
+					RAJ_gandhian_branch_open = yes
+				}
+			}
+			available = {
+				has_completed_focus = RAJ_a_congress_resurgent
+			}
+			on_add = {
+				ROOT = {
+					hidden_effect = {
+						set_country_flag = RAJ_GOE_patel_in_cabinet
+					}
+					RAJ_GOE_patel_partition_pressure_effect = yes
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					ROOT = {
+						clr_country_flag = RAJ_GOE_patel_in_cabinet
+					}
+				}
+			}
+			traits = {
+				RAJ_GOE_iron_man_of_india
 			}
 		}
 	}

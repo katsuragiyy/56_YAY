@@ -4,7 +4,6 @@
 
 add_namespace = AFG_industrial_events
 add_namespace = AFG_political_events
-add_namespace = AFG_royal_succession_events 
 
 #Offer oil concession deal to X
 country_event = {
@@ -1232,7 +1231,12 @@ country_event = {
 				factor = 0 
 				OR = {
 					has_war_with = FROM
-					is_subject = yes
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of = FROM
+						}
+					}
 				}
 			}
 			modifier = {
@@ -1261,6 +1265,10 @@ country_event = {
 		name = AFG_political_events.10.b
 		ai_chance = {
 			base = 5
+			modifier = {
+				factor = 0 
+				is_subject_of = FROM
+			}
 		}
 		FROM = {
 			country_event = {
@@ -1289,7 +1297,21 @@ country_event = {
 		ai_chance = {
 			base = 10
 		}
-		puppet = FROM
+		IF = {
+			limit = {
+				FROM = {
+					is_subject = no
+				}
+			}
+			puppet = FROM
+		}
+		ELSE = {
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}	
+		}
+		
 	}	
 }
 
@@ -1621,6 +1643,10 @@ country_event = {
 				id = FROM
 				value = 200
 			}
+			add_relation_rule_override = {
+				target = AFG
+				can_send_volunteers = yes 
+			}
 		}
 
 		FROM = {
@@ -1666,6 +1692,7 @@ country_event = {
 		ai_chance = {
 			base = 10
 		}
+
 	}
 }
 
@@ -1735,6 +1762,10 @@ country_event = {
 					type = send_volunteers_desire
 					id = ROOT
 					value = 300
+				}
+				add_relation_rule_override = {
+					target = AFG
+					can_send_volunteers = yes 
 				}
 			}
 		}
@@ -2429,6 +2460,10 @@ country_event = {
 			id = FROM
 			value = 200
 		}
+		add_relation_rule_override = {
+			target = AFG
+			can_send_volunteers = yes 
+		}
 	}
 	# Afghanistan is irrelevant
 	option = {
@@ -3033,7 +3068,7 @@ country_event = {
 		hidden_effect = {
 			AFG_mohammed_daoud_khan = { set_nationality = ROOT }
 		}
-
+		
 		add_country_leader_role = {
 		    character = AFG_mohammed_daoud_khan
 		    promote_leader = yes
@@ -3059,6 +3094,7 @@ country_event = {
 		hidden_effect = {
 			AFG_shah_mahmud_khan = { set_nationality = ROOT }
 		}
+		
 		add_country_leader_role = {
 		    character = AFG_shah_mahmud_khan
 		    promote_leader = yes
@@ -3084,6 +3120,7 @@ country_event = {
 		hidden_effect = {
 			AFG_muhammad_ibrahim_khan = { set_nationality = ROOT }
 		}
+		
 		add_country_leader_role = {
 		    character = AFG_muhammad_ibrahim_khan
 		    promote_leader = yes
@@ -3272,7 +3309,7 @@ country_event = {
 }
 
 
-#AFG requests GER Aid
+#AFG requests JAP Aid
 country_event = {
 	id = AFG_political_events.153
 	title = AFG_political_events.153.t
@@ -3301,6 +3338,10 @@ country_event = {
 				type = send_volunteers_desire
 				id = FROM
 				value = 200
+			}
+			add_relation_rule_override = {
+				target = AFG
+				can_send_volunteers = yes 
 			}
 		}
 
@@ -3334,7 +3375,7 @@ country_event = {
 	}
 }
 
-# Event for AFG if GER rejects
+# Event for AFG if JAP rejects
 country_event = {
 	id = AFG_political_events.154
 	title = AFG_political_events.154.t
@@ -3353,7 +3394,7 @@ country_event = {
 	}
 }
 
-# Event for AFG if GER accepts
+# Event for AFG if JAP accepts
 country_event = {
 	id = AFG_political_events.155
 	title = AFG_political_events.155.t
@@ -3403,6 +3444,10 @@ country_event = {
 				type = send_volunteers_desire
 				id = ROOT
 				value = 200
+			}
+			add_relation_rule_override = {
+				target = AFG
+				can_send_volunteers = yes 
 			}
 		}
 
@@ -3484,6 +3529,10 @@ country_event = {
 				type = send_volunteers_desire
 				id = FROM
 				value = 200
+			}
+			add_relation_rule_override = {
+				target = AFG
+				can_send_volunteers = yes 
 			}
 		}
 
@@ -3677,15 +3726,15 @@ country_event = {
 
 # Royal Succession Election Event
 country_event = {
-	id = AFG_royal_succession_events.01
-	title = AFG_royal_succession_events.01.t
-	desc = AFG_royal_succession_events.01.desc
+	id = AFG_political_events.173
+	title = AFG_political_events.173.t
+	desc = AFG_political_events.173.desc
 	picture = GFX_report_event_generic_sign_treaty2
 	is_triggered_only = yes
 	fire_only_once = yes
 	# Continuity - Sardar Shah Mahmud Khan
 	option = {
-		name = AFG_royal_succession_events.01.a
+		name = AFG_political_events.173.a
 		ai_chance = {
 			base = 7
 		}
@@ -3707,7 +3756,7 @@ country_event = {
 	}	
 	# Military - Sardar Shah Wali Khan 
 	option = {
-		name = AFG_royal_succession_events.01.b
+		name = AFG_political_events.173.b
 		ai_chance = {
 			base = 2
 		}
@@ -3726,7 +3775,7 @@ country_event = {
 	}
 	# Youth - Daod
 	option = {
-		name = AFG_royal_succession_events.01.c
+		name = AFG_political_events.173.c
 		ai_chance = {
 			base = 1
 		}

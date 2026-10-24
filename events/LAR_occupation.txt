@@ -7,8 +7,8 @@ country_event = {
 	title = occupied_countries.1.title
 	desc = occupied_countries.1.desc
 	
-	# todo lar
-	picture = GFX_report_event_canadian_soldiers
+	# Picture follows the continent of the occupied country's capital.
+	picture = [GetCollaborationGovernmentEventPicture]
 	
 	is_triggered_only = yes
 
@@ -46,6 +46,19 @@ country_event = {
 			base = 100
 		}
 	}
+
+	option = {
+		name = occupied_countries.1.c
+
+		custom_effect_tooltip = occupied_countries.1.c_tt
+		hidden_effect = {
+			set_country_flag = stop_collaboration_government_events
+		}
+
+		ai_chance = {
+			base = 0
+		}
+	}
 }
 
 
@@ -58,7 +71,6 @@ country_event = {
 	hidden = yes
 	
 	immediate = {
-				
 		FROM = {
 			if = {
 				limit = {
@@ -196,12 +208,16 @@ country_event = {
 						
 						set_temp_variable = { new_occupied_country = THIS }
 					}
-				}				
+				}
+				
+				
 				# change ideology if necessary
 				if = {
 					limit = { 
 						var:occupied_country = {
 							#only change ideology if we are not creating a new country and old country is not existing
+							NOT = { original_tag = DNZ } #Danzig should usually always be fascist
+							NOT = { original_tag = SOV } #Soviet Union should always be communist
 							OR = {
 								exists = no
 								NOT = { tag = new_occupied_country }
@@ -453,7 +469,7 @@ country_event = {
 					}
 				}
 			
-				# create war if necessary
+				# create war if necesarry
 				if = {
 					limit = { NOT = { has_war_with = new_occupied_country } }
 					declare_war_on = { target = new_occupied_country type = annex_everything }

@@ -17,6 +17,7 @@ division_template = {
 	}
 	support = {
 		artillery = { x = 0 y = 0 } 	# Heavy Arty Regiment had 2x 155mm battalions
+		engineer = { x = 0 y = 1 }
 	}
 }
 division_template = {
@@ -57,6 +58,7 @@ division_template = {
 	support = {
 		mot_recon = { x = 0 y = 0 }      # Recon Group consisted of 26 ACs + motorcycles
 		artillery = { x = 0 y = 1 }  # Heavy Arty Regiment had 1x 155mm, 1x 105mm battalions
+		engineer = { x = 0 y = 1 }
 	}
 }
 division_template = {
@@ -107,6 +109,7 @@ division_template = {
 	}
 	support = {
 		mot_recon = { x = 0 y = 0 }      # Recon Group consisted of 42 ACs + motorcycles
+		engineer = { x = 0 y = 1 }
 	}
 }
 division_template = {
@@ -155,7 +158,7 @@ units = {
 		location = 5291
 		division_template = "Division Coloniale"	 	# Second line, reserve equipment
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.45
+		start_equipment_factor = 0.5
 
 	}
 	division= {	
@@ -961,7 +964,6 @@ instant_effect = {
 		requested_factories = 1
 		progress = 0.3
 		efficiency = 50
-		
 	}
 
 	add_equipment_production = {
@@ -983,8 +985,7 @@ instant_effect = {
 		requested_factories = 1
 		progress = 0.4
 		efficiency = 50
-		industrial_manufacturer = mio:FRA_hotchkiss_organization
-		
+		industrial_manufacturer = mio:FRA_renault_organization
 	}
 
 	add_equipment_production = {

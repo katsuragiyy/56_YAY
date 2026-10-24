@@ -556,7 +556,43 @@ country_event = {
 			relation = non_aggression_pact
 			active = yes
 		}
-		FROM = { country_event = { id = wtt_japan.12 days = 1 } }
+
+		IF = {
+			limit = {
+				original_tag = CHI
+			}
+			add_opinion_modifier = {
+				target = FROM
+				modifier = trautmann_agreement_opm
+			}
+
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = trautmann_agreement_opm
+				}	
+			}
+		}
+		FROM = { 
+			country_event = { 
+				id = wtt_japan.12 
+				days = 1 
+			}
+			if = {
+				limit = {
+					original_tag = SOV
+				}
+				hidden_effect = {
+					PRC = {
+						country_event = { 
+							id = SEA_PRC_misc_events.12
+							days = 2
+						}
+					}
+				}
+			}
+		}
+
 	}
 
 
@@ -566,7 +602,14 @@ country_event = {
 		ai_chance = {
 			base = 0
 		}
-		FROM = { country_event = { id = wtt_japan.13 days = 1 } }	
+
+		FROM = { 
+			country_event = { 
+				id = wtt_japan.13 
+				days = 1 
+			} 
+		}	
+
 	}
 }
 
@@ -591,6 +634,24 @@ country_event = {
 				relation = non_aggression_pact
 				active = yes
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			IF = {
+				limit = {
+					FROM = {
+						original_tag = CHI
+					}
+				}
+				add_opinion_modifier = {
+					target = FROM
+					modifier = trautmann_agreement_opm
+				}
+				FROM = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = trautmann_agreement_opm
+					}	
+				}
+			}
 		}
 
 	}
@@ -609,6 +670,21 @@ country_event = {
 		name = wtt_japan.13.a
 		ai_chance = {
 			base = 10
+		}
+
+		hidden_effect = { ### Lets the northern focuses open again without waiting out the pact timer.
+			if = {
+				limit = {
+					FROM = { original_tag = SOV }
+				}
+				set_country_flag = JAP_soviet_japanese_neutrality_pact_refused_flag
+			}
+			else_if = {
+				limit = {
+					FROM = { original_tag = CHI }
+				}
+				set_country_flag = JAP_chinese_japanese_neutrality_pact_refused_flag
+			}
 		}
 	}
 
@@ -1024,7 +1100,8 @@ country_event = {
 		}
 
 		JAP = { country_event = { id = wtt_japan.105 days = 1 } }
-		"PHI" = { country_event = { id = wtt_japan.107 days = 1 } }
+		PHI = { country_event = { id = wtt_japan.107 days = 1 } }
+
 	}
 
 	# Never!
@@ -1980,7 +2057,12 @@ country_event = {
 			if = {
 				limit = {
 					524 = {
-						is_controlled_by = JAP
+						controller = {
+							OR = {
+								original_tag = JAP
+								is_ally_with = JAP
+							}
+						}
 					}
 				}
 				event_target:WTT_current_china_leader = {
@@ -2028,7 +2110,7 @@ country_event = {
 						is_in_faction_with = event_target:WTT_current_china_leader
 					}
 					white_peace = ROOT
-				
+					# 56
 					add_ai_strategy = {
 						type = support
 						id = ROOT
@@ -2111,7 +2193,7 @@ country_event = {
 		FROM = {
 			country_event = { id = wtt_japan.128 }
 		}
-		
+		# 56
 		ai_chance = { # If Japan has lots of major enemies, the AI will not make a separate peace
 			base = 10
 			modifier = {
@@ -2340,57 +2422,225 @@ country_event = {
 				target = PRC
 				days = 730
 			}
+			add_ai_strategy = {
+				type = antagonize
+				id = PRC
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = PRC
+			    value = -100
+			}
 			set_truce = {
 				target = CHI
 				days = 730
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = CHI
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = CHI
+			    value = -100
 			}
 			set_truce = {
 				target = XSM
 				days = 730
 			}
+			add_ai_strategy = {
+				type = antagonize
+				id = XSM
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = XSM
+			    value = -100
+			}
 			set_truce = {
 				target = SHX
 				days = 730
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = SHX
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = SHX
+			    value = -100
 			}
 			set_truce = {
 				target = GXC
 				days = 730
 			}
+			add_ai_strategy = {
+				type = antagonize
+				id = GXC
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = GXC
+			    value = -100
+			}
 			set_truce = {
 				target = YUN
 				days = 730
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = YUN
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = YUN
+			    value = -100
 			}
 			set_truce = {
 				target = SIK
 				days = 730
 			}
+			add_ai_strategy = {
+				type = antagonize
+				id = SIK
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = SIK
+			    value = -100
+			}
 			set_truce = {
 				target = XIC
 				days = 730
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = XIC
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = XIC
+			    value = -100
 			}
 			set_truce = {
 				target = SND
 				days = 730
 			}
+			add_ai_strategy = {
+				type = antagonize
+				id = SND
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = SND
+			    value = -100
+			}
 			set_truce = {
 				target = GDC
 				days = 730
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = GDC
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = GDC
+			    value = -100
 			}
 			set_truce = {
 				target = SIC
 				days = 730
 			}
+			add_ai_strategy = {
+				type = antagonize
+				id = SIC
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = SIC
+			    value = -100
+			}
 			set_truce = {
 				target = KHM
 				days = 730
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = KHM
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = KHM
+			    value = -100
 			}
 			set_truce = {
 				target = NXM
 				days = 730
 			}
+			add_ai_strategy = {
+				type = antagonize
+				id = NXM
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = NXM
+			    value = -100
+			}
 			set_truce = {
 				target = GSM
 				days = 730
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = GSM
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = GSM
+			    value = -100
+			}
+			set_truce = {
+				target = HBC
+				days = 730
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = HBC
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = HBC
+			    value = -100
+			}
+			set_truce = {
+				target = KUM
+				days = 730
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = KUM
+				value = -100
+			}
+			add_ai_strategy = {
+			    type = conquer
+			    id = KUM
+			    value = -100
 			}
 		}
 	}
@@ -2449,7 +2699,7 @@ country_event = {
 					transfer_state = 918
 					transfer_state = 919
 					transfer_state = 920
-				}				
+				}
 			}
 			if = {
 				limit = {
@@ -2614,16 +2864,16 @@ country_event = {
 		trigger = {
 			original_tag = JAP
 		}
-		add_tech_bonus = {
-			name = sov_jap_border_conflict_won
-			category = armor
-			bonus = 1.0
-		}
 		add_doctrine_cost_reduction = {
 			name = sov_jap_border_conflict_won
 			cost_reduction = 0.35
 			uses = 1
 			category = land_doctrine
+		}
+		add_tech_bonus = {
+			name = sov_jap_border_conflict_won
+			category = armor
+			bonus = 1.0
 		}
 		hidden_effect = {
 			#set_country_flag = JAP_did_the_border_war_flag
@@ -2689,7 +2939,7 @@ country_event = {
 		army_experience = 50
 	}
 	option = {
-		name = japan_border_conflict.3.b
+		name = japan_border_conflict.4.b
 		trigger = {
 			original_tag = SOV
 		}

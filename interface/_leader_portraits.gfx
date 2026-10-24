@@ -9281,6 +9281,7 @@ spriteType = {
 	spriteType = { name = "GFX_portrait_CZE_karel_schwarzenberg" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Karel_VI.dds" }
 	spriteType = { name = "GFX_portrait_CZE_lev_prchala" texturefile = "gfx/leaders/CZE/Portrait_Czech_Lev_Prchala.dds" }
 	spriteType = { name = "GFX_portrait_CZE_zdenko_hudecek" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Zdenko_Hudecek.dds" }
+	spriteType = { name = "GFX_portrait_CZE_milan_hodza" texturefile = "gfx/leaders/CZE/r56_portrait_CZE_Milan_Hodza.dds" }
 
 	# AST - TAOG
 	spriteType = { name = "GFX_portrait_AST_jack_miles" texturefile = "gfx/leaders/AST/r56_portrait_AST_JB_Miles.dds" }

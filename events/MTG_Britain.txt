@@ -1,4 +1,8 @@
-﻿add_namespace = mtg_britain 
+﻿###########################
+# ENG Events
+###########################
+
+add_namespace = mtg_britain 
 
 # Abdication Crisis Edward VIII
 country_event = {
@@ -44,9 +48,11 @@ country_event = {
 		name = mtg_britain.1.b
 		trigger = {
 			NOT = {
-				has_completed_focus = ENG_organize_the_blackshirts
-				has_completed_focus = ENG_concessions_to_the_trade_unions
-				has_completed_focus = ENG_steady_as_she_goes
+				OR = {
+					has_completed_focus = ENG_organize_the_blackshirts
+					has_completed_focus = ENG_concessions_to_the_trade_unions
+					has_completed_focus = ENG_steady_as_she_goes
+				}
 			}
 		}
 		ai_chance = {
@@ -121,9 +127,11 @@ country_event = {
 		name = mtg_britain.1.a
 		trigger = {
 			NOT = {
-				has_completed_focus = ENG_organize_the_blackshirts
-				has_completed_focus = ENG_concessions_to_the_trade_unions
-				has_completed_focus = ENG_steady_as_she_goes
+				OR = {
+					has_completed_focus = ENG_organize_the_blackshirts
+					has_completed_focus = ENG_concessions_to_the_trade_unions
+					has_completed_focus = ENG_steady_as_she_goes
+				}
 			}
 		}
 		ai_chance = {
@@ -299,8 +307,8 @@ country_event = {
 				NZL = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
 			}
 			dismantle_faction = yes
+			#don't remove Britain from research group - they can still share tech with other countries who are aligned to them!	
 		}
-		#don't remove Britain from research group - they can still share tech with other countries who are aligned to them!
 		effect_tooltip = {
 			if = {
 				limit = {
@@ -313,7 +321,7 @@ country_event = {
 					SAF = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
 				}
 				set_autonomy = { target = SAF autonomy_state = autonomy_free }
-			}	
+			}
 			if = {
 				limit = {
 					RAJ = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
@@ -334,18 +342,18 @@ country_event = {
 								is_subject_of = ENG
 							}
 						}
+						#retire_country_leader = yes
 						RAJ = { 
 							country_event = { id = GOE_RAJ.30 hours = 2 } 
 							remove_from_tech_sharing_group = commonwealth_research
-							effect_tooltip = {
-								add_ideas = idea_RAJ_the_long_goodbye
-							}
+							effect_tooltip = { add_ideas = idea_RAJ_the_long_goodbye }
 							if = {
 								limit = {
 									NOT = {
 										has_autonomy_state = autonomy_dominion
 									}
 								}
+
 								set_autonomy = {
 									target=RAJ
 									autonomy_state = autonomy_dominion
@@ -356,16 +364,13 @@ country_event = {
 							}
 						} 
 						custom_effect_tooltip =  GOE_RAJ.30_we_are_leaving_tt
+						
 					}
 				}
-				if = {
-					limit = {
-						RAJ = {
-							owns_state = 659
-						}	
-					}
-					transfer_state = 659		
-				}				
+				if = { # 56 - Goodbye Aden
+					limit = { RAJ = { owns_state = 659 } }
+					transfer_state = 659
+				}
 			}
 			if = {
 				limit = {
@@ -380,15 +385,11 @@ country_event = {
 				set_autonomy = { target = NZL autonomy_state = autonomy_free }
 			}
 			if = {
-				limit = {
-					OMA = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
-				}
+				limit = { OMA = { has_country_flag = ENG_abdication_crisis_dominion_will_leave } }
 				set_autonomy = { target = OMA autonomy_state = autonomy_free }
 			}
 			if = {
-				limit = {
-					BHU = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
-				}
+				limit = { BHU = { has_country_flag = ENG_abdication_crisis_dominion_will_leave } }
 				set_autonomy = { target = BHU autonomy_state = autonomy_free }
 			}
 			if = {
@@ -439,9 +440,9 @@ country_event = {
 				}
 				SAF = {
 					create_faction_from_template = {
-						template = faction_template_defensive_democratic
+						template = faction_template_allies
 						name = ENG_commonwealth_of_nations
-						icon = GFX_faction_logo_generic_17
+						icon = GFX_faction_logo_generic_2
 					}
 					if = {
 						limit = {
@@ -463,9 +464,9 @@ country_event = {
 				}
 				AST = {
 					create_faction_from_template = {
-						template = faction_template_defensive_democratic
+						template = faction_template_allies
 						name = ENG_commonwealth_of_nations
-						icon = GFX_faction_logo_generic_17
+						icon = GFX_faction_logo_generic_2
 					}
 					if = {
 						limit = {
@@ -511,6 +512,7 @@ country_event = {
 						NOT = { has_completed_focus = RAJ_great_depression_price_controls }
 					}
 				}
+
 				RAJ = {
 					country_event = { id = mtg_britain.16 }
 					add_ai_strategy = {
@@ -546,6 +548,7 @@ country_event = {
 					}
 				}
 			}
+
 			if = {
 				limit = {
 					OMA = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
@@ -705,7 +708,7 @@ country_event = {
 				}
 				modifier = {
 					factor = 0
-					has_country_flag = ENG_working_classes_support_marriage
+					has_country_flag = ENG_upper_classes_support_marriage
 				}
 				country_event = { id = mtg_britain.12 } 
 			}
@@ -1058,7 +1061,7 @@ country_event = {
 	}
 }
 
-# King abdicates
+# King abdicates - Man the Guns version
 country_event = {
 	id = mtg_britain.14
 	title = britain.17.t
@@ -1070,7 +1073,8 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			remove_ideas = ENG_king_edward
-			add_ideas = ENG_george_vi		
+			add_ideas = ENG_george_vi
+			set_country_flag = ENG_edward_viii_abdicated
 		}
 	}
 
@@ -1164,9 +1168,9 @@ country_event = {
 			FROM = { set_autonomy = { target = CAN autonomy_state = autonomy_free } }
 			drop_cosmetic_tag = yes
 			create_faction_from_template = {
-				template = faction_template_defensive_democratic
+				template = faction_template_allies
 				name = ENG_commonwealth_of_nations
-				icon = GFX_faction_logo_generic_17
+				icon = GFX_faction_logo_generic_2
 			}
 			set_country_flag = r56_Can_leads_commonwealth_now
 			if = {
@@ -1217,6 +1221,7 @@ country_event = {
 				}
 			}
 		}
+
 		if = {
 			limit = {
 				tag = SAF
@@ -1228,9 +1233,9 @@ country_event = {
 					AST = { NOT = { has_country_flag = ENG_abdication_crisis_dominion_will_leave } }
 				}
 				create_faction_from_template = {
-					template = faction_template_defensive_democratic
+					template = faction_template_allies
 					name = ENG_commonwealth_of_nations
-					icon = GFX_faction_logo_generic_17
+					icon = GFX_faction_logo_generic_2
 				}
 				if = {
 					limit = {
@@ -1267,6 +1272,7 @@ country_event = {
 				}
 			}
 		}
+
 		if = {
 			limit = {
 				tag = AST
@@ -1275,16 +1281,15 @@ country_event = {
 			if = {
 				limit = {
 					CAN = { NOT = { has_country_flag = ENG_abdication_crisis_dominion_will_leave } }
+					AST = { NOT = { has_country_flag = ENG_abdication_crisis_dominion_will_leave } }
 				}
 				create_faction_from_template = {
-					template = faction_template_defensive_democratic
+					template = faction_template_allies
 					name = ENG_commonwealth_of_nations
-					icon = GFX_faction_logo_generic_17
+					icon = GFX_faction_logo_generic_2
 				}
 				if = {
-					limit = {
-						SAF = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
-					}
+					limit = { SAF = { has_country_flag = ENG_abdication_crisis_dominion_will_leave } }
 					add_to_faction = SAF
 				}
 				if = {
@@ -1427,11 +1432,13 @@ country_event = {
 		if = { #needs to go second to last
 			limit = {
 				tag = RAJ
+				
 			}
 			if = {
 				limit = {
 					NOT = { has_global_flag = raj_dlc_focus_tree }	#56
 				}
+
 				FROM = { set_autonomy = { target = RAJ autonomy_state = autonomy_free } }
 				ENG = { remove_from_faction = RAJ }
 				RAJ = {
@@ -1482,6 +1489,7 @@ country_event = {
 						id = GOE_RAJ.30 hours = 2
 					}
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				custom_effect_tooltip = GOE_RAJ.30_we_are_leaving_tt
 			}
 
@@ -1698,6 +1706,24 @@ country_event = {
 		ENG = { set_autonomy = { target = PAK autonomy_state = autonomy_colony } }
 		PAK = {
 			add_ideas = ENG_guided_by_britain_raj_1
+		}
+		if = {
+			limit = {
+				has_idea = RAJ_marginalized_muslim_community_angry
+			}
+			swap_ideas = {
+				add_idea = RAJ_marginalized_muslim_community_happy
+				remove_idea = RAJ_marginalized_muslim_community_angry
+			}
+		}
+		if = {
+			limit = {
+				has_idea = RAJ_marginalized_muslim_community
+			}
+			swap_ideas = {
+				add_idea = RAJ_marginalized_muslim_community_happy
+				remove_idea = RAJ_marginalized_muslim_community
+			}
 		}
 	}
 }
@@ -1962,9 +1988,9 @@ country_event = {
 				NOT = { is_in_faction = yes }
 			}
 			create_faction_from_template = {
-				template = faction_template_generic_dominance
+				template = faction_template_GER_mitteleuropa_alliance
 				name = GER_central_powers_faction
-				icon = GFX_faction_logo_generic_4
+				icon = GFX_faction_logo_generic_13
 			}
 		}
 		FROM = { country_event = { id = mtg_britain.28 hours = 6 } }
@@ -2155,7 +2181,7 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			was_uk_dominion_a_subject = yes
+			was_uk_dominion_a_subject = yes  
 			add_stability = 30
 			every_state = {
 				limit = {
@@ -2375,14 +2401,8 @@ country_event = {
 				retire_country_leader = yes
 			}
 			if = {
-				limit = {
-					BHU = {
-						is_in_faction_with = ROOT
-					}
-				}
-				BHU = {
-					leave_faction = yes
-				}
+				limit = { BHU = { is_in_faction_with = ROOT } }
+				BHU = { leave_faction = yes }
 			}	
 			if = {	
 				limit = {
@@ -2461,13 +2481,15 @@ country_event = {
 	# Accept
 	option = {
 		name = mtg_britain.36.a
+
+		
 		FROM = {
 			if = {
 				limit = {
 					is_in_faction = no
 				}
 				create_faction_from_template = {
-					template = faction_template_regional_anti_democratic
+					template = faction_template_anglo_italian_pact
 					name = anglo_italian_pact
 					icon = GFX_faction_logo_generic_fascist
 				}
@@ -2492,6 +2514,12 @@ country_event = {
 				}
 			}
 		}
+		#Italian subjects join the faction
+		every_subject_country = {
+			FROM = {
+				add_to_faction = PREV
+			}
+		}
 		hidden_effect = {
 			add_ai_strategy = {
 				type = alliance
@@ -2514,9 +2542,11 @@ country_event = {
 	# Reject
 	option = {
 		name = mtg_britain.36.b
+
 		ai_chance = {
 			base = 0
 		}
+
 		FROM = { country_event = { id = mtg_britain.38 hours = 6 } }
 	}
 }
@@ -4482,7 +4512,7 @@ country_event = {
 					has_country_flag = harry_pollitt
 				}
 				create_country_leader = {
-					name = "Harry Pollitt"
+					name = ENG_harry_pollitt
 					picture = "portrait_eng_harry_pollitt.dds"
 					expire = "1965.1.1"
 					ideology = leninism
@@ -7841,7 +7871,12 @@ country_event = {
 			modifier = {
 				factor = 0
 				tag = RAJ
-				ENG = { NOT = { has_completed_focus = ENG_indian_autonomy } }
+				ENG = {
+					AND = {
+						NOT = { has_completed_focus = ENG_indian_autonomy } 
+						NOT = { has_country_leader_with_trait = viceroy_emeritus }
+					}
+				}
 			}
 		}
 		custom_effect_tooltip = mtg_britain.100_tt #"If all accept you will get:"
@@ -7874,20 +7909,35 @@ country_event = {
 			modifier = {
 				factor = 0
 				tag = RAJ
-				ENG = { has_completed_focus = ENG_indian_autonomy }
+				ENG = { 
+					OR = {
+						has_completed_focus = ENG_indian_autonomy 
+						has_country_leader_with_trait = viceroy_emeritus
+					}
+				}
 				has_opinion = { target = ENG value > 99 }
 			}
 			modifier = {
 				factor = 0
 				tag = RAJ
-				ENG = { has_completed_focus = ENG_indian_autonomy }
+				ENG = { 
+					OR = {
+						has_completed_focus = ENG_indian_autonomy 
+						has_country_leader_with_trait = viceroy_emeritus
+					}
+				}
 				has_opinion = { target = ENG value > 89 }
 				FROM = { has_country_flag = ENG_diplomatic_pressure_flag }
 			}
 			modifier = {
 				factor = 0
 				tag = RAJ
-				ENG = { has_completed_focus = ENG_indian_autonomy }
+				ENG = { 
+					OR = {
+						has_completed_focus = ENG_indian_autonomy 
+						has_country_leader_with_trait = viceroy_emeritus
+					}
+				}
 				has_opinion = { target = ENG value > 79 }
 				FROM = { has_country_flag = ENG_extensive_diplomatic_pressure_flag }
 			}

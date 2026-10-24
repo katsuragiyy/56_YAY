@@ -617,6 +617,7 @@ if = {
 	recruit_character = CZE_karel_pavala_army	#general, split character to avoid a bug that doesn't allow admiral/commander on one character
 	recruit_character = CZE_jaroslav_slechta	#advisor
 	recruit_character = CZE_hugo_vavrecka		#advisor
+	recruit_character = CZE_ferdinand_catlos
 
 	#R56: Slovakian nationalists that Road removed but PFOT added a DLC instance for, so at least that part needs to be available
 	recruit_character = CZE_vojtech_tuka

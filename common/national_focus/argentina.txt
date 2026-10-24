@@ -1273,11 +1273,8 @@ focus_tree = {
 		cost = 5
 		available = {
 			SPR_scw_in_progress = yes
-			SPR = {
+			SPA = {
 				exists = yes
-				hidden_trigger = {
-					has_country_flag = SPR_nationalist_spain_flag
-				}
 			}
 		}
 		ai_will_do = {
@@ -1363,13 +1360,14 @@ focus_tree = {
 				}
 			else = {
 				any_country_with_original_tag = {
+					exists = yes
 					original_tag_to_check = SPR
-				NOT = {
-					OR = {
-						has_government = fascism
-						has_government = neutrality
+					NOT = {
+						OR = {
+							has_government = fascism
+							has_government = neutrality
+						}
 					}
-				}
 					has_civil_war = no
 				}
 			}
@@ -2406,10 +2404,10 @@ focus_tree = {
 		relative_position_id = ARG_release_hellmuth
 		cost = 10
 		available = {
-			any_other_country = {
-				original_tag = USA
+			any_country_with_original_tag = {
+				original_tag_to_check = USA
 				has_government = democratic
-				#exists = yes #r56
+				exists = yes
 			}
 		}
 
@@ -3815,8 +3813,9 @@ focus_tree = {
 		relative_position_id = ARG_align_with_the_monroe_doctrine
 		cost = 10
 		available = {
-			any_other_country = {
-				original_tag = ENG
+			any_country_with_original_tag = {
+				exists = yes
+				original_tag_to_check = ENG
 				has_war_with_major = yes
 				has_government = democratic
 				NOT = {
@@ -4048,8 +4047,9 @@ focus_tree = {
 		relative_position_id = ARG_align_with_the_monroe_doctrine
 		cost = 10
 		available = {
-			any_other_country = {
-				original_tag = USA
+			any_country_with_original_tag = {
+				exists = yes
+				original_tag_to_check =  USA
 				has_war_with_major = yes
 				has_government = democratic
 				NOT = {
@@ -4140,6 +4140,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			any_country_with_original_tag = {
+				exists = yes
 				original_tag_to_check = GER
 				NOT = {
 					has_government = ARG
@@ -4173,8 +4174,8 @@ focus_tree = {
 		relative_position_id = ARG_us_marine_program
 		cost = 10
 		available = {
-			any_other_country = {
-				original_tag = SOV
+			any_country_with_original_tag = {
+				original_tag_to_check = SOV
 				has_government = communism
 				exists = yes
 			}
@@ -4362,8 +4363,9 @@ focus_tree = {
 		cost = 5
 		available = {
 			SPR_scw_in_progress = yes #r56 was NOT = { has_global_flag = scw_over }
-			any_other_country = {
-				original_tag = SPR
+			any_country_with_original_tag = {
+				exists = yes
+				original_tag_to_check = SPR
 				OR = {
 					has_completed_focus = SPR_the_anti_fascist_workers_revolution
 					has_completed_focus = SPR_maintain_the_second_republic

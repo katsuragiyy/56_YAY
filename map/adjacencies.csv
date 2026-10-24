@@ -343,4 +343,5 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 12237;12931;impassable;-1;-1;-1;-1;-1;;Papuan Highlands
 4418;12931;impassable;-1;-1;-1;-1;-1;;Papuan Highlands
 4418;7409;impassable;-1;-1;-1;-1;-1;;Papuan Highlands
+1345;13525;sea;5615;-1;-1;-1;-1;;Riau
 -1;-1;;-1;-1;-1;-1;-1;-1;

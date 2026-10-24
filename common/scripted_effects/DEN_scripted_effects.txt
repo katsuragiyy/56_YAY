@@ -3852,6 +3852,7 @@ DEN_independence_war_effects = {
 		}
 		DEN_drop_occupation_tag = yes
 	}
+
 	if = {
 		limit = {	
 			has_country_flag = DEN_cannot_join_factions_flag

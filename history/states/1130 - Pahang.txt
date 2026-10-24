@@ -16,7 +16,11 @@ state = {
 		add_core_of = MAL
 
 		victory_points = {
-			10297 5 # Kuala Lumpur
+			10297 10 # Kuala Lumpur
+		}
+
+		victory_points = {
+			4412 5 # Malaka
 		}
 
 		buildings = {

@@ -18,7 +18,7 @@ state = {
 		add_core_of = MAL
 
 		victory_points = {
-			1376 3 # Ipoh 
+			1364 1 # Ipoh 
 		}
 
 		buildings = {
@@ -26,12 +26,12 @@ state = {
 			infrastructure = 1
 
 		}
-		add_to_array = { state_victory_points = 1376 }
+		add_to_array = { state_victory_points = 1364 }
 		
 	}
 
 	provinces = {
-		1364 1376 4310 4384 12215 
+		1364 1376 4310 12215 
 	}
 
 	local_supplies = 0.0 

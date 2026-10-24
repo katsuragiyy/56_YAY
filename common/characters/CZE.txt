@@ -1,6 +1,8 @@
-characters={
-	### The King of Bohemia
-	CZE_karl_albrecht = {
+characters = {
+	
+	### COUNTRY LEADERS ###
+
+	CZE_karl_albrecht = { ### The King of Bohemia ### 
 		name=POL_karl_albrecht
 		portraits = {
 			civilian = {
@@ -9,28 +11,12 @@ characters={
 		}
 	}
 
-	#rk leader
-	CZE_jaroslav_krejchi={
-		name="Jaroslav Krejčí"
+	CZE_milan_hodza = {
+		name = CZE_milan_hodza
 		portraits={
 			civilian={
-				large=GFX_portrait_Jaroslav_Krejci
-			}
-		}
-		country_leader={
-			ideology=nazism
-			expire="1965.1.1.1"
-			id=-1
-		}
-	}
-
-	#dlc advisor/leader
-	CZE_edvard_benesh = {
-		name = CZE_edvard_benesh
-		portraits={
-			civilian={
-				large=GFX_portrait_Edvard_Benes
-				small=GFX_idea_CZE_edvard_benes
+				large=GFX_portrait_CZE_milan_hodza
+				small=GFX_portrait_CZE_milan_hodza_small
 			}
 		}
 		country_leader={
@@ -38,32 +24,91 @@ characters={
 			expire="1965.1.1.1"
 			id=-1
 			traits = {
-				CZE_2nd_prezident CZE_diplomatic_workhorse de_facto_leader
+				CZE_disoriented_minister_of_foreign_affairs agrarian_old_guard
 			}
 		}
-		advisor={
+		advisor = { # 56 Addition to the Non-DLC Tree
+			cost = 150
 			slot = political_advisor
-			idea_token = CZE_edvard_benesh_idea
-			can_be_fired = no
-			allowed  = {
-				original_tag  = CZE
+			idea_token = CZE_milan_hodza
+			do_effect  = { NOT = { has_government  = democratic  } }
+			traits = { democratic_reformer }
+			ai_will_do = { base = 1 }
+
+			allowed = {	
+				original_tag = CZE
+				NOT = { has_dlc = "Peace For Our Time" }
 			}
-			available = {
-				has_government = democratic
-				is_country_leader = no
+		}
+	}
+
+	CZE_edvard_benesh={
+		instance = {
+			allowed = {
 				NOT = {
-					has_completed_focus = CZE_topple_the_king
+					has_dlc = "Peace For Our Time"
 				}
 			}
-			visible = {
-				is_country_leader = no
-				has_government = democratic
-				NOT = {
-					has_completed_focus = CZE_topple_the_king
+
+			name = CZE_edvard_benesh
+			portraits={
+				civilian={
+					large=GFX_portrait_Edvard_Benes
 				}
 			}
-			traits  = {
-				CZE_diplomatic_workhorse CZE_2nd_prezident
+			country_leader={
+				ideology=conservatism
+				expire="1965.1.1.1"
+				id=-1
+				traits = {
+					skillful_diplomat de_facto_leader
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				has_dlc = "Peace For Our Time"
+			}
+
+			name = CZE_edvard_benesh
+			portraits={
+				civilian={
+					large=GFX_portrait_Edvard_Benes
+					small=GFX_idea_CZE_edvard_benes
+				}
+			}
+			country_leader={
+				ideology=conservatism
+				expire="1965.1.1.1"
+				id=-1
+				traits = {
+					CZE_2nd_prezident CZE_diplomatic_workhorse de_facto_leader
+				}
+			}
+			advisor={
+				slot = political_advisor
+				idea_token = CZE_edvard_benesh_idea
+				can_be_fired = no
+				allowed  = {
+					original_tag  = CZE
+				}
+				available = {
+					has_government = democratic
+					is_country_leader = no
+					NOT = {
+						has_completed_focus = CZE_topple_the_king
+					}
+				}
+				visible = {
+					is_country_leader = no
+					has_government = democratic
+					NOT = {
+						has_completed_focus = CZE_topple_the_king
+					}
+				}
+				traits  = {
+					CZE_diplomatic_workhorse CZE_2nd_prezident
+				}
 			}
 		}
 	}
@@ -85,6 +130,50 @@ characters={
 		}
 	}
 
+	CZE_jaroslav_krejchi={ 
+		name="Jaroslav Krejčí"
+		portraits={
+			civilian={
+				large=GFX_portrait_Jaroslav_Krejci
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	CZE_andrej_hlinka = { #Non-aligned placeholder - party leader flavor only
+		name=CZE_andrej_hlinka
+		portraits = {
+			civilian={
+				large = GFX_Portrait_Europe_Generic_2
+			}
+		}
+
+		country_leader={
+			ideology=oligarchism
+			expire = "1938.1.16.9"
+			id=-1
+		}
+	}
+
+	CZE_robert_rychtrmoc={ #Non-aligned placeholder after Hlinka - party leader flavor only 
+		name=CZE_robert_rychtrmoc
+		portraits={
+			civilian={
+				large = GFX_Portrait_Europe_Generic_4
+			}
+		}
+		country_leader={
+			ideology=oligarchism
+			traits={ eager_collaborator baron_of_terror }
+			expire="1945.1.1.12"
+			id=-1
+		}
+	}
+
 	CZE_emil_hacha = { #Second Republic leader
 		name=CZE_emil_hacha
 		portraits = {
@@ -96,6 +185,98 @@ characters={
 
 		country_leader={
 			ideology=oligarchism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	CZE_albrecht_franz = {
+		name = CZE_albrecht_franz
+		portraits = {
+			civilian = {
+				large = GFX_portrait_CZE_albrecht_franz_von_habsburg
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1.1"
+			id = -1
+			traits = { duke_of_teschen_king_of_bohemia }
+		}
+	}
+
+	CZE_karel_schwarzenberg = {
+		name = CZE_karel_schwarzenberg
+		portraits = {
+			civilian = {
+				large = GFX_portrait_CZE_karel_schwarzenberg
+				small = GFX_idea_CZE_karel_schwarzenberg
+			}
+		}
+		country_leader = {
+			ideology = constitutional_monarchy
+			expire = "1965.1.1.1"
+			id = -1
+			traits = { }
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CZE_karel_schwarzenberg
+			allowed  = {
+				original_tag  = CZE
+			}
+			available = {
+				has_completed_focus = CZE_unify_the_fascist_parties
+			}
+			visible = {
+				NOT = {
+					has_completed_focus = CZE_petition_the_nobles
+					has_completed_focus = CZE_increase_funding_from_moscow
+				}
+			}
+			traits  = {
+				fascist_demagogue
+			}
+			ai_will_do = {
+				base = 200
+				modifier = {
+					factor = 0
+					has_government = fascism
+					fascism > 0.7
+				}
+			}
+		}
+	}
+
+	CZE_klement_gottwald={
+		name=CZE_klement_gottwald
+		portraits={
+			army={
+				small=GFX_portrait_CZE_klement_gottwald_small
+			}
+			civilian={
+				large=GFX_portrait_CZE_klement_gottwald
+			}
+		}
+		#MU doesn't fit role
+		# advisor={ 
+		# 	slot = navy_chief
+		# 	idea_token = CZE_klement_gottwald
+		# 	allowed = {
+		# 		original_tag = CZE
+		# 	}
+		# 	traits = {
+		# 		navy_chief_reform_2
+		# 	}
+		# 	cost = 100
+		# 	ai_will_do = {
+		# 		factor = 1.000
+		# 	}
+		# }
+		
+		country_leader={
+			ideology=stalinism
+			traits = { staunch_stalinist }
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -118,7 +299,9 @@ characters={
 		}
 	}
 
-	#political advisors
+	### POLITCAL ADVISORS ### 
+
+	## Advisors Needing High Visibility on Startdate Are Put First ##
 	CZE_josef_rozsevac = {
 		name = CZE_josef_rozsevac
 		portraits={
@@ -162,77 +345,186 @@ characters={
 		}
 	}
 
-	CZE_konrad_henlein = {
-		name=CZE_konrad_henlein
+	CZE_konrad_henlein={
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "Peace For Our Time"
+				}
+			}
+			name=CZE_konrad_henlein
+			portraits={
+				army={
+					small="GFX_idea_CZE_konrad_henlein"
+				}
+			}
+			advisor={
+				slot = political_advisor
+				idea_token = CZE_konrad_henlein
+				allowed  = {
+					original_tag  = CZE
+				}
+				available  = {
+					has_completed_focus  = CZE_ban_communism # 56 - For R56 Czech Tree
+					if  = {
+						limit = {
+							has_dlc = "Man the Guns"
+						}
+						NOT = {
+							has_autonomy_state  = autonomy_supervised_state
+						}
+					}
+				}
+				traits  = {
+					fascist_demagogue 
+				}
+				ai_will_do  = {
+					base = 0
+					modifier = {
+						add = 20
+						OR = {
+							has_country_flag = CZE_AI_RANDOM_FASCIST
+							has_game_rule = {
+								rule = CZE_ai_behavior
+								option = FASCIST
+							}
+						}
+					}
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				has_dlc = "Peace For Our Time"
+			}
+			name=CZE_konrad_henlein
+			portraits={
+				army={
+					small="GFX_idea_CZE_konrad_henlein"
+				}
+			}
+			advisor={
+				slot = political_advisor
+				idea_token = CZE_konrad_henlein
+				allowed  = {
+					original_tag  = CZE
+				}
+				on_add = {
+					owner = {
+						if = {
+							limit = {
+								has_power_balance = {
+									id = CZE_bop_army_readiness
+								}
+							}
+							CZE_bop_very_low_decrease_effect = yes
+							custom_effect_tooltip = generic_skip_one_line_tt
+						}
+					}
+				}
+				on_remove = {
+					owner = {
+						if = {
+							limit = {
+								has_power_balance = {
+									id = CZE_bop_army_readiness
+								}
+							}
+							CZE_bop_very_low_increase_effect = yes
+						}
+					}
+				}
+				available = {
+					if = {
+						limit = {
+							GER = {
+								has_government = fascism
+							}
+						}
+						NOT = {
+							has_war_with = GER
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_completed_focus = CZE_contact_henlein
+							}
+						}
+						has_completed_focus = CZE_cooperate_with_the_sdp
+					}
+					else = {
+						has_completed_focus = CZE_contact_henlein
+					}
+				}
+				visible = {
+					NOT = {
+						has_country_flag = CZE_hide_konrade_henlein_for_now
+					}
+				}
+				traits  = {
+					national_socialist_paramilitarist 
+				}
+				ai_will_do = {
+					base = 1
+				}
+			}
+		}
+	}
+
+	CZE_gustav_husak={
+		name=CZE_gustav_husak
 		portraits={
 			army={
-				small="GFX_idea_CZE_konrad_henlein"
+				small="GFX_idea_CZE_gustav_husak"
 			}
 		}
 		advisor={
 			slot = political_advisor
-			idea_token = CZE_konrad_henlein
+			idea_token = CZE_gustav_husak
 			allowed  = {
 				original_tag  = CZE
 			}
-			on_add = {
-				owner = {
-					if = {
-						limit = {
-							has_power_balance = {
-								id = CZE_bop_army_readiness
-							}
-						}
-						CZE_bop_very_low_decrease_effect = yes
-						custom_effect_tooltip = generic_skip_one_line_tt
-					}
-				}
-			}
-			on_remove = {
-				owner = {
-					if = {
-						limit = {
-							has_power_balance = {
-								id = CZE_bop_army_readiness
-							}
-						}
-						CZE_bop_very_low_increase_effect = yes
-					}
-				}
-			}
-			available = {
-				if = {
-					limit = {
-						GER = {
-							has_government = fascism
-						}
-					}
-					NOT = {
-						has_war_with = GER
-					}
-				}
-				if = {
-					limit = {
+			available  = {
+				if  = {
+					limit  = {
+						has_dlc = "Death or Dishonor"
 						NOT = {
-							has_completed_focus = CZE_contact_henlein
+							has_dlc = "Peace For Our Time"
 						}
 					}
-					has_completed_focus = CZE_cooperate_with_the_sdp
+					has_completed_focus  = CZE_go_left 
 				}
-				else = {
-					has_completed_focus = CZE_contact_henlein
-				}
-			}
-			visible = {
-				NOT = {
-					has_country_flag = CZE_hide_konrade_henlein_for_now
+				# else_if = {	#replaced by more time-appropriate advisors
+				# 	limit = {
+				# 		has_dlc = "Peace For Our Time"
+				# 	}
+				# 	has_completed_focus = CZE_increase_funding_from_moscow
+				# }
+				if  = {
+					limit  = {
+						has_dlc = "Man the Guns"
+					}
+					not  = {
+						has_autonomy_state  = autonomy_supervised_state
+					}
 				}
 			}
 			traits  = {
-				national_socialist_paramilitarist 
+				communist_revolutionary 
 			}
-			ai_will_do = {
-				base = 1
+			ai_will_do  = {
+				base = 0
+				modifier = {
+					add = 20
+					OR = {
+						has_country_flag = CZE_AI_RANDOM_COMMUNIST
+						has_game_rule = {
+							rule = CZE_ai_behavior
+							option = COMMUNIST
+						}
+					}
+				}
 			}
 		}
 	}
@@ -496,6 +788,54 @@ characters={
 		}
 	}
 
+	CZE_ferdinand_catlos={
+		name=CZE_ferdinand_catlos
+		portraits={
+			army={
+				small="GFX_idea_CZE_ferdinand_catlos"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CZE_ferdinand_catlos
+			cost = 150
+			allowed = {
+				original_tag  = CZE
+			}
+			traits = {
+				quartermaster_general 
+			}
+			research_bonus = {
+				construction_tech = 0.15
+			}
+			on_add = {
+				owner = {
+					if = {
+						limit = {
+							has_power_balance = {
+								id = CZE_bop_army_readiness
+							}
+						}
+						CZE_bop_very_low_increase_effect = yes
+						custom_effect_tooltip = generic_skip_one_line_tt
+					}
+				}
+			}
+			on_remove = {
+				owner = {
+					if = {
+						limit = {
+							has_power_balance = {
+								id = CZE_bop_army_readiness
+							}
+						}
+						CZE_bop_very_low_decrease_effect = yes
+					}
+				}
+			}
+		}
+	}
+
 	##Advisors Available On Start Date That Have Possible Restrictions##
 
 	CZE_zdenek_fierlinger = {
@@ -698,9 +1038,7 @@ characters={
 				}
 				available  = {
 					has_completed_focus = CZE_democratic_bastion 
-					NOT  = {
-						has_autonomy_state  = autonomy_supervised_state
-					}
+					NOT  = { has_autonomy_state  = autonomy_supervised_state }
 				}
 				traits  = {
 					democratic_reformer 
@@ -1026,81 +1364,37 @@ characters={
 			}
 		}
 	}
-	CZE_karel_schwarzenberg={
+	CZE_emil_kolben = {
 		instance = {
 			allowed = {
 				NOT = {
 					has_dlc = "Peace For Our Time"
 				}
 			}
-			name=CZE_karel_schwarzenberg
+			name=CZE_emil_kolben
 			portraits={
-				civilian={
-					large="gfx/leaders/CZE/r56_portrait_CZE_Karel_VI.dds"
+				army={
+					small="GFX_idea_CZE_emil_kolben" # 56
 				}
-			}
-			country_leader={
-				ideology= constitutional_monarchy
-				expire= "1965.1.1"
-				id=-1
-			}
-		}
-		instance = {
-			allowed = {
-				has_dlc = "Peace For Our Time"
-			}
-			name = CZE_karel_schwarzenberg
-			portraits = {
-				civilian = {
-					large = GFX_portrait_CZE_karel_schwarzenberg
-					small = GFX_idea_CZE_karel_schwarzenberg
-				}
-			}
-			country_leader = {
-				ideology = despotism
-				expire = "1965.1.1.1"
-				id = -1
-				traits = { }
 			}
 			advisor={
 				slot = political_advisor
-				idea_token = CZE_karel_schwarzenberg
-				allowed  = {
-					original_tag  = CZE
+				idea_token = CZE_emil_kolben_dod
+				allowed = {
+					original_tag = CZE
 				}
 				available = {
-					has_completed_focus = CZE_unify_the_fascist_parties
-				}
-				visible = {
-					NOT = {
-						has_completed_focus = CZE_petition_the_nobles
-						has_completed_focus = CZE_increase_funding_from_moscow
+					has_completed_focus = CZE_R56_support_strategic_industries
+					OR = { # 56
+						has_government = democratic
+						has_government = neutrality
 					}
 				}
-				traits  = {
-					fascist_demagogue
+				traits = {
+					war_industrialist # 56
 				}
-				ai_will_do = {
-					base = 200
-					modifier = {
-						factor = 0
-						has_government = fascism
-						fascism > 0.7
-					}
-				}
-			}
+			}	
 		}
-	}
-	
-	CZE_albrecht_franz = {		#another monarchist option for Hamburg Czechia
-		name = CZE_albrecht_franz
-		portraits = {
-			civilian = {
-				large = GFX_portrait_CZE_albrecht_franz_von_habsburg
-			}
-		}
-	}
-	CZE_emil_kolben = {
 		instance = {
 			allowed = {
 				has_dlc = "Peace For Our Time"
@@ -1153,41 +1447,6 @@ characters={
 				}
 				traits = {
 					CZE_general_director_of_ckd
-				}
-			}
-		}
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "Peace For Our Time"
-				}
-			}
-			name="Emil Kolben"
-			#desc = CZE_emil_kolben_desc
-			portraits={
-				army={
-					small="GFX_idea_CZE_emil_kolben"
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = CZE_emil_kolben
-				allowed = {	
-					original_tag = CZE
-				}
-				available = { 
-					has_completed_focus = CZE_R56_support_strategic_industries
-					OR = {
-						has_government = democratic
-						has_government = neutrality
-					}
-				}
-				traits = {
-					war_industrialist
-				}
-				cost = 150
-				ai_will_do = {
-					factor = 1.000
 				}
 			}
 		}
@@ -1246,7 +1505,7 @@ characters={
 				construction_tech = 0.10
 			}
 		}
-	}	
+	}
 
 	CZE_emil_franke = {
 		name = CZE_emil_franke
@@ -1472,69 +1731,6 @@ characters={
 				legacy_id=-1
 				visible = {
 					has_completed_focus = CZE_the_second_fortification_program
-				}
-			}
-		}
-	}
-
-	CZE_milan_hodza = {
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "Peace For Our Time"
-				}
-			}
-			name=CZE_milan_hodza
-			#desc = "CZE_milan_hodza_desc"
-			portraits={
-				civilian={
-					large = "gfx/leaders/CZE/r56_portrait_CZE_Milan_Hodza.dds"
-					small="GFX_idea_CZE_milan_hodza"
-				}
-			}
-			country_leader={
-				ideology=conservatism
-				traits = { ideological_groupie compassionate_gentleman }
-				expire="1965.1.1"
-				id=-1
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = CZE_milan_hodza
-				allowed = {	
-					original_tag = CZE
-				}
-				do_effect  = {
-					not  = {
-						has_government  = democratic 
-					}
-				}
-				traits = {
-					democratic_reformer
-				}
-				cost = 150
-				ai_will_do = {
-					factor = 1.000
-				}
-			}
-		}
-		instance = {
-			allowed = {
-				has_dlc = "Peace For Our Time"
-			}
-			name = CZE_milan_hodza
-			portraits={
-				civilian={
-					large=GFX_portrait_CZE_milan_hodza
-					small=GFX_portrait_CZE_milan_hodza_small
-				}
-			}
-			country_leader={
-				ideology=conservatism
-				expire="1965.1.1.1"
-				id=-1
-				traits = {
-					CZE_disoriented_minister_of_foreign_affairs agrarian_old_guard
 				}
 			}
 		}
@@ -1781,60 +1977,6 @@ characters={
 				factor = 1		
 			}
 		}
-	}
-
-	CZE_klement_gottwald = {
-		name="Klement Gottwald"
-		#desc = CZE_klement_gottwald_desc
-		portraits={
-			civilian={
-				large="gfx/leaders/CZE/Portrait_Czech_Klement_Gottwald.dds"
-			}
-			army={
-				small="GFX_idea_generic_political_advisor_europe_3"
-			}
-		}
-		country_leader={
-			ideology=stalinism
-			traits = {
-				stalins_puppet
-			}
-			expire="1965.1.1"
-			id=-1
-		}
-		#advisor={
-		#	slot = political_advisor
-		#	idea_token = CZE_klement_gottwald
-		#	allowed = {	
-		#		original_tag = CZE
-		#	}
-		#	available = {
-		#		OR = { 
-		#			has_completed_focus = CZE_strengthen_communism 
-		#			has_government = fascism
-		#			has_government = communism
-		#		}
-		#		NOT  = {
-		#			has_autonomy_state  = autonomy_supervised_state
-		#		}				
-		#	}
-		#	do_effect  = {
-		#		not  = {
-		#			has_government  = fascism 
-		#		}
-		#	}
-		#	traits = {
-		#		communist_revolutionary
-		#	}
-		#	cost = 150
-		#	ai_will_do = { 
-		#		factor = 0 
-		#		modifier = {
-		#			add = 10
-		#			has_idea = CZE_press_law_idea
-		#		}			
-		#	}
-		#}
 	}
 
 	CZE_alois_neurath={
@@ -3702,7 +3844,7 @@ characters={
 		}
 	}
 
-	CZE_zdenko_hudecek = {
+	CZE_zdenko_hudecek={
 		instance = {
 			allowed = {
 				has_dlc = "Peace For Our Time"
@@ -5174,7 +5316,7 @@ characters={
 	}
 
 	CZE_sergej_ingr = {
-		name="Sergěj Ingr"
+		name=CZE_sergej_ingr
 		portraits={
 			army={
 				large = "gfx/leaders/CZE/r56_portrait_CZE_Sergej_Ingr.dds"

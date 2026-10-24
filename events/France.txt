@@ -2184,7 +2184,10 @@ country_event = {
 			}
 		}
 		JAP = {
-			country_event = { days = 5 id = japan.7 }
+			country_event = { 
+				days = 5 
+				id = japan.7 
+			}
 		}
 	}
 }
@@ -2340,6 +2343,7 @@ country_event = {
 				NOT = { state = 158 }
 				NOT = { state = 114 }
 				NOT = { state = 50 }
+				NOT = { state = 923 } #BADEN
 				NOT = { state = 42 }
 				is_controlled_by = ROOT
 				OR = {
@@ -2364,10 +2368,19 @@ country_event = {
 					NOT = { state = 1 }
 					NOT = { state = 735 }
 					NOT = { state = 21 }
+					NOT = { state = 851 }
 					NOT = { state = 31 }
 					is_owned_by = ROOT
 					is_controlled_by = PREV
 				}
+			}
+		}
+		# PLEASE Don't fire if this will end the war (No other ally is a major)
+		FRA = {
+			any_allied_country = {
+				is_major = yes 
+				has_capitulated = no 
+				has_war_with = GER 
 			}
 		}
 	}
@@ -2391,6 +2404,20 @@ country_event = {
 		hidden_effect = {
 			set_global_flag = FRA_capitulation_event_fired
 		}
+		#hidden_effect = { # 56 - We dont have syria and lebanon
+		#	every_subject_country = {
+		#		limit = {
+		#			OR = {
+		#				original_tag = SYR
+		#				original_tag = LEB
+		#			}
+		#		}
+		#		country_event = {
+		#			id = GOE_generic_events.1
+		#			days = 7
+		#		}
+		#	}
+		#}
 	}
 	
 	option = { # Become Vichy
@@ -2405,7 +2432,7 @@ country_event = {
 		}
 		custom_effect_tooltip = france.10.a_tt
 		# Switches to Vichy if GER accepts
-
+		set_country_flag = GER_dont_seize_gold_reserves_flag #Can't allow Germany to seize out gold reserves just yet
 		#Swiss event regarding hiding French soldiers in there after the Fall of France
 		hidden_effect = {	#linked with Fall of France, so replaced it here instead of own trigger - Fantom
 			if = {
@@ -2439,7 +2466,7 @@ country_event = {
 			GER = { country_event = france.14 }
 		}
 		custom_effect_tooltip = france.10.b_tt
-		
+		set_country_flag = GER_dont_seize_gold_reserves_flag #Can't allow Germany to seize out gold reserves just yet
 		#Swiss event regarding hiding French soldiers in there after the Fall of France
 		hidden_effect = {	#linked with Fall of France, so replaced it here instead of own trigger - Fantom
 			if = {
@@ -2563,9 +2590,7 @@ country_event = {
 				value = 50    
 			}		
 			every_other_country = {
-				limit = {
-					is_puppet_of = FRA
-				}
+				limit = { is_puppet_of = FRA }
 				puppet = PREV
 			}		
 		}
@@ -2610,7 +2635,10 @@ country_event = {
 	
 	option = { # Become Vichy
 		name = france.13.a
-		trigger = { is_ai = no }
+		trigger = {
+			is_ai = no
+			has_civil_war = no
+		}
 		set_country_flag = become_vichy
 		set_global_flag = fall_of_france
 		save_global_event_target_as = vichy_france
@@ -2700,6 +2728,12 @@ country_event = {
 	picture = GFX_report_event_german_parade_paris
 	
 	is_triggered_only = yes
+
+	trigger = {
+		FRA = {
+			has_civil_war = no
+		}
+	}
 	
 	option = { # Agree
 		name = france.14.a
@@ -2767,48 +2801,73 @@ country_event = {
 			limit = { 19 = { owner = { original_tag = FRA } } }
 			set_state_controller = 19
 		}
+
+		GER_set_consumer_goods_war_reparations = yes
+
 		# Italian Occupation Zone (if they did well)
 		if = { #if Italy did really well, they get an extra bonus state (but only if that doesn't lead to bordergore)
 			limit = {
-				735 = { #Savoy
-					owner = { original_tag = FRA }
-					is_controlled_by = ITA
-				}
-				21 = { #Provence
-					owner = { original_tag = FRA }
-					is_controlled_by = ITA
-				}
-				32 = { #Alpes
-					owner = { original_tag = FRA }
-					is_controlled_by = ITA
+				AND = {
+					735 = { #Savoy
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
+					21 = { #Provence (Bouches-du-Rhone)
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
+					851 = { #Provence (Var)
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
+					32 = { #Alpes
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
 				}
 			}
 			ITA = { transfer_state = 32 }
 		}
 		if = {
 			limit = {
-				21 = { #Provence
-					owner = { original_tag = FRA }
-					is_controlled_by = ITA
+				AND = {
+					851 = { #Provence (Var)
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
 				}
 			}
-			ITA = { transfer_state = 21 }
 			ITA = { transfer_state = 851 }
 		}
 		if = {
 			limit = {
-				1 = { #Corsica
-					owner = { original_tag = FRA }
-					is_controlled_by = ITA
+				AND = {
+					21 = { #Provence (Bouches-du-Rhone)
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
+				}
+			}
+			ITA = { transfer_state = 21 }
+		}
+		if = {
+			limit = {
+				AND = {
+					1 = { #Corsica
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
 				}
 			}
 			ITA = { transfer_state = 1 }
 		}
 		if = {
 			limit = {
-				735 = { #Savoy
-					owner = { original_tag = FRA }
-					is_controlled_by = ITA
+				AND = {
+					735 = { #Savoy
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
 				}
 			}
 			ITA = { transfer_state = 735 }
@@ -2832,6 +2891,7 @@ country_event = {
 		}
 		FRA = {
 			set_capital = { state = 539 }
+
 			hidden_effect = {
 					set_state_controller = 26
 					set_state_controller = 22
@@ -2951,6 +3011,7 @@ country_event = {
 								state = 680
 								state = 677
 								state = 458
+								state = 799
 							}
 							controller = { # FRA not controller
 								original_tag = FRA
@@ -2969,17 +3030,8 @@ country_event = {
 		random_other_country = {
 			limit = { original_tag = FRA has_government = fascism }
 			set_cosmetic_tag = FRA_VICHY
-			create_country_leader = {
-				name = "Philippe Pétain"
-				picture = "Portrait_France_Philippe_Petain.dds"
-				expire = "1965.1.1"
-				ideology = fascism_ideology
-				traits = {
-					popular_figurehead2
-				}
-			}
 			load_focus_tree = vichy_france_focus
-			set_country_flag = is_vichy_france
+
 			ROOT = { puppet = PREV }
 			set_capital = { state = 26 }
 			set_politics = {
@@ -2997,20 +3049,41 @@ country_event = {
 				}
 				set_nationality = FRA
 			}
+			
+			set_country_flag = is_vichy_france
+			save_event_target_as = vichy_france
+
+			FRA = { #Move Petain to Vichy
+				set_nationality = {
+					target_country = PREV
+					character = FRA_philippe_petain
+				}
+			}
+
+			add_country_leader_role = {
+				character = FRA_philippe_petain
+				country_leader = {
+					ideology = fascism_ideology 
+					expire = "1965.1.1.1"
+					id = -1
+				}
+				promote_leader = yes 
+			}
+			transfer_advisors_to_vichy = yes
 			# FRA Player Switches to Vichy
 			if = {
 				limit = { FRA = { has_country_flag = become_vichy } }
 				change_tag_from = FRA
 			}
-			save_event_target_as = vichy_france
 		}
-		news_event = {id = news.34  hours = 6 }
+		news_event = { hours = 6 id = news.34 }
 		hidden_effect =  {
 			FRA = { country_event = { id = france.20 days = 1 } }
 		}
-		FRI = {
-			country_event = frenchindochina.4
+		FROM = {
+			clr_country_flag = GER_dont_seize_gold_reserves_flag
 		}
+		FRI = { country_event = frenchindochina.4 } # 56 - Indochina "oh shit" moment
 	}
 
 	option = { # Agree - Neutrality
@@ -3079,20 +3152,33 @@ country_event = {
 			limit = { 19 = { owner = { original_tag = FRA } } }
 			set_state_controller = 19
 		}
+		if = {
+            limit = { 806 = { owner = { original_tag = FRA } } }
+            set_state_controller = 806
+        }
+
+        GER_set_consumer_goods_war_reparations = yes
+
 		# Italian Occupation Zone (if they did well)
 		if = { #if Italy did really well, they get an extra bonus state (but only if that doesn't lead to bordergore)
 			limit = {
-				735 = { #Savoy
-					owner = { original_tag = FRA }
-					is_controlled_by = ITA
-				}
-				21 = { #Provence
-					owner = { original_tag = FRA }
-					is_controlled_by = ITA
-				}
-				32 = { #Alpes
-					owner = { original_tag = FRA }
-					is_controlled_by = ITA
+				AND = {
+					735 = { #Savoy
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
+					851 = { #Provence (Var)
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
+					21 = { #Provence (Bouches-du-Rhone)
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
+					32 = { #Alpes
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
 				}
 			}
 			ITA = { transfer_state = 32 }
@@ -3100,14 +3186,24 @@ country_event = {
 		if = {
 			limit = {
 				AND = {
-					21 = { #Provence
+					851 = { #Provence (Var)
+						owner = { original_tag = FRA }
+						is_controlled_by = ITA
+					}
+				}
+			}
+			ITA = { transfer_state = 851 }
+		}
+		if = {
+			limit = {
+				AND = {
+					21 = { #Provence (Bouches-du-Rhone)
 						owner = { original_tag = FRA }
 						is_controlled_by = ITA
 					}
 				}
 			}
 			ITA = { transfer_state = 21 }
-			ITA = { transfer_state = 851 }	#lies behind this 21, so this one gets thrown in for free
 		}
 		if = {
 			limit = {
@@ -3327,6 +3423,9 @@ country_event = {
 		hidden_effect =  {
 			FRA = { country_event = { id = france.20 days = 1 } }
 		}
+		FROM = {
+			clr_country_flag = GER_dont_seize_gold_reserves_flag
+		}
 		FRI = {
 			country_event = frenchindochina.4
 		}
@@ -3344,17 +3443,6 @@ country_event = {
 			set_cosmetic_tag = FRA_FREE 
 			add_ideas = FRA_defeatism
 			load_focus_tree = free_french_focus
-			#CHECK IF NECESSARY
-			#create_country_leader = {
-			#	name = "Charles de Gaulle"
-			#	desc = "POLITICS_CHARLES_DE_GAULLE_DESC"
-			#	picture = "r56_portrait_FRA_Charles_De_Gaulle.dds"
-			#	expire = "1965.1.1"
-			#	ideology = conservatism
-			#	traits = {
-			#		connetable_of_france
-			#	}
-			#}			
 			if = {
 				limit = {
 					capital_scope = {
@@ -3377,6 +3465,9 @@ country_event = {
 			}
 		}
 		custom_effect_tooltip = establishing_vichy_tt
+
+		GER_set_consumer_goods_war_reparations = yes
+
 		hidden_effect = {
 			create_dynamic_country = {
 				original_tag = FRA
@@ -3393,6 +3484,21 @@ country_event = {
 							is_core_of = LEB
 							is_core_of = SYR
 						}
+						# Keep French Indochina out of Vichy while Siam's limited war over it is ongoing
+						NOT = {
+							AND = {
+								OR = {
+									is_core_of = VIN
+									is_core_of = CAM
+									is_core_of = LAO
+								}
+								SIA = {
+									has_active_mission = SIA_limited_war_indochina
+									has_variable = limited_war_target
+									var:limited_war_target = { original_tag = FRA }
+								}
+							}
+						}
 					}
 					event_target:vichy_france = { transfer_state = PREV }
 				}
@@ -3401,6 +3507,7 @@ country_event = {
 						OR = {
 							state = 735
 							state = 21
+							state = 851
 							state = 32
 							state = 20
 							state = 26
@@ -3409,7 +3516,6 @@ country_event = {
 							state = 25
 							state = 33
 							state = 1
-							state = 851 #Var
 							AND = {	#Monaco for when micronations disabled
 								state = 1012
 								is_core_of = FRA
@@ -3418,8 +3524,13 @@ country_event = {
 						CONTROLLER = { 
 							OR = {
 								original_tag = FRA
-								has_war_with = FRA
-							} 
+								AND  = {
+									has_war_with = FRA
+									NOT = {	#Especially Switzerland can obtain states before the war
+										owns_state = PREV
+									}
+								}
+							}
 						} #failsafe for weird shit (tm)
 					}
 					add_core_of = PREV
@@ -3442,6 +3553,7 @@ country_event = {
 								state = 21
 								state = 1
 								state = 735
+								state = 851
 							}
 							has_state_flag = vichy_italian_conquest
 						}
@@ -3451,11 +3563,20 @@ country_event = {
 					if = {
 						limit = {
 							21 = { is_controlled_by = ITA }
+							851 = { is_controlled_by = ITA }
 							735 = { is_controlled_by = ITA } 
 						}
 						ITA = { transfer_state = 32 }
 					}
 					
+				}
+				every_owned_state = {
+					limit = {
+						NOT = {
+							is_core_of = FRA
+						}
+					}
+					FRA = { add_state_claim = PREV } #Free France gets claims on all of Vichy, primarily so they can demand that shit back in a peacedeal
 				}
 				set_rule = { 
 					can_join_factions = no 
@@ -3539,6 +3660,9 @@ country_event = {
 				}
 			}
 		}
+		FROM = {
+			clr_country_flag = GER_dont_seize_gold_reserves_flag
+		}
 		FRI = {
 			country_event = frenchindochina.4
 		}
@@ -3558,6 +3682,9 @@ country_event = {
 		}
 		FRA = {
 			country_event = { hours = 6 id = france.15 }
+		}
+		FROM = {
+			clr_country_flag = GER_dont_seize_gold_reserves_flag
 		}
 	}
 }
@@ -3626,11 +3753,6 @@ country_event = {
 			id = "FRA"
 			value = 200
 		}
-	#	hidden_effect = {
-	#		set_country_flag = alliance_applicant@ROOT
-	#		FROM = { set_country_flag = alliance_inviter@ROOT }
-	#		news_event = { id = news.289 hours = 12 }
-	#	}		
 	}
 
 	option = {
@@ -3688,14 +3810,14 @@ country_event = {
 				character = FRA_charles_de_gaulle
 				country_leader = {
 					expire = "1965.1.1"
-					traits = {
+					ideology = conservatism
+					traits = { # 56
 						tank_enthusiast
 						connetable_of_france
-					}
-					ideology = conservatism
+					}	
 				}
-				promote_leader = yes
-			}
+				promote_leader = yes				
+			}		
 			if = {
 				limit = {
 					#has_dlc = "La Resistance"
@@ -3813,7 +3935,7 @@ country_event = {
 			YUG = {
 				add_opinion_modifier = { target = FRA modifier = western_betrayal }
 				country_event = { id = yugoslavia.5 hours = 6 }
-			}
+			}			
 		}
 		if = {
 			limit = { 
@@ -3849,8 +3971,8 @@ country_event = {
 				}
 			}
 			add_political_power = -200
+			add_opinion_modifier = { target = GER modifier = condemn_aggression }
 		}
-		add_opinion_modifier = { target = GER modifier = condemn_aggression }
 		YUG = { 
 			country_event = { id = yugoslavia.4 days = 1 }
 			add_opinion_modifier = { target = FRA modifier = offered_support }
@@ -3915,7 +4037,7 @@ country_event = {
 				}
 			}
 			create_faction_from_template = {
-				template = faction_template_defensive_democratic
+				template = faction_template_the_little_entente
 				name = french_alliance
 				icon = GFX_faction_logo_generic_12
 			}
@@ -3923,7 +4045,7 @@ country_event = {
 			YUG = {
 				add_ai_strategy = {
 					type = alliance
-					id = "FRA"
+					id = FRA
 					value = 200
 				}
 			}
@@ -3967,7 +4089,7 @@ country_event = {
 			FRA = {
 				add_ai_strategy = {
 					type = alliance
-					id = "ENG"
+					id = ENG
 					value = 200
 				}
 			}
@@ -4134,23 +4256,23 @@ country_event = {
 
 # Édouard Daladier Resigns
 country_event = {
-    id = france.31
-    title = france.31.t
-    desc = france.31.d
-    picture = GFX_report_event_german_parade_paris
- 
-    fire_only_once = yes
- 
-    trigger = {
-        original_tag = FRA
-        has_government = democratic
-        has_global_flag = fall_of_france
-        NOT = { has_country_flag = france_de_gaulle }
-    } 
+	id = france.31
+	title = france.31.t
+	desc = france.31.d
+	picture = GFX_report_event_german_parade_paris
 
-    mean_time_to_happen = {
-        days = 7
-    }
+	fire_only_once = yes
+
+	trigger = {
+		original_tag = FRA
+		has_government = democratic
+		has_global_flag = fall_of_france
+		NOT = { has_country_flag = france_de_gaulle }
+	} 
+
+	mean_time_to_happen = {
+		days = 7
+	}
 
 	option = {
 		name = france.31.a
@@ -4160,6 +4282,8 @@ country_event = {
 			country_leader = {
 				expire = "1965.1.1"
 				ideology = liberalism
+				traits = {
+				}
 			}
 			promote_leader = yes
 		}

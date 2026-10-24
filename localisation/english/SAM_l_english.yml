@@ -389,6 +389,7 @@
  SAM_this_will_happen_fono_accepted_independence: "Leads §Y[ROOT.GetName]§! closer to being §GFavoured§! in negotiations."
  SAM_this_will_happen_fono_rejected: "§Y[NZL.GetNameDef]§! may §RDeclare War§! over our independence."
  SAM_if_they_reject: "§YEffects if they reject:§!"
+ SAM_samoa_will_basically_become_independent: "§ONegotiations Will End§! \n\nFollowing the conclusion of the negotiations, §Y[FROM.GetNameDef]§! will bypass §Y$r56_SAM_organize_new_government$§!, §Y$r56_SAM_expand_rights_of_aristocracy$§!, §Y$r56_SAM_propose_making_nelson_faatonu$§!, §Y$r56_SAM_expand_rights_of_fono$§!, and §Y$r56_SAM_reach_out_to_wellington$§!, and will be able to follow a path that is aligned with our government."
  
  r56_goodwill_negotiations.3.t: "Mau Demands Greater Representation in the Fono"
  r56_goodwill_negotiations.3.d: "The first set of demands have arrived from the Mau. The Fono is the traditional parliament of the [FROM.GetAdjective] government, where chiefs gather to discuss important political matters. Under the governance of the Conservative government a few years prior, the Fono's power was limited, composed of mainly whites, and the real power was in the hand's of the administrator. The Mau wishes to change this. To give power back to the traditional parliament and to establish elections where the people can vote their representatives in the Fono."
@@ -410,7 +411,7 @@
  r56_goodwill_negotiations.6.b: "So you want us to leave?"
  
  r56_goodwill_negotiations.7.t: "Fa'a Sāmoa Secured"
- r56_goodwill_negotiations.7.d: "The [FROM.GetAdjective], on the behalf of [FROM.Capital.GetCapitalVictoryPointName], has accepted our demands to stop interfering with our traditional ways. This is yet another victory for the Mau, but not the last. We must continue to list off our deamnds and hope the [NZL.GetAdjective] will accept them."
+ r56_goodwill_negotiations.7.d: "The [FROM.GetAdjective], on the behalf of [FROM.Capital.GetCapitalVictoryPointName], has accepted our demands to stop interfering with our traditional ways. This is yet another victory for the Mau, but not the last. We must continue to list off our deamnds one by one and hope the [NZL.GetAdjective] delegation will accept them."
  r56_goodwill_negotiations.7.a: "Good."
  
  r56_goodwill_negotiations.8.t: "Mau Demands Repealing of Ordinances"
@@ -425,13 +426,17 @@
  
  r56_goodwill_negotiations.10.t: "Question of [SAM.GetAdjective] Independence"
  r56_goodwill_negotiations.10.d: "The most important question yet remains the sovereignty dispute of [726.GetName]. Many in [726.GetName] have argued that the 1889 Berlin Treaty is the evidence they need to assert themselves as an independent state that is being illegally occupied. And with the establishment of a provisional government in 1929, their legitimacy has only grown since then. While it will hurt the pride of our people, it may be the best course of action."
- r56_goodwill_negotiations.10.a: "We are leaving.."
+ r56_goodwill_negotiations.10.a: "We are leaving.. leaving.."
  r56_goodwill_negotiations.10.b: "Compromise we shall."
 
  r56_goodwill_negotiations.11.t: "Mau Suggests Incorporation of Union Islands"
  r56_goodwill_negotiations.11.d: "The Union Islands exist in a limbo state of sovereignty. Formally part of [ENG.GetNameDef], yet administered by [NZL.GetNameDef] through [726.GetName]. Some in the Mau in turn have suggested that the territory of the Union Islands be formally incorporated into a [SAM.GetAdjective] state in order to simplify this administrative complexity."
  r56_goodwill_negotiations.11.a: "I don't see why not!"
  r56_goodwill_negotiations.11.b: "They already got independence, now they want territory?!"
+
+ r56_goodwill_negotiations.12.t: "Ordinances Abolished, Nelson's Exile Revoked"
+ r56_goodwill_negotiations.12.d: "As negotiations continue to progress under intense talks between our and the [NZL.GetAdjective] delegation, more and more is being achieved from these talks. Recently, it has been reported that the Ordinances that have been adopted in New Zealand and the multiple exiles of $SAM_olaf_nelson$ are to be revoked following the conclusion of the talks. Another massive victory for the Mau and Samoa."
+ r56_goodwill_negotiations.12.a: "Good."
  
  #GM Compromise - SAM
  r56_goodwill_outcome.1.t:0 "Goodwill Mission: Compromise"
@@ -736,9 +741,6 @@
 
  r56_SAM_pressure_the_legislative_council: "Pressure the Legislative Council"
  r56_SAM_pressure_the_legislative_council_desc: ""
-
- r56_SAM_the_spark_that_we_required: "The Spark We Require"
- r56_SAM_the_spark_that_we_required_desc: ""
 
  r56_SAM_gather_tumua_ma_pule: "Rally Tumua and Pule"
  r56_SAM_gather_tumua_ma_pule_desc: ""

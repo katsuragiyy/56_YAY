@@ -15,6 +15,7 @@
 # Reminder that focus filters prio has to be handled in the generic focus file :)
 
 #!gfx:interface\r56_goals.gfx
+
 focus_tree = {
 	id = italian_focus
 
@@ -10504,13 +10505,8 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			#TODO_Manu: Need to do something here because it is super redundant with everything else
-
 			custom_effect_tooltip = form_greater_italy_tt
 
-			#TODO_Manu: What if Italian allies/subjects control these?
-
-			#TODO_Manu: Re-arrange script so that tooltips are clearer
 			#CLAIMS IN TUNISIA
 			if = {
 				limit = {
@@ -10717,6 +10713,8 @@ focus_tree = {
 					limit = {
 						846 = {
 							controller = {
+								NOT = { controls_state = 44 } #Otherwise already received the wargoal above
+								NOT = { controls_state = 805 } #Otherwise already received the wargoal above
 								NOT = { has_war_with = ROOT }
 								NOT = { is_in_faction_with = ROOT }
 								NOT = { has_non_aggression_pact_with = ROOT }
@@ -14511,6 +14509,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
+
 			IF = {
 				limit = {
 					NOT = { has_rule = can_create_factions }
@@ -14588,12 +14587,12 @@ focus_tree = {
 				uses = 1
 				category = heavy_air
 			}
-			# add_tech_bonus = { #Changed to require the tech to complete this focus, and give template and production line
-			# 	name = ITA_mare_nostrum_bba
-			# 	bonus = 1.0
-			# 	uses = 1
-			# 	technology = ship_hull_super_heavy	#turned into sp
-			# }
+			#add_tech_bonus = { #Changed to require the tech to complete this focus, and give template and production line
+				#name = ITA_mare_nostrum_bba
+				#bonus = 1.0
+				#uses = 1
+				#technology = ship_hull_super_heavy
+			#}
 
 			add_breakthrough_progress = {
 				specialization = specialization_naval
@@ -14671,6 +14670,13 @@ focus_tree = {
 		y = 1
 		relative_position_id = ITA_mare_nostrum_bba
 		cost = 5
+		available = {
+			any_controlled_state = {
+				resistance > 0
+				is_fully_controlled_by = ROOT
+			}
+		}
+
 
 		completion_reward = {
 			every_controlled_state = {
@@ -14706,20 +14712,40 @@ focus_tree = {
 			custom_effect_tooltip = ITA_all_roads_lead_to_rome_re_tt
 			add_to_variable = { ITA_re_supply_node_range = 0.1 }
 
-			every_neighbor_country = { #TODO_Manu: Better solution cause this does not match the countries which states are above (due to islands)
+			custom_effect_tooltip = ITA_all_roads_lead_to_rome_wargoals_tt
+			if = {
 				limit = {
-					capital_scope = { is_on_continent = europe }
-					NOT = {
-						is_in_faction_with = ROOT
-						has_guaranteed = ROOT
-						is_guaranteed_by = ROOT
-						has_non_aggression_pact_with = ROOT
+					any_other_country = {
+						capital_scope = { is_on_continent = europe }
+						NOT = {
+							is_in_faction_with = ROOT
+							has_guaranteed = ROOT
+							is_guaranteed_by = ROOT
+							has_non_aggression_pact_with = ROOT
+							has_war_with = ROOT
+						}
 					}
 				}
-				ROOT = {
-					create_wargoal = {
-						type = annex_everything
-						target = PREV
+				custom_effect_tooltip = generic_current_effects
+				custom_effect_tooltip = generic_ROOT_gains_wargoal_tt
+				every_neighbor_country = {
+					limit = {
+						capital_scope = { is_on_continent = europe }
+						NOT = {
+							is_in_faction_with = ROOT
+							has_guaranteed = ROOT
+							is_guaranteed_by = ROOT
+							has_non_aggression_pact_with = ROOT
+							has_war_with = ROOT
+						}
+					}
+					hidden_effect = {
+						ROOT = {
+							create_wargoal = {
+								type = annex_everything
+								target = PREV
+							}
+						}
 					}
 				}
 			}
@@ -14772,6 +14798,7 @@ focus_tree = {
 				uses = 1
 				category = heavy_air
 			}
+
 			if = {
 				limit = {
 					has_dlc = "By Blood Alone"
@@ -14798,7 +14825,7 @@ focus_tree = {
 				custom_effect_tooltip = ITA_modify_regia_aeronautica_dynamic_modifier_ns_intro
 				if = {
 					limit = {
-						NOT = { is_special_project_completed = sp_air_intercontinental_bomber }
+						NOT = { is_special_project_completed = sp:sp_air_intercontinental_bomber }
 					}
 					add_to_variable = { 
 						ITA_ra_sp_air_intercontinental_bomber_speed_factor = 0.2
@@ -14807,7 +14834,7 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						NOT = { is_special_project_completed = sp_air_mothership_aircraft }
+						NOT = { is_special_project_completed = sp:sp_air_mothership_aircraft }
 					}
 					add_to_variable = { 
 						ITA_ra_sp_air_mothership_aircraft_speed_factor = 0.2
@@ -14855,22 +14882,36 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+
 			if = {
 				limit = {
 					has_dlc = "No Step Back"
 				}
-				#add_tech_bonus = { #Changed to require the tech to complete this focus, and give template and production line
-				#	name = ITA_modern_musculus
-				#	ahead_reduction = 2
-				#	bonus = 1.0
-				#	uses = 1
-				#	technology = super_heavy_tank_chassis
-				#}
-				custom_effect_tooltip = ITA_modern_musculus_military_industry_dm_tt
-				hidden_effect = {
-					add_ideas = ITA_hidden_super_heavy_tank_ns
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ITA_hidden_super_heavy_tank_ns
+						}
+					}
+					custom_effect_tooltip = ITA_modern_musculus_military_industry_dm_tt
+					hidden_effect = {
+						add_ideas = ITA_hidden_super_heavy_tank_ns
+					}
 				}
-				ITA_add_modern_musculus_sh_tank_template_and_production = yes
+
+				if = {
+					limit = {
+						has_tech = super_heavy_tank_chassis
+					}
+					#SH template
+					ITA_add_modern_musculus_sh_tank_template_and_production = yes
+				}
+				else = {
+					custom_effect_tooltip = ITA_focus_sh_tank_template_tt
+					effect_tooltip = {
+						ITA_add_modern_musculus_sh_tank_template_and_production = yes
+					}
+				}
 			}
 			else = {
 				add_tech_bonus = {
@@ -14882,6 +14923,28 @@ focus_tree = {
 					technology = super_heavy_td
 					technology = super_heavy_art
 					technology = super_heavy_spaa
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.5
+			}
+			if = {
+				limit = {
+					has_dlc = "Gotterdammerung"
+				}
+				if = {
+					limit = {
+						NOT = { is_special_project_completed = sp:sp_land_land_cruiser }
+					}
+					custom_effect_tooltip = ITA_modify_regio_esercito_dynamic_modifier_ns_intro
+					add_to_variable = { 
+						ITA_re_sp_land_land_cruiser_speed_factor = 0.2
+						tooltip = sp_land_land_cruiser_speed_factor_tt
+					}
 				}
 			}
 		}
@@ -15299,9 +15362,16 @@ focus_tree = {
 					has_dlc = "No Step Back"
 				}
 				
-				custom_effect_tooltip = ITA_modern_musculus_military_industry_dm_tt
-				hidden_effect = {
-					add_ideas = ITA_hidden_super_heavy_tank_ns
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ITA_hidden_super_heavy_tank_ns
+						}
+					}
+					custom_effect_tooltip = ITA_modern_musculus_military_industry_dm_tt
+					hidden_effect = {
+						add_ideas = ITA_hidden_super_heavy_tank_ns
+					}
 				}
 
 				if = {
@@ -15517,6 +15587,8 @@ focus_tree = {
 ##       ##     ## ##   ##   ##        ##  ##    ##  ##  ####    ##        ##     ## ##        ##     ##     ##  ##             ##    ##   ##    ##  ##    ##  ##     ##    ##    
 ##       ##     ## ##    ##  ##        ##  ##    ##  ##   ###    ##        ##     ## ##        ##     ##     ##  ##    ## ##    ##    ##    ##   ##  ##    ##  ##     ##    ##    
 ##        #######  ##     ## ######## ####  ######   ##    ##    ##         #######  ######## ####    ##    ####  ######   ######     ##     ## ####  ######   ##     ##    ##    
+
+
 	focus = {
 		id = ITA_foreign_affairs
 		icon = GFX_goal_generic_major_diplo
@@ -15604,11 +15676,11 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ITA_foreign_affairs
-		cost = 5
-		
+		cost = 5		
 		available = {
 			is_subject = no
 		}
+
 
 		completion_reward = {
 			add_state_claim = 102 #NORTH SLOVENIA
@@ -15618,7 +15690,6 @@ focus_tree = {
 			add_state_claim = 105 #MONTENEGRO
 			add_state_claim = 963 #WEST SANDZAK
 			add_state_claim = 802 #KOSOVO
-
 
 			if = {
 				limit = {
@@ -15649,13 +15720,14 @@ focus_tree = {
 					}
 				}
 				activate_targeted_decision = { target = YUG decision = ITA_send_ultimatum_to_country_balkan }
-			}
+			}	
 			
 			USA = {	#USA can denounce the aggression - former "Claims on Yugoslavia"
 				set_country_flag = { flag = USA_yugoslavia_window days = 60 value = 1 }	#probably missing
 			}
 		}
 	}
+
 	focus = {
 		id = ITA_ally_yugoslavia
 		icon = GFX_goal_generic_befriend_yugoslavia
@@ -22985,9 +23057,7 @@ focus_tree = {
 					has_government = democratic
 					is_subject = no
 				}
-				any_other_country = {
-					is_in_faction_with = ROOT
-				}
+				num_faction_members > 1
 			}
 		}
 

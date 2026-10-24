@@ -465,7 +465,7 @@ focus_tree = {
 				custom_effect_tooltip = BRA_modify_estado_novo_ns_intro
 				add_to_variable = {
 					BRA_estado_novo_production_factory_max_efficiency_factor = 0.05
-					tooltip = industrial_capacity_factory_tt # R56
+					tooltip = production_factory_max_efficiency_factor_tt
 				}
 				add_to_variable = {
 					BRA_estado_novo_consumer_goods_factor = -0.05
@@ -480,7 +480,7 @@ focus_tree = {
 				custom_effect_tooltip = BRA_modify_estado_moderno_ns_intro
 				add_to_variable = {
 					BRA_estado_moderno_production_factory_max_efficiency_factor = 0.05
-					tooltip = industrial_capacity_factory_tt
+					tooltip = production_factory_max_efficiency_factor_tt
 				}
 				add_to_variable = {
 					BRA_estado_moderno_consumer_goods_factor = -0.05

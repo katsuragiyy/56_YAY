@@ -339,9 +339,11 @@ ideas = {
 							NOT = { has_idea = HUN_treaty_of_triannon_aat }
 						}
 					}
-					ELSE = { # R56
-						has_completed_focus = HUN_secret_rearmament
-						NOT = { has_idea = HUN_treaty_of_triannon }
+					ELSE = {
+						OR = {
+							has_completed_focus = HUN_secret_rearmament
+							NOT = { has_idea = HUN_treaty_of_triannon }
+						}
 					}
 				}
 				ELSE_IF = {
@@ -1392,6 +1394,13 @@ ideas = {
 			ai_will_do = {
    				factor = 1
 
+				modifier = {
+					original_tag = JAP
+					has_idea = export_focus
+					has_active_mission = JAP_government_faction_demands_trade_law_change
+					factor = 10
+				}
+
    				modifier = {
 					factor = 300
 
@@ -1527,6 +1536,13 @@ ideas = {
 
 			ai_will_do = {
    				factor = 1
+
+				modifier = {
+					original_tag = JAP
+					has_idea = limited_exports
+					has_active_mission = JAP_government_faction_demands_trade_law_change
+					factor = 10
+				}
 
 				modifier = {
 					factor = 0
@@ -1690,6 +1706,13 @@ ideas = {
 			ai_will_do = {
    				factor = 1
 
+				modifier = {
+					original_tag = JAP
+					has_idea = closed_economy
+					has_active_mission = JAP_government_faction_demands_trade_law_change
+					factor = 10
+				}
+
    				modifier = {
 					add = -1
 
@@ -1728,7 +1751,8 @@ ideas = {
 					}
 				}
    			}
-			on_add = {
+
+   			on_add = {
 				if = {
 					limit = {
 						has_global_flag = sia_dlc_focus_tree

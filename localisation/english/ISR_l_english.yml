@@ -48,8 +48,8 @@
  ################################
  #TOOLTIPS
  ################################
- ISR_ARAB_volunteers_EGY:0 "We will §Gtake control§! of §Y[PAL.GetNameDef]§!'s southern units."
- ISR_ARAB_volunteers_JOR:0 "We will §Gtake control§! of the remainder of §Y[PAL.GetNameDef]§!'s units"
+ ISR_ARAB_volunteers_EGY:0 "We will §GTake Control§! of §Y[PAL.GetNameDef]§!'s southern units."
+ ISR_ARAB_volunteers_JOR:0 "We will §GTake Control§! of the remainder of §Y[PAL.GetNameDef]§!'s units"
  MPL_trigger_collapse_PAL:0 " §RIt has begun.§!"
  MPL_trigger_collapse_ISR:0 " §RIt has begun.§!"
  ISR_coup_after_war:0 "We will coup the government once the war is concluded."
@@ -73,7 +73,7 @@
  ISR_land_reclamation_unlocked:0 "Unlocks §YLand Reclamation§! decisions, allowing us to obtain more building slots."
  ISR_if_has_jewish_militarism:0 "If we have §YIron Wall Diplomacy§! national spirit:"
  ISR_if_not_has_jewish_militarism:0 "If we do not have §YIron Wall Diplomacy§! national spirit:"
- ISR_armageddon:0 "§RArmageddon has come§!"
+ ISR_armageddon:0 "§RArmageddon Has come§!"
  ISR_coalition_will_be_updated:0 "§GThis focus will be autocompleted once a coalition is formed if the checks are fulfilled§!."
  MPL_arab_declaring_war:0 "Has joined the Arab-[ISR.GetAdjective] war."
  ISR_walk_once_more:0 "But what happens to a dream deferred?"

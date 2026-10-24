@@ -5,7 +5,7 @@ country_event = {
 	id = wtt_prc.1
 	title = wtt_prc.1.t
 	desc = wtt_prc.1.desc
-	picture = GFX_report_event_china_chiang_kai_shek
+	picture = GFX_report_event_china_chiang_mao
 
 	is_triggered_only = yes
 	
@@ -299,13 +299,13 @@ country_event = {
 			}
 			KOR = { transfer_state = 920 }
 		}
-		if = {
+		IF = {
 			limit = {
 				MAN = {
 					is_subject_of = JAP
 				}
 			}
-			if = {
+			IF = {
 				limit = {
 					controls_state = 609
 				}
@@ -313,7 +313,7 @@ country_event = {
 					transfer_state = 609
 				}
 			}
-			if = {
+			IF = {
 				limit = {
 					controls_state = 745
 				}
@@ -323,13 +323,13 @@ country_event = {
 			}
 			set_autonomy = { target = MAN autonomy_state = autonomy_free }
 		}
-		else_if = {
+		ELSE_IF = {
 			limit = {
 				not = {
 					has_war_with = event_target:WTT_current_china_leader
 				}
 			}			
-			if = {
+			IF = {
 				limit = {
 					controls_state = 609
 				}
@@ -337,7 +337,7 @@ country_event = {
 					transfer_state = 609
 				}
 			}
-			if = {
+			IF = {
 				limit = {
 					controls_state = 745
 				}
@@ -346,7 +346,7 @@ country_event = {
 				}
 			}
 		}
-		if = {
+		IF = {
 			limit = {
 				MEN = {
 					is_subject_of = JAP
@@ -758,6 +758,7 @@ country_event = {
 			base = 10
 		}
 		event_target:warlord = {
+			PRC_transfer_negative_spirits = yes
 			every_country = {
 				limit = {
 					is_subject_of = event_target:communist_china
@@ -792,7 +793,15 @@ country_event = {
 			
 			hidden_effect = {
 				PRC_soviet_tribute_level_up = yes
-				load_focus_tree = china_communist_focus 
+				IF = {
+					limit = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+					load_focus_tree = china_communist_warlord_focus
+				} 
+				ELSE = {
+					load_focus_tree = china_communist_focus
+				} 
 			}
 		}
 	}
@@ -987,7 +996,10 @@ country_event = {
 			}
 			event_target:WTT_communist_china = {
 				set_rule = { can_create_factions = yes }
-				create_faction = CHI_the_peoples_front
+				create_faction_from_template = {
+					template = faction_template_POR_popular_front_bloc
+					name = CHI_the_peoples_front
+				}
 				add_to_faction = PREV
 			}
 			add_ai_strategy = {
@@ -1125,7 +1137,7 @@ country_event = {
 			base = 10
 		}
 		FROM = {
-			country_event = { id = wtt_warlord_vs_prc.3 }
+			country_event = { id = wtt_warlord_vs_prc.33 }
 		}
 		PRC_soviet_tribute_clear_all = yes
 	}
@@ -1240,4 +1252,3 @@ country_event = {
 		}
 	}
 }
-

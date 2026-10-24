@@ -307,6 +307,16 @@ spriteTypes = {
 		textureFile = "gfx/flags/small/AFG_fascism.tga"
 		legacy_lazy_load = no
 	}
+	spriteType = {
+		name = "GFX_gamerules_AFG_mughal"
+		textureFile = "gfx/flags/small/AFG_mughal_emirate_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_gamerules_AFG_bukhara"
+		textureFile = "gfx/flags/small/BUK_neutrality.tga"
+		legacy_lazy_load = no
+	}
 	###------> LUX GAME RULES FLAGS
 	spriteType = {
 		name = "GFX_gamerules_LUX_communist"

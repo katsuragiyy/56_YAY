@@ -6641,8 +6641,13 @@ form_byzantine_empire_category = {
 		}
 
 		complete_effect = {
-			set_country_flag = GRE_byz_unified_flag
-			GRE_set_appropriate_cosmetic_tag = yes
+			effect_tooltip = {
+				set_cosmetic_tag = BYZ_UNIFIED
+			}
+			hidden_effect = {
+				set_country_flag = GRE_byz_unified_flag
+				GRE_set_appropriate_cosmetic_tag = yes
+			}
 			set_capital = { state = 797 }
 			add_state_core = 797
 			hidden_effect = { 797 = { set_state_name = "Constantinople" } }
@@ -11874,6 +11879,7 @@ form_macedonian_empire_category = {
 	}
 }
 
+
 form_turan_category = {
 
 	form_turan = {
@@ -11881,10 +11887,24 @@ form_turan_category = {
 		icon = generic_form_nation
 
 		allowed = {
-			original_tag = TUR
-			has_dlc = "Battle for the Bosporus"
+			OR = {
+				AND = {
+					original_tag = TUR
+					has_dlc = "Battle for the Bosporus"
+				}
+				AND = {
+					original_tag = AFG
+					has_dlc = "Graveyard of Empires" # 56
+				}
+			}
 		}
 
+		visible = {
+			#original_tag = TUR		#56 - Does not need to be checked for while game is running, these checks only need to be in 'allowed = {}' sections of code
+			if = { limit = { original_tag = TUR } has_completed_focus = TUR_turanist_ambition }
+			else_if = { limit = { original_tag = AFG } has_completed_focus = AFG_a_turanian_empire }
+			NOT = { has_global_flag = form_turan_flag }
+		}
 		available = {
 			is_subject = no
 			# Turkey
@@ -12009,12 +12029,6 @@ form_turan_category = {
 				controls_state = 874
 				controls_state = 822
 			}
-		}
-
-		visible = {
-			#original_tag = TUR		#56 - Does not need to be checked for while game is running, these checks only need to be in 'allowed = {}' sections of code
-			has_completed_focus = TUR_turanist_ambition
-			NOT = { has_global_flag = form_turan_flag }
 		}
 
 		complete_effect = {
@@ -12517,6 +12531,7 @@ form_turan_category = {
 }
 
 form_turkestan_category = {
+
 	form_turkestan = {
 
 		icon = generic_form_nation
@@ -12536,6 +12551,7 @@ form_turkestan_category = {
 				original_tag = KHI # Khiva
 				original_tag = KKP # Karakalpakstan
 				original_tag = KUM # Kumul Khanate
+				original_tag = AFG # Afghanistan, only if they've doen a specific focus 
 			}
 		}
 
@@ -12600,6 +12616,10 @@ form_turkestan_category = {
 				#original_tag = KHI # Khiva
 				#original_tag = KKP # Karakalpakstan
 			#}
+			AND = {
+				original_tag = AFG
+				has_completed_focus = AFG_turanist_abitions
+			}
 			NOT = { has_global_flag = form_turkestan_flag }
 		}
 

@@ -55685,6 +55685,38 @@ spriteTypes = {
     legacy_lazy_load = no
   }
 
+  spriteType = {
+    name = "GFX_goal_ICE_military_academy_shine"
+    texturefile = "gfx/interface/goals/ice/r56_goal_ICE_military_academy.dds"
+    effectFile = "gfx/FX/buttonstate.lua"
+    animation = {
+      animationmaskfile = "gfx/interface/goals/ice/r56_goal_ICE_military_academy.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = -90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+
+    animation = {
+      animationmaskfile = "gfx/interface/goals/ice/r56_goal_ICE_military_academy.dds"
+      animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      animationrotation = 90.0
+      animationlooping = no
+      animationtime = 0.75
+      animationdelay = 0
+      animationblendmode = "add"
+      animationtype = "scrolling"
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+    }
+    legacy_lazy_load = no
+  }
+
 	spriteType = {
     name = "GFX_focus_NOR_hydroelectric_power_shine"
     texturefile = "gfx/interface/goals/nor/focus_NOR_hydroelectric_power.dds"
@@ -56266,7 +56298,7 @@ spriteTypes = {
     texturefile = "gfx/interface/goals/nzl/r56_goal_NZL_seato.dds"
     effectFile = "gfx/FX/buttonstate.lua"
     animation = {
-      animationmaskfile = "gfx/interface/goals/nzl/rr56_goal_NZL_seato.dds"
+      animationmaskfile = "gfx/interface/goals/nzl/r56_goal_NZL_seato.dds"
       animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
       animationrotation = -90.0
       animationlooping = no
@@ -56279,7 +56311,7 @@ spriteTypes = {
     }
 
     animation = {
-      animationmaskfile = "gfx/interface/goals/nzl/rr56_goal_NZL_seato.dds"
+      animationmaskfile = "gfx/interface/goals/nzl/r56_goal_NZL_seato.dds"
       animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
       animationrotation = 90.0
       animationlooping = no
@@ -56298,7 +56330,7 @@ spriteTypes = {
     texturefile = "gfx/interface/goals/nzl/r56_goal_NZL_breaking_out.dds"
     effectFile = "gfx/FX/buttonstate.lua"
     animation = {
-      animationmaskfile = "gfx/interface/goals/nzl/gfx/interface/goals/nzl/r56_goal_NZL_breaking_out.dds"
+      animationmaskfile = "gfx/interface/goals/nzl/r56_goal_NZL_breaking_out.dds"
       animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
       animationrotation = -90.0
       animationlooping = no
@@ -56330,7 +56362,7 @@ spriteTypes = {
     texturefile = "gfx/interface/goals/nzl/r56_goal_NZL_home_defense.dds"
     effectFile = "gfx/FX/buttonstate.lua"
     animation = {
-      animationmaskfile = "gfx/interface/goals/nzl/gfx/interface/goals/nzl/r56_goal_NZL_home_defense.dds"
+      animationmaskfile = "gfx/interface/goals/nzl/r56_goal_NZL_home_defense.dds"
       animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
       animationrotation = -90.0
       animationlooping = no

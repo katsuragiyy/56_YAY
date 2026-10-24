@@ -1323,8 +1323,8 @@ LGF_UNIFIED = {
 }
 
 COG_belgian_congo = {
-	color = rgb { 0 71 179 }
-	color_ui = rgb { 0 31 77 }
+	color = rgb { 193 171 8 } # 56 - Screw blue, u r now YELLOW
+	color_ui = rgb { 251 222 10 } # 56 - Screw blue, u r now YELLOW
 }
 
 HUN_GREATER = {
@@ -1650,6 +1650,11 @@ PER_viceroyalty_of_iran = {
 PER_viceroyalty_of_persia = {
 	color = rgb { 139 0 0 }
 	color_ui = rgb { 139 0 0 }
+}
+
+samanid_empire_tag = {
+	color = rgb { 0 165 114 }
+	color_ui = rgb { 0 165 114 }
 }
 
 european_union_leader = {

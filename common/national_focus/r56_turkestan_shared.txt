@@ -1467,7 +1467,7 @@
 			add_ideas = political_commissars_focus
 			hidden_effect = {
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer infantry_officer }
+					traits = { communist_sympathizer infantry_officer }
 					skill = 3
 					attack_skill = 2
 					defense_skill = 4
@@ -1475,7 +1475,7 @@
 					logistics_skill = 1
 				}
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer artillerist }
+					traits = { communist_sympathizer artillerist }
 					skill = 2
 					attack_skill = 2
 					defense_skill = 2
@@ -1483,7 +1483,7 @@
 					logistics_skill = 2
 				}
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer trait_reckless cavalry_officer }
+					traits = { communist_sympathizer trait_reckless cavalry_officer }
 					skill = 2
 					attack_skill = 3
 					defense_skill = 1

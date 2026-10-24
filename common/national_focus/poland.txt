@@ -8694,7 +8694,7 @@ focus_tree = {
 			effect_tooltip = {
 				create_corps_commander = {
 					name = "Vladislav Korchits"
-					traits = { JAP_communist_sympathizer old_guard }
+					traits = { communist_sympathizer old_guard }
 					skill = 3
 					attack_skill = 2
 					defense_skill = 4
@@ -11925,6 +11925,7 @@ focus_tree = {
 						is_core_of = CZE
 						is_core_of = SLO
 						state = 5
+						state = 68
 						state = 763
 					}
 				}

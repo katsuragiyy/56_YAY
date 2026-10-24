@@ -64,6 +64,12 @@ on_actions = {
 						original_tag = RAJ
 						original_tag = MAL
 						original_tag = INS
+						original_tag = JOR
+						#original_tag = EGY # 56
+						original_tag = PAL
+						original_tag = SYR
+						original_tag = LEB
+						original_tag = KUW
 					}
 				}
 				abandon_colony_tag = yes
@@ -109,6 +115,22 @@ on_actions = {
 				}
 				add_to_tech_sharing_group = commonwealth_research				
 			}
+
+			#if = { # 56 - We probably shouldn't have this to not bug out r56 content
+			#	limit = {
+			#		tag = RAJ
+			#		has_autonomy_state = autonomy_dominion
+			#		NOT = { has_dlc = "Graveyard of Empires" }
+			#	}
+			#	set_politics = {
+			#		ruling_party = democratic
+			#		elections_allowed = yes
+			#	}
+			#	add_popularity = {
+			#		ideology = neutrality
+			#		popularity = -1
+			#	}
+			#}
 		}
 	}
 
@@ -120,6 +142,17 @@ on_actions = {
 	#used when puppeting in a peace conference
 	#ROOT = nation being puppeted, FROM = overlord
 	on_puppet = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						original_tag = SYR
+						original_tag = LEB
+					}
+				}
+				FRA_sync_levant_cosmetic_tag_effect = yes
+			}
+		}
 		effect = {
 			if = {
 				limit = {
@@ -144,33 +177,51 @@ on_actions = {
 			}
 			if = {
 				limit = { 
-					TAG = USA
-					is_subject_of = ENG
-				}
+					AND = { 
+						TAG = USA
+						is_subject_of = ENG
+						}
+					 }
 				set_cosmetic_tag = USA_UK
 			}
 			if = {
 				limit = { 
-					TAG = UKR
-					is_subject_of = GER
-					GER = { has_government = fascism }
-				}
+					AND = { 
+						TAG = USA
+						is_subject_of = SAF
+						SAF = { has_idea = SAF_king_edward }
+						}
+					 }
+				set_cosmetic_tag = USA_SAF_EDW
+			}
+			if = {
+				limit = { 
+					AND = { 
+						TAG = UKR
+						is_subject_of = GER
+						GER = { has_government = fascism }
+						}
+					 }
 				set_cosmetic_tag = UKR_GER
 			}
 			if = {
 				limit = { 
-					TAG = UKR
-					is_subject_of = SOV
-					SOV = { has_government = communism }
-				}
+					AND = { 
+						TAG = UKR
+						is_subject_of = SOV
+						SOV = { has_government = communism }
+						}
+					 }
 				set_cosmetic_tag = UKR_SOV
 			}
 			if = {
 				limit = { 
-					TAG = BLR
-					is_subject_of = GER
-					GER = { has_government = fascism }
-				}
+					AND = { 
+						TAG = BLR
+						is_subject_of = GER
+						GER = { has_government = fascism }
+						}
+					 }
 				set_cosmetic_tag = BLR_GER
 			}
 			if = {
@@ -247,32 +298,40 @@ on_actions = {
 			}
 			if = {
 				limit = { 
-					TAG = USA
-					is_subject_of = ENG
+					AND = { 
+						TAG = USA
+						is_subject_of = ENG
+					}
 				}
 				set_cosmetic_tag = USA_UK
 			}
 			if = {
 				limit = { 
-					TAG = UKR
-					is_subject_of = GER
-					GER = { has_government = fascism }
+					AND = { 
+						TAG = UKR
+						is_subject_of = GER
+						GER = { has_government = fascism }
+					}
 				}
 				set_cosmetic_tag = UKR_GER
 			}
 			if = {
 				limit = { 
-					TAG = UKR
-					is_subject_of = SOV
-					SOV = { has_government = communism }
+					AND = { 
+						TAG = UKR
+						is_subject_of = SOV
+						SOV = { has_government = communism }
+					}
 				}
 				set_cosmetic_tag = UKR_SOV
 			}
 			if = {
 				limit = { 
-					TAG = BLR
-					is_subject_of = GER
-					GER = { has_government = fascism }
+					AND = { 
+						TAG = BLR
+						is_subject_of = GER
+						GER = { has_government = fascism }
+					}
 				}
 				set_cosmetic_tag = BLR_GER
 			}
@@ -407,5 +466,61 @@ on_actions = {
 			}
 		}
 	}
+
+	#ROOT is free nation FROM is releaser
+	on_release_as_free = { 
+
+		# Making sure Quebec City becomes the Capital of Quebec
+		effect = {
+			IF = {
+				limit = {
+					ROOT = {
+						tag = QUE
+						owns_state = 468
+					}
+				}
+				468 = {
+					set_victory_points = {
+						province = 4345
+						value = 15
+					}
+
+					set_victory_points = {
+						province = 12149
+						value = 20
+					}
+				}	
+			}
+		}
+
+	}
+
+	# ROOT is the nation being released, FROM is the overlord
+	on_release_as_puppet = {
+
+		# Making sure Quebec City becomes the Capital of Quebec
+	    effect = {
+	    	IF = {
+	    		limit = {
+	    			ROOT = {
+	    				tag = QUE
+	    				owns_state = 468
+	    			}
+	    		}
+	    		468 = {
+	    			set_victory_points = {
+	    				province = 4345
+	    				value = 15
+	    			}
+
+	    			set_victory_points = {
+	    				province = 12149
+	    				value = 20
+	    			}
+	    		}	
+	    	}
+	    }
+	}
+	
 
 }

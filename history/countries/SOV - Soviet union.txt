@@ -801,7 +801,7 @@ set_variable = { SOV_defense_industry_materiel_manufacturer_cost_factor = 0 } #-
 set_variable = { SOV_defense_industry_breakthrough_factor = 0 } #-> PC of Mortar Armament
 set_variable = { SOV_defense_industry_production_speed_coastal_bunker_factor = 0 } #-> Military Engineering University
 set_variable = { SOV_defense_industry_production_speed_bunker_factor = 0 } #-> Military Engineering University
-set_variable = { SOV_defense_industry_max_dig_in_factor = 0 } #-> Military Engineering University
+set_variable = { SOV_defense_industry_max_dig_in = 0 } #-> Military Engineering University
 set_variable = { SOV_defense_industry_army_artillery_defence_factor = 0 } #-> Military Engineering University
 
 
@@ -903,7 +903,7 @@ set_variable = { SOV_ideological_rallies_days = 90 }
 set_variable = { SOV_ultimatum_days = 14 }
 set_variable = { SOV_send_infantry_equipment_cd = 180 }
 set_variable = { SOV_operation_countenance_preparation_days = 30 }
-set_variable = { SOV_operation_countenance_mission_days = 45 }
+set_variable = { SOV_operation_countenance_mission_days = 30 }
 
 set_variable = { SOV_permanent_revolution_uprising_days = 90 }
 

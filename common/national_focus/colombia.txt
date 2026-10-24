@@ -1743,7 +1743,7 @@ focus_tree = {
 			add_ideas = political_commissars_focus
 			hidden_effect = {
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer infantry_officer }
+					traits = { communist_sympathizer infantry_officer }
 					skill = 3
 					attack_skill = 2
 					defense_skill = 4
@@ -1751,7 +1751,7 @@ focus_tree = {
 					logistics_skill = 1
 				}
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer infantry_officer }
+					traits = { communist_sympathizer infantry_officer }
 					skill = 2
 					attack_skill = 2
 					defense_skill = 2
@@ -1759,7 +1759,7 @@ focus_tree = {
 					logistics_skill = 2
 				}
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer trait_reckless cavalry_officer }
+					traits = { communist_sympathizer trait_reckless cavalry_officer }
 					skill = 2
 					attack_skill = 3
 					defense_skill = 1
@@ -1972,9 +1972,20 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			base = 0
+			factor = 0
+			modifier = {
+				add = -10
+				USA = {
+					NOT = {
+						focus_progress = {
+							focus = r56_USA_form_united_nations
+							progress < 0.01
+						}
+					}
+				}
+			}
 			modifier = { # LET ME GET ON THAT!!!
-				add = 1000
+				add = 100
 				USA = {
 					focus_progress = {
 						focus = r56_USA_form_united_nations

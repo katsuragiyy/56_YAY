@@ -7179,6 +7179,7 @@ MON_greater_mongolia = {
 				original_tag = BYA
 				original_tag = KUM
 				original_tag = KAL
+				original_tag = AFG
 			}
 		}
 
@@ -7231,6 +7232,10 @@ MON_greater_mongolia = {
 
 		visible = {
 			NOT = { has_global_flag = form_greater_mongolia_flag }
+			IF = {
+				limit = { original_tag = AFG }
+				has_completed_focus = AFG_heirs_of_the_chagatai
+			}
 		}
 
 		complete_effect = {
@@ -7324,6 +7329,7 @@ MON_greater_mongolia = {
 				original_tag = TAN
 				original_tag = KUM
 				original_tag = KAL
+				original_tag = AFG
 			}
 		}
 
@@ -7419,6 +7425,7 @@ MON_greater_mongolia = {
 				original_tag = BYA
 				original_tag = TAN
 				original_tag = KUM
+				original_tag = AFG
 			}
 		}
 
@@ -7504,6 +7511,7 @@ MON_greater_mongolia = {
 				original_tag = TAN
 				original_tag = KUM
 				original_tag = KAL
+				original_tag = AFG
 			}
 		}
 
@@ -7588,6 +7596,7 @@ MON_greater_mongolia = {
 				original_tag = BYA
 				original_tag = TAN
 				original_tag = KAL
+				original_tag = AFG
 			}
 		}
 
@@ -7671,6 +7680,7 @@ MON_greater_mongolia = {
 				original_tag = MEN
 				original_tag = BYA
 				original_tag = KAL
+				original_tag = AFG
 			}
 		}
 

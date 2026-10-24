@@ -2210,7 +2210,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 10
+		cost = 5
 		prerequisite = { focus = SWE_form_saab }
 		relative_position_id = SWE_form_saab
 		mutually_exclusive = { focus = SWE_domestic_designs }
@@ -2220,8 +2220,9 @@ focus_tree = {
 		}
 
 		available = {
-			any_other_country = {
-				is_major = yes
+			any_collection_element = {
+				collection = game:all_majors
+				NOT = { tag = ROOT }
 				has_government = ROOT
 				NOT = { has_war_with = ROOT }
 			}
@@ -2465,23 +2466,38 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = SWE_reject_saltsjobaden }
 		relative_position_id = SWE_reject_saltsjobaden
-
-		available = {
-			NOT = {
-				has_government = communism
-			}
-		}		
+		
 
 		ai_will_do = {
 			factor = 10		
 		}
 
+		available = {
+			NOT = {
+				has_government = communism
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			hidden_effect = { #need tt because variables dont show up in tooltip
-				remove_dynamic_modifier = {
-					modifier = SWE_folkhemmet
+			hidden_effect = {
+				if = { #need tt because variables dont show up in tooltip
+					limit = {
+						has_dynamic_modifier = {
+							modifier = SWE_folkhemmet
+						}
+					}
+					remove_dynamic_modifier = {
+						modifier = SWE_folkhemmet
+					}
 				}
 			}
 			custom_effect_tooltip = SWE_economic_deregulation_tt
@@ -2504,7 +2520,26 @@ focus_tree = {
 			factor = 10		
 		}
 
+		available = {
+			NOT = { has_war_with = FIN }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+
 		completion_reward = {
+			if = {
+				limit = {
+					has_idea = neutrality_idea
+				}
+				remove_ideas = neutrality_idea
+			}
 			set_rule = { can_send_volunteers = yes }
 			if = {
 				limit = {
@@ -2524,25 +2559,33 @@ focus_tree = {
 				custom_effect_tooltip = SWE_swedes_not_sweden_to_finlands_aid_tt_2
 			}
 			
-			FIN = {
-				add_equipment_to_stockpile = { 
-					type = infantry_equipment_0
-					amount = 2000 
-					producer = PREV
+			if = {
+				limit = {
+					NOT = { FIN = { has_war_with = ROOT } }
 				}
 
-				add_equipment_to_stockpile = { 
-					type = anti_air_equipment_1
-					amount = 100 
-					producer = PREV
-				}
+				FIN = {
 
-				add_equipment_to_stockpile = { 
-					type = anti_tank_equipment_1
-					amount = 100 
-					producer = PREV
+					add_equipment_to_stockpile = { 
+						type = infantry_equipment_0
+						amount = 2000 
+						producer = PREV
+					}
+
+					add_equipment_to_stockpile = { 
+						type = anti_air_equipment_1
+						amount = 100 
+						producer = PREV
+					}
+
+					add_equipment_to_stockpile = { 
+						type = anti_tank_equipment_1
+						amount = 100 
+						producer = PREV
+					}
 				}
 			}
+
 		}
 	}
 
@@ -2571,7 +2614,9 @@ focus_tree = {
 			FIN = {
 				NOT = { has_war_with = ROOT }
 				has_capitulated = no
+				has_civil_war = no
 			}
+			is_subject = no
 		}
 
 		bypass = {
@@ -2581,6 +2626,10 @@ focus_tree = {
 				}
 			}
 		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 
 		completion_reward = {
@@ -2623,6 +2672,14 @@ focus_tree = {
 		available = {
 			democratic > 0.66
 		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
@@ -2656,6 +2713,18 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10		
 		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
 
 		completion_reward = {
 			hidden_effect = {
@@ -2700,8 +2769,12 @@ focus_tree = {
 	available = {
 		communism > 0.2
 	}
+	bypass = {
+	}
 	cancel_if_invalid = no
-	search_filters = { FOCUS_FILTER_POLITICAL }
+	continue_if_invalid = no
+	available_if_capitulated = no
+	search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 	completion_reward = {
 		country_event = {
 			id = AAT_Sweden_communism.1
@@ -2814,6 +2887,18 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10		
 		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -2858,6 +2943,18 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10		
 		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
@@ -2889,6 +2986,19 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10		
 		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
 
 		completion_reward = {
 			custom_effect_tooltip = SWE_refuge_for_revolutionaries_tt
@@ -4204,11 +4314,16 @@ focus_tree = {
 			set_rule = { can_create_factions = yes }
 			set_cosmetic_tag = SWE_nordic_defense_council
 			retire_country_leader = yes
-			promote_character = SWE_nordic_defense_council_leader
+			promote_character = {
+				character = SWE_nordic_defense_council_leader 
+			}
 			if = {
 				limit = {
 					NOR = {
 						is_subject = no
+						NOT = {
+							has_war_with = ROOT
+						}
 					}
 				}
 				NOR = { country_event = { id = AAT_Sweden_nordic_defense_council.1 hours = 3 } }
@@ -4219,6 +4334,9 @@ focus_tree = {
 				limit = {
 					FIN = {
 						is_subject = no
+						NOT = {
+							has_war_with = ROOT
+						}
 					}
 				}
 				if = {
@@ -4237,6 +4355,9 @@ focus_tree = {
 				limit = {
 					DEN = {
 						is_subject = no
+						NOT = {
+							has_war_with = ROOT
+						}
 					}
 				}
 				DEN = { country_event = { id = AAT_Sweden_nordic_defense_council.1 hours = 3 } }
@@ -4246,6 +4367,9 @@ focus_tree = {
 				limit = {
 					ICE = {
 						is_subject = no
+						NOT = {
+							has_war_with = ROOT
+						}
 					}
 				}
 				ICE = { country_event = { id = AAT_Sweden_nordic_defense_council.1 hours = 3 } }
@@ -4330,7 +4454,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_tech = ship_hull_super_heavy
+			is_special_project_completed = sp:sp_naval_super_heavy_battleship
 			FIN = {
 				is_subject_of = ROOT
 				exists = yes
@@ -4445,6 +4569,7 @@ focus_tree = {
 					limit = { 
 						has_capitulated = no 
 						is_subject_of = ROOT
+						NOT = { original_tag = SWE }
 					}
 					transfer_units_fraction = {
 						target = ROOT         # the recipient
@@ -4459,6 +4584,7 @@ focus_tree = {
 			custom_effect_tooltip = SWE_nordic_centralized_air_command_tt
 		}
 	}
+
 
 	focus = {
 		id = SWE_cement_control_of_the_baltic
@@ -4585,6 +4711,7 @@ focus_tree = {
 		}
 	}
 
+
 	focus = {
 		id = SWE_decentralized_nordic_army_command
 		icon = GFX_focus_SWE_the_nordic_decentralized_nordic_army_command 
@@ -4613,6 +4740,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+
 			IF = {
 				limit = {
 					has_dlc = "No Compromise, No Surrender"
@@ -4625,11 +4753,15 @@ focus_tree = {
 				set_rule = { can_create_factions = yes }
 				create_faction = SWE_the_nordic_defense_council
 			}
+
 			complete_national_focus = NORDIC_form_joint_alliance
 			every_other_country = {
 				limit = {
 					NORDIC_is_nordic = yes 
 					is_subject = no
+					NOT = {
+						has_war_with = ROOT
+					}
 					IF= {
 						limit = { SWE = { NORDIC_is_democratic = yes }}
 						NORDIC_is_democratic = yes
@@ -6765,6 +6897,17 @@ focus_tree = {
 			is_subject_of = GER
 			has_government = fascism
 		}
+	    bypass = {
+	    	OR = {
+	    		FIN = { is_subject_of = ROOT }
+	    		FIN = {
+	    			all_core_state = {
+	    				is_controlled_by = ROOT
+	    			}
+	    		}
+	    	}
+	    }    
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		will_lead_to_war_with = FIN
 
 		completion_reward = {
@@ -6808,6 +6951,10 @@ focus_tree = {
 				    		generator = { 111 }
 				    	}
 			    	}
+			
+
+
+
 			    }
 			}
 
@@ -6828,6 +6975,8 @@ focus_tree = {
 			is_subject_of = GER
 			has_government = fascism
 		}
+	                
+		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
 			add_breakthrough_progress = {
@@ -6840,7 +6989,7 @@ focus_tree = {
 				uses = 1 # was 2
 				category = nuclear
 			}
-			add_ideas = ROM_uranium_supply_idea
+			add_ideas = ROM_uranium_supply_idea # 56
 			GER = {
 				add_breakthrough_progress = {
 					specialization = specialization_nuclear
@@ -6904,6 +7053,8 @@ focus_tree = {
 			is_subject_of = GER
 			has_government = fascism
 		}
+	                
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ANNEXATION }
 
 		completion_reward = {
 			
@@ -7054,7 +7205,14 @@ focus_tree = {
 			is_subject_of = GER
 			has_government = fascism
 		}
+	                
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_RESEARCH }
 		completion_reward = {
+			custom_effect_tooltip = SWE_the_new_order_tt_2
+			drop_cosmetic_tag = yes
+			hidden_effect = {
+				set_cosmetic_tag = SWE_the_new_order
+			}
 			every_country = {
 				limit = {
 					has_War_with = ROOT
@@ -7223,7 +7381,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = SWE_restoring_order
-		cost = 10
+		cost = 5
 
 		completion_reward = {
 			custom_effect_tooltip = SWE_mythologize_swedish_history_tt
@@ -7254,6 +7412,26 @@ focus_tree = {
 				}
 				activate_mission = SWE_implement_rural_reforms_countdown
 			}
+			if = {
+				limit = {
+					has_completed_focus = SWE_revoke_anti_militia_laws
+				}
+				add_popularity = {
+					ideology = fascism 
+					popularity = 0.1
+				}
+			}
+			else = {
+				add_popularity = {
+					ideology = neutrality 
+					popularity = 0.1
+				}
+			}
+
+
+			add_political_power = 120
+
+
 		}
 	}
 
@@ -7265,7 +7443,7 @@ focus_tree = {
 		x = -5
 		y = 1
 		relative_position_id = SWE_mythologize_swedish_history
-		cost = 10
+		cost = 5
 		available = {
 			OR = {
 				ENG = {
@@ -7283,6 +7461,7 @@ focus_tree = {
 			OR = {
 				is_in_faction_with = ENG
 				is_in_faction_with = USA
+				is_subject = yes
 			}
 		}
 
@@ -7339,6 +7518,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		bypass = { is_subject = yes }
 	    
 
 
@@ -7473,7 +7654,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = SWE_mythologize_swedish_history
-		cost = 10
+		cost = 5
 		available = {
 			has_war_support > 0.4
 			has_army_manpower = { size > 80000 }
@@ -7481,6 +7662,14 @@ focus_tree = {
 				144 = { is_fully_controlled_by = NOR }
 				1035 = { is_fully_controlled_by =  NOR }
 				1034 = { is_fully_controlled_by =  NOR }
+			}
+		}
+
+		bypass = {
+			AND = {
+				144 = { is_fully_controlled_by = SWE }
+				1035 = { is_fully_controlled_by =  SWE }
+				1034 = { is_fully_controlled_by =  SWE }
 			}
 		}
 	                
@@ -7498,6 +7687,8 @@ focus_tree = {
 				transfer_state = 1035
 				
 			}
+
+			custom_effect_tooltip = SWE_crisis_affecting_variables
 		}
 	}
 	focus = {
@@ -7516,11 +7707,14 @@ focus_tree = {
 		}
 
 		bypass = {
-			1024 = {
-				controller = { 
-					OR = {
-						has_war_with = ROOT 
-						tag = ROOT 
+			OR = {
+				is_subject = yes
+				1024 = {
+					controller = { 
+						OR = {
+							has_war_with = ROOT 
+							tag = ROOT 
+						}
 					}
 				}
 			}
@@ -7540,6 +7734,8 @@ focus_tree = {
 			effect_tooltip = {
 				transfer_state = 1024
 			}
+
+			custom_effect_tooltip = SWE_crisis_affecting_variables
 		}
 	}
 	focus = {
@@ -7631,6 +7827,10 @@ focus_tree = {
 				}
 			}
 		}
+
+		bypass = {
+			is_subject = yes
+		}
 	                
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 
@@ -7646,6 +7846,8 @@ focus_tree = {
 				create_wargoal = {
 					target = LAT
 					type = puppet_wargoal_focus
+					generator = { 808 }
+					expire = 0
 				}
 			}
 			IF = {
@@ -7659,6 +7861,8 @@ focus_tree = {
 				create_wargoal = {
 					target = LIT
 					type = puppet_wargoal_focus
+					generator = { 11 }
+					expire = 0
 				}
 			}
 			IF = {
@@ -7672,6 +7876,8 @@ focus_tree = {
 				create_wargoal = {
 					target = EST
 					type = puppet_wargoal_focus
+					generator = { 812 }
+					expire = 0
 				}
 			}
 		}
@@ -7685,7 +7891,12 @@ focus_tree = {
 		x = 5
 		y = 1
 		relative_position_id = SWE_mythologize_swedish_history
-		cost = 10
+		cost = 5
+		available = {
+			NOT = {
+				has_war_with = GER
+			}
+		}
 	                
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -7702,14 +7913,17 @@ focus_tree = {
 				set_country_flag = {
 					flag = SWE_GER_avoid_dow_nordics
 					value = 1
-					days = 547
+					days = 730
 				}
 				add_opinion_modifier = { target = ROOT modifier = anti_comintern_pact_opinion } 
 			}
 			add_opinion_modifier = { target = GER modifier = anti_comintern_pact_opinion }
 
 			add_ideas = anti_soviet_pact
-			SOV = {
+			every_other_country = {
+				limit = {
+					original_tag = SOV
+				}
 				add_opinion_modifier = { target = ROOT modifier = worse_pact_against_us }
 			}
 
@@ -7724,7 +7938,7 @@ focus_tree = {
 		x = 0 
 		y = 1
 		relative_position_id = SWE_bornholm_crisis
-		cost = 10
+		cost = 5
 		available = {
 			1024 = {
 				is_owned_and_controlled_by = SWE
@@ -7741,6 +7955,21 @@ focus_tree = {
 				}
 				ICE = { is_subject_of = DEN }
 			}
+		}
+
+		bypass = {
+			OR = {
+				is_subject = yes
+				AND = {
+					337 = { is_controlled_by = SWE  }
+					101  = { is_controlled_by = SWE }
+				}
+
+				AND = {
+					337 = { controller = { is_in_faction_with = SWE  }}
+					101 = { controller = { is_in_faction_with = SWE  }}
+				}
+			}		
 		}
 	                
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -7763,7 +7992,7 @@ focus_tree = {
 				transfer_state = 101
 				transfer_state = 337
 			}
-
+			custom_effect_tooltip = SWE_crisis_affecting_variables
 		}
 	}
 	focus = {
@@ -7782,10 +8011,21 @@ focus_tree = {
 		}
 
 		bypass = {
-			has_war_with = FIN
+			148 = {
+				OR = {
+					owner = {
+						OR = {
+							has_war = yes
+							is_subject_of = ROOT
+						}
+					}
+					is_owned_by = ROOT
+					is_demilitarized_zone = yes
+				}
+			}
 		}
 	                
-		search_filters = { FOCUS_FILTER_ANNEXATION }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_WAR_SUPPORT }
 
 		completion_reward = {
 
@@ -7802,6 +8042,8 @@ focus_tree = {
 
 				add_war_support = 0.06
 			}
+
+			custom_effect_tooltip = SWE_crisis_affecting_variables
 		}
 	}
 	focus = {
@@ -7817,6 +8059,15 @@ focus_tree = {
 			NOR = {
 				exists = yes
 				is_subject = no
+			}
+		}
+
+		bypass = {
+			OR = {
+				NOR = {
+					is_subject_of = ROOT
+				}
+				is_subject = yes
 			}
 		}
 	                
@@ -7878,6 +8129,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		bypass = {
 			OR = {
+				is_subject = yes
 				has_war_with = DEN
 				DEN = {
 					is_subject = yes
@@ -7952,6 +8204,10 @@ focus_tree = {
 				NOT = { is_in_faction_with = ROOT }
 			}
 		}
+
+		bypass = {
+			is_subject = yes
+		}
 	                
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 
@@ -7987,10 +8243,8 @@ focus_tree = {
 						state = 234
 						state = 217 #Stalingrad
 					}
-					NOT = { state = 705 } #Crimea
-
+					NOT = { state = 137 } #Crimea
 				} 
-
 				add_claim_by = ROOT
 			}
 		}
@@ -8054,7 +8308,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = SWE_universal_basic_income
-		cost = 10
+		cost = 5
 		available = {
 			OR = {
 				NOR = { 
@@ -8093,8 +8347,14 @@ focus_tree = {
 		}
 		bypass = {
 			hidden_trigger = {
-				is_ai = yes
-				is_historical_focus_on = yes
+				OR = {
+					is_subject = yes
+                    AND = {
+                        is_ai = yes
+                        is_historical_focus_on = yes
+                    }
+                    is_in_faction = yes
+                }
 			}
 		}
 		completion_reward = {
@@ -8127,11 +8387,12 @@ focus_tree = {
 					is_ai = yes
 					is_historical_focus_on = yes
 				}
+				is_subject = yes
 			}
 		}
 		available = {
-			any_other_country = {
-				is_major = yes
+			any_collection_element = {
+				collection = game:all_majors
 				is_faction_leader = yes
 				has_government = ROOT
 				NOT = { is_in_faction_with = ROOT }
@@ -8208,7 +8469,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = SWE_acquire_ww2_tanks_and_wrecks
-				bonus = 1
+				bonus = 0.75
 				uses = 2
 				category = cat_medium_armor
 			
@@ -8283,7 +8544,7 @@ focus_tree = {
 			}
 			ELSE = {
 				add_tech_bonus = {
-					name = SWE_increase_intelligence_funding
+					name = SWE_electronics_bonus
 					bonus = 1
 					uses = 2
 					category = electronics
@@ -8321,12 +8582,11 @@ focus_tree = {
 					}
 				}
 				add_tech_bonus = {
-					name = SWE_karnvapenprogram
-					bonus = 1.0
+					name = SWE_karnvapenprogram_nuclear_bonus
+					bonus = 0.5 # was 1
 					uses = 1
 					category = nuclear
 				}
-				custom_effect_tooltip = generic_skip_one_line_tt
 				add_breakthrough_progress = {
 					specialization = specialization_nuclear
 					value = 0.5
@@ -8335,15 +8595,22 @@ focus_tree = {
 			ELSE = {
 				add_breakthrough_progress = {
 					specialization = specialization_nuclear
-					value = 0.8
+					value = 0.75
 				}
 			}
+
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.25
+			}
+
 			add_tech_bonus = {
 				name = SWE_karnvapenprogram_air_bonus
-				bonus = 1
+				bonus = 0.75 # was 1
 				uses = 1
 				category = air_equipment
 			}
+
 		}
 	}
 	focus = {
@@ -8496,8 +8763,8 @@ focus_tree = {
 		relative_position_id = SWE_karnvapenprogram
 		cost = 10
 		available = {
-			any_other_country = {
-				is_major = yes
+			any_collection_element = {
+				collection = game:all_majors
 				is_faction_leader = yes
 				NOT = {
 					is_in_faction_with = ROOT
@@ -8597,6 +8864,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = SWE_war_games
 		cost = 10
+		available = {
+			is_subject = no
+		}
   		bypass = {
 			hidden_trigger = {
 				is_ai = yes
@@ -8619,6 +8889,7 @@ focus_tree = {
 					is_major = yes
 					is_faction_leader = yes
 					NOT = { has_government = SWE }
+					NOT = { is_in_faction_with = SWE }
 				}
 				SWE = {
 					create_wargoal = {
@@ -8646,6 +8917,7 @@ focus_tree = {
 		}
 
 		available = {
+			num_of_factories > 80
 			AND = {
 				OR = {
 					has_completed_focus = SWE_vasa_ii
@@ -8657,12 +8929,11 @@ focus_tree = {
 					has_completed_focus = SWE_rockets
 				}
 			}
-
-			industrial_complex > 34
 		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
 			add_research_slot = 1

@@ -647,20 +647,32 @@ focus_tree = {
 		available = {
 			is_subject = no
 			country_exists = CZE
+			CZE = {
+				OR = {
+					has_war = no
+					surrender_progress < 0.05
+					all_enemy_country = {
+						has_war_with = ROOT
+					}
+				}
+			}
 		}
 
 		bypass = {
-			CZE = {
-				OR = {
-					exists = no
-					is_subject = yes
-					has_war_with = ROOT
+			OR = {
+				CZE = {
+					OR = {
+						exists = no
+						is_subject = yes
+					}
 				}
+				has_global_flag = GER_reformed_austro_hungarian_empire
 			}
 		}
 
 		completion_reward = {
 			CZE = { country_event = { id = DOD_hungary.10 } }
+			custom_effect_tooltip = HUN_protect_czechoslovakia_tt
 		}
 	}
 
@@ -681,9 +693,9 @@ focus_tree = {
 		}
 
 		available = {
-			is_subject = no
 			has_army_manpower = { size > 200000 }
 			76 = { OWNER = { NOT = { is_in_faction_with = HUN } } }
+			is_subject = no
 		}
 
 		bypass = {

@@ -917,9 +917,12 @@ news_event = {
 		}
 		add_stability = 0.15
 		add_war_support = 0.15
+		custom_effect_tooltip = generic_skip_one_line_tt
 		set_country_flag = TUR_ott_sultanate_flag
 		TUR_set_appropriate_cosmetic_tag = yes
+		custom_effect_tooltip = generic_skip_one_line_tt
 		set_capital = { state = 797 }
+		custom_effect_tooltip = generic_skip_one_line_tt
 		add_country_leader_role = {
 			character = TUR_abdulmejid_ii
 			country_leader = {
@@ -946,6 +949,7 @@ news_event = {
 		}
 		if = { # 56
 			limit = { HYD = { has_government = neutrality } }
+			custom_effect_tooltip = generic_skip_one_line_tt
 			ROOT = {
 				add_opinion_modifier = {
 					target = HYD

@@ -1,7 +1,6 @@
 ###DEBUG STUFF
 
 debug_decisions = {
-
 	DEBUG_MIO_SHOW_DEBUG_MIO_ARCHETYPES = {
 		priority = 100
 		allowed = {
@@ -1168,7 +1167,7 @@ FIN_finnish_resistance_category = {
 				command_power > 19
 			}
 			modifier = {
-				factor = 50
+				factor = 5
 				command_power > 49
 			}
 		}
@@ -2064,7 +2063,7 @@ FIN_the_path_to_socialism = {
 		days_remove = 30
 
 		modifier = {
-			stability_weekly_factor = -0.005
+			stability_weekly = -0.005
 		}
 
 		remove_effect = {
@@ -2449,7 +2448,7 @@ FIN_foreign_politics_decision_category = {
 			}
 			modifier = { # Don't Do it if you, Germany or any of their Allies hold Leningrad or Moscow and you are not very close to collapsing 
 				factor = 0
-				surrender_progress < 0.75
+				surrender_progress < 0.4
 				OR = {
 					195 = { # Leningrad
 						OR = { 
@@ -2487,7 +2486,7 @@ FIN_foreign_politics_decision_category = {
 			}
 			modifier = { # Stalingrad feels a little less safe than the others
 				factor = 0.5
-				surrender_progress < 0.75
+				surrender_progress < 0.4
 				217 = { # Stalingrad
 					OR = { 
 						
@@ -2516,7 +2515,7 @@ FIN_foreign_politics_decision_category = {
 			}
 			modifier = { # Panic mode
 				add = 1000	#r56: increased from 200 since increasing manpower law can have similarly massive values of ai prio
-				check_variable = { ROOT.surrender_progress > 0.75 } 
+				check_variable = { ROOT.surrender_progress > 0.4 }
 			}
 		}
 
@@ -2574,6 +2573,7 @@ FIN_foreign_politics_decision_category = {
 			}
 			SOV = {
 				has_country_flag = SOV_great_patriotic_war_flag
+				is_subject = no
 			}
 			has_completed_focus = FIN_cooperation_with_germany
 			has_civil_war = no

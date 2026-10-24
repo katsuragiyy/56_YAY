@@ -2088,9 +2088,7 @@ unit_medals = {
 		available = { 
 			has_government = democratic 
 			should_have_any_unique_medals_trigger = no
-			NOT = {
-				original_tag = SWE
-			}
+			NOT = { original_tag = SWE } # 56
 		}
 		frame = 2
 		icon = "GFX_medal_icon_democratic"

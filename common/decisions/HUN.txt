@@ -1205,22 +1205,20 @@ HUN_territorial_revision_category = {
 
 		target_trigger = {
 			FROM = {
-				NOT = {
-					OR = {
-						has_war_with = ROOT
-						original_tag = ROOT
-					}
-				}
-				NOT = {
-					has_country_flag = HUN_refused_banatian_demands
-					has_country_flag = HUN_sent_banatian_demands
-				}
 				OR = {
 					controls_state = 764
 					any_subject_country = {
 						is_ai = yes
 						controls_state = 764
 					}
+				}
+				NOT = {
+					has_war_with = ROOT
+					original_tag = ROOT
+				}
+				NOT = {
+					has_country_flag = HUN_refused_banatian_demands
+					has_country_flag = HUN_sent_banatian_demands
 				}
 			}
 		}
@@ -3544,6 +3542,11 @@ HUN_the_empire_category = {
 			ALB = {
 				drop_cosmetic_tag = yes
 				set_cosmetic_tag = ALB_wiedist_principality
+				set_party_name = {
+					ideology = neutrality
+					long_name = ALB_house_of_wied_party_long
+					name = ALB_house_of_wied_party
+				}	
 				add_country_leader_role = { # R56
 					character = ALB_wilhelm_of_wied
 					promote_leader = yes
@@ -3971,6 +3974,14 @@ HUN_the_empire_category = {
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 109
+						}
+					}
+					109 = {
+						controller = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+							}
 						}
 					}
 				}
@@ -5428,12 +5439,6 @@ political_actions = {
 				set_country_flag = HUN_crowned_hermann_goering_king_flag
 			}
 		}
-
-		#modifier = {
-		#}
-
-		#remove_effect = {	
-		#}
 
 	}
 

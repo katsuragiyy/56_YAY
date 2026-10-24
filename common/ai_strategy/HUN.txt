@@ -101,7 +101,6 @@ germany_kaiser = {
 		original_tag = HUN
 	}
 	enable = {
-		#tag = HUN
 		has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary
 		GER = {
 			OR = {
@@ -109,7 +108,7 @@ germany_kaiser = {
 				has_completed_focus = GER_a_new_reich
 				has_completed_focus = GER_oppose_hitler
 			}
-
+			has_government = neutrality
 		}
 	}
 	abort = {
@@ -139,14 +138,14 @@ germany_kaiser = {
 
 germany_hungary_kaiser = {
 	allowed = {
-		original_tag = HUN
+		original_tag = GER
 	}
 	enable = {
-		#tag = GER
 		OR = {
 			has_completed_focus = GER_a_new_reich
 			has_completed_focus = GER_the_kaiser_rises
 		}
+		has_government = neutrality
 		HUN = {
 			has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary
 		}
@@ -174,6 +173,51 @@ germany_hungary_kaiser = {
 		type = support
 		id = "HUN"
 		value = 200
+	}
+}
+
+HUN_does_the_eastern_front = { #Pfot, HUN will share front similar to Italian behavior
+	allowed = { 
+		tag = HUN
+	}
+
+	enable = {
+		GER = {
+			going_war_with_SOV = yes
+			is_ai = yes #You'd get in the way of a player
+		}
+		ROOT = {
+			is_in_faction_with = GER
+			surrender_progress < 0.01 #Nothing bad is happening at home
+			any_neighbor_country = {
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = ROM
+		value = 100
+	}
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = SLO
+		value = 100
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = GER
+		value = 100
+	}
+	ai_strategy = {
+    	type = front_unit_request
+    	tag = SOV
+    	value = 100
 	}
 }
 

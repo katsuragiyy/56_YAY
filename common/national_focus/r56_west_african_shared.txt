@@ -496,7 +496,7 @@ focus_tree = {
 					any_unit_leader = { 
 						has_trait = harsh_leader 
 						NOT = {
-							has_trait = JAP_communist_sympathizer
+							has_trait = communist_sympathizer
 						}
 					}
 				}
@@ -505,7 +505,7 @@ focus_tree = {
 						limit = {
 							has_trait = harsh_leader
 							NOT = {
-								has_trait = JAP_communist_sympathizer
+								has_trait = communist_sympathizer
 							}
 						}
 						if = {
@@ -529,7 +529,7 @@ focus_tree = {
 					any_unit_leader = { 
 						has_trait = trait_reckless
 						NOT = {
-							has_trait = JAP_communist_sympathizer
+							has_trait = communist_sympathizer
 						}
 					}
 				}
@@ -538,7 +538,7 @@ focus_tree = {
 						limit = { 
 							has_trait = trait_reckless
 							not = {
-								has_trait = JAP_communist_sympathizer
+								has_trait = communist_sympathizer
 							}
 						}
 						add_country_leader_role = {
@@ -896,7 +896,7 @@ focus_tree = {
 			custom_effect_tooltip = SAU_gain_3_generals
 			hidden_effect = {
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer infantry_officer }
+					traits = { communist_sympathizer infantry_officer }
 					skill = 3
 					attack_skill = 2
 					defense_skill = 4
@@ -904,7 +904,7 @@ focus_tree = {
 					logistics_skill = 1
 				}
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer artillerist }
+					traits = { communist_sympathizer artillerist }
 					skill = 2
 					attack_skill = 2
 					defense_skill = 2
@@ -912,7 +912,7 @@ focus_tree = {
 					logistics_skill = 2
 				}
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer trait_reckless cavalry_officer }
+					traits = { communist_sympathizer trait_reckless cavalry_officer }
 					skill = 2
 					attack_skill = 3
 					defense_skill = 1

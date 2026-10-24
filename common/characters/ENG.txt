@@ -3253,7 +3253,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { JAP_communist_sympathizer infantry_officer }
+			traits = { communist_sympathizer infantry_officer }
 			visible = {
 				OR = { 
 					has_completed_focus = ENG_promote_new_officers
@@ -3279,7 +3279,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { JAP_communist_sympathizer infantry_officer }
+			traits = { communist_sympathizer infantry_officer }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2

@@ -308,11 +308,12 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+
 			add_war_support = 0.075
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = INS_instigate_chaos_sulawesi_tt
-			if = {
+			if = { # 56
 				limit = {
 					NOT = { has_completed_focus = INS_instigate_chaos_sulawesi }
 				}
@@ -325,19 +326,19 @@ focus_tree = {
 	#focus = {
 	#	id = INS_embezzlement_scheme_in_batavia
 	#	icon = GFX_focus_AUS_raid_military_storages
-	#
+#
 	#	available = {
 	#		is_subject_of = HOL
 	#	}
 	#	prerequisite = { focus = INS_expand_resistance_membership }
 	#	mutually_exclusive = {  }
-	#
+#
 	#	x = -4
 	#	y = 1
 	#	relative_position_id = INS_expand_resistance_membership
-	#
+#
 	#	cost = 10
-	#
+#
 	#	search_filters = {  }
 	#	completion_reward = {
 	#		custom_effect_tooltip = INS_embezzlement_scheme_in_batavia_tt
@@ -615,7 +616,7 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = INS_the_declaration_of_independence_tt
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			#set_technology = {
 			#	militia_tech = 1
 			#	popup = no
@@ -642,11 +643,9 @@ focus_tree = {
 			else = {
 				custom_effect_tooltip = INS_add_3_militia_unit_tt
 			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			custom_effect_tooltip = INS_militia_warning_tt
-
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			add_dynamic_modifier = {
 				modifier = INS_republican_government_modifier
 			}
@@ -1171,12 +1170,12 @@ focus_tree = {
 				}
 			}
 			modifier = {
-				add = 2 #fallback
-				date > 1944.1.1
+				add = 10 #fallback
+				date > 1943.1.1
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INTERNAL_AFFAIRS }
+		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
 			add_stability = -0.05
 			add_war_support = -0.05
@@ -1351,14 +1350,13 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			add_war_support = 0.05
-
-			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
 			set_country_flag = INS_islamist_loyalty
 			show_ideas_tooltip = INS_mohammad_natsir
 			show_ideas_tooltip = INS_mohammad_roem
 			show_ideas_tooltip = INS_sjafruddin_prawiranegara
+			custom_effect_tooltip = newline_tt
+			add_war_support = 0.05
 		}
 	}
 
@@ -1384,6 +1382,9 @@ focus_tree = {
 		completion_reward = {
 			unlock_decision_category_tooltip = INS_unity_in_diversity_cat
 			custom_effect_tooltip = INS_unity_in_diversity_explain_tt
+
+			custom_effect_tooltip = INS_national_committee_spirit_tt
+			add_to_variable = { var = INS_national_committee_spirit_political_power_factor value = 0.1 tooltip = political_power_factor_tt }
 		}
 	}
 
@@ -2160,18 +2161,18 @@ focus_tree = {
 					is_coastal = yes
 					free_building_slots = {
 						building = dockyard
-						size > 1
+						size > 0
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
 					level = 1
 					instant_build = yes
 				}
 			}
-			if = {
+			if = { # 56
 				limit = {
 					has_dlc = "No Compromise, No Surrender"
 					NOT = {
@@ -2915,45 +2916,6 @@ focus_tree = {
 			add_political_power = 150
 		}
 	}
-
-	#focus = {
-	#	id = INS_dominion_of_atjeh
-	#	icon = GFX_focus_INS_dominion_of_atjeh
-	#
-	#	available = {
-	#		owns_state = 1050 #Atjeh
-	#		controls_state = 1050
-	#	}
-	#	prerequisite = { focus = INS_land_reform }
-	#	mutually_exclusive = {}
-	#
-	#	x = -2
-	#	y = 3
-	#	relative_position_id = INS_vice_presidential_edict
-	#
-	#	ai_will_do = {
-	#		base = 0
-	#		modifier = {
-	#			add = 10
-	#			has_active_mission = INS_militias_di_mission
-	#		}
-	#	}
-	#
-	#	cost = 5
-	#
-	#	search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
-	#	completion_reward = {
-	#		release_autonomy = { 
-	#			target = ATJ  
-	#			autonomy_state = autonomy_dominion 
-	#			freedom_level = 0.4 
-	#			release_non_owned_controlled = no
-	#			force_change_controller_for_non_ally_controlled = no
-	#		}
-	#		add_stability = 0.05
-	#		add_political_power = 150
-	#	}
-	#}
 
 	# <Vice Presidential Edict - President>
 	focus = {
@@ -4446,6 +4408,185 @@ focus_tree = {
 #			}
 #		}
 #	}
+
+#	focus = {
+#		id = INS_enact_militarism
+#		icon = GFX_focus_generic_military_dictatorship
+#
+#		available = { }
+#		prerequisite = { focus = INS_guided_democracy }
+#		mutually_exclusive = {}
+#
+#		x = 0
+#		y = 1
+#		relative_position_id = INS_guided_democracy
+#
+#		cost = 5
+#
+#		ai_will_do = {
+#			base = 1.5
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+#		completion_reward = {
+#			add_ideas = INS_guided_democracy_idea
+#		}
+#	}
+
+#	focus = {
+#		id = INS_japanese_military_lessons
+#		icon = GFX_focus_generic_japanese_imperial_glory
+#
+#		available = { }
+#		prerequisite = { focus = INS_enact_militarism }
+#		mutually_exclusive = {}
+#
+#		x = 1
+#		y = 2
+#		relative_position_id = INS_guided_democracy
+#
+#		cost = 10
+#
+#		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+#		completion_reward = {
+#			add_popularity = {
+#				ideology = fascism
+#				popularity = 0.1
+#			}
+#			add_popularity = {
+#				ideology = neutrality
+#				popularity = 0.05
+#			}
+#			add_tech_bonus = {
+#				name = INS_japanese_military_lessons
+#				bonus = 1.0
+#				uses = 1
+#				category = infantry_weapons
+#			}
+#			add_tech_bonus = {
+#				name = INS_japanese_military_lessons
+#				bonus = 0.5
+#				uses = 2
+#				category = support_tech
+#			}
+#		}
+#	}
+
+#	focus = {
+#		id = INS_sukarnos_industrialization
+#		icon = GFX_focus_GER_factories_for_resources
+#
+#		available = { }
+#		prerequisite = { focus = INS_enact_militarism }
+#		mutually_exclusive = {}
+#
+#		x = -1
+#		y = 2
+#		relative_position_id = INS_guided_democracy
+#
+#		cost = 10
+#
+#		search_filters = { FOCUS_FILTER_INDUSTRY }
+#		completion_reward = {
+#			random_owned_controlled_state = {
+#				limit = {
+#					impassable = no
+#				}
+#				prioritize = { 1058 335 1051 }
+#				add_resource = {
+#					type = coal
+#					amount = 10
+#				}
+#				add_resource = {
+#					type = steel
+#					amount = 8
+#				}
+#				add_resource = {
+#					type = tungsten
+#					amount = 8
+#				}
+#			}
+#			random_owned_controlled_state = {
+#				limit = {
+#					impassable = no
+#				}
+#				prioritize = { 1058 335 1051 }
+#				add_resource = {
+#					type = coal
+#					amount = 10
+#				}
+#				add_resource = {
+#					type = steel
+#					amount = 8
+#				}
+#				add_resource = {
+#					type = tungsten
+#					amount = 8
+#				}
+#			}
+#		}
+#	}
+
+#	focus = {
+#		id = INS_sukarnos_industrialization2
+#		icon = GFX_focus_generic_military_industry
+#
+#		available = { }
+#		prerequisite = { focus = INS_sukarnos_industrialization }
+#		mutually_exclusive = {}
+#
+#		x = -1
+#		y = 3
+#		relative_position_id = INS_guided_democracy
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			base = 2
+#		}
+#
+#		search_filters = { FOCUS_FILTER_INDUSTRY }
+#		completion_reward = {
+#			add_ideas = INS_military_above_all_idea
+#
+#			random_owned_controlled_state = {
+#				limit = {
+#					free_building_slots = {
+#						building = arms_factory
+#						size > 1
+#						include_locked = yes
+#					}
+#					impassable = no
+#				}
+#				prioritize = { 1058 335 1051 }
+#				add_extra_state_shared_building_slots = 2
+#				add_building_construction = {
+#					type = arms_factory
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#
+#			random_owned_controlled_state = {
+#				limit = {
+#					free_building_slots = {
+#						building = industrial_complex
+#						size > 1
+#						include_locked = yes
+#					}
+#					impassable = no
+#				}
+#				prioritize = { 1058 335 1051 }
+#				add_extra_state_shared_building_slots = 2
+#				add_building_construction = {
+#					type = industrial_complex
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#		}
+#	}
+
 	
 
 	
@@ -4508,7 +4649,7 @@ focus_tree = {
 				tooltip = drift_defence_factor_tt
 			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = newline_tt
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.1
@@ -4565,20 +4706,6 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_tech_bonus = {
-				name = INS_three_year_plan
-				bonus = 0.5
-				uses = 2
-				category = industry
-			}
-			add_tech_bonus = {
-				name = INS_three_year_plan
-				bonus = 0.5
-				uses = 1
-				category = electronics
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
 			random_core_state = {
 				limit = {
 					is_controlled_by = ROOT
@@ -4595,6 +4722,19 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+			}
+
+			add_tech_bonus = {
+				name = INS_three_year_plan
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+			add_tech_bonus = {
+				name = INS_three_year_plan
+				bonus = 0.5
+				uses = 1
+				category = electronics
 			}
 			random_core_state = {
 				limit = {
@@ -4643,9 +4783,8 @@ focus_tree = {
 		overlay = GFX_focus_fast_overlay_generic_clock
 
 		available = {
-			communism > 0.5
+			communism > 0.35
 		}
-
 		prerequisite = { focus = INS_political_stabilization }
 		mutually_exclusive = { focus = INS_vice_presidential_edict focus = INS_guided_democracy }
 
@@ -4658,7 +4797,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				add = 3
+				add = 10
 				INS_check_plan_revolution_communist = yes
 			}
 		}
@@ -4687,10 +4826,13 @@ focus_tree = {
 				#long_name = <loc_string> # Optional
 				#name = <loc_string># Optional
 			}
+			remove_dynamic_modifier = { modifier = INS_national_committee_spirit }
 
 			custom_effect_tooltip = INS_focus_time_reduce_pki_tt
 		}
 	}
+
+	
 
 	focus = {
 		id = INS_pacific_revolution
@@ -4731,7 +4873,7 @@ focus_tree = {
 			base = 2
 		}
 
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -4803,6 +4945,11 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			set_rule = {
+				can_create_factions = yes
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			create_faction = INS_tan_malakas_faction
 			if = {
@@ -4830,6 +4977,7 @@ focus_tree = {
 
 				has_cosmetic_tag = INS_maphilindo
 			}
+
 		}
 		prerequisite = { focus = INS_the_maphilindo_speech }
 		prerequisite = { focus = INS_pan_asian_union }

@@ -41,6 +41,9 @@ focus_tree = {
 	
 		cost = 10
 
+		available = {
+		}
+
 		bypass = {
 			OR = {
 				has_war = yes
@@ -69,6 +72,9 @@ focus_tree = {
 		y = 1
 	
 		cost = 10
+
+		available = {
+		}
 
 		bypass = {
 			OR = {
@@ -142,6 +148,9 @@ focus_tree = {
 		y = 1
 	
 		cost = 5
+
+		available = {
+		}
 	
 		completion_reward = {
 
@@ -330,6 +339,9 @@ focus_tree = {
 		y = 2
 	
 		cost = 5
+
+		available = {
+		}
 	
 		completion_reward = {
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -586,6 +598,7 @@ focus_tree = {
 		}
 	
 		completion_reward = {
+			# 56
 			add_tech_bonus = {
 				name = FRA_fortification_focus
 				bonus = 1
@@ -593,6 +606,7 @@ focus_tree = {
 				category = cat_fortification
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
+			##
 			IF = {
 				limit = {
 					34 = {
@@ -631,8 +645,14 @@ focus_tree = {
 	
 		cost = 10
 
+		available = {
+		}
+
 		bypass = {
 			has_war_with = FRA
+		}
+	
+		search_filters = {  
 		}
 	
 		completion_reward = {
@@ -662,8 +682,12 @@ focus_tree = {
 		y = 1
 	
 		cost = 5
+
+		available = {
+		}
 	
 		completion_reward = {
+			# 56
 			add_tech_bonus = {
 				name = FRA_fortification_focus
 				bonus = 1
@@ -671,6 +695,7 @@ focus_tree = {
 				category = cat_fortification
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
+			##
 			custom_effect_tooltip = BEL_modify_defensive_neutrality_dynamic_modifier_tt
 			add_to_variable = { 
 				BEL_defensive_neutrality_bunker_max_level_terrain_limit = 1
@@ -742,6 +767,12 @@ focus_tree = {
 		y = 1
 	
 		cost = 5
+
+		available = {
+		}
+	
+		search_filters = {  
+		}
 	
 		completion_reward = {
 			every_owned_state = {
@@ -875,6 +906,9 @@ focus_tree = {
 			controls_province = 3488
 		}
 	
+		search_filters = {  
+		}
+	
 		completion_reward = {
 
 			965 = {	#56 - Eupen Malmedy
@@ -910,6 +944,12 @@ focus_tree = {
 		y = 2
 	
 		cost = 10
+
+		available = {
+		}
+	
+		search_filters = {  
+		}
 	
 		completion_reward = {
 			hidden_effect = {
@@ -954,6 +994,9 @@ focus_tree = {
 		y = 1
 	
 		cost = 10
+
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
@@ -1008,6 +1051,9 @@ focus_tree = {
 	
 		cost = 10
 
+		available = {
+		}
+
 		available_if_capitulated = yes
 	
 		completion_reward = {
@@ -1035,6 +1081,9 @@ focus_tree = {
 	
 		cost = 10
 
+		available = {
+		}
+
 		available_if_capitulated = yes
 	
 		completion_reward = {
@@ -1059,6 +1108,9 @@ focus_tree = {
 		y = 1
 	
 		cost = 10
+
+		available = {
+		}
 	
 		completion_reward = {
 			custom_effect_tooltip = BEL_modify_royal_military_academy_dynamic_modifier_tt
@@ -1408,6 +1460,10 @@ focus_tree = {
 		y = 1
 	
 		cost = 10
+
+		available = {
+			is_in_faction = yes
+		}
 
 		available_if_capitulated = yes
 	
@@ -1843,15 +1899,10 @@ focus_tree = {
 	
 		completion_reward = {
 			IF = { # 56?
-				limit = {
-					has_dynamic_modifier = {
-						modifier = BEL_scars_of_ww1_dynamic_modifier
-					}
-				}
+				limit = { has_dynamic_modifier = { modifier = BEL_scars_of_ww1_dynamic_modifier } }
 				remove_dynamic_modifier = { modifier = BEL_scars_of_ww1_dynamic_modifier }
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
-			
 			add_ideas = BEL_legacy_of_the_great_war_ns
 		}
 
@@ -2520,7 +2571,11 @@ focus_tree = {
 							hours = 6
 						}
 
-						set_country_flag = sent_eu_invitation_flag
+						set_country_flag = {
+							flag = sent_eu_invitation_flag
+							days = 365
+							value = 1
+						}
 					}
 				}
 
@@ -2543,7 +2598,11 @@ focus_tree = {
 							hours = 6
 						}
 
-						set_country_flag = sent_eu_invitation_flag
+						set_country_flag = {
+							flag = sent_eu_invitation_flag
+							days = 365
+							value = 1
+						}
 					}
 				}
 			}						
@@ -4467,6 +4526,7 @@ focus = {
 			IF = {
 				limit = {
 					any_country_with_original_tag = {
+						exists = yes
 						original_tag_to_check = ENG
 						has_government = democratic
 						is_subject = no
@@ -4491,6 +4551,7 @@ focus = {
 			ELSE_IF = {
 				limit = {
 					any_country_with_original_tag = {
+						exists = yes
 						original_tag_to_check = FRA
 						has_government = democratic
 						is_subject = no
@@ -4681,6 +4742,7 @@ focus = {
 			}
 			
 		}
+		enable_automatic_bypass = no
 	
 		completion_reward = {
 
@@ -4800,6 +4862,7 @@ focus = {
 
 		available = {
 			any_country_with_original_tag = {
+				exists = yes
 				original_tag_to_check = SOV
 				has_government = communism
 				is_subject = no
@@ -4818,6 +4881,8 @@ focus = {
 				}
 				has_capitulated = yes
 			}
+
+
 		}
 	
 		completion_reward = {
@@ -5015,6 +5080,7 @@ focus = {
 			IF = {
 				limit = {
 					any_country_with_original_tag = {
+						exists = yes
 						original_tag_to_check = ENG
 						has_government = democratic
 						is_faction_leader = yes
@@ -5031,6 +5097,7 @@ focus = {
 			ELSE_IF = {
 				limit = {
 					any_country_with_original_tag = {
+						exists = yes
 						original_tag_to_check = FRA
 						has_government = democratic
 						is_faction_leader = yes
@@ -5047,6 +5114,7 @@ focus = {
 			ELSE_IF = {
 				limit = {
 					any_country_with_original_tag = {
+						exists = yes
 						original_tag_to_check = USA
 						has_government = democratic
 						is_faction_leader = yes
@@ -5063,9 +5131,9 @@ focus = {
 			ELSE = { #this likely won't happen, but, if it does
 				random_other_country = {
 					limit = {
+						is_major = yes
 						has_government = democratic
 						is_faction_leader = yes
-						is_major = yes
 					}
 
 					country_event = {
@@ -6021,7 +6089,11 @@ focus = {
 						hours = 6
 					}
 
-					set_country_flag = sent_eu_invitation_flag
+					set_country_flag = {
+						flag = sent_eu_invitation_flag
+						days = 365
+						value = 1
+					}
 				}
 			}
 
@@ -6044,7 +6116,11 @@ focus = {
 						hours = 6
 					}
 
-					set_country_flag = sent_eu_invitation_flag
+					set_country_flag = {
+						flag = sent_eu_invitation_flag
+						days = 365
+						value = 1
+					}
 				}
 			}
 
@@ -6067,7 +6143,11 @@ focus = {
 						hours = 6
 					}
 
-					set_country_flag = sent_eu_invitation_flag
+					set_country_flag = {
+						flag = sent_eu_invitation_flag
+						days = 365
+						value = 1
+					}
 				}
 			}
 
@@ -6090,7 +6170,11 @@ focus = {
 						hours = 6
 					}
 
-					set_country_flag = sent_eu_invitation_flag
+					set_country_flag = {
+						flag = sent_eu_invitation_flag
+						days = 365
+						value = 1
+					}
 				}
 			}
 
@@ -6113,7 +6197,11 @@ focus = {
 						hours = 6
 					}
 
-					set_country_flag = sent_eu_invitation_flag
+					set_country_flag = {
+						flag = sent_eu_invitation_flag
+						days = 365
+						value = 1
+					}
 				}
 			}
 
@@ -6179,7 +6267,7 @@ focus = {
 		cost = 0
 
 		available = {
-			has_capitulated = yes	#56?
+			always = no
 		}
 
 		available_if_capitulated = yes
@@ -6531,7 +6619,6 @@ focus = {
 				}
 			}
 
-			add_stability = -0.1
 			add_political_power = 200
 		}
 	}
@@ -6612,9 +6699,9 @@ focus = {
 		completion_reward = {
 			custom_effect_tooltip = BEL_modify_belgian_resistance_state_dynamic_modifier_tt
 			add_to_variable = { 
-				BEL_belgian_resistance_resistance_damage_to_garrison_on_our_occupied_states = 0.2
-				tooltip = resistance_damage_to_garrison_on_our_occupied_states_tt				
-			}	
+				BEL_belgian_resistance_resistance_damage_to_garrison = 0.2
+				tooltip = resistance_damage_to_garrison_tt				
+			}
 		}
 
 	}
@@ -6761,8 +6848,8 @@ focus = {
 		completion_reward = {
 			custom_effect_tooltip = BEL_modify_belgian_resistance_state_dynamic_modifier_tt
 			add_to_variable = { 
-				BEL_belgian_resistance_resistance_growth_on_our_occupied_states = 0.2
-				tooltip = resistance_growth_on_our_occupied_states_tt				
+				BEL_belgian_resistance_resistance_growth = 0.2
+				tooltip = resistance_growth_tt				
 			}	
 		}
 
@@ -6836,6 +6923,7 @@ focus = {
 				}		 
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
+	
 			IF = {
 				limit = {
 					is_government_in_exile = yes
@@ -7797,7 +7885,7 @@ focus = {
 			ELSE = {
 				air_experience = 25
 			}
-
+			
 		}
 
 	}

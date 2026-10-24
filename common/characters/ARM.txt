@@ -1127,7 +1127,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { politically_connected harsh_leader trickster JAP_communist_sympathizer }
+			traits = { politically_connected harsh_leader trickster communist_sympathizer }
 			skill = 2
 			attack_skill = 1
 			defense_skill = 2
@@ -1165,7 +1165,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { organizer brilliant_strategist trait_mountaineer JAP_communist_sympathizer }
+			traits = { organizer brilliant_strategist trait_mountaineer communist_sympathizer }
 			skill = 3
 			attack_skill = 3
 			defense_skill = 2

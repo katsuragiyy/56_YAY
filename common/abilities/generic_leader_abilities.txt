@@ -17,6 +17,7 @@ ability = {
 					has_completed_focus = JAP_tennoheika_banzai  
 					#has_completed_focus = CHI_sea_dare_to_die_corps  
 				}
+
 				if = {
 					limit = {
 						has_global_flag = chi_dlc_focus_tree # R56
@@ -243,11 +244,8 @@ ability = {
 					defense_skill_level > 7
 					has_trait = inflexible_strategist
 				}
-
 				has_ability = probing_attack
 			}
-
-
 			is_border_war = no
 		}
 		

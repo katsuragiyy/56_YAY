@@ -21,10 +21,10 @@ division_template = {
 }
 division_template = {
 	name = "National Guard Division"  	# Standard formation for NG divisions through late 1940
-	
+
 	division_names_group = USA_INF_01
 
-	regiments = {						
+	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
@@ -43,7 +43,6 @@ division_template = {
 		engineer = { x = 0 y = 1 }   # US Eng Rgt consisted of 2 Bns
 	}
 }
-
 division_template = {
 	name = "Organized Reserve"
 
@@ -492,24 +491,24 @@ units = {
 	}
 
 	# North Pacific Defenses #
-	division= {				
-		name = "Midway Island Garrison"			
+	division= {
+		name = "Midway Island Garrison"
 		location = 13052
 		division_template = "Army Garrison Brigade"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.15
 
-	}				
-	division= {				
-		name = "Wake Island Garrison"			
+	}
+	division= {
+		name = "Wake Island Garrison"
 		location = 13047
 		division_template = "Army Garrison Brigade"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.15
 
-	}				
-	division= {				
-		name = "Guam Garrison"			
+	}
+	division= {
+		name = "Guam Garrison"
 		location = 12140
 		division_template = "Army Garrison Brigade"
 		start_experience_factor = 0.1
@@ -517,18 +516,19 @@ units = {
 
 	} 
 	
-	# South Pacific Defenses #		
-	division= {			
+	# South Pacific Defenses #
+	division= {
 		name = "Johnston Island Garrison"		
 		location = 13051
 		division_template = "Army Garrison Brigade"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.15
-	}	
 
-	### U.S. Army Forces in the Far East ###		
-	division = {										
-		name = "Philippine Division"			
+	}
+
+	### U.S. Army Forces in the Far East ###
+	division = {
+		name = "Philippine Division"
 		location = 10265
 		division_template = "Army Infantry Division"			# older equipment, less training than NG division
 		start_experience_factor = 0.2
@@ -549,10 +549,13 @@ units = {
 }
 
 
+
+
 #########################
 ## STARTING PRODUCTION ##
 #########################
-instant_effect = {		
+instant_effect = {
+
 	add_equipment_production = {
 		equipment = {
 			type = infantry_equipment_1
@@ -562,12 +565,13 @@ instant_effect = {
 		requested_factories = 2
 		progress = 0.1
 		efficiency = 50
+		industrial_manufacturer = mio:USA_springfield_armory_organization
 	}
 
 	add_equipment_production = {
 		equipment = {
 			type = support_equipment_1
-			creator = "USA" 
+			creator = "USA"
 		}
 		requested_factories = 1
 		progress = 0.3
@@ -577,11 +581,13 @@ instant_effect = {
 	add_equipment_production = {
 		equipment = {
 			type = artillery_equipment_1
-			creator = "USA" 
+			creator = "USA"
 		}
 		requested_factories = 1
 		progress = 0.3
 		efficiency = 50
+		industrial_manufacturer = mio:USA_rock_island_arsenal_organization
 	}
+
 }
 #####################

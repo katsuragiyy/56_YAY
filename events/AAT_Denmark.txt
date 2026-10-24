@@ -1108,6 +1108,7 @@ country_event = { #Someone attacked us :'(
 	trigger = {
 		is_subject = no
 	}
+
 	is_triggered_only = yes
 
 	fire_only_once = yes
@@ -1222,7 +1223,7 @@ country_event = { #Someone attacked us :'(
 
 		hidden_effect = { #TODO_DANNE; can I remove the neutrality_flag?
 			clr_country_flag = DEN_neutrality_flag
-		}	
+		}
 		hidden_effect = {
 			play_song = "danish_song_of_liberation"
 		}
@@ -1256,6 +1257,7 @@ country_event = { #Denmark wants to become a puppet
 					DEN_occupation_laws_cic_to_overlord = 0.15
 					tooltip = cic_to_overlord_factor_tt
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				add_to_variable = {
 					DEN_occupation_laws_mic_to_overlord = 0.15
 					tooltip = mic_to_overlord_factor_tt
@@ -1406,10 +1408,12 @@ country_event = { #Denmark becomes a puppet
 				DEN_occupation_laws_cic_to_overlord = 0.15
 				tooltip = cic_to_overlord_factor_tt
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_to_variable = {
 				DEN_occupation_laws_mic_to_overlord = 0.15
 				tooltip = mic_to_overlord_factor_tt
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			set_cosmetic_tag = DEN_occupied_denmark
 		}
@@ -1765,6 +1769,7 @@ country_event = { #Danish Liberation War
 			}
 		}
 	}
+
 	option = { #Change Government form
 		name = denmark_occupation_event.7.a
 		ai_chance = {
@@ -1795,6 +1800,7 @@ country_event = { #Danish Liberation War
 		hidden_effect = {
 			play_song = "danish_song_of_liberation"
 		}
+
 	}
 	option = { #Keep current Government form
 		name = denmark_occupation_event.7.b
@@ -1816,6 +1822,7 @@ country_event = { #Danish Liberation War
 		}
 
 		DEN_independence_war_effects = yes
+
 		if = { #If the Overlord installed a country leader of their own, that dude needs to go for ever
 			limit = {	
 				has_country_leader_with_trait = DEN_plenipotentiary
@@ -1846,6 +1853,7 @@ country_event = { #Denmark becomes independent peacefully
 			}
 		}
 	}
+
 	option = { 
 		name = denmark_occupation_event.8.a
 		
@@ -1938,6 +1946,7 @@ country_event = { #Denmark becomes independent peacefully
 		}
 
 		DEN_activate_bought_ships = yes #Denmark receives the Destroyers it bought
+
 		hidden_effect = {
 			play_song = "danish_song_of_liberation"
 		}
@@ -2320,6 +2329,7 @@ country_event = { #Overlord accepts allegiance
 				clr_country_flag = DEN_is_protectorate_flag
 			}
 		}
+
 		OVERLORD = {
 			add_opinion_modifier = {
 				modifier = DEN_cooperative_subject
@@ -3256,6 +3266,7 @@ country_event = { #Denmark: Telegram Crisis Begins
 			set_country_flag = DEN_telegram_crisis_flag #For trackability's sake
 		}
 	}
+
 	trigger = {
 		tag = DEN
 		has_global_flag = DEN_use_DLC_tree
@@ -7054,15 +7065,20 @@ country_event = { #Denmark joins the alliance
 			FROM = { add_to_faction = ROOT }
 		}
 		else = {
-			set_rule = {
-				can_create_factions = yes
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = faction_template_DEN_nordic_cooperation_alliance
+				add_faction_initiative = 1
+				add_to_faction = FROM
 			}
-			create_faction_from_template = {
-				template = faction_template_defensive_democratic
-				name = DEN_nordic_cooperation_alliance
-				icon = GFX_faction_logo_generic_8
+			ELSE = {
+				set_rule = { can_create_factions = yes }
+				create_faction = DEN_nordic_cooperation_alliance
+				add_to_faction = FROM
 			}
-			add_to_faction = FROM
 		}
 	}
 }
@@ -7811,7 +7827,7 @@ country_event = { #Denmark Demands Iceland from Overlord
 				    tag = FROM
 				    ratio < 0.5
 				}
-			}
+			}			
 			modifier = {
 				factor = 0.5
 				any_allied_country = {
@@ -7821,7 +7837,7 @@ country_event = { #Denmark Demands Iceland from Overlord
 			modifier = {
 				factor = 0.5
 				is_major = yes
-			}		
+			}
 		}
 		effect_tooltip = {
 			FROM = { puppet = ICE }
@@ -9758,9 +9774,9 @@ country_event = { #Denmark offers subjugation
 				}
 			}
 		}
-
+		
 		effect_tooltip = {
-
+			
 			FROM = { puppet = ROOT }
 
 		}
@@ -10162,6 +10178,7 @@ country_event = { #End of the Economic Crisis
 
 	option = { #DEN receives good news
 		name = denmark_events.1.a
+
 		add_stability = 0.05
 		
 		add_to_variable = { DEN_industrial_improvement_tracker_var = 1 }
@@ -10241,6 +10258,7 @@ country_event = { #The Danish King seeks refuge
 	}
 
 	fire_only_once = no
+
 	is_triggered_only = yes
 
 	option = { #Welcome him

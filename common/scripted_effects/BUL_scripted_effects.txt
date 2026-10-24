@@ -837,14 +837,14 @@ BUL_nsm_medium_loyalty_decrease_effect = {
 				has_country_flag = BUL_nsm_destroyed_flag
 			}
 		}
+	}
 	custom_effect_tooltip = BUL_nsm_tt
 	custom_effect_tooltip = BUL_medium_loyalty_decrease_tt
 	add_to_variable = { BUL_nsm_loyalty = BUL_faction_medium_decrease }
-		clamp_variable = {
-			var = BUL_nsm_loyalty
-			min = 0
-			max = 100
-		}
+	clamp_variable = {
+		var = BUL_nsm_loyalty
+		min = 0
+		max = 100
 	}
 }
 BUL_nsm_medium_popularity_decrease_effect = {
@@ -855,14 +855,14 @@ BUL_nsm_medium_popularity_decrease_effect = {
 				has_country_flag = BUL_nsm_destroyed_flag
 			}
 		}
+	}
 	custom_effect_tooltip = BUL_nsm_tt
 	custom_effect_tooltip = BUL_medium_popularity_decrease_tt
 	add_to_variable = { BUL_nsm_popularity = BUL_faction_medium_decrease }
-		clamp_variable = {
-			var = BUL_nsm_popularity
-			min = 0
-			max = 100
-		}
+	clamp_variable = {
+		var = BUL_nsm_popularity
+		min = 0
+		max = 100
 	}
 }
 
@@ -874,14 +874,14 @@ BUL_nsm_high_loyalty_decrease_effect = {
 				has_country_flag = BUL_nsm_destroyed_flag
 			}
 		}
+	}
 	custom_effect_tooltip = BUL_nsm_tt
 	custom_effect_tooltip = BUL_high_loyalty_decrease_tt
 	add_to_variable = { BUL_nsm_loyalty = BUL_faction_high_decrease }
-		clamp_variable = {
-			var = BUL_nsm_loyalty
-			min = 0
-			max = 100
-		}
+	clamp_variable = {
+		var = BUL_nsm_loyalty
+		min = 0
+		max = 100
 	}
 }
 BUL_nsm_high_popularity_decrease_effect = {
@@ -892,14 +892,14 @@ BUL_nsm_high_popularity_decrease_effect = {
 				has_country_flag = BUL_nsm_destroyed_flag
 			}
 		}
+	}
 	custom_effect_tooltip = BUL_nsm_tt
 	custom_effect_tooltip = BUL_high_popularity_decrease_tt
 	add_to_variable = { BUL_nsm_popularity = BUL_faction_high_decrease }
-		clamp_variable = {
-			var = BUL_nsm_popularity
-			min = 0
-			max = 100
-		}
+	clamp_variable = {
+		var = BUL_nsm_popularity
+		min = 0
+		max = 100
 	}
 }
 

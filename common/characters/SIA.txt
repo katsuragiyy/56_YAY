@@ -82,7 +82,7 @@ characters={
 		name = SIA_phraya_songsuradet
 		portraits = {
 			civilian = {
-				small = GFX_idea_minister_siam_phraya_songsuradej_minister
+				small = GFX_portrait_SIA_phraya_songsuradet_small
 				large = GFX_portrait_SIA_phraya_songsuradet
 			}
 		}	

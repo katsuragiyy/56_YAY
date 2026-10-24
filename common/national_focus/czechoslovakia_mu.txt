@@ -1857,8 +1857,7 @@ focus_tree = {
 		y = 0
 
 		available = {
-			any_other_country = {
-				is_subject_of = ROOT
+			any_subject_country = {
 				OR = {
 					has_autonomy_state = autonomy_dominion
 					has_autonomy_state = autonomy_puppet
@@ -4671,8 +4670,8 @@ focus_tree = {
 
 		available = {
 			is_subject_of = GER
-			any_other_country = {
-				is_major = yes
+			any_collection_element = {
+				collection = game:all_majors
 				has_war_with = GER
 				has_government = democratic
 				NOT = {
@@ -6541,7 +6540,7 @@ focus_tree = {
 							original_tag = AUS
 						}
 					}
-					OR = { #TODO_logan better checks then doing states, use has_railway_connection
+					OR = { #TODO_logan better checks then doing states, use has_railway_connection?
 						#state = 89
 						#state = 88
 						state = 762
@@ -7797,7 +7796,7 @@ focus_tree = {
 			add_ideas = CZE_guardian_of_central_europe_idea
 			custom_effect_tooltip = generic_skip_one_line_tt
 			set_rule = { can_create_factions = yes }
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = generic_skip_one_line_tt # 56
 
 			if = {
 				limit = {
@@ -7814,7 +7813,15 @@ focus_tree = {
 
 	focus = {
 		id = CZE_strike_at_the_heart_of_bolshevism
-		icon = GFX_focus_attack_soviet
+
+		icon = {
+			GFX_focus_attack_soviet = {
+				SOV = {
+					has_government = communism
+				}
+			}
+			GFX_focus_attack_soviet = yes
+		}
 
 		dynamic = yes
 
@@ -9093,7 +9100,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_gottwald_faction #against civil war - stalinist
-		icon = GFX_goal_support_communism
+		icon = GFX_goal_workers_support # 56
 		
 		relative_position_id = CZE_expand_the_communist_press
 		x = 0
@@ -9964,7 +9971,7 @@ focus_tree = {
 			
 			hidden_effect = {
 				create_corps_commander = {
-					traits = { JAP_communist_sympathizer politically_connected }
+					traits = { communist_sympathizer politically_connected }
 					attack_skill = 2
 					defense_skill = 2
 					planning_skill = 2
@@ -11483,7 +11490,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_strengthen_the_little_entente
-		icon = GFX_focus_AUS_invite_the_entente
+		icon = GFX_goal_CZE_the_little_entente_question # 56
 
 		prerequisite = {
 			focus = CZE_forgive_trading_debts
@@ -12767,11 +12774,17 @@ focus_tree = {
 		available = {
 			91 = {
 				is_controlled_by = ROOT
-				compliance > 30
+				OR = {
+					compliance > 30
+					is_core_of = ROOT
+				}
 			}
 			89 = {
 				is_controlled_by = ROOT
-				compliance > 30
+				OR = {
+					compliance > 30
+					is_core_of = ROOT
+				}
 			}
 		}
 
@@ -18443,6 +18456,7 @@ focus_tree = {
 				specialization = specialization_land
 				value = 0.25
 			}	
+			# 56
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_tech_bonus = {
 				name = FRA_fortification_focus
@@ -18644,7 +18658,7 @@ focus_tree = {
 			}
 			GFX_focus_generic_air_partners = yes
 		}
-
+		
 		prerequisite = { focus = CZE_expand_airfield_capacity }
 
 		relative_position_id = CZE_expand_airfield_capacity
@@ -19196,7 +19210,7 @@ focus_tree = {
 			}
 			GFX_focus_generic_limited_social_mobilization = yes
 		}
-		
+	
 		prerequisite = { focus = CZE_national_defense_act }
 		relative_position_id = CZE_national_defense_act
 		x = 1
@@ -22962,9 +22976,8 @@ focus_tree = {
 	
 		available = {
 			#CZE_has_a_skoda_naval_focus_focus = yes
-			any_state = {
+			any_controlled_state = {
 				is_coastal = yes
-				is_controlled_by = ROOT
 			}
 		}
 	
@@ -23033,9 +23046,8 @@ focus_tree = {
 	
 		available = {
 			CZE_has_a_skoda_naval_focus_focus = yes
-			any_state = {
+			any_controlled_state = {
 				is_coastal = yes
-				is_controlled_by = ROOT
 			}
 		}
 	
@@ -23082,9 +23094,8 @@ focus_tree = {
 	
 		available = {
 			CZE_has_a_skoda_naval_focus_focus = yes
-			any_state = {
+			any_controlled_state = {
 				is_coastal = yes
-				is_controlled_by = ROOT
 			}
 		}
 	
@@ -23133,9 +23144,8 @@ focus_tree = {
 		}
 	
 		available = {
-			any_state = {
+			any_controlled_state = {
 				is_coastal = yes
-				is_controlled_by = ROOT
 			}
 		}
 			
@@ -23206,9 +23216,8 @@ focus_tree = {
 	
 		available = {
 			CZE_has_a_skoda_naval_focus_focus = yes
-			any_state = {
+			any_controlled_state = {
 				is_coastal = yes
-				is_controlled_by = ROOT
 			}
 		}
 	
@@ -23327,9 +23336,8 @@ focus_tree = {
 	
 		available = {
 			CZE_has_a_skoda_naval_focus_focus = yes
-			any_state = {
+			any_controlled_state = {
 				is_coastal = yes
-				is_controlled_by = ROOT
 			}
 		}
 	
@@ -23477,9 +23485,8 @@ focus_tree = {
 	
 		available = {
 			CZE_has_a_skoda_naval_focus_focus = yes
-			any_state = {
+			any_controlled_state = {
 				is_coastal = yes
-				is_controlled_by = ROOT
 			}
 		}
 	
@@ -23531,9 +23538,8 @@ focus_tree = {
 	
 		available = {
 			CZE_has_a_skoda_naval_focus_focus = yes
-			any_state = {
+			any_controlled_state = {
 				is_coastal = yes
-				is_controlled_by = ROOT
 			}
 		}
 	

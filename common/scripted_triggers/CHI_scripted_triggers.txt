@@ -146,6 +146,15 @@ is_chinese_warlord_tooltip = {
 	}
 }
 
+### Attacking them calls in the USSR - evaluated in the scope of the country being targeted.
+CHI_is_soviet_protected = {
+	OR = {
+		is_in_faction_with = SOU
+		is_subject_of = SOU
+		is_guaranteed_by = SOU
+	}
+}
+
 GER_will_support = {
 	GER = {
 		exists = yes
@@ -336,7 +345,7 @@ is_unequal_signatory = {
 	}
 }
 
-CHI_northern_mandate_states = {	#R56_TODO
+CHI_northern_mandate_states = {
 	OR = {
 		region = 149 #Eastern Siberia
 		region = 256 #Transbaikal

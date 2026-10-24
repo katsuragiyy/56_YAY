@@ -254,7 +254,7 @@ country_event = {
 				factor = 0
 				NOT = { original_tag = GRE } 
 				OR = {
-					has_war_support < 20
+					has_war_support < 0.2
 					has_war = yes
 				}
 			}
@@ -276,7 +276,6 @@ country_event = {
 						has_completed_focus = FRA_humanite_unie
 						has_completed_focus = FRA_assistance_treaty
 					}
-					
 				}
 			}
 		}
@@ -1578,6 +1577,7 @@ country_event = {
 	title = bftb_greece.25.t
 	desc = bftb_greece.25.desc
 	picture = GFX_report_event_gre_diplomacy
+
 	
 	trigger = {
 		has_country_flag = GRE_deciding_on_megali_idea
@@ -1638,6 +1638,7 @@ country_event = {
 	title = bftb_greece.26.t
 	desc = bftb_greece.26.desc
 	picture = GFX_report_event_gre_trial
+
 	
 	trigger = {
 		has_country_flag = GRE_deciding_on_megali_idea
@@ -1760,6 +1761,7 @@ country_event = {
 	title = bftb_greece.200.t
 	desc = bftb_greece.200.desc
 	picture = GFX_report_event_gre_megali_conference_signing
+
 	
 	trigger = {
 		has_country_flag = GRE_megali_idea_approved
@@ -1831,6 +1833,7 @@ country_event = {
 	title = bftb_greece.201.t
 	desc = bftb_greece.201.desc
 	picture = GFX_report_event_gre_megali_conference_signing
+
 	
 	trigger = {
 		has_country_flag = GRE_megali_idea_approved
@@ -1927,6 +1930,7 @@ country_event = {
 	title = bftb_greece.202.t
 	desc = bftb_greece.202.desc
 	picture = GFX_report_event_gre_megali_conference_signing
+
 	
 	trigger = {
 		has_country_flag = GRE_megali_idea_approved
@@ -2027,6 +2031,7 @@ country_event = {
 	title = bftb_greece.203.t
 	desc = bftb_greece.203.desc
 	picture = GFX_report_event_gre_megali_conference_signing
+
 	
 	trigger = {
 		has_country_flag = GRE_megali_idea_approved
@@ -2118,6 +2123,7 @@ country_event = {
 	title = bftb_greece.204.t
 	desc = bftb_greece.204.desc
 	picture = GFX_report_event_gre_megali_conference_signing
+
 	
 	trigger = {
 		has_country_flag = GRE_megali_idea_approved
@@ -2183,8 +2189,10 @@ country_event = {
 		every_other_country = { 
 			limit = {
 				NOT = {
-					original_tag = ENG
-					original_tag = FRA
+					OR = {
+						original_tag = ENG
+						original_tag = FRA
+					}
 				}
 				has_country_flag = GRE_no_british_armenia
 				has_country_flag = GRE_no_french_kurdistan
@@ -2215,6 +2223,7 @@ country_event = {
 	title = bftb_greece.205.t
 	desc = bftb_greece.205.desc
 	picture = GFX_report_event_gre_megali_conference_signing
+
 	
 	trigger = {
 		has_country_flag = GRE_megali_idea_approved
@@ -2334,6 +2343,7 @@ country_event = {
 	title = bftb_greece.206.t
 	desc = bftb_greece.206.desc
 	picture = GFX_report_event_gre_megali_conference_signing
+
 	
 	trigger = {
 		has_country_flag = GRE_megali_idea_approved
@@ -2491,7 +2501,7 @@ country_event = {
 			modifier = {
 				factor = 3
 				OR = {
-					has_war_support < 20
+					has_war_support < 0.2
 					has_war = yes
 				}
 			}
@@ -2760,6 +2770,7 @@ country_event = {
 					set_resistance = 0
 					set_compliance = 70
 				}
+
 			}
 		}
 		if = { 
@@ -2959,8 +2970,8 @@ country_event = {
 		ai_chance = {
 			base = 4
 			modifier = {
-				any_other_country = {
-					is_major = yes
+				any_collection_element = {
+					collection = game:all_majors
 					has_guaranteed = TUR
 				}
 				factor = 0.5
@@ -3659,9 +3670,9 @@ country_event = {
 	}
 	option = {
 		name = bftb_greece.51.b #aid - support
-		trigger = {
-			has_equipment = { support_equipment > 150 }
-		}
+		#trigger = {
+		#	has_equipment = { support_equipment > 150 }
+		#}
 		ai_chance = {
 			base = 75
 		}
@@ -3670,7 +3681,7 @@ country_event = {
 				type = support_equipment
 				amount = 150
 				producer = ENG
-			}
+			}	
 		}
 		send_equipment = { 
 			equipment = support_equipment
@@ -4149,7 +4160,7 @@ country_event = {
 				is_in_faction = no
 			}
 			create_faction_from_template = {
-				template = faction_template_generic
+				template = faction_template_ITA_italian_league
 				name = spazio_vitale
 			}
 			add_to_faction = GRE
@@ -4162,7 +4173,7 @@ country_event = {
 			}
 			remove_from_faction = ROOT
 			create_faction_from_template = {
-				template = faction_template_generic
+				template = faction_template_ITA_italian_league
 				name = spazio_vitale
 			}
 			add_to_faction = GRE
@@ -4277,7 +4288,7 @@ country_event = {
 				is_in_faction = no
 			}
 			create_faction_from_template = {
-				template = faction_template_generic
+				template = faction_template_ITA_italian_league
 				name = spazio_vitale
 			}
 			add_to_faction = GRE
@@ -4289,7 +4300,7 @@ country_event = {
 			}
 			remove_from_faction = ROOT
 			create_faction_from_template = {
-				template = faction_template_generic
+				template = faction_template_ITA_italian_league
 				name = spazio_vitale
 			}
 			add_to_faction = GRE
@@ -4497,6 +4508,8 @@ country_event = {
 				}
 			}
 		}
+
+
 	}
 }
 #Byzantine Party protests
@@ -4626,9 +4639,11 @@ country_event = {
 		hidden_effect = { 
 			if = { 
 				limit = { 
-					NOT = {
-						has_idea = GRE_eee_in_government
-						has_country_flag = onassis_proposition_accepted
+					NOT = { 
+						OR = {
+							has_idea = GRE_eee_in_government
+							has_country_flag = onassis_proposition_accepted
+						}
 					}
 				}
 				country_event = { id = bftb_greece.90 }
@@ -4658,9 +4673,11 @@ country_event = {
 		hidden_effect = { 
 			if = { 
 				limit = { 
-					NOT = {
-						has_idea = GRE_eee_in_government
-						has_country_flag = onassis_proposition_accepted
+					NOT = { 
+						OR = {
+							has_idea = GRE_eee_in_government
+							has_country_flag = onassis_proposition_accepted
+						}
 					}
 				}
 				country_event = { id = bftb_greece.90 }
@@ -5254,7 +5271,7 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 10
-				num_of_available_civilian_factories < 15
+				num_of_civilian_factories_available_for_projects < 15
 			}
 		}
 		GRE = { 
@@ -5319,7 +5336,7 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 10
-				num_of_available_civilian_factories < 20
+				num_of_civilian_factories_available_for_projects < 20
 			}
 		}
 		GRE = { 
@@ -5614,7 +5631,7 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 10
-				num_of_available_civilian_factories < 15
+				num_of_civilian_factories_available_for_projects < 15
 			}
 		}
 		GRE = { 
@@ -5679,7 +5696,7 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 10
-				num_of_available_civilian_factories < 20
+				num_of_civilian_factories_available_for_projects < 20
 			}
 		}
 		GRE = { 
@@ -5900,7 +5917,7 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 10
-				num_of_available_civilian_factories < 15
+				num_of_civilian_factories_available_for_projects < 15
 			}
 		}
 		GRE = { 
@@ -5965,7 +5982,7 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 10
-				num_of_available_civilian_factories < 20
+				num_of_civilian_factories_available_for_projects < 20
 			}
 		}
 		GRE = { 

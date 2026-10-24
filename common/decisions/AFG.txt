@@ -894,9 +894,11 @@ AFG_foreign_intervention_category = {
 				has_government = democratic
 				has_government = fascism
 			}
-			any_other_country = {
-				has_country_flag = AFG_requested_our_aid
-			}
+			OR = { 
+     	  		AND = { NOT = { tag = SOV } SOV = { has_country_flag = AFG_requested_our_aid } }
+     	  		AND = { NOT = { tag = GER } GER = { has_country_flag = AFG_requested_our_aid } }
+     	  		AND = { NOT = { tag = ENG } ENG = { has_country_flag = AFG_requested_our_aid } }
+     		}
 		}
 	   # on_map_mode = map_and_decisions_view 
 	    cost = 30
@@ -941,9 +943,11 @@ AFG_foreign_intervention_category = {
 				has_government = democratic
 				has_government = communism
 			}
-			any_other_country = {
-				has_country_flag = AFG_requested_our_aid
-			}
+			OR = { 
+     	  		AND = { NOT = { tag = SOV } SOV = { has_country_flag = AFG_requested_our_aid } }
+     	  		AND = { NOT = { tag = GER } GER = { has_country_flag = AFG_requested_our_aid } }
+     	  		AND = { NOT = { tag = ENG } ENG = { has_country_flag = AFG_requested_our_aid } }
+     		}
 		}
 	   # on_map_mode = map_and_decisions_view 
 	    cost = 30
@@ -990,9 +994,11 @@ AFG_foreign_intervention_category = {
 				has_government = communism
 				has_government = fascism
 			}
-			any_other_country = {
-				has_country_flag = AFG_requested_our_aid
-			}
+			OR = { 
+     	  		AND = { NOT = { tag = SOV } SOV = { has_country_flag = AFG_requested_our_aid } }
+     	  		AND = { NOT = { tag = GER } GER = { has_country_flag = AFG_requested_our_aid } }
+     	  		AND = { NOT = { tag = ENG } ENG = { has_country_flag = AFG_requested_our_aid } }
+     		}
 		}
 	   # on_map_mode = map_and_decisions_view 
 	    cost = 30
@@ -1808,7 +1814,7 @@ political_actions = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			country_event = {
-				id = AFG_royal_succession_events.01
+				id = AFG_political_events.173
 			}	
 
 		}

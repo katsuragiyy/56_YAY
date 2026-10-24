@@ -1169,6 +1169,10 @@ on_actions = {
 						name = RAJ_neutrality_party
 						long_name = RAJ_neutrality_party_long
 					}
+					country_event = {
+						id = GOE_RAJ.52
+						days = 4069
+					}
 					else = {
 						country_event = { id = india.1 days = 32 }
 						set_power_balance = {

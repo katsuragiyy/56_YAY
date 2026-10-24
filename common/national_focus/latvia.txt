@@ -9,12 +9,12 @@
 #!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = latvia_tree
-
+	
 	country = {
 		factor = 0
 		
 		modifier = {
-			add = 9
+			add = 10
 			tag = LAT
 			has_dlc = "No Step Back"
 			has_global_flag = LAT_vanilla_focus_tree
@@ -132,6 +132,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
 		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = LAT_janis_balodis
 			swap_ideas = {
 				remove_idea = LAT_saeima_idea
@@ -338,6 +339,18 @@ focus_tree = {
 			add_popularity = {
 				ideology = democratic
 				popularity = 0.1
+			}
+			hidden_effect = {
+				LAT_alberts_kvesis = {
+					remove_trait = {
+						trait = subservient_democrat
+						slot = political_advisor
+					}
+					add_trait = {
+						trait = subservient_democrat_democratic
+						slot = political_advisor
+					}	
+				}
 			}
 		}
 	}
@@ -680,6 +693,7 @@ focus_tree = {
 		}
 
 		available = {
+			is_subject = no
 			any_other_country = {
 				NOT = { has_war_with = ROOT }
 				is_faction_leader = yes
@@ -782,6 +796,7 @@ focus_tree = {
 		}
 
 		available = {
+			is_subject = no
 			is_in_faction = no
 			OR = {
 				EST = { exists = yes }
@@ -1333,7 +1348,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 0
-				GER = { has_capitulated = yes }
+					GER = { has_capitulated = yes }
 			}
 			modifier = {
 				GER = { surrender_progress > 0.25 }
@@ -1361,7 +1376,21 @@ focus_tree = {
 		}
 
 		bypass = {
+			fascism > 0.4
 			is_in_faction_with = GER
+		}
+
+		bypass_effect = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
+			remove_mission = LAT_perkonkrust_uprising
+			remove_perkonkrust_effect = yes
 		}
 
 		cancel_if_invalid = no
@@ -1836,9 +1865,11 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
+
 				set_rule = {
 					can_create_factions = yes
 				}
+
 				if = {
 					limit = {
 						is_in_faction = no
@@ -2577,7 +2608,7 @@ focus_tree = {
 			else = {
 				add_tech_bonus = {
 					name = LAT_prepare_covert_resistance
-					bonus = 1.0
+					bonus = 0.75
 					uses = 2
 					category = electronics
 				}

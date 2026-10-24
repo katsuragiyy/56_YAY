@@ -1051,5 +1051,20 @@ areas = {
 			202
 		}
 	}
+	
+	north_east_africa = {
+		strategic_regions = {
+			225 # tripoli
+			128 # egypt
+			232 # levant
+		}
+	}
 
+	med_invasion_zone = {
+		strategic_regions = {
+			169
+			29
+			68
+		}
+	}
 }

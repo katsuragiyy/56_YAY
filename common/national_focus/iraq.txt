@@ -1838,7 +1838,9 @@ focus_tree = {
 			base = 1
 		}
 
+
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+
 
 		completion_reward = {
 			IF = {
@@ -1903,7 +1905,9 @@ focus_tree = {
 			base = 1
 		}
 
+
 		search_filters = { FOCUS_FILTER_MANPOWER }
+
 
 		completion_reward = {
 
@@ -1930,6 +1934,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 1
 		}
+
 
 		completion_reward = {
 
@@ -1979,7 +1984,9 @@ focus_tree = {
 			base = 1
 		}
 
+
 		search_filters = { FOCUS_FILTER_MANPOWER }
+
 
 		completion_reward = {
 
@@ -2015,7 +2022,9 @@ focus_tree = {
 			base = 1
 		}
 
+
 		search_filters = { FOCUS_FILTER_RESEARCH }
+
 
 		completion_reward = {
 
@@ -2075,7 +2084,9 @@ focus_tree = {
 			}
 		}
 
+
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+
 
 		completion_reward = {
 			
@@ -2127,7 +2138,9 @@ focus_tree = {
 			has_tech = mechanised_infantry
 		}
 
+
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
+
 
 		completion_reward = {
 
@@ -2216,6 +2229,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL FOCUS_FILTER_AIR_XP }
 
+
 		completion_reward = {
 
 			IF = {
@@ -2269,6 +2283,7 @@ focus_tree = {
 			base = 1
 		}
 
+
 		completion_reward = {
 
 			if = {
@@ -2283,7 +2298,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = IRQ_air_force_modifier_IRQ
 				}
-			}		
+			}
 		}
 	}
 
@@ -2525,7 +2540,9 @@ focus_tree = {
 			base = 1
 		}
 
+
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+
 
 		completion_reward = {
 			IF = {
@@ -2607,7 +2624,9 @@ focus_tree = {
 			base = 1
 		}
 
+
 		search_filters = { FOCUS_FILTER_AIR_XP }
+
 
 		completion_reward = {
 
@@ -2615,7 +2634,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			IRQ_modify_air_force_modifier_version = yes
-
+		
 			add_to_variable = { 
 				IRQ_air_strategic_bomber_bombing_factor = 0.1
 				tooltip = air_strategic_bomber_bombing_factor_tt
@@ -2662,7 +2681,9 @@ focus_tree = {
 			base = 1
 		}
 
+
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR_XP }
+
 
 		completion_reward = {
 
@@ -2723,6 +2744,7 @@ focus_tree = {
 			base = 1
 		}
 
+
 		completion_reward = {
 
 			air_experience = 15
@@ -2770,8 +2792,10 @@ focus_tree = {
 			}
 		}
 
+
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
+
 
 		completion_reward = {
 			
@@ -2843,7 +2867,9 @@ focus_tree = {
 			}
 		}
 
+
 		search_filters = { FOCUS_FILTER_RESEARCH }
+
 
 		completion_reward = {
 			
@@ -2895,7 +2921,9 @@ focus_tree = {
 			base = 1
 		}
 
+
 		search_filters = { FOCUS_FILTER_RESEARCH }
+
 
 		completion_reward = {
 
@@ -2961,6 +2989,7 @@ focus_tree = {
 			base = 1
 		}
 
+
 		completion_reward = {
 
 			IF = {
@@ -3025,6 +3054,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 1
 		}
+
 
 		completion_reward = {
 			IRQ_modify_navy_modifier_version = yes
@@ -3093,6 +3123,7 @@ focus_tree = {
 			base = 1
 		}
 
+
 		completion_reward = {
 			custom_effect_tooltip = ETH_purchase_obsolete_ships_tt
 			set_country_flag = generic_purchase_old_ships_flag			
@@ -3120,7 +3151,9 @@ focus_tree = {
 			}
 		}
 
+
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+
 
 		completion_reward = {
 
@@ -3184,7 +3217,9 @@ focus_tree = {
 			base = 1
 		}
 
+
 		search_filters = { FOCUS_FILTER_RESEARCH }
+
 
 		completion_reward = {
 			set_technology = { coastal_defense_ships = 1 }
@@ -3317,7 +3352,9 @@ focus_tree = {
 			}
 		}
 
+
 		search_filters = { FOCUS_FILTER_INDUSTRY }
+
 
 		completion_reward = {
 
@@ -3479,12 +3516,16 @@ focus_tree = {
 			base = 1
 		}
 
+
 		search_filters = { FOCUS_FILTER_STABILITY }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
+
 		completion_reward = {
+
 			add_stability = 0.1
 			add_political_power = 100
+
 			if = {
 				limit = {
 					has_game_rule = {
@@ -3843,7 +3884,18 @@ focus_tree = {
 				limit = {
 					is_in_faction_with = GER
 				}
-				ROOT = { send_embargo = PREV }
+				if = {
+					limit = {
+						has_dlc = "By Blood Alone"
+					}
+					ROOT = { send_embargo = PREV }
+				}
+				else = {
+					ROOT = {
+						add_opinion_modifier = { target = PREV modifier = embargo }
+					}
+					add_opinion_modifier = { target = ROOT modifier = sanctions_relations }
+				}
 			}
 			ENG = {
 				add_opinion_modifier = {
@@ -4219,6 +4271,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 			IF = {
 				limit = {
@@ -4284,7 +4340,15 @@ focus_tree = {
 			has_idea = IRQ_anglo_iraqi_treaty
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_HISTORICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			swap_ideas = {
@@ -4357,6 +4421,14 @@ focus_tree = {
 			}
 			has_war_with_major = yes
 		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -4431,6 +4503,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 
 			ENG = {
@@ -4460,7 +4536,19 @@ focus_tree = {
 			base = 1
 		}
 
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -4505,7 +4593,19 @@ focus_tree = {
 			base = 1
 		}
 
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -4579,6 +4679,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY }
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 
 			add_stability = 0.05
@@ -4623,6 +4727,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_MILITARY_CHARACTER }
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 
 			custom_effect_tooltip = IRQ_abd_al_illah_fm_tt
@@ -4665,6 +4773,10 @@ focus_tree = {
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -4726,6 +4838,7 @@ focus_tree = {
 				}
 				OR = {
 					any_country_with_original_tag = {
+						exists = yes
 						original_tag_to_check = FRA
 						owns_state = 680
 					}
@@ -4794,6 +4907,10 @@ focus_tree = {
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			IF = {
@@ -4893,8 +5010,16 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			hidden_effect = { drop_cosmetic_tag = yes }
@@ -4948,7 +5073,15 @@ focus_tree = {
 			is_subject = no
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			custom_effect_tooltip = IRQ_expand_membership_tt
@@ -5003,6 +5136,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 			every_state = {
 				limit = {
@@ -5047,8 +5184,16 @@ focus_tree = {
 			}	
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			hidden_effect = { drop_cosmetic_tag = yes }
@@ -5107,8 +5252,16 @@ focus_tree = {
 			is_subject = no
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			every_state = {
@@ -5214,8 +5367,16 @@ focus_tree = {
 			is_subject = no
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			every_state = {
@@ -5266,16 +5427,25 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			any_other_country = {
-				original_tag = SPR
+			any_country_with_original_tag = {
+				exists = yes
+				original_tag_to_check = SPR
 				NOT = {
 					is_in_faction_with = ROOT
 				}	
 			}
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			every_state = {
@@ -5335,7 +5505,19 @@ focus_tree = {
 			base = 1
 		}
 
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_HISTORICAL }
+
+		cancel_if_invalid = yes 
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -5373,7 +5555,19 @@ focus_tree = {
 			base = 1
 		}
 
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -5416,7 +5610,19 @@ focus_tree = {
 			base = 1
 		}
 
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			ITA = {
@@ -5469,7 +5675,15 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL_CHARACTER }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -5498,7 +5712,19 @@ focus_tree = {
 			base = 1
 		}
 
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -5531,8 +5757,19 @@ focus_tree = {
 			base = 1
 		}
 
+		available = {
+		}
+
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_STABILITY }
 		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -5586,8 +5823,16 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			PER = {
@@ -5627,7 +5872,15 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			TUR = {
@@ -5657,7 +5910,18 @@ focus_tree = {
 			base = 1
 		}
 
+		available = {
+		}
+
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_WAR_SUPPORT }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -5698,7 +5962,18 @@ focus_tree = {
 			base = 1
 		}
 
+		available = {
+		}
+
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER FOCUS_FILTER_MILITARY_CHARACTER }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -5734,7 +6009,15 @@ focus_tree = {
 			is_subject = no
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -5823,7 +6106,15 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			680 = { add_claim_by = ROOT }
@@ -5861,7 +6152,15 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			553 = { add_claim_by = ROOT }
@@ -5907,6 +6206,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 
 			custom_effect_tooltip = IRQ_align_afghanistan_fasc_tt
@@ -5946,7 +6249,15 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			hidden_effect = { drop_cosmetic_tag = yes }
@@ -5985,6 +6296,10 @@ focus_tree = {
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -6034,6 +6349,10 @@ focus_tree = {
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -6088,7 +6407,19 @@ focus_tree = {
 			base = 1
 		}
 
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_HISTORICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -6132,7 +6463,15 @@ focus_tree = {
 			has_government = fascism
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_MILITARY_CHARACTER }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			IF = {
@@ -6195,7 +6534,6 @@ focus_tree = {
 					has_war_with = 677.OWNER
 					has_war_with = 799.OWNER
 				}
-				
 			}
 			680 = {
 				NOT = {
@@ -6255,6 +6593,10 @@ focus_tree = {
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			IF = {
@@ -6320,7 +6662,15 @@ focus_tree = {
 			is_subject = no
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_HISTORICAL FOCUS_FILTER_WAR_SUPPORT }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			add_ideas = IRQ_rally_the_arab_world_idea
@@ -6349,7 +6699,15 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_MILITARY_CHARACTER }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -6443,6 +6801,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 			create_wargoal = {
 				target = SAU
@@ -6485,7 +6847,15 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -6525,7 +6895,15 @@ focus_tree = {
 			has_government = fascism
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			every_state = {
@@ -6571,7 +6949,15 @@ focus_tree = {
 			has_government = fascism
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			every_state = {
@@ -6622,12 +7008,30 @@ focus_tree = {
 			has_government = fascism
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			hidden_effect = { drop_cosmetic_tag = yes }
-			set_cosmetic_tag = IRQ_united_arab_republic	
-			custom_effect_tooltip = IRQ_arab_republic_core_tt		
+			set_cosmetic_tag = IRQ_united_arab_republic
+			custom_effect_tooltip = IRQ_arab_republic_core_tt
+			IF = {
+				limit = {
+					has_idea = IRQ_sharaf_bin_rajeh
+				}
+				remove_ideas = IRQ_sharaf_bin_rajeh
+				set_can_be_fired_in_advisor_role = {
+					character = IRQ_sharaf_bin_rajeh
+					value = yes
+				}
+			}
 		}
 	}
 
@@ -6659,6 +7063,10 @@ focus_tree = {
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			remove_ideas = IRQ_anglo_iraqi_treaty
@@ -6727,6 +7135,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 			GER = {
 				country_event = { id = generic.2 hours = 4 }
@@ -6755,7 +7167,15 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			ETH_add_random_mil_factory_effect = yes
@@ -6802,6 +7222,14 @@ focus_tree = {
 				is_in_faction_with = GER
 			}
 		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -6859,6 +7287,14 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 			custom_effect_tooltip = IRQ_invite_oil_mission_ctt
 			
@@ -6913,8 +7349,14 @@ focus_tree = {
 			is_subject = no
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL_CHARACTER }
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		available_if_capitulated = yes	#r56
 
 		completion_reward = {
@@ -6957,7 +7399,15 @@ focus_tree = {
 			has_global_flag = the_1936_PAL_revolt_has_happened
 		}
 
+		bypass = {
+
+		}
+
 		search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_HISTORICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			add_political_power = 120
@@ -8342,7 +8792,12 @@ focus_tree = {
 	
 		}
 	
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER }
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 	
 		completion_reward = {
 			add_political_power = 150
@@ -8382,7 +8837,14 @@ focus_tree = {
 			}
 		}
 	
+		bypass = {
+		}
+	
 		search_filters = { FOCUS_FILTER_POLITICAL }
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 	
 		completion_reward = {
 
@@ -8432,7 +8894,16 @@ focus_tree = {
 			}
 		}
 	
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
+		bypass = {
+		}
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 	
 		completion_reward = {
 			add_popularity = {
@@ -8507,7 +8978,16 @@ focus_tree = {
 			}
 		}
 	
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
+		bypass = {
+	
+		}
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER }
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 	
 		completion_reward = {
 			
@@ -8704,7 +9184,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			every_state = {
+			every_state = { # 56
 				limit = {
 					has_dynamic_modifier = { modifier = KUR_resistance_modifier }
 					OR = {
@@ -8922,6 +9402,10 @@ focus_tree = {
 	
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -8941,7 +9425,19 @@ focus_tree = {
 			base = 1
 		}
 	
+		available = {
+			
+		}
+	
+		bypass = {
+	
+		}
+	
 		search_filters = { FOCUS_FILTER_INDUSTRY }
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 	
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -8994,6 +9490,10 @@ focus_tree = {
 	
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
 		completion_reward = {
 			676 = {
 				add_resource = {
@@ -9022,9 +9522,22 @@ focus_tree = {
 			base = 1
 		}
 	
+		available = {
+			
+		}
+	
+		bypass = {
+	
+		}
+	
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
 		completion_reward = {
+
 			add_ideas = IRQ_peshmerga_idea 
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -9033,6 +9546,7 @@ focus_tree = {
 				militia_tech = 1
 				popup = no
 			}	
+
 		}
 	}
 
@@ -9051,6 +9565,10 @@ focus_tree = {
 		}
 
 		available = {
+
+		}
+
+		bypass = {
 
 		}
 
@@ -9096,7 +9614,20 @@ focus_tree = {
 			base = 1
 		}
 	
-		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
+		available = {
+			
+		}
+	
+		bypass = {
+	
+		}
+	
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 	
 		completion_reward = {
 
@@ -9187,6 +9718,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
 		completion_reward = {
 
 			add_ideas = KUR_rejected_ankara_treaty
@@ -9246,12 +9781,13 @@ focus_tree = {
 			}
 		}
 
-		search_filters = {FOCUS_FILTER_POLITICAL}
+		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
 
 		completion_reward = {
 			if = {
 				limit = {
 					any_country_with_original_tag = {
+						exists = yes
 						original_tag_to_check = SOV
 						is_faction_leader = yes
 						has_government = communism
@@ -9326,6 +9862,14 @@ focus_tree = {
 
 		cost = 10
 
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
 		search_filters = {FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
@@ -9390,6 +9934,10 @@ focus_tree = {
 		cost = 10
 
 		available = {
+
+		}
+
+		bypass = {
 
 		}
 
@@ -9482,6 +10030,10 @@ focus_tree = {
 		}
 	
 		search_filters = { FOCUS_FILTER_POLITICAL }
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		will_lead_to_war_with = TUR
 		completion_reward = {
 			create_wargoal = {
@@ -9521,6 +10073,10 @@ focus_tree = {
 		}
 	
 		search_filters = { FOCUS_FILTER_POLITICAL }
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		will_lead_to_war_with = PER
 		completion_reward = {
 			create_wargoal = {
@@ -9563,6 +10119,10 @@ focus_tree = {
 	
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
 		completion_reward = {
 
 			349 = {
@@ -9578,6 +10138,9 @@ focus_tree = {
 				add_core_of = ROOT
 			}
 			416 = {
+				add_core_of = ROOT
+			}
+			988 = {
 				add_core_of = ROOT
 			}
 			#1004 = { #R56

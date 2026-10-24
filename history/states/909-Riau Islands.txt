@@ -24,11 +24,12 @@ state = {
 			13532 = {
 				naval_base = 1
 			}
+			13525 = { naval_base = 1 }
 		}
 	}
 
 	provinces = {
-		12113 13532 
+		12113 13532 13525
 	}
 
 	manpower = 177500

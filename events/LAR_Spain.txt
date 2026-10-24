@@ -11132,8 +11132,10 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		end_puppet = FROM
-		remove_from_faction = FROM
+		hidden_effect = {
+			end_puppet = FROM
+			remove_from_faction = FROM
+		}
 	}
 	
 	option = { # Ok
@@ -11142,8 +11144,8 @@ country_event = {
 			base = 100
 			modifier = {
 				factor = 0.33
-				any_country = {
-					is_major = yes
+				any_collection_element = {
+					collection = game:all_majors
 					has_war_with = ROOT
 				}
 			}
@@ -11171,8 +11173,8 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 100
-				any_country = {
-					is_major = yes
+				any_collection_element = {
+					collection = game:all_majors
 					has_war_with = ROOT
 				}
 			}
@@ -11728,8 +11730,8 @@ country_event = {
 			base = 100
 			modifier = {
 				factor = 0.33
-				any_country = {
-					is_major = yes
+				any_collection_element = {
+					collection = game:all_majors
 					has_war_with = ROOT
 				}
 			}
@@ -11850,8 +11852,8 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 100
-				any_country = {
-					is_major = yes
+				any_collection_element = {
+					collection = game:all_majors
 					has_war_with = ROOT
 				}
 			}

@@ -1183,32 +1183,32 @@ KUM = {
 	color_ui = rgb { 153 122 0 }	
 }
 GSM = {
-	color = rgb { 105 60 100 } 
-	color_ui = rgb { 12 26 39 }
+	color = rgb { 105 90 132 } # 56
+	color_ui = rgb { 105 90 132 } # 56
 }
 GDC = {
 	color = rgb { 45 134 89 }
 	color_ui = rgb { 25 77 51 }
 }
 KHM = {
-	color = rgb { 153 102 51 }
-	color_ui = rgb { 96 64 32 }
+	color = rgb { 105 90 132 } # 56
+	color_ui = rgb { 105 90 132 } # 56
 }
 NXM = {
-	color = rgb { 105 125 150 } 
-	color_ui = rgb { 32 64 96 } 
+	color = rgb { 105 90 132 } # 56
+	color_ui = rgb { 105 90 132 } # 56
 }
 SND = {
-	color = rgb { 5	85	165 }
-	color_ui = rgb { 5 120 200 }
+	color = rgb { 5	85	165 } # 56
+	color_ui = rgb { 5 120 200 } # 56
 }
 SIC = {
-	color = rgb { 0 96 128 }
-	color_ui = rgb { 0 77 102 } 
+	color = rgb { 5	85	165 } # 56
+	color_ui = rgb { 5 120 200 } # 56
 }
 XIC = {
-	color = rgb { 43 92 181 }
-	color_ui = rgb { 45 100 190 } 
+	color = rgb { 5	85	165 } # 56
+	color_ui = rgb { 5 120 200 } # 56
 }
 
 RNG = {
@@ -1222,8 +1222,8 @@ PSR = {
 }
 
 HBC = {
-	color = rgb { 5	85	165 }
-	color_ui = rgb { 5 120 200 }
+	color = rgb { 5	85	165 } # 56
+	color_ui = rgb { 5 120 200 } # 56
 }
 
 BOU = {

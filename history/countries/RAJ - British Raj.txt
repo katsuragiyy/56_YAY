@@ -186,7 +186,6 @@ recruit_character = RAJ_benegal_rama_rau
 recruit_character = RAJ_dhananjay_gadgil
 recruit_character = RAJ_walchand_hirachand
 recruit_character = RAJ_asit_krishna_mukherji
-recruit_character = RAJ_subbier_appadurai_ayer
 recruit_character = RAJ_manabendra_nath_roy
 recruit_character = RAJ_muzaffar_ahmad
 recruit_character = RAJ_nathu_singh_rathore_r56
@@ -214,6 +213,9 @@ if = {
 	recruit_character = RAJ_karam_singh_mann
 	recruit_character = RAJ_GOE_ukkirapandi_muthuramalinga_thevar
 	recruit_character = RAJ_GOE_sarat_bose
+	recruit_character = RAJ_abdul_ghaffar_khan
+	recruit_character = RAJ_GOE_vallabhbhai_patel
+	recruit_character = RAJ_GOE_subbier_appadurai_ayer
 	#recruit_character = RAJ_john_edward_golightly #Already have a silent workhorse present
 
 	recruit_character = RAJ_jim_corbett

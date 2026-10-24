@@ -1013,6 +1013,7 @@ country_event = {
 					id = CHI
 					value = 200
 				}
+				set_rule = { can_join_factions = yes }
 			}
 			every_country = {
 				limit = {
@@ -1048,6 +1049,10 @@ country_event = {
 			base = 20
 			modifier = {
 				has_country_flag = SOV_xian_refuse
+				factor = 0
+			}
+			modifier = {
+				is_historical_focus_on = yes
 				factor = 0
 			}
 		}
@@ -1513,6 +1518,7 @@ country_event = {
 					id = "CHI"
 					value = 200
 				}
+				set_rule = { can_join_factions = yes }
 			}
 			every_country = {
 				limit = {

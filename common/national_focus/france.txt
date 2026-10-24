@@ -3814,13 +3814,13 @@ focus_tree = {
 			}
 			
 		}
+		bypass_effect = {
+			set_rule = { can_create_factions = yes }
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			set_rule = {
-				can_create_factions = yes
-			}
 			if = {
 				limit = {
 					CZE = {
@@ -3835,6 +3835,7 @@ focus_tree = {
 			else_if = {
 				limit = {
 					CZE = {
+						exists = yes
 						has_government = ROOT
 						OR = {
 							is_subject = no
@@ -3843,11 +3844,12 @@ focus_tree = {
 					}
 					is_faction_leader = yes
 				}
-				CZE = { country_event = france.17 }
+				CZE = { country_event = generic.5 }
 			}
 			else_if = {
 				limit = {
 					CZE = {
+						exists = yes
 						has_government = ROOT
 						is_in_faction = no
 						OR = {
@@ -3855,17 +3857,19 @@ focus_tree = {
 							is_subject_of = ROOT
 						}
 					}
-					is_in_faction = no
+					#is_in_faction = no		#focus now bypasses if in a faction and war, let them leave the faction and do this otherwise
 				}
-				create_faction_from_template = {
-					template = faction_template_anti_fascist
-					name = french_entente_alliance
-					icon = GFX_faction_logo_generic_12
-				}
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = faction_template_the_little_entente
+
 				CZE = { custom_effect_tooltip = invite_to_faction_tt }
 				hidden_effect = {
-					CZE = { country_event = france.17 }
+					CZE = { country_event = generic.5 }
 				}
+			}
+			else = {
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = faction_template_the_little_entente
 			}
 			hidden_effect = {
 				news_event = {
@@ -9084,20 +9088,19 @@ focus_tree = {
 
 		available = {
 			is_subject = no
+			is_faction_leader = yes
 			has_government = democratic
 			ENG = {
 				exists = yes
 				has_government = democratic
 				is_faction_leader = yes
+				NOT = { has_war_with = ROOT }
 				NOT = {
 					OR = {
 						has_completed_focus = ENG_a_change_in_course
 						has_completed_focus = ENG_visit_germany
 					}
 				}
-			}
-			NOT = {
-				has_war_with = ENG
 			}
 		}
 
@@ -10667,18 +10670,16 @@ focus_tree = {
 		}
 
 		available = {
-			if = {
-				limit = {
-					has_dlc = "No Step Back"
+			OR = {
+				AND = {
+					has_tech = basic_heavy_tank
+					has_tech = basic_medium_tank
 				}
-				has_tech = basic_medium_tank_chassis
-				has_tech = basic_heavy_tank_chassis
+				AND = {
+					has_tech = basic_heavy_tank_chassis
+					has_tech = basic_medium_tank_chassis
+				}
 			}
-			else = {
-				has_tech = basic_heavy_tank
-				has_tech = basic_medium_tank
-			}
-			
 		}
 
 		completion_reward = {
@@ -10701,14 +10702,31 @@ focus_tree = {
 					engineer = { x = 0 y = 2 }
 				}
 			}
-			capital_scope = {
-				create_unit = {
-					division = "name = \"1re Division Cuirassée\" division_template = \"Division Cuirassée\" start_experience_factor = 0.7"  
-					owner = ROOT
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
 				}
-				create_unit = {
-					division = "name = \"2me Division Cuirassée\" division_template = \"Division Cuirassée\" start_experience_factor = 0.7"  
-					owner = ROOT
+				capital_scope = {
+					create_unit = {
+						division = "name = \"1re Division Cuirassée\" division_template = \"Division Cuirassée\" start_experience_factor = 0.7 force_equipment_variants = { heavy_tank_chassis_1 = { creator = \"FRA\" version_name = \"Char B1\"} }"  
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"2me Division Cuirassée\" division_template = \"Division Cuirassée\" start_experience_factor = 0.7 force_equipment_variants = { heavy_tank_chassis_1 = { creator = \"FRA\" version_name = \"Char B1\"} }"  
+						owner = ROOT
+					}
+				}
+			}
+			else = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"1re Division Cuirassée\" division_template = \"Division Cuirassée\" start_experience_factor = 0.7"  
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"2me Division Cuirassée\" division_template = \"Division Cuirassée\" start_experience_factor = 0.7"  
+						owner = ROOT
+					}
 				}
 			}
 			random_country_division = {
