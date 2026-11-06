@@ -12041,6 +12041,30 @@ on_actions = {
 					}
 				}
 			}
+			ELS = {
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								is_historical_focus_on = no
+								has_game_rule = {
+									rule = ELS_ai_behavior
+									option = DEFAULT
+								}
+							}
+							has_game_rule = {
+								rule = ELS_ai_behavior
+								option = RANDOM
+							}
+						}
+					}
+					random_list = {
+						60 = { set_country_flag = ELS_AI_RANDOM_HISTORICAL }
+						25 = { set_country_flag = ELS_AI_RANDOM_DEMOCRATIC }
+						15 = { set_country_flag = ELS_AI_RANDOM_COMMUNIST }
+					}
+				}
+			}
 			HON = {
 				if = {
 					limit = {
@@ -18944,6 +18968,7 @@ on_actions = {
 			}
 			SLO = { remove_ideas = r56_SLO_economy_dm_fake }
 			AST = { remove_ideas = AST_R56_economy_placeholder } #Remove placeholder shown in country selection
+			ELS = { remove_ideas = r56_ELS_coffee_republic } #Remove placeholder shown in country selection
 			#Create VP renaming exception array
 			add_to_array = {
 				global.vp_rename_exceptions = 9833	#Istanbul
