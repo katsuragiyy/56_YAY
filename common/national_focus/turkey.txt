@@ -5409,10 +5409,9 @@ focus_tree = {
 			is_subject = no
 			is_in_faction = no
 			ITA = {
+				NOT = { has_war_with = ROOT }
 				OR = {
-					NOT = {
-						is_in_faction = yes
-					}
+					NOT = { is_in_faction = yes }
 					is_faction_leader = yes
 				}
 			}

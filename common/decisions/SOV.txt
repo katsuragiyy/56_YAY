@@ -5826,11 +5826,11 @@ SOV_diplomacy_baltic_decision_category = {
 				date < 1940.1.1
 			}
 			modifier = {
-				factor = 100 # 56
+				add = 10 # 56
 				has_political_power > 100 # 56
 			}
 			modifier = {
-				factor = 100 # 56
+				add = 10 # 56
 				date > 1940.6.1
 			}
 			modifier = {

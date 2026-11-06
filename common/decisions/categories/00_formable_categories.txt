@@ -692,6 +692,7 @@ form_roman_empire_category = {
 					state = 118
 					# Malta 
 					state = 116
+					state = 973 # Andorra
 				}
 			}
 		}

@@ -420,7 +420,7 @@
  r56_goodwill_negotiations.8.b: "Only some. And with certain restrictions."
  
  r56_goodwill_negotiations.9.t: "Mau Demands Lift on Economic Restrictions"
- r56_goodwill_negotiations.9.d: "Our colonial administration had exercised extreme economic power in [726.GetName], cracking down on local businesses and restricting travel from [726.GetName] to [1088.GetName]. This must change if we wish to see [726.GETNAME] prosper economically."
+ r56_goodwill_negotiations.9.d: "Our colonial administration had exercised extreme economic power in [726.GetName], cracking down on local businesses and restricting travel from [726.GetName] to [1088.GetName]. This must change if we wish to see [726.GetName] prosper economically."
  r56_goodwill_negotiations.9.a: "Sure."
  r56_goodwill_negotiations.9.b: "Not a chance."
  

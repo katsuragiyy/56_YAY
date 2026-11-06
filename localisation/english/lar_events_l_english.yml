@@ -203,6 +203,8 @@
  lar_end_the_occupation.1.desc:1 "After several years, the government of [From.GetLeader] has officially declared their program of 'National Revolution' to have been successful. The weakness and decadence of the old French political system, he claimed in a radio address, had been stamped out, to be replaced by a new, regenerated system of government better suited for a noble and war-like nation such as France.\n\nAs part of this effort, his government has officially requested that the obligations and restrictions placed on it by the Armistice be lifted and that his government be placed in full control of all French territories.\n\nIn return, he has offered to rejoin the war to punish those who plunged our two countries into the second bloody war in a generation."
  lar_end_the_occupation.1.a:1 "We welcome them with open arms!"
  lar_end_the_occupation.1.b:1 "He seems to have ideas well above his station."
+ occupied_countries.1.c: "Stop bringing me these petitions."
+ occupied_countries.1.c_tt: "We will no longer be notified when an occupied nation is ready for a §YCollaboration Government§!.\nThey can still be formed at any time from the §YForeign Influence§! decisions."
  lar_end_the_occupation.2.t:1 "The occupation ends"
  lar_end_the_occupation.2.desc:1 "Following the signing of the Pact of Steel by [This.GetLeader], German troops all across the country have turned over control to French forces. Following a ceremony attended by both [From.GetLeader] and [This.GetLeader], the German garrison of Paris hauled down the [From.GetAdjective] flag and marched out of the city, leaving it under the Tricolore for the first time in years."
  lar_end_the_occupation.2.a:1 "We have regained our honor."

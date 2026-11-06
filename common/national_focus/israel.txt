@@ -95,6 +95,19 @@ focus_tree = {
 				factor = 10
 				is_historical_focus_on = yes
 			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_leader = {
+						character = ISR_zeev_jabotinsky
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = ISR_menachem_begin
+						ruling_only = yes
+					}
+				}
+			}
 		}
 		completion_reward = {
 			hidden_effect = {
@@ -425,7 +438,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 100
+				factor = 50
+				OR = {
+					has_country_leader = {
+						character = ISR_zeev_jabotinsky
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = ISR_menachem_begin
+						ruling_only = yes
+					}
+				}
 			}
 		}
 		completion_reward = {
